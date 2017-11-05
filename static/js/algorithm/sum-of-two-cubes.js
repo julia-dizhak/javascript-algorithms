@@ -82,11 +82,13 @@ function defineSumOfTwoCubesRuntimeTwo(n) {
         }
     }
 
-    /** The algorithm operates by essentially iterating through all (a, b) pairs and then searching all (c, d) pairs to find if there are any matches to that (a, b) pairs.
-    * Why do we keep on computing all (c, d) pairs for each (a, b) pair? We should just create a list of (c, d) pairs once.
-    * Then, we have an (a, b) pair, find the matches within the (c, d) list. We can quickly locate the matches by inserting each (c, d) pair into a hash table that maps from the sum
-    * to the pair (or, rather, the list of pairs that have that sum).
+    /**
+     * The algorithm operates by essentially iterating through all (a, b) pairs and then searching all (c, d) pairs to find if there are any matches to that (a, b) pairs.
+     * Why do we keep on computing all (c, d) pairs for each (a, b) pair? We should just create a list of (c, d) pairs once.
+     * Then, we have an (a, b) pair, find the matches within the (c, d) list. We can quickly locate the matches by inserting each (c, d) pair into a hash table that maps from the sum
+     * to the pair (or, rather, the list of pairs that have that sum).
     */
+
     // for (var a = 1; a < n; a++) {
     //     for (var b = 1; b < n; b++) {
     //         data = Math.pow(a, 3) + Math.pow(b, 3);
@@ -99,8 +101,9 @@ function defineSumOfTwoCubesRuntimeTwo(n) {
     //     }
     // }
 
-    /** Actually, once we have the map of all the (c, d) pairs, we can just use that directly.
-     *  We don't need to generate the (a, b) pairs. Each (a, b) will already be in the map.
+    /**
+     * Actually, once we have the map of all the (c, d) pairs, we can just use that directly.
+     * We don't need to generate the (a, b) pairs. Each (a, b) will already be in the map.
      */
     for (var key in result) {
         var solutions = result[key];
