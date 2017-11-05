@@ -6,10 +6,10 @@
  *
  * Characteristics
  *
- * runtime O(n:^4)
- * runtime O(n:^3)
+ * Runtime O(n:^4)
+ * Runtime O(n:^3)
  *
- * runtime O(n:^2)
+ * Runtime O(n:^2)
  *
  */
 
@@ -19,9 +19,9 @@
  *
  */
 
- 'use strict';
+'use strict';
 
-// runtime O(n:^4)
+// Runtime O(n:^4)
 // n = 1000
 function defineSumOfTwoCubesRuntimeFour(n) {
     var counter = 0;
@@ -44,14 +44,14 @@ function defineSumOfTwoCubesRuntimeFour(n) {
 // defineSumOfTwoCubesRuntimeFour(10);
 
 
-// runtime O(n:^3)
+// Runtime O(n:^3)
 function defineSumOfTwoCubesRuntimeThree(n) {
     var counter = 0;
 
     for (var a = 1; a < n; a++) {
         for (var b = 1; b < n; b++) {
             for (var c = 1; c < n; c++) {
-                var d = Math.pow(Math.pow(a, 3) + Math.pow(b, 3) - Math.pow(c, 3), 1 / 3);
+                var d = Math.round(Math.pow(Math.pow(a, 3) + Math.pow(b, 3) - Math.pow(c, 3), 1 / 3)); // not sure if round is correct but it seems, yes
                 counter += 1;
                 if (Math.pow(a, 3) + Math.pow(b, 3) == Math.pow(c, 3) + Math.pow(d, 3) && d >= 0 && d <= n) { // validate that value works
                     console.log(`${counter} attempt`);
@@ -61,10 +61,9 @@ function defineSumOfTwoCubesRuntimeThree(n) {
         }
     }
 }
-// defineSumOfTwoCubesRuntimeThree(10);
+//defineSumOfTwoCubesRuntimeThree(10);
 
-// runtime O(n:^2)
-
+// Runtime O(n:^2)
 function defineSumOfTwoCubesRuntimeTwo(n) {
     let counter = 0;
     let result = {}, data;
@@ -121,4 +120,4 @@ function defineSumOfTwoCubesRuntimeTwo(n) {
     // console.log(result);
 }
 
-defineSumOfTwoCubesRuntimeTwo(10);
+//defineSumOfTwoCubesRuntimeTwo(10);
