@@ -49,11 +49,11 @@ let findDuplicatesRuntimeOne = function(arr) {
     }
 
     for ( let j in obj1) {
-        output.push(j)
+        output.push(j);
     }
 
     return output;
 };
 
-findDuplicatesRuntimeOne([4,3,2,7,8,2,3,1]);
-console.log( findDuplicatesRuntimeOne([4,3,2,7,8,2,3,1]) );
+//findDuplicatesRuntimeOne([4,3,2,7,8,2,3,1]);
+//console.log( findDuplicatesRuntimeOne([4,3,2,7,8,2,3,1]) );

@@ -1,26 +1,23 @@
 /**
  * Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
  *
- * Algorithm
- * ...
+ * Algorithm ...
+ * Characteristics ...
  *
- * Characteristics
- *
- * Runtime O(n:^4)
- * Runtime O(n:^3)
- * Runtime O(n:^2)
+ * Runtime O(n^4)
+ * Runtime O(n^3)
+ * Runtime O(n^2)
  *
  */
 
 /**
  * @param {number}
  * @return {number a,b,c,d; pair (a,b) (c,d)}
- *
  */
 
 'use strict';
 
-// Runtime O(n:^4)
+// Runtime O(n^4)
 // n = 1000
 function defineSumOfTwoCubesRuntimeFour(n) {
     var counter = 0;
@@ -43,7 +40,7 @@ function defineSumOfTwoCubesRuntimeFour(n) {
 // defineSumOfTwoCubesRuntimeFour(10);
 
 
-// Runtime O(n:^3)
+// Runtime O(n^3)
 function defineSumOfTwoCubesRuntimeThree(n) {
     var counter = 0;
 
