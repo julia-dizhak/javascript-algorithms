@@ -62,4 +62,4 @@ function isUniqueSymbolRuntime1(str) {
 
 }
 
-console.log(isUniqueSymbolRuntime1('test'));
+//console.log(isUniqueSymbolRuntime1('test'));
