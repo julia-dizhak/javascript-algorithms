@@ -12,6 +12,7 @@
   <div class="wrapper">
     <h1>Javascript algorithms</h1>
 
+    <p>Data structure:</p>
     <ul>
       <li>
         <h2>Number</h2>
@@ -30,44 +31,56 @@
         <h2>String</h2>
         <ul>
           <li>
+            <pre id="unique-in-string"></pre>
+            <script>
+                $('#unique-in-string').load('static/js/algorithm/string/unique-in-string.js')
+            </script>
+          </li>
+          <li>
             <pre id="is-permutation"></pre>
             <script>
                 $('#is-permutation').load('static/js/algorithm/string/is-permutation.js')
             </script>
           </li>
           <li>
-            
+
           </li>
         </ul>
       </li>
 
       <li>
         <h2>Array</h2>
+
         <ul>
-          <li></li>
+          <li>
+            <details role="section" aria-expanded="false" aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+               Linear search (find index in array).
+               In this type of search, a sequential search is made over all items one by one.
+               Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.
+              </summary>
+              <div aria-hidden="true">
+                <pre id="linear-search"></pre>
+                <script>
+                    $('#linear-search').load('static/js/algorithm/array/linear-search.js')
+                </script>
+              </div>
+            </details>
+          </li>
+
+          <li>
+
+          </li>
         </ul>
+
       </li>
+
     </ul>
 
 
 
-    <h2>Data structure:</h2>
-    <ul>
 
 
-      <li>
-        <h3>Array</h3>
-        <ul>
-          <li></li>
-        </ul>
-      </li>
-      <li>
-        <h3>String</h3>
-        <ul>
-          <li></li>
-        </ul>
-      </li>
-    </ul>
 
 
 
@@ -75,14 +88,7 @@
     <ul>
 
 
-      array
-      <li>
-        Linear search (find index in array)
-        In this type of search, a sequential search is made over all items one by one.
-        Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.
 
-        <script src="static/js/algorithm/linear-search.js"></script>
-      </li>
 
       array
       <li>
@@ -96,20 +102,8 @@
         <script src="static/js/algorithm/eliminate-duplicates-in-array.js"></script>
       </li>
 
-      string
-      <li>
-        is unique symbol in a string
-         <script src="static/js/algorithm/unique-in-string.js"></script>
-        <script src="static/js/algorithm/string/is-permutation.js"></script>
-        runtime n
-        runtime 1
 
-      </li>
 
-      string
-      <li>
-        isPermutation 'rat' --> 'tar'
-      </li>
 
        <li>
         Find the duplicate number

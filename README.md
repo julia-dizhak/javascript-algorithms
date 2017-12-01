@@ -5,14 +5,25 @@ This repository contains JavaScript implementations of different famous Computer
 ## Algorithms
 
 ### Number
-*Write all possible positive solutions for a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5]. (Runtime O(n^4), Runtime O(n^3), Runtime O(n^2))*
+
+#### Write all possible positive solutions for a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5] / runtime O(n^4), O(n^3), O(n^2)
+
+---
 
 ### String
 
+#### Find unique symbols in string / runtime O(n), runtime O(1)
+#### isPermutation 'rat' --> 'tar' / runtime O(n)
+
+---
+
 ### Array
 
+#### Linear search (or find index) / runtime O(n)
+
+
 ### Sorting and Searching
-*Linear search (or find index).*
+
 
 Runtime O(n)
 

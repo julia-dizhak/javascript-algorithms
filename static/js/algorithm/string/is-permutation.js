@@ -1,7 +1,7 @@
 /**
  * isPermutation 'rat' --> 'tar'
  *
- * Runtime O(n)
+ * runtime O(n)
  */
 
 /**

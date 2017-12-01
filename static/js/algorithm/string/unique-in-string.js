@@ -1,11 +1,10 @@
 /**
- * Find unique symbols in string.
+ * Find unique symbols in string (or detecting if a string consists of unique characters).
  *
  * Algorithm
  * ...
  *
  * Characteristics
- *
  *
  */
 
@@ -15,12 +14,10 @@
  *
  */
 
-// detecting if a string consists of unique characters
 'use strict';
 
 // array
-// Runtime? O(n)
-// time comsuming
+// runtime O(n)
 function isUniqueSymbolRuntimeN(str) {
     if (typeof str !== 'string') {
         return new Error({message: 'Must be a string'});
@@ -43,6 +40,7 @@ function isUniqueSymbolRuntimeN(str) {
 
 //console.log( isUniqueSymbolRuntimeN('teste') );
 
+// runtime O(1)
 function isUniqueSymbolRuntime1(str) {
     if (typeof str !== 'string') {
         throw new Error('Must be a string', str);
