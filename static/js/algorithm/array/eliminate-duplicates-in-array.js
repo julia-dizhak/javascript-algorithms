@@ -14,7 +14,7 @@
 
 'use strict';
 
-// Runtime O(1)
+// runtime O(1)
 let eliminateDuplicates = function(arr) {
     let len = arr.length,
         output = [],

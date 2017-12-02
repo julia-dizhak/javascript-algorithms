@@ -16,7 +16,6 @@
 
 'use strict';
 
-// array
 // runtime O(n)
 function isUniqueSymbolRuntimeN(str) {
     if (typeof str !== 'string') {

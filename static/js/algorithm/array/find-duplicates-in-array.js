@@ -15,7 +15,7 @@
 
 'use strict';
 
-// Runtime O(n)
+// runtime O(n)
 let findDuplicatesRuntimeN = function(arr) {
     let sorted = arr.sort(),
         len = arr.length - 1,
@@ -33,7 +33,7 @@ let findDuplicatesRuntimeN = function(arr) {
 //findDuplicatesRuntimeN([4,3,2,7,8,2,3,1]);
 //console.log( findDuplicatesRuntimeN([4,3,2,7,8,2,3,1]) );
 
-// Runtime O(1)
+// runtime O(1)
 let findDuplicatesRuntimeOne = function(arr) {
     let len = arr.length,
         obj= {},

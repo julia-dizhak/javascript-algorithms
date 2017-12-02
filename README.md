@@ -20,26 +20,14 @@ This repository contains JavaScript implementations of different famous Computer
 ### Array
 
 #### Linear search (or find index) / runtime O(n)
+#### Find all duplicates in an array / runtime O(n), O(1)
+#### Eliminate all duplicates in array / runtime O(1)
+#### Check if string is palindrome / runtime O(n)
+
+---
 
 
 ### Sorting and Searching
-
-
-Runtime O(n)
-
-
-*Find all duplicates in an array.*
-
-Runtime O(n), Runtime O(1)
-
-
-*Eliminate all duplicates in an array.*
-
-Runtime O(1)
-
-
-
-
 
 ## Development
 
