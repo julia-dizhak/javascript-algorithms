@@ -12,8 +12,10 @@ This repository contains JavaScript implementations of different famous Computer
 
 ### String
 
-#### Find unique symbols in string / runtime O(n), runtime O(1)
+#### Find unique symbol in string / runtime O(n), runtime O(1)
+#### Find repeat symbol in string / runtime O(n)
 #### isPermutation 'rat' --> 'tar' / runtime O(n)
+#### Check if string is palindrome / runtime O(n)
 
 ---
 
@@ -22,7 +24,7 @@ This repository contains JavaScript implementations of different famous Computer
 #### Linear search (or find index) / runtime O(n)
 #### Find all duplicates in an array / runtime O(n), O(1)
 #### Eliminate all duplicates in array / runtime O(1)
-#### Check if string is palindrome / runtime O(n)
+
 
 ---
 

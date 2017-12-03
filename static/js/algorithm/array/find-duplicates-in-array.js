@@ -11,6 +11,7 @@
 /**
  * @param {number[]} array[number]
  * @return {number[]}
+ * 
  */
 
 'use strict';
@@ -48,7 +49,7 @@ let findDuplicatesRuntimeOne = function(arr) {
         }
     }
 
-    for ( let j in obj1) {
+    for ( let j in obj1 ) {
         output.push(j);
     }
 

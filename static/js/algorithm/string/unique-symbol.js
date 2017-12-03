@@ -34,10 +34,9 @@ function isUniqueSymbolRuntimeN(str) {
     }
 
     //return str;
-
 }
 
-//console.log( isUniqueSymbolRuntimeN('teste') );
+// console.log( isUniqueSymbolRuntimeN('teste') );
 
 // runtime O(1)
 function isUniqueSymbolRuntime1(str) {
@@ -59,4 +58,4 @@ function isUniqueSymbolRuntime1(str) {
 
 }
 
-//console.log(isUniqueSymbolRuntime1('test'));
+// console.log(isUniqueSymbolRuntime1('test'));
