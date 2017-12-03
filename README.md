@@ -22,7 +22,8 @@ This repository contains JavaScript implementations of different famous Computer
 ### Array
 
 #### Linear search (or find index) / runtime O(n)
-#### Find all duplicates in an array / runtime O(n), O(1)
+#### Find one duplicates in array (only one duplicate is possible); find all duplicates in array (multiply duplicates); find all myltiply duplicates
+and return array without duplicates / runtime O(n), O(1)
 #### Eliminate all duplicates in array / runtime O(1)
 
 
