@@ -31,6 +31,7 @@
 
 'use strict';
 
+// runtime O(n)
 function findIndex(data, searchQuery) {
     for (var i = 0; i < data.length; i++) {
         if ( data[i] === searchQuery) {

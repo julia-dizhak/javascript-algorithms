@@ -25,5 +25,5 @@
 // number.toString()
 // first, I establish the dictionary to store all the numbers
 // first with simple digit
-// then keep one single digit + and do that loop contionusly to find all of the combintation
+// then keep one single digit + and do that loop contionusly to find all of the combination
 

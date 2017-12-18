@@ -1,5 +1,5 @@
 /**
- * Find one duplicates in array (only one duplicate is possible)
+ * Find duplicates in array if only one duplicate is possible
  * Find all duplicates in array (multiply duplicates)
  * Find all myltiply duplicates and return array without duplicates
  *

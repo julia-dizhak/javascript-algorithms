@@ -12,19 +12,27 @@ This repository contains JavaScript implementations of different famous Computer
 
 ### String
 
-#### Find unique symbol in string / runtime O(n), runtime O(1)
-#### Find repeat symbol in string / runtime O(n)
-#### isPermutation 'rat' --> 'tar' / runtime O(n)
-#### Check if string is palindrome / runtime O(n)
+Find unique symbol in string / runtime O(n), runtime O(1)
+
+Find repeat symbol in string / runtime O(n)
+
+isPermutation 'rat' --> 'tar' / runtime O(n)
+
+Check if string is palindrome / runtime O(n)
 
 ---
 
 ### Array
 
-#### Linear search (or find index) / runtime O(n)
-#### Find one duplicates in array (only one duplicate is possible); find all duplicates in array (multiply duplicates); find all myltiply duplicates
-and return array without duplicates / runtime O(n), O(1)
-#### Eliminate all duplicates in array / runtime O(1)
+Linear search (or find index method) / runtime O(n)
+
+Find duplicates in array if only one duplicate is possible;
+
+Find all duplicates in array (multiply duplicates) and return array without duplicates / runtime O(n), O(1);
+
+Eliminate all duplicates in array / runtime O(1)
+
+Find last element in array and increase (+1) using addition rules
 
 
 ---
