@@ -1,5 +1,5 @@
 /**
- * Find repeat symbols in string
+ * Find duplicates symbols in a string
  *
  */
 
@@ -12,7 +12,7 @@
 'use strict';
 
 // runtime O(n)
-function countSymbol(symbol, str) {
+function findDuplicateSymbol(symbol, str) {
     let count = 0,
         len = str.length;
 
@@ -27,4 +27,4 @@ function countSymbol(symbol, str) {
 
 }
 
-// console.log(countSymbol('a', 'apple') );
+// console.log(findDuplicateSymbol('a', 'apple') );

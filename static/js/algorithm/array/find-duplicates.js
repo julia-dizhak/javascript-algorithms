@@ -92,7 +92,7 @@ let findMultiplyDuplicatesAndEliminate = function(arr) {
 
 
 // find myltiply duplicates
-// runtime O(m)
+// runtime O(n)
 let findMultiplyDuplicatesRuntimeN = function(arr) {
     let len = arr.length,
         obj= {},
@@ -104,7 +104,6 @@ let findMultiplyDuplicatesRuntimeN = function(arr) {
         } else {
             duplicate.push(arr[i]);
         }
-
     }
 
     return duplicate;

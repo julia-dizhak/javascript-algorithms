@@ -20,7 +20,7 @@ const increaseLastElement = function(arr) {
     let carrying = 1;
     let newArray = [];
 
-    for (let i=len - 1; i>=0; i--) {
+    for (let i = len - 1; i >= 0; i--) {
         let element = arr[i];
         let newElement = element + carrying;
 
