@@ -1,0 +1,12 @@
+body {
+    font: 400 100%/120% 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.wrapper {
+    width: 980px;
+    margin: 0 auto;
+}
+
+details {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}

@@ -1,8 +1,6 @@
 /**
  * Translate number by alphabetic code to a string
- * 12258 -> 'abbeh', 'aveh', 'abyh', 'lbeh', 'lyh'
- *
- *
+ * solutions(12258_ -> 'abbeh', 'aveh', 'abyh', 'lbeh', 'lyh'
  *
  *
  * Input:
@@ -28,45 +26,40 @@
 // first with simple digit
 // then keep one single digit + and do that loop contionusly to find all of the combination
 
+// Solutions
+// (278) --> bgh
 function translateNumberbByAlphabeticCode(num) {
-     let arr2 =  ('' + num).split('').map(digit => +digit);
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split(''),
+          lenAlphabet = alphabet.length;
 
-     let alphabet1 = {
-         1: 'a',
-         2: 'b',
-         3: 'c'
-     };
-     //console.log(alphabet1[1])
-     let alphabet = ['a', 'b', 'c', 'd', 'e'];
+    num =  ('' + num).split('').map(digit => digit - 1 ); // let arr =  ('' + num).split('').map(function(digit) { return +digit; });
+    const len = num.length;
 
-    let arr = num.toString().split(''),
-        len = arr2.length;
+    let solutions = [];
 
 
+    for (let i = 0; i <= len; i++) {
+        let solution = alphabet[num[i]];
+        solutions.push(solution);
 
-    let arr1 =  ('' + num).split('').map(function(digit) {
-        return +digit;
-    });
+        console.log( num[i] + num[i+1])
 
+        // if (num[i]) {
+        //
+        // }
+        //
+        // if ( num[i] < 26) {
+        //
+        // }
 
-
-    //console.log(arr2);
-
-
-    for (let i = len - 1; i >= 0; i--) {
-        if (arr2[i]) {
-
-        }
-
-        if ( arr2[i] < 26) {
-console.log(arr2[i]);
-        }
+        //num[2]  = b --> alphabet[1] --> b
     }
 
+     return solutions.join('');
 
 }
 
-//console.log('translateNumberbByAlphabeticCode', translateNumberbByAlphabeticCode(12258) );
+console.log('translateNumberbByAlphabeticCode(278) -->', translateNumberbByAlphabeticCode(278) );
 
 
 // solution(278) -> bgh

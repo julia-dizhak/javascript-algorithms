@@ -10,7 +10,6 @@
 // const toLowerCaseImperative
 let arr = ['test', 'hello', 'hu', 'test to my', 'welcome', 'hu', 'test to test', 'morning', 'hi', 'tu', 'yes', 'no', 'test', 'hello', 'test', 'hello', 'hu'];
 
-
 // for
 let loopByFor = input => {
     let output = [];
@@ -24,15 +23,6 @@ let loopByFor = input => {
 console.time('loopByFor');
 console.log('loopByFor', loopByFor(arr));
 console.timeEnd('loopByFor');
-
-// map
-let loopByMap = input => input.map(
-    value => value.toUpperCase()
-);
-
-console.time('loopByMap');
-console.log('loopByMap', loopByMap(arr));
-console.timeEnd('loopByMap');
 
 // forEach
 let loopByForEach = input => {
@@ -49,3 +39,11 @@ console.time('loopByForEach');
 console.log('loopByForEach', loopByForEach(arr));
 console.timeEnd('loopByForEach');
 
+// map
+let loopByMap = input => input.map(
+    value => value.toUpperCase()
+);
+
+console.time('loopByMap');
+console.log('loopByMap', loopByMap(arr));
+console.timeEnd('loopByMap');
