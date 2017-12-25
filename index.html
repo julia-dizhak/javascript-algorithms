@@ -25,14 +25,27 @@
           <li>
             <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5]
+                Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
               </summary>
               <div aria-hidden="true">
                 <pre id="numbers-sum-of-two-cubes"></pre>
                 <script>
                     $('#numbers-sum-of-two-cubes').load('static/js/algorithm/number/sum-of-two-cubes.js')
                 </script>
-                <script src="static/js/algorithm/number/translate-number-by-alphabetic-code.js"></script>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details role="section" aria-expanded="false" aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.
+              </summary>
+              <div aria-hidden="true">
+                <pre id="number-to-alphabetic-code"></pre>
+                <script>
+                    $('#number-to-alphabetic-code').load('static/js/algorithm/number/translate-number-by-alphabetic-code.js')
+                </script>
+                <!--<script src="static/js/algorithm/number/translate-number-by-alphabetic-code.js"></script>-->
               </div>
             </details>
           </li>

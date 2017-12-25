@@ -1,13 +1,6 @@
 /**
  * Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
- *
- * Algorithm ...
- * Characteristics ...
- *
- * Runtime O(n^4)
- * Runtime O(n^3)
- * Runtime O(n^2)
- *
+ * Characteristics: Runtime O(n^4), Runtime O(n^3), Runtime O(n^2)
  */
 
 /**
@@ -17,15 +10,14 @@
 
 'use strict';
 
-// Runtime O(n^4)
-// n = 1000
+// Runtime O(n^4), n = 1000
 function defineSumOfTwoCubesRuntimeFour(n) {
-    var counter = 0;
+    let counter = 0;
 
-    for (var a = 1; a < n; a++) {
-        for (var b = 1; b < n; b++) {
-            for (var c = 1; c < n; c++) {
-                for (var d = 1; d < n; d++) {
+    for (let a = 1; a < n; a++) {
+        for (let b = 1; b < n; b++) {
+            for (let c = 1; c < n; c++) {
+                for (let d = 1; d < n; d++) {
                     counter += 1;
                     if (Math.pow(a, 3) + Math.pow(b, 3) == Math.pow(c, 3) + Math.pow(d, 3)) {
                         console.log(`${counter} attempt`);
@@ -39,15 +31,14 @@ function defineSumOfTwoCubesRuntimeFour(n) {
 }
 // defineSumOfTwoCubesRuntimeFour(10);
 
-
 // Runtime O(n^3)
 function defineSumOfTwoCubesRuntimeThree(n) {
-    var counter = 0;
+    let counter = 0;
 
-    for (var a = 1; a < n; a++) {
-        for (var b = 1; b < n; b++) {
-            for (var c = 1; c < n; c++) {
-                var d = Math.round(Math.pow(Math.pow(a, 3) + Math.pow(b, 3) - Math.pow(c, 3), 1 / 3)); // not sure if round is correct but it seems, yes
+    for (let a = 1; a < n; a++) {
+        for (let b = 1; b < n; b++) {
+            for (let c = 1; c < n; c++) {
+                let d = Math.round(Math.pow(Math.pow(a, 3) + Math.pow(b, 3) - Math.pow(c, 3), 1 / 3)); // not sure if round is correct but it seems, yes
                 counter += 1;
                 if (Math.pow(a, 3) + Math.pow(b, 3) == Math.pow(c, 3) + Math.pow(d, 3) && d >= 0 && d <= n) { // validate that value works
                     console.log(`${counter} attempt`);
@@ -57,7 +48,7 @@ function defineSumOfTwoCubesRuntimeThree(n) {
         }
     }
 }
-//defineSumOfTwoCubesRuntimeThree(10);
+// defineSumOfTwoCubesRuntimeThree(10);
 
 // Runtime O(n:^2)
 function defineSumOfTwoCubesRuntimeTwo(n) {
@@ -100,20 +91,19 @@ function defineSumOfTwoCubesRuntimeTwo(n) {
      * Actually, once we have the map of all the (c, d) pairs, we can just use that directly.
      * We don't need to generate the (a, b) pairs. Each (a, b) will already be in the map.
      */
-    for (var key in result) {
-        var solutions = result[key];
-        for (var i=0; i<solutions.length; i++) {
-            var pair = solutions[i];
+    for (let key in result) {
+        let solutions = result[key];
 
+        for (let i = 0; i < solutions.length; i++) {
+            let pair = solutions[i];
 
-            for (var j=0; j<solutions.length; j++) {
-                var pair2 = solutions[j];
+            for (let j = 0; j < solutions.length; j++) {
+                let pair2 = solutions[j];
                 console.log(pair, pair2);
             }
         }
     }
 
-    // console.log(result);
 }
 
-//defineSumOfTwoCubesRuntimeTwo(10);
+// defineSumOfTwoCubesRuntimeTwo(10);
