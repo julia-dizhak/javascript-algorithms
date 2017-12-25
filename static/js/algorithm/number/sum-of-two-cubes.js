@@ -1,9 +1,7 @@
 /**
  * Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
  * Characteristics: Runtime O(n^4), Runtime O(n^3), Runtime O(n^2)
- */
-
-/**
+ *
  * @param {number}
  * @return {number a,b,c,d; pair (a,b) (c,d)}
  */

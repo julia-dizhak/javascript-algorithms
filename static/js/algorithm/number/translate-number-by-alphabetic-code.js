@@ -12,9 +12,6 @@
  * solutions(123) --> 'abc', 'mc', 'ax'
  * solution(278) -> 'bgh'
  *
- */
-
-/**
  * @param {number}
  * @return {string}
  *
