@@ -12,7 +12,7 @@ Characteristics: Runtime O(?)
 
 ### Number
 
-Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120
+Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120 (3 version: factorial, while loop, for loop)
 
 Write all possible positive solutions for a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5] / runtime O(n^4), O(n^3), O(n^2)
 

@@ -18,10 +18,10 @@
  *
  */
 
-// Factorialize a Number with Recursion --> Runtime O()
-function factorialize(num) {
-    "use strict";
+"use strict";
 
+// Factorialize a Number with Recursion --> Runtime O(n)? O(n-1)?
+function factorializeRecursion(num) {
     // if the number is less than 0, reject it
     if ( num < 0 ) {
         return -1;
@@ -64,8 +64,26 @@ function factorialize(num) {
     }
 }
 
-console.log('factorialize(5) -->', factorialize(-1));
+//console.log('factorializeRecursion(5) -->', factorializeRecursion(5));
+
+// Factorialize a Number with a While loop --> Runtime O(n)
+function factorializeByWhileLoop(num) {
+    let result = num;
+
+    if (num === 0 || num === 1 ) {
+        return 1;
+    }
+
+    while (num > 1) {
+        num--;
+        result *= num;
+    }
+
+    return result;
+
+}
+
+console.log('factorializeByWhileLoop(5) -->', factorializeByWhileLoop(5));
 
 // provided test cases
-
-// Factori
+//test add to readme
