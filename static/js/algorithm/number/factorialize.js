@@ -83,7 +83,24 @@ function factorializeByWhileLoop(num) {
 
 }
 
-console.log('factorializeByWhileLoop(5) -->', factorializeByWhileLoop(5));
+//console.log('factorializeByWhileLoop(5) -->', factorializeByWhileLoop(5));
+
+// Factorialize a Number with a FOR loop --> Runtime O(n)
+function factorializeWithForLoop(num) {
+    if (num === 0 || num === 1 ) {
+        return 1;
+    }
+
+    for (let i = num - 1; i >= 1; i--) {
+        num = num * i;
+    }
+
+    return num;
+
+}
+
+console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
+
 
 // provided test cases
 //test add to readme
