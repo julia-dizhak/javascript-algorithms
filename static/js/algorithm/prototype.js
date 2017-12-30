@@ -35,13 +35,13 @@ bobby.sayName();
 
 // this is module, constructor
 var Friend = function(name) {
-    Person.super_.call(this, name);
+    //Person.super_.call(this, name);
 };
 
 //inherits(Friend, Person);
 
 var julia = new Friend("julia");
-julia.sayname();
+//julia.sayname();
 
 
 var Musician = function(name, instrument) {

@@ -50,7 +50,7 @@ function generateHeadAndTail(arr) {
                 [
                     [...head, numTwoElements], [...tail.slice(2)]
                 ]
-            )
+            );
         }
 
         return result;
@@ -66,7 +66,7 @@ function solutions(arr) {
         return [];
     }
 
-    let q = [[ [], [] ]],
+    let q = [ [ [], arr ] ],
         result = [];
 
     while (q.length > 0) {
@@ -78,15 +78,11 @@ function solutions(arr) {
             tail = firstFromQ[1],
             pairs;
 
-        if (tail.length === 0 && head.length === 0) {
-            pairs = generateHeadAndTail([[], arr]);
-            //console.log('calculated initial pairs', pairs);
-            pairs.map((pair) => q.push(pair));
-        } else if (tail.length === 0 && head.length > 0) {
+        if (tail.length === 0 && head.length > 0){
             result.push(head);
         } else if (tail.length > 0) {
             pairs = generateHeadAndTail([head, tail]);
-            //console.log('another pairs ', pairs);
+            // console.log('another pairs ', pairs);
             pairs.map((pair) => q.push(pair));
         }
     }
@@ -96,7 +92,7 @@ function solutions(arr) {
 
 console.log(JSON.stringify(solutions([1, 2, 3])));
 
-function translateByAlphabeticCode(arrOfSolutions) {
+function translateByAlphabetCode(arrOfSolutions) {
     let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
     return arrOfSolutions.map((listOfNumbers)=>{
@@ -106,5 +102,8 @@ function translateByAlphabeticCode(arrOfSolutions) {
     });
 }
 
-console.log('translateByAlphabeticCode(123) --> abc, mc, ax; current -->', translateByAlphabeticCode([1,2,3]));
-console.log('translateByAlphabeticCode(278) -->', translateByAlphabeticCode([[12,3],[1,23],[1,2,3]]));
+console.log('translateByAlphabetCode(123) --> abc, mc, ax; current -->', translateByAlphabetCode([1,2,3]));
+//console.log('translateByAlphabetCode(278) -->', translateByAlphabetCode([[12,3],[1,23],[1,2,3]]));
+
+export { generateHeadAndTail, solutions, translateByAlphabetCode };
+//module.exports { generateHeadAndTail, solutions, translateByAlphabetCode };

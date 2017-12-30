@@ -80,7 +80,6 @@ function factorializeByWhileLoop(num) {
     }
 
     return result;
-
 }
 
 //console.log('factorializeByWhileLoop(5) -->', factorializeByWhileLoop(5));
@@ -96,7 +95,6 @@ function factorializeWithForLoop(num) {
     }
 
     return num;
-
 }
 
 //console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));

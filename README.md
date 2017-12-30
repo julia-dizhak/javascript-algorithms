@@ -50,6 +50,20 @@ Find last element in array and increase (+1) using addition rules
 
 ### Sorting and Searching
 
+###
+todo:
+    <ol>
+      - performance test
+      <li>string is unique symbol find by Set https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set</li>
+      <li>update readme</li>
+      <li>navigation and content</li>
+      <li>demo url</li>
+      <li>to add scss</li>
+      <li>seo</li>
+
+      <li>https://www.youtube.com/watch?v=92e5Ih4Chbk binary search</li>
+    </ol>
+
 ## Development
 
 
