@@ -1,6 +1,8 @@
 node_modules/
 bower_components
+/_site
 .bundle/
+.sass-cache/
 
 *.git
 *.idea/

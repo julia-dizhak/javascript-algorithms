@@ -68,6 +68,8 @@ The code in this repository is distributed under the terms of the MIT license.
 
 ### TODO:
 
+jekyll add to readme
+
 generate test coverage
 
 babel populate build
