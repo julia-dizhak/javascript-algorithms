@@ -1,5 +1,8 @@
 /**
- * Translate number by alphabetic code to a string.
+ * Translate number by alphabetic code to a string. Given the list of numbers [1,2],
+ * write a solution to translate them into
+ * all possible sequences of letters e.g. [1, 2] -> 'ab', 'm'
+ *
  * Description:
  * segment data(number): single digit or double digit
  * single -> translate to a letter
@@ -8,9 +11,10 @@
  * first with simple digit
  * then keep one single digit + and do that loop contionusly to find all of the combination
  *
+ * solutions(12) --> 'ab', 'm'
  * solutions(12258) --> 'abbeh', 'aveh', 'abyh', 'lbeh', 'lyh'
  * solutions(123) --> 'abc', 'mc', 'ax'
- * solution(278) -> 'bgh'
+ * solutions(278) -> 'bgh'
  *
  * @param {number}
  * @return {string}
@@ -19,64 +23,88 @@
 
 'use strict';
 
-function translateNumberbByAlphabeticCode(num) {
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split(''),
-          lenAlphabet = alphabet.length;
+function generateHeadAndTail(arr) {
+    // arr[[1], [2, 3]]
 
-    let num1 =  ('' + num).split('').map(digit => +digit - 1 ); // let arr =  ('' + num).split('').map(function(digit) { return +digit; });
-    let num2 =  ('' + num).split('').map(digit => +digit );
-    let len1 = num1.length;
-    let len2 = num2.length;
+    let head = arr[0],
+        tail = arr[1],
+        result = [];
 
-    let solutions = [];
+    if ( tail.length === 1 ) {
+        result = [[[...head, ...tail], []]];
+        return result;
+    } else {
+        // if ( tail.length > 1)
+        let firstElement = tail[0],
+            entry = [ [...head, firstElement], [...tail.slice(1)]];
 
-    // single translate to a letter: simple digit
-    for (let i = 0; i < len1; i++) {
-        let solution = alphabet[num1[i]];
-        solutions.push(solution);
+        //console.log(firstElement);
+        //console.log(JSON.stringify(entry));
+
+        result.push(entry);
+
+        let numTwoElements = parseInt('' + tail[0] + tail[1]);
+        //console.log(numTwoElements);
+        if (numTwoElements <=26 ) {
+            result.push(
+                [
+                    [...head, numTwoElements], [...tail.slice(2)]
+                ]
+            )
+        }
+
+        return result;
     }
 
-    // iterate an array as a pair (current, next)
-    num2.reduce( (arr, v, i, a) => {
-        console.log( a[i]);
-        if (i < a.length - 1) {
-            arr.push([a[i], a[i + 1]]);
-        } else {
-            arr.push(a[i]);
-        }
-        console.log(arr);
-        return arr;
-
-        }, []).
-    forEach(pair => {
-        let pairs = '' + pair[0] + pair[1],
-            solution = alphabet[pairs];
-
-
-        if ( parseInt(pair) < 26 ) {
-            solutions.push(solution);
-        }
-    });
-
-    // all pairs
-    // for (let i = 0; i < len2; i++) {
-    //     for (let j = 1; j < len2; j++) {
-    //         let pairs = '' + num2[i] + num2[j];
-    //         console.log(pairs);
-    //
-    //         if ( parseInt(pairs) < 26 ) {
-    //             let solution = alphabet[pairs];
-    //
-    //             solutions.push(solution);
-    //         } else {
-    //             let solution = alphabet[num1[i]];
-    //             solutions.push(solution);
-    //         }
-    //     }
-    // }
-
-    return solutions.join('');
+    //console.log(JSON.stringify(result));
 }
 
-console.log('translateNumberbByAlphabeticCode(123) --> abc, mc, ax; current -->', translateNumberbByAlphabeticCode(123) );
-//console.log('translateNumberbByAlphabeticCode(278) -->', translateNumberbByAlphabeticCode(278) );
+//console.log( 'generateHeadAndTail -->', JSON.stringify(generateHeadAndTail([[1], [2,3]])) );
+
+function solutions(arr) {
+    if ( arr.length === 0) {
+        return [];
+    }
+
+    let q = [[ [], [] ]],
+        result = [];
+
+    while (q.length > 0) {
+        //console.log('values in the q', q);
+        let firstFromQ = q.pop();
+        //console.log('array for processing', firstFromQ);
+
+        let head = firstFromQ[0],
+            tail = firstFromQ[1],
+            pairs;
+
+        if (tail.length === 0 && head.length === 0) {
+            pairs = generateHeadAndTail([[], arr]);
+            //console.log('calculated initial pairs', pairs);
+            pairs.map((pair) => q.push(pair));
+        } else if (tail.length === 0 && head.length > 0) {
+            result.push(head);
+        } else if (tail.length > 0) {
+            pairs = generateHeadAndTail([head, tail]);
+            //console.log('another pairs ', pairs);
+            pairs.map((pair) => q.push(pair));
+        }
+    }
+
+    return result;
+}
+
+console.log(JSON.stringify(solutions([1, 2, 3])));
+
+function translateByAlphabeticCode(arrOfSolutions) {
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+    return arrOfSolutions.map((listOfNumbers)=>{
+        return listOfNumbers.map((num)=> {
+            return alphabet[num-1];
+        }).join('');
+    });
+}
+
+console.log('translateByAlphabeticCode(123) --> abc, mc, ax; current -->', translateByAlphabeticCode([1,2,3]));
+console.log('translateByAlphabeticCode(278) -->', translateByAlphabeticCode([[12,3],[1,23],[1,2,3]]));

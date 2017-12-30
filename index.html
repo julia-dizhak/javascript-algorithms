@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+<meta name="description" content="JavaScript implementations of different famous Computer Science algorithms, such as factorialize a number">
 
-<title>Javascript Algorithms</title>
+<title>JavaScript implementations of different famous Computer Science algorithms</title>
 <head>
   <link rel="stylesheet" href="static/css/style.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -12,8 +13,9 @@
 <section>
   <div class="wrapper">
     <h1>Javascript algorithms</h1>
+    <p class="description">There are JavaScript implementations of different famous Computer Science algorithms.</p>
 
-    <p>Data structure:</p>
+    <p>Algoritmes divided by <strong>Data structure</strong>:</p>
     <ul>
       <li>
         <h2>Number</h2>
@@ -25,7 +27,7 @@
           <li>
             <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                Factorialize a Number: return the factorial of the provided integer:
+                <h3 class="title">Factorialize a Number: return the factorial of the provided integer:</h3>
                 <ul>
                   <li>Factorialize a Number with Recursion</li>
                   <li>Factorialize a Number with a While loop</li>
@@ -45,7 +47,7 @@
           <li>
             <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
+                <h3 class="title">Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].</h3>
               </summary>
               <div aria-hidden="true">
                 <pre id="numbers-sum-of-two-cubes"></pre>
@@ -58,14 +60,14 @@
           <li>
             <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.
+                <h3 class="title">Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.</h3>
               </summary>
               <div aria-hidden="true">
                 <pre id="number-to-alphabetic-code"></pre>
                 <script>
                     $('#number-to-alphabetic-code').load('static/js/algorithm/number/translate-number-by-alphabetic-code.js')
                 </script>
-                <!--<script src="static/js/algorithm/number/translate-number-by-alphabetic-code.js"></script>-->
+                <script src="static/js/algorithm/number/translate-number-by-alphabetic-code.js"></script>
               </div>
             </details>
           </li>

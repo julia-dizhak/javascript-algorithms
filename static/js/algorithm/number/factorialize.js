@@ -99,7 +99,7 @@ function factorializeWithForLoop(num) {
 
 }
 
-console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
+//console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
 
 
 // provided test cases
