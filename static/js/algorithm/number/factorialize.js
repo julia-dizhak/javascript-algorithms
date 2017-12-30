@@ -18,7 +18,7 @@
  *
  */
 
-"use strict";
+'use strict';
 
 // Factorialize a number with Recursion --> Runtime O(n)? O(n-1)?
 function factorializeRecursion(num) {
@@ -32,9 +32,8 @@ function factorializeRecursion(num) {
         return 1;
     }
 
-    // otherwise, call the recursive procedure again
+    /*  Otherwise, call the recursive procedure again
 
-    /*
         First Part of the recursion method
         You need to remember that you won’t have just one call, you’ll have several nested calls
 
@@ -64,7 +63,7 @@ function factorializeRecursion(num) {
     }
 }
 
-//console.log('factorializeRecursion(5) -->', factorializeRecursion(5));
+console.log('factorializeRecursion(5) -->', factorializeRecursion(5));
 
 // Factorialize a number with a while loop --> Runtime O(n)
 function factorializeByWhileLoop(num) {
@@ -97,6 +96,6 @@ function factorializeWithForLoop(num) {
     return num;
 }
 
-//console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
+console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
 
 export { factorializeRecursion, factorializeByWhileLoop, factorializeWithForLoop };

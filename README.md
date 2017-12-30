@@ -10,7 +10,13 @@ Solution
 
 Characteristics: Runtime O(?)
 
-Tests: by [jest](https://facebook.github.io/jest/), run by `yarn test`
+Tests: by [Jest](https://facebook.github.io/jest/), run by `yarn test`
+
+---
+
+## Development
+
+Jekyll is a static website builder, to install `gem install jekyll`
 
 ---
 
@@ -52,9 +58,7 @@ Find last element in array and increase (+1) using addition rules
 
 ### Sorting and Searching
 
-
-## Development
-
+---
 
 ## License
 
@@ -63,6 +67,14 @@ The code in this repository is distributed under the terms of the MIT license.
 ---
 
 ### TODO:
+
+generate test coverage
+
+babel populate build
+
+webpack configuration
+
+how to improve SEO
 
 - performance test
 
@@ -79,5 +91,3 @@ to add scss
 seo
 
 https://www.youtube.com/watch?v=92e5Ih4Chbk binary search
-
-

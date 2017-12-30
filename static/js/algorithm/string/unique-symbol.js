@@ -48,7 +48,7 @@ function isUniqueSymbolRuntime1(str) {
         len = str.length;
 
     for (let i = 0; i < len; i++) {
-        if ( obj.hasOwnProperty( str[i] ) ) {
+        if (obj.hasOwnProperty(str[i])) {
             obj[str[i]] = false;
         } else {
             obj[str[i]] = true;
