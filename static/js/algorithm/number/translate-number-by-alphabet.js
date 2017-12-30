@@ -102,7 +102,7 @@ function translateByAlphabetCode(arrOfSolutions) {
     });
 }
 
-console.log('translateByAlphabetCode(123) --> abc, mc, ax; current -->', translateByAlphabetCode([1,2,3]));
+//console.log('translateByAlphabetCode(123) --> abc, mc, ax; current -->', translateByAlphabetCode([1,2,3]));
 //console.log('translateByAlphabetCode(278) -->', translateByAlphabetCode([[12,3],[1,23],[1,2,3]]));
 
 export { generateHeadAndTail, solutions, translateByAlphabetCode };

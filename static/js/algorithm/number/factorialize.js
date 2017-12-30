@@ -20,7 +20,7 @@
 
 "use strict";
 
-// Factorialize a Number with Recursion --> Runtime O(n)? O(n-1)?
+// Factorialize a number with Recursion --> Runtime O(n)? O(n-1)?
 function factorializeRecursion(num) {
     // if the number is less than 0, reject it
     if ( num < 0 ) {
@@ -60,13 +60,13 @@ function factorializeRecursion(num) {
     */
 
     else {
-        return ( num * factorialize(num - 1));
+        return ( num * factorializeRecursion(num - 1));
     }
 }
 
 //console.log('factorializeRecursion(5) -->', factorializeRecursion(5));
 
-// Factorialize a Number with a While loop --> Runtime O(n)
+// Factorialize a number with a while loop --> Runtime O(n)
 function factorializeByWhileLoop(num) {
     let result = num;
 
@@ -84,7 +84,7 @@ function factorializeByWhileLoop(num) {
 
 //console.log('factorializeByWhileLoop(5) -->', factorializeByWhileLoop(5));
 
-// Factorialize a Number with a FOR loop --> Runtime O(n)
+// Factorialize a number with a for loop --> Runtime O(n)
 function factorializeWithForLoop(num) {
     if (num === 0 || num === 1 ) {
         return 1;
@@ -99,6 +99,4 @@ function factorializeWithForLoop(num) {
 
 //console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
 
-
-// provided test cases
-//test add to readme
+export { factorializeRecursion, factorializeByWhileLoop, factorializeWithForLoop };

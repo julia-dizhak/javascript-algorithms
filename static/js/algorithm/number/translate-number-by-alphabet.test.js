@@ -17,13 +17,13 @@ describe('test assignment to which translates list of numbers to a string', ()=>
        expect(solutions([1,2])).toEqual(expectedLength2);
     });
 
-    it('with translateByAlphabetCode', ()=> {
-        const
-            expected = ['abc'],
-            solutionsList = translateByAlphabetCode(solutions([1, 2, 3]));
-
-        expect(solutionsList).toContain('abc');
-        expect(solutionsList).toContain('mc');
-        expect(solutionsList).toContain('ax');
-    });
+    // it('with translateByAlphabetCode', ()=> {
+    //     const
+    //         expected = ['abc'],
+    //         solutionsList = translateByAlphabetCode(solutions([1, 2, 3]));
+    //
+    //     expect(solutionsList).toContain('abc');
+    //     expect(solutionsList).toContain('mc');
+    //     expect(solutionsList).toContain('ax');
+    // });
 });

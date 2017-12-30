@@ -10,6 +10,10 @@ Solution
 
 Characteristics: Runtime O(?)
 
+Tests: by [jest](https://facebook.github.io/jest/), run by `yarn test`
+
+---
+
 ### Number
 
 Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120 (3 versions: factorial, while loop, for loop)
@@ -44,25 +48,10 @@ Eliminate all duplicates in array / runtime O(1)
 
 Find last element in array and increase (+1) using addition rules
 
-
 ---
-
 
 ### Sorting and Searching
 
-###
-todo:
-    <ol>
-      - performance test
-      <li>string is unique symbol find by Set https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set</li>
-      <li>update readme</li>
-      <li>navigation and content</li>
-      <li>demo url</li>
-      <li>to add scss</li>
-      <li>seo</li>
-
-      <li>https://www.youtube.com/watch?v=92e5Ih4Chbk binary search</li>
-    </ol>
 
 ## Development
 
@@ -70,3 +59,25 @@ todo:
 ## License
 
 The code in this repository is distributed under the terms of the MIT license.
+
+---
+
+### TODO:
+
+- performance test
+
+string is unique symbol find by Set https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+update readme
+
+navigation and content
+
+demo url
+
+to add scss
+
+seo
+
+https://www.youtube.com/watch?v=92e5Ih4Chbk binary search
+
+
