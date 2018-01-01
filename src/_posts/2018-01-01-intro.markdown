@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Intro"
+date:   2018-01-01
+categories: intro
+---
+
+Intro
+Algoritmes divided by Data structure:
+Three ways to Factorialize a Number in js: return the factorial of the provided integer.
+
+{% highlight ruby %}
+<script>
+    $('#factorial').load('static/js/algorithm/number/factorialize.js')
+</script>
+{% endhighlight %}
+
+
