@@ -8,9 +8,14 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build-js": "babel static/js/algorithm/number/translate-number-by-alphabet.js --out-file ./static/assets/js/translate-number-by-alphabet.compiled.js",
+    "babel": "babel",
+    "babel-version": "babel --version"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "jest": "^22.0.4"
   },

@@ -52,6 +52,9 @@ ul li ul li {
     padding: 2rem 1rem;
 }
 
+.data {
+    padding: 0 0 15px 0;
+}
 .data ol > li {
     margin: 0 0 25px 0;
 }

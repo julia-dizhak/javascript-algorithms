@@ -85,6 +85,11 @@
 
       <ol>
         <li>
+          test
+          <!--Question: How would you verify a prime number?-->
+        </li>
+
+        <li>
           <details open role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
               <span>
@@ -131,7 +136,21 @@
         </li>
 
         <li>
-
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                <span>
+                  <strong>Question:</strong>
+                  Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.
+                </span>
+              </summary>
+              <div aria-hidden="true">
+                <pre><code id="number-by-alphabet-code"></code></pre>
+                <script>
+                    $('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')
+                </script>
+                <script src="static/assets/js/translate-number-by-alphabet.compiled.js"></script>
+              </div>
+          </details>
         </li>
 
       </ol>
@@ -142,34 +161,21 @@
   <div class="data string">
     <div class="container">
       <h2>String</h2>
+
+      <ol>
+        <li>
+
+        </li>
+
+        <li></li>
+      </ol>
     </div>
   </div>
 
 
   <div class="wrapper">
     <ul>
-      <li>
-        <h2>Number</h2>
-        <ul>
 
-
-
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                <h3 class="title">Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.</h3>
-              </summary>
-              <div aria-hidden="true">
-                <pre id="number-by-alphabet-code"></pre>
-                <script>
-                    $('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')
-                </script>
-                <!--<script src="static/js/algorithm/number/translate-number-by-alphabet.js"></script>-->
-              </div>
-            </details>
-          </li>
-        </ul>
-      </li>
 
       <li>
         <h2>String</h2>
@@ -300,7 +306,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
 
 </body>
 </html>
