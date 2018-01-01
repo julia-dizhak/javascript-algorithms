@@ -8,18 +8,24 @@ Description
 
 Solution
 
-Characteristics: Runtime O(?)
+Characteristics: runtime or complexity
 
 Tests: by [Jest](https://facebook.github.io/jest/)
 
 
 ---
 ## Development
-[Jest](https://facebook.github.io/jest/), run by `yarn test`
+[ECMAScript 6 features](http://es6-features.org/).
 
-[Highlightjs](https://highlightjs.org/), javascript syntax highlighter
+[Yarn](https://yarnpkg.com/) package manager.
 
-Zenburn.css
+[Babel](https://babeljs.io/) is the Javascript compiler.
+
+[Jest](https://facebook.github.io/jest/), run by `yarn test`.
+
+With a javascript syntax highlighter [Highlightjs](https://highlightjs.org/).
+
+Zenburn.css.
 
 
 ---
@@ -78,7 +84,6 @@ jekyll add to readme
 
 generate test coverage
 
-babel populate build
 
 webpack configuration
 

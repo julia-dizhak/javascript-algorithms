@@ -32,13 +32,16 @@
       <br>
 
       <p class="description">There are JavaScript implementations of different famous Computer Science algorithms.</p>
-      <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
       <p>Tests provided by Jest.</p>
-      <hr>
+      <hr class="line">
 
       <p>Algoritmes divided by <strong>data structure</strong>:</p>
 
       <ul>
+        <li>
+          <h3>Array</h3>
+          <p>is a ...</p>
+        </li>
         <li>
           <h3>Number</h3>
           <p>is a js object is a wrapper object allowing you to work with numerical values.</p>
@@ -47,38 +50,115 @@
           <h3>String</h3>
           <p>is a ...</p>
         </li>
-        <li>
-          <h3>Array</h3>
-          <p>is a ...</p>
-        </li>
+
       </ul>
 
       <!--<h2>TODO: level Part -1: beginner</h2>-->
     </div>
   </div>
 
-  <div class="data empty">
+  <div class="questions">
     <div class="container">
+      <h2>List of questions:</h2>
+      <ul>
+        <li>
+          <h2>Array</h2>
+          <ol>
+            <li>Find an index in array</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <details role="section" aria-expanded="false" aria-labelledby="label">
-        <summary role="button" aria-controls="content">
-            <span>
-              <strong>Question:</strong>
-              Test question.
-            </span>
-            <p>
-              <strong>Answer:</strong>
-              Test Answer.
-            </p>
-          </summary>
-          <div aria-hidden="true">
-            <pre><code id="code"></code></pre>
-            <script>
-                $('#code').load('static/js/algorithm/prototype.js')
-            </script>
-          </div>
-      </details>
+  <div class="intro">
+    <div class="container">
+      <h2>Algorithmes</h2>
+      <p>The definitive javascript algorithmes for your next developer interview.</p>
+      <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
+      <p>The idea don't use the default methods of js, for example, <code>sort()</code> and etc.</p>
+    </div>
+  </div>
 
+  <div class="data array">
+    <div class="container">
+      <h2>Array</h2>
+      <ol>
+        <li>
+          <details open role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Linear search (find an index in array).
+                In this type of search, a sequential search is made over all items one by one.
+                Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="linear-search"></code></pre>
+              <script>
+                  $('#linear-search').load('static/js/algorithm/array/linear-search.js')
+              </script>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Find duplicates in array:
+              </span>
+              <ul>
+                <li>find duplicates in array if only one duplicate is possible;</li>
+                <li>find all duplicates in array (multiply duplicates);</li>
+                <li>find all myltiply duplicates and return array without duplicates.</li>
+              </ul>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="find-duplicates-in-array"></code></pre>
+              <script>
+                  $('#find-duplicates-in-array').load('static/js/algorithm/array/find-duplicates.js')
+              </script>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                 Eliminate all duplicates in array:
+              </span>
+            </summary>
+              <div aria-hidden="true">
+                <pre><code id="eliminate-duplicates"></code></pre>
+                <script>
+                    $('#eliminate-duplicates').load('static/js/algorithm/array/eliminate-duplicates-in-array.js')
+                </script>
+              </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Find last element in array and increase (+1) using addition rules.
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="increase-last-element"></code></pre>
+              <script>
+                  $('#increase-last-element').load('static/js/algorithm/array/increase-last-element-using-addition-rules.js')
+              </script>
+            </div>
+          </details>
+        </li>
+      </ol>
     </div>
   </div>
 
@@ -88,7 +168,7 @@
 
       <ol>
         <li>
-          <details open role="section" aria-expanded="false" aria-labelledby="label">
+          <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
                 <span>
                   <strong>Question:</strong>
@@ -193,7 +273,7 @@
             <summary role="button" aria-controls="content">
               <span>
                 <strong>Question:</strong>
-                Find unique symbols in string
+                Find unique symbols in string.
               </span>
             </summary>
             <div aria-hidden="true">
@@ -207,7 +287,7 @@
             <summary role="button" aria-controls="content">
               <span>
                 <strong>Question:</strong>
-                Find repeat symbols in string
+                Find repeat symbols in string.
               </span>
             </summary>
             <div aria-hidden="true">
@@ -219,125 +299,47 @@
           </details>
         </li>
 
-        <li></li>
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                isPermutation 'rat' --> 'tar'.
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="is-permutation"></code></pre>
+              <script>
+                  $('#is-permutation').load('static/js/algorithm/string/is-permutation.js')
+              </script>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Check if string is palindrome.
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="is-palindrome"></code></pre>
+              <script>
+                  $('#is-palindrome').load('static/js/algorithm/string/palindrome.js')
+              </script>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <script src="static/js/algorithm/string/code.js"></script>
+        </li>
       </ol>
     </div>
   </div>
 
-
-  <div class="wrapper">
-    <ul>
-
-
-      <li>
-
-
-        <ul>
-
-
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                isPermutation 'rat' --> 'tar'
-              </summary>
-              <div aria-hidden="true">
-                <pre id="is-permutation"></pre>
-                <script>
-                    $('#is-permutation').load('static/js/algorithm/string/is-permutation.js')
-                </script>
-              </div>
-            </details>
-          </li>
-
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                Check if string is palindrome
-              </summary>
-              <div aria-hidden="true">
-                <pre id="is-palindrome"></pre>
-                <script>
-                    $('#is-palindrome').load('static/js/algorithm/string/palindrome.js')
-                </script>
-              </div>
-            </details>
-          </li>
-
-          <li>
-            <script src="static/js/algorithm/string/code.js"></script>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <h2>Array</h2>
-
-        <ul>
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-               Linear search (find index in array).
-               In this type of search, a sequential search is made over all items one by one.
-               Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.
-              </summary>
-              <div aria-hidden="true">
-                <pre id="linear-search"></pre>
-                <script>
-                    $('#linear-search').load('static/js/algorithm/array/linear-search.js')
-                </script>
-              </div>
-            </details>
-          </li>
-
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                Find duplicates in array if only one duplicate is possible;
-                find all duplicates in array (multiply duplicates);
-                find all myltiply duplicates and return array without duplicates;
-              </summary>
-              <div aria-hidden="true">
-                <pre id="find-duplicates-in-array"></pre>
-                <script>
-                    $('#find-duplicates-in-array').load('static/js/algorithm/array/find-duplicates.js')
-                </script>
-              </div>
-            </details>
-          </li>
-
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                Eliminate all duplicates in array
-              </summary>
-              <div aria-hidden="true">
-                <pre id="eliminate-duplicates"></pre>
-                <script>
-                    $('#eliminate-duplicates').load('static/js/algorithm/array/eliminate-duplicates-in-array.js')
-                </script>
-              </div>
-            </details>
-          </li>
-
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                Find last element in array and increase (+1) using addition rules.
-              </summary>
-              <div aria-hidden="true">
-                <pre id="increase-last-element"></pre>
-                <script>
-                    $('#increase-last-element').load('static/js/algorithm/array/increase-last-element-using-addition-rules.js')
-                </script>
-              </div>
-            </details>
-          </li>
-        </ul>
-
-      </li>
-
-    </ul>
-  </div>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>

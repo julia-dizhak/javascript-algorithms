@@ -1,9 +1,15 @@
 body {
     font: 400 100%/120% 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
-.wrapper {
-    width: 980px;
-    margin: 0 auto;
+.questions h2 {
+    margin: 0 0 1.5rem 0;
+}
+
+.intro {
+    padding: 2rem 1rem 2rem;
+}
+.intro h2 {
+    margin: 0 0 1.5rem 0;
 }
 
 details {
@@ -49,7 +55,7 @@ ul li ul li {
 .jumbotron {
     background: #fee;
     /*background: #fef;*/
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 2rem;
 }
 
 .data {

@@ -1,8 +1,7 @@
 /**
  * Linear Search ( Array A, Value x)
  *
- * Algorithm
- *
+ * Algorithm:
  * Step 1: Set i to 1
  * Step 2: if i > n then go to step 7
  * Step 3: if A[i] = x then go to step 6
@@ -12,19 +11,14 @@
  * Step 7: Print element not found
  * Step 8: Exit
  *
- * Characteristics
- *
+ * Characteristics:
  * The worst case performance scenario for a linear search is that it needs to loop through the entire collection;
  * either because the item is the last one, or because the item isn't found. In other words, if you have N items in your collection, the worst case scenario to find an item is N iterations.
  * This is known as runtime O(n) using the Big O Notation.
  * The speed of search grows linearly with the number of items within your collection.
  *
- * In The Real World
- * Find Index
+ * In the real world: find index
  *
- */
-
-/**
  * @param {array, number}
  * @return {string[]}
  */
@@ -33,7 +27,7 @@
 
 // runtime O(n)
 function findIndex(data, searchQuery) {
-    for (var i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         if ( data[i] === searchQuery) {
             return data[i];
         }
@@ -42,4 +36,4 @@ function findIndex(data, searchQuery) {
 }
 
 findIndex([1,2,3,4,6], 6);
-//console.log( findIndex([1,2,3,4,6], 6) );
+console.log( findIndex([1,2,3,4,6], 6) );
