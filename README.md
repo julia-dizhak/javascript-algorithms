@@ -12,14 +12,17 @@ Characteristics: Runtime O(?)
 
 Tests: by [Jest](https://facebook.github.io/jest/)
 
----
 
+---
 ## Development
 [Jest](https://facebook.github.io/jest/), run by `yarn test`
 
+[Highlightjs](https://highlightjs.org/), javascript syntax highlighter https://highlightjs.org/
+
+Zenburn.css
+
 
 ---
-
 ### Number
 
 Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120 (3 versions: factorial, while loop, for loop)
@@ -28,8 +31,8 @@ Write all possible positive solutions for a^3+b^3 = c^3 + d^3, where a, b, c, d 
 
 Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'
 
----
 
+---
 ### String
 
 Find unique symbol in string / runtime O(n), runtime O(1)
@@ -40,8 +43,8 @@ isPermutation 'rat' --> 'tar' / runtime O(n)
 
 Check if string is palindrome / runtime O(n)
 
----
 
+---
 ### Array
 
 Linear search (or find index method) / runtime O(n)
@@ -54,18 +57,18 @@ Eliminate all duplicates in array / runtime O(1)
 
 Find last element in array and increase (+1) using addition rules
 
----
 
+---
 ### Sorting and Searching
 
----
 
+---
 ## License
 
 The code in this repository is distributed under the terms of the MIT license.
 
----
 
+---
 ### TODO:
 
 jekyll add to readme

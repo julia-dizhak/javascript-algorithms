@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="node_modules/highlight.js/styles/zenburn.css">
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
@@ -53,9 +54,88 @@
     </div>
   </div>
 
+  <div class="data empty">
+    <div class="container">
+
+      <details role="section" aria-expanded="false" aria-labelledby="label">
+        <summary role="button" aria-controls="content">
+            <span>
+              <strong>Question:</strong>
+              Test question.
+            </span>
+            <p>
+              <strong>Answer:</strong>
+              Test Answer.
+            </p>
+          </summary>
+          <div aria-hidden="true">
+            <pre><code id="code"></code></pre>
+            <script>
+                $('#code').load('static/js/algorithm/prototype.js')
+            </script>
+          </div>
+      </details>
+
+    </div>
+  </div>
+
   <div class="data number">
     <div class="container">
       <h2>Number</h2>
+
+      <ol>
+        <li>
+          <details open role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Three ways to Factorialize a Number in js: return the factorial of the provided integer.
+              </span>
+              <p>
+                <strong>Answer:</strong>
+                The “Mathy” definition: Factorials are products of every whole number from 1 to n. For example, if n is 3 then 3! is 3 x 2 x 1 = 6.
+              </p>
+              <div>
+                <strong>Solutions:</strong>
+                <ul>
+                  <li>Factorialize a Number with Recursion</li>
+                  <li>Factorialize a Number with a While loop</li>
+                  <li>Factorialize a Number with a FOR loop</li>
+                </ul>
+              </div>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="factorial"></code></pre>
+              <script>
+                  $('#factorial').load('static/js/algorithm/number/factorialize.js')
+              </script>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="numbers-sum-of-two-cubes"></code></pre>
+              <script>
+                  $('#numbers-sum-of-two-cubes').load('static/js/algorithm/number/sum-of-two-cubes.js')
+              </script>
+            </div>
+          </details>
+        </li>
+
+        <li>
+
+        </li>
+
+      </ol>
+
     </div>
   </div>
 
@@ -71,38 +151,9 @@
       <li>
         <h2>Number</h2>
         <ul>
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                <h3 class="title">Three ways to Factorialize a Number in js: return the factorial of the provided integer.</h3>
-                <ul>
-                  <li>Factorialize a Number with Recursion</li>
-                  <li>Factorialize a Number with a While loop</li>
-                  <li>Factorialize a Number with a FOR loop</li>
-                </ul>
-              </summary>
-              <div aria-hidden="true">
-                <pre><code id="factorial"></code></pre>
-                <script>
-                    $('#factorial').load('static/js/algorithm/number/factorialize.js')
-                </script>
-              </div>
-            </details>
-          </li>
 
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                <h3 class="title">Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].</h3>
-              </summary>
-              <div aria-hidden="true">
-                <pre id="numbers-sum-of-two-cubes"></pre>
-                <script>
-                    $('#numbers-sum-of-two-cubes').load('static/js/algorithm/number/sum-of-two-cubes.js')
-                </script>
-              </div>
-            </details>
-          </li>
+
+
           <li>
             <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
@@ -113,7 +164,7 @@
                 <script>
                     $('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')
                 </script>
-                <script src="static/js/algorithm/number/translate-number-by-alphabet.js"></script>
+                <!--<script src="static/js/algorithm/number/translate-number-by-alphabet.js"></script>-->
               </div>
             </details>
           </li>
@@ -246,6 +297,10 @@
     </ul>
   </div>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 
 </body>
 </html>
