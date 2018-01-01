@@ -10,11 +10,12 @@ Solution
 
 Characteristics: Runtime O(?)
 
-Tests: by [Jest](https://facebook.github.io/jest/), run by `yarn test`
+Tests: by [Jest](https://facebook.github.io/jest/)
 
 ---
 
 ## Development
+[Jest](https://facebook.github.io/jest/), run by `yarn test`
 
 Jekyll is a static website builder, to install `gem install jekyll`
 
