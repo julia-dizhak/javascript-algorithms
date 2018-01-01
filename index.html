@@ -9,6 +9,8 @@
   <title>JavaScript implementations of different famous Computer Science algorithms.</title>
 
   <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="static/css/style.css">
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -17,19 +19,54 @@
 <body>
 
 <section>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>JS: Interview Algorithm</h1>
+      <h2>How to Solve famous algorithms by javascript?</h2>
+      <p>November 02, 2017</p>
+      <br>
+
+      <p class="description">There are JavaScript implementations of different famous Computer Science algorithms.</p>
+      <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
+      <p>Tests provided by Jest.</p>
+      <hr>
+
+      <p>Algoritmes divided by <strong>data structure</strong>:</p>
+
+      <ul>
+        <li>
+          <h3>Number</h3>
+          <p>is a js object is a wrapper object allowing you to work with numerical values.</p>
+        </li>
+        <li>
+          <h3>String</h3>
+          <p>is a ...</p>
+        </li>
+        <li>
+          <h3>Array</h3>
+          <p>is a ...</p>
+        </li>
+      </ul>
+
+      <!--<h2>TODO: level Part -1: beginner</h2>-->
+    </div>
+  </div>
+
+  <div class="data number">
+    <div class="container">
+      <h2>Number</h2>
+    </div>
+  </div>
+
+  <div class="data string">
+    <div class="container">
+      <h2>String</h2>
+    </div>
+  </div>
+
+
   <div class="wrapper">
-    <h1>Javascript algorithms: How to Solve famous algorithms by js?</h1>
-    <p class="description">There are JavaScript implementations of different famous Computer Science algorithms.</p>
-    <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
-    <p>Tests provided by Jest.</p>
-    <hr>
-
-    <p>Algoritmes divided by <strong>Data structure</strong>:</p>
-    <article>
-      <p><strong>Number</strong> is a js object is a wrapper object allowing you to work with numerical values.</p>
-      <p><strong>String</strong> is a ...</p>
-    </article>
-
     <ul>
       <li>
         <h2>Number</h2>
@@ -76,7 +113,7 @@
                 <script>
                     $('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')
                 </script>
-                <!--<script src="static/js/algorithm/number/translate-number-by-alphabet.js"></script>-->
+                <script src="static/js/algorithm/number/translate-number-by-alphabet.js"></script>
               </div>
             </details>
           </li>

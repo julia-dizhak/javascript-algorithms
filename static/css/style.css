@@ -22,3 +22,9 @@ details summary {
 ul li ul li {
     list-style: none;
 }
+
+.jumbotron {
+    background: #fee;
+    //background: #fef;
+    padding: 2rem 1rem;
+}
