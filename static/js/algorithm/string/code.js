@@ -47,4 +47,4 @@ function countNumberOfOccurrences(str) {
 
 }
 
-console.log('countNumberOfOccurrences -->', countNumberOfOccurrences('I want to eat two apples'));
+//console.log('countNumberOfOccurrences -->', countNumberOfOccurrences('I want to eat two apples'));

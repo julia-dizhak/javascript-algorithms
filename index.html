@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="JavaScript implementations of different famous Computer Science algorithms, such as factorialize a number">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="JavaScript implementations of different famous Computer Science algorithms, such as factorialize a number, javascript interview questions, front end interview questions, javascript interview, algorithm in javascript, javascript interview materials, javascript interview preparation">
   <meta name="keywords" content="javascript algorithms, javascript, js, algorithms, algorithm, computer science algorithms, computer science">
 
   <title>JavaScript implementations of different famous Computer Science algorithms.</title>
@@ -24,7 +27,7 @@
   <div class="jumbotron">
     <div class="container">
       <h1>JS: Interview Algorithm</h1>
-      <h2>How to Solve famous algorithms by javascript?</h2>
+      <h2>How to solve famous computer science algorithms by javascript?</h2>
       <p>November 02, 2017</p>
       <br>
 
@@ -85,12 +88,35 @@
 
       <ol>
         <li>
-          test
-          <!--Question: How would you verify a prime number?-->
+          <details open role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+                <span>
+                  <strong>Question:</strong>
+                  How would you verify a prime number?
+                </span>
+                <p>
+                  <strong>Answer:</strong>
+                  a prime number is a natural number greater than 1 and only divisible by itself.
+                </p>
+              </summary>
+              <div aria-hidden="true">
+                <div>
+                  <strong>Solutions:</strong>
+                  <ul>
+                    <li>Prime number with a while loop</li>
+                    <li>Prime number with a for loop</li>
+                  </ul>
+                </div>
+                <pre><code id="prime-number"></code></pre>
+                <script>
+                    $('#prime-number').load('static/js/algorithm/number/prime-number.js')
+                </script>
+              </div>
+          </details>
         </li>
 
         <li>
-          <details open role="section" aria-expanded="false" aria-labelledby="label">
+          <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
               <span>
                 <strong>Question:</strong>
@@ -100,16 +126,16 @@
                 <strong>Answer:</strong>
                 The “Mathy” definition: Factorials are products of every whole number from 1 to n. For example, if n is 3 then 3! is 3 x 2 x 1 = 6.
               </p>
+            </summary>
+            <div aria-hidden="true">
               <div>
                 <strong>Solutions:</strong>
                 <ul>
-                  <li>Factorialize a Number with Recursion</li>
-                  <li>Factorialize a Number with a While loop</li>
-                  <li>Factorialize a Number with a FOR loop</li>
+                  <li>Factorialize a number with recursion</li>
+                  <li>Factorialize a number with a while loop</li>
+                  <li>Factorialize a mumber with a fOR loop</li>
                 </ul>
               </div>
-            </summary>
-            <div aria-hidden="true">
               <pre><code id="factorial"></code></pre>
               <script>
                   $('#factorial').load('static/js/algorithm/number/factorialize.js')
@@ -148,7 +174,6 @@
                 <script>
                     $('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')
                 </script>
-                <script src="static/assets/js/translate-number-by-alphabet.compiled.js"></script>
               </div>
           </details>
         </li>
@@ -164,7 +189,34 @@
 
       <ol>
         <li>
-
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Find unique symbols in string
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="unique-in-string"></code></pre>
+              <script>
+                  $('#unique-in-string').load('static/js/algorithm/string/unique-symbol.js')
+              </script>
+            </div>
+          </details>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Find repeat symbols in string
+              </span>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="repeat-in-string"></code></pre>
+              <script>
+                  $('#repeat-in-string').load('static/js/algorithm/string/repeat-symbol.js')
+              </script>
+            </div>
+          </details>
         </li>
 
         <li></li>
@@ -178,26 +230,10 @@
 
 
       <li>
-        <h2>String</h2>
+
 
         <ul>
-          <li>
-            <details role="section" aria-expanded="false" aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                Find unique symbols in string / Find repeat symbols in string
-              </summary>
-              <div aria-hidden="true">
-                <pre id="unique-in-string"></pre>
-                <script>
-                    $('#unique-in-string').load('static/js/algorithm/string/unique-symbol.js')
-                </script>
-                <pre id="repeat-in-string"></pre>
-                <script>
-                    $('#repeat-in-string').load('static/js/algorithm/string/repeat-symbol.js')
-                </script>
-              </div>
-            </details>
-          </li>
+
 
           <li>
             <details role="section" aria-expanded="false" aria-labelledby="label">

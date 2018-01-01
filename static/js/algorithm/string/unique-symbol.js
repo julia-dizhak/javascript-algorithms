@@ -6,9 +6,6 @@
  *
  * Characteristics
  *
- */
-
-/**
  * @param {string}
  * @return {}
  *

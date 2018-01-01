@@ -17,13 +17,16 @@ Tests: by [Jest](https://facebook.github.io/jest/)
 ## Development
 [Jest](https://facebook.github.io/jest/), run by `yarn test`
 
-[Highlightjs](https://highlightjs.org/), javascript syntax highlighter https://highlightjs.org/
+[Highlightjs](https://highlightjs.org/), javascript syntax highlighter
 
 Zenburn.css
 
 
 ---
 ### Number
+Is number a prime / runtime O(n), runtime O(sqrt(n))
+
+Find unique symbol in string / runtime O(n), runtime O(1)
 
 Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120 (3 versions: factorial, while loop, for loop)
 
