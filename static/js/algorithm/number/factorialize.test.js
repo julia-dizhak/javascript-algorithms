@@ -6,7 +6,6 @@ describe('test assignment to which factorialize a number: return the factorial o
         expect(factorializeRecursion(5)).toEqual(120);
         expect(factorializeRecursion(3)).toBe(6);
         expect(factorializeRecursion(1)).not.toBe(0);
-
     });
 
     it('with a while loop', ()=> {

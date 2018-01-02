@@ -41,40 +41,7 @@ const countNumberOfOccurrences = str => {
 console.log('countNumberOfOccurrences -->', countNumberOfOccurrences('I want to eat two apples. Apples are good.'));
 
 
-// const arr1 = [1,2];
-// const arr2 = [6];
-//
-// function mergeSolution(arr1, arr2) {
-//     let i=0,
-//         j=0,
-//         result = [];
-//
-//     while (i < arr1.length && j < arr2.length ) {
-//         if (arr1[i] < arr2[j]) {
-//             result.push(arr1[i]);
-//             i++;
-//         } else {
-//             result.push((arr2[j]));
-//             j++;
-//         }
-//     }
-//     //console.log(i,j);
-//     if (i < arr1.length) {
-//         result = [...result, ...arr1.slice(i)];
-//     }
-//      if (j < arr2.length) {
-//         result = [...result, ...arr2.slice(j)];
-//     }
-//
-//     return result;
-//
-//     //i[0] > j[0]
-//
-//     // for () {
-//     //
-//     // }
-// }
-// console.log(mergeSolution(arr1, arr2));
+
 
 // reverse
 let str = 'string',

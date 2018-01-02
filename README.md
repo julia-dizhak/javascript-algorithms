@@ -43,6 +43,7 @@ Translate a number by alphabetic code to a string, for example, solutions(123) -
 
 ---
 ### String
+Count the number of occurrences of all characters in a string. / runtime O(n)
 
 Find unique symbol in string / runtime O(n), runtime O(1)
 
@@ -55,6 +56,7 @@ Check if string is palindrome / runtime O(n)
 
 ---
 ### Array
+Merge two sorted arrays
 
 Linear search (or find index method) / runtime O(n)
 
