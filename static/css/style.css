@@ -2,8 +2,15 @@ body {
     font: 400 100%/120% 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
+.main-desc {
+    margin-top: 1em;
+}
 .questions h2 {
     margin: 0 0 1.5rem 0;
+}
+.questions ul {
+    padding: 0;
+    list-style: none;
 }
 .questions ul > li {
     padding: 0 0 5px 0;
@@ -59,7 +66,7 @@ body {
 .intro {
     padding: 2rem 1rem 2rem;
 }
-.intro h2 {
+.intro h3 {
     margin: 0 0 1.5rem 0;
 }
 
@@ -92,6 +99,15 @@ details pre {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+@media (max-width: 767px) {
+    details pre {
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        background: none;
+        border-radius: 0;
+    }
+}
 details pre code {
     display: block;
     padding: 5px;
@@ -106,12 +122,25 @@ ul li ul li {
 .jumbotron {
     background: #fee;
     /*background: #fef;*/
-    padding: 1rem 1rem 2rem;
+    padding: 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+    .jumbotron {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .data {
     padding: 0 0 15px 0;
 }
+@media (max-width: 767px) {
+    .data ol {
+        padding: 0 0 0 10px;
+    }
+}
+
 .data ol > li {
     margin: 0 0 25px 0;
 }
