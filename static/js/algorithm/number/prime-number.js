@@ -9,7 +9,7 @@
 'use strict';
 
 // runtime O(n)
-function isPrimeNumberByWhileLoop(num) {
+function isPrimeNumberWithWhileLoop(num) {
     let divisor = 2;
 
     if (num < 2) {
@@ -29,10 +29,10 @@ function isPrimeNumberByWhileLoop(num) {
     return num + ' is a prime number';
 
 }
-//console.log('isPrimeNumberByWhileLoop', isPrimeNumberByWhileLoop(0));
+console.log('isPrimeNumberWithWhileLoop', isPrimeNumberWithWhileLoop(0));
 
 // runtime O(n)
-const isPrimeNumberByForLoop = num => {
+const isPrimeNumberWithForLoop = num => {
     if (num < 2) {
         return num + ' a number is not greater than 1';
     } else if (num === 2) {
@@ -48,14 +48,14 @@ const isPrimeNumberByForLoop = num => {
     }
 
 };
-//console.log('isPrimeNumberByForLoop', isPrimeNumberByForLoop(2));
+console.log('isPrimeNumberWithForLoop', isPrimeNumberWithForLoop(2));
 
 // runtime O(sqrt(n))
 // a number will never be divisible by a number bigger than half of its values. So, we dont have to loop 50%;
 // if a number is not divisible by 3. (if it is divisible by 3, then it wouldn't be a prime number);
 // then it would be divisible any number bigger than the 1/3 of its value;
 // divisor would be less than Math.sqrt (n)
-const isPrimeNumberRuntimeSqrt = num => {
+const isPrimeNumberWithForLoopRuntimeSqrt = num => {
     if (num < 2) {
         return num + ' a number is not greater than 1';
     }
@@ -71,4 +71,4 @@ const isPrimeNumberRuntimeSqrt = num => {
     }
     return num + ' is prime number';
 };
-console.log('isPrimeNumberRuntimeSqrt', isPrimeNumberRuntimeSqrt(100));
+console.log('isPrimeNumberWithForLoopRuntimeSqrt', isPrimeNumberWithForLoopRuntimeSqrt(100));
