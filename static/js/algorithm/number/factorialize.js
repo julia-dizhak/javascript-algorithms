@@ -66,7 +66,7 @@ function factorializeRecursion(num) {
 console.log('factorializeRecursion(5) -->', factorializeRecursion(5));
 
 // Factorialize a number with a while loop --> Runtime O(n)
-function factorializeByWhileLoop(num) {
+function factorializeWithWhileLoop(num) {
     let result = num;
 
     if (num === 0 || num === 1 ) {
@@ -81,7 +81,7 @@ function factorializeByWhileLoop(num) {
     return result;
 }
 
-//console.log('factorializeByWhileLoop(5) -->', factorializeByWhileLoop(5));
+console.log('factorializeWithWhileLoop(5) -->', factorializeWithWhileLoop(5));
 
 // Factorialize a number with a for loop --> Runtime O(n)
 function factorializeWithForLoop(num) {
@@ -98,4 +98,4 @@ function factorializeWithForLoop(num) {
 
 console.log('factorializeWithForLoop(5) -->', factorializeWithForLoop(5));
 
-export { factorializeRecursion, factorializeByWhileLoop, factorializeWithForLoop };
+export { factorializeRecursion, factorializeWithWhileLoop, factorializeWithForLoop };

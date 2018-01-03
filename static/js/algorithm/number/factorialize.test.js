@@ -1,4 +1,4 @@
-import { factorializeRecursion, factorializeByWhileLoop, factorializeWithForLoop } from './factorialize';
+import { factorializeRecursion, factorializeWithWhileLoop, factorializeWithForLoop } from './factorialize';
 
 describe('test assignment to which factorialize a number: return the factorial of the provided integer', ()=>{
 
@@ -9,7 +9,7 @@ describe('test assignment to which factorialize a number: return the factorial o
     });
 
     it('with a while loop', ()=> {
-        expect(factorializeByWhileLoop(10)).toEqual(3628800);
+        expect(factorializeWithWhileLoop(10)).toEqual(3628800);
     });
 
     it('with a for loop', ()=> {
