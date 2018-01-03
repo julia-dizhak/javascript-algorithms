@@ -14,12 +14,46 @@ body {
 
 .test {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: baseline;
     padding: .2rem .4rem;
     font-size: 90%;
     color: blue;
     background-color: #f7f7f9;
     border-radius: .25rem;
+}
+
+.complexity {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: .2rem .4rem;
+    font-size: 90%;
+    color: green;
+    background-color: #f7f7f9;
+    border-radius: .25rem;
+}
+
+.definition {
+    color: purple;
+}
+
+.head {
+    margin: 0 0 10px 0;
+}
+.head .title {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.num {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .4rem .6rem;
+    font-size: 110%;
+    font-weight: bold;
+    color: green;
+    background-color: #f7f7f9;
+    border-radius: .25rem;
+    margin: 0 0 0 5px;
 }
 
 .intro {

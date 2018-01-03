@@ -72,8 +72,8 @@
         <li>
           <h3>Number</h3>
           <ol>
-            <li>Factorialize a Number + <span class="test">test</span></li>
-            <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' + <span class="test">test</span></li>
+            <li>Factorialize a Number: with recursion, a while loop, a for loop + <span class="test">test</span>.</li>
+            <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' + <span class="test">test</span>.</li>
           </ol>
         </li>
 
@@ -81,7 +81,7 @@
           <h3>String</h3>
           <ol>
             <li>Count the number of occurrences of all characters in a string.</li>
-            <li>Reverse a string: </li>
+            <li>Reverse a string: with a decrementing for loop and recursion + <span class="test">test</span>.</li>
           </ol>
         </li>
       </ul>
@@ -236,20 +236,24 @@
                 <strong>Question:</strong>
                 Three ways to Factorialize a Number in js: return the factorial of the provided integer.
               </span>
-              <p>
-                <strong>Answer:</strong>
-                The “Mathy” definition: Factorials are products of every whole number from 1 to n. For example, if n is 3 then 3! is 3 x 2 x 1 = 6.
-              </p>
-            </summary>
-            <div aria-hidden="true">
+              <dl class="definition">
+                <dt>Factorial</dt>
+                <dd>is product of every whole number from 1 to n. For example, if n is 3 then <code>3! is 3 x 2 x 1 = 6</code></dd>
+              </dl>
+              <dl class="definition">
+                <dt>Recursion</dt>
+                <dd>is an important programming technique, in which a function calls itself.</dd>
+              </dl>
               <div>
                 <strong>Solutions:</strong>
                 <ul>
-                  <li>Factorialize a number with recursion</li>
-                  <li>Factorialize a number with a while loop</li>
-                  <li>Factorialize a mumber with a fOR loop</li>
+                  <li>factorialize a number with recursion</li>
+                  <li>factorialize a number with a while loop</li>
+                  <li>factorialize a mumber with a for loop</li>
                 </ul>
               </div>
+            </summary>
+            <div aria-hidden="true">
               <pre><code id="factorial"></code></pre>
               <script>
                   $('#factorial').load('static/js/algorithm/number/factorialize.js')
@@ -300,8 +304,7 @@
   <div class="data string">
     <div class="container">
       <header class="head">
-        <h2 class="title">String</h2>
-        <span class="number">5</span>
+        <h2 class="title">String</h2> <span class="num">5</span>
       </header>
 
 
@@ -375,8 +378,12 @@
             <summary role="button" aria-controls="content">
               <span>
                 <strong>Question:</strong>
-                Check if string is palindrome.
+                Check if string is palindrome <span class="complexity">runtime O(n)</span>.
               </span>
+              <dl class="definition">
+                <dt>Palindrome</dt>
+                <dd>is a word, phrase, number, or sequence of characters which reads the same backward or forward.</dd>
+              </dl>
             </summary>
             <div aria-hidden="true">
               <pre><code id="is-palindrome"></code></pre>
@@ -392,15 +399,17 @@
                 <strong>Question:</strong>
                 Reverse a string.
               </span>
-              <ul>
-                <li>reverse a string with a decrementing for loop <span class="complexity">runtime O(n)</span></li>
-                <li>2</li>
-              </ul>
+              <div>
+                <strong>Solutions:</strong>
+                <ul>
+                  <li>reverse a string with a decrementing for loop <span class="complexity">runtime O(n)</span>.</li>
+                  <li>reverse a string with recursion <span class="complexity">runtime O(n)</span>.</li>
+                </ul>
+              </div>
             </summary>
             <div aria-hidden="true">
               <pre><code id="reverse-string"></code></pre>
               <script>$('#reverse-string').load('static/js/algorithm/string/reverse.js')</script>
-              <script src="static/assets/js/reverse.compiled.js"></script>
             </div>
           </details>
         </li>

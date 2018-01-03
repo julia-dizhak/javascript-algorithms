@@ -1,4 +1,4 @@
-import { reverseWithDecrementingLForLoop } from './reverse';
+import { reverseWithDecrementingLForLoop, reverseWithRecursion } from './reverse';
 
 describe('reverse a string test case', () => {
 

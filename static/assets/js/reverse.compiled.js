@@ -14,14 +14,14 @@
     /**
      * Reverse a string
      *
-     * runtime O(n)
-     *
      * @param {string}
      * @return {string}
      *
      */
 
     'use strict';
+
+    // runtime O(n)
 
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -30,14 +30,31 @@
         var len = str.length;
         var result = [];
 
-        for (var i = len - 1; i >= 0; i--) {
-            result.push(str[i]);
+        if (str !== '') {
+            for (var i = len - 1; i >= 0; i--) {
+                result.push(str[i]);
+            }
+            return result.join('').toLowerCase();
         }
-
-        return result.join('').toLowerCase();
     };
 
-    console.log(reverseWithDecrementingLForLoop('Hello'));
+    //console.log(reverseWithDecrementingLForLoop('Hello'));
+
+    // runtime O(n)
+    var reverseWithRecursion = function reverseWithRecursion(str) {
+        str = str.toLowerCase();
+        if (str === '') {
+            // this is the terminal case that will end the recursion
+            return '';
+        } else {
+            return reverseWithRecursion(str.substr(1)) + str.charAt(0);
+        }
+
+        //return (str === '') ? '' : reverseWithRecursion(str.substr(1)) + str.charAt(0); // ternary operator
+    };
+
+    console.log(reverseWithRecursion('GoodBye!'));
 
     exports.reverseWithDecrementingLForLoop = reverseWithDecrementingLForLoop;
+    exports.reverseWithRecursion = reverseWithRecursion;
 });
