@@ -1,6 +1,6 @@
 /**
- * Merge two sorted arrays
- * arr1 = [1, 2, 4, 6], arr2 = [3, 7, 9] => result = [1, 2, 3, 4, 6, 7, 9]
+ * Write a function which merges two sorted arrays of integers and prints result (Merge two sorted arrays)
+ * Example, arr1 = [1, 2, 4, 6], arr2 = [3, 7, 9] => result = [1, 2, 3, 4, 6, 7, 9]
  *
  * runtime O(n)
  *
@@ -12,8 +12,8 @@
 'use strict';
 
 const mergeSortedArrays = (arr1,arr2) => {
-    let i = 0,
-        j = 0,
+    let i = 0, // initial index for the first array
+        j = 0, // initial index for the second array
         result = [];
 
     const len1 = arr1.length,

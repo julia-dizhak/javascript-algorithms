@@ -1,6 +1,6 @@
-# Javascript algorithms
+# Javascript algorithm
 
-This repository contains JavaScript implementations of different famous Computer Science algorithms.
+This repository contains Javascript implementations of different famous computer science algorithms.
 
 ## Algorithms
 
@@ -15,6 +15,7 @@ Tests: by [Jest](https://facebook.github.io/jest/)
 
 ---
 ## Development
+
 [ECMAScript 6 features](http://es6-features.org/).
 
 [Yarn](https://yarnpkg.com/) package manager.
@@ -34,11 +35,11 @@ Is number a prime / runtime O(n), runtime O(sqrt(n))
 
 Find unique symbol in string / runtime O(n), runtime O(1)
 
-Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120 (3 versions: factorial, while loop, for loop)
+Factorialize a Number, for example, 5! = 1 * 2 * 3 * 4 * 5 = 120 (3 versions: factorial, while loop, for loop) / runtime O(n) / test
 
 Write all possible positive solutions for a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5] / runtime O(n^4), O(n^3), O(n^2)
 
-Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'
+Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' / test
 
 
 ---
@@ -56,7 +57,7 @@ Check if string is palindrome / runtime O(n)
 
 ---
 ### Array
-Merge two sorted arrays
+Merge two sorted arrays / test
 
 Linear search (or find index method) / runtime O(n)
 

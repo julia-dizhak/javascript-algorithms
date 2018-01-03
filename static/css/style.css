@@ -1,8 +1,25 @@
 body {
     font: 400 100%/120% 'Helvetica Neue',Helvetica,Arial,sans-serif;
 }
+
 .questions h2 {
     margin: 0 0 1.5rem 0;
+}
+.questions ul > li {
+    padding: 0 0 5px 0;
+}
+.questions ol li {
+    margin: 0 0 5px 0;
+}
+
+.test {
+    display: inline-block;
+    vertical-align: middle;
+    padding: .2rem .4rem;
+    font-size: 90%;
+    color: blue;
+    background-color: #f7f7f9;
+    border-radius: .25rem;
 }
 
 .intro {

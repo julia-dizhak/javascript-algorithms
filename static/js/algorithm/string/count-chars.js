@@ -39,26 +39,3 @@ const countNumberOfOccurrences = str => {
 };
 
 console.log('countNumberOfOccurrences -->', countNumberOfOccurrences('I want to eat two apples. Apples are good.'));
-
-
-
-
-// reverse
-let str = 'string',
-    strReverse = 'gnitrs';
-
-function reverse(str) {
-    const len = str.length;
-    let result = [];
-
-    for (let i = len-1; i >= 0; i--) {
-        console.log(str[i]);
-        result.push(str[i]);
-    }
-    return result.join('');
-}
-
-//console.log(reverse(str));
-
-
-

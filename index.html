@@ -35,7 +35,7 @@
       <p>Tests provided by Jest.</p>
       <hr class="line">
 
-      <p>Algoritmes divided by <strong>data structure</strong>:</p>
+      <p>Algoritmes divided by <strong>Data structures</strong>:</p>
 
       <ul>
         <li>
@@ -62,17 +62,26 @@
       <h2>List of questions:</h2>
       <ul>
         <li>
-          <h2>Array</h2>
+          <h3>Array</h3>
           <ol>
-            <li>Merge two sorted arrays</li>
+            <li>Merge two sorted arrays + <span class="test">test</span></li>
             <li>Find an index in array</li>
           </ol>
         </li>
 
         <li>
-          <h2>String</h2>
+          <h3>Number</h3>
+          <ol>
+            <li>Factorialize a Number + <span class="test">test</span></li>
+            <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' + <span class="test">test</span></li>
+          </ol>
+        </li>
+
+        <li>
+          <h3>String</h3>
           <ol>
             <li>Count the number of occurrences of all characters in a string.</li>
+            <li>Reverse a string: </li>
           </ol>
         </li>
       </ul>
@@ -81,10 +90,10 @@
 
   <div class="intro">
     <div class="container">
-      <h2>Algorithmes</h2>
+      <h2>Algorithms</h2>
       <p>The definitive javascript algorithmes for your next developer interview.</p>
       <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
-      <p>The idea don't use the default methods of js, for example, <code>sort()</code> and etc.</p>
+      <p>The idea don't use the default, in-built methods of Javascript, for example, <code>sort(), reverse()</code> and etc.</p>
     </div>
   </div>
 
@@ -290,7 +299,11 @@
 
   <div class="data string">
     <div class="container">
-      <h2>String</h2>
+      <header class="head">
+        <h2 class="title">String</h2>
+        <span class="number">5</span>
+      </header>
+
 
       <ol>
         <li>
@@ -367,13 +380,33 @@
             </summary>
             <div aria-hidden="true">
               <pre><code id="is-palindrome"></code></pre>
-              <script>
-                  $('#is-palindrome').load('static/js/algorithm/string/palindrome.js')
-              </script>
+              <script>$('#is-palindrome').load('static/js/algorithm/string/palindrome.js')</script>
             </div>
           </details>
         </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>
+                <strong>Question:</strong>
+                Reverse a string.
+              </span>
+              <ul>
+                <li>reverse a string with a decrementing for loop <span class="complexity">runtime O(n)</span></li>
+                <li>2</li>
+              </ul>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="reverse-string"></code></pre>
+              <script>$('#reverse-string').load('static/js/algorithm/string/reverse.js')</script>
+              <script src="static/assets/js/reverse.compiled.js"></script>
+            </div>
+          </details>
+        </li>
+
       </ol>
+
     </div>
   </div>
 
