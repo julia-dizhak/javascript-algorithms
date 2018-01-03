@@ -11,10 +11,10 @@
 'use strict';
 
 function isStringPalindrome(str) {
-    let palindrome = str.split('').reverse().join('');
+    let removeSpaceFromStr = str.replace(/\s/g, ''),
+        palindrome = removeSpaceFromStr.split('').reverse().join('');
 
-    return (str === palindrome) ? true: false;
+    return (removeSpaceFromStr === palindrome) ? palindrome + ' is a palindrome' : false;
 }
 
-console.log(isStringPalindrome('level'));
-console.log(isStringPalindrome('test'));
+console.log(isStringPalindrome('race car'));
