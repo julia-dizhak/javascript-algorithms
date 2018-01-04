@@ -31,7 +31,6 @@ const primeFactors = num => {
         }
     }
 
-
     // wrong solution
     // i = num/2
     // for (let i = 0; i < num / 2; i++) {

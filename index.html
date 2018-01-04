@@ -53,6 +53,7 @@
           <ol>
             <li>How would you verify a prime number?</li>
             <li>How could you find all prime factors of a number? (<span class="test">test</span>)</li>
+            <li>How do get nth Fibonacci number?</li>
             <li>Factorialize a Number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
             <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' (<span class="test">test</span>).</li>
           </ol>
@@ -183,7 +184,7 @@
     <div class="container">
       <header class="head">
         <h2 class="title">Number</h2>
-        <span class="num">5</span>
+        <span class="num">6</span>
       </header>
 
       <ol>
@@ -218,11 +219,8 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-                <span>
-                  <strong>Question:</strong>
-                  How could you find all prime factors of a number?
-                </span>
-                <span class="complexity">if number is prime - O(n) or O(Math.log2(n))</span>
+                <span>Question: <strong>How could you find all prime factors of a number?</strong></span>
+                <span class="complexity">if number is prime - O(n), otherwise runtime is O(Math.log2(n))</span>
                 <dl class="definition">
                   <dt>The prime factors of a positive integer</dt>
                   <dd>are the prime numbers that divide that integer exactly</dd>
@@ -233,7 +231,29 @@
                 <script>
                     $('#prime-factors').load('static/js/algorithm/number/prime-factors.js')
                 </script>
-                <script src="static/assets/js/prime-factors.compiled.js"></script>
+              </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+                <span>Question:<strong> How do get nth Fibonacci number?</strong></span>
+                <span class="complexity"></span>
+                <dl class="definition">
+                  <dt>The Fibonacci numbers</dt>
+                  <dd>are the numbers in the following integer sequence, called the Fibonacci sequence,
+                    and characterized by the fact that every number after the first two is the sum of the two preceding one
+                    <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...</code>
+                  </dd>
+                </dl>
+              </summary>
+              <div aria-hidden="true">
+                <pre><code id="fibonacci"></code></pre>
+                <script>
+                    $('#fibonacci').load('static/js/algorithm/number/fibonacci.js')
+                </script>
+                <script src="static/js/algorithm/number/fibonacci.js"></script>
               </div>
           </details>
         </li>
