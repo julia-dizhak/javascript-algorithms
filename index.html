@@ -29,7 +29,7 @@
       <h1>JS: Interview Algorithm</h1>
       <time datetime="2017-11-02T19:00">November 02, 201</time>
 
-      <p class="main-desc">How to solve famous computer science algorithms by javascript?</p>
+      <p class="main-desc">How to solve famous computer science (CS) algorithms (algos) by javascript?</p>
       <p class="description">There are JavaScript implementations of different famous computer science algorithms.</p>
       <p>Algoritmes divided by <strong>Data structures</strong>: Array, Number, String, ... </p>
       <p>Tests provided by <a href="https://facebook.github.io/jest/">Jest</a>.</p>
@@ -43,7 +43,7 @@
         <li>
           <h3>Array</h3>
           <ol>
-            <li>Merge two sorted arrays + <span class="test">test</span></li>
+            <li>Merge two sorted arrays (<span class="test">test</span>).</li>
             <li>Find an index in array</li>
           </ol>
         </li>
@@ -51,8 +51,10 @@
         <li>
           <h3>Number</h3>
           <ol>
-            <li>Factorialize a Number: with recursion, a while loop, a for loop + <span class="test">test</span>.</li>
-            <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' + <span class="test">test</span>.</li>
+            <li>prime</li>
+            <li>factors primeFactors</li>
+            <li>Factorialize a Number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
+            <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' (<span class="test">test</span>).</li>
           </ol>
         </li>
 
@@ -61,7 +63,7 @@
           <ol>
             <li>Count the number of occurrences of all characters in a string.</li>
             <li>Check if is given string is a palindrome with ignoring spaces, e.g. 'race car' would be palindrome.</li>
-            <li>Reverse a string: with a decrementing for loop and recursion + <span class="test">test</span>.</li>
+            <li>Reverse a string: with a decrementing for loop and recursion (<span class="test">test</span>).</li>
           </ol>
         </li>
       </ul>
@@ -70,10 +72,11 @@
 
   <div class="intro">
     <div class="container">
-      <h3>Algorithms rules:</h3>
+      <h3>Algorithm rules:</h3>
       <p>The definitive javascript algorithmes for your next developer interview.</p>
       <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
       <p>The idea don't use the default, in-built methods of Javascript, for example, <code>sort(), reverse()</code> and etc.</p>
+      <p>What is the run time complexity? Can you make this better?</p>
     </div>
   </div>
 
@@ -82,7 +85,7 @@
       <h2>Array</h2>
       <ol>
         <li>
-          <details open role="section" aria-expanded="false" aria-labelledby="label">
+          <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
               <span>
                 <strong>Question:</strong>
@@ -180,7 +183,7 @@
     <div class="container">
       <header class="head">
         <h2 class="title">Number</h2>
-        <span class="num">4</span>
+        <span class="num">5</span>
       </header>
 
       <ol>
@@ -208,6 +211,29 @@
                 <script>
                     $('#prime-number').load('static/js/algorithm/number/prime-number.js')
                 </script>
+              </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+                <span>
+                  <strong>Question:</strong>
+                  How could you find all prime factors of a number?
+                </span>
+                <dl class="definition">
+                  <dt>Prime factors</dt>
+                  <dd>...</dd>
+                </dl>
+
+              </summary>
+              <div aria-hidden="true">
+                <pre><code id="prime-factors"></code></pre>
+                <script>
+                    $('#prime-factors').load('static/js/algorithm/number/prime-factors.js')
+                </script>
+                <script src="static/js/algorithm/number/prime-factors.js"></script>
               </div>
           </details>
         </li>
@@ -278,13 +304,12 @@
               </div>
           </details>
         </li>
-
       </ol>
 
     </div>
   </div>
 
-  <div class="data string">
+  <div class="data">
     <div class="container">
       <header class="head">
         <h2 class="title">String</h2>
@@ -308,6 +333,7 @@
             </div>
           </details>
         </li>
+
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
@@ -398,14 +424,17 @@
         </li>
 
       </ol>
-
     </div>
   </div>
 
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  $(function() {
+      $('pre code').each(function(i, element){ hljs.highlightBlock(element) });
+  });
+</script>
 
 </body>
 </html>

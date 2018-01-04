@@ -1,5 +1,5 @@
 /**
- * Count the number of occurrences of a character in a string 'I want to eat two apples. Apples are good.';
+ * Count the number of occurrences of a character in a str 'I want to eat two apples. Apples are good.';
  * result = {
  *     " ": 8
  *     .: 2

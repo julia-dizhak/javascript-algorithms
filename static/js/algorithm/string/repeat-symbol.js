@@ -1,8 +1,8 @@
 /**
- * Find duplicates symbols in a string.
+ * Find duplicates symbols in a str.
  * runtime O(n)
  *
- * @param {string, string}
+ * @param {str, str}
  * @return {number}
  *
  */
@@ -22,4 +22,4 @@ function findDuplicateSymbol(symbol, str) {
     return count;
 }
 
-console.log(findDuplicateSymbol('a', 'apple') );
+console.log('findDuplicateSymbol-->', findDuplicateSymbol('a', 'apple'));

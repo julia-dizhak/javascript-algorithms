@@ -1,13 +1,8 @@
 /**
- * Find unique symbols in string (or detecting if a string consists of unique characters).
- *
- * Algorithm
- * ...
- *
- * Characteristics
+ * Find unique symbols (or detecting if a str consists of unique characters).
  *
  * @param {string}
- * @return {}
+ * @return {boolean}
  *
  */
 
@@ -30,10 +25,9 @@ function isUniqueSymbolRuntimeN(str) {
         }
     }
 
-    //return str;
+    return str;
 }
-
-// console.log( isUniqueSymbolRuntimeN('teste') );
+console.log(isUniqueSymbolRuntimeN('test') );
 
 // runtime O(1)
 function isUniqueSymbolRuntime1(str) {
@@ -45,6 +39,8 @@ function isUniqueSymbolRuntime1(str) {
         len = str.length;
 
     for (let i = 0; i < len; i++) {
+        //return (obj.hasOwnProperty(str[i])) ? obj[str[i]] = false : obj[str[i]] = true;
+
         if (obj.hasOwnProperty(str[i])) {
             obj[str[i]] = false;
         } else {
@@ -55,4 +51,4 @@ function isUniqueSymbolRuntime1(str) {
 
 }
 
-// console.log(isUniqueSymbolRuntime1('test'));
+console.log('isUniqueSymbolRuntime1 -->', isUniqueSymbolRuntime1('teste'));
