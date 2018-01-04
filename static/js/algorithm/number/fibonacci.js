@@ -8,7 +8,7 @@
 
 'use strict';
 
-const fibonacci = (num) => {
+const fibonacciWithForLoop = (num) => {
     let fibo = [0, 1];
 
     if (num <= 2) return 1;
@@ -26,4 +26,5 @@ const fibonacci = (num) => {
     return fibo[num];
 };
 
-console.log('fibonacci -->', fibonacci(3));
+console.log('fibonacciWithForLoop -->', fibonacciWithForLoop(3));
+

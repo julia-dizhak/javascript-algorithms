@@ -44,7 +44,8 @@
           <h3>Array</h3>
           <ol>
             <li>Merge two sorted arrays (<span class="test">test</span>).</li>
-            <li>Find an index in array</li>
+            <li>Find an index in array.</li>
+            <li>Eliminate all duplicates in array.</li>
           </ol>
         </li>
 
@@ -53,7 +54,7 @@
           <ol>
             <li>How would you verify a prime number?</li>
             <li>How could you find all prime factors of a number? (<span class="test">test</span>)</li>
-            <li>How do get nth Fibonacci number?</li>
+            <li>How do get nth Fibonacci number? (<span class="level-beginner">beginner</span>)</li>
             <li>Factorialize a Number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
             <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' (<span class="test">test</span>).</li>
           </ol>
@@ -78,12 +79,17 @@
       <p>I propose several solutions and explain step-by-step what happens under the hood.</p>
       <p>The idea don't use the default, in-built methods of Javascript, for example, <code>sort(), reverse()</code> and etc.</p>
       <p>What is the run time complexity? Can you make this better?</p>
+      <p>Levels: <span class="level-beginner">beginner</span></p>
     </div>
   </div>
 
   <div class="data array">
     <div class="container">
-      <h2>Array</h2>
+      <header class="head">
+        <h2 class="title">Array</h2>
+        <span class="num">5</span>
+      </header>
+
       <ol>
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
@@ -146,16 +152,11 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                 Eliminate all duplicates in array:
-              </span>
+              <span>Question: <strong>Eliminate all duplicates in array</strong> <span class="complexity">runtime O(1)</span>.</span>
             </summary>
               <div aria-hidden="true">
                 <pre><code id="eliminate-duplicates"></code></pre>
-                <script>
-                    $('#eliminate-duplicates').load('static/js/algorithm/array/eliminate-duplicates-in-array.js')
-                </script>
+                <script>$('#eliminate-duplicates').load('static/js/algorithm/array/eliminate-duplicates.js')</script>
               </div>
           </details>
         </li>

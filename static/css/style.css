@@ -13,7 +13,7 @@ body {
     list-style: none;
 }
 .questions ul > li {
-    padding: 0 0 5px 0;
+    padding: 0 0 15px 0;
 }
 .questions ol li {
     margin: 0 0 5px 0;
@@ -37,6 +37,24 @@ body {
     color: green;
     background-color: #f7f7f9;
     border-radius: .25rem;
+}
+
+.level,
+.level-beginner {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: .2rem .4rem;
+    font-size: 90%;
+    border-radius: .25rem;
+}
+.level-beginner {
+    background-color: #efef8f;
+}
+.level-medium {
+    background-color: #E3CEAB;
+}
+.level-hard {
+    background-color: pink;
 }
 
 .definition {
