@@ -192,10 +192,7 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-                <span>
-                  <strong>Question:</strong>
-                  How would you verify a prime number?
-                </span>
+                <span>Question:<strong>How would you verify a prime number?</strong></span>
                 <dl class="definition">
                   <dt>Prime number</dt>
                   <dd>is a natural number greater than 1 and only divisible by itself</dd>
@@ -203,8 +200,8 @@
                 <div>
                     <strong>Solutions:</strong>
                     <ul>
-                      <li>Prime number with a while loop <span class="complexity">runtime O(n)</span>.</li>
-                      <li>Prime number with a for loop <span class="complexity">runtime O(n), O(sqrt(n))</span>.</li>
+                      <li>Prime number with a while loop <span class="complexity">runtime O(n)</span></li>
+                      <li>Prime number with a for loop <span class="complexity">runtime O(n), O(sqrt(n))</span></li>
                     </ul>
                   </div>
               </summary>
@@ -244,17 +241,22 @@
                 <dl class="definition">
                   <dt>The Fibonacci numbers</dt>
                   <dd>are the numbers in the following integer sequence, called the Fibonacci sequence,
-                    and characterized by the fact that every number after the first two is the sum of the two preceding one
+                    and characterized by the fact that every number after the first two is the sum of the two preceding
                     <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...</code>
                   </dd>
                 </dl>
+                <div>
+                  <strong>Solutions:</strong>
+                  <ul>
+                    <li>fibonacci with a for loop <span class="complexity">runtime O(n)</span></li>
+                    <li>fibonacci with recursion <span class="complexity">runtime O(2^n)</span></li>
+                  </ul>
+                </div>
               </summary>
               <div aria-hidden="true">
                 <pre><code id="fibonacci"></code></pre>
-                <script>
-                    $('#fibonacci').load('static/js/algorithm/number/fibonacci.js')
-                </script>
-                <script src="static/js/algorithm/number/fibonacci.js"></script>
+                <script>$('#fibonacci').load('static/js/algorithm/number/fibonacci.js')</script>
+                <script src="static/assets/js/prime-factors.compiled.js"></script>
               </div>
           </details>
         </li>

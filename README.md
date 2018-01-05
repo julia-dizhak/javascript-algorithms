@@ -83,7 +83,7 @@ The code in this repository is distributed under the terms of the MIT license.
 ---
 ### TODO:
 
-add level Part -1: beginner
+levels: beginner, medium, ... (like corners)
 
 generate test coverage
 

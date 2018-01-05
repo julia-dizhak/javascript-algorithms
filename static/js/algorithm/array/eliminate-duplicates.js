@@ -26,6 +26,7 @@ let eliminateDuplicates = function(arr) {
         output.push(i);
     }
 
+    // converting string into array integers
     output = output.map((item) => {
         return parseInt(item, 10);
     });

@@ -39,9 +39,27 @@ const primeFactors = num => {
     //     }
     // }
 
-    return factors;
+    // eluminate duplicates
+    let obj = {},
+        len = factors.length,
+        factorsWithoutDuplicate = [];
+
+    for (let i = 0; i < len; i++) {
+        obj[factors[i]] = 0;
+    }
+
+    for (let j in obj) {
+        factorsWithoutDuplicate.push(j);
+    }
+
+    // converting string into array integers
+    factorsWithoutDuplicate = factorsWithoutDuplicate.map((item) => {
+        return parseInt(item, 10);
+    });
+
+    return factorsWithoutDuplicate;
 
 };
-console.log('primeFactors -->', primeFactors(98)); // --> [2,7,7]?
+console.log('primeFactors -->', primeFactors(98)); // --> [2,7]
 
 export { primeFactors };

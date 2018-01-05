@@ -37,12 +37,14 @@
         var factors = [],
             divisor = 2;
 
-        while (num > 2) {
-            if (num % divisor === 0) {
-                factors.push(divisor);
-                num = num / divisor;
-            } else {
-                divisor++;
+        if (num > 2) {
+            while (num > 2) {
+                if (num % divisor === 0) {
+                    factors.push(divisor);
+                    num = num / divisor;
+                } else {
+                    divisor++;
+                }
             }
         }
 
@@ -54,9 +56,29 @@
         //     }
         // }
 
-        return factors;
+        //
+        var obj = {},
+            len = factors.length,
+            factors1 = [];
+
+        for (var i = 0; i < len; i++) {
+            obj[factors[i]] = 0;
+        }
+
+        //console.log(obj);
+
+        for (var j in obj) {
+            factors1.push(j);
+        }
+
+        factors1 = factors1.map(function (item) {
+            return parseInt(item, 10);
+        });
+
+        console.log(factors1);
+        return factors1;
     };
-    console.log('primeFactors -->', primeFactors(11));
+    console.log('primeFactors -->', primeFactors(98)); // --> [2,7,7]?
 
     exports.primeFactors = primeFactors;
 });
