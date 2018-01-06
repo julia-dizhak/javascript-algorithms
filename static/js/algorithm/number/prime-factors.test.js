@@ -1,4 +1,4 @@
-import { primeFactors} from './prime-factors';
+import { primeFactors } from './prime-factors';
 
 describe('prime factors test case', () => {
 

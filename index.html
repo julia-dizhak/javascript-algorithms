@@ -54,6 +54,7 @@
           <ol>
             <li>How would you verify a prime number?</li>
             <li>How could you find all prime factors of a number? (<span class="test">test</span>)</li>
+            <li>How would you find the greatest common divisor of two numbers?</li>
             <li>How do get nth Fibonacci number? (<span class="level-beginner">beginner</span>)</li>
             <li>Factorialize a Number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
             <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' (<span class="test">test</span>).</li>
@@ -185,7 +186,7 @@
     <div class="container">
       <header class="head">
         <h2 class="title">Number</h2>
-        <span class="num">6</span>
+        <span class="num">7</span>
       </header>
 
       <ol>
@@ -207,9 +208,7 @@
               </summary>
               <div aria-hidden="true">
                 <pre><code id="prime-number"></code></pre>
-                <script>
-                    $('#prime-number').load('static/js/algorithm/number/prime-number.js')
-                </script>
+                <script>$('#prime-number').load('static/js/algorithm/number/prime-number.js')</script>
               </div>
           </details>
         </li>
@@ -226,9 +225,32 @@
               </summary>
               <div aria-hidden="true">
                 <pre><code id="prime-factors"></code></pre>
-                <script>
-                    $('#prime-factors').load('static/js/algorithm/number/prime-factors.js')
-                </script>
+                <script>$('#prime-factors').load('static/js/algorithm/number/prime-factors.js')</script>
+              </div>
+          </details>
+        </li>
+
+        <li>
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+                <span>Question: <strong>How would you find the greatest common divisor of two numbers</strong></span>
+                <span class="complexity"></span>
+                <dl class="definition">
+                  <dt>The greatest common divisor</dt>
+                  <dd>In mathematics, the gcd of two or more integers, which are not all zero, is the largest positive integer that divides each of integers.</dd>
+                </dl>
+              <div>
+                  <strong>Solutions:</strong>
+                  <ul>
+                    <li>with a while loop <span class="complexity">runtime O(n)</span></li>
+                    <li>with recursion <span class="complexity">runtime O(2^n)</span></li>
+                  </ul>
+                </div>
+              </summary>
+              <div aria-hidden="true">
+                <pre><code id="gcd"></code></pre>
+                <script>$('#gcd').load('static/js/algorithm/number/gcd.js')</script>
+                <script src="static/js/algorithm/number/gcd.js"></script>
               </div>
           </details>
         </li>
@@ -256,7 +278,6 @@
               <div aria-hidden="true">
                 <pre><code id="fibonacci"></code></pre>
                 <script>$('#fibonacci').load('static/js/algorithm/number/fibonacci.js')</script>
-                <script src="static/assets/js/prime-factors.compiled.js"></script>
               </div>
           </details>
         </li>
