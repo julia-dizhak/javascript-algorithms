@@ -45,7 +45,8 @@
           <ol>
             <li>Merge two sorted arrays (<span class="test">test</span>).</li>
             <li>Find an index in array.</li>
-            <li>Eliminate all duplicates in array.</li>
+            <li><a href="#is-remove-duplicates">Eliminate (remove) all duplicates in array.</a> (<span class="test">test</span>)</li>
+            <li><a href="#is-increase-last-element">Find last element in array and increase (+1) using addition rules</a></li>
           </ol>
         </li>
 
@@ -132,10 +133,7 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Find duplicates in array:
-              </span>
+              <span>Question:<strong>Find duplicates in array:</strong></span>
               <ul>
                 <li>find duplicates in array if only one duplicate is possible;</li>
                 <li>find all duplicates in array (multiply duplicates);</li>
@@ -151,10 +149,10 @@
           </details>
         </li>
 
-        <li>
+        <li id="is-remove-duplicates">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>Question: <strong>Eliminate all duplicates in array</strong> <span class="complexity">runtime O(1)</span>.</span>
+              <span>Question: <strong>How would you remove (eliminate) duplicate members from an array</strong> <span class="complexity">runtime O(1)</span>.</span>
             </summary>
               <div aria-hidden="true">
                 <pre><code id="eliminate-duplicates"></code></pre>
@@ -163,19 +161,15 @@
           </details>
         </li>
 
-        <li>
+        <li id="is-increase-last-element">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Find last element in array and increase (+1) using addition rules.
-              </span>
+              <span>Question: <strong>Find last element in array and increase (+1) using addition rules</strong></span>
+              <span class="complexity">runtime O(n)</span>.
             </summary>
             <div aria-hidden="true">
               <pre><code id="increase-last-element"></code></pre>
-              <script>
-                  $('#increase-last-element').load('static/js/algorithm/array/increase-last-element-using-addition-rules.js')
-              </script>
+              <script>$('#increase-last-element').load('static/js/algorithm/array/increase-last-element-using-addition-rules.js')</script>
             </div>
           </details>
         </li>

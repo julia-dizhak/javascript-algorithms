@@ -12,19 +12,31 @@
 'use strict';
 
 // runtime O(1)
-let eliminateDuplicates = function(arr) {
+// will start a while looping and keep an object/associated array.
+// If I find an element for the first time, I will set it is value as true (that will tell me element added once.).
+// If I find an element in the exists object, I will not insert it into the return array.
+const eliminateDuplicates = (arr) => {
     let len = arr.length,
         output = [],
-        obj = {};
+        exists = {},
+        element;
 
     for (let i = 0; i < len; i++) {
-        obj[arr[i]] = 0; // obj['p']
-    }
-    //console.log(obj);
+        element = arr[i];
 
-    for (let i in obj) {
-        output.push(i);
+        if (!exists[element]) {
+            output.push(element);
+            exists[element] = true;
+        }
     }
+
+    // 2 for loops
+    //for (let i = 0; i < len; i++) {
+    //     exists[arr[i]] = 0; // exists['p']
+    // }
+    // for (let i in exists) {
+    //     output.push(i);
+    // }
 
     // converting string into array integers
     output = output.map((item) => {
@@ -35,3 +47,5 @@ let eliminateDuplicates = function(arr) {
 };
 
 console.log('eliminateDuplicates -->', eliminateDuplicates([4,3,1,11,2,7,8,2,3,2,1,1,1]));
+
+export { eliminateDuplicates };

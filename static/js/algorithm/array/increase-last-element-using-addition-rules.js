@@ -1,12 +1,11 @@
 /**
  * Find last element in array and increase (+1) using addition rules.
+ *
  * Input --> Output:
  * [1,9] --> [2,0]
  * [1,2,3] --> [1,2,4]
  * [9,9,9] --> [1,0,0,0]
- */
 
-/**
  * @param {array[number]}
  * @return {array[number]}
  *
@@ -43,5 +42,3 @@ const increaseLastElement = function(arr) {
 console.log(increaseLastElement([1,2,3]), [1, 2, 4] );
 console.log(increaseLastElement([1,2, 3, 9]), [1, 2, 4, 0]);
 console.log(increaseLastElement([9, 9, 9]), [1, 0, 0, 0]);
-
-
