@@ -1,21 +1,40 @@
-import { greatestCommonDivisor } from './gcd';
+import { greatestCommonDivisor, euclideanWithRecursion } from './gcd';
 
 describe('greatest common divisor test case', () => {
 
     it('trick case: a = b', ()  => {
-        expect(greatestCommonDivisor(3, 3)).toEqual(3);
+        let a = 3,
+            b = 3,
+            gcd = 3;
+
+        expect(greatestCommonDivisor(a, b)).toEqual(gcd);
+        expect(euclideanWithRecursion(a, b)).toEqual(gcd);
     });
 
     it('first argument is a prime', () => {
-        expect(greatestCommonDivisor(37, 600)).toEqual(1);
+        let a = 73,
+            b = 600,
+            gcd = 1;
+
+        expect(greatestCommonDivisor(a, b)).toEqual(gcd);
+        expect(euclideanWithRecursion(a, b)).toEqual(gcd);
     });
 
     it('one is multiplum of other', () => {
-        expect(greatestCommonDivisor(20, 100)).toEqual(20);
+        let a = 20,
+            b = 100,
+            gcd = 20;
+
+        expect(greatestCommonDivisor(a, b)).toEqual(gcd);
+        expect(euclideanWithRecursion(a, b)).toEqual(gcd);
     });
 
     it('straight case', () => {
-        expect(greatestCommonDivisor(624129, 2061517)).toEqual(18913);
+        let a = 624129,
+            b = 2061517,
+            gcd = 18913;
+        expect(greatestCommonDivisor(a, b)).toEqual(gcd);
+        expect(greatestCommonDivisor(a, b)).toEqual(gcd);
     });
 });
 
