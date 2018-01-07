@@ -52,11 +52,12 @@
         <li>
           <h3>Number</h3>
           <ol>
-            <li>How would you verify a prime number?</li>
-            <li>How could you find all prime factors of a number? (<span class="test">test</span>)</li>
+            <li><a href="#is-prime">How would you verify a prime number?</a></li>
+            <li><a href="#are-prime-factors">How could you find all prime factors of a number?</a>(<span class="test">test</span>)</li>
             <li>How would you find the greatest common divisor of two numbers: with while loop, with for loop, euclidean + euclidean with recursion (<span class="test">test</span>)</li>
             <li>How do get nth Fibonacci number? (<span class="level-beginner">beginner</span>)</li>
-            <li>Factorialize a Number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
+            <li>Factorialize a number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
+            <li>Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].</li>
             <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' (<span class="test">test</span>).</li>
           </ol>
         </li>
@@ -190,10 +191,10 @@
       </header>
 
       <ol>
-        <li>
+        <li id="is-prime">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-                <span>Question:<strong>How would you verify a prime number?</strong></span>
+                <span>Question: <strong>How would you verify a prime number?</strong></span>
                 <dl class="definition">
                   <dt>Prime number</dt>
                   <dd>is a natural number greater than 1 and only divisible by itself</dd>
@@ -213,7 +214,7 @@
           </details>
         </li>
 
-        <li>
+        <li id="are-prime-factors">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
                 <span>Question: <strong>How could you find all prime factors of a number?</strong></span>
@@ -285,10 +286,7 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Three ways to Factorialize a Number in js: return the factorial of the provided integer.
-              </span>
+              <span>Question: <strong>Three ways to factorialize a Number in js: return the factorial of the provided integer.</strong></span>
               <dl class="definition">
                 <dt>Factorial</dt>
                 <dd>is product of every whole number from 1 to n. For example, if n is 3 then <code>3! is 3 x 2 x 1 = 6</code></dd>
@@ -308,9 +306,7 @@
             </summary>
             <div aria-hidden="true">
               <pre><code id="factorial"></code></pre>
-              <script>
-                  $('#factorial').load('static/js/algorithm/number/factorialize.js')
-              </script>
+              <script>$('#factorial').load('static/js/algorithm/number/factorialize.js')</script>
             </div>
           </details>
         </li>
@@ -318,16 +314,11 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].
-              </span>
+              <span>Question: <strong>Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].</strong></span>
             </summary>
             <div aria-hidden="true">
               <pre><code id="numbers-sum-of-two-cubes"></code></pre>
-              <script>
-                  $('#numbers-sum-of-two-cubes').load('static/js/algorithm/number/sum-of-two-cubes.js')
-              </script>
+              <script>$('#numbers-sum-of-two-cubes').load('static/js/algorithm/number/sum-of-two-cubes.js')</script>
             </div>
           </details>
         </li>
@@ -335,16 +326,12 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                <span>
-                  <strong>Question:</strong>
-                  Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.
-                </span>
+                <span>Question: <strong>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.</strong></span>
+                <span class="complexity">runtime O(n^4), runtime O(n^3), runtime O(n^2)</span>
               </summary>
               <div aria-hidden="true">
                 <pre><code id="number-by-alphabet-code"></code></pre>
-                <script>
-                    $('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')
-                </script>
+                <script>$('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')</script>
               </div>
           </details>
         </li>

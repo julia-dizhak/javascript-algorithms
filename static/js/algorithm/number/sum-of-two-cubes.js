@@ -8,7 +8,7 @@
 
 'use strict';
 
-// Runtime O(n^4), n = 1000
+// runtime O(n^4), n = 1000
 function defineSumOfTwoCubesRuntimeFour(n) {
     let counter = 0;
 
@@ -27,9 +27,9 @@ function defineSumOfTwoCubesRuntimeFour(n) {
         }
     }
 }
-// defineSumOfTwoCubesRuntimeFour(10);
+consolw.log(defineSumOfTwoCubesRuntimeFour(10));
 
-// Runtime O(n^3)
+// runtime O(n^3)
 function defineSumOfTwoCubesRuntimeThree(n) {
     let counter = 0;
 
@@ -48,7 +48,7 @@ function defineSumOfTwoCubesRuntimeThree(n) {
 }
 // defineSumOfTwoCubesRuntimeThree(10);
 
-// Runtime O(n:^2)
+// runtime O(n^2)
 function defineSumOfTwoCubesRuntimeTwo(n) {
     let counter = 0;
     let result = {}, data;

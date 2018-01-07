@@ -31,7 +31,9 @@ Zenburn.css.
 
 ---
 ### Number
-Is number a prime / runtime O(n), runtime O(sqrt(n))
+Is number a prime / runtime O(n), O(sqrt(n))
+
+How could you find all prime factors of a number? / runtime O(n), O(Math.log2(n))
 
 Find unique symbol in string / runtime O(n), runtime O(1)
 
