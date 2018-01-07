@@ -11,14 +11,13 @@
 
 'use strict';
 
-const mergeSortedArrays = (arr1,arr2) => {
+const mergeSortedArrays = (arr1, arr2) => {
     let i = 0, // initial index for the first array
-        j = 0, // initial index for the second array
+        j = 0, // initial index for the second array,
         result = [];
 
     const len1 = arr1.length,
         len2 = arr2.length;
-
 
     while (i < len1 && j < len2 ) {
         if (arr1[i] < arr2[j]) {
@@ -39,6 +38,43 @@ const mergeSortedArrays = (arr1,arr2) => {
     }
 
     return result;
+};
+
+// other solution
+const mergeSortedArrays1 = (arr1, arr2) => {
+    let i = 1,
+        j = 1,
+        firstArr1 = arr1[0],
+        firstArr2 = arr2[0],
+        merged = [];
+
+    const len1 = arr1.length,
+        len2 = arr2.length;
+
+    // case if one array is empty
+    if (len1 === 0) {
+        return arr2;
+    }
+    if (len2 === 0) {
+        return arr1;
+    }
+
+    // if firstArr1 or firstArr2 exists we will insert to merged array
+    // will go inside while loop
+    // to insert: firstArr1 exists and firstArr2 doesn't exists
+    // or both exists and firstArr1 < firstArr2
+    // this is the critical part of the example
+    while(firstArr1 || firstArr2) {
+        if ( (firstArr1 && !firstArr2) || firstArr1 < firstArr2 ) {
+            merged.push(firstArr1);
+            firstArr1 = arr1[i++];
+        } else {
+            merged.push(firstArr2);
+            firstArr2 = arr2[j++];
+        }
+    }
+
+    return merged;
 };
 
 console.log('mergeSortedArrays', mergeSortedArrays([1, 2, 4, 6], [3, 7, 9]));

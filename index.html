@@ -43,8 +43,8 @@
         <li>
           <h3>Array</h3>
           <ol>
-            <li>Merge two sorted arrays (<span class="test">test</span>).</li>
-            <li>Find an index in array.</li>
+            <li><a href="#is-sorted">Merge two sorted arrays.</a> (<span class="test">test</span>)</li>
+            <li><a href="#is-find-index">Find an index in array</a>.</li>
             <li><a href="#is-remove-duplicates">Eliminate (remove) all duplicates in array.</a> (<span class="test">test</span>)</li>
             <li><a href="#is-increase-last-element">Find last element in array and increase (+1) using addition rules</a></li>
           </ol>
@@ -94,38 +94,32 @@
       </header>
 
       <ol>
-        <li>
+        <li id="is-sorted">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Merge two sorted arrays.
-              </span>
+              <span>Question: <strong>Merge two sorted arrays</strong></span>
+              <span class="complexity">runtime O(n)</span>.
             </summary>
             <div aria-hidden="true">
               <pre><code id="merge-sorted"></code></pre>
-              <script>
-                  $('#merge-sorted').load('static/js/algorithm/array/merge-sorted-arrays.js')
-              </script>
+              <script>$('#merge-sorted').load('static/js/algorithm/array/merge-sorted-arrays.js')</script>
             </div>
           </details>
         </li>
 
-        <li>
+        <li id="is-find-index">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Linear search (find an index in array).
+              <span> Question:
+                <strong>Linear search (find an index in array).</strong>
                 In this type of search, a sequential search is made over all items one by one.
-                Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection.
+                Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection
               </span>
+              <span class="complexity">runtime O(n)</span>.
             </summary>
             <div aria-hidden="true">
               <pre><code id="linear-search"></code></pre>
-              <script>
-                  $('#linear-search').load('static/js/algorithm/array/linear-search.js')
-              </script>
+              <script>$('#linear-search').load('static/js/algorithm/array/linear-search.js')</script>
             </div>
           </details>
         </li>
@@ -133,7 +127,7 @@
         <li>
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>Question:<strong>Find duplicates in array:</strong></span>
+              <span>Question: <strong>Find duplicates in array:</strong></span>
               <ul>
                 <li>find duplicates in array if only one duplicate is possible;</li>
                 <li>find all duplicates in array (multiply duplicates);</li>
