@@ -43,8 +43,16 @@
         <li>
           <h3>Array</h3>
           <ol>
-            <li><a href="#is-sorted">Merge two sorted arrays.</a> (<span class="test">test</span>)</li>
+            <li>
+              <a href="#is-sorted">Merge two sorted arrays.</a>
+              (<span class="test">test</span>)
+            </li>
             <li><a href="#is-find-index">Find an index in array</a>.</li>
+            <li>
+              <a href="#is-clone-array">Duplicate / clone an array: method slice, with for loop, with for loop fixed size</a>
+              (<span class="level-beginner">beginner</span>
+              <span class="test">test</span>).
+            </li>
             <li><a href="#is-remove-duplicates">Eliminate (remove) all duplicates in array.</a> (<span class="test">test</span>)</li>
             <li><a href="#is-increase-last-element">Find last element in array and increase (+1) using addition rules</a></li>
           </ol>
@@ -60,6 +68,12 @@
             <li>Factorialize a number: with recursion, a while loop, a for loop (<span class="test">test</span>).</li>
             <li>Print all positive solutions to the equation a^3+b^3 = c^3 + d^3, where a, b, c, d lie between [0, 10^5].</li>
             <li>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax' (<span class="test">test</span>).</li>
+            <li>
+              <a href="#is-fizzbuzz">
+                Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,"buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5
+              </a>
+              <span class="level-beginner">beginner</span>
+            </li>
           </ol>
         </li>
 
@@ -90,7 +104,7 @@
     <div class="container">
       <header class="head">
         <h2 class="title">Array</h2>
-        <span class="num">5</span>
+        <span class="num">6</span>
       </header>
 
       <ol>
@@ -120,6 +134,24 @@
             <div aria-hidden="true">
               <pre><code id="linear-search"></code></pre>
               <script>$('#linear-search').load('static/js/algorithm/array/linear-search.js')</script>
+            </div>
+          </details>
+        </li>
+
+        <li id="is-clone-array">
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span>Question: <strong>clone (or duplicate) an array:</strong></span>
+              <ul>
+                <li>slice method <span class="complexity">O(1)</span></li>
+                <li>for loop <span class="complexity">O(n)</span></li>
+                <li>for loop with fixed size <span class="complexity">O(n)</span></li>
+              </ul>
+            </summary>
+            <div aria-hidden="true">
+              <pre><code id="clone-array"></code></pre>
+              <script>$('#clone-array').load('static/js/algorithm/array/clone-array.js')</script>
+              <script src="static/assets/js/clone-array.compiled.js"></script>
             </div>
           </details>
         </li>
@@ -175,7 +207,7 @@
     <div class="container">
       <header class="head">
         <h2 class="title">Number</h2>
-        <span class="num">7</span>
+        <span class="num">8</span>
       </header>
 
       <ol>
@@ -320,6 +352,21 @@
               <div aria-hidden="true">
                 <pre><code id="number-by-alphabet-code"></code></pre>
                 <script>$('#number-by-alphabet-code').load('static/js/algorithm/number/translate-number-by-alphabet.js')</script>
+              </div>
+          </details>
+        </li>
+
+        <li id="is-fizzbuzz">
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                <span>Question: <strong>Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,
+                  "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5</strong>
+                </span>
+                <span class="complexity">runtime O(n)</span>.
+              </summary>
+              <div aria-hidden="true">
+                <pre><code id="fizz-buzz"></code></pre>
+                <script>$('#fizz-buzz').load('static/js/algorithm/number/fizz-buzz.js')</script>
               </div>
           </details>
         </li>
