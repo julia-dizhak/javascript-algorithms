@@ -8,7 +8,7 @@
             exports: {}
         };
         factory(mod.exports);
-        global.cloneArray = mod.exports;
+        global.clone = mod.exports;
     }
 })(this, function (exports) {
     /**

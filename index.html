@@ -40,19 +40,31 @@
     <div class="container">
       <h2>List of questions:</h2>
       <ul>
+
         <li>
-          <h3>Array</h3>
+          <header class="head">
+            <h3 class="title">Array</h3>
+            <span class="num">6</span>
+          </header>
           <ol>
             <li>
               <a href="#is-sorted">Merge two sorted arrays.</a>
-              (<span class="complexity">O(n)</span>, <span class="test">test</span>)
+              (<span class="complexity">O(n)</span>, <span class="test">test</span>).
             </li>
+
             <li><a href="#is-find-index">Find an index in array</a>.</li>
+
             <li>
-              <a href="#is-clone-array">Duplicate / clone an array: method slice, with for loop, with for loop fixed size</a>
-              (<span class="level-beginner">beginner</span>
+              <a href="#is-clone-array">
+                Clone or duplicate an array: slice, for loop, for loop fixed size:
+              </a>
+                .slice( )<span class="complexity">O(1)</span>,
+                for loop <span class="complexity">O(n)</span>,
+                for loop with fixed size <span class="complexity">O(n)</span>
+              (<span class="level-beginner">beginner</span>,
               <span class="test">test</span>).
             </li>
+
             <li><a href="#is-remove-duplicates">Eliminate (remove) all duplicates in array.</a> (<span class="test">test</span>)</li>
             <li><a href="#is-increase-last-element">Find last element in array and increase (+1) using addition rules</a></li>
           </ol>
@@ -105,19 +117,14 @@
 
   <div class="data array">
     <div class="container">
-      <header class="head">
-        <h2 class="title">Array</h2>
-        <span class="num">6</span>
-      </header>
-
+      <h2 class="title">Array</h2>
       <ol>
-        <li id="is-sorted">
-          <details role="section" aria-expanded="false" aria-labelledby="label">
+        <li>
+          <details id="is-sorted" role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>Question: <strong>Merge two sorted arrays</strong></span>
-              <span class="complexity">O(n)</span>.
+              <span>Question: <strong>merge two sorted arrays.</strong></span>
             </summary>
-            <div aria-hidden="true">
+            <div>
               <pre>Algorithm: <br> <code id="merge-sorted"></code></pre>
               <script>$('#merge-sorted').load('static/js/algorithm/array/merge-sorted-arrays.js')</script>
               <pre>Test: <br> <code id="merge-sorted-test"></code></pre>
@@ -143,20 +150,17 @@
           </details>
         </li>
 
-        <li id="is-clone-array">
-          <details role="section" aria-expanded="false" aria-labelledby="label">
+        <li>
+          <details id="is-clone-array" role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>Question: <strong>clone (or duplicate) an array:</strong></span>
-              <ul>
-                <li>slice method <span class="complexity">O(1)</span></li>
-                <li>for loop <span class="complexity">O(n)</span></li>
-                <li>for loop with fixed size <span class="complexity">O(n)</span></li>
-              </ul>
+              <span>Question: <strong>clone an array.</strong></span>
             </summary>
-            <div aria-hidden="true">
-              <pre><code id="clone-array"></code></pre>
-              <script>$('#clone-array').load('static/js/algorithm/array/clone-array.js')</script>
-              <script src="static/assets/js/clone-array.compiled.js"></script>
+            <div>
+              <pre>Algorithm: <br> <code id="clone-array"></code></pre>
+              <script>$('#clone-array').load('static/js/algorithm/array/clone.js')</script>
+              <script src="static/assets/js/clone.compiled.js"></script>
+              <pre>Test: <br> <code id="clone-array-test"></code></pre>
+              <script>$('#clone-array-test').load('static/js/algorithm/array/clone.test.js')</script>
             </div>
           </details>
         </li>
@@ -521,8 +525,25 @@
       $('pre code').each(function(i, element){ hljs.highlightBlock(element) });
   });
 </script>
-<script>
 
+<script>
+  // automatically open details element on ID call
+  function openTarget() {
+      let hash = location.hash.substring(1),
+          details = document.getElementsByTagName('details');
+
+      if (hash) {
+          var detail = document.getElementById(hash);
+      }
+
+      if (detail && detail.tagName.toLowerCase() === 'details') {
+          details.hidden = true;
+          detail.open = true;
+      } else {
+          //detais.hidden = true;
+      }
+  }
+  window.addEventListener('hashchange', openTarget);
 </script>
 
 </body>
