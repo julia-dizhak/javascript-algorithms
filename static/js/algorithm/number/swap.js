@@ -20,7 +20,18 @@ const swapNumber = (a, b) => {
 
 };
 
-console.log('after swap: b, a --> ', swapNumber(3, 4));
+//console.log('after swap: b, a --> ', swapNumber(3, 4));
 
-const swapNumberWithTemp = (a,b)
+// O(1)
+const swapNumberWithTemp = (a, b) => {
+    let temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    return [a, b];
+};
+
+console.log('after swap: b, a --> ', swapNumberWithTemp(3, 4));
 //export { reverseWithDecrementingLForLoop, reverseWithRecursion };
