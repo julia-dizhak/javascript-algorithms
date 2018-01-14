@@ -90,18 +90,25 @@
               <span class="level-beginner">beginner</span>
             </li>
             <li>
-              <a href="#is-swap-number">Swap a number with and without a temporary variable (temp)</a>
+              <a href="#is-swap-number">Swap a number with and without a temporary variable (temp), destructuring assignment array matching([a, b] = [b, a])</a>
               (<span class="complexity">O(1)</span>, but with a temp variable the memory space will be bigger).
             </li>
           </ol>
         </li>
 
         <li>
-          <h3>String</h3>
+          <header class="head">
+            <h3 class="title">String</h3>
+            <span class="num">5</span>
+          </header>
           <ol>
             <li>Count the number of occurrences of all characters in a string.</li>
             <li>Check if is given string is a palindrome with ignoring spaces, e.g. 'race car' would be palindrome.</li>
-            <li>Three ways to reverse a string: with in-build method <code>.reverse()</code>, a decrementing for loop and recursion (<span class="test">test</span>).</li>
+            <li>
+              <a href="#is-reverse-string">Three ways to reverse a string:</a>
+              with in-build method <code>.reverse()</code>, a decrementing for loop <span class="complexity">O(n)</span> and recursion <span class="complexity">O(1) ?</span>
+              (<span class="test">test</span>).
+            </li>
           </ol>
         </li>
       </ul>
@@ -490,23 +497,13 @@
         </li>
 
         <li>
-          <details role="section" aria-expanded="false" aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span>
-                <strong>Question:</strong>
-                Reverse a string.
-              </span>
-              <div>
-                <strong>Solutions:</strong>
-                <ul>
-                  <li>reverse a string with a decrementing for loop <span class="complexity">O(n)</span>.</li>
-                  <li>reverse a string with recursion <span class="complexity">O(1) ?</span>.</li>
-                </ul>
-              </div>
-            </summary>
-            <div aria-hidden="true">
-              <pre><code id="reverse-string"></code></pre>
+          <details id="is-reverse-string" role="section" aria-expanded="false" aria-labelledby="label">
+            <summary role="button" aria-controls="content">Question: <strong>Reverse a string</strong>.</summary>
+            <div>
+              <pre>Algorithm: <br> <code id="reverse-string"></code></pre>
               <script>$('#reverse-string').load('static/js/algorithm/string/reverse.js')</script>
+              <pre>Test: <br> <code id="reverse-string-test"></code></pre>
+              <script>$('#reverse-string-test').load('static/js/algorithm/string/reverse.test.js')</script>
             </div>
           </details>
         </li>
