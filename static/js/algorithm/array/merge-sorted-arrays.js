@@ -40,7 +40,7 @@ const mergeSortedArrays = (arr1, arr2) => {
     return result;
 };
 
-// other solution
+// other solution but also with a loop
 const mergeSortedArrays1 = (arr1, arr2) => {
     let i = 1,
         j = 1,

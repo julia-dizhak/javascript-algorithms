@@ -45,7 +45,7 @@
           <ol>
             <li>
               <a href="#is-sorted">Merge two sorted arrays.</a>
-              (<span class="test">test</span>)
+              (<span class="complexity">O(n)</span>, <span class="test">test</span>)
             </li>
             <li><a href="#is-find-index">Find an index in array</a>.</li>
             <li>
@@ -74,6 +74,9 @@
               </a>
               <span class="level-beginner">beginner</span>
             </li>
+            <li>
+              <a href="#swap-number">Swap a number with a temporary variable</a>
+            </li>
           </ol>
         </li>
 
@@ -82,7 +85,7 @@
           <ol>
             <li>Count the number of occurrences of all characters in a string.</li>
             <li>Check if is given string is a palindrome with ignoring spaces, e.g. 'race car' would be palindrome.</li>
-            <li>Reverse a string: with a decrementing for loop and recursion (<span class="test">test</span>).</li>
+            <li>Three ways to reverse a string: with in-build method <code>.reverse()</code>, a decrementing for loop and recursion (<span class="test">test</span>).</li>
           </ol>
         </li>
       </ul>
@@ -112,11 +115,13 @@
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
               <span>Question: <strong>Merge two sorted arrays</strong></span>
-              <span class="complexity">runtime O(n)</span>.
+              <span class="complexity">O(n)</span>.
             </summary>
             <div aria-hidden="true">
-              <pre><code id="merge-sorted"></code></pre>
+              <pre>Algorithm: <br> <code id="merge-sorted"></code></pre>
               <script>$('#merge-sorted').load('static/js/algorithm/array/merge-sorted-arrays.js')</script>
+              <pre>Test: <br> <code id="merge-sorted-test"></code></pre>
+              <script>$('#merge-sorted-test').load('static/js/algorithm/array/merge-sorted-arrays.test.js')</script>
             </div>
           </details>
         </li>
@@ -129,7 +134,7 @@
                 In this type of search, a sequential search is made over all items one by one.
                 Every item is checked and if a match is found then that particular item is returned, otherwise the search continues till the end of the data collection
               </span>
-              <span class="complexity">runtime O(n)</span>.
+              <span class="complexity">O(n)</span>.
             </summary>
             <div aria-hidden="true">
               <pre><code id="linear-search"></code></pre>
@@ -178,7 +183,7 @@
         <li id="is-remove-duplicates">
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
-              <span>Question: <strong>How would you remove (eliminate) duplicate members from an array</strong> <span class="complexity">runtime O(1)</span>.</span>
+              <span>Question: <strong>How would you remove (eliminate) duplicate members from an array</strong> <span class="complexity">O(1)</span>.</span>
             </summary>
               <div aria-hidden="true">
                 <pre><code id="eliminate-duplicates"></code></pre>
@@ -191,7 +196,7 @@
           <details role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
               <span>Question: <strong>Find last element in array and increase (+1) using addition rules</strong></span>
-              <span class="complexity">runtime O(n)</span>.
+              <span class="complexity">O(n)</span>.
             </summary>
             <div aria-hidden="true">
               <pre><code id="increase-last-element"></code></pre>
@@ -222,8 +227,8 @@
                 <div>
                     <strong>Solutions:</strong>
                     <ul>
-                      <li>Prime number with a while loop <span class="complexity">runtime O(n)</span></li>
-                      <li>Prime number with a for loop <span class="complexity">runtime O(n), O(sqrt(n))</span></li>
+                      <li>Prime number with a while loop <span class="complexity">O(n)</span></li>
+                      <li>Prime number with a for loop <span class="complexity">O(n), O(sqrt(n))</span></li>
                     </ul>
                   </div>
               </summary>
@@ -264,7 +269,7 @@
                   <strong>Solutions:</strong>
                   <ul>
                     <li>with a while loop, with for loop</li>
-                    <li>Euclidean with recursion <span class="complexity">runtime O(2^n)</span></li>
+                    <li>Euclidean with recursion <span class="complexity">O(2^n)</span></li>
                     <li>Lehmer's gcd algorithm ?</li>
                   </ul>
                 </div>
@@ -291,8 +296,8 @@
                 <div>
                   <strong>Solutions:</strong>
                   <ul>
-                    <li>fibonacci with a for loop <span class="complexity">runtime O(n)</span></li>
-                    <li>fibonacci with recursion <span class="complexity">runtime O(2^n)</span></li>
+                    <li>fibonacci with a for loop <span class="complexity">O(n)</span></li>
+                    <li>fibonacci with recursion <span class="complexity">O(2^n)</span></li>
                   </ul>
                 </div>
               </summary>
@@ -347,7 +352,7 @@
           <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
                 <span>Question: <strong>Translate a number by alphabetic code to a string, for example, solutions(123) --> 'abc', 'mc', 'ax'.</strong></span>
-                <span class="complexity">runtime O(n^4), runtime O(n^3), runtime O(n^2)</span>
+                <span class="complexity">O(n^4), O(n^3), O(n^2)</span>
               </summary>
               <div aria-hidden="true">
                 <pre><code id="number-by-alphabet-code"></code></pre>
@@ -359,14 +364,28 @@
         <li id="is-fizzbuzz">
           <details role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                <span>Question: <strong>Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,
+                <span>Question: <strong>create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,
                   "buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5</strong>
                 </span>
-                <span class="complexity">runtime O(n)</span>.
+                <span class="complexity">O(n)</span>.
               </summary>
               <div aria-hidden="true">
                 <pre><code id="fizz-buzz"></code></pre>
                 <script>$('#fizz-buzz').load('static/js/algorithm/number/fizz-buzz.js')</script>
+              </div>
+          </details>
+        </li>
+
+        <li id="is-swap-number">
+          <details role="section" aria-expanded="false" aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                <span>Question: <strong>swap number without temp</strong></span>
+                <span class="complexity">O(n)?</span>.
+              </summary>
+              <div aria-hidden="true">
+                <pre><code id="swap-number"></code></pre>
+                <script>$('#fizz-buzz').load('static/js/algorithm/number/swap.js')</script>
+                <script src="static/js/algorithm/number/swap.js"></script>
               </div>
           </details>
         </li>
@@ -453,7 +472,7 @@
             <summary role="button" aria-controls="content">
               <span>
                 <strong>Question:</strong>
-                Check if is given string is a palindrome with ignoring spaces, e.g. 'race car' would be palindrome <span class="complexity">runtime O(n)</span>.
+                Check if is given string is a palindrome with ignoring spaces, e.g. 'race car' would be palindrome <span class="complexity">O(n)</span>.
               </span>
               <dl class="definition">
                 <dt>Palindrome</dt>
@@ -477,8 +496,8 @@
               <div>
                 <strong>Solutions:</strong>
                 <ul>
-                  <li>reverse a string with a decrementing for loop <span class="complexity">runtime O(n)</span>.</li>
-                  <li>reverse a string with recursion <span class="complexity">runtime O(n)</span>.</li>
+                  <li>reverse a string with a decrementing for loop <span class="complexity">O(n)</span>.</li>
+                  <li>reverse a string with recursion <span class="complexity">O(1) ?</span>.</li>
                 </ul>
               </div>
             </summary>
@@ -497,9 +516,13 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 <script>
+  // highlight the code
   $(function() {
       $('pre code').each(function(i, element){ hljs.highlightBlock(element) });
   });
+</script>
+<script>
+
 </script>
 
 </body>

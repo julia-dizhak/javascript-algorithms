@@ -23,7 +23,7 @@ const reverseWithDecrementingLForLoop = (str) => {
 
 //console.log(reverseWithDecrementingLForLoop('Hello'));
 
-// runtime O(n)
+// runtime O(1)?
 const reverseWithRecursion = (str) => {
     str = str.toLowerCase();
     if (str === '') { // this is the terminal case that will end the recursion
