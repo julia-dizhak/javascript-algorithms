@@ -56,7 +56,7 @@
 
             <li>
               <a href="#is-clone-array">
-                Clone or duplicate an array: slice, for loop, for loop fixed size:
+                Clone an array: slice, for loop, for loop fixed size:
               </a>
                 .slice( )<span class="complexity">O(1)</span>,
                 for loop <span class="complexity">O(n)</span>,
@@ -71,7 +71,10 @@
         </li>
 
         <li>
-          <h3>Number</h3>
+          <header class="head">
+            <h3 class="title">Number</h3>
+            <span class="num">9</span>
+          </header>
           <ol>
             <li><a href="#is-prime">How would you verify a prime number?</a></li>
             <li><a href="#are-prime-factors">How could you find all prime factors of a number?</a>(<span class="test">test</span>)</li>
@@ -87,7 +90,8 @@
               <span class="level-beginner">beginner</span>
             </li>
             <li>
-              <a href="#swap-number">Swap a number with a temporary variable</a>
+              <a href="#is-swap-number">Swap a number with and without a temporary variable (temp)</a>
+              (<span class="complexity">O(1)</span>, but with a temp variable the memory space will be bigger).
             </li>
           </ol>
         </li>
@@ -214,11 +218,7 @@
 
   <div class="data number">
     <div class="container">
-      <header class="head">
-        <h2 class="title">Number</h2>
-        <span class="num">8</span>
-      </header>
-
+      <h2 class="title">Number</h2>
       <ol>
         <li id="is-prime">
           <details role="section" aria-expanded="false" aria-labelledby="label">
@@ -380,15 +380,14 @@
           </details>
         </li>
 
-        <li id="is-swap-number">
-          <details role="section" aria-expanded="false" aria-labelledby="label">
+        <li>
+          <details id="is-swap-number" role="section" aria-expanded="false" aria-labelledby="label">
               <summary role="button" aria-controls="content">
-                <span>Question: <strong>swap number without temp</strong></span>
-                <span class="complexity">O(n)?</span>.
+                <span>Question: <strong>swap number without temp and with temp</strong></span>.
               </summary>
-              <div aria-hidden="true">
-                <pre><code id="swap-number"></code></pre>
-                <script>$('#fizz-buzz').load('static/js/algorithm/number/swap.js')</script>
+              <div>
+                <pre>Algorithm: <br> <code id="swap-number"></code></pre>
+                <script>$('#swap-number').load('static/js/algorithm/number/swap.js')</script>
                 <script src="static/js/algorithm/number/swap.js"></script>
               </div>
           </details>

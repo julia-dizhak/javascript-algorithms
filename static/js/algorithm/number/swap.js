@@ -8,22 +8,19 @@
 
 'use strict';
 
-// runtime O(n)?
+// runtime O(1)
 const swapNumber = (a, b) => {
     console.log('before swap: ','a: ', a, 'b: ', b);
     b = b - a; // b = 4 - 3 -> 1
-
-    console.log(b);
-
     a = a + b; // a = 3 + 1 = 4 -> b
     b = a - b; // b = 4 - 1 = 3 -> a
 
-    console.log('after swap: ','a: ', b, 'b: ', a);
-
-    a = a ^ b;
+    return [a, b];
+    //a = a ^ b;
 
 };
 
-console.log(swapNumber(3, 4));
+console.log('after swap: b, a --> ', swapNumber(3, 4));
 
+const swapNumberWithTemp = (a,b)
 //export { reverseWithDecrementingLForLoop, reverseWithRecursion };
