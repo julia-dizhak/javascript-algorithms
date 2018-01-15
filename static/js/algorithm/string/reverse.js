@@ -11,19 +11,21 @@
 // runtime O(n)
 const reverseWithDecrementingLForLoop = (str) => {
     const len = str.length - 1;
-    let result = [],
-        newString = '';
+    let result = [];
+        //newString = '';
 
-    if (str !== '') {
-        for (let i = len; i >= 0; i--) {
-            result.push(str[i]);
-            //newString += str[i];
-            //newString = newString + i;
-        }
-
-        //return newString;
-        return result.join('').toLowerCase();
+    if (!str || typeof str != 'string' || str.length < 2) {
+        return str;
     }
+
+    for (let i = len; i >= 0; i--) {
+        result.push(str[i]);
+        //newString += str[i];
+        //newString = newString + i;
+    }
+
+    //return newString;
+    return result.join('').toLowerCase();
 };
 
 //console.log(reverseWithDecrementingLForLoop('Hello'));
