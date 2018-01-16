@@ -19,7 +19,7 @@ const reverseWithDecrementingLForLoop = (str) => {
     }
 
     for (let i = len; i >= 0; i--) {
-        result.push(str[i]);
+        result.push(str[i]); // perform better
         //newString += str[i];
         //newString = newString + i;
     }

@@ -65,6 +65,16 @@ body {
 .definition {
     color: purple;
 }
+.definition dt,
+.definition dd {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+.definition dd {
+    font-size: 1.1em;
+}
 
 .head {
     margin: 0 0 10px 0;

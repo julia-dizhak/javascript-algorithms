@@ -76,7 +76,11 @@
             <span class="num">9</span>
           </header>
           <ol>
-            <li><a href="#is-prime">How would you verify a prime number?</a></li>
+            <li>
+              <a href="#is-prime">How would you verify a prime numbe: with a while loop <span class="complexity">O(n)</span>, for loop <span class="complexity">O(n), O(sqrt(n))</span></a>
+              <dl class="definition"><dt>Prime number</dt> <dd>is a natural number greater than 1 and only divisible by itself.</dd></dl>
+            </li>
+
             <li><a href="#are-prime-factors">How could you find all prime factors of a number?</a>(<span class="test">test</span>)</li>
             <li>How would you find the greatest common divisor of two numbers: with while loop, with for loop, euclidean + euclidean with recursion (<span class="test">test</span>)</li>
             <li>How do get nth Fibonacci number? (<span class="level-beginner">beginner</span>)</li>
@@ -90,8 +94,9 @@
               <span class="level-beginner">beginner</span>
             </li>
             <li>
-              <a href="#is-swap-number">Swap a number with and without a temporary variable (temp), destructuring assignment array matching([a, b] = [b, a])</a>
-              (<span class="complexity">O(1)</span>, but with a temp variable the memory space will be bigger).
+              <a href="#is-swap-number">Swap a number:</a>
+              with and without a temporary variable (temp) (<span class="complexity">O(1)</span>, but with a temp variable the memory space will be bigger),
+              destructuring assignment array matching([a, b] = [b, a]).
             </li>
           </ol>
         </li>
@@ -227,26 +232,15 @@
     <div class="container">
       <h2 class="title">Number</h2>
       <ol>
-        <li id="is-prime">
-          <details role="section" aria-expanded="false" aria-labelledby="label">
+        <li>
+          <details id="is-prime" role="section" aria-expanded="false" aria-labelledby="label">
             <summary role="button" aria-controls="content">
                 <span>Question: <strong>How would you verify a prime number?</strong></span>
-                <dl class="definition">
-                  <dt>Prime number</dt>
-                  <dd>is a natural number greater than 1 and only divisible by itself</dd>
-                </dl>
-                <div>
-                    <strong>Solutions:</strong>
-                    <ul>
-                      <li>Prime number with a while loop <span class="complexity">O(n)</span></li>
-                      <li>Prime number with a for loop <span class="complexity">O(n), O(sqrt(n))</span></li>
-                    </ul>
-                  </div>
-              </summary>
-              <div aria-hidden="true">
-                <pre><code id="prime-number"></code></pre>
-                <script>$('#prime-number').load('static/js/algorithm/number/prime-number.js')</script>
-              </div>
+            </summary>
+            <div>
+              <pre><code id="prime-number"></code></pre>
+              <script>$('#prime-number').load('static/js/algorithm/number/prime-number.js')</script>
+            </div>
           </details>
         </li>
 
