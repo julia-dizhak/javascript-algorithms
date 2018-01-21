@@ -21,8 +21,8 @@
      * concat
      * spread operator arr2 = [...arr1];
      *
-     * @param {[]}
-     * @return {[]}
+     * @param {[array]}
+     * @return {[array]}
      */
 
     'use strict';
@@ -33,6 +33,19 @@
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+
+    function _toConsumableArray(arr) {
+        if (Array.isArray(arr)) {
+            for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+                arr2[i] = arr[i];
+            }
+
+            return arr2;
+        } else {
+            return Array.from(arr);
+        }
+    }
+
     var cloneWithSliceMethod = function cloneWithSliceMethod(arr) {
         var clone = arr.slice(0); // faster then arr.slice()
 
@@ -46,20 +59,20 @@
         return this.slice(0);
     };
 
-    // don't iterate over arrays to clone them if all you need is a naive clone
+    // don't iterate over arrays to clone them if all you need is a native clone
     // runtime O(n)
     var cloneWithForLoop = function cloneWithForLoop(arr) {
         var clone = [],
             len = arr.length;
 
         for (var index = 0; index < len; index++) {
-            clone.push(arr[index]);
+            clone.push(arr[index]); // index could be any types, so you should check and if it's references type make additional manipulation
         }
 
         return clone;
     };
 
-    //console.log(cloneWithForLoop ([1,2,3,4,5]));
+    //console.log(cloneWithForLoop([1,2,3,4,5]));
 
     // loop fixed size
     // runtime O(n)
@@ -73,7 +86,21 @@
         return copy;
     };
 
+    // deep clone array spread
+    var cloneDeepWithSpread = function cloneDeepWithSpread(clone) {
+        return [].concat(_toConsumableArray(clone));
+    };
+
+    //console.log('cloneDeepWithSpread', cloneDeepWithSpread([1,2,[3]]) );
+
+    // deep clone array JSON.stringify
+    var cloneDeepJson = function cloneDeepJson(clone) {
+        return JSON.parse(JSON.stringify(clone));
+    };
+
     exports.cloneWithSliceMethod = cloneWithSliceMethod;
     exports.cloneWithForLoop = cloneWithForLoop;
     exports.cloneWithForLoopFixedSize = cloneWithForLoopFixedSize;
+    exports.cloneDeepWithSpread = cloneDeepWithSpread;
+    exports.cloneDeepJson = cloneDeepJson;
 });

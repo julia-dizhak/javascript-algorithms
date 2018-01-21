@@ -46,4 +46,4 @@ const swapNumberWithBitwise = (a, b) => {
     return [a, b];
 };
 
-console.log(swapNumberWithBitwise(3, 4));
+// console.log(swapNumberWithBitwise(3, 4));
