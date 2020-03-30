@@ -1,37 +1,17 @@
-# Javascript algorithm
-
-This repository contains Javascript implementations of different famous computer science algorithms.
+# Computer science algorithms by JavaScript
+The repo contains JavaScript implementations of different famous computer science algorithms.
 
 ## Algorithms
+Contains description, solution and characteristics: runtime or complexity
+Development by
+[ES6](http://es6-features.org/), [Yarn](https://yarnpkg.com/), [Babel](https://babeljs.io/) is the Javascript compiler, [Jest](https://facebook.github.io/jest/) with a syntax highlighter [Highlightjs](https://highlightjs.org/).
 
-Description
+[Demo](https://julia-dizhak.github.io/javascript-algorithms/)
 
-Solution
-
-Characteristics: runtime or complexity
-
-Tests: by [Jest](https://facebook.github.io/jest/)
-
-
+Tests run by `yarn test`
 ---
-## Development
-
-[ECMAScript 6 features](http://es6-features.org/).
-
-[Yarn](https://yarnpkg.com/) package manager.
-
-[Babel](https://babeljs.io/) is the Javascript compiler.
-
-[Jest](https://facebook.github.io/jest/), run by `yarn test`.
-
-With a javascript syntax highlighter [Highlightjs](https://highlightjs.org/).
-
-Zenburn.css.
-
-
----
-### Number
-Is number a prime / runtime O(n), O(sqrt(n))
+## Number
+Is number a prime? runtime O(n), O(sqrt(n))
 
 How could you find all prime factors of a number? / runtime O(n), O(Math.log2(n))
 
@@ -85,20 +65,11 @@ The code in this repository is distributed under the terms of the MIT license.
 ---
 ### TODO:
 
-levels: beginner, medium, ... (like corners)
+display level: beginner, medium, ... (like corners)
 
 generate test coverage
 
-
-webpack configuration
-
-how to improve SEO
-
-- performance test
-
-string is unique symbol find by Set https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
-
-update readme
+performance test
 
 navigation and content
 
