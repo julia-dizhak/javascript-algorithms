@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## GitHub Pages
+Deployment on github pages
+if git use ssh
+`git remote set-url origin git@github.com:julia-dizhak/javascript-algorithms.git`
+
 ## Available Scripts
 
 In the project directory, you can run:
