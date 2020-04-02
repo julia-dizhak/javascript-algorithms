@@ -1,9 +1,0 @@
-node_modules/
-bower_components
-
-*.git
-*.idea/
-*.pyc
-
-.DS_Store
-*.DS_Store
