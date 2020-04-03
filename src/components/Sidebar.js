@@ -5,6 +5,7 @@ import './sidebar.css';
 function Sidebar() {
   return (
     <div className="sidebar">
+      <a href="/" className="logo">Algo</a>
       <nav>
         <ul className="list">
           <li>
@@ -18,8 +19,8 @@ function Sidebar() {
           <li>
             <header className="title">Sorting</header>
             <ul className="subList">
-              <li><a href="#sorting-bubble">Bubble sort</a></li>
-              <li><a href="sorting-quick-sort">Quick sort</a></li>
+              <li><a href="#bubble-sort">Bubble sort</a></li>
+              {/* <li><a href="sorting-quick-sort">Quick sort</a></li> */}
             </ul>
           </li>
 
