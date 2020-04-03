@@ -52,6 +52,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## TODO:
 create separate components CodeArrays, CodeSorting etc
 
+scrollTo
+
 details toggle logic
 
 display level: beginner, medium, ... (like corners)

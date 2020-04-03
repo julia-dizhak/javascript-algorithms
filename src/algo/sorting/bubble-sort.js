@@ -1,6 +1,6 @@
 function bubbleSort(arr) {
   const len = arr.length;
-  let count = 0;
+  //let count = 0;
 
   let swap;
 
@@ -10,12 +10,12 @@ function bubbleSort(arr) {
       if (arr[i] > arr[i+1]) {
         [ arr[i], arr[i+1] ] =[ arr[i+1], arr[i] ];
         swap = true;
-        count += 1;
+        //count += 1;
       }
     }
   } while (swap)
 
-  console.log('count', count);
+  //console.log('count', count);
   return arr;
 }
 

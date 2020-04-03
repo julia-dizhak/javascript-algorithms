@@ -20,7 +20,7 @@ function Sidebar() {
             <header className="title">Sorting</header>
             <ul className="subList">
               <li><a href="#bubble-sort">Bubble sort</a></li>
-              {/* <li><a href="sorting-quick-sort">Quick sort</a></li> */}
+              <li><a href="#quick-sort">Quick sort</a></li>
             </ul>
           </li>
 
