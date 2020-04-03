@@ -12,19 +12,7 @@
 }
 
 /* main part */
-.main {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.Pane1 {
-  /* background: red; */
-
-}
-
-.Pane2 {
-  /* background-color: yellow; */
+.wrapper {
+  text-align: left;
+  padding: 15px 10px;
 }

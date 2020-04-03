@@ -7,4 +7,37 @@
     box-shadow: 0 0 8px 0 rgba(0,0,0,0.21);
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
+
+.title {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list a {
+    color: #fff;
+}
+.list a:hover {
+    text-decoration: none;
+}
+
+.subList {
+    text-align: left;
+    padding: 0 5px 5px 5px;
+}
+.subList li {
+    margin: 0 0 10px 0;
+}
+.subList a {
+    text-align: left;
+}
+
