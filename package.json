@@ -10,10 +10,12 @@
     "@testing-library/user-event": "^7.1.2",
     "autobind-decorator": "^2.4.0",
     "gh-pages": "^2.2.0",
+    "highlight.js": "^9.18.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "react-split-pane": "^0.1.91"
+    "react-split-pane": "^0.1.91",
+    "react-syntax-highlighter": "^12.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

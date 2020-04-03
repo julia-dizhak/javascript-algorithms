@@ -6,8 +6,7 @@ import SplitSidebarView from './components/SplitSidebarView';
 import './App.css';
 
 function openTarget() {
-  let hash = location.hash.substring(1),  // eslint-disable-line
-    details = document.getElementsByTagName('details');
+  let hash = location.hash.substring(1);  // eslint-disable-line
 
   if (hash) {
     var detail = document.getElementById(hash);
@@ -31,7 +30,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <div className="main">
         <SplitSidebarView>
           <Sidebar
             className="sidebar"
@@ -43,8 +41,7 @@ class App extends Component {
             <Main />
           </div>
         </SplitSidebarView>
-        </div>
-    </div>
+      </div>
     );
   }
 }

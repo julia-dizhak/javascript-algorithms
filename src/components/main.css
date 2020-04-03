@@ -1,7 +1,22 @@
 .main {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  /* display: flex; */
+}
+
+.main .title {
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  font-size: 1.1em;
+}
+
+.main ul {
+  list-style: none;
+}
+
+.details {
+  position: relative;
+  flex: 1 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 var(--shadow-color);
+  border-radius: 4px;
+  padding: 25px;
 }

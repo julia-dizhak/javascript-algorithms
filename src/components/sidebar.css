@@ -11,33 +11,33 @@
     box-sizing: border-box;
 }
 
-.title {
+.sidebar .title {
     font-weight: bold;
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     font-size: 1.2em;
 }
 
-.list {
+.sidebar .list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.list a {
+.sidebar .list a {
     color: #fff;
 }
-.list a:hover {
+.sidebar .list a:hover {
     text-decoration: none;
 }
 
-.subList {
+.sidebar .subList {
     text-align: left;
     padding: 0 5px 5px 5px;
 }
-.subList li {
+.sidebar .subList li {
     margin: 0 0 10px 0;
 }
-.subList a {
+.sidebar .subList a {
     text-align: left;
 }
 
