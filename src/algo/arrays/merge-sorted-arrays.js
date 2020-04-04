@@ -73,6 +73,4 @@ const mergeSortedArrays1 = (arr1, arr2) => {
     return merged;
 };
 
-//console.log('mergeSortedArrays', mergeSortedArrays([1, 2, 4, 6], [3, 7, 9]));
-
-export { mergeSortedArrays };
+export { mergeSortedArrays, mergeSortedArrays1  };

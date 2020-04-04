@@ -22,7 +22,7 @@ class App extends Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('hashchange', openTarget);
   }
 
@@ -31,9 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <SplitSidebarView>
-          <Sidebar
-            className="sidebar"
-          />
+          <Sidebar className="sidebar" />
           <div className="wrapper">
             <header className="App-header">
               Computer Science Algorithms by Javascript

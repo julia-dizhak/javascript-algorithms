@@ -23,7 +23,14 @@
     font-weight: bold;
     margin: 0 0 25px 0;
     display: inline-block;
+    /* text-align: left; */
+    font-size: 2em;
     text-align: left;
+    text-shadow: 0 0 1px #000;
+}
+
+.logo:hover {
+    text-decoration: underline;
 }
 
 .sidebar .list {
