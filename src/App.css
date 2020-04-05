@@ -12,8 +12,19 @@
 }
 
 /* main part */
-.wrapper {
+.rightPart{
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.rightPart .App-header {
   padding: 15px 10px;
-  /* background: #eff0f1; */
+}
+
+.wrapper {
+  padding: 15px 10px;
 }

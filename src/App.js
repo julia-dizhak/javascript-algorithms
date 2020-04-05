@@ -32,11 +32,11 @@ class App extends Component {
       <div className="App">
         <SplitSidebarView>
           <Sidebar className="sidebar" />
-          <div className="wrapper">
-            <header className="App-header">
-              Computer Science Algorithms by Javascript
-            </header>
-            <Main />
+          <div className="rightPart">
+              <header className="App-header">
+                Computer Science Algorithms by Javascript
+              </header>
+              <Main />
           </div>
         </SplitSidebarView>
       </div>

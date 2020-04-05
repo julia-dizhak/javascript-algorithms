@@ -1,5 +1,7 @@
 .main {
-  /* display: flex; */
+  width: 100%;
+  overflow: auto;
+  flex: 1;
 }
 
 .main .title {

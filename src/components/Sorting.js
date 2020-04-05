@@ -7,7 +7,7 @@ import { findMedian } from './../algo/sorting/tasks/find-median';
 
 function Sorting() {
   return (
-    <div className="main">
+    <div className="sorting">
       <h2>Sorting</h2>
 
       <ul>
