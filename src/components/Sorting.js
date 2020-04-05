@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { bubbleSort } from './../algo/sorting/bubble-sort';
 import { quickSort } from './../algo/sorting/quick-sort';
+import { findMedian } from './../algo/sorting/tasks/find-median';
 
 function Sorting() {
   return (
@@ -57,7 +58,7 @@ function Sorting() {
 
             <div aria-hidden="true">
               <h3 className="title">Solution:</h3>
-              <p>first pick a random number</p>
+              <p>first pick a random number - pivot</p>
 
               <SyntaxHighlighter
                 language="javascript"
@@ -70,6 +71,37 @@ function Sorting() {
                 if we pick random pivot point (choose middle one), so that way it’s big O is O(nlogn).
                 It’s space complexity is O(logn).
               </p>
+            </div>
+          </details>
+        </li>
+
+        {/* other tasks */}
+        <li>
+          <details
+            className="details"
+            id="find-median"
+            aria-expanded="false"
+            aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span className="question">
+                Question:&nbsp;
+                <strong>Find a median</strong>
+              </span>
+            </summary>
+
+            <div aria-hidden="true">
+              <h3 className="title">Solution:</h3>
+              <p>
+                The median of a list of numbers is essentially it's middle element after sorting.
+                The same number of elements occur after it as before.
+              </p>
+              <SyntaxHighlighter
+                language="javascript"
+                style={docco}
+              >
+                {findMedian.toString()}
+              </SyntaxHighlighter>
+
             </div>
           </details>
         </li>

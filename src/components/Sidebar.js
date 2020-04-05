@@ -21,6 +21,8 @@ function Sidebar() {
             <ul className="subList">
               <li><a href="#bubble-sort">Bubble sort</a></li>
               <li><a href="#quick-sort">Quick sort</a></li>
+              {/* other tasks */}
+              <li><a href="#find-median">Find a median</a></li>
             </ul>
           </li>
 
