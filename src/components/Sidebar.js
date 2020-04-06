@@ -29,6 +29,7 @@ function Sidebar() {
           <li>
             <header className="title">String Manipulation</header>
             <ul className="subList">
+              <li><a href="#define-anagrams">Define anagrams</a></li>
               <li><a href="#making-anagrams">Making anagrams</a></li>
             </ul>
           </li>
