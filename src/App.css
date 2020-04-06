@@ -28,3 +28,7 @@
 .wrapper {
   padding: 15px 10px;
 }
+
+.unorderedList {
+  list-style: disc !important;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { bubbleSort } from './../algo/sorting/bubble-sort';
-import { quickSort } from './../algo/sorting/quick-sort';
-import { findMedian } from './../algo/sorting/tasks/find-median';
+import { bubbleSort } from '../../algo/sorting/bubble-sort';
+import { quickSort } from '../../algo/sorting/quick-sort';
+import { findMedian } from '../../algo/sorting/tasks/find-median';
 
 function Sorting() {
   return (

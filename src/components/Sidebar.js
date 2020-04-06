@@ -26,6 +26,13 @@ function Sidebar() {
             </ul>
           </li>
 
+          <li>
+            <header className="title">String Manipulation</header>
+            <ul className="subList">
+              <li><a href="#making-anagrams">Making anagrams</a></li>
+            </ul>
+          </li>
+
         </ul>
       </nav>
     </div>

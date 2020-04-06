@@ -2,7 +2,8 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { mergeSortedArrays } from './../algo/arrays/merge-sorted-arrays';
-import Sorting from './Sorting';
+import Sorting from './concepts/Sorting';
+import StringManipulation from './concepts/StringManipulation';
 
 import './main.css';
 
@@ -43,6 +44,7 @@ function Main() {
         </ul>
 
         <Sorting />
+        <StringManipulation />
       </div>
   </div>
   );
