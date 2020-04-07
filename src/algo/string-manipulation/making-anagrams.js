@@ -39,7 +39,6 @@ function makingAnagrams(str1, str2) {
 
   const arr1 = Object.values(obj1);
   const arr2 = Object.values(obj2);
-  debugger;
   const sum1 = ((arr1.length > 0) && arr1.reduce((a,b) => a + b)) || 0;
   const sum2 = ((arr2.length > 0) && arr2.reduce((a,b) => a+b)) || 0;
   const sum = sum1 + sum2;

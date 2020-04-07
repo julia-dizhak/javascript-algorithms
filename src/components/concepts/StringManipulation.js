@@ -83,6 +83,13 @@ export default function StringManipulation() {
           </details>
         </li>
       </ul>
+
+      <div className="importantInfo">
+        There are as well some extra diferent tasks and their solutions
+        related to string manipulation
+        in folder tasks such as
+        <pre>alternatingCharacters</pre>
+      </div>
   </div>
   );
 }
