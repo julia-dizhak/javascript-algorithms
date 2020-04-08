@@ -89,6 +89,7 @@ export default function StringManipulation() {
         related to string manipulation
         in folder tasks such as
         <pre>alternatingCharacters</pre>
+        <pre>sherlock valid string</pre>
       </div>
   </div>
   );

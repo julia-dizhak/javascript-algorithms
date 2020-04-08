@@ -14,4 +14,3 @@ describe('alternatingCharacters test case', () => {
     expect(alternatingCharacters('BABABA')).toEqual(0);
   });
 });
-
