@@ -8,7 +8,6 @@ export const count = (list, value) => {
 }
 
 function isValid(s) {
-  // is not empty string case todo
   const arr = s.split('');
   const len = arr.length;
   let letters = {};
@@ -23,12 +22,8 @@ function isValid(s) {
   const valMin = Math.min(...values);
 
   const countMax = count(values, valMax);
-  //const countMax = values.filter((x) => x === valMax).length;
   const countMin = count(values, valMin);
-  ///const countMin = values.filter((x) => x === valMin).length;
-
   let isValid = false;
-
 
   if (
     (valMax === valMin) ||

@@ -127,7 +127,8 @@ export default function StringManipulation() {
               <div aria-hidden="true">
                 <h3 className="title">Solution:</h3>
                 <p>
-
+                Sherlock considers a string to be valid if all characters of the string
+                appear the same number of times and one symbol could be deleted.
                 </p>
                 <SyntaxHighlighter
                   language="javascript"

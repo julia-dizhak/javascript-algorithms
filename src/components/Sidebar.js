@@ -40,6 +40,7 @@ function Sidebar() {
             </header>
             <ul className="subList">
               <li><a href="#eloquent-looping-triangle">Looping a triangle</a></li>
+              <li><a href="#eloquent-fizz-buzz">Fizz buzz</a></li>
             </ul>
           </li>
 
