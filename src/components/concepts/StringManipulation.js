@@ -4,6 +4,7 @@ import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { defineAnagrams } from '../../algo/string-manipulation/define-anagrams';
 import { makingAnagrams } from '../../algo/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../algo/string-manipulation/tasks/alternating-characters';
+import { isValid } from '../../algo/string-manipulation/tasks/sherlock-valid-string';
 
 export default function StringManipulation() {
   return (
@@ -93,6 +94,7 @@ export default function StringManipulation() {
               id="alternating-characters"
               aria-expanded="false"
               aria-labelledby="label">
+
               <summary role="button" aria-controls="content">
                 <span className="question">Alternating characters</span>
               </summary>
@@ -113,24 +115,32 @@ export default function StringManipulation() {
               </div>
             </details>
 
-            {/* <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
+            <details
+              className="details"
+              id="sherlock-valid-string"
+              aria-expanded="false"
+              aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                <span className="question">Sherlock valid string</span>
+              </summary>
 
-              <pre>sherlock valid string</pre>
+              <div aria-hidden="true">
+                <h3 className="title">Solution:</h3>
+                <p>
 
+                </p>
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={dark}
+                >
+                  {isValid.toString()}
+                </SyntaxHighlighter>
+              </div>
+            </details>
 
-            </div> */}
           </details>
         </li>
       </ul>
-
-      <div className="importantInfo">
-        There are as well some extra diferent tasks and their solutions
-        related to string manipulation
-        in folder tasks such as
-        <pre>alternatingCharacters</pre>
-        <pre>sherlock valid string</pre>
-      </div>
   </div>
   );
 }
