@@ -1,5 +1,5 @@
 /**
-  * Looping a triangle
+  *   Looping a triangle
   *   Write a loop that makes seven calls to console.log to output the following triangle:
   *   #
   *   ##
@@ -9,17 +9,10 @@
   *   ######
   *   #######
  */
-
- function loopingTriangle(len) {
-   let str = ''; // todo manage different symbols
-   for (let index = 0; index < len; index++) {
-     //debugger
-      str = str + '#';
-     console.log(str)
-
+ function loopingTriangle(len, symbol='#') {
+   for (let line = symbol; line.length < len+1; line += symbol) {
+     console.log(line)
    }
  }
-
- loopingTriangle(7)
 
  export { loopingTriangle }

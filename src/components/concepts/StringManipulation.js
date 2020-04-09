@@ -1,8 +1,9 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { defineAnagrams } from '../../algo/string-manipulation/define-anagrams';
 import { makingAnagrams } from '../../algo/string-manipulation/making-anagrams';
+import { alternatingCharacters } from '../../algo/string-manipulation/tasks/alternating-characters';
 
 export default function StringManipulation() {
   return (
@@ -42,9 +43,6 @@ export default function StringManipulation() {
               >
                 {defineAnagrams.toString()}
               </SyntaxHighlighter>
-              <p>
-
-              </p>
             </div>
           </details>
         </li>
@@ -76,10 +74,52 @@ export default function StringManipulation() {
               >
                 {makingAnagrams.toString()}
               </SyntaxHighlighter>
-              <p>
-
-              </p>
             </div>
+          </details>
+        </li>
+
+        <li>
+          <details
+            className="details"
+            id="string-manipulation-tasks"
+            aria-expanded="false"
+            aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              Different tasks related to String Manipulation
+            </summary>
+
+            <details
+              className="details"
+              id="alternating-characters"
+              aria-expanded="false"
+              aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                <span className="question">Alternating characters</span>
+              </summary>
+
+              <div aria-hidden="true">
+                <h3 className="title">Solution:</h3>
+                <p>
+                  Given two strings, a and b, that may or may not be of the same length,
+                  determine the minimum number of character deletions required to make a and b anagrams.
+                  Any characters can be deleted from either of the strings.
+                </p>
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={dark}
+                >
+                  {alternatingCharacters.toString()}
+                </SyntaxHighlighter>
+              </div>
+            </details>
+
+            {/* <div aria-hidden="true">
+              <h3 className="title">Solution:</h3>
+
+              <pre>sherlock valid string</pre>
+
+
+            </div> */}
           </details>
         </li>
       </ul>
