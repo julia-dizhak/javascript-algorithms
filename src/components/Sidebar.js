@@ -8,7 +8,7 @@ function Sidebar() {
       <a href="/" className="logo">Algo</a>
       <nav>
         <ul className="list">
-          <li>
+          <li className="item">
             <header className="title">Arrays</header>
             <ul className="subList">
               <li><a href="#is-sorted">Merge two sorted arrays</a></li>
@@ -16,7 +16,7 @@ function Sidebar() {
             </ul>
           </li>
 
-          <li>
+          <li className="item">
             <header className="title">Sorting</header>
             <ul className="subList">
               <li><a href="#bubble-sort">Bubble sort</a></li>
@@ -26,11 +26,20 @@ function Sidebar() {
             </ul>
           </li>
 
-          <li>
+          <li className="item">
             <header className="title">String Manipulation</header>
             <ul className="subList">
               <li><a href="#define-anagrams">Define anagrams</a></li>
               <li><a href="#making-anagrams">Making anagrams</a></li>
+            </ul>
+          </li>
+
+          <li className="item">
+            <header className="title">
+              Tasks from Eloquent JavaScript
+            </header>
+            <ul className="subList">
+              <li><a href="#eloquent-looping-triangle">Looping a triangle</a></li>
             </ul>
           </li>
 

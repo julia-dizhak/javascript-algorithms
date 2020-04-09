@@ -4,6 +4,7 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { mergeSortedArrays } from './../algo/arrays/merge-sorted-arrays';
 import Sorting from './concepts/Sorting';
 import StringManipulation from './concepts/StringManipulation';
+import CodeSandboxTasks from '../eloquent-tasks/CodeSandboxTasks';
 
 import './main.css';
 
@@ -45,6 +46,7 @@ function Main() {
 
         <Sorting />
         <StringManipulation />
+        <CodeSandboxTasks />
       </div>
   </div>
   );

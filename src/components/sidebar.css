@@ -46,9 +46,13 @@
     text-decoration: none;
 }
 
+.sidebar .item {
+    margin: 0 0 15px 0;
+}
 .sidebar .subList {
     text-align: left;
-    padding: 0 5px 5px 5px;
+    padding: 0 5px 5px 15px;
+    margin: 0;
 }
 .sidebar .subList li {
     margin: 0 0 10px 0;
