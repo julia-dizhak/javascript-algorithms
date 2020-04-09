@@ -10,7 +10,7 @@
   *   #######
  */
  function loopingTriangle(len, symbol='#') {
-   for (let line = symbol; line.length < len+1; line += symbol) {
+   for (let line = symbol; line.length < len + 1; line += symbol) {
      console.log(line)
    }
  }

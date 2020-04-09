@@ -3,6 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { loopingTriangle } from './tasks/looping-triangle';
 import { fizzBuzz } from './tasks/fizz-buzz';
+import { chessboard } from './tasks/chessboard';
 
 export default function StringManipulation() {
   return (
@@ -70,6 +71,39 @@ export default function StringManipulation() {
                 style={docco}
               >
                 {fizzBuzz.toString()}
+              </SyntaxHighlighter>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <details
+            className="details"
+            id="eloquent-fizz-buzz"
+            aria-expanded="false"
+            aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span className="question">
+                Question:&nbsp;
+                <strong>
+                  Chessboard
+                </strong>
+                <p>
+                  Write a program that creates a string that represents an 8×8 grid, using newline characters
+                  to separate lines. At each position of the grid there is either a space or a "#" character.
+                  The characters should form a chessboard.
+                </p>
+              </span>
+            </summary>
+
+            <div aria-hidden="true">
+              <h3 className="title">Solution:</h3>
+              <span className="complexity">complexity - n2</span>
+              <SyntaxHighlighter
+                language="javascript"
+                style={docco}
+              >
+                { chessboard.toString() }
               </SyntaxHighlighter>
             </div>
           </details>
