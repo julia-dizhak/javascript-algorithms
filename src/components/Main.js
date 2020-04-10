@@ -5,6 +5,7 @@ import { mergeSortedArrays } from './../algo/arrays/merge-sorted-arrays';
 import Sorting from './concepts/Sorting';
 import StringManipulation from './concepts/StringManipulation';
 import CodeSandboxTasks from '../eloquent-tasks/CodeSandboxTasks';
+import GreedyAlgorithms from './concepts/GreedyAlgoritms';
 
 import './main.css';
 
@@ -46,6 +47,7 @@ function Main() {
 
         <Sorting />
         <StringManipulation />
+        <GreedyAlgorithms />
         <CodeSandboxTasks />
       </div>
   </div>

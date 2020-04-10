@@ -35,6 +35,13 @@ function Sidebar() {
           </li>
 
           <li className="item">
+            <header className="title">Greedy Algorithms</header>
+            <ul className="subList">
+              <li><a href="#greedy-min-absolute-difference">Minimum absolute difference</a></li>
+            </ul>
+          </li>
+
+          <li className="item">
             <header className="title">
               Tasks from Eloquent JavaScript
             </header>
