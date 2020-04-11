@@ -2,6 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { minimumAbsoluteDifference } from '../../algo/greedy/min-abs-difference';
+import { luckBalance } from '../../algo/greedy/luck-balaance';
 
 
 export default function GreedyAlgorithms() {
@@ -42,6 +43,31 @@ export default function GreedyAlgorithms() {
                 style={docco}
               >
                 {minimumAbsoluteDifference.toString()}
+              </SyntaxHighlighter>
+            </div>
+          </details>
+        </li>
+
+        <li>
+          <details
+            className="details"
+            id="greedy-luck-balance"
+            aria-expanded="false"
+            aria-labelledby="label">
+            <summary role="button" aria-controls="content">
+              <span className="question">
+                Question:&nbsp;
+                <strong>Luck Balance</strong>
+              </span>
+            </summary>
+
+            <div aria-hidden="true">
+              <h3 className="title">Solution:</h3>
+              <SyntaxHighlighter
+                language="javascript"
+                style={docco}
+              >
+                {luckBalance.toString()}
               </SyntaxHighlighter>
             </div>
           </details>

@@ -38,6 +38,7 @@ function Sidebar() {
             <header className="title">Greedy Algorithms</header>
             <ul className="subList">
               <li><a href="#greedy-min-absolute-difference">Minimum absolute difference</a></li>
+              <li><a href="#greedy-luck-balance">Luck balance</a></li>
             </ul>
           </li>
 
