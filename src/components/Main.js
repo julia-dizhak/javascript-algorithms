@@ -6,6 +6,7 @@ import Sorting from './concepts/Sorting';
 import StringManipulation from './concepts/StringManipulation';
 import CodeSandboxTasks from '../eloquent-tasks/CodeSandboxTasks';
 import GreedyAlgorithms from './concepts/GreedyAlgoritms';
+import Number from './concepts/Number';
 
 import './main.css';
 
@@ -13,6 +14,8 @@ function Main() {
   return (
     <div className="main">
       <div className="wrapper">
+        <Number />
+
         <h2>Arrays</h2>
 
         <ul>

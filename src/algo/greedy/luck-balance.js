@@ -29,12 +29,4 @@ function luckBalance(k, contests) {
   return luck;
 }
 
-
 export { luckBalance }
-
-// function exp(base, exp) {
-
-// }
-
-
-

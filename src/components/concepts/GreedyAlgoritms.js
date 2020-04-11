@@ -2,7 +2,7 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { minimumAbsoluteDifference } from '../../algo/greedy/min-abs-difference';
-import { luckBalance } from '../../algo/greedy/luck-balaance';
+import { luckBalance } from '../../algo/greedy/luck-balance';
 
 
 export default function GreedyAlgorithms() {

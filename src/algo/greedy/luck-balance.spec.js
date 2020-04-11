@@ -1,4 +1,4 @@
-import { luckBalance } from './luck-balaance';
+import { luckBalance, exp } from './luck-balance';
 
 describe('greedy algo: luckBalance test case', () => {
 
@@ -31,4 +31,3 @@ describe('greedy algo: luckBalance test case', () => {
   });
 
 });
-
