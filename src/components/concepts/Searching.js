@@ -26,13 +26,14 @@ export default function Searching() {
 
             <div aria-hidden="true">
               <h3 className="title">Solution:</h3>
+              <div className="complexity">runtime is O(n)</div>
               <SyntaxHighlighter
                 language="javascript"
                 style={docco}
               >
                 {findIndex.toString()}
               </SyntaxHighlighter>
-              runtime is O(n)
+
             </div>
           </details>
         </li>
@@ -53,6 +54,14 @@ export default function Searching() {
             {binarySearchRecursive([1, 3, 5, 7, 8, 9], 7)}
             <div aria-hidden="true">
               <h3 className="title">Solution:</h3>
+              <div className="complexity">
+                Runtime is next.
+                We know that linear search on an array of n elements might have to make as many as n guesses.
+                You probably already have an intuitive idea that binary search makes fewer guesses than linear search.
+                The key idea is that when binary search makes an incorrect guess,
+                the portion of the array that contains reasonable guesses is reduced by at least half.
+                Every time we double the size of the array, we need at most one more guess.
+              </div>
               <SyntaxHighlighter
                 language="javascript"
                 style={docco}

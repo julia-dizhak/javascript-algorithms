@@ -24,14 +24,13 @@ export default function ArrayAlgorithms() {
 
             <div aria-hidden="true">
               <h3 className="title">Solution:</h3>
-
+              <div className="complexity">runtime is O(n)</div>
               <SyntaxHighlighter
                 language="javascript"
                 style={docco}
               >
                 {mergeSortedArrays.toString()}
               </SyntaxHighlighter>
-              runtime is O(n)
             </div>
           </details>
         </li>

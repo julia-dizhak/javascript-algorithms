@@ -46,4 +46,37 @@ function binarySearchRecursive(arr, target) {
   }
 }
 
+
+function balancedSums(arr) {
+  // arr = [5, 6, 8, 11] arr=[0, 1, ...,n]
+  const len = arr.length;
+  // 1 n-1
+  // n = 1
+  // let leftSum = arr[0];
+  // let rightSum = arr[2] len - 1]
+
+  let leftSum = 0;
+  let rightSum = 0;
+
+  for (let i = 1; i < len; i++) {
+
+  }
+
+  let index = 2
+  if (index === 2) {
+    leftSum = arr[0] + arr[1];
+    //rightSum = arr[index+1] + ... + arr[len -1]
+    rightSum = arr[index+1]
+    let sum = arr.slice(0, index - 1).reduce((accumulator, currentValue) => {
+
+   })
+  }
+  if (leftSum === rightSum) {
+    return 'Yes'
+  }
+
+}
+
+balancedSums([5,6,8,11])
+
 export { binarySearch, binarySearchRecursive }
