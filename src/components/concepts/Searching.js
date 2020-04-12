@@ -50,9 +50,9 @@ export default function Searching() {
               </span>
             </summary>
 
+            {binarySearch([1, 3, 5, 7, 8, 9], 7)}
             <div aria-hidden="true">
               <h3 className="title">Solution:</h3>
-              {/* {binarySearchRecursive([1,2,3,4,5], 2)} */}
               <SyntaxHighlighter
                 language="javascript"
                 style={docco}

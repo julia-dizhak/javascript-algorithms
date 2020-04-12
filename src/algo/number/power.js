@@ -14,7 +14,7 @@ export { power }
 // todo sorted arr
 // You probably already have an intuitive idea that binary search makes fewer guesses than linear search
 // recursive approach
-function binarySearchRecursive(arr, target) {
+function binarySearchRecursive1(arr, target) {
   const len = arr.length;
   // index
   let start = 0;
@@ -22,7 +22,7 @@ function binarySearchRecursive(arr, target) {
 
 
   //let mid = Math.floor((start - end)/2); // index
-  debugger;
+
   //let guess = arr[guessIndex]
 
 
@@ -56,13 +56,6 @@ function binarySearchRecursive(arr, target) {
 
 }
 
-// first 25 prime numbers
-//const a = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-const a = [1, 3, 5, 7, 8, 9]
-binarySearchRecursive(a, 5);
 
-// task
-// [5,6,8,11]
 
-export { binarySearchRecursive }
 
