@@ -1,7 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { power } from '../../algo/number/power';
+import { power, binarySearch } from '../../algo/number/power';
 
 
 export default function Number() {
@@ -25,6 +25,8 @@ export default function Number() {
 
             <div aria-hidden="true">
               <h3 className="title">Solution:</h3>
+              {binarySearch([1,2,3,4,5], 2)}
+              {/* {binarySearch([1,3,4,5,6,9], 3)} */}
               <SyntaxHighlighter
                 language="javascript"
                 style={docco}

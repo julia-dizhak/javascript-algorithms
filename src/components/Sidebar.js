@@ -19,7 +19,7 @@ function Sidebar() {
             <header className="title">Arrays</header>
             <ul className="subList">
               <li><a href="#is-sorted">Merge two sorted arrays</a></li>
-              {/* <li><a href="#is-find-index">Find an index in array</a></li> */}
+              <li><a href="#is-find-index">Find an index for element in array</a></li>
             </ul>
           </li>
 
