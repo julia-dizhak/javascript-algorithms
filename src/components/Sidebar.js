@@ -19,7 +19,6 @@ function Sidebar() {
             <header className="title">Arrays</header>
             <ul className="subList">
               <li><a href="#is-sorted">Merge two sorted arrays</a></li>
-              <li><a href="#is-find-index">Find an index for element in array</a></li>
             </ul>
           </li>
 
@@ -46,6 +45,14 @@ function Sidebar() {
             <ul className="subList">
               <li><a href="#greedy-min-absolute-difference">Minimum absolute difference</a></li>
               <li><a href="#greedy-luck-balance">Luck balance</a></li>
+            </ul>
+          </li>
+
+          <li className="item">
+            <header className="title">Search</header>
+            <ul className="subList">
+              <li><a href="#is-find-index">Linear search: Find an index for element in array</a></li>
+              <li><a href="#binary-search">Binary search in array</a></li>
             </ul>
           </li>
 

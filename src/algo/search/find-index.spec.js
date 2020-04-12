@@ -10,4 +10,3 @@ describe('findIndex in array test case', () => {
     expect(findIndex([0, 1, 3, 4], -1)).toEqual(undefined);
   })
 });
-

@@ -24,7 +24,7 @@
  * @return {number | undefined}
  */
 
-function findIndex(arr, searchQuery) {
+export function findIndex(arr, searchQuery) {
   const len = arr.length;
 
   for (let index = 0; index < len; index++) {
@@ -34,5 +34,3 @@ function findIndex(arr, searchQuery) {
     } else return undefined
   }
 }
-
-export { findIndex }

@@ -7,10 +7,9 @@ describe('power test case', () => {
     expect(power(2,1)).toEqual(2);
   })
 
-  it('power', () => {
+  it('power function', () => {
     expect(power(2,10)).toEqual(1024);
     expect(power(2,2)).toEqual(4);
     expect(power(3,3)).toEqual(27);
   })
 });
-
