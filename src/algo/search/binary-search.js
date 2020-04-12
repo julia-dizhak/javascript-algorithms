@@ -18,7 +18,7 @@ function binarySearch(arr, target) {
     } else {
       end = mid - 1;
     }
-    console.log('mid', mid) // todo remove lof
+    //console.log('mid', mid) // todo remove lof
   }
 
   //isTargetExist = false;
@@ -30,18 +30,20 @@ function binarySearch(arr, target) {
 
 function binarySearchRecursive(arr, target) {
   const len = arr.length;
-  // indexes
   let start = 0;
   let end = len - 1;
 
   let mid = Math.floor( (start + end) / 2 );
 
-  if (arr[mid] === target) return true;
-
-  if ( arr[mid] < target) {
-
+  if (arr[mid] === target) {
+    return true;
+  } else if ( arr[mid] < target ) {
+    return binarySearchRecursive(arr.slice(mid + 1, end), target);
+  } else if ( arr[mid] > target ) {
+    return binarySearchRecursive(arr.slice(start, mid - 1), target);
+  } else {
+    return false
   }
-
 }
 
 export { binarySearch, binarySearchRecursive }
