@@ -1,4 +1,4 @@
-import { binarySearchRecursive, binarySearch } from './binary-search';
+import { binarySearchRecursive, binarySearch, balancedSums } from './binary-search';
 
 describe('binary search using while loop test case', () => {
 
@@ -28,4 +28,20 @@ describe('binary search recursive solution', () => {
     expect(binarySearchRecursive(primes, 73)).toEqual(true);
     expect(binarySearchRecursive(primes, 6)).toEqual(false);
   });
+});
+
+// todo move
+describe('balancedSums solution', () => {
+
+  it('', () => {
+    const a = [5, 6, 8, 11];
+    expect(balancedSums(a)).toEqual('YES');
+    expect(balancedSums([1])).toEqual('YES'); // separate test
+    expect(balancedSums([1,2,3])).toEqual('NO');
+    expect(balancedSums([1,2,3,3])).toEqual('YES');
+    expect(balancedSums([0,0,2,0])).toEqual('YES');
+
+    expect(balancedSums([2,0,0,0])).toEqual('YES');
+  })
+
 });
