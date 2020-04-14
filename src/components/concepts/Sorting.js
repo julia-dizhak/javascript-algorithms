@@ -1,4 +1,5 @@
 import React from 'react';
+import Details from './../Details';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { bubbleSort } from '../../algo/sorting/bubble-sort';
@@ -12,71 +13,43 @@ function Sorting() {
 
       <ul>
         <li>
-          <details
-            className="details"
+          <Details
             id="bubble-sort"
-            aria-expanded="false"
-            aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span className="question">
-                Question:&nbsp;
-                <strong>bubble sort</strong>
-              </span>
-            </summary>
-
-            <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
-              <p>is a method for sorting arrays by comparing each array element to the element behind it</p>
-
-              <SyntaxHighlighter
-                language="javascript"
-                style={docco}
-              >
-                {bubbleSort.toString()}
-              </SyntaxHighlighter>
-              <p>
-              Unfortunately bubble sort is pretty slow
-              worst scenario a run time is O(n^2),
-              space is O(1)
-              </p>
-            </div>
-          </details>
+            question="Bubble sort"
+            solutionDesc="is a method for sorting arrays by comparing each array element to the element behind it"
+            comlexityDesc="Unfortunately bubble sort is pretty slow"
+            runTime="O(n^2)"
+            spaceTime="O(1)"
+            code={bubbleSort.toString()}
+          />
         </li>
 
         <li>
-          <details
-            className="details"
+          <Details
             id="quick-sort"
-            aria-expanded="false"
-            aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span className="question">
-                Question:&nbsp;
-                <strong>implement quick sort</strong>
-              </span>
-            </summary>
-
-            <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
-              <p>first pick a random number - pivot</p>
-
-              <SyntaxHighlighter
-                language="javascript"
-                style={docco}
-              >
-                {quickSort.toString()}
-              </SyntaxHighlighter>
-              <p>
-                Quick sort’s worst case is O(n2) but that can be avoided
-                if we pick random pivot point (choose middle one), so that way it’s big O is O(nlogn).
-                It’s space complexity is O(logn).
-              </p>
-            </div>
-          </details>
+            question="Quick sort"
+            solutionDesc="first pick a random number - pivot"
+            comlexityDesc={"<p>test</p><p>test</p>"}
+            runTime="O(log n), worst case O(n^2)"
+            spaceTime="O(log n)"
+            code={quickSort.toString()}
+          />
         </li>
+        {/* "Quick sort’s worst case is O(n2) but that can be avoided
+                if we pick random pivot point (choose middle one), so that way it’s big O is O(nlogn).
+                It’s space complexity is O(log n)." */}
 
         {/* other tasks */}
         <li>
+          <Details
+            id="quick-sort"
+            question="Quick sort"
+            solutionDesc="first pick a random number - pivot"
+            comlexityDesc={"<p>test</p><p>test</p>"}
+            runTime="O(log n), worst case O(n^2)"
+            spaceTime="O(log n)"
+            code={quickSort.toString()}
+          />
           <details
             className="details"
             id="find-median"

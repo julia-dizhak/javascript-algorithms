@@ -39,7 +39,7 @@ describe('balancedSums solution', () => {
     expect(balancedSums([1])).toEqual('YES'); // separate test
     expect(balancedSums([1,2,3])).toEqual('NO');
     expect(balancedSums([1,2,3,3])).toEqual('YES');
-    expect(balancedSums([0,0,2,0])).toEqual('YES');
+    expect(balancedSums([0,0,2,0])).toEqual('NO');
 
     expect(balancedSums([2,0,0,0])).toEqual('YES');
   })

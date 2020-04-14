@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+//import MovieContent from './movies/MovieContent';
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import SplitSidebarView from './components/SplitSidebarView';
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 function openTarget() {
@@ -30,6 +32,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* <MovieContent
+          title="test"
+        /> */}
+
         <SplitSidebarView>
           <Sidebar className="sidebar" />
           <div className="rightPart">

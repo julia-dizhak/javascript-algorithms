@@ -1,6 +1,12 @@
+/**
+ * Binary search must always operated on sth which is storted
+ */
+
 /* Returns either the index of the location in the array,
-  or -1 if the array did not contain the targetValue */
+  or -1 if the array did not contain the targetValue
+*/
 function binarySearch(arr, target) {
+  arr = arr.sort();
   const len = arr.length;
   let start = 0;
   let end = len - 1;
@@ -29,6 +35,7 @@ function binarySearch(arr, target) {
 }
 
 function binarySearchRecursive(arr, target) {
+  arr = arr.sort();
   const len = arr.length;
   let start = 0;
   let end = len - 1;
@@ -94,7 +101,6 @@ export function balancedSums(arr) {
   let i = 0;
   let j = arr.length - 1;
   let sum = 0;
-  debugger;
   while (i !== j) {
     if (sum >= 0) {
       sum -= arr[j];
