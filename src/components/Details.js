@@ -37,9 +37,9 @@ export default function Details(props) {
         <h3 className="title">Solution:</h3>
         <p>{solutionDesc}</p>
         <div className="complexity">
-          <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />
-          <p>Runtime is {runTime}</p>
-          <p>Space time is {spaceTime}</p>
+          {complexityDesc && <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />}
+          {runTime && <p>Runtime is {runTime}</p>}
+          {spaceTime &&  <p>Space time is {spaceTime}</p>}
         </div>
 
         <SyntaxHighlighter

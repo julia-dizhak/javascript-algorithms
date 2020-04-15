@@ -1,9 +1,8 @@
 import React from 'react';
 import Details from './../Details';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { bubbleSort } from '../../algo/sorting/bubble-sort';
 import { quickSort } from '../../algo/sorting/quick-sort';
+import { selectionSort } from '../../algo/sorting/selection-sort';
 import { findMedian } from '../../algo/sorting/tasks/find-median';
 
 function Sorting() {
@@ -29,7 +28,6 @@ function Sorting() {
             id="quick-sort"
             question="Quick sort"
             solutionDesc="first pick a random number - pivot"
-            comlexityDesc={"<p>test</p><p>test</p>"}
             runTime="O(log n), worst case O(n^2)"
             spaceTime="O(log n)"
             code={quickSort.toString()}
@@ -40,43 +38,28 @@ function Sorting() {
                 It’s space complexity is O(log n)." */}
 
         {/* other tasks */}
+
         <li>
           <Details
-            id="quick-sort"
-            question="Quick sort"
-            solutionDesc="first pick a random number - pivot"
-            comlexityDesc={"<p>test</p><p>test</p>"}
-            runTime="O(log n), worst case O(n^2)"
-            spaceTime="O(log n)"
-            code={quickSort.toString()}
+            id="selection-sort"
+            question="Selection sort"
+            solutionDesc=""
+            comlexityDesc=""
+            runTime="quadratic time complexity in all cases"
+            spaceTime=""
+            code={selectionSort.toString()}
           />
-          <details
-            className="details"
+        </li>
+
+        <li>
+          <Details
             id="find-median"
-            aria-expanded="false"
-            aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span className="question">
-                Question:&nbsp;
-                <strong>Find a median</strong>
-              </span>
-            </summary>
-
-            <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
-              <p>
-                The median of a list of numbers is essentially it's middle element after sorting.
-                The same number of elements occur after it as before.
-              </p>
-              <SyntaxHighlighter
-                language="javascript"
-                style={docco}
-              >
-                {findMedian.toString()}
-              </SyntaxHighlighter>
-
-            </div>
-          </details>
+            question="Find a median"
+            solutionDesc="The median of a list of numbers is essentially it's middle element after sorting. The same number of elements occur after it as before."
+            runTime=""
+            spaceTime=""
+            code={findMedian.toString()}
+          />
         </li>
       </ul>
   </div>

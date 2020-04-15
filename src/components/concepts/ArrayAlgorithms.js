@@ -1,7 +1,10 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Details from './../Details';
 import { mergeSortedArrays } from '../../algo/array/merge-sorted-arrays';
+import { jumpOnClouds } from '../../algo/array/tasks/jump-on-clouds';
+
 
 export default function ArrayAlgorithms() {
   return (
@@ -33,6 +36,16 @@ export default function ArrayAlgorithms() {
               </SyntaxHighlighter>
             </div>
           </details>
+        </li>
+
+        {/* different task */}
+        <li>
+          <Details
+            id="array-jump-on-clouds"
+            question="Jump on clouds"
+            solutionDesc=""
+            code={jumpOnClouds.toString()}
+          />
         </li>
 
       </ul>
