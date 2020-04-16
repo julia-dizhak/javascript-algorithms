@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import MovieContent from './movies/MovieContent';
+import MovieContent from './movies/MovieContent';
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import SplitSidebarView from './components/SplitSidebarView';
@@ -32,9 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <MovieContent
-          title="test"
-        /> */}
+        {/* <MovieContent /> */}
 
         <SplitSidebarView>
           <Sidebar className="sidebar" />

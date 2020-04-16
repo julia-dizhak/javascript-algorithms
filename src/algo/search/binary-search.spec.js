@@ -1,47 +1,29 @@
-import { binarySearchRecursive, binarySearch, balancedSums } from './binary-search';
+import { binarySearchRecursive, binarySearch } from './binary-search';
 
 describe('binary search using while loop test case', () => {
+  const arr = [1, 3, 5, 7, 8, 9];
+  const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
 
-  it('find a target in array', () => {
-    const arr = [1, 3, 5, 7, 8, 9];
-    expect(binarySearch(arr, 5)).toEqual(true);
-    expect(binarySearch(arr, 6)).toEqual(false);
+  it('binary search with while', () => {
+    expect(binarySearch(arr, 5)).toEqual(2);
+    expect(binarySearch(arr, 6)).toEqual(-1);
   });
 
-  it('find a target in array of first 25 primes', () => {
-    const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-    expect(binarySearch(primes, 73)).toEqual(true);
-    expect(binarySearch(primes, 6)).toEqual(false);
+  it('binary search with while loof of first 25 primes', () => {
+    expect(binarySearch(primes, 73)).toEqual(20);
+    expect(binarySearch(primes, 6)).toEqual(-1);
   });
-});
 
-describe('binary search recursive solution', () => {
-
-  it('find a target in array', () => {
-    const a = [1, 3, 5, 7, 8, 9];
-    expect(binarySearchRecursive(a, 5)).toEqual(true);
-    expect(binarySearchRecursive(a, 6)).toEqual(false);
+  it('binary search recursive solution', () => {
+    expect(binarySearchRecursive(arr, 5)).toEqual(2);
+    expect(binarySearchRecursive(arr, 1)).toEqual(0);
+    expect(binarySearchRecursive(arr, 6)).toEqual(-1);
   })
 
-  it('find a target in array of first 25 primes', () => {
-    const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-    expect(binarySearchRecursive(primes, 73)).toEqual(true);
-    expect(binarySearchRecursive(primes, 6)).toEqual(false);
+  xit('binary search recursive solution of first 25 primes', () => {
+    expect(binarySearchRecursive(primes, 73)).toEqual(20);
+    expect(binarySearchRecursive(primes, 6)).toEqual(-1);
+    expect(binarySearchRecursive(primes, 19)).toEqual(7);
   });
 });
 
-// todo move
-describe('balancedSums solution', () => {
-
-  it('', () => {
-    const a = [5, 6, 8, 11];
-    expect(balancedSums(a)).toEqual('YES');
-    expect(balancedSums([1])).toEqual('YES'); // separate test
-    expect(balancedSums([1,2,3])).toEqual('NO');
-    expect(balancedSums([1,2,3,3])).toEqual('YES');
-    expect(balancedSums([0,0,2,0])).toEqual('NO');
-
-    expect(balancedSums([2,0,0,0])).toEqual('YES');
-  })
-
-});

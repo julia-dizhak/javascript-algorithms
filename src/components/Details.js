@@ -1,6 +1,6 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function createMarkup(markup) {
   return {__html: markup};
@@ -14,7 +14,8 @@ export default function Details(props) {
     complexityDesc,
     runTime,
     spaceTime,
-    code
+    code,
+    secondCode
   } = props;
 
   return (
@@ -42,12 +43,24 @@ export default function Details(props) {
           {spaceTime &&  <p>Space time is {spaceTime}</p>}
         </div>
 
-        <SyntaxHighlighter
-          language="javascript"
-          style={docco}
-        >
-          {code}
-        </SyntaxHighlighter>
+        {code &&
+          <SyntaxHighlighter
+            language="javascript"
+            style={docco}
+          >
+            {code}
+          </SyntaxHighlighter>
+        }
+
+        {secondCode &&
+          <SyntaxHighlighter
+            language="javascript"
+            style={dark}
+          >
+            {secondCode}
+          </SyntaxHighlighter>
+        }
+
       </div>
     </details>
   )

@@ -1,16 +1,19 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { moviesData } from "./utils/movies-data";
 import MovieItem from './components/MovieItem';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default class MovieContent extends Component {
   constructor() {
     super();
 
     this.state = {
-      movies: moviesData
+      movies: moviesData,
+      moviesWillWatch: []
     }
 
-    this.removeMovie = this.removeMovie.bind(this)
+    this.removeMovie = this.removeMovie.bind(this);
+    this.addMovieToWillWatch = this.addMovieToWillWatch.bind(this);
   }
 
   removeMovie(movie) {
@@ -21,22 +24,41 @@ export default class MovieContent extends Component {
     })
   }
 
+  addMovieToWillWatch() {
+
+  }
+
   render() {
     console.log('render', this.state, this)
-    const { movies } = this.state;
+    const { movies, moviesWillWatch } = this.state;
 
     return (
-      <Fragment>
-        {movies.map(movie => {
-          return (
-            <MovieItem
-              key={movie.id}
-              movie={movie}
-              removeMovie={this.removeMovie}
-            />
-          )
-        })}
-      </Fragment>
+      <Container>
+        <Row>
+          <Col xs={9}>
+            <Row>
+              {movies.map(movie => {
+                return (
+                  <Col
+                    key={movie.id}
+                    xs={6}
+                    mb={4}
+                  >
+                    <MovieItem
+                      movie={movie}
+                      removeMovie={this.removeMovie}
+                      addMovieToWillWatch={this.addMovieToWillWatch}
+                    />
+                  </Col>
+                )
+              })}
+            </Row>
+          </Col>
+          <Col xs={3}>
+            will watch: {moviesWillWatch.length}
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }

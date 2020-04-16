@@ -8,8 +8,6 @@
  * Now the list is sorted.
  * Selection sort has quadratic time complexity in all cases.
  */
-
-
 function swap(a, b, arr) {
   let temp = arr[a];
   arr[a] = arr[b];

@@ -30,4 +30,3 @@ function jumpOnClouds(c) {
 }
 
 export { jumpOnClouds }
-

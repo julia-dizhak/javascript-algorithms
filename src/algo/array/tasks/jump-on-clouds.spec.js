@@ -12,7 +12,6 @@ describe('jumpOnClouds test case', () => {
   it('arrays', () => {
     expect(jumpOnClouds([0,1,0,0,0,1,0])).toEqual(3);
     expect(jumpOnClouds([0,0, 0, 0, 1, 0])).toEqual(4);
-
   });
 });
 
