@@ -36,11 +36,12 @@ export default function Details(props) {
 
       <div aria-hidden="true">
         <h3 className="title">Solution:</h3>
-        <p>{solutionDesc}</p>
+        <p className="solutionDesc">{solutionDesc}</p>
         <div className="complexity">
-          {complexityDesc && <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />}
-          {runTime && <p>Runtime is {runTime}</p>}
-          {spaceTime &&  <p>Space time is {spaceTime}</p>}
+          {/* {complexityDesc && <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />} */}
+          {complexityDesc && <div className="complexityDesc">{complexityDesc}</div> }
+          {runTime && <p className="runtime">runtime is {runTime}</p>}
+          {spaceTime && <p>space time is {spaceTime}</p>}
         </div>
 
         {code &&

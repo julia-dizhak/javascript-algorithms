@@ -24,12 +24,19 @@ export default class MovieContent extends Component {
     })
   }
 
-  addMovieToWillWatch() {
-
+  addMovieToWillWatch(movie) {
+    const { moviesWillWatch } = this.state;
+    const updatedMoviesWillWatch = [
+      ...moviesWillWatch,
+      movie
+    ];
+    this.setState({
+      moviesWillWatch: updatedMoviesWillWatch
+    })
   }
 
   render() {
-    console.log('render', this.state, this)
+    //console.log('render', this.state, this)
     const { movies, moviesWillWatch } = this.state;
 
     return (

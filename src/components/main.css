@@ -36,3 +36,20 @@
 .importantInfo pre {
   font-weight: normal;
 }
+
+.complexity {
+  margin: 0;
+  padding: 0;
+}
+
+.complexityDesc {
+  margin: 0 0 15px 0;
+}
+
+.solutionDesc {
+  margin: 0 0 5px 0;
+}
+
+.runtime {
+  margin: 0 0 5px 0;
+}

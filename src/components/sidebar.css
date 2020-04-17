@@ -9,6 +9,7 @@
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 .sidebar .title {
