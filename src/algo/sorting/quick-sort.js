@@ -14,7 +14,8 @@ function quickSort(array) {
     el < pivot ? leftArr.push(el) : rightArr.push(el)
   }
 
-  return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]
+  const merged = [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
+  return merged;
 }
 
 export { quickSort };

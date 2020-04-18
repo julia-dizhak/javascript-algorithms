@@ -11,7 +11,6 @@ export default function Searching() {
       <h2>Search</h2>
 
       <ul>
-        {twoSum([2, 7, 11, 15], 9)}
         <li>
           <Details
             id="is-find-index"
@@ -19,7 +18,7 @@ export default function Searching() {
             solutionDesc=""
             complexityDesc="The worst case performance scenario for a linear search is that it needs to loop through the entire collection."
             runTime="O(n)"
-            spaceTime="O(1)"
+            spaceComplexity="O(1)"
             code={findIndex.toString()}
           />
         </li>
@@ -29,9 +28,9 @@ export default function Searching() {
             id="binary-search"
             question="Binary search with while and recursion"
             solutionDesc=""
-            comlexityDesc=""
+            complexityDesc=""
             runTime="O(log n)"
-            spaceTime=""
+            spaceComplexity=""
             code={binarySearch.toString()}
             secondCode={binarySearchRecursive.toString()}
           />
@@ -42,11 +41,24 @@ export default function Searching() {
             id="search-balanced-sum"
             question="Balanced sum"
             solutionDesc="challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right"
-            comlexityDesc=""
+            complexityDesc=""
             runTime="O(n)"
             code={balancedSum.toString()}
           />
         </li>
+
+        <li>
+          <Details
+            id="search-two-sum"
+            question="Two sum"
+            solutionDesc="Given an array of integers, return indices of the two numbers such that they add up to a specific target."
+            complexityDesc=""
+            runTime="O(n)"
+            spaceComplexity="O(n). The extra space required depends on the number of items stored in the hash table, which stores exactly nn elements"
+            code={twoSum.toString()}
+          />
+        </li>
+
       </ul>
 
   </div>

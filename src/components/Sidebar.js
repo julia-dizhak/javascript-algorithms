@@ -57,6 +57,7 @@ function Sidebar() {
 
               {/* other tasks */}
               <li><a href="#search-balanced-sum">Balanced Sum</a></li>
+              <li><a href="#search-two-sum">Two Sum</a></li>
             </ul>
           </li>
 

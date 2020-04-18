@@ -13,7 +13,7 @@ export default function Details(props) {
     solutionDesc,
     complexityDesc,
     runTime,
-    spaceTime,
+    spaceComplexity,
     code,
     secondCode
   } = props;
@@ -41,7 +41,7 @@ export default function Details(props) {
           {/* {complexityDesc && <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />} */}
           {complexityDesc && <div className="complexityDesc">{complexityDesc}</div> }
           {runTime && <p className="runtime">runtime is {runTime}</p>}
-          {spaceTime && <p>space time is {spaceTime}</p>}
+          {spaceComplexity && <p>space complexity is {spaceComplexity}</p>}
         </div>
 
         {code &&

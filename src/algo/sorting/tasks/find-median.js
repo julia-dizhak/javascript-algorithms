@@ -1,19 +1,4 @@
-function quickSort(arr) {
-  const len = arr.length;
-  if (len <= 1) return arr;
-
-  let leftArr = [];
-  let rightArr = [];
-  let pivot = arr[0];
-
-  for (const el of arr.slice(1, len)) {
-    (el < pivot) ? leftArr.push(el) : rightArr.push(el)
-  }
-
-  const merged = [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
-  //console.log(merged.join(' '));
-  return merged;
-}
+import { quickSort } from '../quick-sort';
 
 function findMedian(arr) {
   const len = arr.length;
@@ -37,9 +22,8 @@ function findMedian(arr) {
 
 function findMedianVariant1(arr) {
   const n = arr.length;
-  arr.sort((a, b) => a - b);
+  arr = arr.sort((a, b) => a - b);
   return arr[(n - 1)/2];
 }
-
 
 export { findMedian, findMedianVariant1 }

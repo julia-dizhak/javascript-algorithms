@@ -1,5 +1,4 @@
 /**
- *
  * Consider an array of integers, arr = [arr[0], ... , arr[n-1]].
  * We define the absolute difference between two elements a[i] and a[j] (where i!=j),
  * to be the absolute value of a[i] - a[j].
@@ -13,10 +12,10 @@
  * |2-4| = 2.
  * The minimum absolute difference is 2.
  *
+ * Algorithm
  * 1) sort
  * 2) consider diff between the first pair as min
  * 3) compare all "consecutive pair min" with the one in step2 to get the least min.
- *
  * */
 function minimumAbsoluteDifference(arr) {
   const len = arr.length;

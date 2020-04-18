@@ -10,15 +10,21 @@ class MovieItem extends Component {
 
   render() {
     const { willWatch } = this.state;
-    const { movie, removeMovie, addMovieToWillWatch } = this.props;
-    // todo destructuring
-    const { title, vote_average, backdrop_path, poster_path} = this.props.movie;
+    const {
+      movie,
+      removeMovie,
+      addMovieToWillWatch,
+      removeMovieFromWillWatch
+    } = this.props;
+
+    const { title, vote_average, backdrop_path, poster_path } = movie;
+    console.log('movie', movie)
 
     return (
       <div className="card">
         <img
           className="card-img-top"
-          src={`https://image.tmdb.org/t/p/w500/{backdrop_path || poster_path}.jpg`}
+          src={`https://image.tmdb.org/t/p/w500${backdrop_path || poster_path}`}
           alt=""
         />
 
@@ -29,22 +35,31 @@ class MovieItem extends Component {
               Rating: {vote_average}
             </p>
 
-            {/* todo change buttons */}
             {willWatch ? (
-                <button
-                  type="button"
-                  className="btn btn-success"
-                  onClick={addMovieToWillWatch.bind(null, movie)}
-                  >
-                  will Watch
-                </button>
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={() => {
+                  this.setState({
+                    willWatch: false
+                  })
+                  removeMovieFromWillWatch(movie)
+                }}
+              >
+                remove will watch
+              </button>
               ) : (
                 <button
                   type="button"
                   className="btn btn-secondary"
-                  onClick={addMovieToWillWatch.bind(null, movie)}
-                  >
-                  will Watch
+                  onClick={() => {
+                    this.setState({
+                      willWatch: true
+                    })
+                    addMovieToWillWatch(movie)
+                  }}
+                >
+                  will watch
                 </button>
               )
             }

@@ -49,7 +49,7 @@ function isValidVariant1(s) {
   Object.values(h).map(v => {
     arr.push(v);
     // if any value is different than first value;
-    if( v !== arr[0] ){
+    if ( v !== arr[0] ){
       count++;  // count how many values are different
       if( (v > arr[0]) && (v-1 !== arr[0]) ){
         res = "No";
@@ -60,8 +60,8 @@ function isValidVariant1(s) {
     }
   })
 
-  if(count > 1) res = "NO"; // if more than one values are different
-  if(count === 1) res = "YES"; // if only one value is different
+  if (count > 1) res = "NO"; // if more than one values are different
+  if (count === 1) res = "YES"; // if only one value is different
   return res;
 }
 

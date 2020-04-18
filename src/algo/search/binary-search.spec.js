@@ -9,7 +9,7 @@ describe('binary search using while loop test case', () => {
     expect(binarySearch(arr, 6)).toEqual(-1);
   });
 
-  it('binary search with while loof of first 25 primes', () => {
+  it('binary search with while loop of first 25 primes', () => {
     expect(binarySearch(primes, 73)).toEqual(20);
     expect(binarySearch(primes, 6)).toEqual(-1);
   });
@@ -20,10 +20,10 @@ describe('binary search using while loop test case', () => {
     expect(binarySearchRecursive(arr, 6)).toEqual(-1);
   })
 
-  xit('binary search recursive solution of first 25 primes', () => {
+  it('binary search recursive solution for first 25 primes', () => {
     expect(binarySearchRecursive(primes, 73)).toEqual(20);
     expect(binarySearchRecursive(primes, 6)).toEqual(-1);
     expect(binarySearchRecursive(primes, 19)).toEqual(7);
   });
-});
 
+});

@@ -24,7 +24,13 @@ function selectionSort(arr) {
         min = j
       }
     }
-    swap(i, min, arr); // swap function define separately, instead of swap could you ES6 syntax
+    
+    // swap function define separately, instead of swap could you ES6 syntax
+    // let temp = arr[i];
+    // arr[i] = arr[min];
+    // arr[min] = temp;
+    // or separate function
+    swap(i, min, arr);
   }
 
   return arr;
