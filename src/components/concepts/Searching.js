@@ -50,7 +50,7 @@ export default function Searching() {
         <li>
           <Details
             id="search-two-sum"
-            question="Two sum"
+            question="Two sum using hash"
             solutionDesc="Given an array of integers, return indices of the two numbers such that they add up to a specific target."
             complexityDesc=""
             runTime="O(n)"

@@ -7,9 +7,11 @@
  * and you may not use the same element twice.
  */
 
-// brute force solution
-// runtime O(n2)
-// space complexity is O(1)
+/**
+ * brute force solution
+ * runtime O(n2)
+ * space complexity is O(1)
+ */
 function twoSumBruteForce(arr, sum) {
   const len = arr.length;
 
@@ -21,33 +23,38 @@ function twoSumBruteForce(arr, sum) {
     }
   }
 
-  throw new Error('No two sum solution')
+  throw new Error('No two sum solution');
 }
 
-// Solution using hash, runtime O(n)
-// The main benefit of using a hash table is the O(1) lookup time.
-// 1 Create an object containing the key-value pairs of the element and its index, respectively.
-// 2 Iterate through array. For currentElement, compute complement.
-// 3 If complement exists in hashTable and currentElementIndex !== hashTable[complement], return the indices of each element.
-// 4 If complement does not exist or the indices of both elements are equal, move to the next element in the array.
-function twoSum(nums, target) {
-  const len = nums.length;
-  const numsIndexes = {};
+/**
+ *
+ * Solution using hash, runtime O(n)
+ * The main benefit of using a hash table is the O(1) lookup time.
+ * 1 Create an object containing the key-value pairs of the element and its index, respectively.
+ * 2 Iterate through an array. For currentElement, compute complement.
+ * 3 If complement exists in hashTable and currentElementIndex !== hashTable[complement], return the indices of each element.
+ * 4 If complement does not exist or the indices of both elements are equal, move to the next element in the array.
+ */
+function twoSum(arr, target) {
+  const len = arr.length;
+  const arrIndexes = {};
 
   for (let i = 0; i < len; i++) {
-    const elem = nums[i];
-    numsIndexes[elem] = i;
+    const elem = arr[i];
+    arrIndexes[elem] = i;
   }
-  // or nums.forEach((num, index) => numsIndexes[num] = index);
+  // or arr.forEach((num, index) => arrIndexes[num] = index);
 
   for (let i = 0; i < len; i += 1) {
-    let complement = target - nums[i];
-    if (numsIndexes[complement] && numsIndexes[complement] !== i) {
-      console.log(i, numsIndexes[complement])
-      return [i, numsIndexes[complement]];
+    let complement = target - arr[i];
+    if (arr[complement] && arr[complement] !== i) {
+      console.log(i, arr[complement])
+      return [i, arr[complement]];
     }
   }
 };
+
+twoSum([2, 7, 13, 5, 4, 13, 5], 10);
 
 function whatFlavors(cost, money) {
   const map = new Map();
