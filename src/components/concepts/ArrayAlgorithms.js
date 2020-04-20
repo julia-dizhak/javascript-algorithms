@@ -2,8 +2,8 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Details from './../Details';
-import { mergeSortedArrays } from '../../algo/array/merge-sorted-arrays';
-import { jumpOnClouds } from '../../algo/array/tasks/jump-on-clouds';
+import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
+import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 
 
 export default function ArrayAlgorithms() {

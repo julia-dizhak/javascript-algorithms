@@ -1,10 +1,10 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { defineAnagrams } from '../../algo/string-manipulation/define-anagrams';
-import { makingAnagrams } from '../../algo/string-manipulation/making-anagrams';
-import { alternatingCharacters } from '../../algo/string-manipulation/tasks/alternating-characters';
-import { isValid } from '../../algo/string-manipulation/tasks/sherlock-valid-string';
+import { defineAnagrams } from '../../algorithms/string-manipulation/define-anagrams';
+import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
+import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
+import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
 
 export default function StringManipulation() {
   return (

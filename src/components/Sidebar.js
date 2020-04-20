@@ -62,6 +62,13 @@ function Sidebar() {
           </li>
 
           <li className="item">
+            <header className="title">Tree</header>
+            <ul className="subList">
+              <li><a href="#binary-search-tree">Binary Search Tree</a></li>
+            </ul>
+          </li>
+
+          <li className="item">
             <header className="title">
               Tasks from Eloquent JavaScript
             </header>

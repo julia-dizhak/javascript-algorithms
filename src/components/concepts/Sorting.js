@@ -1,9 +1,9 @@
 import React from 'react';
 import Details from './../Details';
-import { bubbleSort } from '../../algo/sorting/bubble-sort';
-import { quickSort } from '../../algo/sorting/quick-sort';
-import { selectionSort } from '../../algo/sorting/selection-sort';
-import { findMedian } from '../../algo/sorting/tasks/find-median';
+import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
+import { quickSort } from '../../algorithms/sorting/quick-sort';
+import { selectionSort } from '../../algorithms/sorting/selection-sort';
+import { findMedian } from '../../algorithms/sorting/tasks/find-median';
 
 function Sorting() {
   return (

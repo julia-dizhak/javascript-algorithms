@@ -1,7 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { power } from '../../algo/number/power';
+import { power } from '../../algorithms/number/power';
 
 export default function Number() {
   return (

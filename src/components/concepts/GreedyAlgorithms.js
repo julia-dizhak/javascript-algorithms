@@ -1,9 +1,9 @@
 import React from 'react';
-import Details from './../Details';
+import Details from '../Details';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { minimumAbsoluteDifference } from '../../algo/greedy/min-abs-difference';
-import { luckBalance } from '../../algo/greedy/luck-balance';
+import { minimumAbsoluteDifference } from '../../algorithms/greedy/min-abs-difference';
+import { luckBalance } from '../../algorithms/greedy/luck-balance';
 
 
 export default function GreedyAlgorithms() {

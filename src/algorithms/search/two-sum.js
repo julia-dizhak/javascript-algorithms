@@ -28,7 +28,7 @@ function twoSumBruteForce(arr, sum) {
 
 /**
  *
- * Solution using hash, runtime O(n)
+ * Solution using hash, runtime O(n) - linear time
  * The main benefit of using a hash table is the O(1) lookup time.
  * 1 Create an object containing the key-value pairs of the element and its index, respectively.
  * 2 Iterate through an array. For currentElement, compute complement.
@@ -43,14 +43,19 @@ function twoSum(arr, target) {
     const elem = arr[i];
     arrIndexes[elem] = i;
   }
-  // or arr.forEach((num, index) => arrIndexes[num] = index);
+  // console.log('arr', arr);
+  // console.log('arrIndexes', arrIndexes);
 
   for (let i = 0; i < len; i += 1) {
     let complement = target - arr[i];
-    if (arr[complement] && arr[complement] !== i) {
-      console.log(i, arr[complement])
-      return [i, arr[complement]];
-    }
+    // console.log('i', i);
+    // console.log('complement', complement);
+    // console.log('arr complement', arr[complement]);
+    // it's wrong solution
+    // if (arr[complement] && arr[complement] !== i) {
+    //   console.log(i, arr[complement])
+    //   return [i, arr[complement]];
+    // }
   }
 };
 
@@ -69,7 +74,7 @@ function whatFlavors(cost, money) {
 }
 
 //whatFlavors([2, 7, 13, 5, 4, 13, 5], 10)
-//twoSum([2, 7, 13, 5, 4, 13, 5], 10)
+
 
 
 // 3 variant
@@ -109,24 +114,3 @@ function whatFlavors(cost, money) {
 // whatFlavors([2, 7, 11, 15], 9);
 
 export { twoSum, twoSumBruteForce }
-
-
-// construction function
-const Stack = function() {
-  this.storage = ''; // storage
-}
-
-// push(val) - add value to the front, return size stack
-Stack.prototype.push = function(val) {
-  this.storage = this.storage.concat('***', val)
-}
-
-// pop removes value from front, return value
-//The lastIndexOf() method returns the index within the calling String object of the last occurrence of the specified value, searching backwards from fromIndex. Returns -1 if the value is not found.
-// const lastEluminate = this.storage.lastIndexOf('***')
-
-// size returns size of stack as an integer
-
-const myWeeklyMenu = new Stack();
-myWeeklyMenu.push('red beans');
-console.log('myWeeklyMenu', myWeeklyMenu)
