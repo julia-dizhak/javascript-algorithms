@@ -1,25 +1,23 @@
-# Computer science algorithms by Javascript
-The repo contains Javascript implementations of different famous computer science algorithms.
+# Computer Sciencein JavaScript
+The repo contains JavaScript implementations of different famous computer science algorithms.
 
-## Algorithms
-Tasks contain description, solution and characteristics: runtime or complexity.
-The idea don't use the default, in-built methods of Javascript, for example, sort(), reverse() and etc.
+## Description
+Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript.
+As well contains description and characteristics: runtime or complexity.
+Without using in-built methods of JavaScript, for example, sort(), reverse() and etc.
 
-Development by
-[ES6](http://es6-features.org/), [Yarn](https://yarnpkg.com/), [Babel](https://babeljs.io/) is the Javascript compiler, [Jest](https://facebook.github.io/jest/) with a syntax highlighter [Highlightjs](https://highlightjs.org/).
+## Demo
+Hosted on GitHub Pages
 
 [Demo](https://julia-dizhak.github.io/javascript-algorithms/)
 
+## Development
+Technology
+[ES6](http://es6-features.org/), [Yarn](https://yarnpkg.com/), [Babel](https://babeljs.io/), [Jest](https://facebook.github.io/jest/) with a syntax highlighter [Highlightjs](https://highlightjs.org/).
+
 Tests run by `npm test`
 
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## GitHub Pages
-Deployment on github pages
-if git use ssh
-`git remote set-url origin git@github.com:julia-dizhak/javascript-algorithms.git`
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Available Scripts
 
@@ -37,16 +35,6 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 
 ## TODO:

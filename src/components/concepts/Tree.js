@@ -9,13 +9,14 @@ export default function Tree() {
     <div className="number">
       <h2>Trees</h2>
 
+      {/* todo remove */}
       {myWeeklyMenu.storage}
 
       <ul>
         <li>
           <Details
             id="binary-search-tree"
-            question="Binary Search Tree"
+            question="Binary Search Tree: insert"
             solutionDesc=""
             complexityDesc=""
             runTime=""
