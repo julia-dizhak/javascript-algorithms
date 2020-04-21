@@ -69,6 +69,14 @@ function Sidebar() {
           </li>
 
           <li className="item">
+            <header className="title">Stack and Queue</header>
+            <ul className="subList">
+              <li><a href="#stack-using-string">Stack implementation using String</a></li>
+              <li><a href="#stack-using-object">Stack implementation using object</a></li>
+            </ul>
+          </li>
+
+          <li className="item">
             <header className="title">
               Tasks from Eloquent JavaScript
             </header>

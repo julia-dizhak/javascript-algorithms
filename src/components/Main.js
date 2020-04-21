@@ -8,6 +8,7 @@ import Number from './concepts/Number';
 import ArrayAlgorithms from './concepts/ArrayAlgorithms';
 import Searching from './concepts/Searching';
 import Tree from './concepts/Tree';
+import StackQueue from './concepts/StackQueue';
 
 import './main.css';
 
@@ -22,6 +23,7 @@ function Main() {
         <GreedyAlgorithms />
         <Searching />
         <Tree />
+        <StackQueue />
         <CodeSandboxTasks />
       </div>
   </div>

@@ -22,8 +22,7 @@ Stack.prototype.pop = function() {
 // size returns size of stack as an integer
 Stack.prototype.size = function() {
   const len = this.storage.length;
-  console.log('len', len)
-  return len
+  return len;
 }
 
 const myWeeklyMenu = new Stack();
@@ -31,9 +30,7 @@ myWeeklyMenu.push('carrot');
 myWeeklyMenu.push('eggs');
 myWeeklyMenu.push('coffee');
 myWeeklyMenu.pop();
-//myWeeklyMenu.pop();
 myWeeklyMenu.size()
-console.log('myWeeklyMenu', myWeeklyMenu)
+//console.log('myWeeklyMenu', myWeeklyMenu)
 
-export { myWeeklyMenu }
-
+export { Stack }

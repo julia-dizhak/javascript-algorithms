@@ -38,6 +38,11 @@ class BinarySearchTree {
     */
     let newNode = new Node(value);
 
+    // special case: no nodes in the tree yet
+    if (this.root.value === undefined) {
+      this.root = newNode
+    }
+
     // search
     const traverseTree = (node) => {
       // if value less than node value, go left
@@ -66,24 +71,34 @@ class BinarySearchTree {
     traverseTree(this.root);
   }
 
-  // The contains() method accepts a value as an argument and
-  // returns true if the value is present in the tree or false if not.
-  // contains(value) {
-  //   let currentNode = this.root;
+   /**
+    * The contains() method accepts a value as an argument and
+    * returns true if the value is present in the tree or false if not.
+  */
+  contains(value) {
+    let currentNode = this.root;
 
-  //   if (value === currentNode.value) {
-  //     return true;
-  //   } else if (value < currentNode.value) {
-  //     // if (left === null) {
-  //     //   return false
-  //     // } else {
+    if (value === currentNode.value) {
+      return true;
+    } else if (value < currentNode.value) {
+      // if (left === null) {
+      //   return false
+      // } else {
 
-  //     // }
-  //   }
-  // }
+      // }
+    }
+  }
 }
 
-const tree = new BinarySearchTree(0) // couldn't be undefined
+// height of binary tree
+// So your program should return '-1' when root is NULL.
+// if root is null case
+//adding an element that already exists should return null.
+// Add a New Element to a Binary Search Tree
+// Check if an Element is Present in a Binary Search Tree
+
+
+const tree = new BinarySearchTree();
 tree.insert(5)
 tree.insert(10)
 tree.insert(15)
