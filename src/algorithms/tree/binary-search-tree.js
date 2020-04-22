@@ -29,6 +29,7 @@ class BinarySearchTree {
     * @param {*} value The value to add to the tree.
     * @returns {void}
   */
+  // adding an element that already exists should return null.
   insert(value) {
     this.count++;
 
@@ -78,31 +79,40 @@ class BinarySearchTree {
   contains(value) {
     let currentNode = this.root;
 
-    if (value === currentNode.value) {
-      return true;
-    } else if (value < currentNode.value) {
-      // if (left === null) {
-      //   return false
-      // } else {
+    while (currentNode) {
+      if (value === currentNode.value) {
+        return true
+      }
 
-      // }
+      if ( value < currentNode.value) {
+        currentNode = currentNode.left
+      } else {
+        currentNode = currentNode.right
+      }
     }
+
+    return false;
+  }
+
+  // height of binary tree, should return '-1' when root is NULL.
+  height(node){
+    if (!node) return -1;
+    var leftHeight = this.height(node.left);
+    var rightHeight = this.height(node.right);
+
+    return Math.max(leftHeight, rightHeight) + 1;
   }
 }
-
-// height of binary tree
-// So your program should return '-1' when root is NULL.
-// if root is null case
-//adding an element that already exists should return null.
-// Add a New Element to a Binary Search Tree
-// Check if an Element is Present in a Binary Search Tree
-
 
 const tree = new BinarySearchTree();
 tree.insert(5)
 tree.insert(10)
 tree.insert(15)
 tree.insert(8)
+tree.contains(4)
+tree.height()
 console.log('tree', tree)
+console.log(tree.height());
+
 
 export { BinarySearchTree }

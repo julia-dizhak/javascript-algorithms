@@ -16,7 +16,7 @@ function twoSumBruteForce(arr, sum) {
   const len = arr.length;
 
   for (let i = 0; i < len; i++) {
-    for (let j = i+1; j < len; j++) {
+    for (let j = i + 1; j < len; j++) {
       if (arr[j] === sum - arr[i]) {
         return [i, j]
       }
@@ -32,34 +32,32 @@ function twoSumBruteForce(arr, sum) {
  * The main benefit of using a hash table is the O(1) lookup time.
  * 1 Create an object containing the key-value pairs of the element and its index, respectively.
  * 2 Iterate through an array. For currentElement, compute complement.
- * 3 If complement exists in hashTable and currentElementIndex !== hashTable[complement], return the indices of each element.
- * 4 If complement does not exist or the indices of both elements are equal, move to the next element in the array.
+ * etc.
+ * @param {number[]} arr
+ * @param {number} target
+ * @return {number[]}
  */
 function twoSum(arr, target) {
   const len = arr.length;
-  const arrIndexes = {};
+  const previousValues = {};
 
   for (let i = 0; i < len; i++) {
-    const elem = arr[i];
-    arrIndexes[elem] = i;
+    const currentElement = arr[i];
+    const complement = target - currentElement;
+    const index2 = previousValues[complement];
+    if (index2 != null) {
+      return [index2, i]
+    } else {
+      previousValues[currentElement] = i
+    }
   }
-  // console.log('arr', arr);
-  // console.log('arrIndexes', arrIndexes);
 
-  for (let i = 0; i < len; i += 1) {
-    let complement = target - arr[i];
-    // console.log('i', i);
-    // console.log('complement', complement);
-    // console.log('arr complement', arr[complement]);
-    // it's wrong solution
-    // if (arr[complement] && arr[complement] !== i) {
-    //   console.log(i, arr[complement])
-    //   return [i, arr[complement]];
-    // }
-  }
+  // or through an exception
+  return []
 };
 
-twoSum([2, 7, 13, 5, 4, 13, 5], 10);
+
+twoSum([2, 7, 11, 15], 9);
 
 function whatFlavors(cost, money) {
   const map = new Map();

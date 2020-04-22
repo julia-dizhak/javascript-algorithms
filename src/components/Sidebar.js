@@ -73,6 +73,7 @@ function Sidebar() {
             <ul className="subList">
               <li><a href="#stack-using-string">Stack implementation using String</a></li>
               <li><a href="#stack-using-object">Stack implementation using object</a></li>
+              <li><a href="#queue-using-object">Queue implementation using object</a></li>
             </ul>
           </li>
 

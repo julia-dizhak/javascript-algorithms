@@ -1,8 +1,8 @@
 import { twoSum, twoSumBruteForce } from './two-sum';
 
 describe('two sum test case', () => {
-  xit('empty array', () => {
-
+  it('empty array', () => {
+    expect(twoSum([], 9)).toEqual([]);
   });
 
   it('two sum brute force solution', () => {
@@ -21,9 +21,8 @@ describe('two sum test case', () => {
     expect(twoSum([2, 7, 13, 5, 4, 13, 5], 10)).toEqual([3, 6]);
   });
 
-  // todo test throw solution
-  xit('', () => {
-    expect(twoSum([2, 7, 11, 15], 8)).toEqual();
+  it('there is no target', () => {
+    expect(twoSum([2, 7, 11, 15], 8)).toEqual([]);
 
   });
 });

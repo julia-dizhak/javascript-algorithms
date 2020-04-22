@@ -2,6 +2,7 @@ import React from 'react';
 import Details from '../Details';
 import { Stack } from '../../algorithms/stack/stack-using-string';
 import { StackObj } from '../../algorithms/stack/stack-using-objects';
+import { Queue } from '../../algorithms/queue/queue-using-object';
 
 export default function StackQueue() {
   return (
@@ -22,6 +23,14 @@ export default function StackQueue() {
             id="stack-using-object"
             question="Stack implementation using object"
             code={StackObj.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="queue-using-object"
+            question="Queue implementation using object"
+            code={Queue.toString()}
           />
         </li>
       </ul>
