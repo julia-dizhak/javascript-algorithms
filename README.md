@@ -1,10 +1,11 @@
-# Computer Sciencein JavaScript
+# Computer Science in JavaScript
 The repo contains JavaScript implementations of different famous computer science algorithms.
 
 ## Description
 Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript.
 As well contains description and characteristics: runtime or complexity.
 Without using in-built methods of JavaScript, for example, sort(), reverse() and etc.
+Solutions include as well measuring of time complexity.
 
 ## Demo
 Hosted on GitHub Pages
@@ -37,8 +38,11 @@ Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
-## Folder structure
-...
+### Folder structure
+The most recent packages are found in these directories:
+
+* `src/algorithms` - the implementation source code
+* `src/algorithms/***.spec.js` - tests for the implementation source code
 
 
 ## TODO:
