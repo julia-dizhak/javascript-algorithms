@@ -1,3 +1,5 @@
+import { binarySearchRecursive } from './binary-search';
+
 /**
  * Ice Cream parlor
  *
@@ -53,11 +55,38 @@ function twoSum(arr, target) {
   }
 
   // or through an exception
-  return []
+  return [];
 };
 
+/**
+ * 1 Take an arr
+ * 2 sort all the items
+ * 3 just do a binary search there
+ * @param {*} arr
+ * @param {*} target
+ */
+// todo find a solution
+// function twoSumBinarySearch(arr, target) {
+//   const sortedArr = arr.sort((a,b) =>  a - b);
+//   console.log('arr', arr);
 
-twoSum([2, 7, 11, 15], 9);
+//   let nums = [];
+//   let previousValues = [];
+
+//   for (let i in sortedArr) {
+//     let complement = binarySearchRecursive(sortedArr, target - sortedArr[i]);
+//     if (!!complement && !previousValues.includes[arr[i]] && !previousValues.includes(complement)) {
+//       nums.push([sortedArr[i], complement]);
+//       previousValues.push(complement)
+//     }
+//   }
+
+//   console.log(nums)
+//   return nums;
+// }
+
+//twoSumBinarySearch([2, 7, 11, 15], 9);
+//twoSumBinarySearch([2,3,4,3,6,7], 6);
 
 function whatFlavors(cost, money) {
   const map = new Map();
@@ -74,41 +103,20 @@ function whatFlavors(cost, money) {
 //whatFlavors([2, 7, 13, 5, 4, 13, 5], 10)
 
 
+const twoSumUsingMap = function(arr, target) {
+  const len = arr.length;
+  let map = new Map();
 
-// 3 variant
-// sort and make binary search
-// and save indexes
-// complemnt
+  for (var i = 0; i < len; i++) {
+    let complement = target - arr[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i]
+    }
+     map.set(arr[i], i);
+  }
+  console.log('map', map)
+}
 
+twoSumUsingMap([2, 7, 11, 15], 9);
 
-// var twoSum = function(nums, target) {
-//   let map = new Map();
-
-//   for (var i = 0; i < nums.length; i++) {
-//     let complement = target - nums[i];
-//     if (map.has(complement)) {
-//       return [map.get(complement), i]
-//     }
-//      map.set(nums[i], i);
-//   }
-//   console.log('map', map)
-// }
-
-
-// function whatFlavors(cost, money) {
-//   let n = cost.length,
-//       restCost = {};
-
-//   for(let i = 0; i < n; i += 1) {
-//       var result = money - cost[i];
-//       if(restCost[result]) {
-//           console.log(restCost[result] + ' ' + (i + 1));
-//           break;
-//       }
-//       restCost[cost[i]] = i + 1;
-//   }
-// }
-
-// whatFlavors([2, 7, 11, 15], 9);
-
-export { twoSum, twoSumBruteForce }
+export { twoSum, twoSumBruteForce, twoSumUsingMap }

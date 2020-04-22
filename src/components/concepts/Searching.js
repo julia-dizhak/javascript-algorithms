@@ -26,7 +26,7 @@ export default function Searching() {
         <li>
           <Details
             id="binary-search"
-            question="Binary search with while and recursion"
+            question="Binary search with loop while and recursion"
             solutionDesc=""
             complexityDesc=""
             runTime="O(log n)"

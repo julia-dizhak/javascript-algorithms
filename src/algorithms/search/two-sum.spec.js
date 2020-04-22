@@ -1,4 +1,4 @@
-import { twoSum, twoSumBruteForce } from './two-sum';
+import { twoSum, twoSumBruteForce, twoSumUsingMap } from './two-sum';
 
 describe('two sum test case', () => {
   it('empty array', () => {
@@ -23,7 +23,11 @@ describe('two sum test case', () => {
 
   it('there is no target', () => {
     expect(twoSum([2, 7, 11, 15], 8)).toEqual([]);
+  });
 
+  it('two sum using Map', () => {
+    expect(twoSumUsingMap([2, 7, 11, 15], 9)).toEqual([0, 1]);
+    expect(twoSum([2, 7, 13, 5, 4, 13, 5], 10)).toEqual([3, 6]);
   });
 });
 
