@@ -29,7 +29,7 @@ class BinarySearchTree {
     * @param {*} value The value to add to the tree.
     * @returns {void}
   */
-  // adding an element that already exists should return null.
+  // todo adding an element that already exists should return null.
   insert(value) {
     this.count++;
 
@@ -95,7 +95,8 @@ class BinarySearchTree {
   }
 
   // height of binary tree, should return '-1' when root is NULL.
-  height(node){
+  height(node = this.root) {
+    //debugger;
     if (!node) return -1;
     var leftHeight = this.height(node.left);
     var rightHeight = this.height(node.right);
@@ -109,10 +110,10 @@ tree.insert(5)
 tree.insert(10)
 tree.insert(15)
 tree.insert(8)
-tree.contains(4)
-tree.height()
 console.log('tree', tree)
-console.log(tree.height());
-
+console.log('height', tree.height());
+console.log('size', tree.size());
 
 export { BinarySearchTree }
+
+

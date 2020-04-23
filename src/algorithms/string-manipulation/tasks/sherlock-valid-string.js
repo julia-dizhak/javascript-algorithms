@@ -43,7 +43,7 @@ function isValidVariant1(s) {
   let count = 0;
 
   for (let char of s) {
-    h[char] = h[char]+1 || 1; // if any char appear more than once, value will increament;
+    h[char] = h[char]+1 || 1; // if any char appear more than once, value will increment;
   }
 
   Object.values(h).map(v => {
@@ -58,6 +58,7 @@ function isValidVariant1(s) {
         res = "Yes"
       }
     }
+    return res = "No";
   })
 
   if (count > 1) res = "NO"; // if more than one values are different

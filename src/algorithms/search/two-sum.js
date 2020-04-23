@@ -88,20 +88,6 @@ function twoSum(arr, target) {
 //twoSumBinarySearch([2, 7, 11, 15], 9);
 //twoSumBinarySearch([2,3,4,3,6,7], 6);
 
-function whatFlavors(cost, money) {
-  const map = new Map();
-  for (let i = 0; i < cost.length; i++) {
-      var target = money - cost[i];
-      if (map.has(target)) {
-        console.log(map.get(target), i + 1);
-        break;
-      }
-      map.set(cost[i], i + 1);
-  }
-}
-
-//whatFlavors([2, 7, 13, 5, 4, 13, 5], 10)
-
 
 const twoSumUsingMap = function(arr, target) {
   const len = arr.length;
@@ -116,7 +102,5 @@ const twoSumUsingMap = function(arr, target) {
   }
   console.log('map', map)
 }
-
-twoSumUsingMap([2, 7, 11, 15], 9);
 
 export { twoSum, twoSumBruteForce, twoSumUsingMap }

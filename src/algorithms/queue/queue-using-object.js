@@ -26,7 +26,7 @@ Queue.prototype.dequeue = function() {
 }
 
 
-const myQueue = new Queue(3);
+//const myQueue = new Queue(3);
 // console.log('myQueue', myQueue )
 
 export { Queue }

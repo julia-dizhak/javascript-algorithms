@@ -2,9 +2,9 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-function createMarkup(markup) {
-  return {__html: markup};
-}
+// function createMarkup(markup) {
+//   return {__html: markup};
+// }
 
 export default function Details(props) {
   const {
@@ -22,8 +22,7 @@ export default function Details(props) {
     <details
       className="details"
       id={id}
-      aria-expanded="false"
-      aria-labelledby="label">
+      aria-expanded="false">
       <summary
         role="button"
         aria-controls="content"

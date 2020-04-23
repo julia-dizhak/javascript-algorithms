@@ -1,6 +1,5 @@
 import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Details from './../Details';
 import { power } from '../../algorithms/number/power';
 
 export default function Number() {
@@ -8,33 +7,15 @@ export default function Number() {
     <div className="number">
       <h2>Number</h2>
 
-      <ul>
+      <ul id="number">
         <li>
-          <details
-            className="details"
+          <Details
             id="number-power"
-            aria-expanded="false"
-            aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span className="question">
-                Question:&nbsp;
-                <strong>Write a Power function</strong>
-              </span>
-            </summary>
-
-            <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
-              <SyntaxHighlighter
-                language="javascript"
-                style={docco}
-              >
-                {power.toString()}
-              </SyntaxHighlighter>
-            </div>
-          </details>
+            question="Write a power function"
+            code={power.toString()}
+          />
         </li>
       </ul>
-
   </div>
   );
 }

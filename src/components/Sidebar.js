@@ -5,14 +5,15 @@ import './sidebar.css';
 function Sidebar() {
   return (
     <div className="sidebar">
-      <a href="/" className="logo">Algo</a>
+      <a href="/" className="logo">Topics</a>
       <nav>
         <ul className="list">
-        <li className="item">
-            <header className="title">Number</header>
-            <ul className="subList">
-              <li><a href="#number-power">power</a></li>
-            </ul>
+          <li className="item">
+            <header className="title"><a href="#number">Number</a></header>
+          </li>
+
+          <li className="item">
+            <header className="title"><a href="#recursion">Recursion</a></header>
           </li>
 
           <li className="item">
