@@ -1,5 +1,5 @@
 /**
- * @fileoverview Binary Search Tree implementation in JavaScript
+ * Binary Search Tree implementation in JavaScript
  */
 
 class Node {
@@ -94,12 +94,27 @@ class BinarySearchTree {
     return false;
   }
 
+  // im not sure that this is correct solution
   // height of binary tree, should return '-1' when root is NULL.
   height(node = this.root) {
-    //debugger;
-    if (!node) return -1;
-    var leftHeight = this.height(node.left);
-    var rightHeight = this.height(node.right);
+    // empty node
+    if (node === null) return -1;
+
+    if (node.left === null && node.right === null) {
+      return 0
+    }
+
+    if (node.left === null) {
+      return this.height(node.right) + 1
+    }
+
+    if (node.right === null) {
+      return this.height(node.left) + 1
+    }
+
+    const leftHeight = this.height(node.left);
+    const rightHeight = this.height(node.right);
+
 
     return Math.max(leftHeight, rightHeight) + 1;
   }
@@ -110,9 +125,10 @@ tree.insert(5)
 tree.insert(10)
 tree.insert(15)
 tree.insert(8)
-console.log('tree', tree)
-console.log('height', tree.height());
-console.log('size', tree.size());
+
+console.log('tree', tree.height())
+// console.log('height', tree.height());
+// console.log('size', tree.size());
 
 export { BinarySearchTree }
 

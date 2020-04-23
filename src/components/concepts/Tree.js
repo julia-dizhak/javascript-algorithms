@@ -11,9 +11,9 @@ export default function Tree() {
         <li>
           <Details
             id="binary-search-tree"
-            question="Binary Search Tree: insert"
+            question="Binary Search Tree: .insert, .contains, height"
             solutionDesc=""
-            complexityDesc=""
+            complexityDesc="In optimal way operations with tree will take O(log(n))"
             runTime=""
             spaceComplexity=""
             code={BinarySearchTree.toString()}
