@@ -20,6 +20,7 @@ class BinarySearchTree {
   }
 
   size() {
+    // count doesn't work correctly with duplicated nodes
     return this.count;
   }
 
@@ -29,7 +30,6 @@ class BinarySearchTree {
     * @param {*} value The value to add to the tree.
     * @returns {void}
   */
-  // todo adding an element that already exists should return null.
   insert(value) {
     this.count++;
 
@@ -49,7 +49,7 @@ class BinarySearchTree {
       // if value less than node value, go left
       if (value < node.value) {
         // if no left child, append new node
-        if (!node.left) {
+        if (node.left === null) {
           node.left = newNode
         }
         // if left child exists, look left again recursively
@@ -59,13 +59,17 @@ class BinarySearchTree {
       }
       // if value bigger than node value go right
       else if ( value > node.value) {
-        if (!node.right) {
+        if (node.right === null) {
           node.right = newNode
         }
         // look searchTree right again
         else {
           traverseTree(node.right)
         }
+      }
+      else {
+        // adding an element that already exists should return null
+        return null
       }
     }
     // call search on root node
@@ -118,16 +122,37 @@ class BinarySearchTree {
 
     return Math.max(leftHeight, rightHeight) + 1;
   }
+
+  // Start at root and check if p and q are less, then go left, otherwise go right
+  lowestCommonAncestor(
+    p, // v1
+    q, // v2
+    node = this.root
+  ) {
+    if (node.value > p && node.value > q) {
+      return this.lowestCommonAncestor(p, q, node.left)
+    } else if (node.value < p && node.value < q) {
+      return this.lowestCommonAncestor(p, q, node.right)
+    } else {
+      return node
+    }
+
+  }
 }
 
 const tree = new BinarySearchTree();
-tree.insert(5)
-tree.insert(10)
-tree.insert(15)
-tree.insert(8)
+// need to have specific order
+tree.insert(4)
+tree.insert(2)
+tree.insert(3)
+tree.insert(1)
+tree.insert(7)
+tree.insert(6)
 
-console.log('tree', tree.height())
-// console.log('height', tree.height());
+
+console.log('tree', tree)
+tree.lowestCommonAncestor(2,7) // should be 4 it's not correct
+console.log('lca', tree.lowestCommonAncestor(2,7));
 // console.log('size', tree.size());
 
 export { BinarySearchTree }

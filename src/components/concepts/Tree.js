@@ -11,7 +11,7 @@ export default function Tree() {
         <li>
           <Details
             id="binary-search-tree"
-            question="Binary Search Tree: .insert, .contains, height"
+            question="Binary Search Tree: .insert, .contains, height, lowest common ancestor"
             solutionDesc=""
             complexityDesc="In optimal way operations with tree will take O(log(n))"
             runTime=""
