@@ -6,7 +6,7 @@ class Node {
   constructor(value) {
     this.value = value;
     this.left = null; // left pointer
-    this.right = null;     // right pointer
+    this.right = null; // right pointer
   }
 }
 /**
@@ -140,9 +140,9 @@ class BinarySearchTree {
   }
 }
 
-const tree = new BinarySearchTree();
+const tree = new BinarySearchTree(4);
 // need to have specific order
-tree.insert(4)
+// tree.insert(4)
 tree.insert(2)
 tree.insert(3)
 tree.insert(1)

@@ -1,5 +1,6 @@
 import React from 'react';
 import Details from './../Details';
+import { factorial } from "../../algorithms/recursion/factorial";
 
 export default function Recursion() {
   return (
@@ -9,9 +10,11 @@ export default function Recursion() {
       <ul id="recursion">
         <li>
           <Details
-            id=""
-            question="test"
-            //code={}
+            id="factorial"
+            question="Factorial using recursion"
+            runTime="The time complexity of recursive factorial is O(n)"
+            spaceComplexity="As there is no extra space taken during the recursive calls, the space complexity is O(n)"
+            code={factorial.toString()}
           />
         </li>
       </ul>

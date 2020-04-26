@@ -8,29 +8,17 @@ function Sidebar() {
       <a href="/" className="logo">Topics</a>
       <nav>
         <ul className="list">
-          <li className="item">
-            <header className="title"><a href="#number">Number</a></header>
-          </li>
-
-          <li className="item">
-            <header className="title"><a href="#recursion">Recursion</a></header>
-          </li>
-
-          <li className="item">
-            <header className="title">Arrays</header>
-            <ul className="subList">
-              <li><a href="#is-sorted">Merge two sorted arrays</a></li>
-            </ul>
-          </li>
+          <li className="item"><header className="title"><a href="#number">Number</a></header></li>
+          <li className="item"><header className="title"><a href="#recursion">Recursion</a></header></li>
+          <li className="item"><header className="title"><a href="#array">Array</a></header></li>
 
           <li className="item">
             <header className="title">Sorting</header>
             <ul className="subList">
               <li><a href="#bubble-sort">Bubble sort</a></li>
               <li><a href="#selection-sort">Selection sort</a></li>
+              <li><a href="#merge-sort">Merge sort</a></li>
               <li><a href="#quick-sort">Quick sort</a></li>
-              {/* other tasks */}
-              <li><a href="#find-median">Find a median</a></li>
             </ul>
           </li>
 
@@ -63,9 +51,9 @@ function Sidebar() {
           </li>
 
           <li className="item">
-            <header className="title">Tree</header>
+            <header className="title"><a href="#binary-search-tree">Tree</a></header>
             <ul className="subList">
-              <li><a href="#binary-search-tree">Binary Search Tree</a></li>
+              <li><a href="#binary-search-tree-operations">Binary Search Tree</a></li>
             </ul>
           </li>
 

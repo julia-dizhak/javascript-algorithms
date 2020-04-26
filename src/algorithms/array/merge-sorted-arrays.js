@@ -1,7 +1,8 @@
 /**
  * Write a function which merges two sorted arrays of integers
  * and prints result
- * runtime O(n)
+ * runtime O(n log n)
+ * Below is just merge sort algorithm
  *
  * @param {array, array}
  * @return {array} - sorted

@@ -3,6 +3,7 @@ import Details from './../Details';
 import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
 import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
+import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
 import { findMedian } from '../../algorithms/sorting/tasks/find-median';
 
 function Sorting() {
@@ -17,7 +18,7 @@ function Sorting() {
             question="Bubble sort"
             solutionDesc="is a method for sorting arrays by comparing each array element to the element behind it"
             complexityDesc="Unfortunately bubble sort is pretty slow"
-            runTime="O(n^2)"
+            runTime="in worst cases is O(n^2)"
             spaceComplexity="O(1)"
             code={bubbleSort.toString()}
           />
@@ -28,7 +29,7 @@ function Sorting() {
             id="selection-sort"
             question="Selection sort"
             solutionDesc=""
-            complexityDesc=""
+            complexityDesc="Time complexity is (n-1) + (n-2) + ... + 1 = n(n-1)/2 = (n^2 - n)/2 = n^2"
             runTime="O(n^2) quadratic time complexity in all cases"
             spaceComplexity=""
             code={selectionSort.toString()}
@@ -37,10 +38,23 @@ function Sorting() {
 
         <li>
           <Details
+            id="merge-sort"
+            question="Merge sort"
+            solutionDesc="we could magically sort the left half and sort the right half and repeat it again"
+            complexityDesc="It always give us O(n log n) runtime. There is no case than array looks really funky."
+            runTime="O(n log n)"
+            spaceComplexity="The downside is merging 2 arrays together requires extra space - O(n) space"
+            code={mergeSort.toString()}
+            secondCode={merger.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
             id="quick-sort"
             question="Quick sort"
             solutionDesc="first pick a random number - pivot"
-            complexityDesc="Quick sort’s worst case is O(n^2) but that can be avoided if we pick random pivot point (choose middle one)"
+            complexityDesc="Quick sort’s worst case is O(n^2) (for example, if list was already sorted) but that can be avoided if we pick random pivot point (choose middle one)"
             runTime="O(n log(n))"
             spaceComplexity="O(log (n))"
             code={quickSort.toString()}

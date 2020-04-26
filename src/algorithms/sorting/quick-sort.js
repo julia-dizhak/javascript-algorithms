@@ -1,15 +1,15 @@
-function quickSort(array) {
-  const len = array.length;
+function quickSort(arr) {
+  const len = arr.length;
 
   if (len <= 1) {
-    return array;
+    return arr;
   }
 
-  const pivot = array[len - 1];
+  const pivot = arr[len - 1];
   const leftArr = [];
   const rightArr = [];
 
-  for (const el of array.slice(0, len - 1)) {
+  for (const el of arr.slice(0, len - 1)) {
     // exclude last element, because it's our pivot
     el < pivot ? leftArr.push(el) : rightArr.push(el)
   }
