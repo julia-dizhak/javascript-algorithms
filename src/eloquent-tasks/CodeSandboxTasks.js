@@ -1,9 +1,11 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Details from '../components/Details';
 import { loopingTriangle } from './tasks/looping-triangle';
 import { fizzBuzz } from './tasks/fizz-buzz';
 import { chessboard } from './tasks/chessboard';
+import { isEven } from './tasks/is-even';
 
 export default function StringManipulation() {
   return (
@@ -107,6 +109,14 @@ export default function StringManipulation() {
               </SyntaxHighlighter>
             </div>
           </details>
+        </li>
+
+        <li>
+          <Details
+            id="eloquent-is-even"
+            question="Define whether a positive whole number is even or odd (using recursion): Zero is even, One is odd, for any other number N, its evenness is the same as N - 2."
+            code={isEven.toString()}
+          />
         </li>
       </ul>
 

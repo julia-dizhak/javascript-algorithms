@@ -1,4 +1,6 @@
 function power(base, exponent) {
+  if (exponent === undefined) exponent = 2;
+
   let result = 1;
 
   for (let count = 0; count < exponent; count++) {
@@ -8,4 +10,15 @@ function power(base, exponent) {
   return result
 }
 
-export { power }
+/**
+ * Recursion usually ten times slower than loops
+ */
+function powerUsingRecursion(base, exponent) {
+  if ( exponent === 0) {
+    return 1
+  } else {
+    return base * powerUsingRecursion(base, exponent - 1)
+  }
+}
+
+export { power, powerUsingRecursion }

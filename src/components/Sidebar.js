@@ -74,6 +74,7 @@ function Sidebar() {
               <li><a href="#eloquent-looping-triangle">Looping a triangle</a></li>
               <li><a href="#eloquent-fizz-buzz">Fizz buzz</a></li>
               <li><a href="#eloquent-chessboard">Chessboard</a></li>
+              <li><a href="#eloquent-is-even">Recursion</a></li>
             </ul>
           </li>
 
