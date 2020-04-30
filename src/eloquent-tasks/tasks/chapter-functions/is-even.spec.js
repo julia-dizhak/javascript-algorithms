@@ -17,9 +17,6 @@ describe('beans counting', () => {
     expect(countBs("abcd")).toEqual(0);
     expect(countBs("BBC")).toEqual(2);
     expect(countBs("Bbcdb")).toEqual(1);
-
-
-
   })
 
   it('countChar', () => {

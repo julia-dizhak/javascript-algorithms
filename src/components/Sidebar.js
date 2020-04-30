@@ -41,8 +41,8 @@ function Sidebar() {
           <li className="item">
             <header className="title">Search</header>
             <ul className="subList">
-              <li><a href="#is-find-index">Linear search: Find an index for element in array</a></li>
-              <li><a href="#binary-search">Binary search in array</a></li>
+              <li><a href="#is-find-index">Linear search</a></li>
+              <li><a href="#binary-search">Binary search</a></li>
 
               {/* other tasks */}
               <li><a href="#search-balanced-sum">Balanced Sum</a></li>

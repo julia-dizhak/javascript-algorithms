@@ -5,7 +5,7 @@ import Details from '../components/Details';
 import { loopingTriangle } from './tasks/looping-triangle';
 import { fizzBuzz } from './tasks/fizz-buzz';
 import { chessboard } from './tasks/chessboard';
-import { isEven } from './tasks/is-even';
+import { isEven } from './tasks/chapter-functions/is-even';
 
 export default function StringManipulation() {
   return (
@@ -17,30 +17,12 @@ export default function StringManipulation() {
 
       <ul>
         <li>
-          <details
-            className="details"
+          <Details
             id="eloquent-looping-triangle"
-            aria-expanded="false"
-            aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span className="question">
-                Question:&nbsp;
-                <strong>Looping triangle</strong>
-                <p>Write a loop that makes seven calls to console.log to output the triangle</p>
-              </span>
-            </summary>
-
-            <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
-
-              <SyntaxHighlighter
-                language="javascript"
-                style={docco}
-              >
-                {loopingTriangle.toString()}
-              </SyntaxHighlighter>
-            </div>
-          </details>
+            question="Looping triangle"
+            solutionDesc="Write a loop that makes seven calls to console.log to output the triangle"
+            code={loopingTriangle.toString()}
+          />
         </li>
 
         <li>

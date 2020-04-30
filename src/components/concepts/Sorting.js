@@ -18,7 +18,7 @@ function Sorting() {
             question="Bubble sort"
             solutionDesc="is a method for sorting arrays by comparing each array element to the element behind it"
             complexityDesc="Unfortunately bubble sort is pretty slow"
-            runTime="in worst cases is O(n^2)"
+            runTime="(n-1) * (n-1) ... = n2 - 2n + 1 = O(n^2), Ω(n^2)"
             spaceComplexity="O(1)"
             code={bubbleSort.toString()}
           />
@@ -27,10 +27,10 @@ function Sorting() {
         <li>
           <Details
             id="selection-sort"
-            question="Selection sort"
+            question="Selection sort: get the next smallest element"
             solutionDesc=""
-            complexityDesc="Time complexity is (n-1) + (n-2) + ... + 1 = n(n-1)/2 = (n^2 - n)/2 = n^2"
-            runTime="O(n^2) quadratic time complexity in all cases"
+            complexityDesc="Time complexity is n + (n-1) + (n-2) + ... + 1 = n*(n+1)/2 = (n^2 + n)/2 = O(n^2)"
+            runTime="O(n^2) quadratic time complexity in all cases, Ω(n^2)"
             spaceComplexity=""
             code={selectionSort.toString()}
           />
@@ -52,7 +52,7 @@ function Sorting() {
         <li>
           <Details
             id="quick-sort"
-            question="Quick sort"
+            question="Quick sort: pick a pivot"
             solutionDesc="first pick a random number - pivot"
             complexityDesc="Quick sort’s worst case is O(n^2) (for example, if list was already sorted) but that can be avoided if we pick random pivot point (choose middle one)"
             runTime="O(n log(n))"
