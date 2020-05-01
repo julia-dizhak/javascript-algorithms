@@ -13,7 +13,7 @@ function binarySearch(arr, target) {
 
 
   while (start <= end) {
-    let mid = Math.floor( (start + end) / 2 ); // index
+    let mid = Math.floor((start + end) / 2); // index
 
     if (arr[mid] === target) {
       return mid
@@ -26,7 +26,6 @@ function binarySearch(arr, target) {
 
   return -1
 }
-
 
 function binarySearchRecursive(arr, target, start = 0, stop = (arr.length - 1)) {
   let midPoint = Math.floor( (start + stop) / 2);

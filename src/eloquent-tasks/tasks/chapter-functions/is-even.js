@@ -31,42 +31,43 @@ export { isEven, countBs, countChar}
 
 // closure
 // ###  What will be the output of the following code?
-function myFunction(a) {
-  var b = 6;
-  return function(b) {
-  console.log(b, a)
-  }
- }
- var testFunction = myFunction(2)
- testFunction(3)
+// function myFunction(a) {
+//   var b = 6;
+//   return function(b) {
+//   console.log(b, a)
+//   }
+//  }
+//  var testFunction = myFunction(2)
+//  testFunction(3)
 
 // Що буде знаходитись у secondVar після виконання наступного коду?
-var firstVar = 'foo';
-var secondVar;
-switch(firstVar) {
- case 'foo':
- secondVar = 'bar';
- case 'bar':
- secondVar = 'foo';
- case 'foobar':
- secondVar = 'barfoo';
- break;
- default:
- secondVar = 'foobar';
-}
+// var firstVar = 'foo';
+// var secondVar;
+// switch(firstVar) {
+//  case 'foo':
+//  secondVar = 'bar';
+//  case 'bar':
+//  secondVar = 'foo';
+//  case 'foobar':
+//  secondVar = 'barfoo';
+//  break;
+//  default:
+//  secondVar = 'foobar';
+// }
 
-//
-let obj1 = {
-  name: 'test',
-  f: 'K'
-}
+// //
+// // let obj1 = {
+// //   name: 'test',
+// //   f: 'K'
+// // }
 
-let obj2 = {
-  name: 'test1',
-  f: 'K1'
-}
+// // let obj2 = {
+// //   name: 'test1',
+// //   f: 'K1'
+// // }
 
-const t = {
-  ...obj1,
-  ...obj2
-}
+// // const t = {
+// //   ...obj1,
+// //   ...obj2
+// // }
+

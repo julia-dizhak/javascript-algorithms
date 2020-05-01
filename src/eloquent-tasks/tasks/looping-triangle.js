@@ -30,7 +30,6 @@ function drawPyramid(h) {
  * Draw a pyramid by recursion means
  * draw pyramid of size n-1 + additional row, for example
  * if h = 4, draw(4-1) + one additional loop
- *
  */
 function drawPyramidUsingRecursion(h) {
   let line = '#';
@@ -46,8 +45,4 @@ function drawPyramidUsingRecursion(h) {
   console.log('line recursion', line)
 }
 
-
-drawPyramidUsingRecursion(4)
-//loopingTriangle(10);
-
- export { loopingTriangle, drawPyramid }
+ export { loopingTriangle, drawPyramid, drawPyramidUsingRecursion }

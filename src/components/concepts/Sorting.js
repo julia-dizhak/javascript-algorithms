@@ -4,6 +4,7 @@ import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
 import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
 import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
+import { insertionSort, solution } from '../../algorithms/sorting/insertion-sort';
 import { findMedian } from '../../algorithms/sorting/tasks/find-median';
 
 function Sorting() {
@@ -33,6 +34,18 @@ function Sorting() {
             runTime="O(n^2) quadratic time complexity in all cases, Ω(n^2)"
             spaceComplexity=""
             code={selectionSort.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="insertion-sort"
+            question="Insertion sort"
+            solutionDesc="Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array."
+            complexityDesc=""
+            runTime="O(n^2)"
+            spaceComplexity="O(1)"
+            code={insertionSort.toString()}
           />
         </li>
 

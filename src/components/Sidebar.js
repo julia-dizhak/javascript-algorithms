@@ -17,6 +17,7 @@ function Sidebar() {
             <ul className="subList">
               <li><a href="#bubble-sort">Bubble sort</a></li>
               <li><a href="#selection-sort">Selection sort</a></li>
+              <li><a href="#insertion-sort">Insertion sort</a></li>
               <li><a href="#merge-sort">Merge sort</a></li>
               <li><a href="#quick-sort">Quick sort</a></li>
             </ul>
