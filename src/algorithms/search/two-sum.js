@@ -1,4 +1,4 @@
-import { binarySearchRecursive } from './binary-search';
+import { binarySearchRecursive } from './binary-search/binary-search';
 
 /**
  * Ice Cream parlor
@@ -45,7 +45,7 @@ function twoSum(arr, target) {
 
   for (let i = 0; i < len; i++) {
     const currentElement = arr[i];
-    const complement = target - currentElement; // needed 
+    const complement = target - currentElement; // needed
     const index2 = previousValues[complement];
     if (index2 != null) {
       return [index2, i]

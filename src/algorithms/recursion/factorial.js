@@ -1,5 +1,4 @@
 const loopNTimes = function(n) {
-  // console.log('n times', n);
   if ( n <= 1) {
     return 'complete'
   }
@@ -103,6 +102,30 @@ function factorial(n) {
 }
 
 factorialUseLoopOperatorMinus(3);
+
+
+let obj1 = {
+  name: 'test',
+  t: 1
+}
+
+let obj2 = {
+  name: 'test1',
+  t: 2
+}
+
+let obj3 = {
+  name: 'test2',
+  t: 0
+}
+
+const result = {
+  ...obj1,
+  ...obj2,
+  ...obj3
+}
+
+console.log(result)
 
 
 export { factorialUseLoop, factorial, factorialUseWhileLoop, factorialUseLoopOperatorMinus, loopNTimes }

@@ -26,4 +26,20 @@ describe('binary search using while loop test case', () => {
     expect(binarySearchRecursive(primes, 19)).toEqual(7);
   });
 
+  it('test left+right overflow for arr of 2 elements', () => {
+    expect(binarySearch([1,2], 1)).toEqual(0);
+    expect(binarySearch([1,2], 2)).toEqual(1);
+    expect(binarySearch([1,2], 3)).toEqual(-1)
+
+    expect(binarySearchRecursive([1,2], 1)).toEqual(0)
+    expect(binarySearchRecursive([1,2], 2)).toEqual(1);
+
+  });
+
+  it('test left+right overflow for arr of 1 element', () => {
+    expect(binarySearch([1], 1)).toEqual(0);
+    expect(binarySearch([1], 2)).toEqual(-1);
+    expect(binarySearchRecursive([1], 1)).toEqual(0);
+    expect(binarySearchRecursive([1], 2)).toEqual(-1);
+  });
 });

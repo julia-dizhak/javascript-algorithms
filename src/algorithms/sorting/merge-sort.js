@@ -41,21 +41,4 @@ function mergeSort(arr) {
   return merger(mergeSort(left), mergeSort(right))
 }
 
-
-function wrapValue(n) {
-  var localVariable = n;
-  //why I can't simple return here return localVariable;
-
-  return function() {
-    //console.log('local variable', localVariable)
-    return localVariable;
-  }
-}
-var wrap1 = wrapValue(1);
-// console.log('wrap1', wrap1());
-
-var wrap2 = wrapValue(2);
-// console.log('wrap2', wrap2());
-
-
 export { mergeSort, merger }

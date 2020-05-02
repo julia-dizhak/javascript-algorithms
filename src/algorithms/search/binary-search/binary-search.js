@@ -1,5 +1,5 @@
 /**
- * Binary search must always operated on sth which is storted
+ * Binary search must always operated on sth which is sorted
  * and returns either the index of the location in the array,
  * or -1 if the array did not contain the targetValue.
  *
@@ -13,10 +13,11 @@ function binarySearch(arr, target) {
 
 
   while (start <= end) {
-    let mid = Math.floor((start + end) / 2); // index
+    // left + right could overflow
+    let mid = Math.floor(start + (end - start)/2)
 
     if (arr[mid] === target) {
-      return mid
+      return mid;
     } else if (arr[mid] < target) {
       start = mid + 1;
     } else {
@@ -24,25 +25,26 @@ function binarySearch(arr, target) {
     }
   }
 
-  return -1
+  return -1;
 }
 
 function binarySearchRecursive(arr, target, start = 0, stop = (arr.length - 1)) {
-  let midPoint = Math.floor( (start + stop) / 2);
-  // let midPoint = Math.floor( ((stop - start) / 2) + start );
+  // left + right could overflow
+  // let midPoint = Math.floor((start + stop) / 2);
+  let mid = Math.floor(start + (stop - start)/2)
 
   switch (true) {
-    case arr[midPoint] === target:
-      return midPoint;
+    case arr[mid] === target:
+      return mid;
 
     case stop - start === 0:
       return -1;
 
-    case arr[midPoint] < target:
-      return binarySearchRecursive(arr, target, midPoint + 1, stop);
+    case arr[mid] < target:
+      return binarySearchRecursive(arr, target, mid + 1, stop);
 
-    case arr[midPoint] > target:
-      return binarySearchRecursive(arr, target, start, midPoint);
+    case arr[mid] > target:
+      return binarySearchRecursive(arr, target, start, mid);
 
     default:
       console.log('Sorry, we are out of expressions');

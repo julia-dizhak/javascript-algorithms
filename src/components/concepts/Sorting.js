@@ -4,7 +4,7 @@ import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
 import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
 import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
-import { insertionSort, solution } from '../../algorithms/sorting/insertion-sort';
+import { insertionSort } from '../../algorithms/sorting/insertion-sort';
 import { findMedian } from '../../algorithms/sorting/tasks/find-median';
 
 function Sorting() {

@@ -54,7 +54,6 @@ describe('sorting array test case', () => {
     expect(bubbleSortDisplayCount([4,3,1,2])).toEqual(5);
   });
 
-
   it('merge sort unsorted array variant 1', () => {
     expect(mergeSort(arr)).toEqual(sortedArr);
     expect(mergeSort(a)).toEqual(sorted);

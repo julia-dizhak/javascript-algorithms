@@ -27,10 +27,10 @@ export default function Searching() {
           <Details
             id="binary-search"
             question="Binary search with loop while and recursion"
-            solutionDesc=""
+            solutionDesc="left + right could overflow, correct mid = left + (right - left)/2"
             complexityDesc=""
             runTime="O(log n)"
-            spaceComplexity=""
+            spaceComplexity="O(1)"
             code={binarySearch.toString()}
             secondCode={binarySearchRecursive.toString()}
           />
