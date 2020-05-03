@@ -20,6 +20,13 @@ Tests run by `npm test`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
+
+## Author
+
+by [Yuliia (Julia) Dizhak](https://github.com/julia-dizhak)
+
+created on 12/21/17
+
 ## Available Scripts
 
 In the project directory, you can run:

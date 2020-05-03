@@ -1,7 +1,7 @@
 import React from 'react';
 import Details from './../Details';
 import { findIndex } from '../../algorithms/search/find-index';
-import { binarySearchRecursive, binarySearch } from '../../algorithms/search/binary-search';
+import { binarySearchRecursive, binarySearch } from '../../algorithms/search/binary-search/binary-search';
 import { balancedSum } from '../../algorithms/search/balanced-sum';
 import { twoSum } from "../../algorithms/search/two-sum";
 
