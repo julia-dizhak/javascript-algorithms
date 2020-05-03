@@ -30,4 +30,3 @@ describe('two sum test case', () => {
     expect(twoSum([2, 7, 13, 5, 4, 13, 5], 10)).toEqual([3, 6]);
   });
 });
-

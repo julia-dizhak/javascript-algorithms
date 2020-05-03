@@ -116,4 +116,5 @@ function insertionSort1(arr) {
   // console.log(arr.join(` `));
 
 insertionSort1([1,3,2])
+
 export { insertionSort }

@@ -7,8 +7,6 @@ import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
 import { insertionSort } from '../../algorithms/sorting/insertion-sort';
 import { findMedian } from '../../algorithms/sorting/tasks/find-median';
 
-// test factorial
-
 function Sorting() {
   return (
     <div className="sorting">
