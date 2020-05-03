@@ -1,10 +1,12 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Details from './../Details';
 import { defineAnagrams } from '../../algorithms/string-manipulation/define-anagrams';
 import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
+import { numJewelsInStones } from '../../algorithms/string-manipulation/tasks/number-jewels-in-stones';
 
 export default function StringManipulation() {
   return (
@@ -85,60 +87,33 @@ export default function StringManipulation() {
             id="string-manipulation-tasks"
             aria-expanded="false"
             aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              Different tasks related to String Manipulation
-            </summary>
-
-            <details
-              className="details"
-              id="alternating-characters"
-              aria-expanded="false"
-              aria-labelledby="label">
-
-              <summary role="button" aria-controls="content">
-                <span className="question">Alternating characters</span>
-              </summary>
-
-              <div aria-hidden="true">
-                <h3 className="title">Solution:</h3>
-                <p>
+              <summary role="button" aria-controls="content">Different tasks related to String Manipulation</summary>
+              <Details
+                id="alternating-characters"
+                question="Alternating characters"
+                solutionDesc={`
                   Given two strings, a and b, that may or may not be of the same length,
                   determine the minimum number of character deletions required to make a and b anagrams.
                   Any characters can be deleted from either of the strings.
-                </p>
-                <SyntaxHighlighter
-                  language="javascript"
-                  style={dark}
-                >
-                  {alternatingCharacters.toString()}
-                </SyntaxHighlighter>
-              </div>
-            </details>
+                `}
+                code={alternatingCharacters.toString()}
+              />
 
-            <details
-              className="details"
-              id="sherlock-valid-string"
-              aria-expanded="false"
-              aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                <span className="question">Sherlock valid string</span>
-              </summary>
+              <Details
+                id="sherlock-valid-string"
+                question="Sherlock valid string"
+                solutionDesc={`
+                  Sherlock considers a string to be valid if all characters of the string
+                  appear the same number of times and one symbol could be deleted.
+                `}
+                code={isValid.toString()}
+              />
 
-              <div aria-hidden="true">
-                <h3 className="title">Solution:</h3>
-                <p>
-                Sherlock considers a string to be valid if all characters of the string
-                appear the same number of times and one symbol could be deleted.
-                </p>
-                <SyntaxHighlighter
-                  language="javascript"
-                  style={dark}
-                >
-                  {isValid.toString()}
-                </SyntaxHighlighter>
-              </div>
-            </details>
-
+              <Details
+                id="numJewelsInStones"
+                question="Number Jewels in stones"
+                code={numJewelsInStones.toString()}
+              />
           </details>
         </li>
       </ul>

@@ -44,16 +44,19 @@ const loopNTimes = function(n) {
  * @return {number}
 */
 function factorialUseLoop(n) {
+  console.time('test-factorialUseLoop');
   let result = 1;
 
   for (let i = 2; i <= n; i++) {
     result *= i
   }
 
+  console.timeEnd('test-factorialUseLoop');
   return result;
 }
 
 function factorialUseLoopOperatorMinus(n) {
+  console.time('test-factorialUseLoopOperatorMinus');
   if ( n < 0 ) {
     return -1;
   }
@@ -66,10 +69,12 @@ function factorialUseLoopOperatorMinus(n) {
     n = n * i
   }
 
+  console.timeEnd('test-factorialUseLoopOperatorMinus');
   return n;
 }
 
 function factorialUseWhileLoop(n) {
+  console.time('test-factorialUseWhileLoop');
   let result = n;
   if ( n < 0 ) {
     result = -1;
@@ -84,23 +89,24 @@ function factorialUseWhileLoop(n) {
     result *= n;
   }
 
+  console.timeEnd('test-factorialUseWhileLoop');
   return result;
 }
 
 function factorial(n) {
+  console.time('test-factorial');
   // if the number is less than 0, reject it
   if ( n < 0 ) {
     return -1;
   }
 
+  // works with (n === 1) as well
   if (n === 0) {
-    // works with (n === 1) as well
     return 1;
   } else {
+    console.timeEnd('test-factorial');
     return n * factorial(n - 1);
   }
 }
-
-factorialUseLoopOperatorMinus(3);
 
 export { factorialUseLoop, factorial, factorialUseWhileLoop, factorialUseLoopOperatorMinus, loopNTimes }

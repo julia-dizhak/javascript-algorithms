@@ -5,60 +5,39 @@ const arr = [
   'morning', 'hi', 'tu', 'yes', 'no', 'test', 'hello', 'morning', 'hi', 'tu', 'yes', 'no', 'test', 'hello'
 ];
 
-// perforamce now §
-//const t0 = performance.now();
-// const loopUsingFor = input => {
-//   let output = [];
-//   for (let i = 0; i < input.length; i++) {
-//       output.push(input[i].toUpperCase());
-//   }
-//   return output;
-// };
+// Use performance now
+const t0 = performance.now();
+const loopUsingForUsePerformance = input => {
+  let output = [];
+  for (let i = 0; i < input.length; i++) {
+    output.push(input[i].toUpperCase());
+  }
+  return output;
+};
+const t1 = performance.now();
+loopUsingForUsePerformance(arr)
+console.log(t0, 'milliseconds');
+console.log(t1, 'milliseconds');
+console.log(t1 - t0, 'milliseconds');
 
-// let output = [];
-// for (let i = 0; i < arr.length; i++) {
-//   output.push(arr[i].toUpperCase());
-// }
-// //return output;
-// const t1 = performance.now();
-// // loopUsingFor(arr);
-// console.log(t0, 'milliseconds');
-// console.log(t1, 'milliseconds');
-// console.log(t1-t0, 'milliseconds');
-
-// performance now
-// const t0 = performance.now();
-// const loopUsingFor = input => {
-//   let output = [];
-//   for (let i = 0; i < input.length; i++) {
-//       output.push(input[i].toUpperCase());
-//   }
-//   return output;
-// };
-// const t1 = performance.now();
-
-// console.log(t0, 'milliseconds');
-// console.log(t1, 'milliseconds');
-// console.log(t1-t0, 'milliseconds');
-
-// // performance now
+// Use time
 console.time('test')
-const loopUsingFor = input => {
+const loopUsingForUseTime = input => {
   let output = [];
   for (let i = 0; i < input.length; i++) {
       output.push(input[i].toUpperCase());
   }
   return output;
 };
-// loopUsingFor(arr);
+loopUsingForUseTime(arr);
 console.timeEnd('test')
 
-//
-function testForEach(x) {
+// Use forEach method
+function testForEach(arr) {
   console.time('test-forEach');
 
   const result = [];
-  x.forEach((val, index) => {
+  arr.forEach((val, index) => {
     result.push(val / 1.2 * 0.1);
   });
 
@@ -66,12 +45,14 @@ function testForEach(x) {
   return result;
 }
 
+// Use for
 function testFor(arr) {
   console.time('test-fo');
-  // arr.len const
+  // test if len define
+  const len = arr.length;
 
   const result = [];
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < len; i++) {
     result.push(arr[i] / 1.2 * 0.1);
   }
 
@@ -79,57 +60,6 @@ function testFor(arr) {
   return result;
 }
 
-
-const x = Array(100).fill(Math.random());
-console.log('x', x)
-testForEach(x);
-testFor(x)
-
-
-
-
-// for loop
-// const loopUsingFor = input => {
-//   let output = [];
-//   for (let i = 0; i < input.length; i++) {
-//       output.push(input[i].toUpperCase());
-//   }
-//   return output;
-// };
-
-// console.time('loopUsingFor');
-// // loopUsingFor(arr)
-// console.log('loopUsingFor', loopUsingFor(arr));
-// console.timeEnd('loopUsingFor');
-
-
-
-
-// // forEach
-// let loopByForEach = input => {
-//   let output = [];
-
-//   input.forEach(function(value) {
-//       output.push( value.toUpperCase() );
-//   });
-
-//   return output;
-// };
-
-// console.time('loopByForEach');
-// console.log('loopByForEach', loopByForEach(arr));
-// console.timeEnd('loopByForEach');
-
-// // map
-// let loopByMap = input => input.map(
-//   value => value.toUpperCase()
-// );
-
-// console.time('loopByMap');
-// console.log('loopByMap', loopByMap(arr));
-// console.timeEnd('loopByMap');
-
-
-export { loopUsingFor  }
-
-
+const arr1 = Array(100).fill(Math.random());
+testForEach(arr1);
+testFor(arr1)

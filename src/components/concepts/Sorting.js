@@ -4,10 +4,9 @@ import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
 import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
 import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
-import { insertionSort, numJewelsInStones } from '../../algorithms/sorting/insertion-sort';
+import { insertionSort } from '../../algorithms/sorting/insertion-sort';
 import { findMedian } from '../../algorithms/sorting/tasks/find-median';
 
-import { loopUsingFor } from "../../performance/loop";
 // test factorial
 
 function Sorting() {

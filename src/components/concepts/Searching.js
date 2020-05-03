@@ -4,6 +4,7 @@ import { findIndex } from '../../algorithms/search/find-index';
 import { binarySearchRecursive, binarySearch } from '../../algorithms/search/binary-search/binary-search';
 import { balancedSum } from '../../algorithms/search/balanced-sum';
 import { twoSum } from "../../algorithms/search/two-sum";
+import { solutionBinarySearch } from "../../algorithms/search/binary-search/278-first-bad-version";
 
 export default function Searching() {
   return (
@@ -63,6 +64,26 @@ export default function Searching() {
           />
         </li>
 
+        <li>
+          <details
+            className="details"
+            id="searching-tasks"
+            aria-expanded="false"
+            aria-labelledby="label">
+              <summary role="button" aria-controls="content">Different tasks related to Binary search</summary>
+              <Details
+                id="first-bad-version"
+                question="First Bad version"
+                solutionDesc={`
+                  Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one,
+                  which causes all the following ones to be bad.
+                `}
+                runTime="O(log n)"
+                spaceComplexity="O(1)"
+                code={solutionBinarySearch.toString()}
+              />
+          </details>
+        </li>
       </ul>
 
   </div>

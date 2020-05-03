@@ -63,9 +63,8 @@ var solutionLinearSearch = function(isBadVersion) {
   left + right could overflow
   One way to fix this is to use left + (right - left)/2
 
-  Time complexity : O(log n). The search space is halved each time.
-  Space complexity : O(1)
-
+  Time complexity: O(log n). The search space is halved each time.
+  Space complexity: O(1)
 */
 
 var solutionBinarySearch = function(isBadVersion) {
