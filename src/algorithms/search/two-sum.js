@@ -1,4 +1,4 @@
-import { binarySearchRecursive } from './binary-search/binary-search';
+import { binarySearchRecursive } from './binary-search';
 
 /**
  * Ice Cream parlor

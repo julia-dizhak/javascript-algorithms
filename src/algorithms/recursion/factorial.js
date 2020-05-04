@@ -56,7 +56,7 @@ function factorialUseLoop(n) {
 }
 
 function factorialUseLoopOperatorMinus(n) {
-  console.time('test-factorialUseLoopOperatorMinus');
+  //console.time('test-factorialUseLoopOperatorMinus');
   if ( n < 0 ) {
     return -1;
   }
@@ -69,12 +69,12 @@ function factorialUseLoopOperatorMinus(n) {
     n = n * i
   }
 
-  console.timeEnd('test-factorialUseLoopOperatorMinus');
+  //console.timeEnd('test-factorialUseLoopOperatorMinus');
   return n;
 }
 
 function factorialUseWhileLoop(n) {
-  console.time('test-factorialUseWhileLoop');
+  //console.time('test-factorialUseWhileLoop');
   let result = n;
   if ( n < 0 ) {
     result = -1;
@@ -89,12 +89,12 @@ function factorialUseWhileLoop(n) {
     result *= n;
   }
 
-  console.timeEnd('test-factorialUseWhileLoop');
+  //console.timeEnd('test-factorialUseWhileLoop');
   return result;
 }
 
 function factorial(n) {
-  console.time('test-factorial');
+  //console.time('test-factorial');
   // if the number is less than 0, reject it
   if ( n < 0 ) {
     return -1;
@@ -104,7 +104,7 @@ function factorial(n) {
   if (n === 0) {
     return 1;
   } else {
-    console.timeEnd('test-factorial');
+    //console.timeEnd('test-factorial');
     return n * factorial(n - 1);
   }
 }
