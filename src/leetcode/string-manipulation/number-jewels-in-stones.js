@@ -34,25 +34,17 @@ var numJewelsInStonesBruteForce = function(J,S) {
     }
   }
   return count;
-
-  // if (!J || !S) {
-  //   return 0
-  // }
-
-  // let count = 0;
-  // for (const char of S) {
-  //   if (J.includes(char)) count++
-  // }
-
-  // return count;
 }
 
-
-// approach 2 hash set
-// Time Complexity: O(J\text{.length} + S\text{.length}))O(J.length+S.length)). The O(J\text{.length})O(J.length) part comes from creating J. The O(S\text{.length})O(S.length) part comes from searching S.
-
-// Space Complexity: O(J\text{.length})O(J.length).
-
+/**
+ * Approach 2 hash set
+ *
+ * Time Complexity: O(J.length + S.length)).
+ * The O(J.length) part comes from creating J.
+ * O(S.length) part comes from searching S.
+ *
+ * Space Complexity: O(S.length)
+ */
  var numJewelsInStones = function(J, S) {
   let count = 0;
   if ((S.length || J.length) === 0) {
@@ -61,70 +53,96 @@ var numJewelsInStonesBruteForce = function(J,S) {
 
   const jewels = J.split('');
   const stones = S.split('');
-  const stonesObj = {}
+  const hash = {}
 
-  for (let i = 0; i < stones.length; i++) {
+  for (let i = 0; i < S.length; i++) {
     const stone = stones[i];
-    stonesObj[stone] = stonesObj[stone] ? stonesObj[stone] + 1 : 1
+    hash[stone] = hash[stone] ? hash[stone] + 1 : 1
   }
 
-  for (let j = 0; j < jewels.length; j++) {
+  for (let j = 0; j < J.length; j++) {
     const jewel = jewels[j];
-    if (stonesObj[jewel]) {
-      count = count + stonesObj[jewel]
+    if (hash[jewel]) {
+      count = count + hash[jewel]
     }
   }
 
   return count;
 };
 
-// var numJewelsInStones = function(J, S) {
-//   let hash = {};
-//   let count = 0;
-//   for(let j in J){
-//       hash[J[j]] = j
-//   }
-//   for(let i in S){
-//       if(hash[S[i]]){
-//           count++
-//       }
-//   }
-//   return count
-// };
+var numJewelsInStonesUseForIn = function(J, S) {
+  let hash = {};
+  let count = 0;
 
-// var numJewelsInStones = function(J, S) {
-//   let result = 0;
-//   for(let i = 0; i < S.length; i++) {
-//       if(J.indexOf(S.charAt(i)) >= 0)
-//           result++;
-//   }
-//   return result;
-// };
-// Actually, due to indexOf being a loop under the hood, I think this is quadratic (O(n**2)) time complexity, when it could be linear (O(n)). It looks neat and I'm sure it works, but it is not ideal?
+  for (let j in J) {
+    hash[J[j]] = j
+  }
 
-// var numJewelsInStones = function(J, S) {
-//   let counter = 0;
-//   for (let i = 0; i < S.length; i++) {
-//       if(J.indexOf(S.charAt(i)) !== -1)
-//           counter++;
-//   }
-//   return counter;
-// };
+  for (let i in S) {
+    if (hash[S[i]]) {
+      count++
+    }
+  }
+  return count
+};
 
-//[...S].filter((char) => J.indexOf(char) > -1 ).length
+// use includes
+var numJewelsInStonesUseIncludes = function(J, S) {
+  if (!J || !S) {
+    return 0
+  }
 
-// const numJewelsInStones = (J, S) => {
-//   const jewels = new Set(J)
-//   return S.split('').reduce((res, s) => res + jewels.has(s), 0)
-// };
+  let count = 0;
+  for (const char of S) {
+    if (J.includes(char)) count++
+  }
+
+  return count;
+}
+
+// use indexOf method
+// Actually, due to indexOf being a loop under the hood,
+// this is quadratic (O(n2)) time complexity = O(J.length * S.length), when it could be linear O(n)
+var numJewelsInStonesUseIndexOf = function(J, S) {
+  if (!J || !S) {
+    return 0
+  }
+
+  let result = 0;
+  for (let i = 0; i < S.length; i++) {
+   if ( J.indexOf(S.charAt(i)) !== -1 ) result++
+  }
+
+  return result;
+}
+
+// use filter
+var numJewelsInStonesUseFilter = function(J, S) {
+  return [...S].filter((char) => J.indexOf(char) > -1 ).length
+}
+
+// reduce and set
 // This is O(S) space and time - could be taken down to O(J) space by normal iteration.
+const numJewelsInStonesUseSet = (J, S) => {
+  const jewels = new Set(J);
+  return S.split('').reduce((res, s) => res + jewels.has(s), 0);
+};
 
-// const numJewelsInStones = (J, S) => {
-//   const set = new Set(J);
-//   return S.split('').reduce(
-//     (count, curr) => (set.has(curr) ? ++count : count),
-//     0
-//   );
-// };
+const numJewelsInStonesUseReduce = (J, S) => {
+  const set = new Set(J);
+  return S.split('').reduce(
+    (count, curr) => (set.has(curr) ? ++count : count),
+    0
+  );
+};
 
-export { numJewelsInStones, numJewelsInStonesBruteForce }
+export {
+  numJewelsInStones,
+  numJewelsInStonesBruteForce,
+  numJewelsInStonesUseForIn,
+  numJewelsInStonesUseIncludes,
+  numJewelsInStonesUseIndexOf,
+  numJewelsInStonesUseFilter,
+  numJewelsInStonesUseSet,
+  numJewelsInStonesUseReduce
+}
