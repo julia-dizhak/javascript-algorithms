@@ -1,6 +1,7 @@
 import React from 'react';
 import Details from './../Details';
 import { power } from '../../algorithms/number/power';
+import { swap, swapUseTemp } from '../../algorithms/number/swap';
 
 export default function Number() {
   return (
@@ -13,6 +14,14 @@ export default function Number() {
             id="number-power"
             question="Write a power function"
             code={power.toString()}
+          />
+
+          <Details
+            id="number-swap"
+            question="Swap: 2 variables"
+            runTime="O(1)"
+            code={swap.toString()}
+            secondCode={swapUseTemp.toString()}
           />
         </li>
       </ul>
