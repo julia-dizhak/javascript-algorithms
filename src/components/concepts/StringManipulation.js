@@ -6,13 +6,13 @@ import { defineAnagrams } from '../../algorithms/string-manipulation/define-anag
 import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
-import { numJewelsInStones } from '../../algorithms/string-manipulation/tasks/number-jewels-in-stones';
+import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/number-jewels-in-stones';
+
 
 export default function StringManipulation() {
   return (
     <div className="sorting">
       <h2>String Manipulation</h2>
-
       <ul>
         <li>
           <details
@@ -113,6 +113,7 @@ export default function StringManipulation() {
                 id="numJewelsInStones"
                 question="Number Jewels in stones"
                 code={numJewelsInStones.toString()}
+                secondCode={numJewelsInStonesBruteForce.toString()}
               />
           </details>
         </li>
