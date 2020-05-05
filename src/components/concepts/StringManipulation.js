@@ -8,7 +8,6 @@ import { alternatingCharacters } from '../../algorithms/string-manipulation/task
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
 import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/number-jewels-in-stones';
 
-
 export default function StringManipulation() {
   return (
     <div className="sorting">

@@ -5,7 +5,7 @@ import Details from '../components/Details';
 import { loopingTriangle } from './tasks/looping-triangle';
 import { fizzBuzz } from './tasks/fizz-buzz';
 import { chessboard } from './tasks/chessboard';
-import { isEven } from './tasks/chapter-functions/is-even';
+import { isEven } from './tasks/3-chapter-functions/is-even';
 
 export default function StringManipulation() {
   return (

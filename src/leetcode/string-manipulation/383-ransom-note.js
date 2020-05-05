@@ -1,5 +1,3 @@
-import { binarySearch } from "../../algorithms/search/binary-search";
-
 /**
  * Leetcode javascript
  * 383 Ransom note
@@ -44,15 +42,5 @@ var canConstruct1 = function(ransomNote, magazine) {
   });
   return oldMagazineLength == magazine.length + ransomNote;
 };
-
-// 1009. Complement of Base 10 Integer
-// 5 - 101
-// 11 - 1011
-// Note that except for N = 0, there are no leading zeroes in any binary representation.
-// var bitwiseComplement = function(N) {
-//   N to binary % 2
-//   for - each 0 to 1
-//   to decimal
-// }
 
 export { canConstruct }
