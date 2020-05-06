@@ -16,9 +16,9 @@ export default function Searching() {
           <Details
             id="is-find-index"
             question="Linear search: find an index of element in array"
-            solutionDesc=""
-            complexityDesc="The worst case performance scenario for a linear search is that it needs to loop through the entire collection."
-            runTime="O(n)"
+            solution=""
+            complexity="The worst case performance scenario for a linear search is that it needs to loop through the entire collection."
+            time="O(n)"
             spaceComplexity="O(1)"
             code={findIndex.toString()}
           />
@@ -28,10 +28,10 @@ export default function Searching() {
           <Details
             id="binary-search"
             question="Binary search with loop while and recursion"
-            solutionDesc="left + right could overflow, correct mid = left + (right - left)/2"
-            complexityDesc=""
-            runTime="O(log n)"
-            spaceComplexity="O(1)"
+            solution="left + right could overflow, correct mid = left + (right - left)/2"
+            complexity=""
+            time="O(log n)"
+            space="O(1)"
             code={binarySearch.toString()}
             secondCode={binarySearchRecursive.toString()}
           />
@@ -41,9 +41,9 @@ export default function Searching() {
           <Details
             id="search-balanced-sum"
             question="Balanced sum"
-            solutionDesc="challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right"
-            complexityDesc=""
-            runTime="O(n)"
+            solution="challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right"
+            complexity=""
+            time="O(n)"
             code={balancedSum.toString()}
           />
         </li>
@@ -52,14 +52,14 @@ export default function Searching() {
           <Details
             id="search-two-sum"
             question="Two sum using hash"
-            solutionDesc={`
+            solution={`
               Given an array of integers, return indices of the two numbers such that they add up to a specific target.
               You may assume that each input has exactly one solution.
               And you may not use the same element twice.
             `}
-            complexityDesc=""
-            runTime="O(n)"
-            spaceComplexity="O(n). The extra space required depends on the number of items stored in the hash table, which stores exactly nn elements"
+            complexity=""
+            time="O(n)"
+            space="O(n). The extra space required depends on the number of items stored in the hash table, which stores exactly nn elements"
             code={twoSum.toString()}
           />
         </li>
@@ -74,12 +74,12 @@ export default function Searching() {
               <Details
                 id="first-bad-version"
                 question="First Bad version"
-                solutionDesc={`
+                solution={`
                   Suppose you have n versions [1, 2, ..., n] and you want to find out the first bad one,
                   which causes all the following ones to be bad.
                 `}
-                runTime="O(log n)"
-                spaceComplexity="O(1)"
+                time="O(log n)"
+                space="O(1)"
                 code={solutionBinarySearch.toString()}
               />
           </details>

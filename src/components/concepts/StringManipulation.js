@@ -7,12 +7,11 @@ import { makingAnagrams } from '../../algorithms/string-manipulation/making-anag
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
 import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/number-jewels-in-stones';
-import { firstUniqueChar } from '../../leetcode/string-manipulation/383-ransom-note';
+import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 
 export default function StringManipulation() {
   return (
     <div className="sorting">
-      {firstUniqueChar('leetcode')}
       <h2>String Manipulation</h2>
       <ul>
         <li>
@@ -92,7 +91,7 @@ export default function StringManipulation() {
               <Details
                 id="alternating-characters"
                 question="Alternating characters"
-                solutionDesc={`
+                solution={`
                   Given two strings, a and b, that may or may not be of the same length,
                   determine the minimum number of character deletions required to make a and b anagrams.
                   Any characters can be deleted from either of the strings.
@@ -103,7 +102,7 @@ export default function StringManipulation() {
               <Details
                 id="sherlock-valid-string"
                 question="Sherlock valid string"
-                solutionDesc={`
+                solution={`
                   Sherlock considers a string to be valid if all characters of the string
                   appear the same number of times and one symbol could be deleted.
                 `}
@@ -115,6 +114,18 @@ export default function StringManipulation() {
                 question="Number Jewels in stones"
                 code={numJewelsInStones.toString()}
                 secondCode={numJewelsInStonesBruteForce.toString()}
+              />
+
+              <Details
+                id="firstUniqueChar"
+                question="First Unique Character in a String"
+                complexity={`
+                  The best possible solution here could be of a linear time
+                  because to ensure that the character is unique you have to check the whole string anyway.
+                `}
+                time="O(n)"
+                space="O(n)"
+                code={firstUniqueChar.toString()}
               />
           </details>
         </li>

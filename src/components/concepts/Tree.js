@@ -12,8 +12,8 @@ export default function Tree() {
           <Details
             id="binary-search-tree-operations"
             question="Binary Search Tree: .insert, .contains, height, lowest common ancestor"
-            solutionDesc=""
-            complexityDesc={
+            solution=""
+            complexity={
               `
                 Binary search trees provide logarithmic time for the common operations of lookup, insertion, and deletion in the average case,
                 and linear time in the worst case.
@@ -24,8 +24,8 @@ export default function Tree() {
                 which creates logarithmic time for these operations in the average case.
               `
             }
-            runTime="O(log(n)) in the average case, linear - in worst cases"
-            spaceComplexity=""
+            time="O(log(n)) in the average case, linear - in worst cases"
+            space=""
             code={BinarySearchTree.toString()}
           />
         </li>

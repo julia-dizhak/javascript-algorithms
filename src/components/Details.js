@@ -10,10 +10,10 @@ export default function Details(props) {
   const {
     id,
     question,
-    solutionDesc,
-    complexityDesc,
-    runTime,
-    spaceComplexity,
+    solution,
+    complexity,
+    time,
+    space,
     code,
     secondCode
   } = props;
@@ -35,12 +35,12 @@ export default function Details(props) {
 
       <div aria-hidden="true">
         <h3 className="title">Solution:</h3>
-        <p className="solutionDesc">{solutionDesc}</p>
+        <p className="solutionDesc">{solution}</p>
         <div className="complexity">
           {/* {complexityDesc && <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />} */}
-          {complexityDesc && <div className="complexityDesc">{complexityDesc}</div> }
-          {runTime && <p className="runtime">runtime is {runTime}</p>}
-          {spaceComplexity && <p>space complexity is {spaceComplexity}</p>}
+          {complexity && <div className="complexityDesc">{complexity}</div> }
+          {time && <p className="runtime">runtime is {time}</p>}
+          {space && <p>space complexity is {space}</p>}
         </div>
 
         {code &&

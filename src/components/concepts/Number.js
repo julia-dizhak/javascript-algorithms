@@ -20,7 +20,7 @@ export default function Number() {
           <Details
             id="number-swap"
             question="Swap: 2 variables"
-            runTime="O(1)"
+            time="O(1)"
             code={swap.toString()}
             secondCode={swapUseTemp.toString()}
           />
@@ -28,9 +28,9 @@ export default function Number() {
           <Details
             id="number-complement"
             question="Complement of Base 10 Integer"
-            solutionDesc="The complement strategy is to flip the bits of its binary representation"
-            runTime="O(1)"
-            spaceTime="O(1)"
+            solution="The complement strategy is to flip the bits of its binary representation"
+            time="O(1)"
+            space="O(1)"
             code={flipBitByBit.toString()}
             secondCode={findComplement.toString()}
           />

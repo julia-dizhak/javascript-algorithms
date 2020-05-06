@@ -17,10 +17,10 @@ function Sorting() {
           <Details
             id="bubble-sort"
             question="Bubble sort"
-            solutionDesc="is a method for sorting arrays by comparing each array element to the element behind it"
-            complexityDesc="Unfortunately bubble sort is pretty slow"
-            runTime="(n-1) * (n-1) ... = n2 - 2n + 1 = O(n^2), Ω(n^2)"
-            spaceComplexity="O(1)"
+            solution="is a method for sorting arrays by comparing each array element to the element behind it"
+            complexity="Unfortunately bubble sort is pretty slow"
+            time="(n-1) * (n-1) ... = n2 - 2n + 1 = O(n^2), Ω(n^2)"
+            space="O(1)"
             code={bubbleSort.toString()}
           />
         </li>
@@ -29,10 +29,10 @@ function Sorting() {
           <Details
             id="selection-sort"
             question="Selection sort: get the next smallest element"
-            solutionDesc=""
-            complexityDesc="Time complexity is n + (n-1) + (n-2) + ... + 1 = n*(n+1)/2 = (n^2 + n)/2 = O(n^2)"
-            runTime="O(n^2) quadratic time complexity in all cases, Ω(n^2)"
-            spaceComplexity=""
+            solution=""
+            complexity="Time complexity is n + (n-1) + (n-2) + ... + 1 = n*(n+1)/2 = (n^2 + n)/2 = O(n^2)"
+            time="O(n^2) quadratic time complexity in all cases, Ω(n^2)"
+            space=""
             code={selectionSort.toString()}
           />
         </li>
@@ -41,10 +41,10 @@ function Sorting() {
           <Details
             id="insertion-sort"
             question="Insertion sort"
-            solutionDesc="Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array."
-            complexityDesc=""
-            runTime="O(n^2)"
-            spaceComplexity="O(1)"
+            solution="Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array."
+            complexity=""
+            time="O(n^2)"
+            space="O(1)"
             code={insertionSort.toString()}
           />
         </li>
@@ -53,10 +53,10 @@ function Sorting() {
           <Details
             id="merge-sort"
             question="Merge sort"
-            solutionDesc="we could magically sort the left half and sort the right half and repeat it again"
-            complexityDesc="It always give us O(n log n) runtime. There is no case than array looks really funky."
-            runTime="O(n log n)"
-            spaceComplexity="The downside is merging 2 arrays together requires extra space - O(n) space"
+            solution="we could magically sort the left half and sort the right half and repeat it again"
+            complexity="It always give us O(n log n) runtime. There is no case than array looks really funky."
+            time="O(n log n)"
+            space="The downside is merging 2 arrays together requires extra space - O(n) space"
             code={mergeSort.toString()}
             secondCode={merger.toString()}
           />
@@ -66,10 +66,10 @@ function Sorting() {
           <Details
             id="quick-sort"
             question="Quick sort: pick a pivot"
-            solutionDesc="first pick a random number - pivot"
-            complexityDesc="Quick sort’s worst case is O(n^2) (for example, if list was already sorted) but that can be avoided if we pick random pivot point (choose middle one)"
-            runTime="O(n log(n))"
-            spaceComplexity="O(log (n))"
+            solution="first pick a random number - pivot"
+            complexity="Quick sort’s worst case is O(n^2) (for example, if list was already sorted) but that can be avoided if we pick random pivot point (choose middle one)"
+            time="O(n log(n))"
+            space="O(log (n))"
             code={quickSort.toString()}
           />
         </li>
@@ -79,9 +79,9 @@ function Sorting() {
           <Details
             id="find-median"
             question="Find a median"
-            solutionDesc="The median of a list of numbers is essentially it's middle element after sorting. The same number of elements occur after it as before."
-            runTime=""
-            spaceComplexity=""
+            solution="The median of a list of numbers is essentially it's middle element after sorting. The same number of elements occur after it as before."
+            time=""
+            space=""
             code={findMedian.toString()}
           />
         </li>

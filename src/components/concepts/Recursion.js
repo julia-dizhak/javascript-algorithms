@@ -12,8 +12,8 @@ export default function Recursion() {
           <Details
             id="factorial"
             question="Factorial using recursion"
-            runTime="The time complexity of recursive factorial is O(n)"
-            spaceComplexity="As there is no extra space taken during the recursive calls, the space complexity is O(n)"
+            time="The time complexity of recursive factorial is O(n)"
+            space="As there is no extra space taken during the recursive calls, the space complexity is O(n)"
             code={factorial.toString()}
           />
         </li>

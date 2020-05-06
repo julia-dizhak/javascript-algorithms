@@ -15,7 +15,7 @@ export default function ArrayAlgorithms() {
           <Details
             id="array-jump-on-clouds"
             question="Jump on clouds"
-            solutionDesc=""
+            solution=""
             code={jumpOnClouds.toString()}
           />
         </li>
@@ -24,9 +24,9 @@ export default function ArrayAlgorithms() {
           <Details
             id="merge-two-arrays"
             question="merge two sorted arrays (mergeSort algorithm)"
-            solutionDesc="Below is just an implementation of mergeSort algorithm"
-            runTime="runtime is O(n log n)"
-            spaceComplexity=""
+            solution="Below is just an implementation of mergeSort algorithm"
+            time="runtime is O(n log n)"
+            space=""
             code={mergeSortedArrays.toString()}
           />
         </li>

@@ -20,7 +20,7 @@ export default function StringManipulation() {
           <Details
             id="eloquent-looping-triangle"
             question="Looping triangle"
-            solutionDesc="Write a loop that makes seven calls to console.log to output the triangle"
+            solution="Write a loop that makes seven calls to console.log to output the triangle"
             code={loopingTriangle.toString()}
           />
         </li>

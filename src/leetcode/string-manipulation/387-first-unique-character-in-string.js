@@ -33,4 +33,4 @@ var firstUniqueChar = function(s) {
   return -1
 }
 
-export {firstUniqueChar  }
+export {firstUniqueChar }

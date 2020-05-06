@@ -16,7 +16,7 @@ export default function GreedyAlgorithms() {
           <Details
             id="greedy-min-absolute-difference"
             question="Minimum absolute difference in an array"
-            solutionDesc="We define the absolute difference between two elements a[i] and a[j] (where i!=j), to be the absolute value of a[i] - a[j]."
+            solution="We define the absolute difference between two elements a[i] and a[j] (where i!=j), to be the absolute value of a[i] - a[j]."
             code={minimumAbsoluteDifference.toString()}
           />
         </li>

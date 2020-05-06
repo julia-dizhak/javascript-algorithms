@@ -195,4 +195,4 @@ console.log('3 test', majorityElement([8,8,7,7,7]));
 
 
 
-export { canConstruct, firstUniqueChar }
+export { canConstruct }
