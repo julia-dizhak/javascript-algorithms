@@ -21,6 +21,21 @@ Tests run by `npm test`
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 
+## List
+
+### Sorting
+* Bubble sort
+* Selection sort
+* Insertion sort
+* Quick sort
+* Merge sort
+
+
+## Leetcode
+
+* 387. First Unique Character in a String
+
+
 ## Author
 
 by [Yuliia (Julia) Dizhak](https://github.com/julia-dizhak)

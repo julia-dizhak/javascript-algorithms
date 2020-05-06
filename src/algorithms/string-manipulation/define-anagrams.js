@@ -33,4 +33,4 @@ function defineAnagrams(str1, str2) {
   }
 }
 
-export { defineAnagrams, func }
+export { defineAnagrams }

@@ -43,43 +43,156 @@ var canConstruct1 = function(ransomNote, magazine) {
   return oldMagazineLength == magazine.length + ransomNote;
 };
 
-/**
- * Leetcode
- * 387 First Unique Character in a String
- * easy
- *
- * Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
- * Note: You may assume the string contain only lowercase letters.
- *
- * Approach linear time solution
- * runtime O(n)
- * The best possible solution here could be of a linear time because to ensure that the character is unique you have to check the whole string anyway.
- *
- * Time complexity : \mathcal{O}(N)O(N) since we go through the string of length N two times.
- * Space complexity : \mathcal{O}(N)O(N) since we have to keep a hash map with N elements.
- */
-var firstUniqueChar = function(s) {
-  const frequencies = {};
+// Microsoft | OA 2019 | String Without 3 Identical Consecutive Letters
+// microsoft
+//Write a function solution that, given a string S of N lowercase English letters,
+// returns a string with no instances of three identical consecutive letters,
+// obtained from S by deleting the minimum possible number of letters
+// Examples: Given S = “eedaaad” , the function should return “eedaad” .
+// One occurrence of letter a is deleted.
 
-  for (const char of s) {
-    frequencies[char] = (frequencies[char] || 0) + 1;
+var noThreeIdenticalLetters = function(s) {
+  const letters = {};
+
+  for (const letter of s) {
+    letters[letter] = (letters[letter] || 0) + 1
   }
 
   for (let i = 0; i < s.length; i++) {
     const char = s[i];
-    if (frequencies[char] === 1) {
-      return i
+    if (letters[char] >= 3) {
+      const firstIndex = s.indexOf(char);
+      const lastIndex = i;
+      const substr = s.substring(firstIndex, lastIndex+1);
+      const substr1 = substr.slice(0,2);
+      console.log('substr', substr)
+      console.log('substr1', substr1)
+      // return begin str + cutted + end
+      // console.log('index', i);
+      // console.log('char', char);
+
     }
   }
 
-  return -1
+  // s.slice(firstIndex, firstIndex + 2)
+  // s.substring(firstIndex, 5+1)
+  console.log('letters', letters)
+
+  return s
 }
 
-  // if (Object.values(frequencies).every(val => val > 1)) {
-  //   return -1
+//console.log(noThreeIdenticalLetters('eedaaad'))
+//given S=“uuuuxaaaaxuuu” the function should return “uuxaaxuu”
+
+
+/**
+ * Leetcode
+ * 169 Majority element
+ * medium
+ *
+ * Given an array of size n, find the majority element.
+ * The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+ * You may assume that the array is non-empty and the majority element always exist in the array.
+ *
+ * brute force approach
+ * [2, 2, 2, 4, 7, 9, 6, 5, 66] doesn/t work
+
+2
+count =3 > lenth/2 -> 2
+
+sum([1, 1])
+
+most visited and majority it's a different task
+ * space o(1)
+ *
+ * sorting
+ *
+ * Arrays.sort(nums);
+        return nums[nums.length/2];
+
+  candidates Boyer-Moore
+  Moore majority vote explained using a school dance analogy
+ *
+ *
+ * second variant
+ * majority element 2
+ * Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+ * Note: The algorithm should run in linear time and in O(1) space.
+ *
+ * @param {number[]} nums
+ * @return {number[]}
+ *
+
+ */
+
+ /**
+ * @param {number[]} arr
+ * @return {number}
+ */
+var majorityElement1 = function(arr) {
+  const len = arr.length;
+  let res = []
+  // if (nums.length === 0) {
+  //   return [];
   // }
 
-console.log('firstUniqueChar', firstUniqueChar('leetcode'))
-console.log('firstUniqueChar1', firstUniqueChar('loveleetcode'))
-console.log('firstUniqueChar1', firstUniqueChar('loleeoe'))
+  if (arr.length === 1) {
+    return arr[0]
+  }
+  const hash = {};
+
+  for (const num of arr) {
+    hash[num] = (hash[num] || 0) + 1
+  }
+
+  for (const key in hash) {
+    if (hash[key] > len / 3)  {
+      res.push(key)
+    }
+  }
+
+  // todo check why it's string
+  return res
+}
+
+var majorityElement = function(arr) {
+  const len = arr.length;
+  // if (nums.length === 0) {
+  //   return [];
+  // }
+
+  if (arr.length === 1) {
+    return arr[0]
+  }
+  const hash = {};
+
+  for (const num of arr) {
+    hash[num] = (hash[num] || 0) + 1
+  }
+
+  for (const key in hash) {
+    if (hash[key] > len / 2)  {
+      return key
+    }
+    //if (Object.keys(hash) > len/2)
+  }
+
+  console.log('hash', hash)
+  // for (let i = 0; i < arr.length; i++) {
+  //   //debugger
+  //   if (hash[arr[i]] > hash[arr[i+1]]) {
+  //     return arr[i]
+  //   } else return arr[i+1]
+  // }
+
+}
+// console.log('majorityElement', majorityElement([3,2,3]));
+// console.log('2 test', majorityElement([2,2,1,1,1,2,2]));
+console.log('majorityElement', majorityElement([1]));
+console.log('majorityElement', majorityElement([2,2]));
+console.log('3 test', majorityElement([8,8,7,7,7]));
+
+
+
+
 export { canConstruct, firstUniqueChar }
