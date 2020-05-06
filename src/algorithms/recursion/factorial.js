@@ -44,14 +44,14 @@ const loopNTimes = function(n) {
  * @return {number}
 */
 function factorialUseLoop(n) {
-  console.time('test-factorialUseLoop');
+  //console.time('test-factorialUseLoop');
   let result = 1;
 
   for (let i = 2; i <= n; i++) {
     result *= i
   }
 
-  console.timeEnd('test-factorialUseLoop');
+  //console.timeEnd('test-factorialUseLoop');
   return result;
 }
 

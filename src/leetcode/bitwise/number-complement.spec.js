@@ -1,4 +1,7 @@
-import { bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit  } from './number-complement';
+import {
+  bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit,
+  decimalToBinary
+} from './number-complement';
 
 describe('bitwise complement test case', () => {
   it('flip bit by bit', () => {
@@ -18,5 +21,11 @@ describe('bitwise complement test case', () => {
     expect(bitwiseComplementUseReduce(5)).toEqual(2);
     expect(bitwiseComplementUseReduce(1)).toEqual(0);
   });
-  
+
+  it('decimalToBinary', () => {
+    expect(decimalToBinary(5)).toEqual('101');
+    expect(decimalToBinary(1)).toEqual('1');
+    //expect(decimalToBinary(0)).toEqual('0');
+  });
+
 });

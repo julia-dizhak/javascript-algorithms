@@ -1,15 +1,8 @@
 import { defineAnagrams } from './define-anagrams';
 
-describe('makingAnagrams  test case', () => {
-  xit('should throw Error with message if arguments are not strings', () => {
-    // try {
-    //     throwError();
-    //     // Fail test if above expression doesn't throw anything.
-    //     expect(makingAnagrams([], undefined)).toBe(false);
-    // } catch (e) {
-    //     expect(e.message).toBe("");
-    // }
-    expect(defineAnagrams([], undefined)).toThrowError(TypeError);
+describe('makingAnagrams test case', () => {
+  it('should error if arguments are not strings', () => {
+    expect(() => defineAnagrams(undefined, undefined)).toThrow()
   });
 
   it('empty strings', () => {

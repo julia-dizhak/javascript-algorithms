@@ -43,4 +43,43 @@ var canConstruct1 = function(ransomNote, magazine) {
   return oldMagazineLength == magazine.length + ransomNote;
 };
 
-export { canConstruct }
+/**
+ * Leetcode
+ * 387 First Unique Character in a String
+ * easy
+ *
+ * Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+ * Note: You may assume the string contain only lowercase letters.
+ *
+ * Approach linear time solution
+ * runtime O(n)
+ * The best possible solution here could be of a linear time because to ensure that the character is unique you have to check the whole string anyway.
+ *
+ * Time complexity : \mathcal{O}(N)O(N) since we go through the string of length N two times.
+ * Space complexity : \mathcal{O}(N)O(N) since we have to keep a hash map with N elements.
+ */
+var firstUniqueChar = function(s) {
+  const frequencies = {};
+
+  for (const char of s) {
+    frequencies[char] = (frequencies[char] || 0) + 1;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (frequencies[char] === 1) {
+      return i
+    }
+  }
+
+  return -1
+}
+
+  // if (Object.values(frequencies).every(val => val > 1)) {
+  //   return -1
+  // }
+
+console.log('firstUniqueChar', firstUniqueChar('leetcode'))
+console.log('firstUniqueChar1', firstUniqueChar('loveleetcode'))
+console.log('firstUniqueChar1', firstUniqueChar('loleeoe'))
+export { canConstruct, firstUniqueChar }

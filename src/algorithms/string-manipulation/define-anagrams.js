@@ -1,6 +1,6 @@
 function defineAnagrams(str1, str2) {
   if (typeof str1 !== 'string' || typeof str2 !== 'string') {
-    throw new Error('isAnagram requires two strings to be passed');
+    throw new Error('defineAnagrams requires two strings to be passed');
   }
 
   if ( str1 === '' || str2 === '') return 'empty strings';
@@ -33,4 +33,4 @@ function defineAnagrams(str1, str2) {
   }
 }
 
-export { defineAnagrams }
+export { defineAnagrams, func }

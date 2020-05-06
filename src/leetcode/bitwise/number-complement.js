@@ -104,45 +104,33 @@ var bitwiseComplementUseReduce = function(N) {
   return decimal
 }
 
-export { bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit  }
+/*
+  the math
+  (1) 11 / 2 = 5
+  (1) 5 / 2 = 2
+  (0) 2 / 2 = 1
+  (1) 1 / 2 = 0
 
-//You // To get better understanding, I think you should try to do the math of that conversion by yourself.
-// (1) 11 / 2 = 5
-// (1) 5 / 2 = 2
-// (0) 2 / 2 = 1
-// (1) 1 / 2 = 0
-// I made a function based on that logic
+  todo: doesn't work with 0 case
+*/
+function decimalToBinary(inputNum) {
+  let binary = [];
 
-// function decimalToBinary(inputNum) {
+  while (inputNum > 0) {
+    if (inputNum % 2 === 1) {
+      binary.splice(0,0,1);
+      inputNum = (inputNum - 1) / 2;
+    } else {
+      binary.splice(0,0,0);
+      inputNum /= 2;
+    }
+  }
 
-//     let binary = [];
+  binary = binary.join('');
+  return binary;
+}
 
-//     while (inputNum > 0) {
-
-//         if (inputNum % 2 === 1) {
-
-//             binary.splice(0,0,1);
-//             inputNum = (inputNum - 1) / 2;
-
-//         } else {
-
-//             binary.splice(0,0,0);
-//             inputNum /= 2;
-//         }
-//     }
-
-//     binary = binary.join('');
-//     console.log(binary);
-// }
-
-
-// function addBinary(a,b) {
-//   // function that converts decimal to binary
-//   function dec2bin(dec) {
-//     return (dec >>> 0).toString(2);
-//   }
-//   var sum = a+b; // add the two numbers together
-//   return sum.toString(2); //converts sum to binary
-//  }
-
-//  addBinary(2, 3);
+export {
+  bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit,
+  decimalToBinary
+}

@@ -7,10 +7,12 @@ import { makingAnagrams } from '../../algorithms/string-manipulation/making-anag
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
 import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/number-jewels-in-stones';
+import { firstUniqueChar } from '../../leetcode/string-manipulation/383-ransom-note';
 
 export default function StringManipulation() {
   return (
     <div className="sorting">
+      {firstUniqueChar('leetcode')}
       <h2>String Manipulation</h2>
       <ul>
         <li>
