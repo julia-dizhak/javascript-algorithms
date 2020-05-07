@@ -39,10 +39,14 @@ created on 12/21/17
 
 ## Leetcode
 
+* Bitwise operators
+    * [476. Number complement (1009. Complement of Base 10 Integer)]
 * Search
-    * 278 First Bad version
+    * [278 First Bad version]
 * String manipulation
-    * 387 First Unique Character in a String
+    * [383 Ransom Note]
+    * [387 First Unique Character in a String]
+    * [771 Jewels and Stones]
 
 ## Available Scripts
 

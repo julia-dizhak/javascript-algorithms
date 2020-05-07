@@ -1,4 +1,4 @@
-import { firstUniqueChar } from './firstUniqueChar';
+import { firstUniqueChar } from './387-first-unique-character-in-string';
 
 describe('firstUniqueChar', () => {
 

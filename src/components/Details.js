@@ -39,7 +39,7 @@ export default function Details(props) {
         <div className="complexity">
           {/* {complexityDesc && <div dangerouslySetInnerHTML={createMarkup(complexityDesc)} />} */}
           {complexity && <div className="complexityDesc">{complexity}</div> }
-          {time && <p className="runtime">runtime is {time}</p>}
+          {time && <p className="runtime">time complexity is {time}</p>}
           {space && <p>space complexity is {space}</p>}
         </div>
 

@@ -1,7 +1,7 @@
 import {
   bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit,
   decimalToBinary
-} from './number-complement';
+} from './476-number-complement';
 
 describe('bitwise complement test case', () => {
   it('flip bit by bit', () => {

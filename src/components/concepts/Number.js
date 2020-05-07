@@ -2,7 +2,7 @@ import React from 'react';
 import Details from './../Details';
 import { power } from '../../algorithms/number/power';
 import { swap, swapUseTemp } from '../../algorithms/number/swap';
-import { flipBitByBit, findComplement } from '../../leetcode/bitwise/number-complement';
+import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
 
 export default function Number() {
   return (

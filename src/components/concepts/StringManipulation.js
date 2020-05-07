@@ -6,7 +6,7 @@ import { defineAnagrams } from '../../algorithms/string-manipulation/define-anag
 import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
-import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/number-jewels-in-stones';
+import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/771-number-jewels-in-stones';
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 
 export default function StringManipulation() {

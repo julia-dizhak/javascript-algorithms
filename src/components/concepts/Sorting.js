@@ -16,7 +16,7 @@ function Sorting() {
         <li>
           <Details
             id="bubble-sort"
-            question="Bubble sort"
+            question="Bubble sort: bubble up the biggest element to the right most position"
             solution="is a method for sorting arrays by comparing each array element to the element behind it"
             complexity="Unfortunately bubble sort is pretty slow"
             time="(n-1) * (n-1) ... = n2 - 2n + 1 = O(n^2), Ω(n^2)"
@@ -28,10 +28,10 @@ function Sorting() {
         <li>
           <Details
             id="selection-sort"
-            question="Selection sort: get the next smallest element"
+            question="Selection sort: move the smallest element to the very left position"
             solution=""
-            complexity="Time complexity is n + (n-1) + (n-2) + ... + 1 = n*(n+1)/2 = (n^2 + n)/2 = O(n^2)"
-            time="O(n^2) quadratic time complexity in all cases, Ω(n^2)"
+            complexity="n + (n-1) + (n-2) + ... + 1 = n*(n+1)/2 = (n^2 + n)/2 = O(n^2)"
+            time="O(n^2) quadratic in all cases, Ω(n^2)"
             space=""
             code={selectionSort.toString()}
           />
@@ -40,8 +40,12 @@ function Sorting() {
         <li>
           <Details
             id="insertion-sort"
-            question="Insertion sort"
-            solution="Insertion sort is used when number of elements is small. It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array."
+            question="Insertion sort: compare items on its left and shift if needed"
+            solution={`
+              Insertion sort is used when number of elements is small.
+              It can also be useful when input array is almost sorted,
+              only few elements are misplaced in complete big array."
+            `}
             complexity=""
             time="O(n^2)"
             space="O(1)"

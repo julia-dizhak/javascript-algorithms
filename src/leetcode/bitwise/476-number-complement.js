@@ -46,7 +46,6 @@ var flipBitByBit = function(num) {
   Approach 2 use toString and parseInt
 
   Time complexity is O(1), because toString operates from 2 through 36 bits.
-
 */
 var bitwiseComplement = function(N) {
   const bitmask = N.toString(2);

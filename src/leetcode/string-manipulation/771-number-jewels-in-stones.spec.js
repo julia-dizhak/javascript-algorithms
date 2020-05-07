@@ -1,4 +1,4 @@
-import { numJewelsInStones, numJewelsInStonesBruteForce } from './number-jewels-in-stones';
+import { numJewelsInStones, numJewelsInStonesBruteForce } from './771-number-jewels-in-stones';
 
 describe('numJewelsInStones test case', () => {
   it('empty strings', () => {

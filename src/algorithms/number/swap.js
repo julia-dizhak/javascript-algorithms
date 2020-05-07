@@ -7,7 +7,7 @@
 
 /*
   Approach 1
-  Runtime O(1)
+  time complexity O(1)
 */
 const swap = function(a,b) {
   //console.log('before swap: ','a: ', a, 'b: ', b);
@@ -20,7 +20,7 @@ const swap = function(a,b) {
 
 /*
   Use temp
-  Runtime O(1)
+  time complexity O(1)
 */
 const swapUseTemp = function(a,b) {
   let temp = a;
