@@ -8,9 +8,7 @@ Without using in-built methods of JavaScript, for example, sort(), reverse() and
 Solutions include as well measuring of time complexity.
 
 ## Demo
-Hosted on GitHub Pages
-
-[Demo](https://julia-dizhak.github.io/javascript-algorithms/)
+Hosted on GitHub Pages, [Demo](https://julia-dizhak.github.io/javascript-algorithms/)
 
 ## Development
 Technology
@@ -40,13 +38,13 @@ created on 12/21/17
 ## Leetcode
 
 * Bitwise operators
-    * [476. Number complement (1009. Complement of Base 10 Integer)]
+    * [476. Number complement / 1009. Complement of Base 10 Integer]
 * Search
-    * [278 First Bad version]
+    * [278. First Bad version]
 * String manipulation
-    * [383 Ransom Note]
-    * [387 First Unique Character in a String]
-    * [771 Jewels and Stones]
+    * [383. Ransom Note]
+    * [387. First Unique Character in a String]
+    * [771. Jewels and Stones]
 
 ## Available Scripts
 
@@ -73,17 +71,10 @@ The most recent packages are found in these directories:
 * `src/algorithms/***.spec.js` - tests for the implementation source code
 
 
-## TODO:
-create separate components CodeArrays, CodeSorting etc
-
-scrollTo
-
-details toggle logic
-
-display level: beginner, medium, ... (like corners)
-
-generate test coverage
-
-performance test
-
-seo
+### TODO:
+  * scrollTo works with bug
+  * details toggle works with bug (sometimes)
+  * display level: beginner, medium, ... (like corners)
+  * generate test coverage
+  * performance test
+  * seo

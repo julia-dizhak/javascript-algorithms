@@ -44,9 +44,9 @@ function Sorting() {
             solution={`
               Insertion sort is used when number of elements is small.
               It can also be useful when input array is almost sorted,
-              only few elements are misplaced in complete big array."
+              only few elements are misplaced in complete big array.
             `}
-            complexity=""
+            complexity="in worst cases number of shifts over that number to the beginning of the array = 1 + 2 + ... + (n-1) = n(n-1)/2 = n^2/2 = n^2"
             time="O(n^2)"
             space="O(1)"
             code={insertionSort.toString()}
