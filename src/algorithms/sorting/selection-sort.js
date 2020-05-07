@@ -37,4 +37,4 @@ function selectionSort(arr) {
   return arr;
 }
 
-export { selectionSort }
+export { selectionSort, swap }

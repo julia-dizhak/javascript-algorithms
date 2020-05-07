@@ -81,4 +81,7 @@ function runningTimeOfInsertionSort(arr) {
   return swap;
 }
 
-export { insertionSort, runningTimeOfInsertionSort }
+export {
+  insertionSort2,
+  insertionSort, runningTimeOfInsertionSort
+}
