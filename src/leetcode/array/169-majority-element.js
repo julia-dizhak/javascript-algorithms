@@ -1,4 +1,4 @@
-import { quickSort } from 'algorithms/sorting/quick-sort';
+import { quickSort } from '../../algorithms/sorting/quick-sort';
 
 /**
  * Leetcode
@@ -72,10 +72,8 @@ var majorityElement = function(arr) {
 */
 var majorityElementSorting = function(arr) {
   arr = quickSort(arr);
-
-  return arr[arr.length/2]
+  return arr[Math.floor(arr.length/2)]
 }
-
 
 /**
  * Approach 6 Boyer-Moore Voting algorithm
@@ -90,7 +88,7 @@ var majorityElementSorting = function(arr) {
  * Whenever count equals 0, we effectively forget about everything in nums up to the current index
  * and consider the current number as the candidate for majority element.
  *
- * Time complexity : O(n)
+ * Time complexity: O(n)
  * Boyer-Moore performs constant work exactly n times, so the algorithm runs in linear time.
  *
  * Space complexity : O(1)
@@ -101,19 +99,14 @@ var majorityMooreVoting = function(nums) {
   let candidate;
 
   for (const num of nums) {
-
     if (count === 0) {
       candidate = num
     }
     count += (num === candidate) ? 1 : -1
   }
 
-  console.log('candidate', candidate)
-
   return candidate
 }
-console.log('majorityElement', majorityMooreVoting([8,8,7,7,7]));
-
 
 /**
  * 229 Majority element II

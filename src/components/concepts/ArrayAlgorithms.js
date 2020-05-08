@@ -2,7 +2,7 @@ import React from 'react';
 import Details from './../Details';
 import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
-import { majorityElementVariant2 } from '../../leetcode/array/169-majority-element';
+import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 
 export default function ArrayAlgorithms() {
   return (
@@ -34,11 +34,12 @@ export default function ArrayAlgorithms() {
         <li>
           <Details
             id="majority-element"
-            question="Majority elements"
+            question="Majority elements: using hash, sort, Voting Moore algorithm"
             solution=""
-            time=""
-            space=""
-            code={majorityElementVariant2.toString()}
+            time="Moore O(n)"
+            space="Moore O(1)"
+            code={majorityElement.toString()}
+            secondCode={majorityMooreVoting.toString()}
           />
         </li>
 
