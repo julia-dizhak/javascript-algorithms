@@ -9,7 +9,7 @@
  * Now the list is sorted.
  * Selection sort has quadratic time complexity in all cases.
  */
-function swap(a, b, arr) {
+function swap(arr, a, b) {
   let temp = arr[a];
   arr[a] = arr[b];
   arr[b] = temp;
@@ -18,10 +18,10 @@ function swap(a, b, arr) {
 function selectionSort(arr) {
   const len = arr.length;
 
-  for (let i = 0; i < len - 1; i++) {
-    let min = i;
+  for (let i = 0; i < len; i++) {
+    let min = i; // set minimum to this position
     for (let j = i+1; j < len; j++) {
-      if (arr[min] > arr[j]) {
+      if (arr[j] < arr[min]) {
         min = j
       }
     }
@@ -31,7 +31,7 @@ function selectionSort(arr) {
     arr[i] = arr[min];
     arr[min] = temp;
     // or separate function
-    //swap(i, min, arr);
+    //swap(arr, i, min);
   }
 
   return arr;

@@ -2,7 +2,7 @@ import React from 'react';
 import Details from './../Details';
 import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
-
+import { majorityElementVariant2 } from '../../leetcode/array/169-majority-element';
 
 export default function ArrayAlgorithms() {
   return (
@@ -28,6 +28,17 @@ export default function ArrayAlgorithms() {
             time="runtime is O(n log n)"
             space=""
             code={mergeSortedArrays.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="majority-element"
+            question="Majority elements"
+            solution=""
+            time=""
+            space=""
+            code={majorityElementVariant2.toString()}
           />
         </li>
 
