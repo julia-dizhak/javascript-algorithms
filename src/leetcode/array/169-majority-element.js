@@ -13,12 +13,37 @@ import { quickSort } from '../../algorithms/sorting/quick-sort';
 
 /**
  * Approach 1 Brute force
- * [2, 2, 2, 4, 7, 9, 6, 5, 66] doesn/t work
  *
- * 2
- * count =3 > lenth/2 -> 2
+ * The brute force algorithm iterates over the array, and then iterates again for each number to count its occurrences.
+ * As soon as a number is found to have appeared more than any other can possibly have appeared, return it.
+ *
+ * Time complexity : O(n^2)
+ * The brute force algorithm contains two nested for loops that each run for nn iterations,
+ * adding up to quadratic time complexity.
+ *
+ * Space complexity : O(1)
+ * The brute force solution does not allocate additional space proportional to the input size.
+ *
 */
-// ...
+var majorityElementBruteForce = function(arr) {
+  const majorityCount = arr.length/2;
+
+  for (const num of arr) {
+    let count = 0;
+
+    for (const elem of arr) {
+      if (elem === num) {
+        count += 1
+      }
+    }
+
+    if (count > majorityCount) {
+      return num
+    }
+  }
+
+  return -1
+}
 
 
 /**
@@ -108,6 +133,48 @@ var majorityMooreVoting = function(nums) {
   return candidate
 }
 
+// voting second solution
+const majorityMooreVotingVariant2 = nums => {
+  if (nums.length === 0) {
+    return [];
+  }
+
+  let candidateA,
+    candidateB,
+    countA = 0,
+    countB = 0;
+  for (let index = 0; index < nums.length; index++) {
+    if (candidateA === nums[index]) {
+      countA++;
+    } else if (candidateB === nums[index]) {
+      countB++;
+    } else if (countA === 0) {
+      candidateA = nums[index];
+      countA = 1;
+    } else if (countB === 0) {
+      candidateB = nums[index];
+      countB = 1;
+    } else {
+      countA--;
+      countB--;
+    }
+  }
+
+  const elementCount = search => {
+    return nums.reduce((accumulator, currentValue) => {
+      return currentValue === search ? accumulator + 1 : accumulator;
+    }, 0);
+  };
+
+  const candidate =  candidateA === candidateB
+    ? [candidateA]
+    : [candidateA, candidateB].filter(
+      (element, index) => elementCount(element) > Math.floor(nums.length / 3)
+    );
+
+  return candidate;
+};
+
 /**
  * 229 Majority element II
  *
@@ -140,12 +207,13 @@ var majorityElementVariant2= function(nums) {
   };
 
   return res;
-
 };
 
 export {
   majorityElement,
+  majorityElementBruteForce,
   majorityMooreVoting,
   majorityElementSorting,
-  majorityElementVariant2
+  majorityElementVariant2,
+  majorityMooreVotingVariant2
 }

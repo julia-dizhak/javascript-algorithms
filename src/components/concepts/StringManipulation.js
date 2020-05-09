@@ -8,6 +8,7 @@ import { alternatingCharacters } from '../../algorithms/string-manipulation/task
 import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
 import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/771-number-jewels-in-stones';
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
+import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 
 export default function StringManipulation() {
   return (

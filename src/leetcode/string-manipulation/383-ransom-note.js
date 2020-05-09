@@ -84,5 +84,63 @@ var noThreeIdenticalLetters = function(s) {
 //console.log(noThreeIdenticalLetters('eedaaad'))
 //given S=“uuuuxaaaaxuuu” the function should return “uuxaaxuu”
 
+/**
+ * 1232
+ * easy
+ * Hint 1 If there're only 2 points, return true.
+ * 2 Check if all other points lie on the line defined by the first 2 points.
+ * 3 Use cross product to check collinearity.
+ */
+
+/**
+ * @param {number[][]} coordinates
+ * @return {boolean}
+*/
+
+// var onLine = function() {
+
+// }
+
+// The point is if we take points p1(x, y), p2(x1, y1), p3(x3, y3), slopes of any two pairs is same then p1, p2, p3 lies on same line.
+// slope from p1 and p2 is y - y1 / x - x1
+// slope from p2 and p3 is y2 - y1 / x2 - x1
+// if these two slopes equal, then p1, p2, p3 lies on same line.
+
+// IF YOU HAVE ANY DOUBTS, FEEL FREE TO ASK
+// IF YOU UNDERSTAND, DON'T FORGET TO UPVOTE
+/**
+ *
+ * It is very straight forward. Just compute slope from the first points. If all the points are on the same line, their slope from the first point will be the same. Our point is defined by an array in the formate of [x,y].
+ */
+
+var checkStraightLine = function(coordinates) {
+  const len = coordinates.length;
+  // there are only two points
+  if (len === 2) {
+    return true
+  }
+
+  const x1 = coordinates[0][0],
+    y1 = coordinates[0][1],
+    x2 = coordinates[1][0],
+    y2 = coordinates[1][1],
+    k = (y2 - y1) / (x2 - x1);
+
+  for (let i = 2; i < len; i++) {
+    let localK = (coordinates[i][1] - y1) / (coordinates[i][0] - x1);
+    if (localK !== k) {
+      return false
+    }
+  }
+
+  return true
+};
+
+// true case coordinates = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
+//console.log(checkStraightLine([[1,2],[2,3]]))
+//console.log(checkStraightLine([[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]]));
+
+checkStraightLine([[1,2],[2,3]])
+// checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]])
 
 export { canConstruct }

@@ -39,6 +39,8 @@ created on 12/21/17
 
 * Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer]
+* Array
+    * [169. Majority element / 229. Majority element II]
 * Search
     * [278. First Bad version]
 * String manipulation
