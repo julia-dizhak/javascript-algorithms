@@ -41,6 +41,7 @@ created on 12/21/17
     * [476. Number complement / 1009. Complement of Base 10 Integer]
 * Array
     * [169. Majority element / 229. Majority element II]
+    * [997. Find the Judge in the town](test)
 * Search
     * [278. First Bad version]
 * String manipulation
