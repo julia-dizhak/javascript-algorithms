@@ -15,6 +15,25 @@ function bubbleSort(arr) {
   return arr;
 }
 
+function bubbleSortTwoForLoops(arr) {
+  const len = arr.length;
+
+  for (let i = 0; i < len; i++) {
+    for (let j = 0; j < len - i - 1; j++) {
+      const current = arr[j];
+      const next = arr[j+1];
+
+      if (current > next) {
+        arr[j] = next;
+        arr[j+1] = current
+      }
+
+    }
+  }
+
+  return arr;
+}
+
 function bubbleSortDisplayCount(arr) {
   const len = arr.length;
   let count = 0;
@@ -35,4 +54,4 @@ function bubbleSortDisplayCount(arr) {
 }
 
 
-export { bubbleSort, bubbleSortDisplayCount }
+export { bubbleSort, bubbleSortDisplayCount, bubbleSortTwoForLoops }

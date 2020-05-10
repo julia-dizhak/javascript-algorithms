@@ -33,4 +33,32 @@ var firstUniqueChar = function(s) {
   return -1
 }
 
-export {firstUniqueChar }
+/**
+ * Calculate unique symbols in string
+ *
+ * time O(n)
+ * space O(n)
+*/
+var countSymbols = function(str) {
+  let map = new Map();
+  let keys = [];
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    let newValue = 1;
+
+    if (map.has(char)) {
+      newValue += map.get(char)
+    }
+    map.set(char, newValue)
+  }
+
+  for (let key of map) {
+    keys.push(key[0]);
+  }
+
+  return keys;
+}
+
+
+export { firstUniqueChar, countSymbols }

@@ -1,4 +1,4 @@
-import { firstUniqueChar } from './387-first-unique-character-in-string';
+import { firstUniqueChar, countSymbols } from './387-first-unique-character-in-string';
 
 describe('firstUniqueChar', () => {
 
@@ -12,4 +12,12 @@ describe('firstUniqueChar', () => {
     expect(firstUniqueChar('loleeoe')).toEqual(-1);
   });
 
+});
+
+describe('countSymbols', () => {
+  it('unique string', ()=> {
+    expect(countSymbols('adam')).toEqual(['a', 'd', 'm']);
+    expect(countSymbols('mama')).toEqual(['m', 'a']);
+    expect(countSymbols('aaaaaaaaaa')).toEqual(['a']);
+  });
 });

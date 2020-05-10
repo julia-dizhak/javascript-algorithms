@@ -101,6 +101,8 @@ var noThreeIdenticalLetters = function(s) {
 
 // }
 
+// Straight line
+// tan
 // The point is if we take points p1(x, y), p2(x1, y1), p3(x3, y3), slopes of any two pairs is same then p1, p2, p3 lies on same line.
 // slope from p1 and p2 is y - y1 / x - x1
 // slope from p2 and p3 is y2 - y1 / x2 - x1
@@ -142,5 +144,108 @@ var checkStraightLine = function(coordinates) {
 
 checkStraightLine([[1,2],[2,3]])
 // checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]])
+
+// 777
+// perfect square
+/**
+ *
+ * Given a positive integer num, write a function which returns True if num is a perfect square else False.
+
+Note: Do not use any built-in library function such as sqrt.
+ */
+//1 = 1
+//4 = 1 + 3
+//n^{2}=1+1+2+2+...+(n-1)+(n-1)+n
+// 16 = 4^2
+//
+
+// 1 even
+// let n = 25
+// 25 = 5 * 5
+// 100 = 10 * 10 = 2*5 * 2*5
+// time O(sqrt n) brute force
+// 10
+var isPerfectSquare = function(num) {
+  for (let i = 1; i < num; i++) {
+    if ( i*i < num ) i++
+    else {
+      if (i*i === num) return true
+    }
+  }
+
+  return false
+};
+
+// efficient
+// n = 16
+// binary search
+// complexity
+// n = 10^10
+// sqrt n = 10 ^ 5
+// log sqrt n = 5
+var isPerfectSquareBinarySearch = function(num) {
+  let left = 1;
+  let right = num;
+
+  while (left <= right) {
+    let mid = Math.floor(left + (right - left)/2);
+    let square = mid * mid;
+
+    if (square === num) {
+      return true
+    }
+    else if (square < num) {
+      left = mid + 1
+    } else {
+      right = mid -1
+    }
+  }
+  return false
+};
+
+
+// console.log('isPerfectSquare1', isPerfectSquare(25))
+// console.log('isPerfectSquare', isPerfectSquare(24))
+console.log('isPerfectSquareBinarySearch', isPerfectSquareBinarySearch(25))
+console.log('isPerfectSquareBinarySearch', isPerfectSquareBinarySearch(24))
+
+// babolonien method
+// The babylonian method to check
+
+// todo move solution from visual code to google doc
+
+/**
+ *
+ * Leetcode
+ * 997 Find the Town Judge
+ *
+ * In a town, there are N people labelled from 1 to N.
+ * There is a rumor that one of these people is secretly the town judge.
+ * If the town judge exists, then:
+ * 1 The town judge trusts nobody.
+ * 2 Everybody (except for the town judge) trusts the town judge.
+ * 3 There is exactly one person that satisfies properties 1 and 2.
+ *
+ * You are given trust, an array of pairs trust[i] = [a, b] representing that the person labelled a trusts the person labelled b.
+ * If the town judge exists and can be identified, return the label of the town judge.
+ * Otherwise, return -1.
+ **/
+
+var findJudge = function(N, trust) {
+  const len = trust.length
+  let judge;
+
+  for (let i = 0; i < len; i++) {
+    console.log('elem', trust[i]);
+
+
+  }
+
+
+
+  return judge
+}
+
+console.log(findJudge(2, [[1,2]]))
 
 export { canConstruct }

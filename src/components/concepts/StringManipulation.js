@@ -43,7 +43,7 @@ export default function StringManipulation() {
 
               <SyntaxHighlighter
                 language="javascript"
-                style={docco}
+                style={dark}
               >
                 {defineAnagrams.toString()}
               </SyntaxHighlighter>
