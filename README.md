@@ -41,7 +41,7 @@ created on 12/21/17
     * [476. Number complement / 1009. Complement of Base 10 Integer]
 * Array
     * [169. Majority element / 229. Majority element II]
-    * [997. Find the Judge in the town](test)
+    * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
 * Search
     * [278. First Bad version]
 * String manipulation

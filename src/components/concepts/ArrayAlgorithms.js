@@ -47,7 +47,7 @@ export default function ArrayAlgorithms() {
         <li>
           <Details
             id="find-judge"
-            question="Find judge in the town"
+            question="Find judge in the town: approach one array"
             solution={
               `
                 In a town, there are N people labelled from 1 to N.
@@ -62,8 +62,14 @@ export default function ArrayAlgorithms() {
                 Otherwise, return -1.
               `
             }
-            time="O(n) ?"
-            space="O(n)"
+            complexity={`
+              Recall that N is number of people, and E is the number of edges (trusts relationships)
+              Time complexity is O(E). We need to loop through the E edges in trust,
+              and the argument about relationship between N and E still applies.
+              Space complexity: O(N) - allocating an array of length N
+            `}
+            time="O(E) number of trusts relationship"
+            space="O(N) allocating an array of length N"
             code={findJudge.toString()}
             //secondCode={}
           />

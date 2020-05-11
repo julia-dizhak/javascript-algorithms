@@ -144,6 +144,7 @@ var checkStraightLine = function(coordinates) {
 
 checkStraightLine([[1,2],[2,3]])
 // checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]])
+// add for coordiantes 2 solution: with tangens and y = ax+ b, JS, Moore's approach (famous voting algorithm) with comments/explanation
 
 // 777
 // perfect square
