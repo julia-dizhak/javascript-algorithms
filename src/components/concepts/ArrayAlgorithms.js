@@ -3,7 +3,7 @@ import Details from './../Details';
 import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
-import { findJudge } from '../../leetcode/array/997-find-judge';
+import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 
 export default function ArrayAlgorithms() {
   return (
@@ -47,7 +47,7 @@ export default function ArrayAlgorithms() {
         <li>
           <Details
             id="find-judge"
-            question="Find judge in the town: approach one array"
+            question="Find judge in the town, approach with one and two arrays"
             solution={
               `
                 In a town, there are N people labelled from 1 to N.
@@ -68,10 +68,10 @@ export default function ArrayAlgorithms() {
               and the argument about relationship between N and E still applies.
               Space complexity: O(N) - allocating an array of length N
             `}
-            time="O(E) number of trusts relationship"
+            time="O(max(N, E) = O(N+E), because is E >= N-1 => O(E) number of trusts relationship"
             space="O(N) allocating an array of length N"
             code={findJudge.toString()}
-            //secondCode={}
+            secondCode={findJudgeTwoArrays.toString()}
           />
         </li>
 

@@ -34,8 +34,9 @@
  *
 **/
 
+
 /*
-  Approach 1: One array
+  Approach: One array
 
   We can build a single Array with the result of indegree - outdegree for each person.
   In other words, we'll +1 to their "score" for each person they are trusted by,
@@ -52,8 +53,15 @@
 
   Complexity analysis
   Recall that N is number of people, and E is the number of edges (trusts relationships)
-  Time complexity is O(E). We need to loop through the E edges in trust,
-  and the argument about relationship between N and E still applies
+  We loop over the trust list once. The cost of doing this is O(E).
+  We then loop over the people. The cost of doing this is O(N).
+  O(max(N, E) = O(N+E). After all, we don't know whether E or N is the bigger one, right?
+  However, remember how we terminate early if E < N - 1?
+  Tis means that in the best case, the time complexity is O(1).
+  And in the worst case, we know that E ≥ N - 1. For the purpose of big-oh notation, we ignore the constant of 1.
+  Therefore, in the worst case, E has to be bigger, and so we can simply drop the N, leaving O(E).
+
+  So time complexity is O(E).
 
   Space complexity: O(N) - allocating an array of length N
 */
@@ -96,4 +104,55 @@ var findJudge = function(N, trust) {
   return -1;
 }
 
-export { findJudge }
+/*
+  Approach: Two arrays
+
+  Intuition
+  The trust relationships form a graph. Each trust pair, [a, b] represents a directed edge going from a to b.
+
+  We can define the town judge in terms of indegree and outdegree.
+
+  In graph theory, we say the outdegree of a vertex (person) is the number of directed edges going out of it.
+  For this graph, the outdegree of the vertex represents the number of other people that person trusts.
+
+  Likewise, we say that the indegree of a vertex (person) is the number of directed edges going into it.
+  So here, it represents the number of people trusted by that person.
+
+  The town judge has an outdegree of 0 and an indegree of N - 1 because they trust nobody, and everybody trusts them (except themselves).
+
+  Therefore, this problem simplifies to calculating the indegree and outdegree for each person and then checking whether or not any of them meet the criteria of the town judge.
+  We can calculate the indegrees and outdegrees for everybody, using a single loop over the input trust array.
+  We'll write the results into two arrays.
+
+  Complexity analysis
+  Time complexity is O(E) and the argument about relationship between N and E still applies.
+
+  Space complexity is O(N)
+  We allocated 2 arrays; one for the indegrees and the other for the outdegrees.
+  Each was of length N + 1. Because in big-oh notation we drop constants, this leaves us with O(N).
+*/
+var findJudgeTwoArrays = function(N, trust) {
+  if (trust.length < N - 1) {
+    return -1;
+  }
+
+  let outdegree = Array(N+1).fill(0);
+  let indegree = Array(N+1).fill(0);
+
+  for (const [i,j] of trust) {
+    outdegree[i]++;
+    indegree[j]++;
+  }
+
+  for (let i = 1; i <=N; i++) {
+    // The town judge has an outdegree of 0 and an indegree of N - 1 because they trust nobody, and everybody trusts them (except themselves).
+    if (outdegree[i] === 0 && indegree[i] === N-1) {
+      return i
+    }
+  }
+
+  return -1;
+}
+
+
+export { findJudge, findJudgeTwoArrays }
