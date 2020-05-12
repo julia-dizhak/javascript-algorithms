@@ -13,17 +13,6 @@ function Sidebar() {
           <li className="item"><header className="title"><a href="#array">Array</a></header></li>
 
           <li className="item">
-            <header className="title">Sorting</header>
-            <ul className="subList">
-              <li><a href="#bubble-sort">Bubble sort</a></li>
-              <li><a href="#selection-sort">Selection sort</a></li>
-              <li><a href="#insertion-sort">Insertion sort</a></li>
-              <li><a href="#merge-sort">Merge sort</a></li>
-              <li><a href="#quick-sort">Quick sort</a></li>
-            </ul>
-          </li>
-
-          <li className="item">
             <header className="title">String Manipulation</header>
             <ul className="subList">
               <li><a href="#define-anagrams">Define anagrams</a></li>
@@ -32,10 +21,13 @@ function Sidebar() {
           </li>
 
           <li className="item">
-            <header className="title">Greedy Algorithms</header>
+            <header className="title">Sorting</header>
             <ul className="subList">
-              <li><a href="#greedy-min-absolute-difference">Minimum absolute difference</a></li>
-              <li><a href="#greedy-luck-balance">Luck balance</a></li>
+              <li><a href="#bubble-sort">Bubble sort</a></li>
+              <li><a href="#selection-sort">Selection sort</a></li>
+              <li><a href="#insertion-sort">Insertion sort</a></li>
+              <li><a href="#merge-sort">Merge sort</a></li>
+              <li><a href="#quick-sort">Quick sort</a></li>
             </ul>
           </li>
 
@@ -52,13 +44,6 @@ function Sidebar() {
           </li>
 
           <li className="item">
-            <header className="title"><a href="#binary-search-tree">Tree</a></header>
-            <ul className="subList">
-              <li><a href="#binary-search-tree-operations">Binary Search Tree</a></li>
-            </ul>
-          </li>
-
-          <li className="item">
             <header className="title">Stack and Queue</header>
             <ul className="subList">
               <li><a href="#stack-using-string">Stack implementation using String</a></li>
@@ -66,6 +51,25 @@ function Sidebar() {
               <li><a href="#queue-using-object">Queue implementation using object</a></li>
             </ul>
           </li>
+          
+          <li className="item">
+            <header className="title">Greedy Algorithms</header>
+            <ul className="subList">
+              <li><a href="#greedy-min-absolute-difference">Minimum absolute difference</a></li>
+              <li><a href="#greedy-luck-balance">Luck balance</a></li>
+            </ul>
+          </li>
+
+
+
+          <li className="item">
+            <header className="title"><a href="#binary-search-tree">Tree</a></header>
+            <ul className="subList">
+              <li><a href="#binary-search-tree-operations">Binary Search Tree</a></li>
+            </ul>
+          </li>
+
+
 
           <li className="item">
             <header className="title">

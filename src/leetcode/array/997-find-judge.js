@@ -120,7 +120,8 @@ var findJudge = function(N, trust) {
 
   The town judge has an outdegree of 0 and an indegree of N - 1 because they trust nobody, and everybody trusts them (except themselves).
 
-  Therefore, this problem simplifies to calculating the indegree and outdegree for each person and then checking whether or not any of them meet the criteria of the town judge.
+  Therefore, this problem simplifies to calculating the indegree and outdegree for each person
+  and then checking whether or not any of them meet the criteria of the town judge.
   We can calculate the indegrees and outdegrees for everybody, using a single loop over the input trust array.
   We'll write the results into two arrays.
 

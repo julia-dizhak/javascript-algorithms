@@ -10,6 +10,7 @@ import ArrayAlgorithms from './concepts/ArrayAlgorithms';
 import Searching from './concepts/Searching';
 import Tree from './concepts/Tree';
 import StackQueue from './concepts/StackQueue';
+import Graph from './concepts/Graph';
 
 import './main.css';
 
@@ -20,12 +21,13 @@ function Main() {
         <Number />
         <Recursion />
         <ArrayAlgorithms />
-        <Sorting />
         <StringManipulation />
-        <GreedyAlgorithms />
+        <Sorting />
         <Searching />
-        <Tree />
         <StackQueue />
+        <Tree />
+        <Graph />
+        <GreedyAlgorithms />
         <CodeSandboxTasks />
       </div>
   </div>

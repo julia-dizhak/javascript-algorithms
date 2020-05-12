@@ -215,4 +215,5 @@ var isPerfectSquareBinarySearch = function(num) {
 
 // todo move solution from visual code to google doc
 
+
 export { canConstruct }
