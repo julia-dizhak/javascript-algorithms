@@ -4,7 +4,7 @@ import { BinarySearchTree } from '../../algorithms/tree/binary-search-tree';
 
 export default function Tree() {
   return (
-    <div className="number">
+    <div className="tree">
       <h2>Trees</h2>
 
       <ul id="binary-search-tree">

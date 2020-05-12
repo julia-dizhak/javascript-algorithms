@@ -8,7 +8,6 @@ import { quickSort } from '../../algorithms/sorting/quick-sort';
  * Given an array of size n, find the majority element.
  * The majority element is the element that appears more than ⌊ n/2 ⌋ times.
  * You may assume that the array is non-empty and the majority element always exist in the array.
- *
  */
 
 /**
@@ -23,7 +22,6 @@ import { quickSort } from '../../algorithms/sorting/quick-sort';
  *
  * Space complexity : O(1)
  * The brute force solution does not allocate additional space proportional to the input size.
- *
 */
 var majorityElementBruteForce = function(arr) {
   const majorityCount = arr.length/2;

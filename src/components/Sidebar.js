@@ -51,16 +51,6 @@ function Sidebar() {
               <li><a href="#queue-using-object">Queue implementation using object</a></li>
             </ul>
           </li>
-          
-          <li className="item">
-            <header className="title">Greedy Algorithms</header>
-            <ul className="subList">
-              <li><a href="#greedy-min-absolute-difference">Minimum absolute difference</a></li>
-              <li><a href="#greedy-luck-balance">Luck balance</a></li>
-            </ul>
-          </li>
-
-
 
           <li className="item">
             <header className="title"><a href="#binary-search-tree">Tree</a></header>
@@ -69,7 +59,19 @@ function Sidebar() {
             </ul>
           </li>
 
+          <li className="item">
+            <header className="title"><a href="#binary-search-tree">Tree</a></header>
+            <ul className="subList">
+              <li><a href="#binary-search-tree-operations">Binary Search Tree</a></li>
+            </ul>
+          </li>
 
+          <li className="item">
+            <header className="title">Graph</header>
+            <ul className="subList">
+              <li><header className="title"><a href="#graph-dfs-flood-fill">Flood fill</a></header></li>
+            </ul>
+          </li>
 
           <li className="item">
             <header className="title">

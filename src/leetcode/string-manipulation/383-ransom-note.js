@@ -146,6 +146,7 @@ checkStraightLine([[1,2],[2,3]])
 // checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]])
 // add for coordiantes 2 solution: with tangens and y = ax+ b, JS, Moore's approach (famous voting algorithm) with comments/explanation
 
+// move to binary search
 // 777
 // perfect square
 /**
@@ -198,7 +199,7 @@ var isPerfectSquareBinarySearch = function(num) {
     else if (square < num) {
       left = mid + 1
     } else {
-      right = mid -1
+      right = mid - 1
     }
   }
   return false
@@ -214,6 +215,35 @@ var isPerfectSquareBinarySearch = function(num) {
 // The babylonian method to check
 
 // todo move solution from visual code to google doc
+
+/**
+ * Single element in sorted array
+ * You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once. Find this single element that appears only once.
+ * Note: Your solution should run in O(log n) time and O(1) space.
+ */
+// move to dictionares
+// using search, search
+var singleNonDuplicate = function(nums) {
+  let hash = {};
+
+  for (const num of nums) {
+    hash[num] = (hash[num] || 0) + 1;
+  }
+
+  for (const key in hash) {
+    console.log('key', key)
+    if (hash[key] === 1) {
+      return key
+    }
+  }
+
+  console.log('hash', hash);
+
+
+  return nums
+};
+
+console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]));
 
 
 export { canConstruct }

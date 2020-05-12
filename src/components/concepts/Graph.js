@@ -4,10 +4,10 @@ import { floodFill } from '../../leetcode/graph/dfs/773-flood-fill';
 
 export default function Graph() {
   return (
-    <div className="number">
+    <div className="graph">
       <h2>Graph</h2>
 
-      <ul id="binary-search-tree">
+      <ul id="graph">
         <li>
           <Details
             id="graph-dfs-flood-fill"
