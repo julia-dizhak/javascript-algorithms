@@ -33,15 +33,15 @@ created on 12/21/17
     * Insertion sort
     * Quick sort
     * Merge sort
-| Sort Name     | O | Ω |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
+
+| Sort Name       | O        | Ω    |
+| Bubble sort     | O(n^2)   | Ω(n) |
+| Selection sort  | O()      | Ω() |
+
 
 * Search
     * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
-...
-...
+
 
 ## Leetcode
 
