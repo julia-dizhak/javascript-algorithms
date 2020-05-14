@@ -152,9 +152,10 @@ checkStraightLine([[1,2],[2,3]])
 /**
  *
  * Given a positive integer num, write a function which returns True if num is a perfect square else False.
-
-Note: Do not use any built-in library function such as sqrt.
- */
+ * Note: Do not use any built-in library function such as sqrt.
+ *
+ *
+*/
 //1 = 1
 //4 = 1 + 3
 //n^{2}=1+1+2+2+...+(n-1)+(n-1)+n
@@ -181,9 +182,13 @@ var isPerfectSquare = function(num) {
 // efficient
 // n = 16
 // binary search
+
 // complexity
-// n = 10^10
-// sqrt n = 10 ^ 5
+// let N <= 10^10
+// low = 1
+// high = 10
+// mid = 5
+// sqrt n = 10 ^ 2
 // log sqrt n = 5
 var isPerfectSquareBinarySearch = function(num) {
   let left = 1;
@@ -217,13 +222,23 @@ var isPerfectSquareBinarySearch = function(num) {
 // todo move solution from visual code to google doc
 
 /**
- * Single element in sorted array
+ * 540 Single element in sorted array
+ * medium
+ *
  * You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once. Find this single element that appears only once.
  * Note: Your solution should run in O(log n) time and O(1) space.
+ *
+ * O(log n)
  */
 // move to dictionares
-// using search, search
-var singleNonDuplicate = function(nums) {
+// using binary search other this input
+// condition even oder odd part of the array and exclude duplicates
+//
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNonDuplicate1 = function(nums) {
   let hash = {};
 
   for (const num of nums) {
@@ -243,7 +258,111 @@ var singleNonDuplicate = function(nums) {
   return nums
 };
 
-console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]));
+var singleNonDuplicate = function(nums) {
+  const len = nums.length;
+  let left = 0;
+  let right = len - 1; // last index
 
+  while (left <= right) {
+    let mid = Math.floor(left + (right - left)/2); // handle overflow if left and right are very large numbers
+    //console.log(nums[mid])
+
+    let isEven = (right - mid) % 2 === 0;
+
+    if (nums[mid] === nums[mid-1]) {
+      if (isEven) {
+        right = mid - 2 // ignore duplicate number
+      } else {
+        left = mid + 1
+      }
+    } else if (nums[mid] === nums[mid+1]) {
+      if (isEven) {
+        left = mid + 2;
+      } else {
+        right = mid - 1
+      }
+    } else {
+      return nums[mid]
+    }
+  }
+
+  return nums[left]
+};
+
+//console.log(singleNonDuplicate([1,1,2,3,3]));
+console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]));
+// [3,3,7,7,10,11,11]
+
+
+/**
+ * 402 Remove K Digits
+ *Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
+
+Note:
+The length of num is less than 10002 and will be ≥ k.
+The given num does not contain any leading zero.
+ *
+ *
+ * Input: num = "1432219", k = 3
+Output: "1219"
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
+
+ *
+ * Greedy algorithm
+ *
+ * explanation
+ * Best possible decision on each step.
+ * We gonna loop through if we wanna keep the current number or we want to delete it and go with a different number
+ * short time pay off
+ *
+ * stack
+ * linear time : loop through N and deletions
+ *
+*/
+
+/*
+  remove first peek
+  peeks from left hand side
+  remove zero from beginning
+  remove previous peeks
+  asending order
+  stack - remove from top
+*/
+/**
+ * @param {string} num
+ * @param {number} k
+ * @return {string}
+ */
+// num is str
+var removeKdigits = function(num, k) {
+  const stack = [];
+  let removed = 0;
+
+  for (const n of num) {
+    while (stack.length && n < stack[stack.length - 1] && removed < k) {
+      stack.pop();
+      removed += 1
+    }
+
+    stack.push(n)
+  }
+
+  // remove all remaining large numbers
+  while (removed < k) {
+    stack.pop()
+    removed += 1
+  }
+
+  // remove all beginning zeros
+  while (stack.length && stack[0] === '0') {
+    stack.shift()
+  }
+
+  console.log(stack.length ? stack.join('') : '0')
+  return stack.length ? stack.join('') : '0';
+}
+
+// 1129
+console.log(removeKdigits('1432219', 3))
 
 export { canConstruct }

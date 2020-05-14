@@ -5,7 +5,7 @@ import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
 import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
 import { insertionSort } from '../../algorithms/sorting/insertion-sort';
-import { findMedian } from '../../algorithms/sorting/tasks/find-median';
+import { findMedian } from '../../algorithms/sorting/problems/find-median';
 
 function Sorting() {
   return (
@@ -19,7 +19,16 @@ function Sorting() {
             question="Bubble sort: bubble up the biggest element to the right most position"
             solution="is a method for sorting arrays by comparing each array element to the element behind it"
             complexity="Unfortunately bubble sort is pretty slow"
-            time="(n-1) * (n-1) ... = n2 - 2n + 1 = O(n^2), Ω(n^2)"
+            time={`
+              (n-1) * (n-1) ... = n2 - 2n + 1 = O(n^2).
+              The worst case situation is reverse ordered array.
+              `
+            }
+            omega={`
+              Ω(n) when array is sorted.
+              As the complete array is sorted, your number of swaps will be zero.
+              If you do not swaps just quit.
+            `}
             space="O(1)"
             code={bubbleSort.toString()}
           />

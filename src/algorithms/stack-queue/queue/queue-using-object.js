@@ -29,5 +29,21 @@ Queue.prototype.dequeue = function() {
 //const myQueue = new Queue(3);
 // console.log('myQueue', myQueue )
 
+// todo
+// head - remove
+// tail - add thing here
+// isEmpty() {
+//   return head == null
+// }
+
+// peek
+
+// add to the tail
+// tail is not null
+
+// remove
+
+
+
 export { Queue }
 

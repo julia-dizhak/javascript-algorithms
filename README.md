@@ -28,11 +28,19 @@ created on 12/21/17
 
 ...
 * Sorting
-    * Bubble sort
+    * [Bubble sort]((https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js))
     * Selection sort
     * Insertion sort
     * Quick sort
     * Merge sort
+| Sort Name     | O | Ω |
+| ---      | ---       |
+| Backtick | `         |
+| Pipe     | \|        |
+
+* Search
+    * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
+...
 ...
 
 ## Leetcode

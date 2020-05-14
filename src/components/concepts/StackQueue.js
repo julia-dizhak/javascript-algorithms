@@ -1,8 +1,8 @@
 import React from 'react';
 import Details from '../Details';
-import { Stack } from '../../algorithms/stack/stack-using-string';
-import { StackObj } from '../../algorithms/stack/stack-using-objects';
-import { Queue } from '../../algorithms/queue/queue-using-object';
+import { Stack } from '../../algorithms/stack-queue/stack/stack-using-string';
+import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
+import { Queue } from '../../algorithms/stack-queue/queue/queue-using-object';
 
 export default function StackQueue() {
   return (

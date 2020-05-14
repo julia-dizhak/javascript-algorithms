@@ -1,4 +1,4 @@
-import { bubbleSort , bubbleSortDisplayCount, bubbleSortTwoForLoops} from './bubble-sort';
+import { bubbleSort , bubbleSortDisplayCount, bubbleSortTwoForLoops, bubbleSortModified } from './bubble-sort';
 import { selectionSort } from './selection-sort';
 import { mergeSort } from './merge-sort';
 import { quickSort } from './quick-sort';
@@ -48,11 +48,16 @@ describe('sorting array test case', () => {
   it('bubble sort unsorted array variant 1', () => {
     expect(bubbleSort(arr)).toEqual(sortedArr);
     expect(bubbleSortTwoForLoops([1, 10, 90, 23, 91, 81])).toEqual([1, 10, 23, 81, 90, 91]);
+    expect(bubbleSortTwoForLoops([1, 10, 20, 30, 41, 81])).toEqual([1, 10, 20, 30, 41, 81]);
+  });
+
+  it('bubble sort modified omega time', () => {
+    expect(bubbleSortModified([1, 10, 20, 30, 41, 81])).toEqual([1, 10, 20, 30, 41, 81]);
   });
 
   it('bubble sort display count', () => {
-    // todo count should be 3
     expect(bubbleSortDisplayCount([4,3,1,2])).toEqual(5);
+    expect(bubbleSortDisplayCount([1,2,3,4])).toEqual(0);
   });
 
   it('merge sort unsorted array variant 1', () => {

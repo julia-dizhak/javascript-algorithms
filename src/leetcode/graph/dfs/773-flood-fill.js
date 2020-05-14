@@ -31,7 +31,7 @@
  * Note the bottom corner is not colored 2, because it is not 4-directionally connected
  * to the starting pixel.
  *
- * 
+ *
  * Flood fill also called seed fill, is an algorithm that determines the area connected to a given node in a multi-dimensional array.
  * The flood-fill algorithm takes three parameters:
  * a start node,
@@ -78,9 +78,9 @@
 
 /*
   Keep track of what color was at the beginning
-  firstColor = original color image
+  startingColor = original color image
 */
-var floodFill = function(image, row, col, newColor, firstColor = image[row][col]) {
+var floodFill = function(image, row, col, newColor, startingColor = image[row][col]) {
   // handle if the coordinate is out of bounds
 	// or if it is already the new color
 	// or if it's not from the original color we're trying to change
@@ -89,17 +89,17 @@ var floodFill = function(image, row, col, newColor, firstColor = image[row][col]
     col < 0 ||
     row >= image.length ||
     col >= image[row].length ||
-    image[row][col] !== firstColor ||
+    image[row][col] !== startingColor ||
     image[row][col] === newColor
   ) return image; // return image as it is
 
   // make it equal to new color
   image[row][col] = newColor;
 
-  floodFill(image, row-1, col, newColor, firstColor); // top row
-  floodFill(image, row+1, col, newColor, firstColor); // bottom row
-  floodFill(image, row, col-1, newColor, firstColor); // left column
-  floodFill(image, row, col+1, newColor, firstColor); // right column
+  floodFill(image, row-1, col, newColor, startingColor); // top row
+  floodFill(image, row+1, col, newColor, startingColor); // bottom row
+  floodFill(image, row, col-1, newColor, startingColor); // left column
+  floodFill(image, row, col+1, newColor, startingColor); // right column
 
   return image
 };

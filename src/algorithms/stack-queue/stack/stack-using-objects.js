@@ -1,3 +1,5 @@
+import { isCompositeComponentWithType } from "react-dom/test-utils";
+
 /**
  * Stack using objects
  * The problem that hash doesn't have last element
@@ -49,6 +51,13 @@ myStack.push('c');
 // myStack.pop();
 // console.log('my stack pop', myStack.pop());
 // console.log('my stack', myStack);
+
+// todo
+// add and remove from top
+// isEmpty
+// peek
+// push
+// pop
 
 export { StackObj }
 

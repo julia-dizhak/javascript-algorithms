@@ -25,9 +25,40 @@ function bubbleSortTwoForLoops(arr) {
 
       if (current > next) {
         arr[j] = next;
-        arr[j+1] = current
+        arr[j+1] = current;
+      }
+    }
+  }
+
+  return arr;
+}
+
+/*
+  Modified bubble sort is just an enhancement to the bubble sort algorithm.
+  It wont improve the algorithm worst case running time
+  but on an average case or for nearly sorted array it is a great improvement as it skips many passes.
+  Modified bubble sort keeps count of the number of adjacent inversions in each pass
+  and when there are no adjacent inversions the algorithm halts as the list will be sorted
+  if there are no adjacent inversions
+*/
+function bubbleSortModified(arr) {
+  const len = arr.length;
+
+  for (let i = 0; i < len; i++) {
+    let swaps = 0;
+    for (let j = 0; j < len - i - 1; j++) {
+      const current = arr[j];
+      const next = arr[j+1];
+
+      if (current > next) {
+        arr[j] = next;
+        arr[j+1] = current;
+        swaps++;
       }
 
+      if (swaps === 0) {
+        break
+      }
     }
   }
 
@@ -36,7 +67,7 @@ function bubbleSortTwoForLoops(arr) {
 
 function bubbleSortDisplayCount(arr) {
   const len = arr.length;
-  let count = 0;
+  let count = 0; // swaps count
   let swap;
 
   do {
@@ -54,4 +85,4 @@ function bubbleSortDisplayCount(arr) {
 }
 
 
-export { bubbleSort, bubbleSortDisplayCount, bubbleSortTwoForLoops }
+export { bubbleSort, bubbleSortDisplayCount, bubbleSortTwoForLoops, bubbleSortModified }
