@@ -38,11 +38,15 @@ created on 12/21/17
 | Bubble sort     | O(n^2)   | Ω(n) |
 | Selection sort  | O()      | Ω() |
 
+| Sort name       | O          | Ω      |
+| :---            | :---       | :---   |
+| Bubble sort     | O(n^2)     | Ω(n)   |
+| Selection sort  |            |        |
+
 | Left-aligned | Center-aligned | Right-aligned |
 | :---         |     :---:      |          ---: |
 | git status   | git status     | git status    |
 | git diff     | git diff       | git diff      |
-
 
 * Search
     * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
