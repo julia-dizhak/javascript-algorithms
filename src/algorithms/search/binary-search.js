@@ -34,10 +34,10 @@ function binarySearch(arr, target) {
 
     if (arr[mid] === target) {
       return mid;
-    } else if (arr[mid] < target) {
-      start = mid + 1;
-    } else {
+    } else if (target < arr[mid]) {
       end = mid - 1;
+    } else {
+      start = mid + 1;
     }
   }
 
@@ -56,10 +56,10 @@ function binarySearchRecursive(arr, target, start = 0, stop = (arr.length - 1)) 
     case stop - start === 0:
       return -1;
 
-    case arr[mid] < target:
+    case target > arr[mid]:
       return binarySearchRecursive(arr, target, mid + 1, stop);
 
-    case arr[mid] > target:
+    case  target < arr[mid]:
       return binarySearchRecursive(arr, target, start, mid);
 
     default:

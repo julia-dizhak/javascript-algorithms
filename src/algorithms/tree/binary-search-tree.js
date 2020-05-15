@@ -1,7 +1,6 @@
 /**
  * Binary Search Tree implementation in JavaScript
  */
-
 class Node {
   constructor(value) {
     this.value = value;
@@ -9,6 +8,7 @@ class Node {
     this.right = null; // right pointer
   }
 }
+
 /**
  * Represents a single node in a BinarySearchTree.
  * @class BinarySearchTree
@@ -124,9 +124,11 @@ class BinarySearchTree {
   }
 
   // Start at root and check if p and q are less, then go left, otherwise go right
+  // p is v1
+  // q is v2
   lowestCommonAncestor(
-    p, // v1
-    q, // v2
+    p,
+    q,
     node = this.root
   ) {
     if (node.value > p && node.value > q) {

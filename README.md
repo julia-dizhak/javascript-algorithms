@@ -27,29 +27,29 @@ created on 12/21/17
 ## List of problems
 
 ...
+* Search
+    * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/find-index.js)
+    * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
+
+| Search name       | O          | Ω      |
+| :---              | :---       | :---   |
+| Linear Search     | O(n)       | Ω(1)   |
+| Binary Search     | O(log n)   | Ω(1)   |
+
 * Sorting
-    * [Bubble sort]((https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js))
+    * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
     * Selection sort
     * Insertion sort
     * Quick sort
     * Merge sort
 
-| Sort Name       | O        | Ω    |
-| Bubble sort     | O(n^2)   | Ω(n) |
-| Selection sort  | O()      | Ω() |
+| Sort name       | O           | Ω          |
+| :---            | :---        | :---       |
+| Bubble sort     | O(n^2)      | Ω(n)       |
+| Selection sort  | O(n^2)      | Ω(n^2)     |
+| Insertion sort  | O(n^2)      | Ω(n)       |
+| Merge sort      | O(n log n)  | Ω(n log n) |
 
-| Sort name       | O          | Ω      |
-| :---            | :---       | :---   |
-| Bubble sort     | O(n^2)     | Ω(n)   |
-| Selection sort  |            |        |
-
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-* Search
-    * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
 
 
 ## Leetcode

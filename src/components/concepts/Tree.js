@@ -1,6 +1,7 @@
 import React from 'react';
 import Details from '../Details';
 import { BinarySearchTree } from '../../algorithms/tree/binary-search-tree';
+import { Trie } from '../../algorithms/trie/trie';
 
 export default function Tree() {
   return (
@@ -27,6 +28,7 @@ export default function Tree() {
             time="O(log(n)) in the average case, linear - in worst cases"
             space=""
             code={BinarySearchTree.toString()}
+            // secondCode={Trie.toString()}
           />
         </li>
       </ul>

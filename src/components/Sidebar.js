@@ -60,13 +60,6 @@ function Sidebar() {
           </li>
 
           <li className="item">
-            <header className="title"><a href="#binary-search-tree">Tree</a></header>
-            <ul className="subList">
-              <li><a href="#binary-search-tree-operations">Binary Search Tree</a></li>
-            </ul>
-          </li>
-
-          <li className="item">
             <header className="title">Graph</header>
             <ul className="subList">
               <li><header className="title"><a href="#graph-dfs-flood-fill">Flood fill</a></header></li>
