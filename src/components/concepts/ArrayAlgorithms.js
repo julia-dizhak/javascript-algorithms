@@ -4,6 +4,7 @@ import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
+import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
 
 export default function ArrayAlgorithms() {
   return (
@@ -72,6 +73,25 @@ export default function ArrayAlgorithms() {
             space="O(N) allocating an array of length N"
             code={findJudge.toString()}
             secondCode={findJudgeTwoArrays.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="max-contiguous-subarray-sum"
+            question="Max contiguous subarray sum: brute force cubic and quadratic time"
+            solution={
+              `
+                test
+              `
+            }
+            complexity={`
+              test
+            `}
+            time=""
+            space=""
+            code={maxSubArrayBruteForceCubicTime.toString()}
+            secondCode={maxSubArrayBruteForce.toString()}
           />
         </li>
 

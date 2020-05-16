@@ -31,24 +31,24 @@ created on 12/21/17
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/find-index.js)
     * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
 
-| Search name       | O          | Ω      |
-| :---              | :---       | :---   |
-| Linear Search     | O(n)       | Ω(1)   |
-| Binary Search     | O(log n)   | Ω(1)   |
+| Search name       | O          | Ω      | Space  |
+| :---              | :---       | :---   | :---   |
+| Linear Search     | O(n)       | Ω(1)   | O(1)   |
+| Binary Search     | O(log n)   | Ω(1)   | O(1)   |
 
 * Sorting
     * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
-    * Selection sort
+    * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/selection-sort.js)
     * Insertion sort
     * Quick sort
     * Merge sort
 
-| Sort name       | O           | Ω          |
-| :---            | :---        | :---       |
-| Bubble sort     | O(n^2)      | Ω(n)       |
-| Selection sort  | O(n^2)      | Ω(n^2)     |
-| Insertion sort  | O(n^2)      | Ω(n)       |
-| Merge sort      | O(n log n)  | Ω(n log n) |
+| Sort name       | O           | Ω          | Space  |
+| :---            | :---        | :---       | :---   |
+| Bubble sort     | O(n^2)      | Ω(n)       | O(1)   |
+| Selection sort  | O(n^2)      | Ω(n^2)     | O(1)   |
+| Insertion sort  | O(n^2)      | Ω(n)       | O(1)   |
+| Merge sort      | O(n log n)  | Ω(n log n) | O(n)   |
 
 
 
@@ -59,6 +59,7 @@ created on 12/21/17
 * Array
     * [169. Majority element / 229. Majority element II]
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
+    * [53. Maximum subarray / ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 * Search
     * [278. First Bad version]
 * String manipulation

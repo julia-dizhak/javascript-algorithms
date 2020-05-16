@@ -252,7 +252,7 @@ var singleNonDuplicate1 = function(nums) {
     }
   }
 
-  console.log('hash', hash);
+  //console.log('hash', hash);
 
 
   return nums
@@ -290,7 +290,7 @@ var singleNonDuplicate = function(nums) {
 };
 
 //console.log(singleNonDuplicate([1,1,2,3,3]));
-console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]));
+//console.log(singleNonDuplicate([1,1,2,3,3,4,4,8,8]));
 // [3,3,7,7,10,11,11]
 
 
@@ -363,6 +363,129 @@ var removeKdigits = function(num, k) {
 }
 
 // 1129
-console.log(removeKdigits('1432219', 3))
+//console.log(removeKdigits('1432219', 3))
 
+
+// divide and conquer
+/*
+maxSubArray for array with n numbers:
+
+If n == 1 : return this single element.
+
+left_sum = maxSubArray for the left subarray, i.e. for the first n/2 numbers (middle element at index (left + right) / 2 always belongs to the left subarray).
+
+right_sum = maxSubArray for the right subarray, i.e. for the last n/2 numbers.
+
+cross_sum = maximum sum of the subarray containing elements from both left and right subarrays and hence crossing the middle element at index (left + right) / 2.
+Merge the subproblems solutions, i.e. return max(left_sum, right_sum, cross_sum).
+
+*/
+const maxSub = (nums, left, right) => {
+  if(left === right)
+      return nums[left]
+  else if(left > right)
+      return Number.NEGATIVE_INFINITY
+
+  let mid = Math.floor((left + right) / 2)
+  let lmax = maxSub(nums, left, mid - 1)
+  let rmax = maxSub(nums, mid + 1, right)
+
+  let leftExtendMaxSum = 0,
+    rightExtendMaxSum = 0;
+
+  for(let i = mid - 1, tempTotal = 0; i >= left; --i)
+      leftExtendMaxSum = Math.max(tempTotal += nums[i], leftExtendMaxSum)
+
+  for(let i = mid + 1, tempTotal = 0; i <= right; ++i)
+      rightExtendMaxSum = Math.max(tempTotal += nums[i], rightExtendMaxSum)
+
+  //console.log('max', Math.max(leftExtendMaxSum + nums[mid] + rightExtendMaxSum, lmax, rmax))
+  return Math.max(leftExtendMaxSum + nums[mid] + rightExtendMaxSum, lmax, rmax)
+}
+
+var maxSubArrayDivide = nums => {
+  //console.log('maxSum', maxSub(nums, 0, nums.length - 1))
+  return maxSub(nums, 0, nums.length - 1);
+}
+
+// todo write a test
+//maxSubArrayDivide([-2,1,-3,4,-1,2,1,-5,4]);
+
+// approach greedy
+/*
+The problem to find maximum (or minimum) element (or sum) with a single array as the input is a good candidate to be solved by the greedy approach in linear time. One can find the examples of linear time greedy solutions in our articles of
+Super Washing Machines, and Gas Problem.
+https://leetcode.com/articles/super-washing-machines/
+https://leetcode.com/articles/gas-station/
+
+Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
+
+
+*/
+
+/* Dynamic programming
+Kadans Algorithm
+The problem to find sum or maximum or minimum in an entire array or in a fixed-size sliding window
+could be solved by the dynamic programming (DP) approach in linear time.
+
+
+*/
+
+
+/*
+
+918 Maximum Sum Circular Subarray
+Given a circular array C of integers represented by A, find the maximum possible sum of a non-empty subarray of C.
+
+Here, a circular array means the end of the array connects to the beginning of the array.  (Formally, C[i] = A[i] when 0 <= i < A.length, and C[i+A.length] = C[i] when i >= 0.)
+
+Also, a subarray may only include each element of the fixed buffer A at most once.  (Formally, for a subarray C[i], C[i+1], ..., C[j], there does not exist i <= k1, k2 <= j with k1 % A.length = k2 % A.length.)
+
+
+
+to find only one solution
+
+*/
+/**
+ * @param {number[]} A
+ * @return {number}
+*/
+// Kadane's Algorithm
+function maxSubarraySum(arr) {
+  let max = arr[0];
+  let prevBest = 0;
+
+  for (let n of arr) {
+    if (prevBest > 0) prevBest += n
+    else prevBest = n
+
+    if (prevBest > max) max = prevBest
+  }
+  // for (let n of arr) {
+  //   if (prevBest > 0) {
+  //     prevBest += n
+  //   } else if (prevBest > max) {
+  //     max = prevBest
+  //   } else {
+  //     prevBest = n
+  //   }
+  // }
+
+  return max;
+}
+var maxSubarraySumCircular = function(A) {
+  const linearMax = maxSubarraySum(A);
+  const total = A.reduce((acc, cur) => acc + cur);
+  // the minumum contigious subarray sum
+  const minSubarraySum = maxSubarraySum(A.map(n => n * -1))
+  // deducts(removes) the minumum contigious subarray sum from the total;
+  const circularMax = total + minSubarraySum;
+
+  // if circularMax is 0, all nums in A are negative, thus return linearMax
+  if (circularMax === 0) return linearMax;
+  return Math.max(circularMax, linearMax);
+}
+
+// Subarray [3] has maximum sum 3
+//console.log(maxSubarraySumCircular([1, -2, 3, -2]))
 export { canConstruct }

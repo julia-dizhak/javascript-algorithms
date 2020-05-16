@@ -16,11 +16,11 @@ import { quickSort } from '../../algorithms/sorting/quick-sort';
  * The brute force algorithm iterates over the array, and then iterates again for each number to count its occurrences.
  * As soon as a number is found to have appeared more than any other can possibly have appeared, return it.
  *
- * Time complexity : O(n^2)
+ * Time complexity: O(n^2)
  * The brute force algorithm contains two nested for loops that each run for nn iterations,
  * adding up to quadratic time complexity.
  *
- * Space complexity : O(1)
+ * Space complexity: O(1)
  * The brute force solution does not allocate additional space proportional to the input size.
 */
 var majorityElementBruteForce = function(arr) {
