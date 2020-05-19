@@ -151,9 +151,9 @@ tree.insert(7)
 tree.insert(6)
 
 
-console.log('tree', tree)
+//console.log('tree', tree)
 tree.lowestCommonAncestor(2,7) // should be 4 it's not correct
-console.log('lca', tree.lowestCommonAncestor(2,7));
+//console.log('lca', tree.lowestCommonAncestor(2,7));
 // console.log('size', tree.size());
 
 // todo move each method separately?

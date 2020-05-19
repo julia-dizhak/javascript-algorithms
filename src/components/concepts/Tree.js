@@ -2,6 +2,7 @@ import React from 'react';
 import Details from '../Details';
 import { BinarySearchTree } from '../../algorithms/tree/binary-search-tree';
 import { Trie } from '../../algorithms/trie/trie';
+import { SinlgyLinkedList } from '../../algorithms/linked-lists/singly-linked-list';
 
 export default function Tree() {
   return (
@@ -29,6 +30,7 @@ export default function Tree() {
             space=""
             code={BinarySearchTree.toString()}
             // secondCode={Trie.toString()}
+            secondCode={SinlgyLinkedList.toString()}
           />
         </li>
       </ul>

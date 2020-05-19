@@ -10,6 +10,9 @@ import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/s
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 
+import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
+import { findAnagrams } from '../../leetcode/string-manipulation/438-find-all-anagrams';
+
 export default function StringManipulation() {
   return (
     <div className="sorting">
@@ -127,6 +130,8 @@ export default function StringManipulation() {
                 time="O(n)"
                 space="O(n)"
                 code={firstUniqueChar.toString()}
+                code={findAnagrams.toString()}
+                //secondCode={checkInclusion.toString}
               />
           </details>
         </li>

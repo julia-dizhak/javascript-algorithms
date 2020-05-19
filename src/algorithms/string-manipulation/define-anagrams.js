@@ -1,3 +1,12 @@
+/**
+ * There are 2 string. Define if they are anagram
+ * Two words are anagrams of one another if their letters can be rearranged to form the other word.
+ *
+ * @param {*} str1
+ * @param {*} str2
+ * @return {boolean}
+*/
+
 function defineAnagrams(str1, str2) {
   if (typeof str1 !== 'string' || typeof str2 !== 'string') {
     throw new Error('defineAnagrams requires two strings to be passed');

@@ -12,11 +12,11 @@ function makingAnagrams(str1, str2) {
   const obj2 = {};
 
   for (let i=0; i < len1; i++) {
-    obj1[str1[i]] = obj1[str1[i]] ? obj1[str1[i]] + 1 : 1
+    obj1[str1[i]] = obj1[str1[i]] ? obj1[str1[i]] + 1 : 1;
   }
 
   for (let j=0; j < len2; j++) {
-    obj2[str2[j]] = obj2[str2[j]] ? obj2[str2[j]] + 1 : 1
+    obj2[str2[j]] = obj2[str2[j]] ? obj2[str2[j]] + 1 : 1;
   }
 
   for (let i =0; i<len1; i++) {

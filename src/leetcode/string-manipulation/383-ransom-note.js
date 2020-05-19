@@ -487,5 +487,8 @@ var maxSubarraySumCircular = function(A) {
 }
 
 // Subarray [3] has maximum sum 3
-//console.log(maxSubarraySumCircular([1, -2, 3, -2]))
+//console.log(maxSubarraySumCircular([2, -1, 2, 0, 1, 3, 4]))
+//console.log(maxSubarraySumCircular([-1, 2, 0, 1, 3, 4]))
+
+
 export { canConstruct }

@@ -123,6 +123,11 @@ var maxSubArrayBruteForce = function(nums) {
   return maximumSubArraySum
 }
 
+/*
+  Approach 3 Dynamic programming (Kadane's algorithm)
+
+  linear time O(n)
+*/
 //console.log(maxSubArrayBruteForce([-2,1,-3,4,-1,2,1,-5,4]))
 //console.log(maxSubArrayBruteForce([-2,1,-3]))
 
