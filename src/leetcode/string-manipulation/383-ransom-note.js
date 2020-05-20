@@ -491,4 +491,71 @@ var maxSubarraySumCircular = function(A) {
 //console.log(maxSubarraySumCircular([-1, 2, 0, 1, 3, 4]))
 
 
+function StopWatch(element, options) {
+  // private variables
+  let timer = createTimer(),
+    startTime,
+    endTime,
+    running,
+    duration = 0;
+
+  // append elements
+  element.appendChild(timer);
+
+  // private functions
+  function createTimer() {
+    return document.createElement('span')
+  }
+  function createButton() {
+
+  }
+
+  this.start = function() {
+    if (running) throw new Error('Stopwatch has already started');
+    running = true;
+    startTime = new Date();
+  }
+
+  this.stop = function() {
+    if (!running) throw new Error('Stopwatch is not started');
+    running = false;
+    endTime = new Date();
+    const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+    duration += seconds;
+    console.log('duration', duration)
+  }
+
+  this.reset = function() {
+    startTime = null;
+    endTime = null;
+    running = false;
+    duration = 0;
+  }
+
+  // read only property
+  Object.defineProperty(this, 'duration', {
+    get: function() {
+      console.log('duration', duration)
+      return duration
+    }
+  });
+}
+
+//
+//const timer = document.getElementById('timer');
+//const aTimer = new StopWatch(timer);
+//console.log('timer', aTimer);
+
+
+// const stopWatch = new StopWatch();
+// stopWatch.start();
+// stopWatch.stop();
+
+// console.log('stop watch', stopWatch);
+// //console.log(stopWatch.stop());
+
+// console.log('duration', stopWatch.duration);
+
+
+
 export { canConstruct }

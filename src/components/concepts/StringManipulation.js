@@ -11,7 +11,7 @@ import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-un
 import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 
 import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
-import { findAnagrams } from '../../leetcode/string-manipulation/438-find-all-anagrams';
+import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-find-all-anagrams';
 
 export default function StringManipulation() {
   return (
@@ -130,8 +130,19 @@ export default function StringManipulation() {
                 time="O(n)"
                 space="O(n)"
                 code={firstUniqueChar.toString()}
-                code={findAnagrams.toString()}
                 //secondCode={checkInclusion.toString}
+              />
+
+              <Details
+                id="find-all-anagrams"
+                question="Find all anagrams in a String: approach sliding window and 2 counter Hashes"
+                solution={`
+                  Given a string s and a non-empty string p,
+                  find all the start indices of p's anagrams in s.
+                `}
+                time="O(N_s + N_p) since it's one pass along both strings"
+                space="O(1) (or O(n)), because pCount and sCount contain 26 elements each"
+                code={findAnagramsUseTwoHash.toString()}
               />
           </details>
         </li>

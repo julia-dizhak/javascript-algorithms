@@ -45,6 +45,9 @@
  *
 */
 
+
+
+
 /*
   Approach Sliding Window + 2 counter HashMaps
 
@@ -75,10 +78,12 @@
   Space complexity: O(1), because pCount and sCount contain 26 elements each.
 */
 
+
+
 /**
- * @param {string} s
- * @param {string} p
- * @return {number[]}
+ * @param {{}} s
+ * @param {{}} p
+ * @return {boolean}
 */
 const compareDict = (dictA, dictB) => {
   for (let keyA in dictA) {
@@ -95,6 +100,11 @@ const compareDict = (dictA, dictB) => {
   return true;
 };
 
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {number[]}
+*/
 var findAnagramsUseTwoHash = function(s, p) {
   let result = [];
 
@@ -110,14 +120,11 @@ var findAnagramsUseTwoHash = function(s, p) {
     sCounter[s[i]] = (sCounter[s[i]] || 0) + 1; // sCounter[s.charAt(i) - 'a']++;
   }
 
-  console.log('p', pCounter);
-  console.log('s', sCounter);
-
   let left = 0;
   let right = p.length;
 
   // move 2 pointers
-  //debugger;
+  // <= is necessary, check case ('ab', 'ba')
   while (right <= s.length) {
     if (compareDict(pCounter, sCounter)) {
       result.push(left)
@@ -132,15 +139,55 @@ var findAnagramsUseTwoHash = function(s, p) {
     left++;
   }
 
-  // check for the last window: Don't forget the last step comparison
-  // if (compareDict(sCounter, pCounter)) {
-  //   result.push(left);
-  // }
-
-  console.log('result', result)
   return result;
 }
-console.log(findAnagramsUseTwoHash('jbackab', 'ab'));
+
+// The same approach but using a map
+var findAnagramsUseMap = function(s, p) {
+  let anagrams = [];
+  if (p == null || s == null || s.length === 0 || p.length > s.length) {
+    return anagrams;
+  }
+
+  const map = new Map();
+
+  for (let i = 0; i < p.length; i++) {
+    if (map.has(p.charAt(i))) {
+      map.set(p.charAt(i), map.getChart(i) + 1);
+    } else {
+      map.set(p.charAt(i), 1);
+    }
+  }
+
+  let left = 0;
+  let right = 0;
+  let counter = map.size;
+
+  while (right < s.length) {
+    const endChar = s.charAt(right);
+    if (map.has(endChar)) {
+      map.set(endChar, map.get(endChar) - 1);
+      if (map.get(endChar) === 0) counter--;
+    }
+    right++;
+
+    while (counter === 0) {
+      if (right - left === p.length) {
+        anagrams.push(left)
+      }
+
+      const startChar = s.charAt(left);
+      if (map.has(startChar)) {
+        map.set(startChar, map.get(startChar) + 1);
+        if (map.get(startChar) > 0) counter++;
+      }
+      left++
+    }
+
+  }
+
+  return anagrams;
+};
 
 
 // todo it seems it's not an approach 1
@@ -176,24 +223,7 @@ var findAnagramsUseWhileLoop = function(s, p) {
   return anagrams;
 }
 
-// todo check
-// const compareDict = (dictA, dictB) => {
-//   for (let keyA in dictA) {
-//     if (dictA[keyA] && dictA[keyA] !== dictB[keyA]) {
-//       return false;
-//     }
-//   }
-
-//   for (let keyB in dictB) {
-//     if (dictB[keyB] && dictB[keyB] !== dictA[keyB]) {
-//       return false;
-//     }
-//   }
-
-//   return true;
-// };
-
-
+// todo
 var findAnagrams = function(s, p) {
   let pCounter = {};
   let anagrams = [];
@@ -206,7 +236,7 @@ var findAnagrams = function(s, p) {
     pCounter[p[i]] = (pCounter[p[i]] || 0) + 1;
   }
 
-  console.log('p', pCounter);
+  //console.log('p', pCounter);
 
   let left = 0,
     right = 0,
@@ -297,50 +327,7 @@ var findAnagrams = function(s, p) {
 //     return res;
 // }
 
-// var findAnagrams = function(s, p) {
 
-//   const map = new Map();
-
-//   for (let i = 0; i < p.length; i++){
-//       if (map.has(p.charAt(i))){
-//           map.set(p.charAt(i), map.get(p.charAt(i)) + 1);
-//       } else {
-//           map.set(p.charAt(i), 1)
-//       }
-//   }
-
-//   let end = 0, begin = 0, ans = []; wordLength = p.length, counter = map.size;
-
-//   while(end < s.length){
-//       const endChar = s.charAt(end);
-//       if (map.has(endChar)){
-//           map.set(endChar, map.get(endChar) - 1);
-//           if (map.get(endChar) === 0) counter--;
-//       }
-
-//       end++;
-
-//       while(counter === 0){
-//           if (end - begin === wordLength){
-//               ans.push(begin)
-//           }
-
-//           const startChar = s.charAt(begin);
-
-//           if (map.has(startChar)){
-//               map.set(startChar, map.get(startChar) + 1);
-//               if (map.get(startChar) > 0) counter++;
-//           }
-
-//           begin++;
-
-//       }
-
-//   }
-
-//   return ans;
-
-// };
 
 //console.log(findAnagrams('cbaebabacd', 'abc'));
 //console.log(findAnagrams('abc', 'abc'));
@@ -437,6 +424,8 @@ export {
   compareDict,
 
   findAnagramsUseTwoHash,
+  findAnagramsUseMap,
+
   findAnagramsUseWhileLoop,
   findAnagrams
 }

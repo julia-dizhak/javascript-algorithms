@@ -119,7 +119,6 @@ class BinarySearchTree {
     const leftHeight = this.height(node.left);
     const rightHeight = this.height(node.right);
 
-
     return Math.max(leftHeight, rightHeight) + 1;
   }
 

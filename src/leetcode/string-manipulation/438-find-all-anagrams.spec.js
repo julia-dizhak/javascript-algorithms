@@ -1,7 +1,9 @@
 import {
   compareDict,
-
+  // same approach
   findAnagramsUseTwoHash,
+  findAnagramsUseMap,
+
   findAnagrams,
   findAnagramsUseWhileLoop
 } from './438-find-all-anagrams';
@@ -19,28 +21,38 @@ describe('find all anagrams', () => {
 
   it('strings are equal', () => {
     expect(findAnagramsUseTwoHash('ab', 'ab')).toEqual([0]);
+    expect(findAnagramsUseMap('ab', 'ab')).toEqual([0]);
+
     expect(findAnagrams('ab', 'ab')).toEqual([0]);
   });
 
   it('there is no anagrams', () => {
     expect(findAnagramsUseTwoHash('abab', 'kf')).toEqual([]);
+    expect(findAnagramsUseMap('abab', 'kf')).toEqual([]);
+
     expect(findAnagrams('abab', 'kf')).toEqual([]);
   });
 
   it('there is 1 anagram in string', () => {
     expect(findAnagramsUseTwoHash('jback', 'ab')).toEqual([1]);
+    expect(findAnagramsUseMap('jback', 'ab')).toEqual([1]);
+
     expect(findAnagrams('jback', 'ab')).toEqual([1]);
     expect(findAnagramsUseWhileLoop('jback', 'ab')).toEqual([1]);
   });
 
   it('there are 2 anagrams in string', () => {
     expect(findAnagramsUseTwoHash('cbaebabacd', 'abc')).toEqual([0,6]);
+    expect(findAnagramsUseMap('cbaebabacd', 'abc')).toEqual([0,6]);
+
     expect(findAnagrams('cbaebabacd', 'abc')).toEqual([0,6]);
     expect(findAnagramsUseWhileLoop('cbaebabacd', 'abc')).toEqual([0,6]);
   });
 
   it('there are 3 anagrams in string', () => {
     expect(findAnagramsUseTwoHash('abab', 'ab')).toEqual([0,1,2]);
+    expect(findAnagramsUseMap('abab', 'ab')).toEqual([0,1,2]);
+
     expect(findAnagrams('abab', 'ab')).toEqual([0,1,2]);
   });
 });
