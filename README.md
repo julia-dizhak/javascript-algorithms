@@ -51,7 +51,6 @@ created on 12/21/17
 | Merge sort      | O(n log n)  | Ω(n log n) | O(n)   |
 
 
-
 ## Leetcode
 
 * Bitwise operators
@@ -69,6 +68,13 @@ created on 12/21/17
     * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)
+
+
+## OOP in JS
+
+* Implementation
+    * [Stop watch](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/oop/stop-watch.js)
+
 
 ## Available Scripts
 
