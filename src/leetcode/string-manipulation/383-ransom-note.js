@@ -490,72 +490,34 @@ var maxSubarraySumCircular = function(A) {
 //console.log(maxSubarraySumCircular([2, -1, 2, 0, 1, 3, 4]))
 //console.log(maxSubarraySumCircular([-1, 2, 0, 1, 3, 4]))
 
+// class Bubble {
+//   constructor() {
+//     this.x = 200;
+//     this.y = 150
+//   }
 
-function StopWatch(element, options) {
-  // private variables
-  let timer = createTimer(),
-    startTime,
-    endTime,
-    running,
-    duration = 0;
+//   move() {
+//     this.x = this.x + random(-5, 5);
+//     this.y = this.y + random(-5, 5);
+//   }
 
-  // append elements
-  element.appendChild(timer);
+//   show() {
+//     stroke(255);
+//     strokeWeight(4);
+//     noFill();
+//   }
+// }
 
-  // private functions
-  function createTimer() {
-    return document.createElement('span')
-  }
-  function createButton() {
+// const bubble = new Bubble();
+// console.log('bubble', bubble);
 
-  }
-
-  this.start = function() {
-    if (running) throw new Error('Stopwatch has already started');
-    running = true;
-    startTime = new Date();
-  }
-
-  this.stop = function() {
-    if (!running) throw new Error('Stopwatch is not started');
-    running = false;
-    endTime = new Date();
-    const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
-    duration += seconds;
-    console.log('duration', duration)
-  }
-
-  this.reset = function() {
-    startTime = null;
-    endTime = null;
-    running = false;
-    duration = 0;
-  }
-
-  // read only property
-  Object.defineProperty(this, 'duration', {
-    get: function() {
-      console.log('duration', duration)
-      return duration
-    }
-  });
-}
-
-//
-//const timer = document.getElementById('timer');
-//const aTimer = new StopWatch(timer);
-//console.log('timer', aTimer);
-
-
-// const stopWatch = new StopWatch();
-// stopWatch.start();
-// stopWatch.stop();
-
-// console.log('stop watch', stopWatch);
-// //console.log(stopWatch.stop());
-
-// console.log('duration', stopWatch.duration);
-
-
+// function setup() {
+//   createCanvas(100, 100)
+// }
+// function draw() {
+//   background();
+//   bubble1.move();
+//   bubble.show()
+// }
 
 export { canConstruct }
