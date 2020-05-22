@@ -4,23 +4,26 @@ class Stack {
     this.stack = [];
   }
 
+  get length() {
+    return this.stack.length
+  }
+
   isEmpty() {
     // helper method
-    return this.stack.length === 0;
+    // returns true if the stack is empty
+    return this.length === 0;
   }
 
-  push(element) {
+  push(item) {
     // inserts the element into the top of the stack
-    this.stack.push(element);
+    this.stack.push(item);
   }
 
-  pop(element) {
+  pop() {
     // removes the element from the top of the stack and return that element
     if (this.isEmpty()) {
       throw new Error('stack is empty');
-      //return 'stack is empty'
     }
-   // this.stack.shift(element);
     return this.stack.pop()
   }
 
@@ -36,7 +39,7 @@ stack.push(2);
 stack.push(3);
 stack.pop();
 stack.peek()
-console.log('stack', stack)
+//console.log('stack', stack);
 
 export { Stack }
 
