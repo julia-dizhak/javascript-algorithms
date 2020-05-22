@@ -40,7 +40,6 @@ const reverseArrayUsePop = function(arr) {
   return reverse;
 }
 
-
 function reverseArrayInPlace(arr) {
   const len = arr.length;
 
@@ -53,4 +52,36 @@ function reverseArrayInPlace(arr) {
   return arr;
 }
 
-export { reverseArray, reverseArrayInPlace, reverseArrayUsePop }
+/*
+  Write a function that takes an array
+  and uses recursion to return its contents in reverse.
+
+  Closure it happens when you have function inside other function.
+
+  Solution:
+    base case is an empty array
+*/
+/**
+ * @param {[]} arr
+ * @param {[]} reversed arr
+ */
+function reverseUseRecursion(arr) {
+  let reversedArr = [];
+
+  let addItems = function(orderedArr) {
+    // if array is empty return
+    if (orderedArr.length > 0) {
+      reversedArr.push(orderedArr.pop());
+      addItems(orderedArr)
+    }
+    return;
+  };
+  addItems(arr);
+
+  return reversedArr;
+}
+
+export {
+  reverseArray, reverseArrayInPlace, reverseArrayUsePop,
+  reverseUseRecursion
+}

@@ -6,7 +6,7 @@ import { loopingTriangle } from './tasks/looping-triangle';
 import { fizzBuzz } from './tasks/fizz-buzz';
 import { chessboard } from './tasks/chessboard';
 import { isEven } from './tasks/3-chapter-functions/is-even';
-import { reverseArray, reverseArrayInPlace } from './tasks/4-chapter-data-structures/reverse-array';
+import { reverseArray, reverseArrayInPlace, reverseUseRecursion } from './tasks/4-chapter-data-structures/reverse-array';
 
 export default function StringManipulation() {
   return (
@@ -110,6 +110,7 @@ export default function StringManipulation() {
             solution=""
             code={reverseArray.toString()}
             secondCode={reverseArrayInPlace.toString()}
+            thirdSolution={reverseUseRecursion.toString()}
           />
         </li>
       </ul>

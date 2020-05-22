@@ -16,7 +16,8 @@ export default function Details(props) {
     omega,
     space,
     code,
-    secondCode
+    secondCode,
+    thirdSolution
   } = props;
 
   return (
@@ -60,6 +61,15 @@ export default function Details(props) {
             style={dark}
           >
             {secondCode}
+          </SyntaxHighlighter>
+        }
+
+        {thirdSolution &&
+          <SyntaxHighlighter
+            language="javascript"
+            style={docco}
+          >
+            {thirdSolution}
           </SyntaxHighlighter>
         }
 
