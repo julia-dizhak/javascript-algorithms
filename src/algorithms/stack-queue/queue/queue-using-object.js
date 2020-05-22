@@ -43,6 +43,15 @@ Queue.prototype.dequeue = function() {
 
 // remove
 
+// // queue
+// let queue = [];
+// // put value on end of queue
+// queue.push(2);
+// queue.push(5);
+// // take first value from queue
+// const j= queue.unshift();
+// console.log(j)
+
 
 
 export { Queue }

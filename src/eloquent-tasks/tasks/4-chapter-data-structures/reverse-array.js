@@ -81,7 +81,21 @@ function reverseUseRecursion(arr) {
   return reversedArr;
 }
 
+function multiplierUseRecursion(arr, num) {
+  if (arr.length === 0) {
+    return arr
+  }
+
+  let last = arr.pop();
+  multiplierUseRecursion(arr, num);
+  arr.push(last * num);
+
+  return arr
+}
+
+
 export {
   reverseArray, reverseArrayInPlace, reverseArrayUsePop,
-  reverseUseRecursion
+  reverseUseRecursion,
+  multiplierUseRecursion
 }
