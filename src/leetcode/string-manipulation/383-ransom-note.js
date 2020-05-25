@@ -520,4 +520,100 @@ var maxSubarraySumCircular = function(A) {
 //   bubble.show()
 // }
 
+/**
+ *
+ * 451
+ * medium
+ * Given a string, sort it in decreasing order based on the frequency of characters.
+ *
+ * Example 1:
+
+Input:
+"tree"
+
+Output:
+"eert"
+
+Explanation:
+'e' appears twice while 'r' and 't' both appear once.
+So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+
+Example 2:
+
+Input:
+"cccaaa"
+
+Output:
+"cccaaa"
+
+Explanation:
+Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer.
+Note that "cacaca" is incorrect, as the same characters must be together.
+
+Example 3:
+
+Input:
+"Aabb"
+
+Output:
+"bbAa"
+
+Explanation:
+"bbaA" is also a valid answer, but "Aabb" is incorrect.
+Note that 'A' and 'a' are treated as two different characters.
+
+ *
+ * Important
+ * Remember strings are immutable
+ * Strings in most programming languages are immutable. This means that once a String is created, we cannot modify it. We can only create a new String
+ * check case in JS!!!
+ *
+ */
+
+
+/**
+ *
+ * @param {*} str
+ */
+var sortCharacterByFrequency = (str) => {
+  // make a hush map
+  const frequency = {};
+
+  for (let i = 0; i < str.length; i++) {
+    frequency[str[i]] = (frequency[str[i]] || 0) + 1
+  }
+
+  for (const key in frequency) {
+    debugger
+  }
+
+  //console.log('frequency', frequency);
+
+}
+
+//console.log(sortCharacterByFrequency('tree')) //'eert'
+
+/**
+ * 986. Interval List Intersections
+ * https://leetcode.com/problems/interval-list-intersections/discuss/315908/clean-javascript-solution
+ */
+
+
+/**
+ * Construct Binary Search Tree from Preorder Traversal
+ * 1008
+ * medium
+ */
+
+// var bstFromPreorder = function(preorder) {
+//   let recur = function(lower, upper) {
+//       if (preorder[0] < lower || preorder[0] > upper) return null;
+//       if (preorder.length == 0) return null;
+//       let root = new TreeNode(preorder.shift());
+//       root.left = recur(lower, root.val);
+//       root.right = recur(root.val, upper);
+//       return root;
+//   }
+//   return recur(-Infinity, Infinity);
+// };
 export { canConstruct }

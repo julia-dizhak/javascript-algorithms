@@ -1,3 +1,14 @@
+/**
+ * Complexity analysis
+ *
+ * Time complexity
+ * We don't need to loop all the way to the end every time because
+ * the right side of the array becomes sorted every loop
+ * In the end of the day it still O(n^2)
+ *
+ * Space is constant O(1)
+ *
+*/
 function bubbleSort(arr) {
   const len = arr.length;
   let swap;

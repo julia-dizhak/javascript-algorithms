@@ -1,4 +1,4 @@
-// implementation of stack use an array
+// Stack implementation use an array
 class Stack {
   constructor() {
     this.stack = [];

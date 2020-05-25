@@ -6,6 +6,8 @@ import { Stack as StackArr } from '../../algorithms/stack-queue/stack/stack-use-
 import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
 import { Queue } from '../../algorithms/stack-queue/queue/queue-using-object';
 
+import { MinStack } from '../../leetcode/stack/155-min-stack';
+
 export default function StackQueue() {
   return (
     <div className="number">
@@ -47,6 +49,27 @@ export default function StackQueue() {
         </li>
       </ul>
 
+      <ul>
+        <li>
+          <details
+            className="details"
+            id="stack-different-tasks"
+            aria-expanded="false"
+            aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                Different problems related to Stacks
+              </summary>
+
+              <Details
+                id="min-stack"
+                question="Min Stack: approach 2 Stacks"
+                code={MinStack.toString()}
+                time="O(1) for all operation"
+                space="O(n)"
+              />
+          </details>
+        </li>
+      </ul>
   </div>
   );
 }
