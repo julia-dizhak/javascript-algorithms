@@ -70,8 +70,20 @@
   the min-tracker Stack would become incorrect once its top value had been removed from the main Stack.
 
   Complexity analysis
-  time O(1) for all operations
-  space O(n)
+  time complexity
+  O(1) for all operations
+  push(...): Checking the top of a Stack, comparing numbers, and pushing to the top of a Stack (or adding to the end of an Array or List) are all O(1) operations.
+
+  pop(...): Popping from a Stack (or removing from the end of an Array, or List) is an O(1) operation.
+
+  top(...): Looking at the top of a Stack is an O(1) operation.
+
+  getMin(...): Same as above. This operation is O(1) because we do not need to compare values to find it.
+  If we had not kept track of it on the Stack,
+  and instead had to search for it each time, the overall time complexity would have been O(n).
+
+  space complexity
+  Worst case is that all the operations are push. In this case, there will be O(2n) = O(n) space used.
 */
 class MinStack {
   /**
@@ -123,6 +135,48 @@ class MinStack {
 }
 
 /*
+  Approach: use one stack only: stack of value / Minimum pairs
+
+  This approach required storing two values in each slot of the underlying Stack.
+  Sometimes though, the minimum values are very repetitive.
+  Do we actually need to store the same minimum value over and over again?
+  We can solve it by using 2 Stack (see solution above)
+
+  time is O(1)
+  space is O(n)
+*/
+
+class MinStackMinPairs {
+  constructor() {
+    this.elements = [];
+  }
+
+  /**
+    @param {number} item
+    @return {void}
+ */
+  push(item) {
+    this.elements.push({
+      value: item,
+      min: this.elements.length === 0 ? item : Math.min(item, this.getMin())
+    })
+  }
+
+  pop() {
+    this.elements.pop();
+  }
+
+  top() {
+    return this.elements[this.elements.length - 1].value;
+  }
+
+  getMin() {
+    return this.elements[this.elements.length - 1].min
+  }
+}
+
+
+/*
   Min stack using object
 
   class MinStack {
@@ -135,9 +189,10 @@ class MinStack {
     ...
   }
 */
-const minStack = new MinStack();
+//const minStack = new MinStack();
 
 export {
   MinStack,
-  minStack
+  MinStackMinPairs,
+  //minStack
 }

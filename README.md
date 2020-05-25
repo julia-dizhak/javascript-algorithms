@@ -64,7 +64,7 @@ created on 12/21/17
     * [53. Maximum subarray / ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 * Search
     * [278. First Bad version]
-    
+
 * String manipulation
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
@@ -75,7 +75,7 @@ created on 12/21/17
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
-    * [155. Min Stack](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
+    * [155. Min Stack: approach 2 stack and stack of value](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
 
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)

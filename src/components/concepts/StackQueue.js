@@ -6,7 +6,7 @@ import { Stack as StackArr } from '../../algorithms/stack-queue/stack/stack-use-
 import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
 import { Queue } from '../../algorithms/stack-queue/queue/queue-using-object';
 
-import { MinStack } from '../../leetcode/stack/155-min-stack';
+import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 
 export default function StackQueue() {
   return (
@@ -49,6 +49,7 @@ export default function StackQueue() {
         </li>
       </ul>
 
+      <h3>Problems</h3>
       <ul>
         <li>
           <details
@@ -62,10 +63,11 @@ export default function StackQueue() {
 
               <Details
                 id="min-stack"
-                question="Min Stack: approach 2 Stacks"
-                code={MinStack.toString()}
+                question="Min Stack: approach 2 Stacks, approach minimum pairs"
                 time="O(1) for all operation"
                 space="O(n)"
+                code={MinStack.toString()}
+                secondCode={MinStackMinPairs.toString()}
               />
           </details>
         </li>
