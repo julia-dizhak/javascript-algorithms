@@ -39,7 +39,7 @@ created on 12/21/17
 * Sorting
     * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
     * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/selection-sort.js)
-    * Insertion sort
+    * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/insertion-sort.js)
     * Quick sort
     * Merge sort
 
@@ -51,7 +51,7 @@ created on 12/21/17
 | Merge sort      | O(n log n)  | Ω(n log n) | O(n)   |
 
 * Stack
-    * [Stack implementation: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack-use-array.js)
+    * [Stack implementation: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
 
 
 ## Leetcode
@@ -61,7 +61,7 @@ created on 12/21/17
 * Array
     * [169. Majority element / 229. Majority element II]
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
-    * [53. Maximum subarray / ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
+    * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 * Search
     * [278. First Bad version]
 
@@ -70,12 +70,13 @@ created on 12/21/17
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
     * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
-
-* Stack
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
-    * [155. Min Stack: approach 2 stack and stack of value](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
+
+* Stack
+    * [155. Min Stack: approach 2 stacks, improved 2 stacks and stack of value (minimum pairs)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
+    * [716 Max Stack: 2 stacks approach](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/716-max-stack.js)
 
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)

@@ -45,6 +45,7 @@
   So you can assume these cases won't happen, or that you should return -1 or throw an exception if they do.
 */
 
+
 /*
   Approach 2 Stacks
 
@@ -70,6 +71,7 @@
   the min-tracker Stack would become incorrect once its top value had been removed from the main Stack.
 
   Complexity analysis
+
   time complexity
   O(1) for all operations
   push(...): Checking the top of a Stack, comparing numbers, and pushing to the top of a Stack (or adding to the end of an Array or List) are all O(1) operations.
@@ -175,8 +177,73 @@ class MinStackMinPairs {
   }
 }
 
+/*
+  Approach 3: Improved 2 Stacks
+
+  In the first approach, we pushed a new number onto the min-tracker Stack if,
+  and only if, it was less than or equal to the current minimum.
+  One downside of this solution is that if the same number is pushed repeatedly into MinStack,
+  and that number also happens to be the current minimum,
+  there'll be a lot of needless repetition on the min-tracker Stack.
+  Recall that we put this repetition in to prevent a bug from occurring (refer to Approach 1).
+
+  An improvement is to put pairs onto the min-tracker Stack.
+  The first value of the pair would be the same as before,
+  and the second value would be how many times that minimum was repeated.
+*/
+
+class MinStackUseTwoStack {
+  constructor() {
+    this.stack = [];
+    this.minStack = [];
+
+  }
+
+  push(item) {
+    // We always put the number onto the main stack.
+    this.stack.push(item);
+
+    // If the min stack is empty, or this number is smaller than
+    // the top of the min stack, put it on with a count of 1.
+    if (this.minStack.length === 0 || item < this.minStack[this.minStack.length - 1][0]) {
+      this.minStack.push([item, 1])
+    }
+
+    // Else if this number is equal to what's currently at the top
+    // of the min stack, then increment the count at the top by 1.
+    else if (item === this.minStack[this.minStack.length - 1][0]) {
+      this.minStack[this.minStack.length - 1][1]++;
+    }
+  }
+
+  pop() {
+    // If the top of min stack is the same as the top of stack
+    // then we need to decrement the count at the top by 1.
+    if (this.stack[this.stack.length - 1] === this.minStack[this.minStack.length - 1][0]) {
+      this.minStack[this.minStack.length - 1][1]--;
+    }
+
+    // If the count at the top of min stack is now 0, then remove
+    // that value as we're done with it.
+    if (this.minStack[this.minStack.length - 1][1] === 0) {
+      this.minStack.pop();
+    }
+
+    // and like before, pop the top of the main stack.
+    this.stack.pop();
+  }
+
+  top() {
+    return this.stack[this.stack.length - 1];
+  }
+
+  getMin() {
+    return this.minStack[this.minStack.length - 1][0];
+  }
+}
 
 /*
+  todo
   Min stack using object
 
   class MinStack {
@@ -189,10 +256,10 @@ class MinStackMinPairs {
     ...
   }
 */
-//const minStack = new MinStack();
+
 
 export {
   MinStack,
   MinStackMinPairs,
-  //minStack
+  MinStackUseTwoStack
 }

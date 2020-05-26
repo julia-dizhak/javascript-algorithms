@@ -7,6 +7,7 @@ import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects
 import { Queue } from '../../algorithms/stack-queue/queue/queue-using-object';
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
+import { MaxStack } from '../../leetcode/stack/716-max-stack';
 
 export default function StackQueue() {
   return (
@@ -68,6 +69,23 @@ export default function StackQueue() {
                 space="O(n)"
                 code={MinStack.toString()}
                 secondCode={MinStackMinPairs.toString()}
+              />
+
+              <Details
+                id="max-stack"
+                question="Max Stack: approach 2 Stacks"
+                solution="Design a max stack that supports push, pop, top, peekMax and popMax."
+                complexity={
+                  `
+                  Can we design operations in O(1) like the min stack problem? No
+                  Because if it were, you could use this data structure to sort an array of numbers in O(n) time.
+                  So, at the very least, either push(x) or popMax() must be O(log n)
+                  `
+                }
+                time="O(N) for the popMax operation, and O(1) for the other operations"
+                space="O(N), the maximum size of the stack."
+                code={MaxStack.toString()}
+                secondCode={MaxStack.toString()}
               />
           </details>
         </li>

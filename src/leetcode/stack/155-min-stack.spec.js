@@ -1,4 +1,7 @@
-import { MinStack , MinStackMinPairs} from './155-min-stack';
+import {
+  MinStack, MinStackUseTwoStack,
+  MinStackMinPairs,
+} from './155-min-stack';
 
 describe('min stack use 2 stacks solution', () => {
   let newStack;
@@ -34,6 +37,44 @@ describe('min stack use 2 stacks solution', () => {
   });
 });
 
+describe('min stack improved 2 stacks solution', () => {
+  let minStack;
+  beforeEach(() => {
+    minStack = new MinStackUseTwoStack();
+  });
+
+  it('push method', () => {
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-3);
+    expect(minStack.getMin()).toEqual(-3);
+    minStack.pop();
+    expect(minStack.top()).toEqual(0);
+    expect(minStack.getMin()).toEqual(-2);
+  });
+
+  it('getMin() and top()', () => {
+    minStack.push(2);
+    minStack.push(-2);
+    minStack.push(-2);
+    expect(minStack.getMin()).toEqual(-2);
+    minStack.pop();
+    minStack.top();
+    expect(minStack.top()).toEqual(-2);
+    expect(minStack.getMin()).toEqual(-2);
+  });
+
+  it('pop()', () => {
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-2);
+    minStack.push(-2);
+    minStack.pop();
+    expect(minStack.top()).toEqual(-2);
+  });
+});
+
+
 describe('min stack use min value pairs', () => {
   let minStack;
   beforeEach(() => {
@@ -65,4 +106,3 @@ describe('min stack use min value pairs', () => {
     expect(minStack.top()).toEqual(0);
   });
 });
-

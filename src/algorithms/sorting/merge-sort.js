@@ -1,5 +1,7 @@
 /**
- *  Merge sort is pretty efficient and the best way to conceptualize merge sort is recursively.
+ *  Merge sort is pretty efficient and the best way to solve merge sort is recursively.
+ *  This algorithm is a good example of Divide and conquer
+ *
  *  So suppose we have large array and we want to sort it.
  *  What if we could magically sort the left half and sort the right half,
  *  and then get back two sorted halves.
@@ -17,10 +19,10 @@ function merger(left, right) {
   while (left.length && right.length) {
     if (left[0] < right[0]) {
       singleSorted.push(left[0]);
-      left.shift();
+      left.shift(); // move pointer to next element
     } else {
       singleSorted.push(right[0]);
-      right.shift();
+      right.shift(); // move pointer to next element
     }
   }
 
