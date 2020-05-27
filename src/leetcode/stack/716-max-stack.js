@@ -103,17 +103,6 @@ class MaxStack {
   }
 }
 
-
-// todo
-var missingNumber = function(nums) {
-  for (let i = 0; i < nums.length; i++) {
-
-  }
-};
-
-console.log('missing number', missingNumber([3,0,1]))
-console.log('missing number', missingNumber([9,6,4,2,3,5,7,0,1]))
-
 /*
   Todo
   There is an approach

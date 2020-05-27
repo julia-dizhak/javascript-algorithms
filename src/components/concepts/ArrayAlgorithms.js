@@ -1,10 +1,12 @@
 import React from 'react';
 import Details from './../Details';
+
 import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
+import { missingNumber} from '../../leetcode/array/268-missing-number';
 
 export default function ArrayAlgorithms() {
   return (
@@ -19,6 +21,7 @@ export default function ArrayAlgorithms() {
             question="Jump on clouds"
             solution=""
             code={jumpOnClouds.toString()}
+            secondCode={missingNumber.toString()}
           />
         </li>
 

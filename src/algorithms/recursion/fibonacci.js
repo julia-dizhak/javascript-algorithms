@@ -105,8 +105,6 @@ function fibIterative(N) {
   return arr[N]
 }
 
-console.log('fib', fibIterative(3));
-
 // todo Approach 4: Iterative Top-Down Approach
 /*
 
