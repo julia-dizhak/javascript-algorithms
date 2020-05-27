@@ -2,6 +2,8 @@ import React from 'react';
 import Details from './../Details';
 
 import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
+import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../algorithms/array/clone';
+
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
@@ -14,6 +16,17 @@ export default function ArrayAlgorithms() {
       <h2>Array</h2>
 
       <ul id="array">
+        <li>
+          <Details
+            id="array-clone"
+            question="Clone arrays"
+            solution=""
+            code={clone.toString()}
+            secondCode={cloneIterative.toString()}
+            thirdSolution={cloneUseLoopFixedSize.toString()}
+          />
+        </li>
+
         {/* different task */}
         <li>
           <Details

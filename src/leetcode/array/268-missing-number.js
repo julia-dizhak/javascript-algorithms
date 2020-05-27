@@ -21,14 +21,6 @@
 */
 
 /*
-  Approach
-
-  An arithmetic progression is a sequence of numbers such that the difference
-  of any two successive members is a constant.
-  For example, the sequence 1, 2, 3, 4, ... is an arithmetic progression with common difference 1
-*/
-
-/*
   Approach 1: Sorting
 
   If nums were in order, it would be easy to see which number is missing.

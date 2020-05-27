@@ -28,10 +28,13 @@ created on 12/21/17
 
 * Number (General)
 * Array
+    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
+    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
+
 * String manipulation
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
-    * [Fibonacci Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
+    * [Fibonacci Number (approaches recursion, iterative](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
 * Search
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/find-index.js)
     * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
@@ -64,6 +67,7 @@ created on 12/21/17
 * Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer]
 * Array
+    * [268. Missing number: approach Gauss, sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
     * [169. Majority element / 229. Majority element II]
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
