@@ -35,15 +35,17 @@
 
   Complexity Analysis
 
-Time complexity : \mathcal{O}(nlgn)O(nlgn)
+  Time complexity : O(nlogn)
+  The only elements of the algorithm that have asymptotically nonconstant time
+  complexity are the main for loop (which runs in O(n) time),
+  and the sort invocation (which runs in O(nlgn) time for Python and Java).
+  Therefore, the runtime is dominated by sort, and the entire runtime is O(nlgn).
 
-The only elements of the algorithm that have asymptotically nonconstant time complexity are the main for loop (which runs in \mathcal{O}(n)O(n) time), and the sort invocation (which runs in \mathcal{O}(nlgn)O(nlgn) time for Python and Java). Therefore, the runtime is dominated by sort, and the entire runtime is \mathcal{O}(nlgn)O(nlgn).
-
-Space complexity : \mathcal{O}(1)O(1) (or \mathcal{O}(n)O(n))
-
-In the sample code, we sorted nums in place, allowing us to avoid allocating additional space. If modifying nums is forbidden, we can allocate an \mathcal{O}(n)O(n) size copy and sort that instead.
-
+  Space complexity : O(1)\O(n)
+  In the sample code, we sorted nums in place, allowing us to avoid allocating additional space.
+  If modifying nums is forbidden, we can allocate an O(n) size copy and sort that instead.
 */
+
 var missingNumber = function(nums) {
   nums = nums.sort((a,b) => a - b);
 
@@ -67,6 +69,9 @@ var missingNumber = function(nums) {
   // array was not missing any numbers
   return -1;
 };
+
+//console.log('missing number', missingNumber([3,0,1]))
+console.log('missing number', missingNumber([9,6,4,2,3,5,7,0,1]))
 
 /*
   Approach 4 Gauss' Formula
@@ -107,8 +112,7 @@ var missingNumberGauss = (nums) => {
   return expectedSum - actualSum;
 }
 
-console.log('missing number', missingNumberGauss([3,0,1]))
-console.log('missing number', missingNumber([1,3,4,0]))
+
 
 export {
   missingNumber,

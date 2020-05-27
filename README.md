@@ -49,7 +49,7 @@ created on 12/21/17
     * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/selection-sort.js)
     * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/insertion-sort.js)
     * Quick sort
-    * Merge sort
+    * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
 
 | Sort name       | O           | Ω          | Space  |
 | :---            | :---        | :---       | :---   |
