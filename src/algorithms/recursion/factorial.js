@@ -93,6 +93,7 @@ function factorialUseWhileLoop(n) {
   return result;
 }
 
+// use recursion
 function factorial(n) {
   //console.time('test-factorial');
   // if the number is less than 0, reject it

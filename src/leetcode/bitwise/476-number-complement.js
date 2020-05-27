@@ -20,9 +20,9 @@
  * Initiate the marker variable which will be used to stop the loop over the bits todo = num.
  *
  * Loop over the bits. While todo != 0:
- *  Flip the current bit: num = num ^ bit.
- *  Prepare for the next run. Shift flip variable to the left and todo variable to the right.
- *  Return num
+ * Flip the current bit: num = num ^ bit.
+ * Prepare for the next run. Shift flip variable to the left and todo variable to the right.
+ * Return num
  *
  *  Time Complexity: O(1), since we're doing not more than 32 iterations here
  *  Space complexity O(1)
@@ -33,11 +33,11 @@ var flipBitByBit = function(num) {
   let todo = num;
 
   while (todo) {
-     // flip current bit
+    // flip current bit
     num = num ^ bit;
-     // prepare for next run
-     bit = bit << 1; // Shift flip variable to the left
-     todo = todo >> 1; // todo variable to the right
+    // prepare for next run
+    bit = bit << 1; // Shift flip variable to the left
+    todo = todo >> 1; // todo variable to the right
   }
   return num
 }

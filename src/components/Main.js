@@ -19,9 +19,9 @@ function Main() {
     <div className="main">
       <div className="wrapper">
         <Number />
-        <Recursion />
         <ArrayAlgorithms />
         <StringManipulation />
+        <Recursion />
         <Sorting />
         <Searching />
         <StackQueue />

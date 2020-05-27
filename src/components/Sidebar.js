@@ -9,7 +9,6 @@ function Sidebar() {
       <nav>
         <ul className="list">
           <li className="item"><header className="title"><a href="#number">Number</a></header></li>
-          <li className="item"><header className="title"><a href="#recursion">Recursion</a></header></li>
           <li className="item"><header className="title"><a href="#array">Array</a></header></li>
 
           <li className="item">
@@ -19,6 +18,8 @@ function Sidebar() {
               <li><a href="#making-anagrams">Making anagrams</a></li>
             </ul>
           </li>
+
+          <li className="item"><header className="title"><a href="#recursion">Recursion</a></header></li>
 
           <li className="item">
             <header className="title">Sorting</header>
@@ -49,7 +50,7 @@ function Sidebar() {
               <li><a href="#stack-use-array">Stack use array</a></li>
               <li><a href="#stack-using-string">Stack implementation using String</a></li>
               <li><a href="#stack-using-object">Stack implementation using object</a></li>
-              
+
               <li><a href="#queue-using-object">Queue implementation using object</a></li>
             </ul>
           </li>

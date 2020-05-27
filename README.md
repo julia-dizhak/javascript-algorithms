@@ -26,7 +26,12 @@ created on 12/21/17
 
 ## List of problems
 
-...
+* Number (General)
+* Array
+* String manipulation
+* Recursion
+    * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
+    * [Fibonacci Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
 * Search
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/find-index.js)
     * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)

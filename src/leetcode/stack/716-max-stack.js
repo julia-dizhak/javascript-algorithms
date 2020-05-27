@@ -39,8 +39,6 @@
 
   For peekMax, we remember the largest value we've seen on the side.
   For example if we add [2, 1, 5, 3, 9], we'll remember [2, 2, 5, 5, 9].
-  This works seamlessly with pop operations, and also it's easy to compute:
-  it's just the maximum of the element we are adding and the previous maximum.
 
   This works seamlessly with pop operations, and also it's easy to compute:
   it's just the maximum of the element we are adding and the previous maximum.
@@ -79,8 +77,7 @@ class MaxStack {
   * popMax() -- Retrieve the maximum element in the stack, and remove it.
   */
   popMax() {
-    //debugger;
-    // For popMax, we know what the current maximum (peekMax) is.
+    // for popMax, we know what the current maximum (peekMax) is.
     // We can pop in original stack until we find that maximum,
     // then push the popped elements back on the stack.
     const temp = [];
@@ -106,33 +103,16 @@ class MaxStack {
   }
 }
 
-let maxStack = new MaxStack();
-maxStack.push(5);
-maxStack.push(1);
-maxStack.push(5);
-maxStack.push(2);
-maxStack.top(); // 5
-maxStack.popMax();  // 5
-//maxStack.top();  // 1
-maxStack.peekMax(); // 5
-maxStack.popMax();
-//maxStack.pop(); // 1
-// maxStack.top(); // 5
 
-// example
-// maxStack.push(5);
-// maxStack.push(1);
-// maxStack.push(5);
-// maxStack.push(1);
-// maxStack.top();
-// maxStack.popMax(); // 5
-//maxStack.popMax();
-//maxStack.top();
-//maxStack.peekMax();
-//maxStack.pop();
-//maxStack.top();
-console.log('max stack', maxStack);
+// todo
+var missingNumber = function(nums) {
+  for (let i = 0; i < nums.length; i++) {
 
+  }
+};
+
+console.log('missing number', missingNumber([3,0,1]))
+console.log('missing number', missingNumber([9,6,4,2,3,5,7,0,1]))
 
 /*
   Todo
