@@ -70,9 +70,6 @@ var missingNumber = function(nums) {
   return -1;
 };
 
-//console.log('missing number', missingNumber([3,0,1]))
-console.log('missing number', missingNumber([9,6,4,2,3,5,7,0,1]))
-
 /*
   Approach 4 Gauss' Formula
 
@@ -112,9 +109,46 @@ var missingNumberGauss = (nums) => {
   return expectedSum - actualSum;
 }
 
+/*
+  Approach: Hash
 
+  Intuition
+  A brute force method for solving this problem would be to simply check
+  for the presence of each number that we expect to be present.
+  The naive implementation might use a linear scan of the array to check for containment,
+  but we can use a HashSet to get constant time containment queries and overall linear runtime.
+
+  Algorithm
+  This algorithm is almost identical to the brute force approach,
+  except we first insert each element of nums into a set,
+  allowing us to later query for containment in O(1) time.
+
+  Complexity Analysis
+  Time complexity: O(n)
+  Because the set allows for O(1) containment queries,
+  the main loop runs in O(n) time. Creating num_set costs O(n) time,
+  as each set insertion runs in amortized O(1) time, so the overall runtime is O(n + n) = O(n).
+
+  Space complexity: \O(n)
+  nums contains n-1 distinct elements, so it costs O(n) space to store a set containing all of them.
+*/
+var missingNumberUseHash = (nums) => {
+  const len = nums.length;
+  const map = {};
+  for (const num of nums) {
+    map[num] = num
+  }
+
+  const expectedNumCount = len + 1;
+  for (let number = 0; number < expectedNumCount; number++) {
+    if (map[number] === undefined) {
+      return number
+    }
+  }
+}
 
 export {
   missingNumber,
-  missingNumberGauss
+  missingNumberGauss,
+  missingNumberUseHash
 }

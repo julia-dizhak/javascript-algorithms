@@ -8,7 +8,6 @@ import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
-import { missingNumber} from '../../leetcode/array/268-missing-number';
 
 export default function ArrayAlgorithms() {
   return (

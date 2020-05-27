@@ -32,9 +32,11 @@ created on 12/21/17
     * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
 
 * String manipulation
+
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
-    * [Fibonacci Number (approaches recursion, iterative](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
+    * [Fibonacci Number (recursion, iterative)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
+
 * Search
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/find-index.js)
     * [Binary search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
@@ -66,11 +68,13 @@ created on 12/21/17
 
 * Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer]
+
 * Array
-    * [268. Missing number: approach Gauss, sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
+    * [268. Missing number: Gauss, sorting, hash](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
     * [169. Majority element / 229. Majority element II]
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
+
 * Search
     * [278. First Bad version]
 
@@ -84,7 +88,7 @@ created on 12/21/17
     * [771. Jewels and Stones]
 
 * Stack
-    * [155. Min Stack: approach 2 stacks, improved 2 stacks and stack of value (minimum pairs)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
+    * [155. Min Stack (2 stacks, improved 2 stacks and stack of value (minimum pairs))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
     * [716 Max Stack: 2 stacks approach](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/716-max-stack.js)
 
 * Graph

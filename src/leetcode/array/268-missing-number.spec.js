@@ -1,6 +1,7 @@
 import {
   missingNumber,
-  missingNumberGauss
+  missingNumberGauss,
+  missingNumberUseHash
 } from './268-missing-number';
 
 describe('missingNumber test case', () => {
@@ -15,6 +16,12 @@ describe('missingNumber test case', () => {
     expect(missingNumberGauss([3,0,1])).toEqual(2);
     expect(missingNumberGauss([9,6,4,2,3,5,7,0,1])).toEqual(8);
     expect(missingNumberGauss([2,0,4,1])).toEqual(3);
+  });
+
+  it('use hash', () => {
+    expect(missingNumberUseHash([3,0,1])).toEqual(2);
+    expect(missingNumberUseHash([9,6,4,2,3,5,7,0,1])).toEqual(8);
+    expect(missingNumberUseHash([2,0,4,1])).toEqual(3);
   });
 
 });
