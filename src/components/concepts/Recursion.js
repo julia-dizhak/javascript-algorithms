@@ -2,7 +2,7 @@ import React from 'react';
 import Details from './../Details';
 
 import { factorial } from '../../algorithms/recursion/factorial';
-import { fib } from "../../algorithms/recursion/fibonacci";
+import { fib, fibIterative } from '../../algorithms/recursion/fibonacci';
 
 export default function Recursion() {
   return (
@@ -23,7 +23,7 @@ export default function Recursion() {
         <li>
           <Details
             id="fibonacci"
-            question="Fibonacci Number: approach recursion"
+            question="Fibonacci Number: approach recursion, iterative solution"
             complexity={
               `
               Recursion is the slowest way to solve the Fibonacci Sequence because it takes exponential time.
@@ -37,6 +37,7 @@ export default function Recursion() {
             time="with recursion O(2^n)"
             space="with recursion O(N)"
             code={fib.toString()}
+            secondCode={fibIterative.toString()}
           />
         </li>
       </ul>

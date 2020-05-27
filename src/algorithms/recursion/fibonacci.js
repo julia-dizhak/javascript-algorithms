@@ -89,39 +89,68 @@ let fib = (N) => {
 };
 
 /*
-  Approach use loop
+  Approach: Iterative solution
+  use for loop
+
+  time - O(n)
+  space - O(1)
 */
-const fibonacciWithForLoop = (num) => {
-  let fibo = [0, 1];
+function fibIterative(N) {
+  let arr = [0, 1];
 
-  if (num <= 2) return 1;
-
-  for (let i = 2; i <= num; i++) {
-      fibo[i] = fibo[i-1] + fibo[i-2];
-      //console.log(fibo);
+  for (let i = 2; i <= N; i++) {
+    arr.push(arr[i-2] + arr[i-1])
   }
 
-  // 3
-  //fibo[2] = fibo[1] + fibo[0]; // 1 + 0
-  //fibo[3] = fibo[2] + fibo[1]; // 2
+  return arr[N]
+}
 
-  return fibo[num];
-};
+console.log('fib', fibIterative(3));
+
+// todo Approach 4: Iterative Top-Down Approach
+/*
+
+*/
+// Here is a O(1) memory solution:
+
+// function fibIterative(n) {
+//     if (n === 0) return 0
+
+//     let prevPrev = 0
+//     let prev = 1
+//     n -= 1
+
+//     while (n > 0) {
+//         let current = prev + prevPrev
+//         prevPrev = prev
+//         prev = current
+//         n--
+//     }
+
+//     return prev
+// }
 
 /*
-  Iterative solution
+  Approach 2: Memoized Solution
+  todo
+
 */
-var fibUseLoop = function(N) {
-  if (N === 0) return 0;
-  if (N === 1) return 1;
 
-  while (N > 1) {
+// const fib1 = (N, memo) => {
+//   memo = memo || {};
 
-  }
+//   if (memo(N)) return memo[N];
+//   if (N > 2) return N;
 
-};
+//   return memo[N] = fib1(N-1, memo) + fib1(N-2, memo);
+// }
 
-//console.log('fib', fibUseLoop(3));
+/*
+  Approach 2: Bottom-Up Approach using Memoization
 
-export { fib }
+
+*/
+
+
+export { fib, fibIterative }
 

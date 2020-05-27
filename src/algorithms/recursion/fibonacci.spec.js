@@ -1,5 +1,6 @@
 import {
-  fib
+  fib,
+  fibIterative
 } from './fibonacci';
 
 describe('fibpnacci test case', () => {
@@ -10,11 +11,14 @@ describe('fibpnacci test case', () => {
     expect(fib(2)).toEqual(1);
     expect(fib(3)).toEqual(2);
     expect(fib(4)).toEqual(3);
-
   });
 
-  // it('with for loop operator minus', ()=> {
-
-  // });
+  it('use iterative solution', ()=> {
+    expect(fibIterative(0)).toEqual(0);
+    expect(fibIterative(1)).toEqual(1);
+    expect(fibIterative(2)).toEqual(1);
+    expect(fibIterative(3)).toEqual(2);
+    expect(fibIterative(4)).toEqual(3);
+  });
 
 });
