@@ -81,8 +81,8 @@ function Sorting() {
             question="Quick sort: pick a pivot"
             solution="first pick a random number - pivot"
             complexity="Quick sort’s worst case is O(n^2) (for example, if list was already sorted) but that can be avoided if we pick random pivot point (choose middle one)"
-            time="O(n log(n))"
-            space="O(log (n))"
+            time="O(n log n)"
+            space="O(log n)"
             code={quickSort.toString()}
           />
         </li>

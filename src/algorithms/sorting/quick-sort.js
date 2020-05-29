@@ -1,3 +1,6 @@
+/*
+  Divide and conquer: recursion
+*/
 function quickSort(arr) {
   const len = arr.length;
 

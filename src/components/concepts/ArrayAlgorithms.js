@@ -8,6 +8,7 @@ import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
+import { singleNonDuplicate } from '../../leetcode/array/540-single-element-in-sorted-array';
 
 export default function ArrayAlgorithms() {
   return (
@@ -33,7 +34,8 @@ export default function ArrayAlgorithms() {
             question="Jump on clouds"
             solution=""
             code={jumpOnClouds.toString()}
-            secondCode={missingNumber.toString()}
+            // todo test
+            secondCode={singleNonDuplicate.toString()}
           />
         </li>
 

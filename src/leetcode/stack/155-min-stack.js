@@ -257,7 +257,6 @@ class MinStackUseTwoStack {
   }
 */
 
-
 export {
   MinStack,
   MinStackMinPairs,

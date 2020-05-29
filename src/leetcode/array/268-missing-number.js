@@ -110,7 +110,7 @@ var missingNumberGauss = (nums) => {
 }
 
 /*
-  Approach: Hash
+  Approach: Hash (close to brute force)
 
   Intuition
   A brute force method for solving this problem would be to simply check
