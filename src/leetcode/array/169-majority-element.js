@@ -182,11 +182,11 @@ const majorityMooreVotingVariant2 = nums => {
   return candidate;
 };
 
-/**
- * 229 Majority element II
- *
- * Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
- * Note: The algorithm should run in linear time and in O(1) space.
+/*
+  229 Majority element II
+  
+  Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+  Note: The algorithm should run in linear time and in O(1) space.
 */
 
 /**

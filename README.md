@@ -70,8 +70,9 @@ created on 12/21/17
     * [476. Number complement / 1009. Complement of Base 10 Integer]
 
 * Array
-    * [268. Missing number: Gauss, sorting, hash](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
-    * [169. Majority element / 229. Majority element II]
+    * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
+    * [540. Single element in sorted array (approach: Brute force, binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)
+    * [169. Majority element / 229. Majority element II (approach: brute force, sorting, hashmap, Voting)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/169-majority-element.js)
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 
