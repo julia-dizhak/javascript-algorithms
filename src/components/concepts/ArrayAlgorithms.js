@@ -8,7 +8,8 @@ import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
-import { singleNonDuplicate } from '../../leetcode/array/540-single-element-in-sorted-array';
+import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch } from '../../leetcode/array/540-single-element-in-sorted-array';
+import { removeDuplicates } from '../../leetcode/array/26-remove-duplicates-from-sorted-array';
 
 export default function ArrayAlgorithms() {
   return (
@@ -16,11 +17,20 @@ export default function ArrayAlgorithms() {
       <h2>Array</h2>
 
       <ul id="array">
+      <li>
+          <Details
+            id="remove-duplicates-in-sorted-array"
+            question="Remove duplicates from sorted array: approach 2 pointers, slow and fast runner"
+            time="O(n)"
+            space="O(1)"
+            code={removeDuplicates.toString()}
+          />
+        </li>
+
         <li>
           <Details
             id="array-clone"
             question="Clone arrays"
-            solution=""
             code={clone.toString()}
             secondCode={cloneIterative.toString()}
             thirdSolution={cloneUseLoopFixedSize.toString()}
@@ -34,8 +44,6 @@ export default function ArrayAlgorithms() {
             question="Jump on clouds"
             solution=""
             code={jumpOnClouds.toString()}
-            // todo test
-            secondCode={singleNonDuplicate.toString()}
           />
         </li>
 
@@ -47,6 +55,18 @@ export default function ArrayAlgorithms() {
             time="runtime is O(n log n)"
             space=""
             code={mergeSortedArrays.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="sinlgle-element-in-sorted-array"
+            question="Single element in sorted array: approach brute force, binary search"
+            solution="for brute force time is O(n), space is O(1)"
+            time="binary search approach O(log n)"
+            space="binary search approachO(1)"
+            code={singleNonDuplicateBruteForce.toString()}
+            secondCode={singleNonDuplicateBinarySearch.toString()}
           />
         </li>
 

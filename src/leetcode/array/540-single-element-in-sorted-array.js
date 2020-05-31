@@ -41,10 +41,10 @@
   because otherwise we'll be going over the end of the array.
 
   Complexity Analysis
-  Time complexity : O(n). For linear search, we are looking at every element
+  Time complexity: O(n). For linear search, we are looking at every element
   in the array once.
 
-  Space complexity : O(1). We are only using constant extra space.
+  Space complexity: O(1). We are only using constant extra space.
 
   While this approach will work, the question tells us we need a O(logn) solution.
   Therefore, this solution isn't good enough.
@@ -134,10 +134,10 @@ var singleNonDuplicateBruteForceVariant2 = function(nums) {
   as binary search is very flexibile!
 
   Complexity Analysis
-  Time complexity : O(log n). On each iteration of the loop,
+  Time complexity: O(log n). On each iteration of the loop,
   we're halving the number of items we still need to search.
 
-  Space complexity : O(1)O(1). We are only using constant space to keep track of where we are in the search.
+  Space complexity: O(1). We are only using constant space to keep track of where we are in the search.
 */
 /**
  * @param {number[]} nums
@@ -169,8 +169,8 @@ var singleNonDuplicateBinarySearch = function(nums) {
 
   return nums[lowest];
 }
-console.log('singleNonDuplicate', singleNonDuplicateBinarySearch([1,1,2,3,3]));
-console.log('singleNonDuplicateBruteForce', singleNonDuplicateBinarySearch([1,1,2,3,3,4,4,8,8]));
+// console.log('singleNonDuplicate', singleNonDuplicateBinarySearch([1,1,2,3,3]));
+// console.log('singleNonDuplicateBruteForce', singleNonDuplicateBinarySearch([1,1,2,3,3,4,4,8,8]));
 
 
 export {

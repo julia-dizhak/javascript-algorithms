@@ -23,9 +23,9 @@ const clone = (arr) => {
 
 
 // to add clone as a native method to arrays
-Array.prototype.clone = function() {
-  return this.slice(0);
-};
+// Array.prototype.clone = function() {
+//   return this.slice(0);
+// };
 
 // don't iterate over arrays to clone them if all you need is a native clone
 // runtime O(n)
