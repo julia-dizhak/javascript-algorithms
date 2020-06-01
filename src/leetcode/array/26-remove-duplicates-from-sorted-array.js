@@ -61,6 +61,7 @@
   Easy solution but doesn't required condition:
   Do not allocate extra space for another array,
   you must do this by modifying the input array in-place with O(1) extra memory.
+  There is extra space.
 */
 var removeDuplicates = function(nums) {
   let uniqueArr = [];
@@ -78,10 +79,9 @@ var removeDuplicates = function(nums) {
   Approach 2 Pointers: slow and fast runner
 
   Algorithm
-
   Since the array is already sorted, we can keep two pointers i and j,
   where i is the slow-runner while j is the fast-runner.
-  As long as nums[i]=nums[j], we increment j to skip the duplicate.
+  As long as nums[i] = nums[j], we increment j to skip the duplicate.
 
   When we encounter nums[j] is not equal nums[i]
   the duplicate run has ended so we must copy its value to nums[i+1].
@@ -107,7 +107,7 @@ var removeDuplicatesTwoPointers = function(nums) {
     return nums.length;
   }
 
-  // 2 pointers
+  // 2 pointers approach
   let slow = 0;
 
   for (let fast = 1; fast < nums.length; fast++) {
@@ -122,9 +122,6 @@ var removeDuplicatesTwoPointers = function(nums) {
   return slow + 1
 
 };
-
-console.log('removeDuplicates', removeDuplicates([1,1,2]));
-console.log('removeDuplicates', removeDuplicates([0,0,1,1,1,2,2,3,3,4]));
 
 export {
   removeDuplicates,

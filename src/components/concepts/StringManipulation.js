@@ -2,6 +2,8 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Details from './../Details';
+
+import { reverseVariant2, reverseStringTwoPointersUseTemp, reverseStringRecursion } from '../../algorithms/string-manipulation/reverse-a-string';
 import { defineAnagrams } from '../../algorithms/string-manipulation/define-anagrams';
 import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
@@ -18,6 +20,18 @@ export default function StringManipulation() {
     <div className="sorting">
       <h2>String Manipulation</h2>
       <ul>
+        <li>
+          <Details
+            id="reverse-a-string"
+            question="Write a function that reverses a string: approach swap, recursion, two pointers"
+            time="Time is O(n) for all approaches"
+            space="two pointers space is O(1), recursion is O(n)"
+            code={reverseVariant2.toString()}
+            secondCode={reverseStringTwoPointersUseTemp.toString()}
+            thirdSolution={reverseStringRecursion.toString()}
+          />
+        </li>
+
         <li>
           <details
             className="details"
@@ -130,7 +144,6 @@ export default function StringManipulation() {
                 time="O(n)"
                 space="O(n)"
                 code={firstUniqueChar.toString()}
-                //secondCode={checkInclusion.toString}
               />
 
               <Details
