@@ -8,7 +8,7 @@ import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
-import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch } from '../../leetcode/array/540-single-element-in-sorted-array';
+import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
 import { removeDuplicates } from '../../leetcode/array/26-remove-duplicates-from-sorted-array';
 
 export default function ArrayAlgorithms() {
@@ -61,12 +61,13 @@ export default function ArrayAlgorithms() {
         <li>
           <Details
             id="sinlgle-element-in-sorted-array"
-            question="Single element in sorted array: approach brute force, binary search"
+            question="Single element in sorted array: approach brute force, binary search, BS only on even indexes"
             solution="for brute force time is O(n), space is O(1)"
             time="binary search approach O(log n)"
             space="binary search approachO(1)"
             code={singleNonDuplicateBruteForce.toString()}
             secondCode={singleNonDuplicateBinarySearch.toString()}
+            thirdSolution={singleNonDuplicateBinarySearchOnEvenIndexes.toString()}
           />
         </li>
 
