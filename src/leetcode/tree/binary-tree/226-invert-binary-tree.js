@@ -78,45 +78,6 @@ class BinarySearchTree {
   }
 }
 
-// const tree2 = new BinarySearchTree1();
-// tree2.root = new TreeNode(4);
-// tree2.root.left = new TreeNode(2);
-// tree2.root.right = new TreeNode(7)
-
-
-
-
-// let tree1 = {
-//   left: {
-//     left: {
-//       value: 1
-//     },
-//     right: {
-//       value: 3
-//     },
-//     value: 2
-//   },
-//   right: {
-//     left: {
-//       value: 6
-//     },
-//     right: {
-//       value: 9
-//     },
-//     value: 7
-//   },
-//   value: 4
-// }
-
-// let tree3 = {
-//   left: {
-//     value: 2
-//   },
-//   right: {
-//     value: 7
-//   },
-//   value: 4
-// }
 
 /*
 Approach recursive
@@ -149,51 +110,15 @@ const invertTree = function(node) {
   // call invert for right subtree
   let right = invertTree(node.right);
 
-  //swap left and right subtrees
+  // swap left and right subtrees
   node.left = right;
   node.right = left;
 
   return node;
 };
 
-const walkAndInsert = (node, arr = []) => {
-  //debugger
-  if (!node) {
-    return
-  } else {
-    walkAndInsert(node.left);
-    arr.push(node.root);
-    walkAndInsert(node.right);
-  }
-  return arr;
-}
-
-// console.log('tree 2', JSON.parse(JSON.stringify(tree2)));
-// //console.log('tree 2 1', tree2);
-// console.log('invert tree 2', invertTree(tree2));
-
-// console.log('tree', JSON.parse(JSON.stringify(tree1)));
-// console.log('invert tree', invertTree(tree1));
-
-// console.log('tree 3', JSON.parse(JSON.stringify(tree3)));
-// console.log('invert tree 3', invertTree(tree3));
-
-let tree4 = new BinarySearchTree();
-//const arr = [4,2,7,1,3,6,9];
-const arr = [4,2,7];
-arr.map((element, index) => {
-  tree4.add(element);
-  return tree4;
-})
-tree4 = JSON.parse(JSON.stringify(tree4)).root;
-
-const invertedTree = invertTree(tree4);
-console.log('tree 4', tree4)
-console.log('invert tree 4', JSON.parse(JSON.stringify(invertedTree)));
-const result = walkAndInsert(invertedTree)
-console.log('result', result)
-
 /*
+todo
 Approach iterative
 
 flip nodes on each layers
@@ -201,7 +126,20 @@ swap leaves of subtree
 dfs
 */
 
+let tree4 = new BinarySearchTree();
+const arr = [4,2,7,1,3,6,9];
+//const arr = [4,2,7];
+arr.map((element, index) => {
+  tree4.add(element);
+  return tree4;
+})
+tree4 = JSON.parse(JSON.stringify(tree4)).root;
 
+const invertedTree = invertTree(tree4);
+const test = JSON.parse(JSON.stringify(invertedTree))
+// console.log('tree 4', tree4)
+// console.log('invert tree 4', JSON.parse(JSON.stringify(invertedTree)));
+// console.log('test', test.left.val)
 
 export {
   invertTree,

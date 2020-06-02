@@ -57,6 +57,26 @@ var preorderTraversal = function(root) {
 let tree = new TreeNode([1, null, 2, 3]);
 //console.log('preorderTraversal', preorderTraversal(tree));
 
+
+// how to push binary tree nodes to array
+// Given a tree root
+
+// A. If the tree is null, there's nothing to insert.
+// B. If is not null:
+// B.1 Insert everything on the left
+// B.2 Insert the tree root
+// B.3 Insert everything on the right
+const walkAndInsert = (node, arr = []) => {
+  if (!node) {
+    return
+  } else {
+    walkAndInsert(node.left);
+    arr.push(node.root);
+    walkAndInsert(node.right);
+  }
+  return arr;
+}
+
 export { preorderTraversal }
 
 // Of the three main types of binary tree traversals (inorder,preorder,postorder), I find preorder traversal the easiest to implement iteratively. You can just reuse the dfs algorithm, but make sure you push the children onto the stack in such a way that the left child is processed before the right child.

@@ -56,6 +56,13 @@ function Sidebar() {
           </li>
 
           <li className="item">
+            <header className="title">Linked Lists</header>
+            <ul className="subList">
+              <li><a href="#singly-linked-list">Singly-linked List</a></li>
+            </ul>
+          </li>
+
+          <li className="item">
             <header className="title"><a href="#binary-search-tree">Tree</a></header>
             <ul className="subList">
               <li><a href="#binary-search-tree-operations">Binary Search Tree</a></li>

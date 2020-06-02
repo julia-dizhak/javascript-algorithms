@@ -234,10 +234,6 @@ function singleNonDuplicateBinarySearchOnEvenIndexes(nums) {
   return nums[lo]
 }
 
-// console.log('singleNonDuplicate', singleNonDuplicateBinarySearch([1,1,2,3,3]));
-// console.log('singleNonDuplicateBruteForce', singleNonDuplicateBinarySearch([1,1,2,3,3,4,4,8,8]));
-
-
 export {
   singleNonDuplicateBruteForce, singleNonDuplicateBruteForceVariant2,
   singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes

@@ -6,10 +6,6 @@ import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tr
 
 import { Trie } from '../../algorithms/trie/trie';
 
-// todo move and error in name
-import { SinlgyLinkedList } from '../../algorithms/linked-lists/singly-linked-list';
-
-
 //
 import { preorderTraversal } from '../../leetcode/tree/binary-search-tree/traversals/pre-order';
 
@@ -39,7 +35,6 @@ export default function Tree() {
             space=""
             code={BinarySearchTree.toString()}
             // secondCode={Trie.toString()}
-            secondCode={SinlgyLinkedList.toString()}
           />
         </li>
 

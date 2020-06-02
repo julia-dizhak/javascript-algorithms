@@ -50,7 +50,7 @@ export default function StackQueue() {
         </li>
       </ul>
 
-      <h3>Problems</h3>
+      <h6>Problems</h6>
       <ul>
         <li>
           <details
