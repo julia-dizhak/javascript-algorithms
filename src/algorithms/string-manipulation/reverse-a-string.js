@@ -24,7 +24,6 @@ Output: ["h","a","n","n","a","H"]
 /*
   Use swap function
 */
-
 function swap(arr, a, b) {
   let temp = arr[a];
   arr[a] = arr[b];
@@ -47,7 +46,6 @@ var reverseVariant2 = s => {
 
 /*
 Approach Recursion in-place
-
 Does in-place mean constant space complexity?
 No. By definition, an in-place algorithm is an algorithm which transforms input
 using no auxiliary data structure.
@@ -68,24 +66,32 @@ To solve the problem, call helper function passing the head and tail indexes
 as arguments: return helper(0, len(s) - 1).
 
 Complexity Analysis
-Time complexity: O(N) time to perform N/2 swaps, O(n/2) == O(1/2 * n), ger rid from constant
+Time complexity: O(N) time to perform N/2 swaps, O(n/2) == O(1/2 * n), get rid from constant
 Space complexity: O(N) to keep the recursion stack.
 */
 function helper(s, left, right) {
   if (left >= right) return;
 
   let temp = s[left];
+  s[left] = s[right];
+  s[right] = temp;
+  helper(s, left+1, right-1)
+}
+
+function helperVariant1(s, left, right) {
+  if (left >= right) return;
+
+  let temp = s[left];
   s[left++] = s[right];
   s[right--] = temp;
-
   helper(s, left, right)
 }
 
 var reverseStringRecursion = s => {
   helper(s, 0, s.length - 1);
-  //console.log('s', s)
 }
 
+// recursion another variant
 var reverseStringRecursionVariant2 = s => {
   if (s.length === 0) return;
 
@@ -149,7 +155,6 @@ var reverseStringTwoPointers = s => {
 
 export {
   reverse, reverseVariant2,
-  reverseStringRecursion, reverseStringRecursionVariant2,
+  reverseStringRecursion, reverseStringRecursionVariant2, helperVariant1,
   reverseStringTwoPointersUseTemp, reverseStringTwoPointers
 }
-

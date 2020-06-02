@@ -94,6 +94,9 @@ created on 12/21/17
     * [155. Min Stack (2 stacks, improved 2 stacks and stack of value (minimum pairs))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
     * [716 Max Stack: 2 stacks approach](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/716-max-stack.js)
 
+* Tree
+    * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)
+
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)
 

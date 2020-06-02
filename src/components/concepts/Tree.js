@@ -1,8 +1,17 @@
 import React from 'react';
 import Details from '../Details';
+
 import { BinarySearchTree } from '../../algorithms/tree/binary-search-tree';
+import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
+
 import { Trie } from '../../algorithms/trie/trie';
+
+// todo move and error in name
 import { SinlgyLinkedList } from '../../algorithms/linked-lists/singly-linked-list';
+
+
+//
+import { preorderTraversal } from '../../leetcode/tree/binary-search-tree/traversals/pre-order';
 
 export default function Tree() {
   return (
@@ -31,6 +40,28 @@ export default function Tree() {
             code={BinarySearchTree.toString()}
             // secondCode={Trie.toString()}
             secondCode={SinlgyLinkedList.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id=""
+            question="Pre-order traversal Binary Tree"
+
+            time=""
+            space=""
+            code={preorderTraversal.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="invert-binary-tree"
+            question="Invert Binary Tree: approach recursion"
+            time="is O(n), since each node in the tree is visited only once"
+            space="is O(h) because of recursion, O(h) function calls will be placed on the stack
+            in the worst case, where h is the height of the tree"
+            code={invertTree.toString()}
           />
         </li>
       </ul>

@@ -5,7 +5,7 @@ class Stack {
   }
 
   get length() {
-    return this.stack.length
+    return this.stack.length;
   }
 
   isEmpty() {

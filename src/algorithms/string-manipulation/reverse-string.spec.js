@@ -1,4 +1,5 @@
 import {
+  reverseStringRecursion,
   reverseStringTwoPointers,
 } from './reverse-a-string';
 
@@ -7,10 +8,15 @@ describe('reverse a string test case', () => {
     expect(reverseStringTwoPointers(['h'])).toEqual(['h']);
   });
 
-  // todo, the function doesn't return anything
-  // how to test algorithms in-place
-  xit('2 pointers', () => {
-    expect(reverseStringTwoPointers(["h","e","l","l","o"])).toEqual(["0","l","l","e","h"]);
+  it('use recursion', () => {
+    let x = ['a','b', 'c'];
+    reverseStringRecursion(x);
+    expect(x).toEqual(["c","b","a"]);
   });
 
+  it('2 pointers approach', () => {
+    let x = ['a', 'b', 'c'];
+    reverseStringTwoPointers(x);
+    expect(x).toEqual(["c","b","a"]);
+  });
 });
