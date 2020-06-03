@@ -64,6 +64,9 @@ created on 12/21/17
 * Stack
     * [Stack implementation: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
 
+* Linked Lists
+    * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
+
 
 ## Leetcode
 

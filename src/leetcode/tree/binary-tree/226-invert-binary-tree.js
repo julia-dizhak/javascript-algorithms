@@ -136,7 +136,7 @@ arr.map((element, index) => {
 tree4 = JSON.parse(JSON.stringify(tree4)).root;
 
 const invertedTree = invertTree(tree4);
-const test = JSON.parse(JSON.stringify(invertedTree))
+//const test = JSON.parse(JSON.stringify(invertedTree))
 // console.log('tree 4', tree4)
 // console.log('invert tree 4', JSON.parse(JSON.stringify(invertedTree)));
 // console.log('test', test.left.val)
