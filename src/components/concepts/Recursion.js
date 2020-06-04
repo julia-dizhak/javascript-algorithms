@@ -7,9 +7,9 @@ import { fib, fibIterative } from '../../algorithms/recursion/fibonacci';
 export default function Recursion() {
   return (
     <div className="number">
-      <h2>Recursion</h2>
+      <h2 id="recursion">Recursion</h2>
 
-      <ul id="recursion">
+      <ul>
         <li>
           <Details
             id="factorial"

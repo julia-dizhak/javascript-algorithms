@@ -67,13 +67,13 @@ class LinkedList {
  */
   get(index) {
     // index is outside the bounds of the list
-    if (index < 0 || index > this.size || this.size === 0) {
+    if (index < 0 || index > this.size - 1 || this.size === 0) {
       return -1;
     }
 
     // we're at the head
     if (index === 0) {
-      return this.head;
+      return this.head.val;
     }
 
     let counter = 0;
@@ -95,6 +95,11 @@ class LinkedList {
    * from a given position.
    */
   getAt(index) {
+    // we're at the head
+    if (index === 0) {
+      return this.head;
+    }
+
     let counter = 0;
     let node = this.head;
     while (node) {
@@ -254,6 +259,61 @@ console.log('get', linkedList.get(1))
 linkedList = JSON.parse(JSON.stringify(linkedList));
 //console.log('linked list original', linkedList1)
 console.log('linked list', linkedList)
+
+
+
+// todo schedule
+// todo move to array?
+// actual cost parameters
+// try with sum
+// profit margin
+// greedy algorithms
+var twoCitySchedCost = function(costs) {
+  const n = Math.floor(costs.length/2);
+  let total = 0;
+
+  /**
+   * Oh I see. So in other words, nested arrays where city A cost is less than city B cost are on the left side of the array and nested arrays where city B cost is less than city A are on the right side of the array -> nested arrays where [0] index is less than [1] index are on the left and nested arrays where [1] index is less than [0] index are on the right. Got it.
+
+So is there an order for the nested arrays once they are sorted accordingly on the left or right? Using the input from Example 1, once sorted, costs = [ [ 30, 200 ], [ 10, 20 ], [ 30, 20 ], [ 400, 50 ] ]. So for instance, is there an order between [ 30, 200 ] and [ 10, 20 ] on the left?
+
+I see for the purposes of this problem that once they are sorted either on the left or right half of the array depending on their indexed optimal values it doesn't matter if they're sorted beyond that but i was just curious.
+   */
+  costs = costs.sort((a,b) => {
+    //debugger
+    console.log('a', a);
+    console.log('b', b)
+
+    return a[0] - b[0] - (a[1] - b[1])
+  });
+  console.log('costs', costs)
+
+
+  // To optimize the company expenses,
+  // send the first n persons to the city A
+  // and the others to the city B
+  for (let i = 0; i < n; i++) {
+    total += costs[i][0]+ costs[i+n][1]
+  }
+
+  return total
+
+};
+
+// var twoCitySchedCost = function(costs) {
+//   costs = costs.sort((a,b) => (b[0] - b[1]) - (a[0] - a[1]));
+//   var minCost = 0, i;
+//   for(i = 0; i < costs.length/2; i++){
+//       minCost += costs[i][1];
+//   }
+//   for(i = costs.length/2; i < costs.length; i++){
+//       minCost += costs[i][0];
+//   }
+//   return minCost;
+// };
+
+//10 + 30 + 50 + 20 = 110
+
 
 
 

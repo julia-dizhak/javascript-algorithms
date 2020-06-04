@@ -10,7 +10,6 @@ function Sidebar() {
         <ul className="list">
           <li className="item"><header className="title"><a href="#number">Number</a></header></li>
           <li className="item"><header className="title"><a href="#array">Array</a></header></li>
-
           <li className="item">
             <header className="title">String Manipulation</header>
             <ul className="subList">
@@ -18,32 +17,12 @@ function Sidebar() {
               <li><a href="#making-anagrams">Making anagrams</a></li>
             </ul>
           </li>
-
-          <li className="item"><header className="title"><a href="#recursion">Recursion</a></header></li>
-
           <li className="item">
-            <header className="title">Sorting</header>
+            <header className="title">Linked Lists</header>
             <ul className="subList">
-              <li><a href="#bubble-sort">Bubble sort</a></li>
-              <li><a href="#selection-sort">Selection sort</a></li>
-              <li><a href="#insertion-sort">Insertion sort</a></li>
-              <li><a href="#merge-sort">Merge sort</a></li>
-              <li><a href="#quick-sort">Quick sort</a></li>
+              <li><a href="#singly-linked-list">Singly-linked List</a></li>
             </ul>
           </li>
-
-          <li className="item">
-            <header className="title">Search</header>
-            <ul className="subList">
-              <li><a href="#is-find-index">Linear search</a></li>
-              <li><a href="#binary-search">Binary search</a></li>
-
-              {/* other tasks */}
-              <li><a href="#search-balanced-sum">Balanced Sum</a></li>
-              <li><a href="#search-two-sum">Two Sum</a></li>
-            </ul>
-          </li>
-
           <li className="item">
             <header className="title">Stack and Queue</header>
             <ul className="subList">
@@ -54,14 +33,6 @@ function Sidebar() {
               <li><a href="#queue-using-object">Queue implementation using object</a></li>
             </ul>
           </li>
-
-          <li className="item">
-            <header className="title">Linked Lists</header>
-            <ul className="subList">
-              <li><a href="#singly-linked-list">Singly-linked List</a></li>
-            </ul>
-          </li>
-
           <li className="item">
             <header className="title"><a href="#binary-search-tree">Tree</a></header>
             <ul className="subList">
@@ -75,6 +46,32 @@ function Sidebar() {
               <li><header className="title"><a href="#graph-dfs-flood-fill">Flood fill</a></header></li>
             </ul>
           </li>
+
+          <li className="item">
+            <header className="title">Sorting</header>
+            <ul className="subList">
+              <li><a href="#bubble-sort">Bubble sort</a></li>
+              <li><a href="#selection-sort">Selection sort</a></li>
+              <li><a href="#insertion-sort">Insertion sort</a></li>
+              <li><a href="#merge-sort">Merge sort</a></li>
+              <li><a href="#quick-sort">Quick sort</a></li>
+            </ul>
+          </li>
+          <li className="item">
+            <header className="title">Search</header>
+            <ul className="subList">
+              <li><a href="#is-find-index">Linear search</a></li>
+              <li><a href="#binary-search">Binary search</a></li>
+
+              {/* other tasks */}
+              <li><a href="#search-balanced-sum">Balanced Sum</a></li>
+              <li><a href="#search-two-sum">Two Sum</a></li>
+            </ul>
+          </li>
+
+          <li className="item"><header className="title"><a href="#recursion">Recursion</a></header></li>
+          <li className="item"><header className="title"><a href="#greedy">Greedy Algorithms</a></header></li>
+
 
           <li className="item">
             <header className="title">

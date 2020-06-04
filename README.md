@@ -81,9 +81,6 @@ created on 12/21/17
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 
-* Search
-    * [278. First Bad version]
-
 * String manipulation
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
@@ -92,6 +89,9 @@ created on 12/21/17
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
+
+* Linked Lists
+    * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
 
 * Stack
     * [155. Min Stack (2 stacks, improved 2 stacks and stack of value (minimum pairs))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
@@ -102,6 +102,13 @@ created on 12/21/17
 
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)
+
+* Search
+    * [278. First Bad version]
+
+* Greedy
+    * [1029. Two city Scheduling](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/greedy/1029-two-city-scheduling.js)
+
 
 
 ## OOP in JS

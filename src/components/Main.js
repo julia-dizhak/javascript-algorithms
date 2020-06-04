@@ -23,14 +23,17 @@ function Main() {
         <Number />
         <ArrayAlgorithms />
         <StringManipulation />
-        <Recursion />
-        <Sorting />
-        <Searching />
-        <StackQueue />
         <LinkedLists />
+        <StackQueue />
         <Tree />
         <Graph />
+
+        <Sorting />
+        <Searching />
+
+        <Recursion />
         <GreedyAlgorithms />
+        
         <CodeSandboxTasks />
       </div>
   </div>

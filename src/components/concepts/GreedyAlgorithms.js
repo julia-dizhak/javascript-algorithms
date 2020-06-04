@@ -1,17 +1,29 @@
 import React from 'react';
 import Details from '../Details';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+// problems
 import { minimumAbsoluteDifference } from '../../algorithms/greedy/min-abs-difference';
 import { luckBalance } from '../../algorithms/greedy/luck-balance';
-
+import { twoCitySchedCost } from '../../leetcode/greedy/1029-two-city-scheduling';
 
 export default function GreedyAlgorithms() {
   return (
-    <div className="sorting">
-      <h2>Greedy Algorithms</h2>
+    <div className="greedy">
+      <h2 id="greedy">Greedy Algorithms</h2>
 
       <ul>
+        <li>
+          <Details
+            id="greedy-two-city-scheduling"
+            question="Two city Scheduling"
+            solution=""
+            complexity=""
+            time=""
+            space=""
+            code={twoCitySchedCost.toString()}
+          />
+        </li>
+
         <li>
           <Details
             id="greedy-min-absolute-difference"
@@ -22,28 +34,11 @@ export default function GreedyAlgorithms() {
         </li>
 
         <li>
-          <details
-            className="details"
+          <Details
             id="greedy-luck-balance"
-            aria-expanded="false"
-            aria-labelledby="label">
-            <summary role="button" aria-controls="content">
-              <span className="question">
-                Question:&nbsp;
-                <strong>Luck Balance</strong>
-              </span>
-            </summary>
-
-            <div aria-hidden="true">
-              <h3 className="title">Solution:</h3>
-              <SyntaxHighlighter
-                language="javascript"
-                style={docco}
-              >
-                {luckBalance.toString()}
-              </SyntaxHighlighter>
-            </div>
-          </details>
+            question="Luck Balance"
+            code={luckBalance.toString()}
+          />
         </li>
       </ul>
 
