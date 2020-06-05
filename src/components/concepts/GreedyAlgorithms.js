@@ -4,7 +4,7 @@ import Details from '../Details';
 // problems
 import { minimumAbsoluteDifference } from '../../algorithms/greedy/min-abs-difference';
 import { luckBalance } from '../../algorithms/greedy/luck-balance';
-import { twoCitySchedCost } from '../../leetcode/greedy/1029-two-city-scheduling';
+import { twoCitySchedCost, twoCitySchedCostSortAbs } from '../../leetcode/greedy/1029-two-city-scheduling';
 
 export default function GreedyAlgorithms() {
   return (
@@ -16,11 +16,18 @@ export default function GreedyAlgorithms() {
           <Details
             id="greedy-two-city-scheduling"
             question="Two city Scheduling"
-            solution=""
-            complexity=""
-            time=""
-            space=""
+            solution={`
+            There are 2N people a company is planning to interview.
+            The cost of flying the i-th person to city A is costs[i][0],
+            and the cost of flying the i-th person to city B is costs[i][1].
+
+            Return the minimum cost to fly every person to a city such
+            that exactly N people arrive in each city.
+            `}
+            time="O(NlogN) because of sorting of input data"
+            space="O(1) since it's a constant space solution"
             code={twoCitySchedCost.toString()}
+            secondCode={twoCitySchedCostSortAbs.toString()}
           />
         </li>
 

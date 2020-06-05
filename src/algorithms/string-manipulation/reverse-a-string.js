@@ -19,6 +19,8 @@ Example 2:
 
 Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
+
+The entire logic for reversing a string is based on using the opposite directional two-pointer approach!
 */
 
 /*
@@ -75,7 +77,7 @@ function helper(s, left, right) {
   let temp = s[left];
   s[left] = s[right];
   s[right] = temp;
-  helper(s, left+1, right-1)
+  helper(s, left + 1, right - 1)
 }
 
 function helperVariant1(s, left, right) {

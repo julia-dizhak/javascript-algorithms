@@ -22,6 +22,14 @@ export default function StringManipulation() {
       <ul>
         <li>
           <Details
+            id="test1"
+            question="test"
+            //code={}
+          />
+        </li>
+
+        <li>
+          <Details
             id="reverse-a-string"
             question="Write a function that reverses a string: approach swap, recursion, two pointers"
             time="Time is O(n) for all approaches"

@@ -1,7 +1,6 @@
 import { BinarySearchTree, invertTree } from './226-invert-binary-tree';
 
-
-
+// toto
 // Input [1,2]
 // Output [1,null,2]
 
@@ -29,15 +28,8 @@ describe('binary search tree test case', () => {
     // todo test as output [4,7,2,9,6,3,1]
   });
 
-  it('if there are only 2 nodes', () => {
-    tree = JSON.parse(JSON.stringify(tree)).root;
-    const invertedTree = invertTree(tree);
-    const test = JSON.parse(JSON.stringify(invertedTree));
+  xit('if there are only 2 nodes Input [1,2] and Output [1,null,2]', () => {
 
-    expect(test.left.val).toEqual(7);
-    expect(test.right.val).toEqual(2);
-    expect(test.left.left.val).toEqual(9);
-    expect(test.right.right.val).toEqual(1);
   });
 });
 

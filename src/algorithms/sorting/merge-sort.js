@@ -26,7 +26,8 @@ function merger(left, right) {
     }
   }
 
-  // need to concat here because there will be one element remaining from either left or the right
+  // need to concat here because there will be one element
+  // remaining from either left or the right
   return singleSorted.concat(left, right);
 }
 

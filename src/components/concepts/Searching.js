@@ -29,7 +29,7 @@ export default function Searching() {
             id="binary-search"
             question="Binary search with loop while and recursion"
             solution="left + right could overflow, correct mid = left + (right - left)/2"
-            complexity=""
+            complexity="For iterative and recursive approach: time is O(log n), but for recursive space is O(log n)"
             time="O(log n)"
             space="O(1)"
             code={binarySearch.toString()}
