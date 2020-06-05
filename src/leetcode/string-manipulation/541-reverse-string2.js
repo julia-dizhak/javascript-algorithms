@@ -43,6 +43,7 @@ const reverseStr = (s, k) => {
   if (s.length  === 1) return s;
 
   let arr = s.split('');
+
   for (let i = 0; i < arr.length; i += 2*k) {
     let start = i;
     // suppose we are near the end of the char array a[]，
@@ -55,7 +56,8 @@ const reverseStr = (s, k) => {
     // the boundary should be length - 1 then,
     // otherwise, index will be out of range.
     let end = Math.min(start + k - 1, arr.length - 1);
-    // end = i + k - 1 works as well
+    // works as well
+    // let end = i + k - 1;
 
     while (start < end) {
       let temp = arr[start];
@@ -66,7 +68,7 @@ const reverseStr = (s, k) => {
   return arr.join('')
 }
 
-const t = reverseStr('abcdefg', 1);
+const t = reverseStr('abcdefg', 2);
 console.log('t', t)
 
 /*

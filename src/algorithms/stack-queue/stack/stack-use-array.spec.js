@@ -14,14 +14,6 @@ describe('stack implemented by an array test case', () => {
     expect(book.stack).toEqual(['Oathbringer', 'The Stand']);
   });
 
-  it('push method', () => {
-    book.push('Oathbringer')
-    expect(book.stack.length).toEqual(1);
-    expect(book.stack).toEqual(['Oathbringer']);
-    book.push('The Stand');
-    expect(book.stack).toEqual(['Oathbringer', 'The Stand']);
-  });
-
   it('pop', () => {
     book.push('Oathbringer');
     book.push('The Stand');

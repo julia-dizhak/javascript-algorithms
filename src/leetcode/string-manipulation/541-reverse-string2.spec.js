@@ -9,7 +9,7 @@ describe('reverse str 2 test case', () => {
     expect(reverseStr('abcdefg',2)).toEqual('bacdfeg');
   });
 
-  xit('long string, k=1', () => {
+  it('long string, k=1', () => {
     expect(reverseStr('abcdefg',1)).toEqual('abcdefg');
   });
 

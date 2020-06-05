@@ -61,11 +61,12 @@ created on 12/21/17
 | Insertion sort  | O(n^2)      | Ω(n)       | O(1)   |
 | Merge sort      | O(n log n)  | Ω(n log n) | O(n)   |
 
-* Stack
-    * [Stack implementation: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
-
 * Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
+
+* Stack
+    * [Stack implementation: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
+    * [Stack implementation: use string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
 
 
 ## Leetcode
