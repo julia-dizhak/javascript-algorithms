@@ -68,9 +68,6 @@ const reverseStr = (s, k) => {
   return arr.join('')
 }
 
-const t = reverseStr('abcdefg', 2);
-console.log('t', t)
-
 /*
 My first attempt, but it doesn't work
 for case reverseStr1('abcdefg',1)

@@ -32,7 +32,7 @@ function binarySearch(arr, target) {
     // left + right could overflow
     let mid = Math.floor(start + (end - start)/2)
 
-    if (arr[mid] === target) {
+    if (target === arr[mid]) {
       return mid;
     } else if (target < arr[mid]) {
       end = mid - 1;

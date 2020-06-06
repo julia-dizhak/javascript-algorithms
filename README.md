@@ -51,15 +51,16 @@ created on 12/21/17
     * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
     * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/selection-sort.js)
     * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/insertion-sort.js)
-    * Quick sort
     * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
+    * Quick sort
 
-| Sort name       | O           | Ω          | Space  |
-| :---            | :---        | :---       | :---   |
-| Bubble sort     | O(n^2)      | Ω(n)       | O(1)   |
-| Selection sort  | O(n^2)      | Ω(n^2)     | O(1)   |
-| Insertion sort  | O(n^2)      | Ω(n)       | O(1)   |
-| Merge sort      | O(n log n)  | Ω(n log n) | O(n)   |
+| Sort name       | O           | Ω          | Space     |
+| :---            | :---        | :---       | :---      |
+| Bubble sort     | O(n^2)      | Ω(n)       | O(1)      |
+| Selection sort  | O(n^2)      | Ω(n^2)     | O(1)      |
+| Insertion sort  | O(n^2)      | Ω(n)       | O(1)      |
+| Merge sort      | O(n log n)  | Ω(n log n) | O(n)      |
+| Quick sort      | O(n log n)  | Ω(n log n) | O(log n)  |
 
 * Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
@@ -105,7 +106,7 @@ created on 12/21/17
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)
 
-* Search
+* Binary Search
     * [278. First Bad version]
 
 * Greedy

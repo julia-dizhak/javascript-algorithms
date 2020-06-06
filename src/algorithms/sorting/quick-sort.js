@@ -21,4 +21,9 @@ function quickSort(arr) {
   return merged;
 }
 
+// lomoto partion scheme
+// potential pivot location
+// final pivot location
+// todo
+
 export { quickSort };
