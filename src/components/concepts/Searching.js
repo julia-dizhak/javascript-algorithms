@@ -14,7 +14,7 @@ export default function Searching() {
     <div className="number">
       <h2>Search / Binary search</h2>
 
-      <ul>
+        <ul>
           <Details
             id="test"
             question=""
@@ -44,41 +44,41 @@ export default function Searching() {
             secondCode={binarySearchRecursive.toString()}
           />
         </li>
-
-        <li>
-          <Details
-            id="search-balanced-sum"
-            question="Balanced sum"
-            solution="challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right"
-            complexity=""
-            time="O(n)"
-            code={balancedSum.toString()}
-          />
-        </li>
-
-        <li>
-          <Details
-            id="search-two-sum"
-            question="Two sum using hash"
-            solution={`
-              Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-              You may assume that each input has exactly one solution.
-              And you may not use the same element twice.
-            `}
-            complexity=""
-            time="O(n)"
-            space="O(n). The extra space required depends on the number of items stored in the hash table, which stores exactly nn elements"
-            code={twoSum.toString()}
-          />
-        </li>
-
+        
         <li>
           <details
             className="details"
             id="searching-tasks"
             aria-expanded="false"
             aria-labelledby="label">
-              <summary role="button" aria-controls="content">Different tasks related to Binary search</summary>
+              <summary role="button" aria-controls="content">
+                Different tasks related to Binary search
+              </summary>
+              <Details
+                id="search-balanced-sum"
+                question="Balanced sum"
+                solution="challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right"
+                complexity=""
+                time="O(n)"
+                code={balancedSum.toString()}
+              />
+
+              <li>
+                <Details
+                  id="search-two-sum"
+                  question="Two sum using hash"
+                  solution={`
+                    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+                    You may assume that each input has exactly one solution.
+                    And you may not use the same element twice.
+                  `}
+                  complexity=""
+                  time="O(n)"
+                  space="O(n). The extra space required depends on the number of items stored in the hash table, which stores exactly nn elements"
+                  code={twoSum.toString()}
+                />
+              </li>
+
               <Details
                 id="first-bad-version"
                 question="First Bad version"

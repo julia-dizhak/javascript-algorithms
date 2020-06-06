@@ -31,72 +31,62 @@ pickIndex will be called at most 10000 times.
 */
 
 /*
-In the case w = [2, 98],
-your pickIndex() should return index 1 for 98% and index 0 for 2%.
+Problem explaining in human way
 
-In the case w = [1, 99] , your pickIndex() should return 1 for 99% and 0 for 1%.
+Given an array w of positive integers sent to Solution(),
+where w[i] describes the weight of index i.
+[1,3] would mean index 0 has weight 1, while index 1 has weight 3.
+Write a function pickIndex() which randomly picks an index in proportion to its weight.
+pickIndex() will be called multiple times.
 
-///another desc
-It is confusing in more than one place, seemed better to rewrite it for Java users
-
-Given an array w of positive integers sent to Solution(), where w[i] describes the weight of index i. [1,3] would mean index 0 has weight 1, while index 1 has weight 3.
-Write a function pickIndex() which randomly picks an index in proportion to its weight. pickIndex() will be called multiple times
-
-Example 1:
-w[] = [1]
-expected return values from pickIndex() calls:
-0
-
-Example 2:
-Input:
-w[] = [1,3]
-expected return values from pickIndex() calls:
-0,1,1,1,0
-
-///explanation
 The problem is, we need to randomly pick an index proportional to its weight.
 What this means?
-We have weights array, each
-weights[i]  represents weight of index i.
+We have weights array, each weights[i] represents weight of index i.
 The more the weight is, then high chances of getting that index randomly.
-
 suppose weights = [1, 3]
 then 3 is larger, so there are high chances to get index 1.
 We can know the chances of selecting each index by knowing their probability.
-
-P(i) = weight[i]/totalWeight
+P(i) = weight[i] / totalWeight
 totalWeight = 1 + 3 = 4
 So, for index 0, P(0) = 1/4  = 0.25 = 25%
 for index 1, P(1) = 3/4 = 0.75 = 75%
-
 So, there are 25% of chances to pick index 0 and 75% chances to pick index 1.
 
-I have provided java code for this problem in the comment section.
-If you are interested, you can check that. Happy coding.
+Example 1:
+Input w = [1]
+expected return values from pickIndex() calls: 0
 
-///
-Given questions input is
+Example 2:
+Input: w = [1,3]
+expected return values from pickIndex() calls: 0,1,1,1,0
+
+More examples:
+So in the case w = [2, 98],
+your pickIndex() should return index 1 for 98% and index 0 for 2%.
+In the case w = [1, 99] , your pickIndex() should return 1 for 99% and 0 for 1%.
+
+
+Explanation of Input Syntax:
+Input:
 ["Solution","pickIndex"]
 [[[1]],[]]
-Will you plz explain to me what this input means I .e.Solution and pickIndex and in second-line then have taken an array of subarrays
-for creation of Solution of object, we don't need to return anything. So, it is null. For pickIndex method, we need to return an index.
+Output: [null,0]
+Solution and pickIndex and in second-line then have taken an array of subarrays.
 
-//
-input contains list of statements, each representing an action.
-Here,
-["Solution","pickIndex"]
-[[[1]],[]]
+Solution:- it creates an object for Solution class with data containing weights [1],
+For creation of Solution of object, we don't need to return anything.
+So, it is null.
 
-Solution:- it creates an object for Solution class with data containing weights [1]
+pickIndex: Now, pickIndex method is called on that object,
+here we need to do some calculations and return an index.
+For pickIndex method, we need to return an index.
 
-pickIndex:- Now, pickIndex method is called on that object, here we need to do some calculations and return an index.
+How will binarySearch work here?
+The probabilities array value precision wouldn't be same with random number.
 
-I think I cleared your doubt.
-If you still have doubt, feel free to ask.
-
-//
-How will binarySearch work here? The probabilities array value precision wouldn't be same with random number
-Yes, but binary search method return index of probability if it is found. If it is not found, then it returns index where it will be in the array if it is present.
+Yes, but binary search method return index of probability if it is found.
+If it is not found, then it returns index where it will be in the array
+if it is present.
 So, binary search works well.
 */
 
@@ -156,92 +146,17 @@ class Solution {
       }
     }
 
-    return left
+    return left;
   }
 }
-
-
-// class Solution {
-//   constructor(w) {
-//     // //debugger
-//     // this.probabilities = [];
-//     // //this.weight = w;
-
-//     // let totalWeight = 0;
-//     // for (const val of w) {
-//     //   totalWeight += val
-//     // }
-//     // //const totalWeight = this.weight[0] + this.weight[1];
-
-//     // // const index0 = this.weight[0]/totalWeight;
-//     // // const index1 = this.weight[1]/totalWeight;
-
-//     // for (let i = 0; i < w.length; i++) {
-//     //   w[i] += (i === 0) ? 0 : w[i-1];
-//     //   this.probabilities[i] = w[i]/totalWeight;
-//     // }
-
-//     this.weight = w;
-//     this.lookup = [];
-//     this.sum = 0;
-
-//     this.weight.forEach((val, index) => {
-//       this.sum += val;
-//       this.lookup[index] = this.sum
-//     })
-//     //return this.lookup
-//   }
-
-//   pickIndex() {
-//     //console.log(this.probabilities)
-//     // let totalWeight = 0;
-//     // for (const i of this.weight) {
-
-//     // }
-//     // const totalWeight = this.weight[0] + this.weight[1];
-//     // const index0 = this.weight[0]/totalWeight;
-//     // const index1 = this.weight[1]/totalWeight;
-//     //return Math.abs
-
-
-//     console.log(this.weight)
-//     console.log(this.lookup)
-//     let low = 0;
-//     let high = this.sum;
-//     let mid;
-//     var dart = 1+Math.floor(Math.random()*this.sum);
-//     console.log('dart', dart)
-
-//     // while (low < high) {
-//     //   mid = Math.floor(low + (high - low)/2);
-//     //   if (this.lookup[mid] === dart) {
-//     //     return mid
-//     //   } else if (dart > this.lookup[mid]) {
-//     //     high = mid
-//     //   } else {
-//     //     low = mid - 1
-//     //   }
-//     // }
-//     //
-//     return low
-//   }
-// }
-
-// /**
-//  * @return {number}
-//  */
-// // Solution.prototype.pickIndex = function() {
-
-// // };
 
 /**
  * Your Solution object will be instantiated and called as such:
  * var obj = new Solution(w)
  * var param_1 = obj.pickIndex()
- */
-//const obj = new Solution([1,3]);
+*/
 const obj = new Solution([2,4,1,5,3]);
-obj.pickIndex()
-//console.log('pickIndex()', obj.pickIndex())
+obj.pickIndex(6)
+
 
 export { Solution }
