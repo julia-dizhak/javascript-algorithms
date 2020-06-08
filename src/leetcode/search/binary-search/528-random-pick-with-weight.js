@@ -91,51 +91,54 @@ So, binary search works well.
 */
 
 /*
-Approach binary search
+Approach binary search and accumulation of sum
 
-Example: input w = [2,4,1,5,3]
-index      -> 0 1 2 3 4
-w          -> 2 4 1 5 3
-sum[index] -> 2 6 7 12 15
-           -> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-
-test w = [2,4,1,5,3]
+Example: input w
+w                  -> 2 4 1 5 3
+index              -> 0 1 2 3 4
+sum[index]         -> 2 6 7 12 15
+pick from [1, sum] -> 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+[0, 2] | [2, 6) | [6, 7) | ...
 number 9 index 3
-
 number 6 -> index 1
 
-Time complexity O(log n) because of binary search
-Space complexity O(n) create array of sums
+Time complexity: O(n) loop through array of sum  + O(log n) because of binary search
+Space complexity: O(n) because we create array of accumulation sums
 */
+
 function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * Math.floor(max));
 }
+
 /**
  * @param {number[]} w
 */
-class Solution {
+class SolutionUseBinarySearch {
   constructor(w) {
+    if (!w.length) throw new Error('empty input');
     this.newWeights = [];
-    this.totalWeight = 0;
+    let total = 0;
 
     for (const val of w) {
-      this.totalWeight += val;
-      this.newWeights.push(this.totalWeight); // sorted arr, can use binary search
+      total += val;
+      this.newWeights.push(total); // sorted arr, can use binary search
     }
   }
 
   pickIndex(pick) {
     const { newWeights } = this;
-    pick = (pick === undefined) ? getRandomInt(this.totalWeight) : pick;
-    console.log('pick', pick);
+    // pick is in range from [1, total] because of task description
+    // 1 <= w[i] <= 10^5
+    // and because 0 is not part of any weight
+    pick = (pick === undefined)
+      ? getRandomInt(this.newWeights[this.newWeights.length - 1]) + 1
+      : pick;
 
     let left = 0;
     let right = newWeights.length - 1;
-    console.log('newWeights', newWeights);
 
     while (left <= right) {
       const mid = Math.floor(left + (right - left)/2);
-      console.log('mid', mid);
 
       if (pick === newWeights[mid]) {
         return mid;
@@ -150,13 +153,132 @@ class Solution {
   }
 }
 
+/*
+Approach with distribution and binary search
+
+Time is O(log n)
+Space is O(n)?
+*/
+class SolutionDistribution {
+  constructor(w) {
+    this.weights = [];
+    this.total = 0;
+
+    for (const val of w) {
+      this.weights.push([this.total+1, this.total +=val])
+    }
+  }
+
+  pickIndex() {
+    // should range from 1 to sum]
+    const pick = Math.floor(Math.random() * this.total) + 1;
+
+    let left = 0;
+    let right = this.weights.length - 1;
+
+    while (left <= right) {
+      let mid = Math.floor(left + (right - left)/2);
+      let [start, end] = this.weights[mid];
+
+      if (pick >= start && pick <= end) {
+        return mid;
+      }
+      if (pick < start) right = mid - 1;
+      else left = mid + 1
+    }
+  }
+}
+
+/*
+Approach use map and linear search
+
+Time is O(n)
+Space is O(n)
+*/
+class SolutionUseMap {
+  constructor(w) {
+    this.weights = new Map();
+    this.total = 0;
+
+    for (let i = 0; i < w.length; i++) {
+      this.total += w[i];
+      this.weights.set(this.total, i)
+    }
+  }
+
+  pickIndex() {
+    const pick = Math.floor(Math.random() * this.total);
+    for (let key of this.weights.keys()) {
+      if (pick < key) return this.weights.get(key)
+    }
+  }
+}
+
+/*
+Approach linear search
+*/
+class SolutionLinearSearch {
+  constructor(w) {
+      const newArr = [];
+      let sum = 0;
+      for(let i = 0;i<w.length;i++) {
+          sum += w[i]
+          newArr.push(sum)
+      }
+      this.range = newArr;
+      this.sum = sum
+  }
+
+  pickIndex() {
+      const random = parseInt(Math.random()*this.sum)
+      for (let i = 0; i< this.range.length;i++) {
+          if (random < this.range[i]) {
+              return i
+          }
+      }
+  }
+}
+
+var Solution = function (w) {
+  if (!w.length) throw new Error('empty input');
+
+  let ranges = w.concat()
+  for (let i = 1; i < w.length; i++) {
+    ranges[i] = ranges[i - 1] + w[i];
+  }
+  this.ranges = ranges;
+  this.total = ranges[ranges.length - 1];
+};
+
+/**
+ * @return {number}
+ */
+Solution.prototype.pickIndex = function () {
+  let random = Math.random();
+  let val = random * this.total;
+
+  return findInHalf(val, this.ranges, 0, this.ranges.length - 1)
+
+  function findInHalf(val, arr, left, right) {
+    if (left === right) return left;
+    let mid = Math.floor((left + right) / 2);
+    if (val < arr[mid]) {
+      return findInHalf(val, arr, left, mid);
+    }
+    return findInHalf(val, arr, mid + 1, right);
+  }
+};
+
 /**
  * Your Solution object will be instantiated and called as such:
  * var obj = new Solution(w)
  * var param_1 = obj.pickIndex()
 */
-const obj = new Solution([2,4,1,5,3]);
-obj.pickIndex(6)
 
-
-export { Solution }
+export {
+  SolutionUseBinarySearch,
+  SolutionDistribution,
+  SolutionLinearSearch,
+  SolutionUseMap,
+  Solution
+}

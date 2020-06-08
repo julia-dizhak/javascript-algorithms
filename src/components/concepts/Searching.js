@@ -6,20 +6,18 @@ import { balancedSum } from '../../algorithms/search/balanced-sum';
 import { twoSum } from "../../algorithms/search/two-sum";
 import { solutionBinarySearch } from '../../leetcode/search/binary-search/278-first-bad-version';
 
-//
-import { Solution } from '../../leetcode/search/binary-search/528-random-pick-with-weight';
-
 export default function Searching() {
   return (
     <div className="number">
       <h2>Search / Binary search</h2>
 
         <ul>
+          {/* test
           <Details
             id="test"
             question=""
-            code={Solution.toString()}
-          />
+            code={}
+          /> */}
         <li>
           <Details
             id="is-find-index"
@@ -44,7 +42,7 @@ export default function Searching() {
             secondCode={binarySearchRecursive.toString()}
           />
         </li>
-        
+
         <li>
           <details
             className="details"

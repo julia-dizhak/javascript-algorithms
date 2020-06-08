@@ -4,13 +4,16 @@ import Number from './concepts/Number';
 import StringManipulation from './concepts/StringManipulation';
 import ArrayAlgorithms from './concepts/ArrayAlgorithms';
 import Sorting from './concepts/Sorting';
-import GreedyAlgorithms from './concepts/GreedyAlgorithms';
+
 import Recursion from './concepts/Recursion';
 import Searching from './concepts/Searching';
 import StackQueue from './concepts/StackQueue';
 import LinkedLists from './concepts/LinkedLists';
 import Tree from './concepts/Tree';
 import Graph from './concepts/Graph';
+
+import GreedyAlgorithms from './concepts/GreedyAlgorithms';
+import DP from './concepts/DP';
 
 import CodeSandboxTasks from '../eloquent-tasks/CodeSandboxTasks';
 
@@ -23,17 +26,19 @@ function Main() {
         <Number />
         <ArrayAlgorithms />
         <StringManipulation />
+
+        <Sorting />
+        <Searching />
+
         <LinkedLists />
         <StackQueue />
         <Tree />
         <Graph />
 
-        <Sorting />
-        <Searching />
-
         <Recursion />
         <GreedyAlgorithms />
-        
+        <DP />
+
         <CodeSandboxTasks />
       </div>
   </div>

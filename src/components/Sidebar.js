@@ -17,6 +17,29 @@ function Sidebar() {
               <li><a href="#making-anagrams">Making anagrams</a></li>
             </ul>
           </li>
+
+          <li className="item">
+            <header className="title">Sorting</header>
+            <ul className="subList">
+              <li><a href="#bubble-sort">Bubble sort</a></li>
+              <li><a href="#selection-sort">Selection sort</a></li>
+              <li><a href="#insertion-sort">Insertion sort</a></li>
+              <li><a href="#merge-sort">Merge sort</a></li>
+              <li><a href="#quick-sort">Quick sort</a></li>
+            </ul>
+          </li>
+          <li className="item">
+            <header className="title">Search</header>
+            <ul className="subList">
+              <li><a href="#is-find-index">Linear search</a></li>
+              <li><a href="#binary-search">Binary search</a></li>
+
+              {/* other tasks */}
+              <li><a href="#search-balanced-sum">Balanced Sum</a></li>
+              <li><a href="#search-two-sum">Two Sum</a></li>
+            </ul>
+          </li>
+
           <li className="item">
             <header className="title">Linked Lists</header>
             <ul className="subList">
@@ -47,30 +70,9 @@ function Sidebar() {
             </ul>
           </li>
 
-          <li className="item">
-            <header className="title">Sorting</header>
-            <ul className="subList">
-              <li><a href="#bubble-sort">Bubble sort</a></li>
-              <li><a href="#selection-sort">Selection sort</a></li>
-              <li><a href="#insertion-sort">Insertion sort</a></li>
-              <li><a href="#merge-sort">Merge sort</a></li>
-              <li><a href="#quick-sort">Quick sort</a></li>
-            </ul>
-          </li>
-          <li className="item">
-            <header className="title">Search</header>
-            <ul className="subList">
-              <li><a href="#is-find-index">Linear search</a></li>
-              <li><a href="#binary-search">Binary search</a></li>
-
-              {/* other tasks */}
-              <li><a href="#search-balanced-sum">Balanced Sum</a></li>
-              <li><a href="#search-two-sum">Two Sum</a></li>
-            </ul>
-          </li>
-
           <li className="item"><header className="title"><a href="#recursion">Recursion</a></header></li>
           <li className="item"><header className="title"><a href="#greedy">Greedy Algorithms</a></header></li>
+          <li className="item"><header className="title"><a href="#dp">DP</a></header></li>
 
 
           <li className="item">
