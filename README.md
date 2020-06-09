@@ -74,6 +74,7 @@ created on 12/21/17
 
 * Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
+    * [231. Power of two (approach: iterative, math + toString)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
 
 * Array
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)

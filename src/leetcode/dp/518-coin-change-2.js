@@ -1,6 +1,6 @@
 /*
 Leetcode
-518. Coin change 2 (Unbounded Knapsack)
+518. Coin change 2
 medium
 
 You are given coins of different denominations and a total amount of money.
@@ -36,27 +36,69 @@ the answer is guaranteed to fit into signed 32-bit integer
 /*
 Approach Dynamic Programming
 
-The idea is In order to know how many combinations there were for 12,
+Any DP problem should start from explanation of sub problems.
+The idea is in order to know how many combinations there were for 5,
 we needed to know how many combinations the previous numbers had.
 
-Logic during each iteration
-if amount >= coin then
+Idea use coins as outer loop and amount of combinations as inner loop.
+Otherwise below logic will not work.
+And if you wanna use amount combination as outer loop,
+you have to change logic.
+
+Algorithm
+1 Create a combinations arr with size amount + 1.
+Each location of arr will be coordinated to amount of money loc 6 = money 6.
+Setup amount 0 with value 1, this will never change,
+because coin will never going to 0
+
+2 Iterate through coins arr where each coin is a parameter as an outer loop
+and combinations as inner loop (start iterate from 1).
+
+3 Logic during each iteration
+if amount >= coin THEN
   combinations[amount] += combinations[amount - coin]
 
-time complexity is O(n*m), where n - coins, m - amount(combinations)
-space is O(coins*amount)
+Input: amount 12, coins [1,2,5], output should be 4
+current coin is 1
+0 1 2 3 4 5 6 7 8 9 10 11 12
+1 1 1 1 1 1 1 1 1 1  1  1  1
 
+current coin is 2
+i=1
+1 >= 2 false, skip amount 1
+
+i=2
+2 >= 2 true, 2-2 = 0
+look at amount 0 which is equal to 1
+current value is 1
+1+1 = 2
+
+i=3
+3>=2 true, 3-2 = 1
+
+and so on
+
+0 1 2 3 4 5 6 7 8 9 10 11 12
+1 1 2 2 3 3 4 4 5 5  6  6  7
+
+current coin is 5
+repeat algorithm
+0 1 2 3 4 5 6 7 8 9 10 11 12
+1 1 2 2 3 4 5 6 7 8 10 11 13
+
+return combinations[amount] = combinations[12] = 13
+
+Time complexity is O(n*m), where n - coins, m - amount(combinations)
+Space is O(coins*amount)
 */
 
-// todo check brute force https://leetcode.com/problems/coin-change-2/discuss/141076/Unbounded-Knapsack
-// brute force https://leetcode.com/problems/coin-change-2/discuss/141076/Unbounded-Knapsack
-// several methods https://leetcode.com/problems/coin-change-2/discuss/674977/100-Faster-or-Recursive-1-d-2-d-DP-or-Matrix-With-Example-or-Commented-Code-Video
 /**
  * @param {number} amount
  * @param {number[]} coins
  * @return {number}
 */
 var change = function(amount, coins) {
+  if (amount <= 0) return 1;
 
   let combinations = new Array(amount+1).fill(0);
   // setup amount 0 with value equal to 1
@@ -64,57 +106,76 @@ var change = function(amount, coins) {
   // because coin will never going to 0
   combinations[0] = 1;
 
-  if (coins.length === 0) {
-    if ( amount === 0) return 1;
-    return 0;
- }
-
   for (const coin of coins) {
     // start from 1
     for (let i = 1; i < combinations.length; i++) {
       // i is amount
       if (i >= coin ) {
-        console.log('coin', coin);
         combinations[i] += combinations[i - coin];
-        console.log('combinations', combinations);
-
       }
 
     }
   }
 
-  //console.log('combinations', combinations);
   return combinations[amount]
 }
+
+/*
+Approach Brute force
+
+
+*/
+
+// todo check brute force https://leetcode.com/problems/coin-change-2/discuss/141076/Unbounded-Knapsack
+// brute force https://leetcode.com/problems/coin-change-2/discuss/141076/Unbounded-Knapsack
+// several methods https://leetcode.com/problems/coin-change-2/discuss/674977/100-Faster-or-Recursive-1-d-2-d-DP-or-Matrix-With-Example-or-Commented-Code-Video
+// outer loop iterating over amount and inner loop iterating over coins
+//The two codes on superificial comparison look equal, but the Code 1 gives a higher number of solutions that the correct answer.
+// amount as the outer of loop
+/*
+Any DP problem should start from explanation of sub problems
+For example, for this problem,
+if just have 1 coin and amount 1.
+How many combination can i have? Only 1
+
+every column starts from 0 until amount
+every row represent is additon of another coin
+*/
+var change1 = function(amount, coins) {
+  if (amount <= 0) return 0;
+
+  let combinations = new Array(amount+1);
+  //combinations[0] = 1;
+
+  for (let i = 0; i < amount + 1; i++) {
+    for (const coin of coins) {
+      //debugger
+      // if amount >= coin
+      // coin + i < amount + 1
+      // coin  <= combinations[i]
+      if (combinations[i] + 1 > coin + 1) {
+      //if (combinations[i] >= coin) {
+        //combinations[i] += combinations[i - coin]
+        combinations[i + coin] = combinations[i] + combinations[i + coin];
+      }
+      if (i === 0) combinations[i] = 1;
+    }
+  }
+
+  console.log('combinations 1', combinations)
+  return combinations[amount]
+};
+
+console.log('change', change1(5, [1,2,5]));
+//change(5, [1,2,5])
+
 
 //change(12, [1,2,5])
 //change(5, [1,2,5])
 //change(3, [2])
 
-/**
- * @param {number} n
- * @return {boolean}
- */
-var isPowerOfTwo = function(n) {
-  let isPowerOfTwo = false;
 
-  return isPowerOfTwo
-};
-//isPowerOfTwo(2);
 
-/**
- * @param {number} num
- * @return {number}
- */
-var findComplement = function(num) {
-  num = num.toString(2);
-  let str = ''
-  for (let i = 0; i < num.length; i++) {
-    str += Number(num[i]) === 0 ? 1 : 0;
-  }
-  return parseInt(str, 2)
-}
-console.log('findComplement', findComplement(5));
 
 
 

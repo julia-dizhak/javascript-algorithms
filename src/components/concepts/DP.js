@@ -12,10 +12,15 @@ export default function DP() {
       <ul>
         <li>
           <Details
-            id=""
-            question="test"
-            time=""
-            space=""
+            id="db-coin-change-2"
+            question="Coin change 2: DP and use as outer loop coins array"
+            solution={`
+            Any DP problem should start from explanation of sub problems.
+            The idea is in order to know how many combinations there were for 5,
+            we needed to know how many combinations the previous numbers had.
+            `}
+            time="O(n*m), where n - coins, m - amount(combinations)"
+            space="Create an arr of O(amount+1)"
             code={change.toString()}
           />
         </li>

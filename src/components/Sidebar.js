@@ -8,6 +8,7 @@ function Sidebar() {
       <a href="/" className="logo">Topics</a>
       <nav>
         <ul className="list">
+          <li className="item"><header className="title"><a href="#bit">Bit Manipulation</a></header></li>
           <li className="item"><header className="title"><a href="#number">Number</a></header></li>
           <li className="item"><header className="title"><a href="#array">Array</a></header></li>
           <li className="item">

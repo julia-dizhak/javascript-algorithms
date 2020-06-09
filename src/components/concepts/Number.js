@@ -2,7 +2,6 @@ import React from 'react';
 import Details from './../Details';
 import { power } from '../../algorithms/number/power';
 import { swap, swapUseTemp } from '../../algorithms/number/swap';
-import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
 
 export default function Number() {
   return (
@@ -23,16 +22,6 @@ export default function Number() {
             time="O(1)"
             code={swap.toString()}
             secondCode={swapUseTemp.toString()}
-          />
-
-          <Details
-            id="number-complement"
-            question="Complement of Base 10 Integer"
-            solution="The complement strategy is to flip the bits of its binary representation"
-            time="O(1)"
-            space="O(1)"
-            code={flipBitByBit.toString()}
-            secondCode={findComplement.toString()}
           />
         </li>
       </ul>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import BitManipulation from './concepts/Bitwise';
 import Number from './concepts/Number';
 import StringManipulation from './concepts/StringManipulation';
 import ArrayAlgorithms from './concepts/ArrayAlgorithms';
@@ -23,6 +24,7 @@ function Main() {
   return (
     <div className="main">
       <div className="wrapper">
+        <BitManipulation />
         <Number />
         <ArrayAlgorithms />
         <StringManipulation />
