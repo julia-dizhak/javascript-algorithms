@@ -3,7 +3,7 @@ import Details from '../Details';
 
 // problems
 import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
-import { isPowerOfTwoIterative } from '../../leetcode/bitwise/231-power-of-two';
+import { isPowerOfTwoIterative, isPowerOfTwoShiftBit } from '../../leetcode/bitwise/231-power-of-two';
 
 export default function BitManipulation() {
   return (
@@ -26,10 +26,11 @@ export default function BitManipulation() {
           <Details
             id=""
             question="Given an integer, write a function to determine if it is a power of two"
-            solution=""
-            time=""
-            space=""
+            solution="approach iterative, bit manipulation"
+            time="O(log n)"
+            space="is O(1)"
             code={isPowerOfTwoIterative.toString()}
+            secondCode={isPowerOfTwoShiftBit.toString()}
           />
         </li>
 

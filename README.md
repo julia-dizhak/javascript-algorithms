@@ -86,11 +86,11 @@ created on 12/21/17
 
 * String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
+    * [541. Is subsequence (two pointers, )](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequnce.js)
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
     * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
-    * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
 
