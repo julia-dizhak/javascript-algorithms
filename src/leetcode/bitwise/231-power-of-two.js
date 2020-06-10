@@ -40,17 +40,17 @@ space is O(1)
  * @return {boolean}
  */
 var isPowerOfTwo = function(n) {
-  if (n <= 0) return false;
+  if (n < 0) return false;
 
   n = n.toString(2);
   let count = 0;
+
   for (let i = 0; i < n.length; i++) {
     if (Number(n[i]) === 1) {
       count++;
     }
   }
-  const isPowerOfTwo = (count <= 1) ? true : false;
-  return isPowerOfTwo
+  return (count === 1) ? true : false;
 };
 
 /*

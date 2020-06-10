@@ -80,6 +80,7 @@ created on 12/21/17
     * [231. Power of two (approach: iterative, math + toString, bit manipulation trick)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
 
     | Approaches:        | Time         | Space  |
+    | :---               | :---         | :---   |
     | Iterative          | O(log n)     | 0(1)   |
     | Math + toString    | O()          | O(1)   |
     | Bit Manipulation   | O(1)         | O(1)   |
