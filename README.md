@@ -1,6 +1,9 @@
 # Computer Science in JavaScript
 The repo contains JavaScript implementations of different famous computer science algorithms.
 
+As well below you will find solution for [leetcode](https://leetcode.com/) problems
+divided by dependency of topic relation.
+
 ## Description
 Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript.
 As well contains description and characteristics: runtime or complexity.
@@ -75,6 +78,10 @@ created on 12/21/17
 * Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
     * [231. Power of two (approach: iterative, math + toString, bit manipulation trick)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
+    | Approaches:        | Time         | Space  |
+    | Iterative         | O(log n)     | 0(1)   |
+    | Math + toString   | O()          | O(1)   |
+    | Bit Manipulation  | O(1)         | O(1)   |
 
 * Array
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
