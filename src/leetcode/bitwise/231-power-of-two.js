@@ -99,78 +99,49 @@ var isPowerOfTwoBitManipulation = function(n) {
 };
 
 /*
-Approach counting set bits
-
-power of two always has 1 set  bit
-which is the most significant bit
+Approach use log, ceil, floor
 */
+var isPowerOfTwoMath = function(n) {
+  if (n <= 0) return false;
+  return Math.floor(Math.log2(n)) ===  Math.ceil(Math.log2(n)) ? true : false;
+};
 
 /*
-todo understand
 Approach bit shift
 
-todo!!!
-you can count number of bits in the given number
-if this count is 1 and the number is greater thah 4
-....001000 = 8
-substract 1 = 8 -1
-....000111 = 7
-
-00010000 = 16
-00001111 = 15
-if you take and operator it will be 0
-n>0 and (n & (n-1)) === 0
-
-How to use bit shift in order to find if its power of two.
-we will keep shiftig unless we hit first set bit
+How to use bit shift in order to find if its power of two:
+we will keep shifting unless we hit first set of bit.
 
 if you remove all less significant bits then you value should be
 equals to 1
 
 how to find is bit equal to 1 -
-you will take bitwise number & x (x=1)
-
-
-
+you will take bitwise and operator: number & x where x=1
 */
 var isPowerOfTwoShiftBit = function(n) {
   if ( n === 0 ) return false;
-  //debugger
-  //while (n > 1 && (n&1) === 0) n >>= 1;
-  while (n > 1 && (n & 1) === 0) {
-    n >>= 1
-  };
 
-  console.log('isPowerOfTwoShiftBit', n === 1)
+  while (n > 1 && (n & 1) === 0)  {
+    n >>= 1
+  }
+
   return n === 1
 };
 
-// public class Solution {
-//   public boolean isPowerOfTwo(int n) {
-//       if(n < 1) return false;
-//       if(n == 1) return true;
-//       while((n & 1) != 1){
-//           n >>= 1;
-//       }
-//       if(n > 1) return false;
-//       else return true;
-//   }
-//}
+/*
+Approach counting set bits
+todo
+*/
 
-
-isPowerOfTwoShiftBit(6);
-// isPowerOfTwoIteratvie(2);
-// isPowerOfTwoIteratvie(4);
-// isPowerOfTwo(6);
-// isPowerOfTwo(16);
-isPowerOfTwo(-16);
-// todo case with 0
-
-// add a solution to a comment?
+/*
+Approach binary search
+todo
+*/
 
 export {
   isPowerOfTwo,
   isPowerOfTwoIterative,
+  isPowerOfTwoMath,
   isPowerOfTwoBitManipulation,
   isPowerOfTwoShiftBit
 }

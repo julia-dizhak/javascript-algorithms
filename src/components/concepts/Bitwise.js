@@ -3,7 +3,7 @@ import Details from '../Details';
 
 // problems
 import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
-import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwoShiftBit } from '../../leetcode/bitwise/231-power-of-two';
+import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
 
 export default function BitManipulation() {
   return (
@@ -32,8 +32,7 @@ export default function BitManipulation() {
             space="is O(1)"
             code={isPowerOfTwoIterative.toString()}
             secondCode={isPowerOfTwoBitManipulation.toString()}
-            //secondCode={isPowerOfTwoShiftBit.toString()}
-            //thirdSolution={}
+            thirdSolution={isPowerOfTwo.toString()}
           />
         </li>
 
