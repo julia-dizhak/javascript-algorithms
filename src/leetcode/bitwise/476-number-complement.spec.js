@@ -1,5 +1,6 @@
 import {
-  bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit,
+  bitwiseComplement, findComplement,
+  bitwiseComplementUseReduce, flipBitByBit,
   decimalToBinary
 } from './476-number-complement';
 
@@ -25,7 +26,6 @@ describe('bitwise complement test case', () => {
   it('decimalToBinary', () => {
     expect(decimalToBinary(5)).toEqual('101');
     expect(decimalToBinary(1)).toEqual('1');
-    //expect(decimalToBinary(0)).toEqual('0');
   });
 
 });

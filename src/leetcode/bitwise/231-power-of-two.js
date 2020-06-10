@@ -95,7 +95,7 @@ number is not power of two and result is not zero.
 Time is O(1), space is O(1)
 */
 var isPowerOfTwoBitManipulation = function(n) {
-  return (n > 0 && (n & (n-1)) === 0);
+  return (n > 0 && (n & (n - 1)) === 0);
 };
 
 /*

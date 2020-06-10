@@ -77,7 +77,13 @@ created on 12/21/17
 
 * Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
+
+    | Approaches:        | Time         | Space  |
+    | :---               | :---         | :---   |
+    | Bit                | O(?)         | 0(?)   |
+
     * [231. Power of two (and more approaches)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
+
     | Approaches:              | Time         | Space  |
     | :---                     | :---         | :---   |
     | Iterative                | O(log n)     | 0(1)   |
@@ -94,7 +100,7 @@ created on 12/21/17
 
 * String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
-    * [541. Is subsequence (two pointers, )](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequnce.js)
+    * [392. Is subsequence (two pointers, )](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequnce.js)
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
@@ -104,6 +110,14 @@ created on 12/21/17
 
 * Binary Search
     * [278. First Bad version](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/278-first-bad-version.js)
+
+    * [35. Search insert position](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/35-search-insert-position.js)
+
+    | Approaches:              | Time         | Space  |
+    | :---                     | :---         | :---   |
+    | Binary search            | O(log n)     | 0(1)   |
+    | Linear Search            | O(n)         | O(1)   |
+
     * [528. Random pick with weight (accumulation sum + binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/528-random-pick-with-weight.js)
 
 * Linked Lists
