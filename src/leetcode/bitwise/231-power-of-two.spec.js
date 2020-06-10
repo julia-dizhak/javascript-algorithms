@@ -1,7 +1,8 @@
 import {
   //isPowerOfTwo,
   isPowerOfTwoIterative,
-  isPowerOfTwoShiftBit as isPowerOfTwo
+  isPowerOfTwoBitManipulation as isPowerOfTwo,
+  //isPowerOfTwoShiftBit as isPowerOfTwo
 } from './231-power-of-two';
 
 describe('power of two test case', () => {

@@ -56,7 +56,7 @@ var isPowerOfTwo = function(n) {
 /*
 Approach iterative: Keep dividing by 2
 
-check if n can be divided by 2.
+Check if n can be divided by 2.
 If yes, divide n by 2 and check it repeatedly.
 
 Time complexity = O(log n)
@@ -77,7 +77,29 @@ var isPowerOfTwoUseWhile = function(n) {
 };
 
 /*
-approach counting set bits
+Approach bit manipulation (trick)
+
+Power of two means only one bit of n is 1.
+And you can use trick n & (n-1) === 0 to judge
+whether that is the case.
+
+Example
+1
+n = 100000, then n - 1 = 011111 and n & (n-1) = 000000,
+so if it's power of two, result is zero.
+
+2
+n = 101110, then n - 1 = 101101, and n & (n-1) = 101100,
+number is not power of two and result is not zero.
+
+Time is O(1), space is O(1)
+*/
+var isPowerOfTwoBitManipulation = function(n) {
+  return (n > 0 && (n & (n-1)) === 0);
+};
+
+/*
+Approach counting set bits
 
 power of two always has 1 set  bit
 which is the most significant bit
@@ -86,6 +108,18 @@ which is the most significant bit
 /*
 todo understand
 Approach bit shift
+
+todo!!!
+you can count number of bits in the given number
+if this count is 1 and the number is greater thah 4
+....001000 = 8
+substract 1 = 8 -1
+....000111 = 7
+
+00010000 = 16
+00001111 = 15
+if you take and operator it will be 0
+n>0 and (n & (n-1)) === 0
 
 How to use bit shift in order to find if its power of two.
 we will keep shiftig unless we hit first set bit
@@ -137,5 +171,6 @@ isPowerOfTwo(-16);
 export {
   isPowerOfTwo,
   isPowerOfTwoIterative,
+  isPowerOfTwoBitManipulation,
   isPowerOfTwoShiftBit
 }
