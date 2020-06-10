@@ -1,7 +1,7 @@
 import {
-  //isPowerOfTwo,
+  isPowerOfTwo,
   isPowerOfTwoIterative,
-  isPowerOfTwoBitManipulation as isPowerOfTwo,
+  // isPowerOfTwoBitManipulation,
   //isPowerOfTwoShiftBit as isPowerOfTwo
 } from './231-power-of-two';
 
