@@ -1,4 +1,9 @@
-import { twoSum, twoSumBruteForce, twoSumUsingMap } from './two-sum';
+import {
+  //twoSum,
+  twoSum1 as twoSum,
+  twoSumBruteForce,
+  twoSumUsingMap
+} from './two-sum';
 
 describe('two sum test case', () => {
   it('empty array', () => {

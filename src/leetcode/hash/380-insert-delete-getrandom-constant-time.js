@@ -40,6 +40,7 @@ explanation https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/854
 todo
 solution 2 hashes
 https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/85434/Java-solution-with-two-HashMaps%3A-easy-to-understand
+https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/589197/javascript-es6-O(1)-using-class-and-maps
 */
 
 /*
@@ -58,9 +59,12 @@ The Map object holds key-value pairs and remembers the original insertion order
 of the keys. Any value (both objects and primitive values)
 may be used as either a key or a value.
 
-The problem is with the getRandom() method as how to implement such a method
-as map doesn't have any indexes. The basis idea to implement such a method is
-to choose a random index and retrieve the element from the random index.
+The problem is with the getRandom() method as how to implement such a method?
+to pick a random element, we need to either have a
+total number, plus a way to access by that number.
+Get random item from JS array
+var item = items[Math.floor(Math.random() * items.length)];
+
 
 So the second thing that comes to our mind is to use ArrayList.
 ArrayList can provide O(1) insert and O(1) getRandom() but cannot provide O(1) remove,
@@ -90,8 +94,10 @@ Now we have O(1) delete.
 class RandomizedSet {
   // Init an empty set.
   constructor(val) {
-    this.map = new Map();
+    // a basic array with inserts
     this.arr = [];
+    // A Map with the inserts as keys and the position in the basic array as values.
+    this.map = new Map();
   }
 
   // Inserts 1 to the set. Returns true as 1 was inserted successfully.
@@ -108,7 +114,7 @@ class RandomizedSet {
 
     // todo provide a test
     // TODO account for wrong type of val or array too large?
-    return true
+    return true;
   }
 
   // Removes an item val from the set if present.
@@ -118,6 +124,9 @@ class RandomizedSet {
     if (!map.has(val)) return false;
 
     const index = map.get(val);
+    // todo check why it's mistake
+    //map.delete(val);
+
     const last = arr[arr.length - 1]; // last element in arr
 
     // important! overwrite a value, not a swap
@@ -128,11 +137,13 @@ class RandomizedSet {
 
     // remove last element
     arr.pop();
+    // remove from map
     map.delete(val);
 
     return true;
   }
 
+  // Random is classic random on the array
   getRandom() {
     const { arr } = this;
     //debugger
@@ -147,6 +158,6 @@ randomSet.insert(10);
 randomSet.insert(4);
 randomSet.remove(2);
 randomSet.getRandom();
-console.log('randomSet', randomSet)
+//console.log('randomSet', randomSet)
 
 export { RandomizedSet }

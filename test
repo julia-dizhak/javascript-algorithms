@@ -1,5 +1,15 @@
+1 two sum
+google youtube
+solution with map
+
 380
 check desc again, more clear why it's O(1)
+provide all  tests
+check swap https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/683882/Heavily-commented-JavaScript-Solution-with-thought-process-explained
+https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/684251/JavaScript-Clean-Solution-Using-Map-and-Array
+and left a comment = override simply works
+use arr and hash https://leetcode.com/problems/insert-delete-getrandom-o1/discuss/436771/JavaScript-Array-of-values-and-Map-of-values-and-locations-in-array
+check 2 hashes solution
 move to anky
 381 follow up
 

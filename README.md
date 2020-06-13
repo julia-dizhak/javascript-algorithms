@@ -116,19 +116,19 @@ created on 12/21/17
 
     * [75. Sort colors](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/75-sort-colors.js)
 
-    | Approach:     | Time    | Space  |
+    | Approach:       | Time    | Space  |
     | :---            | :---    | :---   |
     | 2 pointers      | O(n)    | O(1)   |
 
 * Hash
     * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
 
-    | Approaches:  | Time       | Space       |
-    | :---         | :---       | :---        |
-    | Array + Map  | O(n^2)     | 0(1)        |
-    | insert         | O(1)       | O(n)        |
-    | remove      | O(1)   | O(1) / O(n) |
-    | getRandom       | O(1)       | O(1)        |
+    | Approach           | Time   | Space   |
+    | :---               | :---   | :---    |
+    | Array + Map: init  |        | O(m+n)  |
+    | insert             | O(1)   | O(1)    |
+    | remove             | O(1)   | O(1)    |
+    | getRandom          | O(1)   | O(1)    |
 
 * String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
