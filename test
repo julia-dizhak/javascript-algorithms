@@ -1,0 +1,53 @@
+380
+check desc again, more clear why it's O(1)
+move to anky
+381 follow up
+
+75
+use counting sort to check
+
+create a doc and share with vasyl
+about positions: check book frontend interviews
+
+medium
+algorithmes and coding interviews: do i need subscribe
+https://medium.com/algorithms-and-leetcode
+check couple of articles
+
+
+quick find
+create anki: describe api, complexity
+add to readme
+
+//
+quick union: check implementation
+add a readme
+an implementation of WeightedUnionFind: I think it's an error on medium with this.find
+what is compression about?
+
+check Here is a full js implementation, taken partly from Michael Toth’s JS visualisation of percolation through union find. I added compression, which Michael did not implement. I also changed the naming so it’s easier to read.
+
+
+// ds definitions
+https://github.com/liyin2015/Algorithms-and-Coding-Interviews/
+
+// bitwise
+x>>y
+dividing by 2
+tilda x - complement  1 for 0, 0 for 1 the same as -x-1
+
+0.4 useful combine bit operation
+for operations that handle each bit, we first need a mask
+that only set that bit to 1 and all others to 0,
+this can be implemnted with arithemtic left shift sign
+bu shifting 1 with 0 to n-1 steps  for n bitwise
+mask = 1 << i
+why 1 << 0 = 1????
+0 << 1 = 0
+1 << 1 = 2
+0 << 0
+
+2 & 1 - check operator and - is it check only last bit?
+
+get ith Bit - what does it mean
+move getBit

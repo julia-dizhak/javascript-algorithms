@@ -84,23 +84,62 @@ created on 12/21/17
 
     * [231. Power of two (and more approaches)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
 
-    | Approaches:              | Time         | Space  |
-    | :---                     | :---         | :---   |
-    | Iterative                | O(log n)     | 0(1)   |
-    | Math + toString          | O(n)         | O(1)   |
-    | Bit Manipulation Trick   | O(1)         | O(1)   |
+    | Approaches:                  | Time         | Space  |
+    | :---                         | :---         | :---   |
+    | Iterative: keep divide by 2  | O(log n)     | 0(1)   |
+    | Math + toString              | O(n)         | O(1)   |
+    | Bit Manipulation Trick       | O(1)         | O(1)   |
 
 * Array
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
     * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/26-remove-duplicates-from-sorted-array.js)
     * [540. Single element in sorted array (approach: Brute force, binary search, BS only on even indexes)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)
-    * [169. Majority element / 229. Majority element II (approach: brute force, sorting, hashmap, Voting)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/169-majority-element.js)
+
+    * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/169-majority-element.js)
+
+    | Approaches:  | Time       | Space       |
+    | :---         | :---       | :---        |
+    | Brute force  | O(n^2)     | 0(1)        |
+    | Hash         | O(n)       | O(n)        |
+    | Sorting      | O(nlogn)   | O(1) / O(n) |
+    | Voting       | O(n)       | O(1)        |
+
+    * [229. Majority element II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/229-majority-element-2.js)
+
+    | Approaches:     | Time    | Space  |
+    | :---            | :---    | :---   |
+    | Hash            | O(n)    | O(n)   |
+    | Voting          | O(?)    | 0(?)   |
+
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 
+    * [75. Sort colors](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/75-sort-colors.js)
+
+    | Approach:     | Time    | Space  |
+    | :---            | :---    | :---   |
+    | 2 pointers      | O(n)    | O(1)   |
+
+* Hash
+    * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
+
+    | Approaches:  | Time       | Space       |
+    | :---         | :---       | :---        |
+    | Array + Map  | O(n^2)     | 0(1)        |
+    | insert         | O(1)       | O(n)        |
+    | remove      | O(1)   | O(1) / O(n) |
+    | getRandom       | O(1)       | O(1)        |
+
 * String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
-    * [392. Is subsequence (two pointers, )](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequnce.js)
+
+    * [392. Is subsequence](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequence.js)
+
+    | Approaches:              | Time         | Space  |
+    | :---                     | :---         | :---   |
+    | Two pointers             | O(n)         | 0(1)   |
+    | Recursion                | O(n)         | 0(n)   |
+
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]

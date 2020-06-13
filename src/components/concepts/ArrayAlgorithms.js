@@ -11,13 +11,17 @@ import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../lee
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
 import { removeDuplicates } from '../../leetcode/array/26-remove-duplicates-from-sorted-array';
 
+import { QuickUnion } from '../../algorithms/union-find/quick-union';
+import { RandomizedSet } from '../../leetcode/hash/380-insert-delete-getrandom-constant-time';
+
+
 export default function ArrayAlgorithms() {
   return (
     <div className="sorting">
       <h2>Array</h2>
 
       <ul id="array">
-      <li>
+        <li>
           <Details
             id="remove-duplicates-in-sorted-array"
             question="Remove duplicates from sorted array: approach 2 pointers, slow and fast runner"

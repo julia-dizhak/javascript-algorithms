@@ -1,11 +1,44 @@
-/**
- * Ice Cream parlor
- *
- * Given an array of integers,
- * return indices of the two numbers such that they add up to a specific target.
- * You may assume that each input would have exactly one solution,
- * and you may not use the same element twice.
- */
+/*
+Ice Cream parlor
+
+Given an array of integers,
+return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution,
+and you may not use the same element twice.
+*/
+
+
+function twoSum1(arr, sum) {
+  //if sum is 0
+
+  let hash = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    hash[arr[i]] = i
+  }
+
+  // find a complement
+  //console.log('hash', hash)
+}
+
+console.log('twoSum', twoSum1([10,11,1,0,2], 3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * brute force solution

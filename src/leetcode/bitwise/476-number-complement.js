@@ -97,17 +97,6 @@ then do subtraction
 
 */
 
-var findComplement1 = function(num) {
-  let n = 0;
-  //debugger
-  // todo display binary?
-  while (n < num) {
-    n = (n << 1) | 1
-  }
-  return n - num
-}
-console.log(findComplement1(5))
-
 /*
 approach
 
@@ -141,6 +130,28 @@ With help of ^, '0' in num now will be complemented to '1'
 //   }
 //   return ~num & ~mask;
 // };
+
+var findComplement1 = function(num) {
+  let n = 0;
+  //debugger
+  // todo display binary?
+  while (n < num) {
+    n = (n << 1) | 1
+  }
+  return n - num
+}
+console.log('complement', findComplement1(5));
+
+function getBit(x,i) {
+  const mask = 1 << i;
+  if (x & mask) return 1;
+  return 0;
+}
+
+console.log('getBit', getBit(5,1));
+console.log('getBit 0', getBit(2,0));
+console.log('getBit 0 ', getBit(2,1));
+
 
 
 /*

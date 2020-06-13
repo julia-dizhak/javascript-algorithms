@@ -1,5 +1,6 @@
 import {
-  isSubsequence
+  //isSubsequence,
+  isSubsequenceRecursion as isSubsequence
 } from './392-is-subsequence';
 
 describe('find all anagrams', () => {

@@ -95,7 +95,7 @@ Intuition
 If the elements are sorted in monotonically increasing (or decreasing) order,
 the majority element can be found at index n/2 or n/2 + 1 incidentally, if n is even.
 
-Time complexity : O(nlogn)
+Time complexity: O(nlogn)
 Sorting the array costs O(nlogn) time in Python and Java, so it dominates the overall runtime.
 
 Space complexity : O(1) or O(n)
@@ -115,7 +115,7 @@ var majorityElementSorting = function(arr) {
   summing them would make it obvious that the majority element is indeed the majority element.
 
   To do this, we maintain a count, which is incremented
-  whenever we see an instance of our current candidate for majority element
+  whenever we see an instance of our current candidate
   and decremented whenever we see anything else.
   Whenever count equals 0, we effectively forget about everything in nums up to the current index
   and consider the current number as the candidate for majority element.
@@ -182,45 +182,10 @@ const majorityMooreVotingVariant2 = nums => {
   return candidate;
 };
 
-/*
-  229 Majority element II
-  
-  Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
-  Note: The algorithm should run in linear time and in O(1) space.
-*/
-
-/**
- * @param {number[]} nums
- * @return {number[]}
-*/
-var majorityElementVariant2= function(nums) {
-  var hash = {};
-  var res = [];
-
-  if (nums.length === 0) {
-    return [];
-  }
-
-  if (nums.length === 1) {
-    return nums[0]
-  }
-
-  for (const num of nums) {
-    hash[num] = (hash[num] || 0) + 1
-  }
-
-  for (let key in hash) {
-    if (hash[key] > nums.length/3) res.push(Number(key));
-  };
-
-  return res;
-};
-
 export {
   majorityElement,
   majorityElementBruteForce,
   majorityMooreVoting,
   majorityElementSorting,
-  majorityElementVariant2,
   majorityMooreVotingVariant2
 }
