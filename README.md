@@ -84,7 +84,7 @@ created on 12/21/17
 
 ## Leetcode
 
-* **Bitwise operators**
+* #### **Bitwise operators**
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
 
     | Approaches:        | Time         | Space  |
