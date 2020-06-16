@@ -84,7 +84,7 @@ created on 12/21/17
 
 ## Leetcode
 
-* Bitwise operators
+* **Bitwise operators**
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
 
     | Approaches:        | Time         | Space  |
@@ -177,6 +177,13 @@ created on 12/21/17
 
 * Tree
     * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)
+
+* BST (Binary Search Tree)
+    * [200. Search in BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/bst/search/200-search-in-bst.js)
+
+    | Approaches:      | Time     | Space  |
+    | :---             | :---     | :---   |
+    | Recursion        | O(?)     | 0(?)   |
 
 * Graph
     * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)
