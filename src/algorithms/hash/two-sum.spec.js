@@ -5,8 +5,10 @@ import {
   twoSumUsingMap
 } from './two-sum';
 
+// todo remove from test sorted arrays
 describe('two sum test case', () => {
   it('empty array', () => {
+    // todo expect(() => twoSum([], 9)).toThrowError(TypeError);
     expect(twoSum([], 9)).toEqual([]);
   });
 

@@ -152,6 +152,52 @@ console.log('getBit', getBit(5,1));
 console.log('getBit 0', getBit(2,0));
 console.log('getBit 0 ', getBit(2,1));
 
+//  contest
+
+/**
+ * @param {number[]} prices
+ * @return {number[]}
+ */
+// Input: prices = [8,4,6,2,3]
+
+// where j is the minimum index such that j > i and prices[j] <= prices[i],
+// otherwise, you will not receive any discount at all
+
+//[4,2,4,2,3]
+var finalPrices = function(prices) {
+  let result = [];
+
+  for (let i = 0; i < prices.length; i++) {
+    result[i] = prices[i];
+    for (let j = i+1; j < prices.length; j++) {
+      if (prices[j] <= prices[i]) {
+        result[i] = prices[i] - prices[j];
+        break;
+      }
+    }
+  }
+  return result
+};
+
+console.log('finalPrices', finalPrices([8,4,6,2,3]))
+
+// 787 !!!
+/*
+2 solutions
+
+directed graph
+level by level bfs search!
+bfs and dfs and find a problems (check invert binary tree task)
+TUSHAR ROY GRAPH PROBLEMS
+https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/686774/SUGGESTION-FOR-BEGINNERS-SIMPLE-STEPS-BFS-or-DIJKSHTRA-or-DP-DIAGRAM
+Dijkstra shortest path in graph
+Heap
+
+idea using BFS
+https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/181943/Readable-Javascript-Solution
+
+
+*/
 
 
 /*

@@ -10,7 +10,6 @@ function Sidebar() {
         <ul className="list">
           <li className="item"><header className="title"><a href="#bit">Bit Manipulation</a></header></li>
           <li className="item"><header className="title"><a href="#number">Number</a></header></li>
-          <li className="item"><header className="title"><a href="#array">Array</a></header></li>
           <li className="item">
             <header className="title">String Manipulation</header>
             <ul className="subList">
@@ -18,6 +17,8 @@ function Sidebar() {
               <li><a href="#making-anagrams">Making anagrams</a></li>
             </ul>
           </li>
+          <li className="item"><header className="title"><a href="#array">Array</a></header></li>
+          <li className="item"><header className="title"><a href="#hash">Hash</a></header></li>
 
           <li className="item">
             <header className="title">Sorting</header>

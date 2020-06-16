@@ -232,13 +232,16 @@ class SolutionLinearSearch {
   pickIndex() {
       const random = parseInt(Math.random()*this.sum)
       for (let i = 0; i< this.range.length;i++) {
-          if (random < this.range[i]) {
-              return i
-          }
+        if (random < this.range[i]) {
+            return i
+        }
       }
   }
 }
 
+/*
+Approach recursion
+*/
 var Solution = function (w) {
   if (!w.length) throw new Error('empty input');
 

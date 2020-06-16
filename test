@@ -1,6 +1,46 @@
+
+serialize and deserialize a binary tree
+https://www.youtube.com/watch?v=suj1ro8TIVY
+
+787 task
+bfs
+dfs
+
+368
+Largest divisible subset
+https://leetcode.com/problems/largest-divisible-subset/discuss/83999/Easy-understood-Java-DP-solution-in-28ms-with-O(n2)-time
+
+528
+recursion approach
+update readme
+check anki card
+
+
+237 provide pictures
+write a linked list ds and provide usual way of deleting with delete a node
+provide test
+
+226 invert
+second approach: iterative
+breadth first search definition queue
+depth first search - stack
+
 1 two sum
+one pass hash table
+2 pass hash table
+2-pass approach can only implement with map?
+update a readme and Hash component
 google youtube
 solution with map
+check solution it's an open
+put solution to leetcode
+
+2 sum input arr sorted: move to separate task, create a test
+binary search
+2 pointers
+test on leetcode
+
+follow up design two sum data structure
 
 380
 check desc again, more clear why it's O(1)

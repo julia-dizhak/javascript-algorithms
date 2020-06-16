@@ -30,16 +30,25 @@ created on 12/21/17
 ## List of problems
 
 * Number (General)
-* Array
-    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
-    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
 
 * String manipulation
     * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/reverse-a-string.js)
 
-* Search
-    * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/find-index.js)
-    * [Binary search (iterative, recursion)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary-search.js)
+* Array
+    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
+    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
+
+* Hash
+    * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/two-sum.js)
+
+    | Approaches:        | Time    | Space    |
+    | :---               | :---    | :---     |
+    | Brute force        | O(n^2)  | O(1)     |
+    | Hash / Map         | O(n)    | O(n)    |
+
+* Search: linear and binary
+    * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
+    * [Binary search (iterative, recursion)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary/binary-search.js)
 
 | Search name       | O          | Ω      | Space  |
 | :---              | :---       | :---   | :---   |
@@ -90,6 +99,23 @@ created on 12/21/17
     | Math + toString              | O(n)         | O(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
 
+* String manipulation
+    * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
+
+    * [392. Is subsequence](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequence.js)
+
+    | Approaches:              | Time         | Space  |
+    | :---                     | :---         | :---   |
+    | Two pointers             | O(n)         | 0(1)   |
+    | Recursion                | O(n)         | 0(n)   |
+
+    * [383. Ransom Note]
+    * [387. First Unique Character in a String]
+    * [771. Jewels and Stones]
+    * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
+    * [387. First Unique Character in a String]
+    * [771. Jewels and Stones]
+
 * Array
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
     * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/26-remove-duplicates-from-sorted-array.js)
@@ -129,23 +155,6 @@ created on 12/21/17
     | insert             | O(1)   | O(1)    |
     | remove             | O(1)   | O(1)    |
     | getRandom          | O(1)   | O(1)    |
-
-* String manipulation
-    * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
-
-    * [392. Is subsequence](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequence.js)
-
-    | Approaches:              | Time         | Space  |
-    | :---                     | :---         | :---   |
-    | Two pointers             | O(n)         | 0(1)   |
-    | Recursion                | O(n)         | 0(n)   |
-
-    * [383. Ransom Note]
-    * [387. First Unique Character in a String]
-    * [771. Jewels and Stones]
-    * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
-    * [387. First Unique Character in a String]
-    * [771. Jewels and Stones]
 
 * Binary Search
     * [278. First Bad version](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/278-first-bad-version.js)

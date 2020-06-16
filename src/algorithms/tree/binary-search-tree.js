@@ -76,7 +76,7 @@ class BinarySearchTree {
     traverseTree(this.root);
   }
 
-   /**
+  /**
     * The contains() method accepts a value as an argument and
     * returns true if the value is present in the tree or false if not.
   */

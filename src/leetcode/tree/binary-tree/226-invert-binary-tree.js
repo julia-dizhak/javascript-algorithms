@@ -84,6 +84,11 @@ Approach recursive
 This is a classic tree problem that is best-suited for a recursive approach.
 
 Algorithm
+The inverse of an empty tree is the empty tree.
+The inverse of a tree with root r, and subtrees right and left,
+is a tree with root r, whose right subtree is the inverse of left,
+and whose left subtree is the inverse of right.
+
 call invert for left subtree
 call invert for right subtree
 swap left and right subtrees

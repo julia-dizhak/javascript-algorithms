@@ -4,10 +4,13 @@ import BitManipulation from './concepts/Bitwise';
 import Number from './concepts/Number';
 import StringManipulation from './concepts/StringManipulation';
 import ArrayAlgorithms from './concepts/ArrayAlgorithms';
+import Hash from './concepts/Hash';
+
 import Sorting from './concepts/Sorting';
+import Searching from './concepts/Searching';
 
 import Recursion from './concepts/Recursion';
-import Searching from './concepts/Searching';
+
 import StackQueue from './concepts/StackQueue';
 import LinkedLists from './concepts/LinkedLists';
 import Tree from './concepts/Tree';
@@ -26,8 +29,9 @@ function Main() {
       <div className="wrapper">
         <BitManipulation />
         <Number />
-        <ArrayAlgorithms />
         <StringManipulation />
+        <ArrayAlgorithms />
+        <Hash />
 
         <Sorting />
         <Searching />

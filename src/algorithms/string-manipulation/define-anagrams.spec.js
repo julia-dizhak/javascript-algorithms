@@ -2,7 +2,7 @@ import { defineAnagrams } from './define-anagrams';
 
 describe('makingAnagrams test case', () => {
   it('should error if arguments are not strings', () => {
-    expect(() => defineAnagrams(undefined, undefined)).toThrow()
+    expect(() => defineAnagrams(undefined, undefined)).toThrow();
   });
 
   it('empty strings', () => {

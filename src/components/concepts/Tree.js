@@ -7,7 +7,7 @@ import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tr
 import { Trie } from '../../algorithms/trie/trie';
 
 //
-import { preorderTraversal } from '../../leetcode/tree/binary-search-tree/traversals/pre-order';
+import { preorderTraversal } from '../../leetcode/tree/bst/traversals/pre-order';
 
 export default function Tree() {
   return (

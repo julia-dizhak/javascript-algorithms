@@ -49,6 +49,8 @@ Instead, we have to replace the value of the node we want
 to delete with the value in the node after it,
 and then delete the node after it.
 
+// todo provide pictures
+
 Because we know that the node we want to delete
 is not the tail of the list, we can guarantee that
 this approach is possible.
@@ -63,49 +65,5 @@ var deleteNode = function(node) {
   node.val = node.next.val;
   node.next = node.next.next;
 };
-
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-}
-
-class LinkedList {
-  constructor() {
-    this.head = null
-    this.size = 0
-  }
-
-  addAtHead(val) {
-    let newNode = new Node(val)
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      newNode.next = this.head;
-      this.head = newNode
-    }
-    this.size++
-  }
-
-  addAtTail(val) {
-    let newNode = new Node(val)
-    if (!this.head) {
-      this.head = newNode;
-    } else {
-      let tail = this.head;
-      while (tail.next) {
-        tail = tail.next
-      }
-      tail.next = newNode
-    }
-  }
-
-  addAtIndex(index, val) {
-
-  }
-}
-
-
 
 export { deleteNode }
