@@ -84,7 +84,7 @@ created on 12/21/17
 
 ## Leetcode
 
-* #### **Bitwise operators**
+* ### Bitwise operators**
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
 
     | Approaches:        | Time         | Space  |
@@ -99,7 +99,7 @@ created on 12/21/17
     | Math + toString              | O(n)         | O(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
 
-* String manipulation
+* ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
 
     * [392. Is subsequence](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequence.js)
