@@ -50,6 +50,9 @@ Test cases:
 2) Tree with one node and key is that node
 3) Tree with many nodes and key does not exist
 4) Tree with many nodes and key exists
+
+Example
+todo
 */
 
 /**
@@ -161,4 +164,8 @@ const tree = new BST();
 // Expected
 // [2,1,3]
 
-export { searchBST }
+export {
+  searchBST,
+  searchBSTIterative,
+  searchBSTIterativeVariant2
+}

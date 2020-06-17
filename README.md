@@ -109,6 +109,13 @@ created on 12/21/17
     | Two pointers             | O(n)         | 0(1)   |
     | Recursion                | O(n)         | 0(n)   |
 
+    * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
+
+    | Approaches:    | Time     | Space  |
+    | :---           | :---     | :---   |
+    | Regex          | O(1)     | 0(1)   |
+
+
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
