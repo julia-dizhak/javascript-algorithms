@@ -14,20 +14,20 @@ import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-f
 
 import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
-import { validIPAddress } from '../../leetcode/string-manipulation/468-validate-ip-address';
 
 export default function StringManipulation() {
   return (
     <div className="sorting">
       <h2>String Manipulation</h2>
+      
       <ul>
-        <li>
+        {/* <li>
           <Details
             id="test1"
             question="test"
-            code={validIPAddress.toString()}
+            code={}
           />
-        </li>
+        </li> */}
 
         <li>
           <Details

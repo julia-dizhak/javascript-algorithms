@@ -48,7 +48,7 @@ Output: "Neither"
 Explanation: This is neither a IPv4 address nor a IPv6 address.
 
 And The most straightforward way is to use try/catch construct with
-built-in facilities: ipaddress lib in Python and InetAddress class in Java.
+built-in facilities: ip address lib in Python and InetAddress class in Java.
 Note that these facilities both refer to POSIX-compatible inet-addr() routine
 for parsing addresses. That's why they consider chunks with leading zeros not
 as an error, but as an octal representation.
@@ -80,10 +80,9 @@ of leading zeros problem as we've discussed above.
 
 Anyway, we start to construct regex pattern by using literal regular expression
 in JS.
-/^$/ matches the beginning of string and matches the end of string
+/^ $/ matches the beginning of string and matches the end of string
 
-Here is the pattern for each chunk
-
+First divide a patter for each chunk.
 Now the problem is reduced to the construction of pattern to match each chunk.
 It's an integer in range (0, 255), and the leading zeros are not allowed.
 That results in five possible situations:
@@ -107,9 +106,17 @@ Let's use pipe to create a regular expression that will match either case 1,
 or case 2, ..., or case 5.
 
 Time complexity: O(1) because the patterns to match have constant length.
+
 Space complexity: O(1).
+valid IPv4 address is at most 15 characters and IPv6 address is at most 39.
+Input could be much longer, but the regex performance would still have
+a bounded constant worst-case runtime to validate a candidate address.
 */
 
+/**
+ * @param {string} IP
+ * @return {string}
+ */
 var validIPAddressUseRegex = function(IP) {
   const ipv4 = /^((\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.){4}$/;
   const ipv6 = /^([\da-f]{1,4}:){8}$/i;
@@ -117,14 +124,47 @@ var validIPAddressUseRegex = function(IP) {
 };
 
 /*
-Approach Regex + split into Array.
+Approach divide and conquer (Regex + split into Array + loop).
 
-Time complexity: O(1) because the patterns to match have constant length
-(4 chunks for ipv4)
-(8 chunks for ipv6)
-Space: is as well O(1), we create an array, but patterns have a constant length
+Intuition
+Both IPv4 and IPv6 addresses are composed of several substrings
+separated by certain delimiter, and each of the substrings
+is of the same format.
+
+IP string algorithm:
+if contains 3 dots?
+  validate as IPv4:
+    if valid => return isValid Ipv4
+    else invalid
+if contains 7 colons?
+  validate as IPv6:
+    if valid => return isValid Ipv6
+    else invalid
+otherwise? return inValid
+
+Therefore, intuitively, we could break down the address into chunks,
+and then verify them one by one.
+The address is valid if and only if each of the chunks is valid.
+We can call this methodology divide and conquer.
+
+For the IPv4 address, we split IP into four chunks by the delimiter .,
+while for IPv6 address, we split IP into eight chunks by the delimiter :.
+
+For each substring of "IPv4" address, we check if it is an integer between 0 - 255,
+and there is no leading zeros.
+
+For each substring of "IPv6" address, we check if it's a hexadecimal number
+of length 1 - 4.
+
+Complexity Analysis
+Time complexity: O(N) because to count number of dots requires to parse the entire input string.
+Space: O(1)
 */
 
+/**
+ * @param {string} IP
+ * @return {string}
+ */
 var validIPAddress = function(IP) {
   if (IP === null || IP === undefined || IP.length === 0) return 'Neither';
 
@@ -134,12 +174,6 @@ var validIPAddress = function(IP) {
   } else {
     return validIPv6(IP) ? 'IPv6' : 'Neither';
   }
-  // const chunkIpv4 = /^(\d*\.){3}\d*$/;
-  // //const chunkIpv4 = /^((\d)\.){3}$/;
-  // debugger
-  // //^(\d{1,3}\.){3}\d{1,3}$
-  // const ipv4 = IP.split('.');
-  // const ipv6 = IP.split(':');
 }
 
 function validIPv4(IP) {
@@ -151,8 +185,10 @@ function validIPv4(IP) {
     // each character of each field should contain only digit.
     // The [^0-9] expression is used to find any character that is NOT a digit.
     if (chunk.match(/[^0-9]/)) return false;
-    if (chunk.length > 1 && chunk.charAt(0) === 0) return false;
-    //check digit is within range [0, 255]
+
+    if (chunk.length > 1 && chunk.charAt(0) === '0') return false;
+
+    // check digit is within range [0, 255]
     if ((+chunk) > 255) return false;
   }
   return true
@@ -165,36 +201,13 @@ function validIPv6(IP) {
   for (const chunk of chunks) {
     if (chunk.length === 0) return false;
     if (chunk.length > 4) return false;
-    //check whether it is digit as well as character range from 'A' to 'F'(Hex)
+
+    // check whether it is digit as well as character range from 'A' to 'F'(Hex)
+    // hexdigits 0123456789abcdefABCDEF
     if (chunk.match(/[^0-9a-fA-F]/g)) return false;
   }
   return true;
 }
-
-console.log('validIPAddressUseRegex', validIPAddress('192.0.0.1'))
-
-/**
- * @param {string} IP
- * @return {string}
- */
-// var validIPAddress = function(IP) {
-//   if (IP === null || IP.length === 0) return 'Neither';
-
-//   if (IP.includes('.')) return checkIPV4(IP);
-//   if (IP.includes(':')) return checkIPV6(IP);
-
-//   return 'Neither';
-// };
-
-// function checkIPV4(IP) {
-//   return IP;
-// }
-
-// function checkIPV6(IP) {
-//   return IP;
-// }
-
-console.log('validIPAddress', validIPAddress('172.16.254.1'))
 
 export {
   validIPAddress,

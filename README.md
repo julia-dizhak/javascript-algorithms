@@ -111,9 +111,10 @@ created on 12/21/17
 
     * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
 
-    | Approaches:    | Time     | Space  |
-    | :---           | :---     | :---   |
-    | Regex          | O(1)     | 0(1)   |
+    | Approaches:        | Time     | Space  |
+    | :---               | :---     | :---   |
+    | Regex              | O(1)     | 0(1)   |
+    | Divide and Conquer | O(n)     | 0(1)   |
 
 
     * [383. Ransom Note]
