@@ -3,6 +3,7 @@ import Details from '../Details';
 
 import { Stack } from '../../algorithms/stack-queue/stack/stack-use-string';
 import { Stack as StackArr } from '../../algorithms/stack-queue/stack/stack-use-array';
+import { Stack as StackLinkedList } from '../../algorithms/stack-queue/stack/stack-use-linked-list';
 import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
 import { Queue } from '../../algorithms/stack-queue/queue/queue-using-object';
 
@@ -21,6 +22,17 @@ export default function StackQueue() {
             id="stack-use-array"
             question="Stack implementation use array as a storage"
             code={StackArr.toString()}
+            time='every operation takes constant time'
+            space='less wasted space'
+          />
+        </li>
+        <li>
+          <Details
+            id="stack-use-linked-list"
+            question="Stack implementation use Linked List"
+            code={StackLinkedList.toString()}
+            time='for .push and pop() takes constant time'
+            space='need space for pointers'
           />
         </li>
         <li>

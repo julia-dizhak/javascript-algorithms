@@ -3,12 +3,16 @@ Leetcode
 733 Flood Fill
 easy
 
-An image is represented by a 2-D array of integers, each integer representing the pixel value of the image (from 0 to 65535).
-Given a coordinate (sr, sc) representing the starting pixel (row and column) of the flood fill, and a pixel value newColor, "flood fill" the image.
+An image is represented by a 2-D array of integers, each integer representing
+the pixel value of the image (from 0 to 65535).
+Given a coordinate (sr, sc) representing the starting pixel (row and column)
+of the flood fill, and a pixel value newColor, "flood fill" the image.
 
-To perform a "flood fill", consider the starting pixel, plus any pixels connected 4-directionally
+To perform a "flood fill", consider the starting pixel, plus any pixels
+connected 4-directionally
 to the starting pixel of the same color as the starting pixel,
-plus any pixels connected 4-directionally to those pixels (also with the same color as the starting pixel),
+plus any pixels connected 4-directionally to those pixels (also with the same color
+as the starting pixel),
 and so on.
 Replace the color of all of the aforementioned pixels with the newColor.
 
@@ -18,7 +22,8 @@ The given starting pixel will satisfy 0 <= sr < image.length and 0 <= sc < image
 The value of each color in image[i][j] and newColor will be an integer in [0, 65535].
 
 Hint
-Write a recursive function that paints the pixel if it's the correct color, then recursion on neighboring pixels.
+Write a recursive function that paints the pixel if it's the correct color,
+then recursion on neighboring pixels.
 
 Example 1
 Input: image = [[1,1,1],[1,1,0],[1,0,1]]
@@ -31,7 +36,8 @@ by a path of the same color as the starting pixel are colored with the new color
 Note the bottom corner is not colored 2, because it is not 4-directionally connected
 to the starting pixel.
 
-Flood fill also called seed fill, is an algorithm that determines the area connected to a given node in a multi-dimensional array.
+Flood fill also called seed fill, is an algorithm that determines the area
+connected to a given node in a multi-dimensional array.
 The flood-fill algorithm takes three parameters:
 a start node,
 a target color,
@@ -44,7 +50,6 @@ A bitmap is a rectangular grid of pixels, with each pixel's color being specifie
 A raster is technically characterized by the width and height of the image in pixels and by the number of bits per pixel (or color depth, which determines the number of colors it can represent).
 */
 
-import { helperVariant1 } from "../../../algorithms/string-manipulation/reverse-a-string";
 
 /*
 Approach 1: Depth-First Search
@@ -78,7 +83,7 @@ Space Complexity: O(N), the size of the implicit call stack when calling dfs.
 */
 var floodFill = function(image, row, col, newColor, startingColor = image[row][col]) {
   // handle if the coordinate is out of bounds
-  // check indexes outs of bound before and then your condition
+  // FIRST check indexes outs of bound (ORDER is important) and then your condition
 	// or if it is already the new color
   // or if it's not from the original color we're trying to change
   if (
@@ -123,7 +128,7 @@ output = [
 ]
 
 Time complexity is proportional to a number of pixes
-we have to fill rows * cols
+we have to fill rows * cols or O(n)
 */
 var floodFillUseHelper = function(img, sr, sc, newColor) {
   // sr - starting row
@@ -159,70 +164,19 @@ function helper(img, i, j, originalColor, newColor) {
   helper(img, i, j + 1, originalColor, newColor);
 }
 
+// let input = [
+//   [1,1,1],
+//   [1,1,0],
+//   [1,0,1]
+// ]
+// console.log('floodFillUseHelper', floodFillUseHelper(input, 1, 1, 2))
 
 /*
 Approach BFS todo
 
 */
 
-
-// 130 surrounded regions
-// last row is not surrounded
-// except regions lies on boundary
-// boudaryDFS
-// video
-// turn x to 0?
-// union find?
-
-//@return {void} Do not return anything, modify board in-place instead.
-
-/**
- * @param {character[][]} board
- * @return {void} Do not return anything, modify board in-place instead.
- */
-var solve = function(board) {
-  //debugger
-  // why?
-  if (board.length === 0 || board[0].length === 0) {
-    return
-  }
-  if (board.length < 2 || board[0].length < 2) {
-    return
-  }
-
-  let rows = board.length;
-  let cols = board[0].length;
-
-  //Any 'O' connected to a boundary can't be turned to 'X', so ...
-	//Start from first and last column, turn 'O' to '*'.
-  for (let i = 0; i < rows; i++) {
-    if (board[i][0] === '0') {
-      boundaryDFS(board, i, 0)
-    }
-    if (board[i][cols-1] === '0') boundaryDFS(board, i, cols-1)
-  }
-};
-
-function boundaryDFS(board, i, j) {
-  if (i < 0 || i > board.length - 1 || j < 0 || j > board.length - 1) {
-    return
-  }
-  if (board[i][j] === '0') {
-    board[i][j] = '*'
-  }
-  if (i > 1 && board[i-1][j] === 'O') boundaryDFS(board, i-1, j);
-
-}
-
-let input = [
-  ['x', 'x', 'x', 'x'],
-  ['x', '0', '0', 'x'],
-  ['x', 'x', '0', 'x'],
-  ['x', '0', 'x', 'x'],
-]
-console.log(solve(input))
-
 export {
   floodFill,
-  floodFillUseHelper,
-  solve }
+  floodFillUseHelper
+}

@@ -52,6 +52,7 @@ function Sidebar() {
             <header className="title">Stack and Queue</header>
             <ul className="subList">
               <li><a href="#stack-use-array">Stack use array</a></li>
+              <li><a href="#stack-use-linked-list">Stack use Linked List</a></li>
               <li><a href="#stack-using-string">Stack use strings</a></li>
               <li><a href="#stack-using-object">Stack implementation using object</a></li>
 

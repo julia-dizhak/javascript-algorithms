@@ -29,29 +29,27 @@ At most 2000 calls will be made to get, addAtHead, addAtTail,  addAtIndex and de
 */
 
 /*
-  the constructor function will be called to initialize
-  the object with two properties, data and a pointer named next.
-  The pointer next is initialized with a default value of null,
-  incase no value is passed as an argument.
+the constructor function will be called to initialize
+the object with two properties, data and a pointer named next.
+The pointer next is initialized with a default value of null,
+incase no value is passed as an argument.
 */
 class ListNode {
   constructor(val) {
     this.val = val;
-    this.next = null; // link
+    this.next = null; // pointer or reference
   }
 }
 
 /*
-  In the above code, a LinkedList class is defined.
-  When an instance of the LinkedList class is formed,
-
-  the constructor function will be called to initialize the object
-  with a property, head.
-  The head pointer is assigned a value of null
-  because when a linked list object is initially created
-  it does not contain any nodes.
-  It is when we add our first node to the linked list,
-  we will assign it to the head pointer.
+When an instance of the LinkedList class is formed,
+the constructor function will be called to initialize the object
+with a property, head.
+The head pointer is assigned a value of null
+because when a linked list object is initially created
+it does not contain any nodes.
+It is when we add our first node to the linked list,
+we will assign it to the head pointer.
 */
 class LinkedList {
   constructor() {
@@ -114,6 +112,8 @@ class LinkedList {
 
   // insert a node
   /**
+   * insert a node
+   * The easiest place to insert a new node in a linked list is at the beginning
    * Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
    * @param {number} val
    * @return {void}
@@ -126,9 +126,11 @@ class LinkedList {
       this.head = newNode;
     } else {
       // Link the new node to our original head node
-      // The pointer next is assigned head pointer so that both pointers now point at the same node.
+      // The pointer next is assigned head pointer so that both pointers
+      // now point at the same node.
       newNode.next = this.head;
-      // As we are inserting at the beginning the head pointer needs to now point at the newNode.
+      // As we are inserting at the beginning the head pointer needs
+      // to new point at the newNode.
       this.head = newNode;
     }
     this.size += 1;
@@ -322,4 +324,7 @@ var oddEvenList = function(head) {
   return head;
 };
 
-export { LinkedList }
+export {
+  ListNode,
+  LinkedList
+}

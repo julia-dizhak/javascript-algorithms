@@ -1,12 +1,10 @@
 import {
-  // floodFill,
-  floodFillUseHelper as floodFill
-} from './733-flood-fill';
+  solve,
+} from './130-surrounded-regions';
 
-describe('flood fill algorithm test case', () => {
+describe('surrounded regions test case', () => {
   let input1, input2;
   let output1, output2;
-
 
   beforeEach(() => {
     input1 = [
@@ -31,8 +29,7 @@ describe('flood fill algorithm test case', () => {
     ]
   });
 
-  it('2 dimensional array', () => {
-    expect(floodFill(input1, 1, 1, 2)).toEqual(output1);
-    expect(floodFill(input2, 1, 1, 3)).toEqual(output2);
+  it('test', () => {
+    expect(solve(input1)).toEqual(undefined);
   });
 });

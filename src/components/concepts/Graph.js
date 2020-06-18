@@ -2,7 +2,7 @@ import React from 'react';
 import Details from '../Details';
 
 import { floodFill } from '../../leetcode/graph/dfs/733-flood-fill';
-import { solve } from '../../leetcode/graph/dfs/733-flood-fill';
+import { solve } from '../../leetcode/graph/dfs/130-surrounded-regions';
 
 export default function Graph() {
   return (
@@ -18,7 +18,7 @@ export default function Graph() {
             time="O(N), where N is the number of pixels in the image. We might process every pixel"
             space="O(N), the size of the implicit call stack when calling dfs."
             code={floodFill.toString()}
-            secondCode={solve.toString()}
+            //secondCode={solve.toString()}
           />
         </li>
       </ul>

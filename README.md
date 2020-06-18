@@ -74,8 +74,9 @@ created on 12/21/17
 * Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
 
-* Stack
-    * [Stack implementation: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
+* ### Stack implementation
+    * [Stack: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
+    * [Stack: use Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
     * [Stack implementation: use string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
 
 * Recursion
@@ -198,9 +199,9 @@ created on 12/21/17
 * ### Graph
     * [733. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/733-flood-fill.js)
 
-    | Approaches:                         | Time    | Space  |
-    | :---                                | :---    | :---   |
-    | DFS (recursion + visited condition) | O(N)    | 0(N)   |
+    | Approaches:                    | Time    | Space  |
+    | :---                           | :---    | :---   |
+    | DFS (recursion + visited flag) | O(N)    | 0(N)   |
 
 
 * Greedy

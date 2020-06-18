@@ -1,4 +1,9 @@
-// Stack implementation use an array
+/*
+Approach implementation of Stack via Array
+
+time: every operation takes constant time
+space: less wasted time in comparison with Linked list
+*/
 class Stack {
   constructor() {
     this.stack = [];
@@ -40,6 +45,9 @@ stack.push(3);
 stack.pop();
 stack.peek()
 //console.log('stack', stack);
+
+//const stackOfStrings = new Stack();
+
 
 export { Stack }
 
