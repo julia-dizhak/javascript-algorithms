@@ -195,8 +195,12 @@ created on 12/21/17
     | Recursion     | O(log n) / O(n)  | 0(h)   |
     | Iterative     | O(log n) / O(n)  | 0(1)   |
 
-* Graph
-    * [773. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/773-flood-fill.js)
+* ### Graph
+    * [733. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/733-flood-fill.js)
+
+    | Approaches:                         | Time    | Space  |
+    | :---                                | :---    | :---   |
+    | DFS (recursion + visited condition) | O(N)    | 0(N)   |
 
 
 * Greedy
