@@ -38,13 +38,14 @@ created on 12/21/17
     * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
     * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
 
-* Hash
+* ### Hash
     * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/two-sum.js)
 
     | Approaches:        | Time    | Space    |
     | :---               | :---    | :---     |
     | Brute force        | O(n^2)  | O(1)     |
-    | Hash / Map         | O(n)    | O(n)    |
+    | 2-pass Hash table  | O(n)    | O(n)     |
+    | 1-pass Hash table  | O(n)    | O(n)     |
 
 * Search: linear and binary
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
@@ -124,7 +125,7 @@ created on 12/21/17
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
 
-* Array
+* ### Array
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
     * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/26-remove-duplicates-from-sorted-array.js)
     * [540. Single element in sorted array (approach: Brute force, binary search, BS only on even indexes)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)

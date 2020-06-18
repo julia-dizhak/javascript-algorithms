@@ -1,6 +1,5 @@
 /*
-Ice Cream parlor
-
+Hackerrunk: Ice Cream parlor
 Leetcode
 1. Two sum
 easy
@@ -41,17 +40,24 @@ See Question [2. Two Sum II – Input array is sorted].
 /*
 Approach brute force
 
+Q. Are numbers are integer?
+Q. Could numbers be negative?
+
+Intuition
 Loop through each element x
 and find if there is another value that equals to target – x.
 
-runtime
-As finding another value requires looping through the rest of array,
-its runtime complexity is O(n2).
 
-space complexity is O(1)
+Time complexity
+As finding another value requires looping through the rest of array,
+its runtime complexity is O(n^2).
+
+Space complexity is O(1)
 */
+
 function twoSumBruteForce(arr, sum) {
   const len = arr.length;
+  if (len === 0) return [];
 
   for (let i = 0; i < len; i++) {
     for (let j = i + 1; j < len; j++) {
@@ -61,42 +67,63 @@ function twoSumBruteForce(arr, sum) {
     }
   }
 
-  throw new Error('No two sum solution');
+  // todo
+  // throw new Error('No two sum solution');
+  return [];
 }
 
-
 /*
-Approach Two-pass hash table
+Approach 2 Two-pass hash table
+Use Map
 
+To improve our run time complexity, we need a more efficient way
+to check if the complement exists in the array.
+If the complement exists, we need to look up its index.
+What is the best way to maintain a mapping of each element
+in the array to its index? A hash table.
 
+We reduce the look up time from O(n) to O(1) by trading space for speed.
+A hash table is built exactly for this purpose, it supports fast look up
+in near constant time. I say "near" because if a collision occurred,
+a look up could degenerate to O(n) time.
+But look up in hash table should be amortized O(1) time as long as
+the hash function was chosen carefully.
+
+A simple implementation uses two iterations.
+In the first iteration, we add each element's value and its index
+to the table. Then, in the second iteration we check if each element's
+complement (target - nums[i]) exists in the table.
+Beware that the complement must not be nums[i] itself!
+
+Complexity Analysis:
+Time complexity : O(n). We traverse the list containing n elements exactly
+twice. Since the hash table reduces the look up time to O(1),
+the time complexity is O(n).
+
+Space complexity: O(n). The extra space required depends on
+the number of items stored in the hash table,
+which stores exactly n elements.
 */
-function twoSum1(arr, sum) {
-  //if sum is 0
 
-  let map = {};
+function twoSumTwoPassHashes(arr, target) {
+  const len = arr.length;
+  if (len === 0) return [];
 
+  let map = new Map();
   for (let i = 0; i < arr.length; i++) {
-    map[arr[i]] = i
+    map.set(arr[i], i)
   }
 
   for (let i = 0; i < arr.length; i++) {
-    const complement = sum - arr[i];
-    // console.log('index', i);
-    // console.log('complement', complement);
-    //debugger
-    if (map[complement] != null) {
-      return [i, map[complement]]; // todo think about correct number
+    const complement = target - arr[i];
+    // Beware that the complement must not be nums[i] itself!
+    if (map.has(complement) && map.get(complement) !== i) {
+      return [i, map.get(complement)]
     }
   }
 
-  //console.log('hash', map)
-  //throw new Error('No two sum solution');
-  return []
+  return [];
 }
-
-//console.log('twoSum', twoSum1([3,2,4], 6)); // index 2, 4
-// console.log('twoSum', twoSum1([2, 7, 11, 15], 9)); // index 0,1
-
 
 /*
 Approach one-pass hash table
@@ -105,175 +132,54 @@ We could reduce the runtime complexity of looking up
 a value to O(1) using a hash map
 that maps a value to its index.
 
+It turns out we can do it in one-pass. While we iterate and inserting elements
+into the table, we also look back to check if current element's
+complement already exists in the table.
+If it exists, we have found a solution and return immediately.
+
 1 Create an object containing the key-value pairs of the element and its index,
 respectively.
 2 Iterate through an array. For currentElement, compute complement.
 
-runtime O(n) - linear time
+Time complexity: O(n). We traverse the list containing n elements
+only once. Each look up in the table costs only O(1) time.
+
+Space complexity: O(n). The extra space required depends on the number
+of items stored in the hash table, which stores at most n elements.
 */
 
 /*
  * @param {number[]} arr
  * @param {number} target
  * @return {number[]}
- */
+*/
+
+// Example
+// { 2: 0, 7: 1, 11: 2, 15 : 2}
+// target 9
 function twoSum(arr, target) {
   const len = arr.length;
-  //if (len === 0 ) throw new Error('No two sum solution');
-  const previousValues = {};
+  if (len === 0) return [];
 
-  for (let i = 0; i < len; i++) {
-    const currentElement = arr[i];
-    const complement = target - currentElement; // needed
-    const index2 = previousValues[complement];
-    if (index2 != null) {
+  let hash = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    const complement = target - arr[i]; // is 7
+    const index2 = hash[complement];
+    if (index2 !== undefined) {
       return [index2, i]
     } else {
-      previousValues[currentElement] = i
+      hash[arr[i]] = i;
     }
   }
 
   // or through an exception
-  //throw new Error('No two sum solution');
+  // throw new Error('No two sum solution');
   return [];
-};
-
-// todo
-/*
-approach use Map
-*/
-const twoSumUsingMap = function(arr, target) {
-  const len = arr.length;
-  let map = new Map();
-
-  for (var i = 0; i < len; i++) {
-    let complement = target - arr[i];
-    if (map.has(complement)) {
-      return [map.get(complement), i]
-    }
-    map.set(arr[i], i);
-  }
-
-  return false
 }
 
-
-/*
-
-Leetcode
-167
-easy
-
-Given an array of integers that is already sorted in ascending order,
-find two numbers such that they add up to a specific target number.
-
-The function twoSum should return indices of the two numbers
-such that they add up to the target, where index1 must be less than index2.
-
-Note:
-
-Your returned answers (both index1 and index2) are not zero-based.
-You may assume that each input would have exactly one solution
-and you may not use the same element twice.
-Example:
-
-Input: numbers = [2,7,11,15], target = 9
-Output: [1,2]
-Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
-
-todo
-1 Take an arr
-2 sort all the items
-3 just do a binary search there
-
-follow up design two sum data structure
-*/
-
-// todo
-// 2 pointers
-// can use the same approach as with hash, space is O(n)
-
-// todo check
-function findValue(nums, target, start = 0, end = nums.length - 1) {
-  while (start <= end) {
-    let mid = Math.floor(start + (end - start)/2);
-    if (target === nums[mid]) return mid;
-    else if (target < nums[mid]) {
-      end = mid - 1;
-    } else {
-      start = mid + 1;
-    }
-  }
-  return (start === end && nums[start] === target) ? start : -1;
+export {
+  twoSum,
+  twoSumBruteForce,
+  twoSumTwoPassHashes
 }
-
-function twoSumBinarySearch(arr, target) {
-  for (let i = 0; i < arr.length; i++) {
-    const complement = target - arr[i];
-    // bsRecursive(arr, target, start, end)
-    // todo rename stop to end
-    const j = findValue(arr, complement, i+1, arr.length);
-    if (j !== -1) {
-      return [i+1, j+1]
-    }
-  }
-  throw new Error('No two sum solution')
-}
-
-//console.log('twoSumBinarySearch', twoSumBinarySearch([2,7,11,15], 9))
-//twoSumBinarySearch([2, 7, 11, 15], 9);
-//twoSumBinarySearch([2,3,4,3,6,7], 6);
-
-/*
-Approach 2 pointers
-
-Let’s assume we have two indices pointing to the i-th and j-th elements,
-Ai and Aj respectively. The sum of Ai and Aj could only fall into one of these three possibilities:
-
-1. Ai + Aj > target. Increasing i isn’t going to help us, as it makes the sum even
-bigger. Therefore we should decrement j.
-
-2. Ai + Aj < target. Decreasing j isn’t going to help us, as it makes the sum even
-smaller. Therefore we should increment i.
-
-3. Ai + Aj == target. We have found the answer.
-
-*/
-
-// [2,7,11,15], sum is 9
-// 2 + 15  - 1 iteration
-// 2 + 11 - 2
-// 2 + 7
-function twoSumTwoPointers(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
-
-  while (left < right) {
-    let sum = nums[left] + nums[right];
-    if (sum < target) {
-      left++;
-    } else if (sum > target) {
-      right--;
-    } else {
-      // becasue the indexes are not zero base, check thorugh leetcode
-      //return [left+1, right+1]
-      return [left, right]
-    }
-  }
-
-  throw new Error('No two sum solution')
-}
-
-//https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/discuss/51287/JavaScript-simple-solution
-// var twoSumTwoPointers = function(numbers, target) {
-//   var l=numbers.length, i=0, j=l-1;
-//   while (numbers[i]+numbers[j] !== target) {
-//     numbers[i]+numbers[j] < target ? i++ : j--;
-//   }
-//   return [i+1, j+1];
-// };
-
-console.log('twoSumTwoPointers', twoSumTwoPointers([2,7,11,15], 9))
-//console.log('twoSumTwoPointers', twoSumTwoPointers([2,7,11,15], 13))
-
-export { twoSum, twoSumBruteForce, twoSumUsingMap , twoSum1 }
