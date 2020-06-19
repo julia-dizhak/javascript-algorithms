@@ -20,7 +20,7 @@ export default function StackQueue() {
         <li>
           <Details
             id="stack-use-array"
-            question="Stack implementation use array as a storage"
+            question="Stack via Array"
             code={StackArr.toString()}
             time='every operation takes constant time'
             space='less wasted space'
@@ -29,7 +29,7 @@ export default function StackQueue() {
         <li>
           <Details
             id="stack-use-linked-list"
-            question="Stack implementation use Linked List"
+            question="Stack via Linked List"
             code={StackLinkedList.toString()}
             time='for .push and pop() takes constant time'
             space='need space for pointers'
@@ -38,14 +38,14 @@ export default function StackQueue() {
         <li>
           <Details
             id="stack-using-string"
-            question="Stack implementation use string"
+            question="Stack via String"
             code={Stack.toString()}
           />
         </li>
         <li>
           <Details
             id="stack-using-object"
-            question="Stack implementation using object"
+            question="Stack via Object"
             code={StackObj.toString()}
           />
         </li>

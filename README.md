@@ -75,9 +75,14 @@ created on 12/21/17
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
 
 * ### Stack implementation
-    * [Stack: use array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
-    * [Stack: use Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
-    * [Stack implementation: use string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
+    * [Stack use Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
+    * [Stack use Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
+
+    | Complexity:        | Time         | Space   |
+    | :---               | :---         | :---    |
+    | All operations     | O(1)         | 0(N)?   |
+
+    * [Stack use String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
 
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)

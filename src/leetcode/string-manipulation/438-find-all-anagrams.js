@@ -46,12 +46,11 @@
 */
 
 
-
-
 /*
   Approach Sliding Window + 2 counter HashMaps
 
-  Let's start from the simplest approach: sliding window + two counter hashmaps letter -> its count.
+  Let's start from the simplest approach: sliding window + two counter hashmaps
+  letter -> its count.
   The first hashmap is a reference counter pCount for string p,
   and the second one is a counter sCount for string in the sliding window.
 
@@ -59,8 +58,8 @@
   recompute the second hashmap sCount in a constant time
   and compare it with the first hashmap pCount.
 
-  If sCount == pCount, then the string in the sliding window is a permutation of string p,
-  and one could add its start position in the output list.
+  If sCount == pCount, then the string in the sliding window is a permutation
+  of string p, and one could add its start position in the output list.
 
   Algorithm
   - Initialize 2 hashes: build reference counter pCount for string p, counter sCount for string s
