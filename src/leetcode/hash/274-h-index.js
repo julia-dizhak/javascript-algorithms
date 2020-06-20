@@ -67,4 +67,7 @@ This is a follow up problem to H-Index, where citations is now guaranteed to be 
 Could you solve it in logarithmic time complexity?
 */
 
-
+// todo https://github.com/bobwei/algorithms/blob/master/src/leetcode/h-index-ii/index.js
+// wiki https://en.wikipedia.org/wiki/H-index
+// https://leetcode.com/problems/h-index-ii/discuss/71063/Standard-binary-search
+// https://leetcode.com/problems/h-index-ii/discuss/71124/Java-binary-search-simple-and-clean

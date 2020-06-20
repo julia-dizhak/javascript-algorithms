@@ -91,54 +91,91 @@ function allUnique(s, start, end) {
 /*
 Approach sliding window
 
-we are going to have 2 pointers, start from the beginning
-one stay at the beginning
-and one pointer keep move and make sure that none of characters are the same
-a is new, b is new, c is new - we are going to add it to the hash set
-when we see a - get rid of that a
-keep track of the longest window
+Algorithm
+The naive approach is very straightforward. But it is too slow.
+So how can we optimize it?
 
-*/
+In the naive approaches, we repeatedly check a substring to see if it has
+duplicate character. But it is unnecessary. If a substring Sij
+from index i to j−1 is already checked to have no duplicate characters.
+We only need to check if S[j] is already in the substring Sij.
+
+To check if a character is already in the substring, we can scan the substring,
+which leads to an O(n^2) algorithm. But we can do better.
+
+By using HashSet as a sliding window, checking if a character in the current
+can be done in O(1).
+
+A sliding window is an abstract concept commonly used in array/string problems.
+A window is a range of elements in the array/string which usually defined
+by the start and end indices, i.e. [i, j) (left-closed, right-open).
+A sliding window is a window "slides" its two boundaries to the certain direction.
+For example, if we slide [i,j) to the right by 1 element, then it becomes [i+1,j+1)
+(left-closed, right-open).
+
+Back to our problem. We use HashSet to store the characters in current
+window [i,j) (j = i initially). Then we slide the index j to the right.
+If it is not in the HashSet, we slide j further. Doing so until s[j]
+is already in the HashSet. At this point, we found the maximum size
+of substrings without duplicate characters start with index i.
+If we do this for all i, we get our answer.
+
+Complexity Analysis
+Time complexity: O(2n)=O(n). In the worst case each character will be visited
+twice by i and j.
+
+Space complexity: O(min(m,n)). Same as the previous approach.
+We need O(k) space for the sliding window, where k is the size of the Set.
+The size of the Set is upper bounded by the size of the string n and the size
+of the charset/alphabet m.
+​*/
 
 /**
  * @param {string} s
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
+  const n = s.length;
   let i = 0;
-  let j = 0; // second pointer, expand the window, make sure that everything is distinct
+  let j = 0; // fast pointer, expand the window, make sure that everything is distinct
   let max = 0;
-  let hash = {};
+  let map = {};
 
-  // for (let i = 0; i < s.length; i++) {
-  //   //debugger
-  //   if (hash[s[i]] === undefined) {
-  //     hash[s[i]] = (hash[s[i]] || 0) + 1;
-  //     j++;
-  //   } else {
-  //     //j = 0
-  //   }
-  // }
-
-  // console.log('hash', hash)
-
-  // return j;
-
-  while (i <= s.length) {
-    if (hash[s[i]] === undefined) {
-      hash[s[i]] = (hash[s[i]] || 0) + 1;
+  while (j < n) {
+    if (map[s[j]]) {
+      // delete from the head by using a slow pointer i
+      // until we can put character j to the hash set
+      map[s[i]] = null;
       i++;
-      j++;
     } else {
-
+      // add character to hash and move j forward
+      map[s[j]] = true;
+      j++;
+      // update max length
+      max = Math.max(max, j - i);
     }
   }
-};
+  return max;
+}
 
-// todo https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/1812/Share-my-Java-solution-using-HashSet
+// todo use Map
+// var lengthOfLongestSubstring = function(s) {
+//   const map = new Map();
+//   let l = 0;
 
-console.log('lengthOfLongestSubstring', lengthOfLongestSubstringBruteForce('abcabcbb'))
-//console.log('lengthOfLongestSubstring', lengthOfLongestSubstring('abcbabcbb'))
+//   for (let i = 0, j = 0; i < s.length; i++) {
+//     if (map.has(s[i])) {
+//       j = Math.max(map.get(s[i]), j);
+//     }
+
+//     l = Math.max(l, i - j + 1);
+//     map.set(s[i], i + 1);
+//   }
+
+//   return l;
+// };
+
+//console.log('lengthOfLongestSubstring', lengthOfLongestSubstring('abcabcbb'))
 
 export {
   lengthOfLongestSubstring,

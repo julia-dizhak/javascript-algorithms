@@ -29,25 +29,62 @@ class Stack {
     if (this.isEmpty()) {
       throw new Error('stack is empty');
     }
-    return this.stack.pop()
+    return this.stack.pop();
   }
 
   peek() {
     // get the top element from the stack
-    return this.stack[this.stack.length - 1]
+    return this.stack[this.stack.length - 1];
   }
 }
 
+/*
+Implementation of Stack use Array
+variant 2
+*/
+
+class StackVariant2 {
+  constructor() {
+    this.stack = [];
+    this.top = 0;
+  }
+
+  length() {
+    return this.top;
+  }
+
+  push(element) {
+    this.stack[this.top++] = element;
+  }
+
+  pop() {
+    return this.stack[--this.top];
+  }
+
+  peek() {
+    return this.stack[this.top - 1];
+  }
+
+  clear() {
+    this.top = 0;
+  }
+
+}
+
+// test
 const stack = new Stack();
+//const stack2 = new StackVariant2();
 stack.push(1);
 stack.push(2);
 stack.push(3);
+stack.push(1);
+stack.pop();
 stack.pop();
 stack.peek()
-//console.log('stack', stack);
 
 //const stackOfStrings = new Stack();
 
-
-export { Stack }
-
+export {
+  Stack,
+  StackVariant2
+}

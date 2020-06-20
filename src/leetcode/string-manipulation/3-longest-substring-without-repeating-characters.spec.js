@@ -1,12 +1,12 @@
 import {
-  //lengthOfLongestSubstring,
-  lengthOfLongestSubstringBruteForce as lengthOfLongestSubstring
+  lengthOfLongestSubstring,
+  // lengthOfLongestSubstringBruteForce as lengthOfLongestSubstring
 } from './3-longest-substring-without-repeating-characters';
 
 describe('lengthOfLongestSubstring test case', () => {
-  // it('str is null', () => {
-
-  // });
+  it('str is null', () => {
+    expect(lengthOfLongestSubstring('')).toEqual(0);
+  });
 
   it('str consist longest substring', () => {
     expect(lengthOfLongestSubstring('abcabcbb')).toEqual(3);

@@ -1,4 +1,7 @@
-import { Stack } from './stack-use-array';
+import {
+  Stack
+  //StackVariant2 as Stack
+ } from './stack-use-array';
 
 describe('stack implemented by an array test case', () => {
   let book;

@@ -24,8 +24,6 @@ In this scenario, how would you change your code?
 // good example of code https://leetcode.com/problems/is-subsequence/discuss/87322/HashMap-%2B-Binary-Search-solution-for-the-follow-up-question
 // solution follow up https://gist.github.com/naresh1406/9d52ef665e9296af639dc1e831a67b55
 
-
-
 /*
 Approach 2 pointers
 
@@ -79,7 +77,6 @@ In our worst case it would be O(n)
 function isSubsequenceRecursion(s, t) {
   // base case
   if (s === null || s.length === 0) return true;
-
 
   for (let i = 0; i < t.length; i++) {
     if (t.charAt(i) === s.charAt(0)) {

@@ -123,6 +123,13 @@ created on 12/21/17
     | Regex              | O(1)     | 0(1)   |
     | Divide and Conquer | O(n)     | 0(1)   |
 
+    * [3. Longest substring without repeating characters](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/3-longest-substring-without-repeating-characters.js)
+
+    | Approaches:            | Time         | Space        |
+    | :---                   | :---         | :---         |
+    | Brute force            | O(n^3)       | O(min(n,m))  |
+    | Sliding window + Hash  | O(2n)=O(n)   | O(min(n,m))  |
+
 
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
@@ -188,6 +195,13 @@ created on 12/21/17
 
 * Stack
     * [155. Min Stack (2 stacks, improved 2 stacks and stack of value (minimum pairs))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
+
+    | Approaches:           | Time     | Space  |
+    | :---                  | :---     | :---   |
+    | 2 Stacks              | O(1)     | 0(n)   |
+    | 1 Stack + min pairs   | O(1)     | O(n)   |
+    | Improved 2 Stacks     | O(1)     | O(n)   |
+
     * [716 Max Stack: 2 stacks approach](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/716-max-stack.js)
 
 * Tree

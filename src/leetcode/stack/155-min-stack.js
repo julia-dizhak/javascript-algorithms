@@ -1,48 +1,51 @@
 /*
-  Leetcode
-  easy
-  155 Implement a min Stack
+Leetcode
+easy
+155 Implement a min Stack
 
-  Design a stack that supports push, pop, top,
-  and retrieving the minimum element in constant time.
-  push(x) -- Push element x onto stack.
-  pop() -- Removes the element on top of the stack.
-  top() -- Get the top element.
-  getMin() -- Retrieve the minimum element in the stack.
+Design a stack that supports push, pop, top,
+and retrieving the minimum element in constant time.
+push(x) - Push element x onto stack.
+pop() - Removes the element on top of the stack.
+top() - Get the top element.
+getMin() - Retrieve the minimum element in the stack.
 
-  Example 1:
-  Input
-  ["MinStack","push","push","push","getMin","pop","top","getMin"]
-  [[],[-2],[0],[-3],[],[],[],[]]
+Example 1:
+Input
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
 
-  Output
-  [null,null,null,null,-3,null,0,-2]
+Output
+[null,null,null,null,-3,null,0,-2]
 
-  Explanation
-  MinStack minStack = new MinStack();
-  minStack.push(-2);
-  minStack.push(0);
-  minStack.push(-3);
-  minStack.getMin(); // return -3
-  minStack.pop();
-  minStack.top();    // return 0
-  minStack.getMin(); // return -2
+Explanation
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); // return -3
+minStack.pop();
+minStack.top();    // return 0
+minStack.getMin(); // return -2
 
-  Constraints:
-  Methods pop, top and getMin operations will always be called on non-empty stacks
+Constraints:
+Methods pop, top and getMin operations will always be called on non-empty stacks
 
-  Overview
-  Few things to keep in mind before we get started:
+Overview
+Few things to keep in mind before we get started:
 
-  Make sure that you read the question carefully.
-  - The getMin(...) operation only needs to return the value of the minimum,
-  it does not remove items from the MinStack.
+Make sure that you read the question carefully.
+- The getMin(...) operation only needs to return the value of the minimum,
+it does not remove items from the MinStack.
 
-  - We're told that all the MinStack operations must run in constant time, i.e. O(1) time
+- We're told that all the MinStack operations must run in constant time, i.e. O(1) time
 
-  - What if you are told to pop(...), getMin(...), or top(...) while there are no values on your MinStack?
-  In constraints, the question say that methods pop, top and getMin operations will always be called on non-empty stacks.
-  So you can assume these cases won't happen, or that you should return -1 or throw an exception if they do.
+- What if you are told to pop(...), getMin(...), or top(...)
+while there are no values on your MinStack?
+In constraints, the question say that methods pop, top and getMin operations
+will always be called on non-empty stacks.
+So you can assume these cases won't happen, or that you should return -1
+or throw an exception if they do.
 */
 
 
@@ -56,10 +59,12 @@
   We'll call this second Stack the "min-tracker" Stack for clarity.
 
   The push(...) method: items should always be pushed onto the main Stack,
-  but they should only be pushed onto the min-tracker Stack if they are smaller than the current top of it.
+  but they should only be pushed onto the min-tracker Stack if they are smaller
+  than the current top of it.
+
   There's one potential pitfall.
-  Instead of only pushing numbers to the min-tracker Stack if they are less than the current minimum,
-  we should push them if they are less than or equal to it.
+  Instead of only pushing numbers to the min-tracker Stack if they are less than
+  the current minimum, we should push them if they are less than or equal to it.
   While this means that some duplicates are added to the min-tracker Stack.
 
   top(...) returns (but doesn't remove) the top value of the main Stack,
@@ -67,8 +72,8 @@
 
   This leaves us still needing to implement MinStack's pop(...) method.
   The value we actually need to pop is always on the top of the main underlying Stack.
-  However, if we simply popped it from there,
-  the min-tracker Stack would become incorrect once its top value had been removed from the main Stack.
+  However, if we simply popped it from there, the min-tracker Stack would become
+  incorrect once its top value had been removed from the main Stack.
 
   Complexity analysis
 
@@ -76,7 +81,8 @@
   O(1) for all operations
   push(...): Checking the top of a Stack, comparing numbers, and pushing to the top of a Stack (or adding to the end of an Array or List) are all O(1) operations.
 
-  pop(...): Popping from a Stack (or removing from the end of an Array, or List) is an O(1) operation.
+  pop(...): Popping from a Stack (or removing from the end of an Array, or List)
+  is an O(1) operation.
 
   top(...): Looking at the top of a Stack is an O(1) operation.
 
@@ -85,7 +91,8 @@
   and instead had to search for it each time, the overall time complexity would have been O(n).
 
   space complexity
-  Worst case is that all the operations are push. In this case, there will be O(2n) = O(n) space used.
+  Worst case is that all the operations are push.
+  In this case, there will be O(2n) = O(n) space used.
 */
 class MinStack {
   /**
@@ -137,15 +144,15 @@ class MinStack {
 }
 
 /*
-  Approach: use one stack only: stack of value / Minimum pairs
+Approach: use one stack only: stack of value / Minimum pairs
 
-  This approach required storing two values in each slot of the underlying Stack.
-  Sometimes though, the minimum values are very repetitive.
-  Do we actually need to store the same minimum value over and over again?
-  We can solve it by using 2 Stack (see solution above)
+This approach required storing two values in each slot of the underlying Stack.
+Sometimes though, the minimum values are very repetitive.
+Do we actually need to store the same minimum value over and over again?
+We can solve it by using 2 Stack (see solution above)
 
-  time is O(1)
-  space is O(n)
+time is O(1)
+space is O(n)
 */
 
 class MinStackMinPairs {
