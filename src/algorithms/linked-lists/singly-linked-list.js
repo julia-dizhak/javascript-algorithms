@@ -109,6 +109,7 @@ class LinkedList {
     return null
   }
 
+
   /**
    * insert a node
    * The easiest place to insert a new node in a linked list is at the beginning
@@ -149,12 +150,13 @@ class LinkedList {
       // (the tail node will initially be pointing at null),
       // and update the tail's next pointer.
       let tail = this.head; // or name as lastNode
+      // keep going down until we find the last node in the list
       while (tail.next) {
         tail = tail.next
       }
       tail.next = newNode;
     }
-    this.size ++;
+    this.size++;
   }
 
   /**

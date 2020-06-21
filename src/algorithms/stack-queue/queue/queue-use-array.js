@@ -1,3 +1,8 @@
+/*
+
+time complexity
+space complexity
+*/
 class Queue {
   constructor() {
     this.queue = [];
