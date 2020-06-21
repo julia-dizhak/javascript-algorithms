@@ -71,18 +71,28 @@ created on 12/21/17
 | Merge sort      | O(n log n)  | Ω(n log n) | O(n)      |
 | Quick sort      | O(n log n)  | Ω(n log n) | O(log n)  |
 
-* Linked Lists
+* ### Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
 
 * ### Stack implementation
-    * [Stack use Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
-    * [Stack use Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
+    * [Stack via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
+
+    * [Stack via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
 
     | Complexity:        | Time         | Space   |
     | :---               | :---         | :---    |
     | All operations     | O(1)         | 0(N)?   |
 
-    * [Stack use String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
+    * [Stack via String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
+
+* ### Queue implementation
+    * [Queue via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/queue/queue-use-array.js)
+
+    * [Queue via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/queue/queue-use-linked-list.js)
+
+    | Complexity:        | Time         | Space   |
+    | :---               | :---         | :---    |
+    | All operations     | O(?)         | 0(?)   |
 
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
@@ -194,7 +204,7 @@ created on 12/21/17
     * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-lists/singly-linked-list/237-delete-node-in-linked-list.js)
 
 * Stack
-    * [155. Min Stack (2 stacks, improved 2 stacks and stack of value (minimum pairs))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
+    * [155. Min Stack](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
 
     | Approaches:           | Time     | Space  |
     | :---                  | :---     | :---   |
@@ -202,7 +212,12 @@ created on 12/21/17
     | 1 Stack + min pairs   | O(1)     | O(n)   |
     | Improved 2 Stacks     | O(1)     | O(n)   |
 
-    * [716 Max Stack: 2 stacks approach](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/716-max-stack.js)
+    * [716. Max Stack](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/716-max-stack.js)
+
+    | Approach: 2 Stacks    | Time     | Space  |
+    | :---                  | :---     | :---   |
+    | popMax()              | O(n)     | 0(n)   |
+    | other operations      | O(1)     | O(n)   |
 
 * Tree
     * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)

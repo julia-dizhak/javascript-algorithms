@@ -45,9 +45,8 @@ class ListNode {
 When an instance of the LinkedList class is formed,
 the constructor function will be called to initialize the object
 with a property, head.
-The head pointer is assigned a value of null
-because when a linked list object is initially created
-it does not contain any nodes.
+The head pointer is assigned a value of null because when a linked list object
+is initially created it does not contain any nodes.
 It is when we add our first node to the linked list,
 we will assign it to the head pointer.
 */
@@ -57,12 +56,12 @@ class LinkedList {
     this.size = 0;
   }
 
-/**
- * Get the value of the index-th node in the linked list.
- * If the index is invalid, return -1.
- * @param {number} index
- * @return {number}
- */
+  /**
+  * Get the value of the index-th node in the linked list.
+  * If the index is invalid, return -1.
+  * @param {number} index
+  * @return {number}
+  */
   get(index) {
     // index is outside the bounds of the list
     if (index < 0 || index > this.size - 1 || this.size === 0) {
@@ -110,7 +109,6 @@ class LinkedList {
     return null
   }
 
-  // insert a node
   /**
    * insert a node
    * The easiest place to insert a new node in a linked list is at the beginning

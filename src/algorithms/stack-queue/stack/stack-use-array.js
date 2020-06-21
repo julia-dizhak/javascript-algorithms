@@ -68,7 +68,6 @@ class StackVariant2 {
   clear() {
     this.top = 0;
   }
-
 }
 
 // test

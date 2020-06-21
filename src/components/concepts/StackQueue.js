@@ -5,7 +5,9 @@ import { Stack } from '../../algorithms/stack-queue/stack/stack-use-string';
 import { Stack as StackArr } from '../../algorithms/stack-queue/stack/stack-use-array';
 import { Stack as StackLinkedList } from '../../algorithms/stack-queue/stack/stack-use-linked-list';
 import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
-import { Queue } from '../../algorithms/stack-queue/queue/queue-using-object';
+
+import { Queue as QueueArray } from '../../algorithms/stack-queue/queue/queue-use-array';
+import { Queue as QueueLinkedList } from '../../algorithms/stack-queue/queue/queue-use-linked-list';
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 import { MaxStack } from '../../leetcode/stack/716-max-stack';
@@ -55,9 +57,16 @@ export default function StackQueue() {
       <ul>
         <li>
           <Details
-            id="queue-using-object"
-            question="Queue implementation using object"
-            code={Queue.toString()}
+            id="queue-use-array"
+            question="Queue via array"
+            code={QueueArray.toString()}
+          />
+        </li>
+        <li>
+          <Details
+            id="queue-use-linked-list"
+            question="Queue via linked list"
+            code={QueueLinkedList.toString()}
           />
         </li>
       </ul>

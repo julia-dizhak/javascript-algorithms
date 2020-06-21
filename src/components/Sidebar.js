@@ -48,17 +48,20 @@ function Sidebar() {
               <li><a href="#singly-linked-list">Singly-linked List</a></li>
             </ul>
           </li>
+
           <li className="item">
             <header className="title">Stack and Queue</header>
             <ul className="subList">
-              <li><a href="#stack-use-array">Stack use array</a></li>
+              <li><a href="#stack-use-array">Stack use Array</a></li>
               <li><a href="#stack-use-linked-list">Stack use Linked List</a></li>
-              <li><a href="#stack-using-string">Stack use strings</a></li>
-              <li><a href="#stack-using-object">Stack implementation using object</a></li>
+              <li><a href="#stack-using-string">Stack use Strings</a></li>
+              {/* <li><a href="#stack-using-object">Stack implementation using object</a></li> */}
 
-              <li><a href="#queue-using-object">Queue implementation using object</a></li>
+              <li><a href="#queue-use-array">Queue via Array</a></li>
+              <li><a href="#queue-use-linked-lost">Queue via Linked list</a></li>
             </ul>
           </li>
+          
           <li className="item">
             <header className="title"><a href="#binary-search-tree">Tree</a></header>
             <ul className="subList">

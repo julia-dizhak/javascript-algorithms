@@ -12,7 +12,7 @@ import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/s
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-find-all-anagrams';
 
-import { lengthOfLongestSubstring } from '../../leetcode/string-manipulation/3-longest-substring-without-repeating-characters';
+import { getPermutation } from '../../leetcode/backtracking/60-permutation-sequence';
 import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
 
@@ -26,7 +26,7 @@ export default function StringManipulation() {
           <Details
             id="test1"
             question="test"
-            code={lengthOfLongestSubstring.toString()}
+            code={getPermutation.toString()}
           />
         </li>
 

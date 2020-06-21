@@ -35,23 +35,23 @@
 */
 
 /*
-  Approach Two Stacks:
+Approach Two Stacks
 
-  For peekMax, we remember the largest value we've seen on the side.
-  For example if we add [2, 1, 5, 3, 9], we'll remember [2, 2, 5, 5, 9].
+For peekMax, we remember the largest value we've seen on the side.
+For example if we add [2, 1, 5, 3, 9, 7], we'll remember [2, 2, 5, 5, 9, 9].
 
-  This works seamlessly with pop operations, and also it's easy to compute:
-  it's just the maximum of the element we are adding and the previous maximum.
+This works seamlessly with pop operations, and also it's easy to compute:
+it's just the maximum of the element we are adding and the previous maximum.
 
-  For popMax, we know what the current maximum (peekMax) is.
-  We can pop until we find that maximum, then push the popped elements back on the stack.
+For popMax, we know what the current maximum (peekMax) is.
+We can pop until we find that maximum, then push the popped elements back on
+the stack.
 
-  Complexity Analysis
+Complexity Analysis
+Time Complexity: O(N) for the popMax operation, and O(1) for the other operations,
+where N is the number of operations performed.
 
-  Time Complexity: O(N) for the popMax operation, and O(1) for the other operations,
-  where N is the number of operations performed.
-
-  Space Complexity: O(N), the maximum size of the stack.
+Space Complexity: O(N), the maximum size of the stack.
 */
 
 class MaxStack {
@@ -102,6 +102,15 @@ class MaxStack {
     return this.maxStack[this.maxStack.length - 1];
   }
 }
+
+const max = new MaxStack();
+max.push(5);
+max.push(3);
+max.push(6);
+max.push(5);
+max.push(3);
+max.popMax()
+//console.log('max', max)
 
 /*
   Todo
