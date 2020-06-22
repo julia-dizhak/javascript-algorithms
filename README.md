@@ -90,10 +90,10 @@ created on 12/21/17
 
     * [Queue via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/queue/queue-use-linked-list.js)
 
-    | Complexity Time:     | enqueue      | dequeue   |
-    | :---                 | :---         | :---      |
-    | 1 Pointer (head)     | O(n)         | 0(1)      |
-    | All operations       | O(?)         | 0(?)      |
+    | Complexity Time:            | enqueue      | dequeue   |
+    | :---                        | :---         | :---      |
+    | 1 Pointer (head)            | O(n)         | 0(1)      |
+    | 2 Pointers (head and tail)  | O(1)         | 0(1)      |
 
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)

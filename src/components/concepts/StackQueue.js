@@ -7,7 +7,7 @@ import { Stack as StackLinkedList } from '../../algorithms/stack-queue/stack/sta
 import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
 
 import { Queue as QueueArray } from '../../algorithms/stack-queue/queue/queue-use-array';
-import { Queue as QueueLinkedList } from '../../algorithms/stack-queue/queue/queue-use-linked-list';
+import { Queue as QueueLinkedList, QueueUse2Pointers } from '../../algorithms/stack-queue/queue/queue-use-linked-list';
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 import { MaxStack } from '../../leetcode/stack/716-max-stack';
@@ -73,8 +73,9 @@ export default function StackQueue() {
         <li>
           <Details
             id="queue-use-linked-list"
-            question="Queue via linked list"
+            question="Queue via linked list (1 pointer and 2 pointers)"
             code={QueueLinkedList.toString()}
+            secondCode={QueueUse2Pointers.toString()}
           />
         </li>
       </ul>

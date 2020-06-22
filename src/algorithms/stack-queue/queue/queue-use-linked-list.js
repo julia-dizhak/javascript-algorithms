@@ -83,7 +83,73 @@ class Queue {
 /*
 Implementation with 2 pointers
 
-time complexity
+time complexity:
+enqueue - O(1) because we have tail pointer
+dequeue - O(1)
 */
 
-export { Queue }
+class QueueUse2Pointers {
+  constructor() {
+    this.head = null; // link to the first node
+    this.tail = null; // link to the last node
+    this.length = 0;
+  }
+
+  isEmpty() {
+    return this.length === 0;
+  }
+
+  getHead() {
+    return this.head.val;
+  }
+
+  getLength() {
+    return this.length;
+  }
+
+  enqueue(val) {
+    let newNode = new ListNode(val);
+    if (!this.head) {
+      this.head = newNode; // the created Node is head
+      // also the created Node is a tail in Queue because it is single
+      this.tail = newNode;
+    } else {
+      // inserts the created node after the tail
+      this.tail.next = newNode;
+      // now created Node is a tail
+      this.tail = newNode;
+    }
+    this.length++;
+  }
+
+  dequeue() {
+    if (!this.head) return 'Queue is empty!';
+    const current = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return current.val;
+  }
+
+  peek() {
+    if (!this.head) return 'Queue is empty!';
+    return this.head.val;
+  }
+}
+
+// tests
+// const persons = new Queue();
+// persons.enqueue('first');
+// persons.enqueue('second');
+// persons.enqueue('third');
+// persons.dequeue();
+// persons.dequeue();
+// persons.dequeue();
+// persons.print();
+//console.log('Queue', persons)
+//const personsJson = JSON.parse(JSON.stringify(persons));
+//console.log('personsJson', personsJson);
+
+export {
+  Queue,
+  QueueUse2Pointers
+}
