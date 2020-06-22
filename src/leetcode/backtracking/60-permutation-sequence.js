@@ -40,7 +40,7 @@ But that's can take n! time complexity
 
 
 /*
-Approach
+Approach Math
 
 we now it's sorted.
 
@@ -138,7 +138,7 @@ The complexity is actually O(n^2), since remove in an arrayList will take O(n) c
  * @return {string}
  */
 var getPermutation = function(n, k) {
-  let factorial = [];
+  let factorial = new Array(n+1);
   let nums = [];
   // create an array of factorial lookup
   let sum = 1;
@@ -160,35 +160,36 @@ var getPermutation = function(n, k) {
   // numbers = {1, 2, 3} if n =3
 
   // because starts from 0
-  //k--;
+  k--;
 
   let res = '';
-  // for (let i = 1; i <= n; i++) {
-  //   //debugger
-  //   let index = Math.ceil(k / factorial[n-i]); // decide to use which permutation set
-  //   res += nums[index];
-  //   // remove index
-  //   // The splice() method changes the contents of an array by removing or
-  //   // replacing existing elements and/or adding new elements in place.
-  //   if (index > -1) {
-  //     nums.splice(index, 1);
-  //   }
+  for (let i = 1; i <= n; i++) {
+    let index = Math.floor(k / factorial[n-i]); // decide to use which permutation set
+    res += nums[index];
+    // remove index
+    // The splice() method changes the contents of an array by removing or
+    // replacing existing elements and/or adding new elements in place.
+    if (index > -1) {
+      nums.splice(index, 1);
+    }
 
-  //   k -= index * factorial[n-i]; //
+    k -= index * factorial[n-i]; //
+  }
+
+  // for (let i = n; i>0; i--) {
+  //   let index = Math.ceil(k / factorial[i - 1]); // decide to use which permutation set
+  //   //debugger;
+  //   // index 2, index 2, index 1, index 1
+  //   res += nums[index - 1];
+  //   nums.splice(index - 1, 1);
+  //   k -= (factorial[i-1] * (index - 1)); // k = 3, k = 1, k = 1, k = 1
   // }
-
-  for (let i=n; i>0; i--) {
-    let index = Math.ceil(k / factorial[i - 1]); // decide to use which permutation set
-    res += nums[index - 1];
-    nums.splice(index - 1, 1);
-    k -= (factorial[i-1] * (index - 1));
-}
 
 
   return res;
 };
 
-// todo 
+// todo
 // var getPermutation = function(n, k) {
 //   var fact=[];
 //   var l=[];

@@ -29,9 +29,20 @@ class Queue {
   }
 
   peek() {
+    if (this.isEmpty()) {
+      throw new Error('queue is empty');
+    }
     return this.queue[0];
   }
 }
+
+// test
+const queue = new Queue();
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.dequeue();
+// console.log('queue', queue)
 
 export {
   Queue

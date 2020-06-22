@@ -11,6 +11,7 @@ import { Queue as QueueLinkedList } from '../../algorithms/stack-queue/queue/que
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 import { MaxStack } from '../../leetcode/stack/716-max-stack';
+import { CircularQueue } from '../../algorithms/stack-queue/queue/circular-queue';
 
 export default function StackQueue() {
   return (
@@ -19,6 +20,13 @@ export default function StackQueue() {
 
       <h3>Stack implementations</h3>
       <ul>
+        <li>
+          <Details
+            id=""
+            question="test"
+            code={CircularQueue.toString()}
+          />
+        </li>
         <li>
           <Details
             id="stack-use-array"

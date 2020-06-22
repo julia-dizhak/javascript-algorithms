@@ -6,13 +6,28 @@ class ListNode {
 }
 
 /*
-Approach
+Implementation with one pointer
 
-time complexity
+time complexity:
+enqueue - O(n)
+dequeue - O(1)
 */
 class Queue {
   constructor() {
     this.head = null;
+    this.length = 0;
+  }
+
+  isEmpty() {
+    return this.length === 0;
+  }
+
+  getHead() {
+    return this.head.val;
+  }
+
+  getLength() {
+    return this.length;
   }
 
   // Insert: add to the end of linked list
@@ -22,29 +37,53 @@ class Queue {
   enqueue(item) {
     let newNode = new ListNode(item);
     if (!this.head) {
-     this.head = newNode
+      this.head = newNode
     } else {
       let traverseNode = this.head;
       while (traverseNode.next) {
-        traverseNode = traverseNode.nex
+        traverseNode = traverseNode.next
       }
       traverseNode.next = newNode;
     }
+    this.length++;
   }
 
   // remove from beginning
   dequeue() {
     if (!this.head) return 'Queue is empty!';
-    else {
-      this.head = this.head.next
-    }
-    return this.head.val;
+    // saves the link to the head which we need to remove
+    const current = this.head;
+
+    // moves the head link to the second Node in the Queue
+    // this.head is the satisfied customer who has already bought products
+    // this.head.next is the next customer who becomes the head of the queue after
+    // satisfied customer leaving
+    this.head = this.head.next;
+    this.length--;
+    // returns the removed Nodes value
+    return current.val;
   }
 
   peek() {
     if (!this.head) return 'Queue is empty!';
     return this.head.val;
   }
+
+  // show all values of all nodes in Queue
+  print() {
+    let current = this.head;
+    while (current) {
+      console.log(current.val);
+      current = current.next;
+    }
+
+  }
 }
+
+/*
+Implementation with 2 pointers
+
+time complexity
+*/
 
 export { Queue }
