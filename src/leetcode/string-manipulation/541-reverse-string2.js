@@ -46,8 +46,7 @@ const reverseStr = (s, k) => {
 
   for (let i = 0; i < arr.length; i += 2*k) {
     let start = i;
-    // suppose we are near the end of the char array a[]，
-    // and we need do once more reverse.
+    // suppose we are near the end of the char array a[]，and we need do once more reverse.
     // If there are exact k or more than k chars left,
     // boundary start + k - 1 works just fine,
     // we can just do the reverse.

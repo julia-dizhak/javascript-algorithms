@@ -3,7 +3,8 @@
   540 Single element in sorted array
   medium
 
-  You are given a sorted array consisting of only integers where every element appears exactly twice,
+  You are given a sorted array consisting of only integers where every element
+  appears exactly twice,
   except for one element which appears exactly once.
   Find this single element that appears only once.
 
@@ -51,7 +52,7 @@
 */
 var singleNonDuplicateBruteForce = function(nums) {
   for (let i = 0; i < nums.length - 1; i += 2) {
-    if (nums[i] !== nums[i+1]) return nums[i]
+    if (nums[i] !== nums[i+1]) return nums[i];
   }
   return nums[nums.length - 1]
 };
@@ -68,10 +69,11 @@ var singleNonDuplicateBruteForceVariant2 = function(nums) {
 
   It makes sense to try and convert the linear search into a binary search.
   In order to use binary search, we need to be able to look at the middle item and
-  then determine whether the solution is the middle item, or to the left, or to the right.
+  then determine whether the solution is the middle item, or to the left, or to
+  the right.
   The key observation to make is that the starting array must always have
-  an odd number of elements (be odd-lengthed), because it has one element appearing once,
-  and all the other elements appearing twice.
+  an odd number of elements (be odd-lengthed), because it has one element
+  appearing once, and all the other elements appearing twice.
 
   An array with the elements 1, 1, 4, 4, 5, 5, 6, 6, 8, 9, 9
 
@@ -139,6 +141,7 @@ var singleNonDuplicateBruteForceVariant2 = function(nums) {
 
   Space complexity: O(1). We are only using constant space to keep track of where we are in the search.
 */
+
 /**
  * @param {number[]} nums
  * @return {number}
@@ -228,10 +231,10 @@ function singleNonDuplicateBinarySearchOnEvenIndexes(nums) {
   while (lo < hi) {
     let mid = Math.floor(lo + (hi - lo)/2);
     if (mid % 2 === 1) mid--;
-    if (nums[mid] === nums[mid+1]) lo = mid+2;
+    if (nums[mid] === nums[mid+1]) lo = mid + 2;
     else hi = mid
   }
-  return nums[lo]
+  return nums[lo];
 }
 
 export {

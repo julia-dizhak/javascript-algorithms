@@ -54,17 +54,21 @@ Please do not use the built-in Queue library.
 
 
 /*
-Approach
+Approach with 2 Pointers
 
 // todo
 In a circular queue, we use an array and two pointers, head and tail.
 head indicates the start position of the queue while tail indicates
 the ending position of the queue.
 
-The idea is to use a vector to store the values of the queue, and then use two pointers, one to the front and one to the tail, to get the front and back elements. A size variable is used to store current queue size. You could do without this variable and calculate size based on front and back pointers, but it makes things much easier, at barely any cost. Everytime either front or tail reaches end of vector, we wrap it around to the front.
+The idea is to use a vector (array) to store the values of the queue, and then use
+two pointers, one to the front and one to the tail, to get the front and back
+elements. A size variable is used to store current queue size.
+You could do without this variable and calculate size based on front and back
+pointers, but it makes things much easier, at barely any cost.
+Everytime either front or tail reaches end of vector, we wrap it around to the front.
 */
 
-// todo check https://leetcode.com/problems/design-circular-queue/discuss/175023/Java-Solution-with-Explanation
 class CircularQueue {
   /**
    * Initialize your data structure here. Set the size of the queue to be k.
@@ -75,7 +79,6 @@ class CircularQueue {
     this.head = -1;
     this.tail = -1;
     this.size = k;
-
   }
 
   /**
@@ -85,7 +88,7 @@ class CircularQueue {
    * @return {boolean}
    */
   enqueue(val) {
-    if (this.isFull() === true) {
+    if (this.isFull()) {
       return false;
     }
 
@@ -109,10 +112,12 @@ class CircularQueue {
     }
   }
 
+  /** Get the front item from the queue. */
   front() {
 
   }
 
+  /** Get the last item from the queue. */
   rear() {
 
   }
@@ -126,8 +131,6 @@ class CircularQueue {
   isFull() {
     return ((this.tail + 1) % this.size) === this.head;
   }
-
-
 }
 
 // test
@@ -139,5 +142,5 @@ circularQueue.enqueue(3);  // return true
 console.log('circularQueue', circularQueue);
 
 export {
-  CircularQueue
+  CircularQueue,
 }

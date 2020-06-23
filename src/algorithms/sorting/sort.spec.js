@@ -2,7 +2,11 @@ import { bubbleSort , bubbleSortDisplayCount, bubbleSortTwoForLoops, bubbleSortM
 import { selectionSort } from './selection-sort';
 import { mergeSort } from './merge-sort';
 import { quickSort } from './quick-sort';
-import { insertionSort } from './insertion-sort';
+import {
+  // insertionSort,
+  insertionSortVariant2 as insertionSort
+ } from './insertion-sort';
+ import { shellSort } from './shell-sort';
 
 describe('sorting array test case', () => {
   let arr;
@@ -43,6 +47,7 @@ describe('sorting array test case', () => {
     expect(quickSort([2, 1])).toEqual([1, 2]);
     expect(mergeSort([2, 1])).toEqual([1, 2]);
     expect(insertionSort([2, 1])).toEqual([1, 2]);
+    expect(shellSort([2, 1])).toEqual([1, 2]);
   });
 
   it('bubble sort unsorted array variant 1', () => {
@@ -79,5 +84,10 @@ describe('sorting array test case', () => {
   it('insertion sort for unsorted arrays', ()=> {
     expect(insertionSort(arr)).toEqual(sortedArr);
     expect(insertionSort(a)).toEqual(sorted);
+  });
+
+  it('shell sort for unsorted arrays', ()=> {
+    expect(shellSort(arr)).toEqual(sortedArr);
+    expect(shellSort(a)).toEqual(sorted);
   });
 });

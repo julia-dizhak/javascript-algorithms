@@ -33,7 +33,8 @@ To move along the number and flip bit by bit.
 
 Initiate 1-bit variable which will be used to flip bits one by one.
 Set it to the smallest register bit = 1.
-Initiate the marker variable which will be used to stop the loop over the bits todo = num.
+Initiate the marker variable which will be used to stop the loop
+over the bits todo = num.
 
 Loop over the bits. While todo != 0:
 Flip the current bit: num = num ^ bit.
