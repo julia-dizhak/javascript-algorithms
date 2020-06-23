@@ -51,13 +51,21 @@ var flipBitByBit = function(num) {
 
   while (todo) {
     // flip current bit
-    num = num ^ bit;
+    num = num ^ bit; // X ^ 1s = ~ X
     // prepare for next run
     bit = bit << 1; // Shift flip variable to the left
     todo = todo >> 1; // todo variable to the right
   }
   return num
 }
+
+
+/*
+Approach
+....
+*/
+
+
 
 /*
   Approach 2 use toString and parseInt
@@ -89,69 +97,6 @@ var findComplement = function(N) {
   return parseInt(str, 2);
 }
 
-/*
-Approach
-
-for example: 100110, its complement is 011001, the sum is 111111.
-So we only need get the min number large or equal to num,
-then do subtraction
-
-*/
-
-/*
-approach
-
-todo
-The core is ^
-111 ^ 101 = 010
-Then the concern is to let the '0' in num complement to '1',
-because all the '1' in num will be complemented to "0" with ^.
-So how to find the '0's in num
-find another number that is one bit left than num and do minus 1.
-e.g. 1000 (8) - 1 = 111 (7)
-
-which will be the largest one in that bit-length, only having '1's.
-With help of ^, '0' in num now will be complemented to '1'
-
-~5 = 1..1010 (-)（all bits inverse）
-*/
-
-// class Solution(object):
-//     def findComplement(self, num):
-//         i = 1
-//         while i <= num:
-//             i = i << 1
-//         return (i - 1) ^ num
-
-// another idea
-// var findComplement = function(num) {
-//   var mask=~0;
-//   while(num&mask){
-//       mask<<=1;
-//   }
-//   return ~num & ~mask;
-// };
-
-var findComplement1 = function(num) {
-  let n = 0;
-  //debugger
-  // todo display binary?
-  while (n < num) {
-    n = (n << 1) | 1
-  }
-  return n - num
-}
-console.log('complement', findComplement1(5));
-
-function getBit(x,i) {
-  const mask = 1 << i;
-  if (x & mask) return 1;
-  return 0;
-}
-
-console.log('getBit', getBit(5,1));
-console.log('getBit 0', getBit(2,0));
-console.log('getBit 0 ', getBit(2,1));
 
 //  contest
 
@@ -181,25 +126,6 @@ var finalPrices = function(prices) {
 };
 
 console.log('finalPrices', finalPrices([8,4,6,2,3]))
-
-// 787 !!!
-/*
-2 solutions
-
-directed graph
-level by level bfs search!
-bfs and dfs and find a problems (check invert binary tree task)
-TUSHAR ROY GRAPH PROBLEMS
-https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/686774/SUGGESTION-FOR-BEGINNERS-SIMPLE-STEPS-BFS-or-DIJKSHTRA-or-DP-DIAGRAM
-Dijkstra shortest path in graph
-Heap
-
-idea using BFS
-https://leetcode.com/problems/cheapest-flights-within-k-stops/discuss/181943/Readable-Javascript-Solution
-
-
-*/
-
 
 /*
   Approach without toString and parseInt

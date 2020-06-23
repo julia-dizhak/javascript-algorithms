@@ -33,8 +33,8 @@ Binary representation
 
 time is O(n)
 space is O(1)
-
 */
+
 /**
  * @param {number} n
  * @return {boolean}
@@ -83,8 +83,7 @@ Power of two means only one bit of n is 1.
 And you can use trick n & (n-1) === 0 to judge
 whether that is the case.
 
-Example
-1
+Example 1
 n = 100000, then n - 1 = 011111 and n & (n-1) = 000000,
 so if it's power of two, result is zero.
 

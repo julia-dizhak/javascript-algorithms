@@ -29,6 +29,15 @@ created on 12/21/17
 
 ## List of problems
 
+* ### Bitwise
+    * [Common bit tasks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
+
+    | Approaches:        | Time    | Space    |
+    | :---               | :---    | :---     |
+    | getBit(num, i)        | O()  | O()     |
+    | testBit(num, i)  | O()    | O()     |
+    |   | O()    | O()     |
+
 * Number (General)
 
 * String manipulation
@@ -118,6 +127,13 @@ created on 12/21/17
     | Iterative: keep divide by 2  | O(log n)     | 0(1)   |
     | Math + toString              | O(n)         | O(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
+
+    * [136 Single Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/136-single-number.js)
+
+    | Approaches:    | Time     | Space  |
+    | :---           | :---     | :---   |
+    | Bitwise XOR    | O(n)     | 0(1)   |
+    | Hash           | O(n)     | O(n)   |
 
 * ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)

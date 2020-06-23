@@ -4,6 +4,7 @@ import Details from '../Details';
 // problems
 import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
 import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
+import { testBit } from '../../algorithms/bitwise/common-bit-tasks'
 
 export default function BitManipulation() {
   return (
@@ -11,6 +12,17 @@ export default function BitManipulation() {
       <h2 id="bit">Bit Manipulation</h2>
 
       <ul id="bit">
+        <li>
+          <Details
+            id="common-bit-tasks"
+            question="Common bit tasks"
+            solution="Tasks: testBit, "
+            time=""
+            space=""
+            code={testBit.toString()}
+            //secondCode={}
+          />
+        </li>
         <li>
           <Details
             id="number-complement"
