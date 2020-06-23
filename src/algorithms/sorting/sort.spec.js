@@ -47,7 +47,11 @@ describe('sorting array test case', () => {
     expect(quickSort([2, 1])).toEqual([1, 2]);
     expect(mergeSort([2, 1])).toEqual([1, 2]);
     expect(insertionSort([2, 1])).toEqual([1, 2]);
-    expect(shellSort([2, 1])).toEqual([1, 2]);
+
+    // shell sort
+    let shellA = [2, 1];
+    shellSort(shellA);
+    expect(shellA).toEqual([1, 2]);
   });
 
   it('bubble sort unsorted array variant 1', () => {
@@ -86,8 +90,8 @@ describe('sorting array test case', () => {
     expect(insertionSort(a)).toEqual(sorted);
   });
 
-  it('shell sort for unsorted arrays', ()=> {
-    expect(shellSort(arr)).toEqual(sortedArr);
-    expect(shellSort(a)).toEqual(sorted);
+  it('shell sort for unsorted arrays', () => {
+    shellSort(arr);
+    expect(arr).toEqual(sortedArr);
   });
 });

@@ -5,6 +5,8 @@ import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
 import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
 import { insertionSort } from '../../algorithms/sorting/insertion-sort';
+// import { shellSort } from '../../algorithms/sorting/shell-sort';
+
 import { findMedian } from '../../algorithms/sorting/problems/find-median';
 
 function Sorting() {
@@ -13,6 +15,13 @@ function Sorting() {
       <h2>Sorting</h2>
 
       <ul>
+        {/* <li>
+          <Details
+            id="sort-test"
+            code={}
+          />
+        </li> */}
+
         <li>
           <Details
             id="bubble-sort"
