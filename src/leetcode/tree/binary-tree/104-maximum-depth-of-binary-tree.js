@@ -81,7 +81,6 @@ class BT {
     return y;
   }
 
-  // maxDepth === height?
   height(root = this.root) {
     if (root === null) return 0;
 
@@ -94,7 +93,7 @@ class BT {
 /*
 Approach recursive
 
-maximum depth equals to height?
+maximum depth equals to height? of the tree - yes, of node - no
 
 Algorithm
 1 if root is null return 0
@@ -111,6 +110,9 @@ Example: Given binary tree [3,9,20,null,null,15,7],
        /
       15
 return its depth = 3?
+
+time complexity: O(n) we are visiting all nodes in Binary tree
+space: height of binary tree, in worst case O(n)
 */
 
 /**
@@ -118,48 +120,25 @@ return its depth = 3?
  * @return {number}
  */
 var maxDepth = function(root) {
-
   if (root === null) return 0;
-
-  let leftHeight = maxDepth(root.left);
-  let rightHeight = maxDepth(root.right);
-
-  return Math.max(leftHeight, rightHeight) + 1;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 
-// test
+/*
+Approach iterative
+*/
 
-
-// check video an example https://www.youtube.com/watch?time_continue=7&v=_SiwrPXG9-g&feature=emb_logo
-// [10,5,6]
-
-// todo
-// https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/BinaryTree.java#L58
-// head = bt.addNode(10, head);
-//         head = bt.addNode(15, head);
-//         head = bt.addNode(5, head);
-//         head = bt.addNode(7, head);
-//         head = bt.addNode(19, head);
-//         head = bt.addNode(20, head);
-//         head = bt.addNode(-1, head);
-//         head = bt.addNode(21, head);
-
-// todo
-// [3,9,20,null,null,15,7]
-let tree = new BT(3);
-tree.addNode(9);
-tree.addNode(20);
-tree.addNode(null);
-tree.addNode(null);
-tree.addNode(15);
-tree.addNode(7);
-console.log('height of tree', tree.height());
-
-tree = JSON.parse(JSON.stringify(tree)).root;
-console.log('tree', tree)
-
-const height = maxDepth(tree);
-console.log('maxDepth', height)
+// tests
+// let tree = new BT(3);
+// tree.addNode(9);
+// tree.addNode(20);
+// tree.addNode(null);
+// tree.addNode(null);
+// tree.addNode(15);
+// tree.addNode(7);
+// console.log('height of tree', tree.height());
+// tree = JSON.parse(JSON.stringify(tree)).root;
+// console.log('tree', tree)
 
 export {
   maxDepth,

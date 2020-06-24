@@ -238,8 +238,19 @@ created on 12/21/17
     | popMax()              | O(n)     | 0(n)   |
     | other operations      | O(1)     | O(n)   |
 
-* Tree
+* ### Tree, Binary Tree
     * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)
+
+    | Approach    | Time     | Space  |
+    | :---        | :---     | :---   |
+    | Recursion   | O(n)     | 0(n)   |
+
+    * [104. Maximum depth of binary tree](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/104-maximum-depth-of-binary-tree.js)
+
+    | Approach    | Time     | Space  |
+    | :---        | :---     | :---   |
+    | Recursion   | O(n)     | 0(n)   |
+    | Iterative   | ?        | ?   |
 
 * ### BST (Binary Search Tree)
     * [700. Search in BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/bst/search/200-search-in-bst.js)

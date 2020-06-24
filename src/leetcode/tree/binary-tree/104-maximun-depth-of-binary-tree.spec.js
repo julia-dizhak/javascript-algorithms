@@ -1,34 +1,44 @@
-import { BinarySearchTree, invertTree } from './226-invert-binary-tree';
+import { maxDepth, BT } from './104-maximum-depth-of-binary-tree';
 
-// toto
-// Input [1,2]
-// Output [1,null,2]
-
-describe('binary search tree test case', () => {
+describe('maximum depth of BT test case', () => {
   let tree;
-  const arr = [4,2,7,1,3,6,9];
 
-  beforeEach(() => {
-    tree = new BinarySearchTree();
+  it('maximum depth 1', () => {
+    tree = new BT(3);
+    const arr = [9,20,null,null,15,7];
     arr.map((element, index) => {
-      tree.add(element);
+      tree.addNode(element);
       return tree;
     })
-  });
 
-  it('invert a binary tree', () => {
     tree = JSON.parse(JSON.stringify(tree)).root;
-    const invertedTree = invertTree(tree);
-    const test = JSON.parse(JSON.stringify(invertedTree));
-
-    expect(test.left.val).toEqual(7);
-    expect(test.right.val).toEqual(2);
-    expect(test.left.left.val).toEqual(9);
-    expect(test.right.right.val).toEqual(1);
-    // todo test as output [4,7,2,9,6,3,1]
+    const height = maxDepth(tree);
+    expect(height).toEqual(4);
   });
 
-  xit('if there are only 2 nodes Input [1,2] and Output [1,null,2]', () => {
+  it('maximum depth 2', () => {
+    tree = new BT(50);
+    const arr = [30,20,40,70,60,80];
+    arr.map((element, index) => {
+      tree.addNode(element);
+      return tree;
+    })
 
+    tree = JSON.parse(JSON.stringify(tree)).root;
+    const height = maxDepth(tree);
+    expect(height).toEqual(3);
+  });
+
+  it('maximum depth is 4', () => {
+    tree = new BT(10);
+    const arr = [5,6,8,4];
+    arr.map((element, index) => {
+      tree.addNode(element);
+      return tree;
+    })
+
+    tree = JSON.parse(JSON.stringify(tree)).root;
+    const height = maxDepth(tree);
+    expect(height).toEqual(4);
   });
 });

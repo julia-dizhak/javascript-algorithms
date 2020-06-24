@@ -8,7 +8,6 @@ import { Trie } from '../../algorithms/trie/trie';
 
 //
 import { preorderTraversal } from '../../leetcode/tree/BST/traversals/pre-order';
-import { maxDepth, BT } from '../../leetcode/tree/binary-tree/104-maximum-depth-of-binary-tree';
 import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 
 export default function Tree() {
@@ -21,9 +20,9 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={BT.toString()}
-            secondCode={maxDepth.toString()}
-            //secondCode={countNodes.toString()}
+            //code={BT.toString()}
+            //secondCode={maxDepth.toString()}
+            secondCode={countNodes.toString()}
           />
         </li>
         <li>
