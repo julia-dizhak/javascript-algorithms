@@ -3,6 +3,7 @@ Leetcode
 137 Single Number II
 Given a non-empty array of integers, every element appears three times except
 for one, which appears exactly once. Find that single one.
+medium
 
 Note:
 Your algorithm should have a linear runtime complexity.
@@ -17,11 +18,18 @@ Input: [0,1,0,1,0,1,99]
 Output: 99
 */
 
+/*
+Approach Hash
+
+time is O(n)
+space is O(n)
+*/
+
 /**
  * @param {number[]} nums
  * @return {number}
  */
-var singleNumber1 = function(nums) {
+var singleNumberUseHash = function(nums) {
   let hash = {};
   for (const num of nums) {
     hash[num] = (hash[num] || 0) + 1;
@@ -32,54 +40,31 @@ var singleNumber1 = function(nums) {
       return key
     }
   }
-
-  //console.log('hash', hash);
 };
 
+/*
+Approach Bitwise XOR
+
+known that A ^ A = 0 and the XOR operator is commutative,
+the solution will be very straightforward.
+X ^ 0s = X
+
+time is O(n)
+space is O(1)
+*/
+
+
 var singleNumber = function(nums) {
-  const n = nums.length;
-  let i = 0;
-  let j = 0;
-
-  let count = 0;
-
-
+  let result = 0;
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== nums[i+1]) {
-      return nums[i+1]
-    }
-
+    result = result ^ nums[i]
   }
 }
 
-/*
-Approach
-xor
-*/
+console.log('singleNumber', singleNumber([2,2,3,2]))
+//console.log('singleNumber', singleNumber([0,1,0,1,0,1,99]))
 
-// public int singleNumber(int[] nums)
-
-// {
-
-//     int result = 0;
-
-//     for (int value: nums)
-
-//     {
-
-//         result ^= value;
-
-//     }
-
-//     return result;
-
-// }
-
-// 2^2^1=1
-// 4^1^2^1^2=4
-
-// xor is a great hint here
-
-
-//console.log('singleNumber', singleNumber([2,2,3,2]))
-console.log('singleNumber', singleNumber([0,1,0,1,0,1,99]))
+export {
+  singleNumber,
+  singleNumberUseHash
+}
