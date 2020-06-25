@@ -92,25 +92,28 @@ var twoCitySchedCostVariant2 = function(costs) {
 };
 
 /*
-  The same approach: sort in descending order, take absolute difference
-  - sort in descending order: take absolute difference and sort from
-  largest impact to smallest impact
+Approach Greedy
+The same approach: sort in descending order, take absolute difference
+sort from largest impact to smallest impact
 
-  - because only N people should arrive in each city
-  2n = length of arr
-  n = length of arr / 2
+- because only N people should arrive in each city
+2n = length of arr
+n = length of arr / 2
 
-  - have counters for each city to keep track of how many people we
-  flown to that city
+- have counters for each city to keep track of how many people we
+flown to that city
 
-  - when adding to the sum we pick the city with the lower costs
-  as long as city is under the N
+- when adding to the sum we pick the city with the lower costs
+as long as city is under the N
 */
+
 var twoCitySchedCostSortAbs = function(costs) {
   // costs city A descending order
   costs = costs.sort((a, b) => {
     return Math.abs(b[0] - b[1]) - Math.abs(a[0] - a[1])
   });
+
+  //console.log('costs', costs)
 
   // another solution for sorted, works as well
   // costs = costs.sort((a, b) => {
@@ -151,6 +154,8 @@ var twoCitySchedCostSortAbs = function(costs) {
 
   return sum;
 };
+
+//console.log('twoCitySchedCostSortAbs', twoCitySchedCostSortAbs([[10,20],[30,200],[400,50],[30,20]]))
 
 export {
   twoCitySchedCost,

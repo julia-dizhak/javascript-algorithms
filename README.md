@@ -271,9 +271,18 @@ created on 12/21/17
 * Greedy
     * [1029. Two city Scheduling](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/greedy/1029-two-city-scheduling.js)
 
+    | Approaches:    | Time      | Space  |
+    | :---           | :---      | :---   |
+    | Greedy         | O(nlogn)  | 0(1)   |
+
 * DP[dynamic programming]
     * [518. Coin change 2 ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
 
+    * [96. Unique binary search trees ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/96-unique-binary-search-trees.js)
+
+    | Approaches:   | Time      | Space  |
+    | :---          | :---      | :---   |
+    | DP            | O(n^2)    | 0(n)   |
 
 
 ## OOP in JS

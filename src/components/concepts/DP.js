@@ -3,6 +3,8 @@ import Details from '../Details';
 
 // problems
 import { change } from '../../leetcode/dp/518-coin-change-2';
+import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
+
 
 export default function DP() {
   return (
@@ -22,6 +24,16 @@ export default function DP() {
             time="O(n*m), where n - coins, m - amount(combinations)"
             space="Create an arr of O(amount+1)"
             code={change.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="db-num-trees"
+            question="Unique Binary Search Trees"
+            time="O(n^2)"
+            space="O(n)"
+            code={numTrees.toString()}
           />
         </li>
 
