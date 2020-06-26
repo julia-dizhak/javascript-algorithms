@@ -19,10 +19,55 @@ Input: [4,1,2,1,2]
 Output: 4
 */
 
+
+/*
+Approach brute force
+
+Algorithm
+
+Iterate over all the elements in nums
+If some number in nums is new to array, append it
+If some number is already in the array, remove it
+
+Complexity Analysis
+Time complexity : O(n^2)
+Space complexity : O(n). We need a list of size nn to contain elements in nums.
+*/
+
+
 /*
 Approach hash
-but then you need to use extra memory
+
+Algorithm
+We use hash table to avoid the O(n) time required for searching the elements.
+
+Iterate through all elements in nums and set up key/value pair.
+Return the element which appeared only once.
+
+Complexity Analysis
+
+Time complexity: O(n⋅1)=O(n). Time complexity of for loop is O(n).
+Time complexity of hash table(dictionary in python) operation pop is O(1).
+
+Space complexity : O(n). The space required by hash table is equal to the number
+of elements in nums.
 */
+
+
+/*
+Approach Math
+
+Concept
+2 * (a + b + c) - (a + a + b + b + c) = c
+
+Complexity Analysis
+Time complexity : O(n + n) = =O(n). sum will call next to iterate through nums.
+We can see it as sum(list(i, for i in nums)) which means the time complexity
+is O(n) because of the number of elements(n) nums.
+
+Space complexity : O(n + n) = O(n). set needs space for the elements in nums
+*/
+
 
 /*
 Approach bit manipulation
@@ -38,8 +83,10 @@ operation
 
 Hence picking the odd one out (5 in this case).
 
-time is O(n)
-space is O(1)
+Complexity Analysis
+Time complexity : O(n). We only iterate through nums, so the time complexity
+is the number of elements in nums.
+Space complexity : O(1).
 */
 
 /**

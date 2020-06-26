@@ -6,9 +6,10 @@ import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tr
 
 import { Trie } from '../../algorithms/trie/trie';
 
-//
+// problems
 import { preorderTraversal } from '../../leetcode/tree/BST/traversals/pre-order';
-import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
+// import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
+import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/0-sum-root-to-leaf-numbers';
 
 export default function Tree() {
   return (
@@ -20,9 +21,9 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            //code={BT.toString()}
-            //secondCode={maxDepth.toString()}
-            secondCode={countNodes.toString()}
+            code={BT.toString()}
+            secondCode={sumNumbers.toString()}
+            // secondCode={Trie.toString()}
           />
         </li>
         <li>
@@ -44,7 +45,6 @@ export default function Tree() {
             time="O(log(n)) in the average case, linear - in worst cases"
             space=""
             code={BinarySearchTree.toString()}
-            // secondCode={Trie.toString()}
           />
         </li>
 

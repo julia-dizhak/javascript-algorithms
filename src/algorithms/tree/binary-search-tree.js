@@ -1,11 +1,12 @@
 /**
  * Binary Search Tree implementation in JavaScript
+ * Nodes as objects
  */
 class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null; // left pointer
-    this.right = null; // right pointer
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left); // left pointer
+    this.right = (right === undefined ? null : right); // right pointer
   }
 }
 
@@ -14,8 +15,8 @@ class Node {
  * @class BinarySearchTree
  */
 class BinarySearchTree {
-  constructor(value) {
-    this.root = new Node(value);
+  constructor(val) {
+    this.root = new Node(val);
     this.count = 0; // how many nodes in Tree
   }
 
@@ -25,55 +26,80 @@ class BinarySearchTree {
   }
 
   /**
+    * Recursive approach
     * Adds some value into the tree. This method traverses the tree to find
     * the correct location to insert the value. Duplicate values are discarded.
-    * @param {*} value The value to add to the tree.
+    * @param {*} val The value to add to the tree.
     * @returns {void}
   */
-  insert(value) {
-    this.count++;
-
-    /*
-      * Create a new node to insert into the tree and store the value in it.
-      * This node will be added into the tree.
-    */
-    let newNode = new Node(value);
-
-    // special case: no nodes in the tree yet
-    if (this.root.value === undefined) {
-      this.root = newNode
-    }
+  insert(val) {
+    let currentNode = this.root;
 
     // search
-    const traverseTree = (node) => {
-      // if value less than node value, go left
-      if (value < node.value) {
-        // if no left child, append new node
+    const check = (node) => {
+      /*
+      * Create a new node to insert into the tree and store the value in it.
+      * This node will be added into the tree.
+       */
+      const newNode = new Node(val);
+      //debugger;
+
+      if (node === null) {
+        node = newNode;
+      } else if (val === node.val) {
+        // case with duplicated
+        console.log('equal val');
+        return null;
+      } else if (val < node.val) {
+         // if value less than node value, go left
         if (node.left === null) {
-          node.left = newNode
+          node.left = newNode;
+        } else {
+          check(node.left)
         }
-        // if left child exists, look left again recursively
-        else {
-          traverseTree(node.left)
-        }
-      }
-      // if value bigger than node value go right
-      else if ( value > node.value) {
+      } else {
+        // if value bigger than node value go right
         if (node.right === null) {
-          node.right = newNode
+          node.right = newNode;
+        } else {
+          check(node.right)
         }
-        // look searchTree right again
-        else {
-          traverseTree(node.right)
-        }
-      }
-      else {
-        // adding an element that already exists should return null
-        return null
       }
     }
+
     // call search on root node
-    traverseTree(this.root);
+    check(currentNode);
+    this.count++;
+  }
+
+  /*
+  * Insertion Node iteratively
+  */
+  insertNode(val, root = this.root) {
+    const newNode = new Node(val);
+
+    let x = root;
+    let y = null; // last node at the moment = leaf
+
+    while (x !== null) {
+      y = x;
+      if (val <= x.val) {
+        x = x.left;
+      } else {
+        x = x.right;
+      }
+    }
+
+    // now y is leaf
+    if (y === null) {
+      y = newNode;
+    } else if (val <= y.val) {
+      y.left = newNode;
+    } else {
+      y.right = newNode;
+    }
+
+    this.count++;
   }
 
   /**
@@ -141,16 +167,14 @@ class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree(4);
-// need to have specific order
-// tree.insert(4)
 tree.insert(2)
 tree.insert(3)
 tree.insert(1)
-tree.insert(7)
-tree.insert(6)
+// tree.insert(7)
+// tree.insert(6)
+console.log('BST', tree)
 
 
-//console.log('tree', tree)
 tree.lowestCommonAncestor(2,7) // should be 4 it's not correct
 //console.log('lca', tree.lowestCommonAncestor(2,7));
 // console.log('size', tree.size());

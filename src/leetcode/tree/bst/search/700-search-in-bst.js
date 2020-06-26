@@ -108,8 +108,8 @@ var searchBST = function(root, val) {
 
 /*
 Approach iterative
-Time is O(n) for non balanced BST
-Time complexity is O(logn) for balanced BST
+
+Time is O(n) for non balanced BST and O(logn) for balanced BST
 Space is O(1)
 */
 
@@ -117,7 +117,7 @@ var searchBSTIterative = function(root, val) {
   while (root !== null && root.val !== val) {
     root = (val < root.val) ? root.left : root.right;
   }
-  return root
+  return root;
 }
 
 var searchBSTIterativeVariant2 = function(root, val) {

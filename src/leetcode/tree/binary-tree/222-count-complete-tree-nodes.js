@@ -1,5 +1,3 @@
-import { BinarySearchTree } from './226-invert-binary-tree'
-
 /*
 Leetcode
 222 Count complete Tree Nodes
@@ -13,30 +11,43 @@ In a complete binary tree every level, except possibly the last,
 is completely filled, and all nodes in the last level are as far left as
 possible. It can have between 1 and 2h nodes inclusive at the last level h.
 
-Example:
+
+Example 1 - tree is complete
 Input:
     1
    / \
   2   3
  / \  /
 4  5 6
-
 Output: 6
+
+What is not complete tree? examples
+    1
+   / \
+  2   3
+ /   /
+4   6
 */
 
 /*
-Approach
+Approach Recursion
 
 The height of a binary tree is the largest number of edges in a path from the root
 node to a leaf node. Essentially, it is the height of the root node.
 Note that if a tree has only one node, then that node is at the same time the
 root node and the only leaf node, so the height of the tree is 0.
 
+Fully completed tree === Perfect binary tree
+    1
+   / \
+  2   3
+ / \  /\
+4  5 6  7
+Number of nodes in completed binary tree (perfect binary tree) = 2^levels - 1
+
 Algorithm
 1 A fully completed tree has node number: count = 2 ^ depth - 1
-for example: [1,2,3]
-depth is 2
-count = 2 ^ 2 - 1 = 3
+for example: [1,2,3], depth is 2, count = 2 ^ 2 - 1 = 3
 
 2 Compare left height and right height, if equal, use the formula,
 otherwise recursively search left and right at next level
@@ -46,7 +57,7 @@ either exists in left side, or right side
 
 For those who are confused with (1 << leftDepth) - 1;
 This is done to find the nodes when depth is known.
-Suppose there are N nodes in a tree, then depth = (log2(n+1))
+Suppose there are N nodes in a tree, then depth = log2(n+1)
 1 node gives log2(2) = 1
 3 nodes gives log2(4) = 2
 7 nodes gives log2(8) = 3
@@ -71,6 +82,48 @@ total time complexity is O(log(n) ^ 2)
  *   this.right = (right === undefined ? null : right)
  * }
  */
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
+class BST {
+  constructor(val) {
+    this.root = new TreeNode(val);
+  }
+
+  // iterative approach
+  insertNode(val, root = this.root) {
+    let newNode = new TreeNode(val);
+    if (!root) {
+      root = newNode;
+    }
+
+    let x = root;
+    let y = null;
+
+    while (x !== null) {
+      y = x;
+      if (val < x.val) {
+        x = x.left;
+      } else {
+        x = x.right;
+      }
+    }
+
+    if (y === null) {
+      y = newNode
+    } else if ( val <= y.val) {
+      y.left = newNode;
+    } else {
+      y.right = newNode;
+    }
+  }
+}
+
 /**
  * @param {TreeNode} root
  * @return {number}
@@ -81,9 +134,13 @@ var countNodes = function(root) {
   let leftDepth = countLeftDepth(root);
   let rightDepth = countRightDepth(root);
 
+  // when it's a full binary tree, count = 2^depth -1
   if (leftDepth === rightDepth) {
+    // todo rightDepth will work as well?
     return (1 << leftDepth) - 1;
   } else {
+    // when it's not full binary tree we'll calculate its left and right subtree
+    // nodes recursively and then plus one (root node) ...?
     // height of the tree
     return 1 + countNodes(root.left) + countNodes(root.right)
   }
@@ -95,7 +152,7 @@ function countLeftDepth(node) {
     node = node.left;
     depth++;
   }
-  return depth
+  return depth;
 }
 
 function countRightDepth(node) {
@@ -104,60 +161,18 @@ function countRightDepth(node) {
     node = node.right;
     depth++;
   }
-  return depth
+  return depth;
 }
 
+// tests
+// let tree = new BST(6);
+// const arr = [1,3,2,4,7,8];
+// arr.map((element, index) => {
+//   tree.insertNode(element);
+//   return tree;
+// })
+// tree = JSON.parse(JSON.stringify(tree)).root;
+// const count = countNodes(tree);
+// console.log('count nodes tree', tree)
 
-
-
-let tree = new BinarySearchTree();
-const arr = [4,2,7,1,3,6,9];
-arr.map((element, index) => {
-  tree.add(element);
-  return tree;
-})
-tree = JSON.parse(JSON.stringify(tree)).root;
-console.log('count nodes tree', tree)
-
-/*
-Find a duplicate Number
-
-Given an array nums containing n + 1 integers where each integer is between 1
-and n (inclusive), prove that at least one duplicate number must exist.
-Assume that there is only one duplicate number,
-find the duplicate one.
-
-Example 1:
-
-Input: [1,3,4,2,2]
-Output: 2
-Example 2:
-
-Input: [3,1,3,4,2]
-Output: 3
-
-Note:
-1 You must not modify the array (assume the array is read only).
-2 You must use only constant, O(1) extra space.
-3 Your runtime complexity should be less than O(n2).
-4 There is only one duplicate number in the array, but it could be repeated more
-than once.
-*/
-
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var findDuplicate = function(nums) {
-  let i = 0;
-  for (let j = i+1; j < nums.length; j++) {
-    if (nums[i] === nums[j]) {
-      
-    }
-
-  }
-};
-
-console.log('findDuplicate', findDuplicate([1,3,4,2,2]))
-
-export { countNodes, BinarySearchTree }
+export { countNodes, BST }

@@ -106,6 +106,14 @@ created on 12/21/17
     | 1 Pointer (head)            | O(n)         | 0(1)      |
     | 2 Pointers (head and tail)  | O(1)         | 0(1)      |
 
+* ### Binary Search Implementation
+    * [BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/binary-search-tree.js)
+
+    | Complexity :              | Time      |  Space    |
+    | :---                      | :---      | :---      |
+    | insert(node) recursion    | O(logn)   | 0(n)      |
+    | insert(node) Iteratively  | O(logn)   | 0(1)      |
+
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
     * [Fibonacci Number (recursion, iterative)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
@@ -116,9 +124,10 @@ created on 12/21/17
 * ### Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
 
-    | Approaches:        | Time         | Space  |
-    | :---               | :---         | :---   |
-    | Bit                | O(?)         | 0(?)   |
+    | Approaches:            | Time         | Space  |
+    | :---                   | :---         | :---   |
+    | Bit Shift + xor (2)    | O(1)         | 0(1)   |
+    | toString and parseInt  | O(1)         | 0(1)   |
 
     * [231. Power of two (and more approaches)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
 
@@ -241,24 +250,30 @@ created on 12/21/17
 * ### Tree, Binary Tree
     * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)
 
-    | Approach    | Time     | Space  |
-    | :---        | :---     | :---   |
-    | Recursion   | O(n)     | 0(n)   |
+    | Approaches:   | Time     | Space  |
+    | :---          | :---     | :---   |
+    | Recursion     | O(n)     | 0(n)   |
 
     * [104. Maximum depth of binary tree](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/104-maximum-depth-of-binary-tree.js)
 
-    | Approach    | Time     | Space  |
-    | :---        | :---     | :---   |
-    | Recursion   | O(n)     | 0(n)   |
-    | Iterative   | ?        | ?   |
+    | Approaches:    | Time     | Space  |
+    | :---           | :---     | :---   |
+    | Recursion      | O(n)     | 0(n)   |
+    | Iterative      | ?        | ?      |
+
+    * [222. Count complete tree nodes](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/22-count-complete-tree-modes.js)
+
+    | Approaches:   | Time         | Space  |
+    | :---          | :---         | :---   |
+    | Recursion     | O(log(n)^2)  | 0(n)   |
 
 * ### BST (Binary Search Tree)
     * [700. Search in BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/bst/search/200-search-in-bst.js)
 
-    | Approaches:   | Time             | Space  |
-    | :---          | :---             | :---   |
-    | Recursion     | O(log n) / O(n)  | 0(h)   |
-    | Iterative     | O(log n) / O(n)  | 0(1)   |
+    | Approaches:   | Time            | Space  |
+    | :---          | :---            | :---   |
+    | Recursion     | O(logn) / O(n)  | 0(h)   |
+    | Iterative     | O(logn) / O(n)  | 0(1)   |
 
 * ### Graph
     * [733. Flood Fill](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/733-flood-fill.js)

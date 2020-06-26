@@ -155,7 +155,7 @@ var twoCitySchedCostSortAbs = function(costs) {
   return sum;
 };
 
-//console.log('twoCitySchedCostSortAbs', twoCitySchedCostSortAbs([[10,20],[30,200],[400,50],[30,20]]))
+// console.log('twoCitySchedCostSortAbs', twoCitySchedCostSortAbs([[10,20],[30,200],[400,50],[30,20]]))
 
 export {
   twoCitySchedCost,

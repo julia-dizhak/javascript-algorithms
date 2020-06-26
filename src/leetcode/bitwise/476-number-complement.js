@@ -50,22 +50,52 @@ var flipBitByBit = function(num) {
   let todo = num;
 
   while (todo) {
+    //console.log('line 1', num.toString(2))
     // flip current bit
     num = num ^ bit; // X ^ 1s = ~ X
+    //console.log('line 2', num.toString(2))
+
     // prepare for next run
+    //console.log('line 3', bit.toString(2))
     bit = bit << 1; // Shift flip variable to the left
+    //console.log('line 4', bit.toString(2))
+
     todo = todo >> 1; // todo variable to the right
+    //console.log('line 5', todo.toString(2))
   }
-  return num
+  return num;
 }
 
 
 /*
-Approach
-....
+Approach Bit manipulation shift and xor
+
+example with num = 5
+i = 1;
+i = i << 1 = 1 << 1 = 10 => 2
+
+i = 2
+2 <= 5
+i = i << 1 = 2 << 1 = 0010 << 1 = 0100 = 4
+
+i = 4
+4 <= 5
+i = i << 1 = 4 << 1 = 0100 << 1 = 1000 = 8
+
+i = 8
+8 > 5
+
+1000 - 1 = 111, 111^101 = 010 got it
+x^1s = ~x
 */
 
-
+function findComplementUseShift(num) {
+  let i = 1;
+  while (i <= num) {
+    i = i << 1;
+  }
+  return (i-1)^num;
+}
 
 /*
   Approach 2 use toString and parseInt
@@ -96,36 +126,6 @@ var findComplement = function(N) {
   }
   return parseInt(str, 2);
 }
-
-
-//  contest
-
-/**
- * @param {number[]} prices
- * @return {number[]}
- */
-// Input: prices = [8,4,6,2,3]
-
-// where j is the minimum index such that j > i and prices[j] <= prices[i],
-// otherwise, you will not receive any discount at all
-
-//[4,2,4,2,3]
-var finalPrices = function(prices) {
-  let result = [];
-
-  for (let i = 0; i < prices.length; i++) {
-    result[i] = prices[i];
-    for (let j = i+1; j < prices.length; j++) {
-      if (prices[j] <= prices[i]) {
-        result[i] = prices[i] - prices[j];
-        break;
-      }
-    }
-  }
-  return result
-};
-
-console.log('finalPrices', finalPrices([8,4,6,2,3]))
 
 /*
   Approach without toString and parseInt
@@ -187,5 +187,6 @@ function decimalToBinary(inputNum) {
 
 export {
   bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit,
-  decimalToBinary
+  decimalToBinary,
+  findComplementUseShift
 }

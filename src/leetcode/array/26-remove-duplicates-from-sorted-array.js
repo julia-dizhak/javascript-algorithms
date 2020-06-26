@@ -118,8 +118,7 @@ var removeDuplicatesTwoPointers = function(nums) {
     }
   }
 
-  return slow + 1
-
+  return slow + 1;
 };
 
 export {
