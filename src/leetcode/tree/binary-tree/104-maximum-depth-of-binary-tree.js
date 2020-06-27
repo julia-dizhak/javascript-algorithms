@@ -21,6 +21,46 @@ Given binary tree [3,9,20,null,null,15,7],
 return its depth = 3.
 */
 
+/*
+Approach recursive
+
+maximum depth equals to height? of the tree - yes, of node - no
+
+Algorithm
+1 if root is null return 0
+2 count height of leet subtree = leftHeight
+3 count height of right subtree = rightHeight
+4 height equals 1 + max(leftHeight, rightHeight)
+
+Example: Given binary tree [3,9,20,null,null,15,7],
+    3
+     \
+      9
+    /  \
+   7   20
+       /
+      15
+return its depth = 3?
+
+time complexity: O(n) we are visiting all nodes in Binary tree
+space: height of binary tree, in worst case O(n)
+*/
+
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+  if (root === null) return 0;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+};
+
+/*
+Approach iterative
+todo
+*/
+
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -89,45 +129,6 @@ class BT {
     return Math.max(leftHeight, rightHeight) + 1;
   }
 }
-
-/*
-Approach recursive
-
-maximum depth equals to height? of the tree - yes, of node - no
-
-Algorithm
-1 if root is null return 0
-2 count height of leet subtree = leftHeight
-3 count height of right subtree = rightHeight
-4 height equals 1 + max(leftHeight, rightHeight)
-
-Example: Given binary tree [3,9,20,null,null,15,7],
-    3
-     \
-      9
-    /  \
-   7   20
-       /
-      15
-return its depth = 3?
-
-time complexity: O(n) we are visiting all nodes in Binary tree
-space: height of binary tree, in worst case O(n)
-*/
-
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var maxDepth = function(root) {
-  if (root === null) return 0;
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
-};
-
-/*
-Approach iterative
-todo
-*/
 
 // tests
 // let tree = new BT(3);

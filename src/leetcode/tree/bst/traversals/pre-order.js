@@ -7,7 +7,7 @@ Given a binary tree, return the preorder traversal of its nodes' values.
 
 Example:
 Input: [1,null,2,3]
-  1
+1
   \
     2
   /
@@ -17,7 +17,48 @@ Output: [1,2,3]
 Follow up: Recursive solution is trivial, could you do it iteratively?
 */
 
-// Definition for a binary tree node.
+/*
+Approach Recursion
+
+Depth-first search: preorder traversal <root><left><right>
+
+Algorithm
+1 visit root
+2 visit left sub-tree (visit all nodes left)
+3 visit right sub-tree (visit all nodes right)
+
+Intuition
+1 Create an empty stack, push root node to the stack
+2 Do following while stack is not empty:
+  2.1 pop an item from the stack and print it
+  2.2 push the right child of popped item to stack.
+  2.3 push the left child of popped item to stack.
+*/
+
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var preorderTraversal = function(root) {
+  let nodeStack = []
+  let result = [];
+  if (root === null) return result;
+  nodeStack.push(root);
+
+  while (!nodeStack.length) {
+    let node = nodeStack.pop();
+    result.push(node.val);
+
+    if (node.right) nodeStack.push(node.right);
+    if (node.left) nodeStack.push(node.left);
+  }
+
+  console.log('result', result)
+  return result;
+
+};
+
+// Definition for a binary tree node
 class TreeNode {
   constructor(val, left, right) {
     this.val = (val === undefined ? 0 : val);
@@ -26,36 +67,13 @@ class TreeNode {
   }
 }
 
-//  function TreeNode(val, left, right) {
-//       this.val = (val===undefined ? 0 : val)
-//       this.left = (left===undefined ? null : left)
-//       this.right = (right===undefined ? null : right)
-//   }
-
-/**
- * @param {TreeNode} root
- * @return {number[]}
- */
-var preorderTraversal = function(root) {
-  if (!root) return [];
-  let result = [];
-  let stack = [root];
-
-  //debugger;
-  while (stack.length) {
-    let node = stack.pop();
-    result.push(node.val);
-    if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.left);
+class BST {
+  constructor(val) {
+    this.root = new TreeNode(val)
   }
-
-  console.log('result', result)
-  return result;
-
-};
-
+}
 let tree = new TreeNode([1, null, 2, 3]);
-//console.log('preorderTraversal', preorderTraversal(tree));
+console.log('preorderTraversal', preorderTraversal(tree));
 
 
 // how to push binary tree nodes to array

@@ -75,6 +75,47 @@ total time complexity is O(log(n) ^ 2)
 */
 
 /**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var countNodes = function(root) {
+  if (root == null) return 0;
+
+  let leftDepth = countLeftDepth(root);
+  let rightDepth = countRightDepth(root);
+
+  // when it's a full binary tree, count = 2^depth -1
+  if (leftDepth === rightDepth) {
+    // todo rightDepth will work as well?
+    return (1 << leftDepth) - 1;
+  } else {
+    // when it's not full binary tree we'll calculate its left and right subtree
+    // nodes recursively and then plus one (root node) ...?
+    // height of the tree
+    return 1 + countNodes(root.left) + countNodes(root.right)
+  }
+};
+
+function countLeftDepth(node) {
+  let depth = 0;
+  while (node !== null) {
+    node = node.left;
+    depth++;
+  }
+  return depth;
+}
+
+function countRightDepth(node) {
+  let depth = 0;
+  while (node !== null) {
+    node = node.right;
+    depth++;
+  }
+  return depth;
+}
+
+
+/**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
  *   this.val = (val === undefined ? 0 : val)
@@ -122,46 +163,6 @@ class BST {
       y.right = newNode;
     }
   }
-}
-
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var countNodes = function(root) {
-  if (root == null) return 0;
-
-  let leftDepth = countLeftDepth(root);
-  let rightDepth = countRightDepth(root);
-
-  // when it's a full binary tree, count = 2^depth -1
-  if (leftDepth === rightDepth) {
-    // todo rightDepth will work as well?
-    return (1 << leftDepth) - 1;
-  } else {
-    // when it's not full binary tree we'll calculate its left and right subtree
-    // nodes recursively and then plus one (root node) ...?
-    // height of the tree
-    return 1 + countNodes(root.left) + countNodes(root.right)
-  }
-};
-
-function countLeftDepth(node) {
-  let depth = 0;
-  while (node !== null) {
-    node = node.left;
-    depth++;
-  }
-  return depth;
-}
-
-function countRightDepth(node) {
-  let depth = 0;
-  while (node !== null) {
-    node = node.right;
-    depth++;
-  }
-  return depth;
 }
 
 // tests

@@ -17,7 +17,7 @@ class Node {
 class BinarySearchTree {
   constructor(val) {
     this.root = new Node(val);
-    this.count = 0; // how many nodes in Tree
+    this.count = 1; // how many nodes in Tree
   }
 
   size() {
@@ -40,9 +40,8 @@ class BinarySearchTree {
       /*
       * Create a new node to insert into the tree and store the value in it.
       * This node will be added into the tree.
-       */
+      */
       const newNode = new Node(val);
-      //debugger;
 
       if (node === null) {
         node = newNode;
@@ -103,18 +102,19 @@ class BinarySearchTree {
   }
 
   /**
+    * search
     * The contains() method accepts a value as an argument and
     * returns true if the value is present in the tree or false if not.
   */
-  contains(value) {
+  contains(val) {
     let currentNode = this.root;
 
     while (currentNode) {
-      if (value === currentNode.value) {
+      if (val === currentNode.val) {
         return true
       }
 
-      if ( value < currentNode.value) {
+      if (val < currentNode.val) {
         currentNode = currentNode.left
       } else {
         currentNode = currentNode.right
@@ -166,13 +166,14 @@ class BinarySearchTree {
   }
 }
 
+// tests
 const tree = new BinarySearchTree(4);
 tree.insert(2)
 tree.insert(3)
 tree.insert(1)
 // tree.insert(7)
 // tree.insert(6)
-console.log('BST', tree)
+//console.log('BST', tree)
 
 
 tree.lowestCommonAncestor(2,7) // should be 4 it's not correct

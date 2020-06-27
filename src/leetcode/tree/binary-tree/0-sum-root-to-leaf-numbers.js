@@ -1,6 +1,6 @@
 /*
 Leetcode
-Sum Root to Leaf Numbers
+129 Sum Root to Leaf Numbers
 
 Given a binary tree containing digits from 0-9 only, each root-to-leaf path
 could represent a number.
@@ -38,6 +38,76 @@ The root-to-leaf path 4->0 represents the number 40.
 Therefore, sum = 495 + 491 + 40 = 1026.
 */
 
+/*
+Approach preorder traversal of the tree.
+
+In preorder traversal, keep track of the value calculated till the current node,
+let this value be val. For every node, we update the val + nodes data
+
+*/
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var sumNumbers = function(root) {
+  let sum = 0;
+  //debugger
+  if (root === null) sum = 0;
+  if (root.left === null && root.right === null) sum += root.val;
+
+  let x = root;
+  //debugger
+  // while (x !== null) {
+  //   if (x.left !== null) {
+  //     x = x.left
+  //   }
+  // }
+
+  // how to find all leaves
+
+  console.log('sum', sum);
+  return sum
+
+};
+
+
+// public int sumNumbers(TreeNode root) {
+// 	return sum(root, 0);
+// }
+
+// public int sum(TreeNode n, int s){
+// 	if (n == null) return 0;
+// 	if (n.right == null && n.left == null) return s*10 + n.val;
+// 	return sum(n.left, s*10 + n.val) + sum(n.right, s*10 + n.val);
+// }
+// https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41531/Clean-Java-DFS-solution-(preorder-traversal)
+//https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/705970/Recursive-Preorder-Traversal-or-Easy-to-Understand-or-Diagram-Visualization
+
+
+// recursion
+// var sumNumbers = function(root) {
+//   let sum = 0;
+//   if (!root){
+//       return 0;
+//   }
+//   const dfs = (node,current) => {
+//       current = current * 10  + node.val;
+//       if (!node.left && !node.right){
+//           sum+=current;
+//       }
+//       if (node.right){
+//           dfs(node.right,current)
+//       }
+//       if (node.left){
+//           dfs(node.left,current)
+//       }
+
+//   }
+//   dfs(root,0);
+//   return sum;
+// };
+// iterative
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
@@ -46,7 +116,6 @@ Therefore, sum = 495 + 491 + 40 = 1026.
  *     this.right = (right===undefined ? null : right)
  * }
  */
-
 class TreeNode {
   constructor(val, left, right) {
     this.val = (val === undefined ? 0 : val);
@@ -93,35 +162,12 @@ class BT {
 
 // tests
 let tree = new BT(1);
-//tree.insertNode(2)
+tree.insertNode(2)
+tree.insertNode(3)
 //tree.insertNode(3)
-//tree = JSON.parse(JSON.stringify(tree)).root;
+tree = JSON.parse(JSON.stringify(tree)).root;
 //console.log('tree', tree);
-
-/**
- * @param {TreeNode} root
- * @return {number}
- */
-var sumNumbers = function(root) {
-  let sum = 0;
-  //debugger
-  if (root === null) sum = 0;
-  if (root.left === null && root.right === null) sum += root.val;
-
-  let x = root;
-  // while ( x !== null) {
-  //   if (x.left)
-  // }
-
-  // how to find all leaves
-
-  console.log('sum', sum);
-  return sum
-
-};
-
-//tree = JSON.parse(JSON.stringify(tree)).root;
-//console.log('sumNumbers', sumNumbers(tree));
+console.log('sumNumbers', sumNumbers(tree));
 //console.log('sumNumbers', sumNumbers([1,2,3]));
 
 export {
