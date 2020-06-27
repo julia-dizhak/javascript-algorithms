@@ -107,7 +107,7 @@ created on 12/21/17
     | 2 Pointers (head and tail)  | O(1)         | 0(1)      |
 
 * ### Binary Tree Traversal
-    * [Depth-first search: Preorder](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/traversal/preorder.js)
+    * [Depth-first search: Preorder](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/preorder.js)
 
     | Approaches:         | Time         | Space  |
     | :---                | :---         | :---   |

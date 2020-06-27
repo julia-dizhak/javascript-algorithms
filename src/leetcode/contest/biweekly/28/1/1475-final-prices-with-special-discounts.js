@@ -1,5 +1,5 @@
 /*
-Leetcode Contest Biweekly 28
+Leetcode Contest Biweekly 28, first problem
 1475 Final prices with special discounts in a shop
 easy
 
@@ -84,7 +84,7 @@ var finalPrices = function(prices) {
 //   }
 //   return res;
 // };
-console.log('finalPrices', finalPrices([8,4,6,2,3]))
+//console.log('finalPrices', finalPrices([8,4,6,2,3]))
 
 export {
   finalPrices
