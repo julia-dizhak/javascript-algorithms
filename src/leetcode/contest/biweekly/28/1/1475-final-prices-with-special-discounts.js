@@ -1,5 +1,5 @@
 /*
-Leetcode Contest Biweekly
+Leetcode Contest Biweekly 28
 1475 Final prices with special discounts in a shop
 easy
 
