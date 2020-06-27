@@ -106,13 +106,23 @@ created on 12/21/17
     | 1 Pointer (head)            | O(n)         | 0(1)      |
     | 2 Pointers (head and tail)  | O(1)         | 0(1)      |
 
-* ### Binary Search Implementation
-    * [BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/binary-search-tree.js)
+* ### Binary Tree Traversal
+    * [Depth-first search: Preorder](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/traversal/preorder.js)
+
+    | Approaches:         | Time         | Space  |
+    | :---                | :---         | :---   |
+    | Recursion + Stack   | O(log n)     | 0(n)   |
+    | Iterative           | O(?)         | 0(?)   |
+
+
+* ### Binary Search Tree (BST) Implementation
+    * [BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bst/binary-search-tree.js)
 
     | Complexity :              | Time      |  Space    |
     | :---                      | :---      | :---      |
     | insert(node) recursion    | O(logn)   | 0(n)      |
     | insert(node) Iteratively  | O(logn)   | 0(1)      |
+
 
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)

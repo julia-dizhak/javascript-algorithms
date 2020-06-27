@@ -1,13 +1,14 @@
 import React from 'react';
 import Details from '../Details';
 
-import { BinarySearchTree } from '../../algorithms/tree/binary-search-tree';
+import { BinarySearchTree } from '../../algorithms/tree/bst/binary-search-tree';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 
 import { Trie } from '../../algorithms/trie/trie';
 
+// traversal
+import { preorderTraversal } from '../../algorithms/tree/bt/traversal/preorder';
 // problems
-import { preorderTraversal } from '../../leetcode/tree/BST/traversals/pre-order';
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/0-sum-root-to-leaf-numbers';
 
@@ -50,11 +51,10 @@ export default function Tree() {
 
         <li>
           <Details
-            id=""
-            question="Pre-order traversal Binary Tree"
-
-            time=""
-            space=""
+            id="bst-preorder-traversal"
+            question="Preorder traversal BST"
+            time="recursion: O(log n)"
+            space="recursion: O(n)"
             code={preorderTraversal.toString()}
           />
         </li>
