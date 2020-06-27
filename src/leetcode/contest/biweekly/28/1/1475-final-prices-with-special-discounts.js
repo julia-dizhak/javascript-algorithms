@@ -1,5 +1,5 @@
 /*
-Leetcode
+Leetcode Contest Biweekly
 1475 Final prices with special discounts in a shop
 easy
 
@@ -45,10 +45,13 @@ the discount is 0.
 */
 
 /*
-Approach
+Approach brute force
 
+time is O(n^2)
+space is O(1)
 */
 
+// todo added contest to wiki
 /**
  * @param {number[]} prices
  * @return {number[]}
@@ -58,7 +61,7 @@ var finalPrices = function(prices) {
   for (let i = 0; i < prices.length; i++) {
     result[i] = prices[i];
     for (let j = i+1; j < prices.length; j++) {
-      if (prices[j] < prices[i]) {
+      if (prices[j] <= prices[i]) {
         result[i] = prices[i] - prices[j];
         break;
       }
@@ -67,4 +70,22 @@ var finalPrices = function(prices) {
   return result
 }
 
+// todo stack solution
+// var finalPrices = function(prices) {
+//   const stack = [];
+//   const res = [];
+//   for(let i = 0; i <prices.length; i++){
+//       res[i] = prices[i]
+//       while(stack.length && prices[stack[stack.length - 1]] >= prices[i]){
+//           const j = stack.pop();
+//           res[j] = prices[j] - prices[i];
+//       }
+//       stack.push(i);
+//   }
+//   return res;
+// };
 console.log('finalPrices', finalPrices([8,4,6,2,3]))
+
+export {
+  finalPrices
+}
