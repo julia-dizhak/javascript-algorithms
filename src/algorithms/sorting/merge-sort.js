@@ -121,7 +121,6 @@ function bottomUpMergeSort(arr) {
   const n = sorted.length;
   var buffer = new Array(n);
 
-
   for (var size = 1; size < n; size *= 2) {
     for (var leftStart = 0; leftStart < n; leftStart += 2*size) {
       var left = leftStart,
@@ -151,6 +150,6 @@ function bottomUpMergeSort(arr) {
   return sorted;
 }
 
-console.log('bottomUpMergeSort', bottomUpMergeSort([5, 2, 1, 3, 6, 4]));
+//console.log('bottomUpMergeSort', bottomUpMergeSort([5, 2, 1, 3, 6, 4]));
 
 export { mergeSort, merger, mergeSortImprove, bottomUpMergeSort }
