@@ -1,6 +1,7 @@
 import React from 'react';
 import Details from '../Details';
 
+import { BT } from '../../algorithms/tree/bt/bt';
 import { BinarySearchTree } from '../../algorithms/tree/bst/binary-search-tree';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 
@@ -10,10 +11,10 @@ import { Trie } from '../../algorithms/trie/trie';
 import { preorderTraversal } from '../../algorithms/tree/bt/traversal/preorder';
 // problems
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
-import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
+//import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
 
 // contest
-import {average, kthFactor, longestSubarray } from '../../leetcode/contest/biweekly/29/contest'
+import { average, kthFactor, longestSubarray } from '../../leetcode/contest/biweekly/29/contest'
 
 export default function Tree() {
   return (
@@ -27,10 +28,22 @@ export default function Tree() {
             question=""
             code={longestSubarray.toString()}
             //code={BT.toString()}
-            secondCode={sumNumbers.toString()}
+            //secondCode={sumNumbers.toString()}
             // secondCode={Trie.toString()}
           />
         </li>
+        <li>
+          <Details
+            id="bt-implementation"
+            question="BT implementation: .insert(node)"
+            solution=""
+            complexity=''
+            time=""
+            space=""
+            code={BT.toString()}
+          />
+        </li>
+
         <li>
           <Details
             id="binary-search-tree-operations"

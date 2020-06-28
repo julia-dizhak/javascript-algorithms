@@ -31,19 +31,17 @@ Answers within 10^-5 of the actual value will be accepted as correct.
 var average = function(salary) {
   salary = salary.sort((a,b) => b - a);
   let sum = sum - salary[0] - salary[salary.length - 1]
-  sum / length - 2
+  //sum / length - 2
   // salary.pop();
   // salary.shift()
   const len = salary.length;
 
-  const sum = salary.reduce((acc, currentVal) => {
-    return acc + currentVal
-  }, 0);
+  // const sum = salary.reduce((acc, currentVal) => {
+  //   return acc + currentVal
+  // }, 0);
 
 
   const average = (sum/len).toFixed(5)
-
-
 
   return average
 };
@@ -235,8 +233,8 @@ var longestSubarray = function(nums) {
   // return max
 };
 
-console.log('longestSubarray', longestSubarray([1,1,0,1]))
-console.log('longestSubarray', longestSubarray([0,1,1,1,0,1,1,0,1]))
+// console.log('longestSubarray', longestSubarray([1,1,0,1]))
+// console.log('longestSubarray', longestSubarray([0,1,1,1,0,1,1,0,1]))
 //console.log('longestSubarray', longestSubarray([0,1,1,1,0,1,1,0,1]))
 
 

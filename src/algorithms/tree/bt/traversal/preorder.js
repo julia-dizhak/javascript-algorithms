@@ -11,7 +11,7 @@ Input: [1,null,2,3]
   \
     2
   /
-  3
+3
 
 Output: [1,2,3]
 Follow up: Recursive solution is trivial, could you do it iteratively?
@@ -40,7 +40,6 @@ Intuition
  * @return {number[]}
  */
 var preorderTraversal = function(root) {
-  //debugger;
   // Initialize the result to an empty array
   let result = [];
   if (root === null) return result;
@@ -62,7 +61,9 @@ var preorderTraversal = function(root) {
 
     // If there is a right child, push it onto the stack.
     if (node.right) nodeStack.push(node.right);
-    //If there is a left child, push it onto the stack.
+    // If there is a left child, push it onto the stack.
+    // when order will be root -> left -> right
+    // push last, pop last
     if (node.left) nodeStack.push(node.left);
   }
 
@@ -72,12 +73,14 @@ var preorderTraversal = function(root) {
 };
 
 /*
+todo
 Approach Iterative
 
 I find preorder traversal the easiest to implement iteratively.
 You can just reuse the dfs algorithm, but make sure you push the children onto
 the stack in such a way that the left child is processed before
 the right child.
+...
 */
 
 // Definition for a binary tree node
@@ -134,27 +137,6 @@ tree.insert(3);
 tree = JSON.parse(JSON.stringify(tree)).root;
 console.log('tree', tree);
 console.log('preorderTraversal', preorderTraversal(tree));
-
-
-// todo
-// how to push binary tree nodes to array
-// Given a tree root
-
-// A. If the tree is null, there's nothing to insert.
-// B. If is not null:
-// B.1 Insert everything on the left
-// B.2 Insert the tree root
-// B.3 Insert everything on the right
-// const walkAndInsert = (node, arr = []) => {
-//   if (!node) {
-//     return
-//   } else {
-//     walkAndInsert(node.left);
-//     arr.push(node.root);
-//     walkAndInsert(node.right);
-//   }
-//   return arr;
-// }
 
 export { preorderTraversal }
 
