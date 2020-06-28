@@ -34,6 +34,8 @@ dp[0] = 0
 var numSquares = function(n) {
   let dp = new Array(n+1).fill(Number.MAX_VALUE);
   dp[0] = 0;
-  
+
   console.log('dp', dp)
 };
+// https://leetcode.com/problems/perfect-squares/discuss/71495/An-easy-understanding-DP-solution-in-Java
+// todo https://leetcode.com/problems/perfect-squares/discuss/346249/Simple-JavaScript-(DP-Solution)

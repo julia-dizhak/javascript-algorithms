@@ -67,7 +67,6 @@ var preorderTraversal = function(root) {
     if (node.left) nodeStack.push(node.left);
   }
 
-  //console.log('result', result)
   return result;
 
 };
@@ -92,37 +91,39 @@ class TreeNode {
   }
 }
 
-class BST {
+class BT {
   constructor(val) {
     this.root = new TreeNode(val);
   }
 
   // iterative approach
-  insert(val) {
+  insert(val, root = this.root) {
     const newNode = new TreeNode(val);
-    if (this.root === null) {
-      this.root = newNode
+
+    if (root === null) {
+      root = newNode;
     }
 
-    let x = this.root;
-    let y = null;
+    let queue = [];
+    queue.push(root);
 
-    while (x !== null) {
-      y = x;
-      if (val <= x.val) {
-        x = x.left
+    while (queue.length) {
+      let node = queue[0];
+      queue.shift();
+
+      if (node.left === null) {
+        node.left = newNode;
+        break;
       } else {
-        x = x.right
+        queue.push(node.left)
       }
-    }
 
-    // y is leaf
-    if (y === null) {
-      y = newNode;
-    } else if (val <= y.val) {
-      y.left = newNode;
-    } else {
-      y.right = newNode;
+      if (node.right === null) {
+        node.right = newNode;
+        break;
+      } else {
+        queue.push(node.right)
+      }
     }
   }
 }
@@ -130,14 +131,18 @@ class BST {
 // tests
 // input [1,null,2,3]
 // Output: [1,2,3]
-let tree = new BST(1);
-tree.insert(null);
-tree.insert(2);
-tree.insert(3);
-tree = JSON.parse(JSON.stringify(tree)).root;
-console.log('tree', tree);
-console.log('preorderTraversal', preorderTraversal(tree));
+// todo
+// let tree = new BT(1);
+// tree.insert(null);
+// tree.insert(2);
+// tree.insert(3);
+// tree = JSON.parse(JSON.stringify(tree)).root;
+// console.log('tree', tree);
+// console.log('preorderTraversal', preorderTraversal(tree));
 
-export { preorderTraversal }
+export {
+  preorderTraversal,
+  BT
+}
 
 

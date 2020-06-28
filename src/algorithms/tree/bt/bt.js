@@ -31,6 +31,9 @@ binary tree.
 Step 9: End of while loop.
 
 Step 10: End of the function.
+
+time is O(log n)
+space is O(1)
 */
 
 class TreeNode {
@@ -49,6 +52,7 @@ class BT {
   // iterative approach
   insert(val, root = this.root) {
     const newNode = new TreeNode(val);
+
     if (root === null) {
       root = newNode;
     }
@@ -90,19 +94,6 @@ class BT {
 // https://www.netjstech.com/2019/03/binary-tree-implementation-in-java-insertion-traversal.html#BinarytreeInsertItr
 
 // tests
-let tree = new BT(5);
-tree.insert(4);
-tree.insert(3);
-tree.insert(2);
-tree.insert(1);
-tree = JSON.parse(JSON.stringify(tree)).root;
-//      5
-//   /   \
-//  4     3
-// / \   (next insertions here)
-// 2  1
-//console.log('BT tree', tree);
-
 // todo doesn't work, case with null
 // input [1,null,2,3]
 // let tree = new BT(1);

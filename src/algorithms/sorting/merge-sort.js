@@ -45,9 +45,9 @@ function mergeSort(arr) {
     return arr;
   }
 
-  const half = Math.floor(arr.length / 2);
-  const left = arr.slice(0, half);
-  const right = arr.slice(half);
+  const mid = Math.floor(arr.length / 2);
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
 
   return merger(mergeSort(left), mergeSort(right))
 }
@@ -59,24 +59,98 @@ Use insertion sort for small subarrays.
 ・Mergesort has too much overhead for tiny subarrays.
 ・Cutoff to insertion sort for ≈ 7 items
 */
-// function mergeSortImprove(arr) {
-//   if ( arr.length <= 1) {
-//     return arr;
-//   }
+function insertionSort(arr, lo, hi) {
+  for (let i = lo; i <= hi; i++) {
+    for (let j = i; j > 0 && arr[j] < arr[j-1]; j--) {
+      let temp = arr[j];
+      arr[j] = arr[j-1];
+      arr[j-1] = temp;
+    }
 
-//   let lo
-//   let hi
+  }
+}
 
-//   const half = Math.floor(arr.length / 2);
-//   const left = arr.slice(0, half);
-//   const right = arr.slice(half);
+// todo doesn't work
+function merge(arr, aux, lo, mid, hi) {
+  // Copy to aux[]
+  for (let i = lo; i <= hi; i++) {
+    aux[i] = arr[i];
+  }
 
-//   if (right <= left + CUTTOF - 1) {
+  // Merge back to a[]
+  let i = lo, j = mid + 1;
+  for (let k = lo; k <= hi; k++) {
+    if      (i > mid)              arr[k] = aux[j++];
+    else if (j > hi)               arr[k] = aux[i++];
+    else if (aux[i] < aux[j])      arr[k] = aux[i++];
+    else                           arr[k] = aux[j++];
+  }
+}
 
-//   }
-// }
 
-// test if it's stable
-console.log('mergeSort', mergeSort([5, 2, 1, 3, 6, 4]));
+function mergeSortImprove(arr, aux, lo, hi) {
+  const CUTTOF = 7;
 
-export { mergeSort, merger }
+  // #1 improvement
+  // Stop condition for this recursion.
+  // This time we add a CUTOFF, when the items in array
+  // is less than 7, we will use insertion sort.
+  if (hi <= lo + CUTTOF - 1) {
+    insertionSort(arr, lo, hi);
+    return;
+  }
+
+  let mid = lo + (hi - lo) / 2;
+  mergeSortImprove(arr, aux, lo, mid);
+  mergeSortImprove(arr, aux, mid + 1, hi);
+  if (!(arr[mid+1] < arr[mid])) return;
+  merge(arr, aux, lo, mid, hi);
+}
+
+/*
+Bottom-up mergeSort
+
+Basic plan.
+・Pass through array, merging subarrays of size 1.
+・Repeat for subarrays of size 2, 4, 8, 16, ....
+
+Complexity
+*/
+function bottomUpMergeSort(arr) {
+  var sorted = arr.slice();
+  const n = sorted.length;
+  var buffer = new Array(n);
+
+
+  for (var size = 1; size < n; size *= 2) {
+    for (var leftStart = 0; leftStart < n; leftStart += 2*size) {
+      var left = leftStart,
+          right = Math.min(left + size, n),
+          leftLimit = right,
+          rightLimit = Math.min(right + size, n),
+          i = left;
+      while (left < leftLimit && right < rightLimit) {
+        if (sorted[left] <= sorted[right]) {
+          buffer[i++] = sorted[left++];
+        } else {
+          buffer[i++] = sorted[right++];
+        }
+      }
+      while (left < leftLimit) {
+        buffer[i++] = sorted[left++];
+      }
+      while (right < rightLimit) {
+        buffer[i++] = sorted[right++];
+      }
+    }
+    var temp = sorted,
+        sorted = buffer,
+        buffer = temp;
+  }
+
+  return sorted;
+}
+
+console.log('bottomUpMergeSort', bottomUpMergeSort([5, 2, 1, 3, 6, 4]));
+
+export { mergeSort, merger, mergeSortImprove, bottomUpMergeSort }

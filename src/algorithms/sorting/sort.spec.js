@@ -1,6 +1,6 @@
 import { bubbleSort , bubbleSortDisplayCount, bubbleSortTwoForLoops, bubbleSortModified } from './bubble-sort';
 import { selectionSort } from './selection-sort';
-import { mergeSort } from './merge-sort';
+import { mergeSort, mergeSortImprove, bottomUpMergeSort } from './merge-sort';
 import { quickSort } from './quick-sort';
 import {
   // insertionSort,
@@ -73,6 +73,11 @@ describe('sorting array test case', () => {
     expect(mergeSort(arr)).toEqual(sortedArr);
     expect(mergeSort(a)).toEqual(sorted);
     expect(mergeSort([5, 2, 1, 3, 6, 4])).toEqual([1, 2, 3, 4, 5, 6]);
+
+    // todo stack exceed
+    // expect(mergeSortImprove([5, 2, 1, 3, 6, 4])).toEqual([1, 2, 3, 4, 5, 6]);
+    
+    expect(bottomUpMergeSort([5, 2, 1, 3, 6, 4])).toEqual([1, 2, 3, 4, 5, 6]);
   });
 
   it('selection sort for unsorted arrays', ()=> {

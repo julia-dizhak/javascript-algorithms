@@ -36,7 +36,7 @@ export default function Tree() {
           <Details
             id="bt-implementation"
             question="BT implementation: .insert(node)"
-            solution=""
+            solution="insert(node): iterative + Queue"
             complexity=''
             time=""
             space=""

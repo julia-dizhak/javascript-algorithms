@@ -111,7 +111,7 @@ created on 12/21/17
 
     | Complexity:               | Time      |  Space    |
     | :---                      | :---      | :---      |
-    | insert(node) iterative    | O(log n)  | 0(1)      |
+    | insert iterative + Queue  | O(log n)  | 0(1)      |
     | insert(node) recursion    | O(?)      | 0(?)      |
     | ...                       |           |           |
 
