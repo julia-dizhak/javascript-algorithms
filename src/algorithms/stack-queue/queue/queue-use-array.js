@@ -36,7 +36,7 @@ class Queue {
   }
 }
 
-// test
+// tests
 const queue = new Queue();
 queue.enqueue(1);
 queue.enqueue(2);

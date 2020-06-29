@@ -250,7 +250,7 @@ created on 12/21/17
 * Linked Lists
     * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-lists/singly-linked-list/237-delete-node-in-linked-list.js)
 
-* Stack
+* ### Stack
     * [155. Min Stack](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
 
     | Approaches:           | Time     | Space  |
@@ -265,6 +265,14 @@ created on 12/21/17
     | :---                  | :---     | :---   |
     | popMax()              | O(n)     | 0(n)   |
     | other operations      | O(1)     | O(n)   |
+
+* ### Queue
+    * [232. Queue use 2 stacks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/queue/queue-with-2-stacks.js)
+
+    | Complexity:  | Time      |  Space    |
+    | :---         | :---      | :---      |
+    | enqueue      | O(1)      | 0(1)      |
+    | dequeue      | O(n)      | 0(1)      |
 
 * ### Tree, Binary Tree
     * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)

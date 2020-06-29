@@ -5,6 +5,10 @@ Recursion
 That's very recursion has 2 parts:
 the base case and the recursive case
 
+Algo week 3
+Goal. Given an array of N items, find a kth smallest item.
+Ex. Min (k = 0), max (k = N - 1), median (k = N/ 2)
+
 Deutsch
 Turkish für Anfänger
 
@@ -19,6 +23,14 @@ lesen
 teil 2 a
 zweiflet
 beweisen - diese Teorie heute zu beweisen
+
+teil 2 b
+ver Versuch
+schwitzen
+Verfassung
+
+teil 4
+Einsamkeit
 
 Test 5
 

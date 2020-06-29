@@ -11,7 +11,11 @@ import { Queue as QueueLinkedList, QueueUse2Pointers } from '../../algorithms/st
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 import { MaxStack } from '../../leetcode/stack/716-max-stack';
+
+// problems related to Queue
 import { CircularQueue } from '../../algorithms/stack-queue/queue/circular-queue';
+
+import { Queue as QueueUse2Stacks } from '../../leetcode/queue/232-queue-with-2-stacks';
 
 export default function StackQueue() {
   return (
@@ -80,7 +84,7 @@ export default function StackQueue() {
         </li>
       </ul>
 
-      <h6>Problems</h6>
+      <h6>Problems Stacks</h6>
       <ul>
         <li>
           <details
@@ -116,6 +120,29 @@ export default function StackQueue() {
                 space="O(N), the maximum size of the stack."
                 code={MaxStack.toString()}
                 secondCode={MaxStack.toString()}
+              />
+          </details>
+        </li>
+      </ul>
+
+      <h6>Problems Queues</h6>
+      <ul>
+        <li>
+          <details
+            className="details"
+            id="queue-problems"
+            aria-expanded="false"
+            aria-labelledby="label">
+              <summary role="button" aria-controls="content">
+                Different problems related to Queues
+              </summary>
+
+              <Details
+                id="queue-use-2-stacks"
+                question=""
+                time=""
+                space=""
+                code={QueueUse2Stacks.toString()}
               />
           </details>
         </li>
