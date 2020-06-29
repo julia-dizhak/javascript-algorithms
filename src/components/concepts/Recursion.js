@@ -1,6 +1,10 @@
 import React from 'react';
 import Details from './../Details';
 
+// explanation
+import { loopNTimes, countDown } from '../../algorithms/recursion/index';
+
+// problems
 import { factorial } from '../../algorithms/recursion/factorial';
 import { fib, fibIterative } from '../../algorithms/recursion/fibonacci';
 
@@ -10,6 +14,17 @@ export default function Recursion() {
       <h2 id="recursion">Recursion</h2>
 
       <ul>
+      <li>
+          <Details
+            id="recursion-explanation"
+            question="Recursion examples"
+            time=""
+            space=""
+            code={loopNTimes.toString()}
+            secondCode={countDown.toString()}
+          />
+        </li>
+
         <li>
           <Details
             id="factorial"

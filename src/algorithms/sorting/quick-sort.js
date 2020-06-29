@@ -8,7 +8,7 @@ function quickSort(arr) {
   if (len <= 1) {
     return arr;
   }
-
+  
   const pivot = arr[len - 1];
   const leftArr = [];
   const rightArr = [];
@@ -21,6 +21,39 @@ function quickSort(arr) {
   const merged = [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
   return merged;
 }
+
+function quickSortUseRandomPivot(arr) {
+  const len = arr.length;
+
+  if (len <= 1) {
+    return arr;
+  }
+  // pivot as a random
+  let min = 1;
+  let max = arr.length - 1;
+  const random = Math.floor(min + Math.random() * (max + 1 - min));
+  const pivot = arr[random]
+
+  const left = [];
+  const right = [];
+
+  arr.splice(arr.indexOf(pivot), 1);
+  arr = [pivot].concat(arr);
+
+  for (let i = 1; i < arr.length; i++) {
+    if (pivot > arr[i]) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+
+  const merged = [...quickSort(left), pivot, ...quickSort(right)];
+  return merged;
+}
+
+// tests
+// console.log('Sorted array:', quickSort([1, 3, 4, 2, 5]));
 
 /*
 Quick-sort under Hoare partition schema
@@ -107,4 +140,4 @@ console.log('Sorted array:', arr);
 // final pivot location
 // todo
 
-export { quickSort };
+export { quickSort, quickSortUseRandomPivot };

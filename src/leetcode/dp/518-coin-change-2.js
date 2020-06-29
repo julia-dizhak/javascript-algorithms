@@ -100,7 +100,7 @@ Space is O(coins*amount)
 var change = function(amount, coins) {
   if (amount <= 0) return 1;
 
-  let combinations = new Array(amount+1).fill(0);
+  let combinations = new Array(amount + 1).fill(0);
   // setup amount 0 with value equal to 1
   // this will never going to change,
   // because coin will never going to 0
@@ -120,63 +120,18 @@ var change = function(amount, coins) {
   return combinations[amount]
 }
 
+// tests
+// console.log('change', change(5, [1,2,5]))
+
 /*
 Approach Brute force
-
-
+todo
+...
 */
-
 // todo check brute force https://leetcode.com/problems/coin-change-2/discuss/141076/Unbounded-Knapsack
 // brute force https://leetcode.com/problems/coin-change-2/discuss/141076/Unbounded-Knapsack
 // several methods https://leetcode.com/problems/coin-change-2/discuss/674977/100-Faster-or-Recursive-1-d-2-d-DP-or-Matrix-With-Example-or-Commented-Code-Video
 // outer loop iterating over amount and inner loop iterating over coins
-//The two codes on superificial comparison look equal, but the Code 1 gives a higher number of solutions that the correct answer.
 // amount as the outer of loop
-/*
-Any DP problem should start from explanation of sub problems
-For example, for this problem,
-if just have 1 coin and amount 1.
-How many combination can i have? Only 1
-
-every column starts from 0 until amount
-every row represent is additon of another coin
-*/
-var change1 = function(amount, coins) {
-  if (amount <= 0) return 0;
-
-  let combinations = new Array(amount+1);
-  //combinations[0] = 1;
-
-  for (let i = 0; i < amount + 1; i++) {
-    for (const coin of coins) {
-      //debugger
-      // if amount >= coin
-      // coin + i < amount + 1
-      // coin  <= combinations[i]
-      if (combinations[i] + 1 > coin + 1) {
-      //if (combinations[i] >= coin) {
-        //combinations[i] += combinations[i - coin]
-        combinations[i + coin] = combinations[i] + combinations[i + coin];
-      }
-      if (i === 0) combinations[i] = 1;
-    }
-  }
-
-  console.log('combinations 1', combinations)
-  return combinations[amount]
-};
-
-console.log('change', change1(5, [1,2,5]));
-//change(5, [1,2,5])
-
-
-//change(12, [1,2,5])
-//change(5, [1,2,5])
-//change(3, [2])
-
-
-
-
-
 
 export { change }

@@ -91,7 +91,7 @@ var removeDuplicates = function(nums) {
   Each of i and j traverses at most n steps.
 
   Space complexity: O(1).
- */
+*/
 
 /**
  * @param {number[]} nums
@@ -120,6 +120,9 @@ var removeDuplicatesTwoPointers = function(nums) {
 
   return slow + 1;
 };
+
+// tests
+console.log('removeDuplicatesTwoPointers', removeDuplicatesTwoPointers([0,0,1,1,1,2,2,3,3,4]))
 
 export {
   removeDuplicates,

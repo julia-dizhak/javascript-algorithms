@@ -1,10 +1,3 @@
-const loopNTimes = function(n) {
-  if ( n <= 1) {
-    return 'complete'
-  }
-  return loopNTimes(n-1);
-}
-
 /**
  * Factorial of a Number: return the factorial of the provided integer.
  * Desc: if the integer is represented with the n, a factorial is the product
@@ -110,4 +103,4 @@ function factorial(n) {
   }
 }
 
-export { factorialUseLoop, factorial, factorialUseWhileLoop, factorialUseLoopOperatorMinus, loopNTimes }
+export { factorialUseLoop, factorial, factorialUseWhileLoop, factorialUseLoopOperatorMinus }

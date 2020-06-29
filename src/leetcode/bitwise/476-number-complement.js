@@ -70,6 +70,8 @@ var flipBitByBit = function(num) {
 /*
 Approach Bit manipulation shift and xor
 
+with this approach Time Limit Exceeded
+
 example with num = 5
 i = 1;
 i = i << 1 = 1 << 1 = 10 => 2
@@ -88,14 +90,51 @@ i = 8
 1000 - 1 = 111, 111^101 = 010 got it
 x^1s = ~x
 */
+// function findComplementUseShift(num) {
+//   let i = 1;
+//   while (i <= num) {
+//     i = i << 1; // multiple by 2
+//   }
+//   return (i-1)^num;
+// }
 
-function findComplementUseShift(num) {
-  let i = 1;
-  while (i <= num) {
-    i = i << 1;
+/*
+Approach
+100110, its complement is 011001, the sum is 111111. So we only need get the
+min number large or equal to num, then do substraction
+*/
+// function findComplementUsePow(num) {
+//   let i = 0;
+//   let j = 0;
+
+//   while (i < num) {
+//     i += Math.pow(2,j);
+//     j++;
+//   }
+
+//   return i - num
+// }
+
+function findComplementUsePow(num) {
+  let n = 0;
+  while (n < num) {
+    n = (n << 1) | 1;
   }
-  return (i-1)^num;
+  return n - num
 }
+
+function findComplementUsePowVariant1(N) {
+  let i = 1; // i = pow(2, x) – 1; c is the smallest number >= N
+
+  while (i < N) {
+    i = (i << 1) | 1;
+    //i = i*2 + 1;  same as above
+  }
+
+  //return i - N; // also ok
+  return N ^ i;
+}
+//console.log('findComplementUsePow', findComplementUsePow(5))
 
 /*
   Approach 2 use toString and parseInt
@@ -186,7 +225,8 @@ function decimalToBinary(inputNum) {
 }
 
 export {
-  bitwiseComplement, findComplement, bitwiseComplementUseReduce, flipBitByBit,
+  bitwiseComplement, findComplement, bitwiseComplementUseReduce,
+  flipBitByBit,
   decimalToBinary,
-  findComplementUseShift
+  findComplementUsePowVariant1, findComplementUsePow
 }
