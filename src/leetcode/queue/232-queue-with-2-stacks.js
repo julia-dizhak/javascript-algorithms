@@ -52,7 +52,6 @@ and then push everything back.
 Method 1 moves all the elements twice in enqueue operation, while below is a method
 moves the elements once and moves elements only of stack2 empty.
 
-
 Time complexity
 push is O(n)
 remove is O(1)

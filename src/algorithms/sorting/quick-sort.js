@@ -5,17 +5,17 @@ Divide and conquer: recursion
 function quickSort(arr) {
   const len = arr.length;
 
-  if (len <= 1) {
+  if (len < 2) {
     return arr;
   }
-  
+
   const pivot = arr[len - 1];
   const leftArr = [];
   const rightArr = [];
 
   for (const el of arr.slice(0, len - 1)) {
     // exclude last element, because it's our pivot
-    el < pivot ? leftArr.push(el) : rightArr.push(el)
+    el < pivot ? leftArr.push(el) : rightArr.push(el);
   }
 
   const merged = [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
@@ -59,11 +59,11 @@ function quickSortUseRandomPivot(arr) {
 Quick-sort under Hoare partition schema
 
 Complexity
-Quick sort’s worst case is O(n2) but that can be avoided if we pick random pivot point (choose middle one), so that way it’s big O is O(nlogn).
+Quick sort’s worst case is O(n2) but that can be avoided if we pick random
+pivot point (choose middle one), so that way it’s big O is O(nlogn).
 Slicing half and recursive and you need to loop through entire array -> O(n log n)
 
 It’s space complexity is O(logn).
-
 */
 
 function quickSortHoare(arr, left = 0, right = arr.length - 1) {
@@ -76,7 +76,7 @@ function quickSortHoare(arr, left = 0, right = arr.length - 1) {
   }
 
   if (right > pivot) {
-    quickSortHoare(arr, pivot, right)
+    quickSortHoare(arr, pivot, right);
   }
 
   return arr;
@@ -126,14 +126,14 @@ function partitionHoare(arr, lo, hi) {
 function getRandom(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-let arr = [];
-// test with 3 indexes
-for (let i = 0; i < 6; i++) {
-  arr.push(getRandom(10))
-}
-console.log("Unsorted array: ", arr);
-arr = quickSortHoare(arr);
-console.log('Sorted array:', arr);
+
+// let arr = [];
+// for (let i = 0; i < 6; i++) {
+//   arr.push(getRandom(10))
+// }
+// console.log("Unsorted array: ", arr);
+//let arr = quickSortHoare([10,33,15,0]);
+//console.log('Sorted array:', arr);
 
 // lomoto partion scheme
 // potential pivot location

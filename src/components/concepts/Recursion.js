@@ -2,7 +2,7 @@ import React from 'react';
 import Details from './../Details';
 
 // explanation
-import { loopNTimes, countDown } from '../../algorithms/recursion/index';
+import { loopNTimes, countDown, sumUseLoop } from '../../algorithms/recursion/index';
 
 // problems
 import { factorial } from '../../algorithms/recursion/factorial';
@@ -20,7 +20,7 @@ export default function Recursion() {
             question="Recursion examples"
             time=""
             space=""
-            code={loopNTimes.toString()}
+            code={sumUseLoop.toString()}
             secondCode={countDown.toString()}
           />
         </li>
