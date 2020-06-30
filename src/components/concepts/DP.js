@@ -4,6 +4,7 @@ import Details from '../Details';
 // problems
 import { change } from '../../leetcode/dp/518-coin-change-2';
 import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
+import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
 
 
 export default function DP() {
@@ -24,6 +25,7 @@ export default function DP() {
             time="O(n*m), where n - coins, m - amount(combinations)"
             space="Create an arr of O(amount+1)"
             code={change.toString()}
+            secondCode={uniquePaths.toString()}
           />
         </li>
 

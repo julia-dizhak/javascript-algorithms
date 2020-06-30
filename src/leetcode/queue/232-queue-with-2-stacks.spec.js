@@ -1,5 +1,6 @@
 import {
   Queue,
+  // QueueUse2Stacks as Queue,
  } from './232-queue-with-2-stacks';
 
 describe('Queue via 2 Stacks test case', () => {

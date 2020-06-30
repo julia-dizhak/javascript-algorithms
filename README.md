@@ -267,7 +267,7 @@ created on 12/21/17
     | other operations      | O(1)     | O(n)   |
 
 * ### Queue
-    * [232. Queue use 2 stacks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/queue/queue-with-2-stacks.js)
+    * [232. Queue use 2 stacks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/queue/232-queue-with-2-stacks.js)
 
     | Complexity:  | Time      |  Space    |
     | :---         | :---      | :---      |

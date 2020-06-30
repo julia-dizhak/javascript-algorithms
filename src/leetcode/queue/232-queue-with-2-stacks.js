@@ -27,10 +27,13 @@ You may simulate a stack by using a list or deque (double-ended queue),
 as long as you use only standard operations of a stack.
 You may assume that all operations are valid (for example, no pop or peek
 operations will be called on an empty queue).
+
+Hint: If you push elements onto a stack and then pop them all, they appear in
+reverse order. If you repeat this process, they're now back in order.
 */
 
 /*
-Approach 2 Stack
+Approach 1 Stack by making enqueue operation costly
 
 Since we main difference between Queue and Stack is the order (first-in first-out vs
 last-in first-out) we know that we need to modify peek() and pop() to go in reverse
@@ -45,6 +48,55 @@ We can use our second stack to reverse the order of elements (by popping s1 and
 pushing the elements on to s2). In such an implementation, on each peek() and pop()
 operation, we would pop everything from s1 onto s2, perform the peek / pop operation,
 and then push everything back.
+
+Method 1 moves all the elements twice in enqueue operation, while below is a method
+moves the elements once and moves elements only of stack2 empty.
+
+
+Time complexity
+push is O(n)
+remove is O(1)
+*/
+
+class QueueUse2Stacks {
+  constructor() {
+    this.stackOldest = [];
+    this.stackNewest = [];
+  }
+
+  size() {
+    return this.stackOldest.length + this.stackNewest.length;
+  }
+
+  enqueue(val) {
+    // move all elements from s1 to s2
+    while (this.stackOldest.length) {
+      this.stackNewest.push(this.stackOldest.pop());
+    }
+
+    // push val in stack1
+    this.stackOldest.push(val);
+
+    // push everything back to s1
+    while (this.stackNewest.length) {
+      this.stackOldest.push(this.stackNewest.pop());
+    }
+  }
+
+  dequeue() {
+    if (this.stackOldest.length === 0) return 'Queue is empty';
+    let x = this.stackOldest[this.stackOldest.length - 1];
+    this.stackOldest.pop();
+    return x;
+  }
+
+  peek() {
+    return this.stackOldest[this.stackOldest.length - 1];
+  }
+}
+
+/*
+Approach 2 Stack (push is O(1), remove is O(n))
 
 In this approach, stackNewest  has the newest elements on top and stackOldest has
 the oldest elements on top. When we dequeue an element, we want to remove the oldest
@@ -100,20 +152,17 @@ class Queue {
   dequeue() {
     // ensure stackOldest has the current elements
     this.shiftStacks();
-    // todo is stackOldest is empty but I still queue.dequeue();
-    // if (this.stackOldest === []) {
-    //   return 'Queue is empty'
-    // }
     // pop the oldest item
     return this.stackOldest.pop();
   }
 }
 
 // tests
-const queue = new Queue();
+// const queue = new Queue();
 // queue.enqueue(0);
 // queue.enqueue(1);
 // queue.enqueue(2);
+// queue.enqueue(4);
 // queue.dequeue();
 // queue.peek();
 // queue.dequeue();
@@ -133,4 +182,4 @@ const queue = new Queue();
 
 //console.log('queue use 2 stacks', queue)
 
-export { Queue }
+export { Queue, QueueUse2Stacks }
