@@ -83,7 +83,15 @@ class LinkedList {
       counter++;
       node = node.next
     }
-    return -1
+    return -1;
+
+    // alternative version
+    // if (index >= this.size) return -1;
+    // let current = this.head;
+    // for (let i = 0; i < index; i++) {
+    //     current = current.next;
+    // }
+    // return current.val;
   }
 
   /**
@@ -108,7 +116,6 @@ class LinkedList {
     }
     return null
   }
-
 
   /**
    * insert a node
@@ -188,9 +195,15 @@ class LinkedList {
     const previous = this.getAt(index - 1);
     newNode.next = previous.next;
     previous.next = newNode;
-    this.size++;
+    // or alternatively without getAt
+    // let current = this.head;
+    // for (let i = 0; i < index - 1; i++) {
+    //     current = current.next
+    // }
+    // newNode.next = current.next;
+    // current.next = newNode
 
-    return this.head;
+    this.size++;
   }
 
   /**
@@ -201,14 +214,12 @@ class LinkedList {
   deleteAtIndex(index) {
     // indexes start from 0
     if (index >= this.size - 1 || index < 0) return;
-
-    if (!this.head) return null;
+    this.size--;
 
     // delete first node
     if (index === 0) {
       this.head = this.head.next;
-      this.size--;
-      return this.head;
+      return;
     }
 
     let counter = 0;
@@ -219,7 +230,6 @@ class LinkedList {
     }
 
     node.next = node.next.next;
-    this.length--;
   }
 
   deleteList() {
@@ -237,31 +247,22 @@ class LinkedList {
   }
 }
 
+// tests
 // A list object is created with a property head, currently pointing at null
-let linkedList = new LinkedList();
-// test 0
-linkedList.addAtHead(1);
-linkedList.addAtTail(3);
-linkedList.addAtIndex(1, 2);  // linked list becomes 1->2->3
-//linkedList.addAtIndex(1, 2);
-linkedList.get(1);            // returns 2
-linkedList.deleteAtIndex(1);  // now the linked list is 1->3
-linkedList.get(1);
-console.log(linkedList.printList());
-console.log('get', linkedList.get(1))
-
-// test 1
-// linkedList.addAtHead(1);
+// let linkedList = new LinkedList();
+// linkedList.addAtHead(7);
 // linkedList.addAtHead(2);
-// linkedList.addAtHead(210);
-// linkedList.addAtHead(300);
-// linkedList.addAtTail(0);
-//let linkedList1 = linkedList;
+// linkedList.addAtHead(1);
+// linkedList.addAtIndex(3, 0);
+// linkedList.deleteAtIndex(2);
+// linkedList.addAtHead(6);
+// linkedList.addAtTail(4)
+// linkedList.get(4);
+// console.log(linkedList.get(4));
+// console.log(linkedList.printList());
 
-linkedList = JSON.parse(JSON.stringify(linkedList));
-//console.log('linked list original', linkedList1)
-console.log('linked list', linkedList)
-
+// linkedList = JSON.parse(JSON.stringify(linkedList));
+// console.log('linked list', linkedList)
 
 /**
  * Leetcode

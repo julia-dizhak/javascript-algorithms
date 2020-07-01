@@ -54,7 +54,7 @@ function max(arr) {
   return (arr[0] > subMax) ? arr[0] : subMax;
 }
 
-console.log('max', max([10,12,0,2,4,6,1]))
+//console.log('max', max([10,12,0,2,4,6,1]))
 
 export {
   loopNTimes,

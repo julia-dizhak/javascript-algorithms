@@ -22,6 +22,7 @@ export default function Recursion() {
             space=""
             code={sumUseLoop.toString()}
             secondCode={countDown.toString()}
+            third={loopNTimes.toString()}
           />
         </li>
 
