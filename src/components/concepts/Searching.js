@@ -1,9 +1,13 @@
 import React from 'react';
 import Details from './../Details';
+
 import { findIndex } from '../../algorithms/search/linear/find-index';
 import { binarySearchRecursive, binarySearch } from '../../algorithms/search/binary/binary-search';
+
+// problems
 import { balancedSum } from '../../algorithms/search/problems/balanced-sum';
 import { solutionBinarySearch } from '../../leetcode/search/binary-search/278-first-bad-version';
+//import { arrangeCoins } from '../../leetcode/search/binarySearch/441-arrangeCoins';
 
 export default function Searching() {
   return (

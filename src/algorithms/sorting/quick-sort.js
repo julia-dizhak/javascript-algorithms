@@ -132,12 +132,14 @@ function getRandom(max) {
 //   arr.push(getRandom(10))
 // }
 // console.log("Unsorted array: ", arr);
-//let arr = quickSortHoare([10,33,15,0]);
-//console.log('Sorted array:', arr);
+// let arr = quickSortHoare([10,33,15,0]);
+// console.log('Sorted array:', arr);
 
 // lomoto partion scheme
 // potential pivot location
 // final pivot location
 // todo
 
-export { quickSort, quickSortUseRandomPivot };
+export {
+  quickSort, quickSortUseRandomPivot
+ };

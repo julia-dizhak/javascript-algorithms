@@ -253,6 +253,13 @@ created on 12/21/17
     | Binary search            | O(log n)     | 0(1)   |
     | Linear Search            | O(n)         | O(1)   |
 
+    * [441. Search insert position](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/35-arranging-coins.js)
+
+    | Approaches:     | Time         | Space  |
+    | :---            | :---         | :---   |
+    | Binary search   | O(log n)     | 0(1)   |
+    | Math            | O(1)         | O(1)   |
+
     * [528. Random pick with weight (accumulation sum + binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/528-random-pick-with-weight.js)
 
 * Linked Lists

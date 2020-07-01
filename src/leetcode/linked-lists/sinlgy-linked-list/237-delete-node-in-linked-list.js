@@ -35,16 +35,14 @@ Do not return anything from your function.
  *     this.val = val;
  *     this.next = null;
  * }
- */
+*/
 
 /*
 Approach swap with next node
 
 The usual way of deleting a node node from a linked list
 is to modify the next pointer of the node before it,
-to point to the node after it.
-
-1 -> 2 -> 3 -> 4
+to point to the node after it (see below).
 
 Since we do not have access to the node before the one we want to delete,
 we cannot modify the next pointer of that node in any way.
@@ -69,4 +67,42 @@ var deleteNode = function(node) {
   node.next = node.next.next;
 };
 
-export { deleteNode }
+/*
+Usual way of deleting a node in linked list
+
+To delete a node from linked list, we need to do following steps.
+1) Find previous node of the node to be deleted.
+2) Change the next of previous node.
+3) Free memory for the node to be deleted.
+
+1 -> 2 -> 3 -> 4 -> 5 -> x
+need to remove 3
+
+Time is O(n)
+space is O(1)
+*/
+var deleteNodeUsualWay = function(node, key) {
+  let temp = node;
+  let prev = null;
+
+  // If head node itself holds the key to be deleted
+  while (temp !== null && node.val === key) {
+    node = temp.next; // changed head
+    return;
+  }
+
+  // Search for the key to be deleted, keep track of the
+  // previous node as we need to change temp.next
+  while (temp !== null && node.val !== key) {
+    prev = temp;
+    temp = temp.next;
+  }
+
+  // If key was not present in linked list
+  if (temp == null) return;
+
+  // Unlink the node from linked list
+  prev.next = temp.next;
+}
+
+export { deleteNode, deleteNodeUsualWay }
