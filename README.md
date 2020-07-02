@@ -50,11 +50,11 @@ created on 12/21/17
 * ### Hash
     * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/two-sum.js)
 
-    | Approaches:        | Time    | Space    |
-    | :---               | :---    | :---     |
-    | Brute force        | O(n^2)  | O(1)     |
-    | 2-pass Hash table  | O(n)    | O(n)     |
-    | 1-pass Hash table  | O(n)    | O(n)     |
+| Approaches:        | Time    | Space    |
+| :---               | :---    | :---     |
+| Brute force        | O(n^2)  | O(1)     |
+| 2-pass Hash table  | O(n)    | O(n)     |
+| 1-pass Hash table  | O(n)    | O(n)     |
 
 * ### Search: linear and binary
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
@@ -71,7 +71,7 @@ created on 12/21/17
     * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/insertion-sort.js)
     * [Shell sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/shell-sort.js)
     * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
-    * Quick sort
+    * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/quick-sort.js)
 
 | Sort name       | O           | Ω          | Space     |
 | :---            | :---        | :---       | :---      |
@@ -85,22 +85,22 @@ created on 12/21/17
 * ### Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
 
-    | Complexity:             | Time         | Space   |
-    | :---                    | :---         | :---    |
-    | get(index)              | O(n)         | 0(1)    |
-    | addAtHead(val)          | O(1)         | 0(1)    |
-    | addAtTail(val)          | O(n)         | 0(1)    |
-    | addAtIndex(index, val)  | O(n)         | 0(1)    |
-    | deleteAtIndex(index)    | O(n)         | 0(1)    |
+| Complexity:             | Time         | Space   |
+| :---                    | :---         | :---    |
+| get(index)              | O(n)         | 0(1)    |
+| addAtHead(val)          | O(1)         | 0(1)    |
+| addAtTail(val)          | O(n)         | 0(1)    |
+| addAtIndex(index, val)  | O(n)         | 0(1)    |
+| deleteAtIndex(index)    | O(n)         | 0(1)    |
 
 * ### Stack implementation
     * [Stack via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
 
     * [Stack via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
 
-    | Complexity:        | Time         | Space   |
-    | :---               | :---         | :---    |
-    | All operations     | O(1)         | 0(N)?   |
+| Complexity:        | Time         | Space   |
+| :---               | :---         | :---    |
+| All operations     | O(1)         | 0(N)?   |
 
     * [Stack via String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
 
@@ -233,7 +233,7 @@ created on 12/21/17
     | :---            | :---    | :---   |
     | 2 pointers      | O(n)    | O(1)   |
 
-* Hash
+* ### Hash
     * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
 
     | Approach           | Time   | Space   |
@@ -243,26 +243,7 @@ created on 12/21/17
     | remove             | O(1)   | O(1)    |
     | getRandom          | O(1)   | O(1)    |
 
-* Binary Search
-    * [278. First Bad version](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/278-first-bad-version.js)
-
-    * [35. Search insert position](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/35-search-insert-position.js)
-
-    | Approaches:              | Time         | Space  |
-    | :---                     | :---         | :---   |
-    | Binary search            | O(log n)     | 0(1)   |
-    | Linear Search            | O(n)         | O(1)   |
-
-    * [441. Search insert position](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/35-arranging-coins.js)
-
-    | Approaches:     | Time         | Space  |
-    | :---            | :---         | :---   |
-    | Binary search   | O(log n)     | 0(1)   |
-    | Math            | O(1)         | O(1)   |
-
-    * [528. Random pick with weight (accumulation sum + binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/528-random-pick-with-weight.js)
-
-* Linked Lists
+* ### Linked Lists
     * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-lists/singly-linked-list/237-delete-node-in-linked-list.js)
 
 * ### Stack
@@ -324,15 +305,36 @@ created on 12/21/17
     | :---                           | :---    | :---   |
     | DFS (recursion + visited flag) | O(N)    | 0(N)   |
 
+* ### Divide & Conquer
+    * [215. Find the kth largest element ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/divide-conquer/215-k-th-largest-element.js)
 
-* Greedy
+* ### Binary Search
+    * [278. First Bad version](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/278-first-bad-version.js)
+
+    * [35. Search insert position](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/35-search-insert-position.js)
+
+    | Approaches:              | Time         | Space  |
+    | :---                     | :---         | :---   |
+    | Binary search            | O(log n)     | 0(1)   |
+    | Linear Search            | O(n)         | O(1)   |
+
+    * [441. Search insert position](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/35-arranging-coins.js)
+
+    | Approaches:     | Time         | Space  |
+    | :---            | :---         | :---   |
+    | Binary search   | O(log n)     | 0(1)   |
+    | Math            | O(1)         | O(1)   |
+
+    * [528. Random pick with weight (accumulation sum + binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/528-random-pick-with-weight.js)
+
+* ### Greedy
     * [1029. Two city Scheduling](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/greedy/1029-two-city-scheduling.js)
 
     | Approaches:    | Time      | Space  |
     | :---           | :---      | :---   |
     | Greedy         | O(nlogn)  | 0(1)   |
 
-* DP[dynamic programming]
+* ### DP[dynamic programming]
     * [518. Coin change 2 ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
 
     * [96. Unique binary search trees ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/96-unique-binary-search-trees.js)

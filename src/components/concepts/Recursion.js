@@ -7,6 +7,7 @@ import { loopNTimes, countDown, sumUseLoop } from '../../algorithms/recursion/in
 // problems
 import { factorial } from '../../algorithms/recursion/factorial';
 import { fib, fibIterative } from '../../algorithms/recursion/fibonacci';
+import { findKthLargest } from '../../leetcode/divide-conquer/215-k-th-largest-element';
 
 export default function Recursion() {
   return (
@@ -14,6 +15,11 @@ export default function Recursion() {
       <h2 id="recursion">Recursion</h2>
 
       <ul>
+        <Details
+          id="test"
+          question=""
+          code={findKthLargest.toString()}
+        />
       <li>
           <Details
             id="recursion-explanation"

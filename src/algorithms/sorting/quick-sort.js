@@ -1,5 +1,10 @@
 /*
+Quick sort: Hoare partition schema and Lomuto partition schema
 Divide and conquer: recursion
+
+pivot
+partitioning
+recursion
 
 */
 function quickSort(arr) {
@@ -66,11 +71,27 @@ Slicing half and recursive and you need to loop through entire array -> O(n log 
 It’s space complexity is O(logn).
 */
 
+// split subroutine
 function quickSortHoare(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let j = partitionHoare(arr, left, right);
+    //console.log('partition from', left, 'to', right, '=> partition', j);
+
+    // sort subarrays
+    quickSortHoare(arr, left, j-1);
+    quickSortHoare(arr, j+1, right);
+  }
+
+  if (right - left === arr.length - 1) return arr;
+}
+
+function quickSortHoare1(arr, left = 0, right = arr.length - 1) {
   // left-pointer would be the index of the first element which is 0
   // and right-pointer would be the index of the last element which would be (length -1).
-  let pivot = partitionHoare(arr, left, right);
+  let pivot = partitionHoare1(arr, left, right);
 
+  // based on pivot splits inputs on 2 parts
+  // and run trees left and right
   if (left < pivot - 1) {
     quickSortHoare(arr, left, pivot - 1);
   }
@@ -96,7 +117,34 @@ value than the right side element. So, the code execution then jumps out of the
 inner while loop and goes right in to execute the swap function.
 */
 function partitionHoare(arr, lo, hi) {
-  let pivot = Math.floor((lo + hi) / 2);
+  let i = lo;
+  let j = hi + 1;
+  // arr[lo] is pivot
+
+  while (true) {
+    while (arr[++i] < arr[lo]) {
+      if (i === hi) break;
+    }
+
+    while (arr[lo] < arr[--j]) {
+      if (j === lo) break;
+    }
+
+    if (i >= j) break;
+    let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+  }
+
+  let temp = arr[lo];
+    arr[lo] = arr[j];
+    arr[j] = temp;
+
+  return j;
+}
+
+function partitionHoare1(arr, lo, hi) {
+  let pivot = Math.floor((lo + hi)/2);
 
   while (lo < hi) {
     // find item on left to swap
@@ -122,6 +170,41 @@ function partitionHoare(arr, lo, hi) {
   return lo;
 }
 
+/*
+Lomuto partition schema
+another idea of pivoting
+
+1) choose pivot, for example last, pivot = arr[last]
+2) start pivot location at the begin of the array
+3) run i and j
+4) i remember last pivot position - keep memory
+5) j investigate
+6) if arr[j] <= pivot swap element before pivot location and increment i
+7) move pivot to final pivot location - in the end swap i and end
+
+great video with explanation https://www.youtube.com/watch?v=MZaf_9IZCrc
+*/
+
+function partitionLomuto(arr, start, end) {
+  // choose element as pivot
+  const pivot = arr[end];
+  let i = start; // pivot location
+
+  for (let j = start; j < end; j++) {
+    if (arr[j] <= pivot) {
+      swap(arr, i, j);
+      i++;
+    }
+  }
+  // move a pivot to its proper location
+  swap(arr, i, end);
+  return i;
+}
+
+function swap(arr, i, j) {
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+}
+
 // tests
 function getRandom(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -135,11 +218,9 @@ function getRandom(max) {
 // let arr = quickSortHoare([10,33,15,0]);
 // console.log('Sorted array:', arr);
 
-// lomoto partion scheme
-// potential pivot location
-// final pivot location
-// todo
 
 export {
-  quickSort, quickSortUseRandomPivot
- };
+  quickSort, quickSortUseRandomPivot,
+  quickSortHoare,
+  quickSortHoare1
+};
