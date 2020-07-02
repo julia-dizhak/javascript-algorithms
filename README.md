@@ -37,7 +37,6 @@ created on 12/21/17
     | getBit(num, i)     | O()     |         |
     | testBit(num, i)    | O()     | O()     |
 
-
 * Number (General)
 
 * String manipulation
@@ -50,11 +49,11 @@ created on 12/21/17
 * ### Hash
     * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/two-sum.js)
 
-| Approaches:        | Time    | Space    |
-| :---               | :---    | :---     |
-| Brute force        | O(n^2)  | O(1)     |
-| 2-pass Hash table  | O(n)    | O(n)     |
-| 1-pass Hash table  | O(n)    | O(n)     |
+    | Approaches:        | Time    | Space    |
+    | :---               | :---    | :---     |
+    | Brute force        | O(n^2)  | O(1)     |
+    | 2-pass Hash table  | O(n)    | O(n)     |
+    | 1-pass Hash table  | O(n)    | O(n)     |
 
 * ### Search: linear and binary
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
@@ -85,22 +84,22 @@ created on 12/21/17
 * ### Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
 
-| Complexity:             | Time         | Space   |
-| :---                    | :---         | :---    |
-| get(index)              | O(n)         | 0(1)    |
-| addAtHead(val)          | O(1)         | 0(1)    |
-| addAtTail(val)          | O(n)         | 0(1)    |
-| addAtIndex(index, val)  | O(n)         | 0(1)    |
-| deleteAtIndex(index)    | O(n)         | 0(1)    |
+    | Complexity:             | Time         | Space   |
+    | :---                    | :---         | :---    |
+    | get(index)              | O(n)         | 0(1)    |
+    | addAtHead(val)          | O(1)         | 0(1)    |
+    | addAtTail(val)          | O(n)         | 0(1)    |
+    | addAtIndex(index, val)  | O(n)         | 0(1)    |
+    | deleteAtIndex(index)    | O(n)         | 0(1)    |
 
 * ### Stack implementation
     * [Stack via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
 
     * [Stack via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
 
-| Complexity:        | Time         | Space   |
-| :---               | :---         | :---    |
-| All operations     | O(1)         | 0(N)?   |
+    | Complexity:        | Time         | Space   |
+    | :---               | :---         | :---    |
+    | All operations     | O(1)         | 0(N)?   |
 
     * [Stack via String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
 
@@ -126,9 +125,10 @@ created on 12/21/17
 * ### Binary Tree Traversal
     * [Depth-first search: Preorder](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/preorder.js)
 
-    | Approaches:         | Time         | Space  |
-    | :---                | :---         | :---   |
-    | Recursion + Stack   | O(log n)     | 0(n)   |
+    | Approaches:         | Time     | Space  |
+    | :---                | :---     | :---   |
+    | Iterative + Stack   | O(n)     | 0(h)   |
+    | Recursion           | O(n)     | 0(n)   |
 
 
 * ### Binary Search Tree (BST) Implementation
@@ -308,10 +308,10 @@ created on 12/21/17
 * ### Divide & Conquer
     * [215. Find the kth largest element ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/divide-conquer/215-k-th-largest-element.js)
 
-| Approaches:    | O         | T        |  Space |
-| :---           | :---      | :---     | :---   |
-| Sort           | O(log n)  | 0(log n) | 0(1)   |
-| Quick-select   | O(n^2)    | 0(n)     | 0(1)   |
+    | Approaches:    | O         | T        |  Space |
+    | :---           | :---      | :---     | :---   |
+    | Sort           | O(log n)  | 0(log n) | 0(1)   |
+    | Quick-select   | O(n^2)    | 0(n)     | 0(1)   |
 
 * ### Binary Search
     * [278. First Bad version](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/278-first-bad-version.js)

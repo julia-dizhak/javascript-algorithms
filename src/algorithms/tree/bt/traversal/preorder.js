@@ -18,9 +18,29 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 */
 
 /*
-Approach Stack + Recursion
+Approach Recursive
+Time is O(n)
+space is O(n)
+*/
+var preorder = function(root, nodes = []) {
+  if (root) {
+    nodes.push(root.val);
+    preorder(root.left, nodes);
+    preorder(root.right, nodes);
+  }
+
+  return nodes;
+};
+
+/*
+Approach Stack + Iterative
 
 Depth-first search: preorder traversal <root><left><right>
+
+I find preorder traversal the easiest to implement iteratively.
+You can just reuse the dfs algorithm, but make sure you push the children onto
+the stack in such a way that the left child is processed before
+the right child.
 
 Algorithm
 1 visit root
@@ -30,9 +50,20 @@ Algorithm
 Intuition
 1 Create an empty stack, push root node to the stack
 2 Do following while stack is not empty:
-  2.1 pop an item from the stack and print it
+  2.1 pop an item from the stack and push it to stack
   2.2 push the right child of popped item to stack.
   2.3 push the left child of popped item to stack.
+
+Complexity
+In an average case however, if you are considering a balanced/close-to-balanced tree,
+the time complexity is always O(n) as you HAVE to visit each node
+
+Each iteration you're going one level deeper and adding 2 elements (right and
+left if they exist) to the stack while popping one node out (the parent one).
+It means that at most 1 new element is added as you go 1 level down. Once you reach
+the left most node and pop it out you repeat the same procedure for the top node
+in the stack -> O(h).
+The space complexity was always proportional to the height of the tree.
 */
 
 /**
@@ -68,19 +99,7 @@ var preorderTraversal = function(root) {
   }
 
   return result;
-
 };
-
-/*
-todo
-Approach Iterative
-
-I find preorder traversal the easiest to implement iteratively.
-You can just reuse the dfs algorithm, but make sure you push the children onto
-the stack in such a way that the left child is processed before
-the right child.
-...
-*/
 
 // Definition for a binary tree node
 class TreeNode {
@@ -138,11 +157,10 @@ class BT {
 // tree.insert(3);
 // tree = JSON.parse(JSON.stringify(tree)).root;
 // console.log('tree', tree);
-// console.log('preorderTraversal', preorderTraversal(tree));
+// console.log('preorder', preorder(tree));
 
 export {
+  preorder,
   preorderTraversal,
   BT
 }
-
-

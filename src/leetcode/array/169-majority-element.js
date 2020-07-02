@@ -1,35 +1,37 @@
 /*
-  Leetcode
-  169 Majority element
-  medium
+Leetcode
+169 Majority element
+medium
 
-  Given an array of size n, find the majority element.
-  The majority element is the element that appears more than ⌊ n/2 ⌋ times.
-  You may assume that the array is non-empty and the majority element always exist in the array.
+Given an array of size n, find the majority element.
+The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+You may assume that the array is non-empty and the majority element always
+exist in the array.
 
-  Example 1:
+Example 1:
+Input: [3,2,3]
 
-  Input: [3,2,3]
-  Output: 3
+Output: 3
 
-  Example 2:
-
-  Input: [2,2,1,1,1,2,2]
-  Output: 2
- */
+Example 2:
+Input: [2,2,1,1,1,2,2]
+Output: 2
+*/
 
 /*
-  Approach 1 Brute force
+Approach 1 Brute force
 
-  The brute force algorithm iterates over the array, and then iterates again for each number to count its occurrences.
-  As soon as a number is found to have appeared more than any other can possibly have appeared, return it.
+The brute force algorithm iterates over the array, and then iterates again for
+each number to count its occurrences. As soon as a number is found to have
+appeared more than any other can possibly have appeared, return it.
 
-  Time complexity: O(n^2)
-  The brute force algorithm contains two nested for loops that each run for nn iterations,
-  adding up to quadratic time complexity.
+Time complexity: O(n^2)
+The brute force algorithm contains two nested for loops that each run for n
+iterations, adding up to quadratic time complexity.
 
-  Space complexity: O(1)
-  The brute force solution does not allocate additional space proportional to the input size.
+Space complexity: O(1)
+The brute force solution does not allocate additional space proportional to the
+input size.
 */
 var majorityElementBruteForce = function(arr) {
   const majorityCount = arr.length/2;
@@ -107,24 +109,25 @@ var majorityElementSorting = function(arr) {
 }
 
 /*
-  Approach 6 Boyer-Moore Voting algorithm
+Approach 6 Boyer-Moore Voting algorithm
 
-  Intuition
-  If we had some way of counting instances of the majority element as +1 and
-  instances of any other element as −1,
-  summing them would make it obvious that the majority element is indeed the majority element.
+Intuition
+If we had some way of counting instances of the majority element as +1 and
+instances of any other element as −1, summing them would make it obvious that
+the majority element is indeed the majority element.
 
-  To do this, we maintain a count, which is incremented
-  whenever we see an instance of our current candidate
-  and decremented whenever we see anything else.
-  Whenever count equals 0, we effectively forget about everything in nums up to the current index
-  and consider the current number as the candidate for majority element.
+To do this, we maintain a count, which is incremented whenever we see an instance
+of our current candidate and decremented whenever we see anything else.
+Whenever count equals 0, we effectively forget about everything in nums up to
+the current index
+and consider the current number as the candidate for majority element.
 
-  Time complexity: O(n)
-  Boyer-Moore performs constant work exactly n times, so the algorithm runs in linear time.
+Time complexity: O(n)
+Boyer-Moore performs constant work exactly n times, so the algorithm runs in
+linear time.
 
-  Space complexity : O(1)
-  Boyer-Moore allocates only constant additional memory.
+Space complexity: O(1)
+Boyer-Moore allocates only constant additional memory.
 */
 var majorityMooreVoting = function(nums) {
   let count = 0;
@@ -181,6 +184,7 @@ const majorityMooreVotingVariant2 = nums => {
 
   return candidate;
 };
+
 
 export {
   majorityElement,

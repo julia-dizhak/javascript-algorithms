@@ -1,6 +1,6 @@
 /*
 Leetocde
-215 Find the kth largest element in an unsorted array.
+215 Find the kth largest (smallest) element in an unsorted array.
 medium
 
 Find the kth largest element in an unsorted array. Note that it is the
@@ -165,7 +165,7 @@ function swap(arr, i, j) {
 }
 
 //console.log('findKthLargest', findKthLargest([3,2,1,5,6,4], 2))
-console.log('findKthLargest', findKthLargest([3,2,1], 1))
+//console.log('findKthLargest', findKthLargest([3,2,1], 1))
 
 export {
   findKthLargest,

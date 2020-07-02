@@ -114,7 +114,6 @@ function countRightDepth(node) {
   return depth;
 }
 
-
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {

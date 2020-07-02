@@ -1,7 +1,23 @@
-import { preorderTraversal, BT } from './preorder';
+import {
+  //preorderTraversal,
+  preorder as preorderTraversal,
+  BT
+} from './preorder';
 
 describe('preorderTraversal test case', () => {
   let tree;
+
+  it('preorderTraversal', () => {
+    tree = new BT(1);
+    tree.insert(2);
+    tree.insert(3)
+    tree = JSON.parse(JSON.stringify(tree)).root;
+    //     1
+    //   /   \
+    //  2     3
+    const result = preorderTraversal(tree);
+    expect(result).toEqual([1,2,3]);
+  });
 
   it('preorderTraversal', () => {
     tree = new BT(5);
