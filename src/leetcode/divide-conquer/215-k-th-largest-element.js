@@ -81,19 +81,37 @@ because n/2+n/4+n/8+..1 = n-1.
  * @param {number} k
  * @return {number}
 */
-
 function findKthLargest(nums, k) {
   k = nums.length - k;
   let lo = 0;
   let hi = nums.length - 1;
   while (lo < hi) {
-    let j = partition(nums, lo, hi);
+    let j = partitionLomuto(nums, lo, hi);
     if (j < k) {
+      /*
+        pivotIndex < n - k
+        k'th largest must be in the right partition. We "undershot" and need to
+        go right (and we do this by narrowing the left bound)
+      */
       lo = j + 1;
     } else if (j > k) {
+      /*
+        k'th largest must be in the left partition. We "overshot" and need to go left
+        (and we do this by narrowing the right bound)
+      */
       hi = j - 1;
     } else {
       break;
+      // if (j === nums.length - k)
+      /*
+        Found. The pivot is index on index n - k. This is literally its final
+        position if the array we were given had been sorted. See how we saved work?
+        We don't need to sort the whole array
+        In this case pivot would have a final position like in sorted array
+        [2 1 3 5 6 4]
+        3 is index 2 like in sorted array
+      */
+      // time limit exceed
       //return nums[k]
     }
   }
@@ -101,12 +119,12 @@ function findKthLargest(nums, k) {
 };
 
 function partition(nums, start, end) {
-  //debugger
   let pivot = start, temp;
   while (start <= end) {
       while (nums[start] <= nums[pivot]) start++;
       while (nums[end] > nums[pivot]) end--;
       if (start > end) break;
+
       temp = nums[start];
       nums[start] = nums[end];
       nums[end] = temp;
@@ -125,7 +143,6 @@ function partition(nums, start, end) {
 
 /*
 Lomuto partition schema
-
 */
 function partitionLomuto(arr, start, end) {
   // choose element as pivot
@@ -148,7 +165,7 @@ function swap(arr, i, j) {
 }
 
 //console.log('findKthLargest', findKthLargest([3,2,1,5,6,4], 2))
-//console.log('findKthLargest jfkldsjfglk', findKthLargest([3,2,1], 1))
+console.log('findKthLargest', findKthLargest([3,2,1], 1))
 
 export {
   findKthLargest,

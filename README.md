@@ -308,6 +308,11 @@ created on 12/21/17
 * ### Divide & Conquer
     * [215. Find the kth largest element ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/divide-conquer/215-k-th-largest-element.js)
 
+| Approaches:    | O         | T        |  Space |
+| :---           | :---      | :---     | :---   |
+| Sort           | O(log n)  | 0(log n) | 0(1)   |
+| Quick-select   | O(n^2)    | 0(n)     | 0(1)   |
+
 * ### Binary Search
     * [278. First Bad version](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/278-first-bad-version.js)
 
