@@ -12,10 +12,10 @@ import { preorderTraversal } from '../../algorithms/tree/bt/traversal/preorder';
 import { levelOrder } from '../../algorithms/tree/bt/traversal/level-order-traversal';
 // problems
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
-//import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
+// import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
 
-// contest
-import { average, kthFactor, longestSubarray } from '../../leetcode/contest/biweekly/29/contest'
+// contest move
+// import { average, kthFactor, longestSubarray } from '../../leetcode/contest/biweekly/29/contest'
 
 export default function Tree() {
   return (
@@ -27,7 +27,6 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={longestSubarray.toString()}
             //code={BT.toString()}
             //secondCode={sumNumbers.toString()}
             // secondCode={Trie.toString()}

@@ -207,14 +207,6 @@ class BT {
 // console.log('tree', tree);
 // console.log('levelorder', levelOrderBottom(tree));
 
-/**
- * @param {number[]} cells
- * @param {number} N
- * @return {number[]}
- */
-var prisonAfterNDays = function(cells, N) {
-
-};
 
 export {
   levelOrder,

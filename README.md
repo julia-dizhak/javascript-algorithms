@@ -204,6 +204,7 @@ created on 12/21/17
     * [383. Ransom Note]
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
+
     * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
@@ -247,6 +248,12 @@ created on 12/21/17
     | insert             | O(1)   | O(1)    |
     | remove             | O(1)   | O(1)    |
     | getRandom          | O(1)   | O(1)    |
+
+    * [957. Prison Cells After N Days)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/957-prison-cells-after-N-days.js)
+
+    | Approach            | Time    | Space   |
+    | :---                | :---    | :---    |
+    | Hash + catch cycle  | O(1)    | O(1)    |
 
 * ### Linked Lists
     * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-lists/singly-linked-list/237-delete-node-in-linked-list.js)

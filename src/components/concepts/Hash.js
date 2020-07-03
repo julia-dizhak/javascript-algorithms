@@ -2,6 +2,8 @@ import React from 'react';
 import Details from './../Details';
 
 import { twoSum } from "../../algorithms/hash/two-sum";
+// problems
+import { prisonAfterNDays } from '../../leetcode/hash/957-prison-cells-after-N-days'
 
 export default function Hash() {
   return (
@@ -9,12 +11,12 @@ export default function Hash() {
       <h2>Hash / Hash Table</h2>
 
         <ul>
-          {/* test
+
           <Details
             id="test"
             question=""
-            code={}
-          /> */}
+            code={prisonAfterNDays.toString()}
+          />
         <li>
           <Details
             id="search-two-sum"
