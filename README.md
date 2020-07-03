@@ -130,6 +130,11 @@ created on 12/21/17
     | Iterative + Stack   | O(n)     | 0(h)   |
     | Recursion           | O(n)     | 0(n)   |
 
+    * [Level order and level bottom traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/level-order-traversal.js)
+
+    | Approaches:         | Time     | Space      |
+    | :---                | :---     | :---       |
+    | Iterative, Queue    | O(n)     | 0(n/2 = n) |
 
 * ### Binary Search Tree (BST) Implementation
     * [BST implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bst/binary-search-tree.js)

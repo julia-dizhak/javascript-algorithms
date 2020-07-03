@@ -9,6 +9,7 @@ import { Trie } from '../../algorithms/trie/trie';
 
 // traversal
 import { preorderTraversal } from '../../algorithms/tree/bt/traversal/preorder';
+import { levelOrder } from '../../algorithms/tree/bt/traversal/level-order-traversal';
 // problems
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 //import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
@@ -68,10 +69,20 @@ export default function Tree() {
 
         <li>
           <Details
-            id="bst-preorder-traversal"
-            question="Preorder traversal BST"
-            time="recursion: O(log n)"
-            space="recursion: O(n)"
+            id="bt-levelorder"
+            question="Level order traversal BT"
+            time=""
+            space=""
+            code={levelOrder.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="bt-preorder-traversal"
+            question="Preorder traversal BT"
+            time=""
+            space=""
             code={preorderTraversal.toString()}
           />
         </li>
