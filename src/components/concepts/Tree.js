@@ -70,9 +70,9 @@ export default function Tree() {
         <li>
           <Details
             id="bt-levelorder"
-            question="Level order traversal BT"
-            time=""
-            space=""
+            question="Level order (bottom level) traversal BT"
+            time="O(n)"
+            space="O(n)"
             code={levelOrder.toString()}
           />
         </li>
