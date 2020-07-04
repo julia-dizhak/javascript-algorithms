@@ -145,6 +145,13 @@ created on 12/21/17
     | insert(node) Iteratively  | O(logn)   | 0(1)      |
     | ...                       |           |           |
 
+* ### Heap
+    * [Max Binary Heap](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/heap/max-binary-heap.js)
+
+    | Complexity:         | Time      |  Space    |
+    | :---                | :---      | :---      |
+    | insert(val)         | O(log n)  | 0(1)      |
+    | ...                 |           |           |
 
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)

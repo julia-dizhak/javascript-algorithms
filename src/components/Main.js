@@ -9,7 +9,9 @@ import Hash from './concepts/Hash';
 import Stack from './concepts/Stack';
 import Queue from './concepts/Queue';
 import LinkedLists from './concepts/LinkedLists';
+
 import Tree from './concepts/Tree';
+import Heap from './concepts/Heap';
 import Graph from './concepts/Graph';
 
 import Sorting from './concepts/Sorting';
@@ -41,6 +43,7 @@ function Main() {
         <Queue />
 
         <Tree />
+        <Heap />
         <Graph />
 
         <Recursion />

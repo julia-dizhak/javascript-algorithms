@@ -44,6 +44,15 @@ cells[i] is in {0, 1}
 1 <= N <= 10^9
 */
 
+/*
+Approach Brute Force
+
+The most naive approach of the solution will be, running a loop for N times and
+changing the position of cells after every iteration and then storing it in a
+temporary list. But considering the fact N is very large (N<=10^9) this solution
+will produce an error TLE.
+*/
+
 
 /*
 Approach Hash (Find a pattern)

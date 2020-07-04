@@ -13,13 +13,13 @@ export default function LinkedLists() {
         <li>
           <Details
             id="singly-linked-list"
-            question="Singly linked list implementation: get(index), addAtHead(val), addAtTail(val), addAtIndex(val), deleteAt(index) "
+            question="Singly linked list implementation"
             code={LinkedList.toString()}
           />
         </li>
       </ul>
 
-      <h4>Doubly-linked List</h4>
+      {/* <h4>Doubly-linked List</h4>
       <ul>
         <li>
           ...
@@ -31,7 +31,7 @@ export default function LinkedLists() {
         <li>
           ...
         </li>
-      </ul>
+      </ul> */}
   </div>
   );
 }
