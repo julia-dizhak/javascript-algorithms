@@ -67,6 +67,60 @@ class MaxBinaryHeap {
     return this.values;
   }
 
+  // bubble down elements to readjust heap after removing max element
+  bubbleDown() {
+    let parentIndex = 0;
+    let size = this.values.length;
+    const parent = this.values[0];
+
+    while(true) {
+      let leftChildIndex = 2*parentIndex + 1;
+      let rightChildIndex = 2*parentIndex + 2;
+
+      let leftChild;
+      let rightChild;
+      let indexToSwap = null;
+
+      // if left child exists, and is greater than the element, plan to swap
+      // with the left child index
+      if (leftChildIndex < size) {
+        leftChild = this.values[leftChildIndex];
+        if (leftChild > parent) {
+          indexToSwap = leftChildIndex
+        }
+      }
+
+      // if right child exists
+      if (rightChildIndex < size) {
+        rightChild = this.values[rightChildIndex];
+        if (
+          (rightChild > parent && indexToSwap === null) ||
+          (rightChild > leftChild && indexToSwap !== null)
+          ) {
+            indexToSwap = rightChildIndex
+        }
+      }
+
+      // if there are no plans to swap, break out of the loop
+      if (indexToSwap === null) break;
+      // swap with planned element
+      this.swap(parentIndex, indexToSwap);
+      // starting index is now index that we swapped with
+      parentIndex = indexToSwap;
+    }
+  }
+
+  deleteMax() {
+    // swap first and last element
+    this.swap(0, this.values.length - 1);
+    //pop max value off of values
+    let poppedVal = this.values.pop();
+    //re-adjust heap if length is greater than 1
+    if (this.values.length > 1) {
+      this.bubbleDown();
+    }
+    return poppedVal
+  }
 
 
   // helper methods
@@ -77,6 +131,7 @@ class MaxBinaryHeap {
   }
 }
 
+// tests
 const heap = new MaxBinaryHeap();
 heap.insert(100);
 heap.insert(20);
@@ -84,6 +139,7 @@ heap.insert(80);
 heap.insert(30);
 heap.insert(70);
 heap.insert(40);
+heap.deleteMax()
 
 // heap.insertOntoEnd(100);
 // heap.insertOntoEnd(20);
