@@ -1,36 +1,30 @@
 import React from 'react';
 import Details from '../Details';
 
-import { Stack } from '../../algorithms/stack-queue/stack/stack-use-string';
-import { Stack as StackArr } from '../../algorithms/stack-queue/stack/stack-use-array';
-import { Stack as StackLinkedList } from '../../algorithms/stack-queue/stack/stack-use-linked-list';
-import { StackObj } from '../../algorithms/stack-queue/stack/stack-using-objects';
-
-import { Queue as QueueArray } from '../../algorithms/stack-queue/queue/queue-use-array';
-import { Queue as QueueLinkedList, QueueUse2Pointers } from '../../algorithms/stack-queue/queue/queue-use-linked-list';
+import { Stack as StackUseString } from '../../algorithms/stack/stack-use-string';
+import { Stack as StackArr } from '../../algorithms/stack/stack-use-array';
+import { Stack as StackLinkedList } from '../../algorithms/stack/stack-use-linked-list';
+import { StackObj as StackUseObj } from '../../algorithms/stack/stack-using-objects';
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 import { MaxStack } from '../../leetcode/stack/716-max-stack';
 
-// problems related to Queue
-import { CircularQueue } from '../../algorithms/stack-queue/queue/circular-queue';
+// problems
+// ...
 
-import { Queue as QueueUse2Stacks } from '../../leetcode/queue/232-queue-with-2-stacks';
-
-export default function StackQueue() {
+export default function Stack() {
   return (
-    <div className="number">
-      <h2>Stack and Queue</h2>
+    <div className="stack" id="stack">
+      <h2>Stack</h2>
 
-      <h3>Stack implementations</h3>
       <ul>
-        <li>
+        {/* <li>
           <Details
             id=""
             question="test"
-            code={CircularQueue.toString()}
+            code={?.toString()}
           />
-        </li>
+        </li> */}
         <li>
           <Details
             id="stack-use-array"
@@ -53,38 +47,18 @@ export default function StackQueue() {
           <Details
             id="stack-using-string"
             question="Stack via String"
-            code={Stack.toString()}
+            code={StackUseString.toString()}
           />
         </li>
         <li>
           <Details
             id="stack-using-object"
             question="Stack via Object"
-            code={StackObj.toString()}
+            code={StackUseObj.toString()}
           />
         </li>
       </ul>
 
-      <h3>Queue</h3>
-      <ul>
-        <li>
-          <Details
-            id="queue-use-array"
-            question="Queue via array"
-            code={QueueArray.toString()}
-          />
-        </li>
-        <li>
-          <Details
-            id="queue-use-linked-list"
-            question="Queue via linked list (1 pointer and 2 pointers)"
-            code={QueueLinkedList.toString()}
-            secondCode={QueueUse2Pointers.toString()}
-          />
-        </li>
-      </ul>
-
-      <h6>Problems Stacks</h6>
       <ul>
         <li>
           <details
@@ -120,29 +94,6 @@ export default function StackQueue() {
                 space="O(N), the maximum size of the stack."
                 code={MaxStack.toString()}
                 secondCode={MaxStack.toString()}
-              />
-          </details>
-        </li>
-      </ul>
-
-      <h6>Problems Queues</h6>
-      <ul>
-        <li>
-          <details
-            className="details"
-            id="queue-problems"
-            aria-expanded="false"
-            aria-labelledby="label">
-              <summary role="button" aria-controls="content">
-                Different problems related to Queues
-              </summary>
-
-              <Details
-                id="queue-use-2-stacks"
-                question=""
-                time=""
-                space=""
-                code={QueueUse2Stacks.toString()}
               />
           </details>
         </li>

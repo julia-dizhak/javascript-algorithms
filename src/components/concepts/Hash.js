@@ -3,7 +3,7 @@ import Details from './../Details';
 
 import { twoSum } from "../../algorithms/hash/two-sum";
 // problems
-import { prisonAfterNDays } from '../../leetcode/hash/957-prison-cells-after-N-days'
+// import { prisonAfterNDays } from '../../leetcode/hash/957-prison-cells-after-N-days'
 
 export default function Hash() {
   return (
@@ -11,12 +11,11 @@ export default function Hash() {
       <h2>Hash / Hash Table</h2>
 
         <ul>
-
-          <Details
+          {/* <Details
             id="test"
             question=""
             code={prisonAfterNDays.toString()}
-          />
+          /> */}
         <li>
           <Details
             id="search-two-sum"

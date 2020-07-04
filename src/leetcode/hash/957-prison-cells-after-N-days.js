@@ -84,18 +84,13 @@ And how many of these did we save in our seen set ? Just 2 .
 Day 1 and Day 2 because those were unseen earlier. After that they started repeating,
 hence we don't save anything else after that.
 
-...
 for current task
 N = N % 14 || 14
 
-So regardless of N, our space is bounded by the length of the cell (and not by N,
-i.e input).
-
-Complexity:
 Time Complexity is O(1)
 Actually it will be how many times we ran the loop to find a cycle
 
-Space
+Space complexity
 Hence the space complexity is O(1) i.e with increasing N, our hashset space
 doesn't increase (it stays constant), hashet is bounded by the length of the cell
 (and not by N)
@@ -111,10 +106,10 @@ var prisonAfterNDays = function(cells, N) {
   let hash = {}
   let cycle = 0;
   let hasCycle = false;
-  debugger
+
   for (let i = 0; i < N; i++) {
     const nextDayTransfrom = nextDay(cells);
-    console.log('next', nextDayTransfrom);
+
     let key = nextDayTransfrom.toString()
     if (!hash[key]) {
       // store cells state
@@ -134,7 +129,6 @@ var prisonAfterNDays = function(cells, N) {
     }
   }
 
-  console.log('hash', hash)
   return cells;
 };
 
@@ -146,7 +140,6 @@ function nextDay(cells) {
     }
   }
 
-  console.log('newPrison', newPrison)
   return newPrison;
 }
 
@@ -163,7 +156,7 @@ function nextDay(cells) {
 //   return newPrison;
 // }
 
-console.log('prisonAfterNDays', prisonAfterNDays([0,1,0,1,1,0,0,1], 14))
+console.log('prisonAfterNDays', prisonAfterNDays([0,1,0,1,1,0,0,1], 15))
 
 export {
   prisonAfterNDays

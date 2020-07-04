@@ -72,14 +72,14 @@ created on 12/21/17
     * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
     * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/quick-sort.js)
 
-| Sort name       | O           | Ω          | Space     |
-| :---            | :---        | :---       | :---      |
-| Bubble sort     | O(n^2)      | Ω(n)       | O(1)      |
-| Selection sort  | O(n^2)      | Ω(n^2)     | O(1)      |
-| Insertion sort  | O(n^2)      | Ω(n)       | O(1)      |
-| Shell sort      | O(n^2)      | Ω(n)       | O(1)      |
-| Merge sort      | O(n log n)  | Ω(n log n) | O(n)      |
-| Quick sort      | O(n log n)  | Ω(n log n) | O(log n)  |
+    | Sort name       | O           | Ω          | Space     |
+    | :---            | :---        | :---       | :---      |
+    | Bubble sort     | O(n^2)      | Ω(n)       | O(1)      |
+    | Selection sort  | O(n^2)      | Ω(n^2)     | O(1)      |
+    | Insertion sort  | O(n^2)      | Ω(n)       | O(1)      |
+    | Shell sort      | O(n^2)      | Ω(n)       | O(1)      |
+    | Merge sort      | O(n log n)  | Ω(n log n) | O(n)      |
+    | Quick sort      | O(n log n)  | Ω(n log n) | O(log n)  |
 
 * ### Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
@@ -93,20 +93,20 @@ created on 12/21/17
     | deleteAtIndex(index)    | O(n)         | 0(1)    |
 
 * ### Stack implementation
-    * [Stack via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-array.js)
+    * [Stack via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack/stack-use-array.js)
 
-    * [Stack via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-linked-list.js)
+    * [Stack via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack/stack-use-linked-list.js)
 
     | Complexity:        | Time         | Space   |
     | :---               | :---         | :---    |
     | All operations     | O(1)         | 0(N)?   |
 
-    * [Stack via String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/stack/stack-use-string.js)
+    * [Stack via String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack/stack-use-string.js)
 
 * ### Queue implementation
-    * [Queue via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/queue/queue-use-array.js)
+    * [Queue via Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/queue/queue-use-array.js)
 
-    * [Queue via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/stack-queue/queue/queue-use-linked-list.js)
+    * [Queue via Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/queue/queue-use-linked-list.js)
 
     | Complexity Time:            | enqueue      | dequeue   |
     | :---                        | :---         | :---      |
@@ -249,7 +249,7 @@ created on 12/21/17
     | remove             | O(1)   | O(1)    |
     | getRandom          | O(1)   | O(1)    |
 
-    * [957. Prison Cells After N Days)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/957-prison-cells-after-N-days.js)
+    * [957. Prison Cells After N Days](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/957-prison-cells-after-N-days.js)
 
     | Approach            | Time    | Space   |
     | :---                | :---    | :---    |

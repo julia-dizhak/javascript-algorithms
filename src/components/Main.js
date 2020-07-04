@@ -6,16 +6,16 @@ import StringManipulation from './concepts/StringManipulation';
 import ArrayAlgorithms from './concepts/ArrayAlgorithms';
 import Hash from './concepts/Hash';
 
-import Sorting from './concepts/Sorting';
-import Searching from './concepts/Searching';
-
-import Recursion from './concepts/Recursion';
-
-import StackQueue from './concepts/StackQueue';
+import Stack from './concepts/Stack';
+import Queue from './concepts/Queue';
 import LinkedLists from './concepts/LinkedLists';
 import Tree from './concepts/Tree';
 import Graph from './concepts/Graph';
 
+import Sorting from './concepts/Sorting';
+import Searching from './concepts/Searching';
+
+import Recursion from './concepts/Recursion';
 import GreedyAlgorithms from './concepts/GreedyAlgorithms';
 import DP from './concepts/DP';
 
@@ -37,7 +37,9 @@ function Main() {
         <Searching />
 
         <LinkedLists />
-        <StackQueue />
+        <Stack />
+        <Queue />
+
         <Tree />
         <Graph />
 
