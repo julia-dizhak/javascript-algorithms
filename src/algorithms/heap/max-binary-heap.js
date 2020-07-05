@@ -152,10 +152,7 @@ heap.deleteMax()
 // heap.insertOntoEnd(70);
 // heap.insertOntoEnd(40);
 
-console.log('heap', heap)
-
-
-
+//console.log('heap', heap)
 
 export {
   MaxBinaryHeap

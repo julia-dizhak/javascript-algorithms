@@ -96,21 +96,28 @@ checking every bit of the number, we repeatedly flip the least-significant
 1-bit of the number to 0, and add 1 to the sum. As soon as the number
 becomes 0, we know that it does not have any more 1-bits, and we return the sum.
 
-...
+The key idea here is to realize that for any number n, doing a bit-wise AND
+of n and n−1 flips the least-significant 1-bit in n to 0. Why?
+Consider the binary representations of n and n−1.
 
-The idea is to consider only set bits of integer by turning off the rightmost
-(least significant) set bit of given number after considering it, so next
-iteration of loop will consider next least significant bit
+In the binary representation, the least significant 1-bit in n always corresponds
+to a 0-bit in n−1. Therefore, adding the two numbers n and n−1 always flips the
+least significant 1-bit in n to 0, and keeps all other bits the same.
+Using this trick, the code becomes very simple.
 
 We know that expression
 n = 100000, then n-1 = 011111 and n&(n-1) = 000000
-will turn off the least significant set bit of given number
+will turn off the least significant (last) set bit of given number
 (n-1) will have all the bits flipped after the least significant set bit of n
 
-Complexity
+Complexity Analysis
+The run time depends on the number of 1-bits in n. In the worst case, all bits
+in n are 1-bits. In case of a 32-bit integer, the run time is O(1).
 Method goes through as many iteration as there are sets bits.
 So if we have 32-bit world with only one the high bit set, then it will only
 go once through the loop
+
+The space complexity is O(1), since no additional space is allocated.
 
 */
 
@@ -125,7 +132,8 @@ var hammingWeight = function(n) {
 };
 
 // tests
-console.log('hammingWeightLoopFlip', hammingWeightLoopFlip(5));
+// console.log('hammingWeightLoopFlip', hammingWeightLoopFlip(5));
+// console.log('hammingWeight', hammingWeight(5));
 
 export {
   hammingWeight,

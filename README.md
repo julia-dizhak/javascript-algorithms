@@ -186,10 +186,10 @@ created on 12/21/17
 
     * [191. Number of bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/191-number-of-bits.js)
 
-    | Approaches:    | Time     | Space  |
-    | :---           | :---     | :---   |
-    | Loop + Flip    | O(1)     | 0(1)   |
-    |            | O()     | O()   |
+    | Approaches:             | Time     | Space  |
+    | :---                    | :---     | :---   |
+    | Loop + Flip             | O(1)     | 0(1)   |
+    | Bit trick manipulation  | O(1)     | O(1)   |
 
 * ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)

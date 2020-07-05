@@ -1,6 +1,6 @@
 import {
-  //hammingWeight,
-  hammingWeightLoopFlip as hammingWeight
+  hammingWeight,
+  //hammingWeightLoopFlip as hammingWeight
 }  from './191-number-of-bits';
 
 describe('given an integer, count its set bits test case ', () => {
@@ -8,6 +8,5 @@ describe('given an integer, count its set bits test case ', () => {
     expect(hammingWeight(-1)).toEqual(32);
     expect(hammingWeight(16)).toEqual(1);
     expect(hammingWeight(5)).toEqual(2);
-    //expect(hammingWeight('00000000000000000000000000001011')).toEqual(3);
   });
 });
