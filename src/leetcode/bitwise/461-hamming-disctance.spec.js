@@ -1,6 +1,7 @@
 import {
+  hammingDistance,
   //hammingDistance1 as hammingDistance,
-  hammingDistance2 as hammingDistance,
+  //hammingDistance2 as hammingDistance,
 
 }  from './461-hamming-distance';
 

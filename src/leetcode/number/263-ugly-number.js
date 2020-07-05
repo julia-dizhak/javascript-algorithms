@@ -178,54 +178,6 @@ TC - 1690 O(1690) - we can have max 1690 ugly numbers till Integer.MAX_VALUE so 
 console.log('nthUglyNumber', nthUglyNumber(10))
 
 
-/*
-So the while works by turning off the right most bit in n in each iteration, the details are as follows.
-
-the "while(n)" par is equivalent to while there is a bit set go into the loop
-
-when were in the loop the "++dist" just counts how may bits we have turned off(set to 0) so far
-
-the "n &= n-1" turns off(set to 0) the right most 1 bit, you can see this by just trying a few examples.
-
-so where we exit the loop we know that n must be zero and hence dist will contain the number of bits set to one in x^y.
-
-That's how the loop works.
-
-n = 100000, then n - 1 = 011111 and n & (n-1) = 000000,
- */
-// O(1) time and space complexity.
-
-var hammingDistance = function(x, y) {
-  let distCounter = 0;
-  if (x === y) return distCounter;
-  let diffOfBits = x^y;
-
-  return countOne(diffOfBits)
-}
-
-function countOne(n) {
-  let count = 0;
-  while (n !== 0) {
-    n = n & (n-1);
-    count++;
-  }
-  return count;
-}
-// class Solution {
-//   public:
-//       int hammingDistance(int x, int y) {
-//           int dist = 0, n = x ^ y;
-//           while (n) {
-//               ++dist;
-//               n &= n - 1;
-//           }
-//           return dist;
-//       }
-//   };
-
-
-console.log('hammingDistance', hammingDistance(1,4))
-
 export {
   isUgly
 }

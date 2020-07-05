@@ -177,7 +177,7 @@ created on 12/21/17
     | Math + toString              | O(n)         | O(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
 
-    * [136 Single Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/136-single-number.js)
+    * [136. Single Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/136-single-number.js)
 
     | Approaches:    | Time     | Space  |
     | :---           | :---     | :---   |
@@ -190,6 +190,13 @@ created on 12/21/17
     | :---                    | :---     | :---   |
     | Loop + Flip             | O(1)     | 0(1)   |
     | Bit trick manipulation  | O(1)     | O(1)   |
+
+    * [461. Humming distance](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/461-humming-distance.js)
+
+    | Approaches:             | Time     | Space  |
+    | :---                    | :---     | :---   |
+    | Bit trick manipulation  | O(1)     | O(1)   |
+    | XOR + toString          | O(n)     | O(1)   |
 
 * ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
