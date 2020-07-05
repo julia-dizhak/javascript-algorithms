@@ -191,12 +191,21 @@ created on 12/21/17
     | Loop + Flip             | O(1)     | 0(1)   |
     | Bit trick manipulation  | O(1)     | O(1)   |
 
-    * [461. Humming distance](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/461-humming-distance.js)
+    * [461. Hamming distance](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/461-hamming-distance.js)
 
     | Approaches:             | Time     | Space  |
     | :---                    | :---     | :---   |
     | Bit trick manipulation  | O(1)     | O(1)   |
     | XOR + toString          | O(n)     | O(1)   |
+
+* ### Number / Math
+    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/263-ugly-number.js)
+
+    | Approaches:                 | Time         | Space     |
+    | :---                        | :---         | :---      |
+    | Recursion                   | O(log N)     | 0(log N)? |
+    | Greatest divide by [2,3,4]  | O(log N)     | 0(1)      |
+
 
 * ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)

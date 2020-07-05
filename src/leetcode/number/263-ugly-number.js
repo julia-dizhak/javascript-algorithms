@@ -1,12 +1,9 @@
-// todo check a solution
-// write a test -2147483648
 /*
 Leetcode
 263 Ugly number
 easy
 
 Write a program to check whether a given number is an ugly number.
-
 Ugly numbers are positive numbers whose prime factors only include 2, 3, 5.
 
 Example 1:
@@ -29,68 +26,57 @@ Note:
 Input is within the 32-bit signed integer range: [−231,  231 − 1].
 */
 
-import { zenburn } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
-/**
- * @param {number} num
- * @return {boolean}
- */
-// doesnt' work solution
-// var isUgly = function(num) {
-//   if (num <= 0) return false;
-//   if (num === 1) return true;
-//   if (num === 2) return true;
-
-//   let divisor = 2;
-//   let factors = [];
-//   //debugger
-//   while (num >= divisor) {
-//     if (num % divisor === 0) {
-//       factors.push(divisor);
-//       num = num / 2; // remove duplicates
-//     } else divisor++;
-//   }
-
-//   console.log('factors', factors);
-
-//   // /final condition to check if the array has anything greater than 5 because we ideally need array with 2, 3 or 5
-//   for (let i = 0; i < factors.length; i++) {
-//     if (factors[i] > 5) return false; // is it good solution
-//   }
-
-//   return true
-// };
-
-
-// var isUgly = function(num) {
-//   if(num <= 0) return false;
-//   while(parseInt(num/2)===num/2) { num/=2; }  // using the fact that
-//   while(parseInt(num/3)===num/3) { num/=3; }  // multiplication is commutative,
-//   while(parseInt(num/5)===num/5) { num/=5; }  // hence the order doesn't matter
-//   return num===1;
-// };
-// It works equally well to simply check if num%prime === 0 instead of parseInt(num/prime)===num/prime
 
 /*
 Approach recursion
 
-time
 complexity
+time O(logN)
+space is O(n)
+*/
+/**
+ * @param {number} num
+ * @return {boolean}
 */
 var isUgly = function(num) {
+  // basic cases: <= 0 and == 1
   if (num <= 0) return false;
+  if (num === 1) return true;
+  //if (num === 2 || num === 3 || num === 5) return true;
 
-  if (num === 1 || num === 2 || num === 3 || num === 5) {
-    return true;
+  // other cases: since the number can contain the factors of 2, 3, 5, I just
+  // remove those factors. So now, I have a number without any factors of 2, 3, 5.
+  if (num % 2 === 0) return isUgly(num/2);
+  if (num % 3 === 0) return isUgly(num/3);
+  if (num % 5 === 0) return isUgly(num/5);
+  // after the removing, the number (new number) can contain a) the factor that
+  // is prime and meanwhile it is >= 7, or b) the factor that is not the prime and
+  // the factor is not comprised of 2, 3 or 5. In both cases, it is false
+  // (not ugly number).
+  return false
+}
+
+/*
+Approach Greatest divide by [2,3,5]
+
+time O(logN) because everytime n becomes n/2 or n/3 or n/5
+*/
+var isUglyGreatestDivide = function(num) {
+  if (num <= 0) return false;
+  let factors = [2,3,5];
+
+  for (const factor of factors) {
+    while (num % factor === 0) {
+      num = num / factor;
+    }
   }
-  if (num % 2 === 0) return isUgly(num / 2);
-  if (num % 3 === 0) return isUgly(num / 3);
-  if (num % 5 === 0) return isUgly(num / 5);
-  return false;
-};
-console.log('isUgly', isUgly(8))
-console.log('isUgly', isUgly(14))
-console.log('isUgly', isUgly(21))
+  return num === 1
+}
+
+// console.log('isUglyGreatestDivide', isUglyGreatestDivide(8))
+
+
+
 
 // public boolean isUgly(int num) {
 //   for (int i = 2; i < 6 && num > 0; i++)
@@ -175,9 +161,10 @@ TC - 1690 O(1690) - we can have max 1690 ugly numbers till Integer.MAX_VALUE so 
 //   }
 // }
 
-console.log('nthUglyNumber', nthUglyNumber(10))
+//console.log('nthUglyNumber', nthUglyNumber(10))
 
 
 export {
-  isUgly
+  isUgly,
+  isUglyGreatestDivide
 }

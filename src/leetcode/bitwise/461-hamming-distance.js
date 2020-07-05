@@ -105,7 +105,7 @@ var hammingDistance2 = function(x, y) {
 };
 
 // tests
-console.log('hammingDistance', hammingDistance(1,4))
+//console.log('hammingDistance', hammingDistance(1,4))
 
 export {
   hammingDistance,
