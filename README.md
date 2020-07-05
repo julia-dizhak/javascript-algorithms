@@ -148,10 +148,11 @@ created on 12/21/17
 * ### Heap
     * [Max Binary Heap](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/heap/max-binary-heap.js)
 
-    | Complexity:         | Time      |  Space    |
-    | :---                | :---      | :---      |
-    | insert(val)         | O(log n)  | 0(1)      |
-    | ...                 |           |           |
+    | Complexity:   | Time      |  Space    |
+    | :---          | :---      | :---      |
+    | insert(val)   | O(log n)  | 0(1)      |
+    | deleteMax     | O(log n)  | O(1)      |
+    | max           | O(1)      | O(1)      |
 
 * Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
@@ -182,6 +183,13 @@ created on 12/21/17
     | :---           | :---     | :---   |
     | Bitwise XOR    | O(n)     | 0(1)   |
     | Hash           | O(n)     | O(n)   |
+
+    * [191. Number of bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/191-number-of-bits.js)
+
+    | Approaches:    | Time     | Space  |
+    | :---           | :---     | :---   |
+    | Loop + Flip    | O(1)     | 0(1)   |
+    |            | O()     | O()   |
 
 * ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)

@@ -2,20 +2,21 @@ import React from 'react';
 import Details from '../Details';
 
 import { MaxBinaryHeap } from '../../algorithms/heap/max-binary-heap';
-
+//import { countPrimes } from '../../leetcode/number/204-count-primes';
+import { isUgly } from '../../leetcode/number/263-ugly-number'
 // problems
 // ...
 
-export default function Queue() {
+export default function Heap() {
   return (
     <div className="heap" id="heap">
       <h2>Heap</h2>
 
-        {/* <Details
+        <Details
           id=""
           question="test"
-          code={.toString()}
-        /> */}
+          code={isUgly.toString()}
+        />
       <ul>
         <li>
           <Details

@@ -4,7 +4,10 @@ import Details from '../Details';
 // problems
 import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
 import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
-import { testBit } from '../../algorithms/bitwise/common-bit-tasks'
+import { numOfSetBits } from '../../leetcode/bitwise/461-hamming-distance';
+import { hammingWeightLoopFlip } from '../../leetcode/bitwise/191-number-of-bits';
+import { testBit } from '../../algorithms/bitwise/common-bit-tasks';
+
 
 export default function BitManipulation() {
   return (
@@ -20,7 +23,7 @@ export default function BitManipulation() {
             time=""
             space=""
             code={testBit.toString()}
-            //secondCode={}
+            secondCode={hammingWeightLoopFlip.toString()}
           />
         </li>
         <li>

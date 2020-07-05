@@ -47,4 +47,20 @@ describe('Max Binary Heap test case', () => {
     expect(popped2).toEqual(80);
     expect(heap.values).toEqual([70, 30, 40, 20]);
   });
+
+  it('max', () => {
+    heap.insert(100);
+    heap.insert(20);
+    heap.insert(80);
+    heap.insert(30);
+    heap.insert(70);
+    heap.insert(40);
+    expect(heap.max()).toEqual(100);
+    const popped1 = heap.deleteMax();
+    expect(popped1).toEqual(100);
+    expect(heap.max()).toEqual(80);
+    const popped2 = heap.deleteMax();
+    expect(popped2).toEqual(80);
+    expect(heap.max()).toEqual(70);
+  });
 });
