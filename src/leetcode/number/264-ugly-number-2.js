@@ -210,26 +210,15 @@ var nthUglyNumberDP = function(n) {
     if (nextUglyNumber === nextFactor5) index5++;
   }
 
-  console.log('ugly', ugly)
+  //console.log('ugly', ugly)
   return ugly[n-1];
 };
 
 // tests
 // console.log('nthUglyNumberDP', nthUglyNumberDP(6))
 
-/**
- * @param {number[]} digits
- * @return {number[]}
- */
-var plusOne = function(digits) {
-
-};
-
-console.log('plusOne', plusOne([1,2,3]))
-
 export {
   nthUglyNumber,
   nthUglyNumberGenerateAllNumbers,
-  nthUglyNumberDP,
-  plusOne
+  nthUglyNumberDP
 }

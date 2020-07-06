@@ -278,6 +278,13 @@ created on 12/21/17
     | :---            | :---    | :---   |
     | 2 pointers      | O(n)    | O(1)   |
 
+    * [66 Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/66-plus-one.js)
+
+    | Approach:    | Time    | Space   |
+    | :---         | :---    | :---    |
+    | Loop         | O(n)    | O(n)    |
+    | Math.pow     | O(n)    | O(n)?   |
+
 * ### Hash
     * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
 

@@ -6,18 +6,18 @@ import { swap, swapUseTemp } from '../../algorithms/number/swap';
 // problems
 // import { countPrimes } from '../../leetcode/number/204-count-primes';
 // import { isUgly } from '../../leetcode/number/263-ugly-number'
-import { nthUglyNumber, plusOne } from '../../leetcode/number/264-ugly-number-2'
+// import { nthUglyNumber } from '../../leetcode/number/264-ugly-number-2'
 
 export default function Number() {
   return (
     <div className="number">
       <h2>Number / Math</h2>
 
-      <Details
+      {/* <Details
         id=""
         question="test"
-        code={plusOne.toString()}
-      />
+        code={.toString()}
+      /> */}
       <ul id="number">
         <li>
           <Details

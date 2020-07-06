@@ -4,21 +4,26 @@ import Details from './../Details';
 import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
 import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../algorithms/array/clone';
 
+// problems
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
 import { removeDuplicates } from '../../leetcode/array/26-remove-duplicates-from-sorted-array';
+import { plusOne } from '../../leetcode/array/66-plus-one';
 
-import { QuickUnion } from '../../algorithms/union-find/quick-union';
+// todo import { QuickUnion } from '../../algorithms/union-find/quick-union';
 // todo import { RandomizedSet } from '../../leetcode/hash/380-insert-delete-getrandom-constant-time';
 
 export default function ArrayAlgorithms() {
   return (
     <div className="sorting">
       <h2>Array</h2>
-
+      <Details
+        id="test-array"
+        code={plusOne.toString()}
+      />
       <ul id="array">
         <li>
           <Details
