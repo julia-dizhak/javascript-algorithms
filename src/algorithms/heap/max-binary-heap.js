@@ -119,7 +119,7 @@ class MaxBinaryHeap {
     if (this.values.length > 1) {
       this.bubbleDown();
     }
-    return poppedVal
+    return poppedVal;
   }
 
   max() {

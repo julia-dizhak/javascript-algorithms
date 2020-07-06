@@ -31,7 +31,7 @@ Input is within the 32-bit signed integer range: [−231,  231 − 1].
 Approach recursion
 
 complexity
-time O(logN)
+time O(log n)
 space is O(n)
 */
 /**
@@ -59,7 +59,7 @@ var isUgly = function(num) {
 /*
 Approach Greatest divide by [2,3,5]
 
-time O(logN) because everytime n becomes n/2 or n/3 or n/5
+time O(logN) because each time n becomes n/2 or n/3 or n/5
 */
 var isUglyGreatestDivide = function(num) {
   if (num <= 0) return false;
@@ -73,96 +73,8 @@ var isUglyGreatestDivide = function(num) {
   return num === 1
 }
 
-// console.log('isUglyGreatestDivide', isUglyGreatestDivide(8))
-
-
-
-
-// public boolean isUgly(int num) {
-//   for (int i = 2; i < 6 && num > 0; i++)
-//       while (num % i == 0)
-//           num /= i;
-//   return num == 1;
-// }
-/*
-Ugly number II
-
-Write a program to find the n-th ugly number.
-
-Ugly numbers are positive numbers whose prime factors only include 2, 3, 5.
-
-Example:
-Input: n = 10
-Output: 12
-Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly
-numbers.
-
-Note:
-1 is typically treated as an ugly number.
-n does not exceed 1690.
-
-Hint 1
-The naive approach is to call isUgly for every number until you reach the nth one.
-Most numbers are not ugly. Try to focus your effort on generating only the ugly ones.
-
-Hint2
-*/
-
-/*
-Brute force
-This will TLE as Most numbers are not ugly.
-*/
-/**
- * @param {number} n
- * @return {number}
- */
-var nthUglyNumber = function(n) {
-  let num = 0;
-  while (n > 0) {
-    num++;
-    if (isUgly(num)) n--;
-  }
-  return num;
-  // for (let i = 0; i <= n; i++) {
-  //   if (isUgly(i)) count++
-  // }
-  // return count
-};
-
-/*
-Approach 2: Generate all ugly number
-How can be optimize is? As per the definition of Ugly Number is a number which
-form of only product of 2, 3, & 5
-number can be represent as in prime factorization like num = 2^a 3^b 5^c - ^ power symbol.
-Why not generate all the possible ugly number and store them in list sort and
-return n-1th (0 index based).
-In this approach if we see sorting itself takes (p * log(p)) where p is the number
-ugly numbers we generated till Integer.MAX_VALUE
-
-Can be futhure optimize???
-
-TC - 1690 O(1690) - we can have max 1690 ugly numbers till Integer.MAX_VALUE so all 3 loops will run that mnay itetrations while out ugly list will take nlogn time where n - 1690.
-*/
-
-// todo
-// https://leetcode.com/problems/ugly-number-ii/discuss/718959/Three-Solution-or-Brute-Force-or-Generate-All-or-DP-Explained
-// check hints
-// https://leetcode.com/problems/ugly-number-ii/discuss/329484/Heavily-commented-JavaScript-bottom-up-DP-solution
-// class Solution {
-//   int nthUglyNumber(int n) {
-//       List<Integer> ugly = new ArrayList<>();
-//       long two, three, five, m = Integer.MAX_VALUE; // long - not let overflow.
-//       for (two = 1; two <= m; two *= 2)
-//           for (three = two; three <= m; three *= 3)
-//               for (five = three; five <= m; five *= 5)
-//                   ugly.add((int) five);
-//       Collections.sort(ugly); // sorting list
-//       return ugly.get(n - 1); // index 0 based
-//   }
-// }
-
-//console.log('nthUglyNumber', nthUglyNumber(10))
-
+// tests
+//console.log('isUglyGreatestDivide', isUglyGreatestDivide(6))
 
 export {
   isUgly,
