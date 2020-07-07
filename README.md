@@ -71,15 +71,17 @@ created on 12/21/17
     * [Shell sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/shell-sort.js)
     * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
     * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/quick-sort.js)
+    * [Heapsort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/heap-sort.js)
 
-    | Sort name       | O           | Ω          | Space     |
-    | :---            | :---        | :---       | :---      |
-    | Bubble sort     | O(n^2)      | Ω(n)       | O(1)      |
-    | Selection sort  | O(n^2)      | Ω(n^2)     | O(1)      |
-    | Insertion sort  | O(n^2)      | Ω(n)       | O(1)      |
-    | Shell sort      | O(n^2)      | Ω(n)       | O(1)      |
-    | Merge sort      | O(n log n)  | Ω(n log n) | O(n)      |
-    | Quick sort      | O(n log n)  | Ω(n log n) | O(log n)  |
+    | Sort name       | Ω           | θ          | O         | Space     | Stable  | Adaptive  |
+    | :---            | :---        | :---       | :---      | :---      | :---    | :---      |
+    | Bubble sort     | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
+    | Selection sort  | Ω(n^2)      | θ(n^2)     | O(n^2)    | O(1)      | -       | -         |
+    | Insertion sort  | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
+    | Shell sort      | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      |         |           |
+    | Merge sort      | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(N)      | +       | -         |
+    | Quick sort      | Ω(NlogN)    | θ(NlogN)   | O(n^2)    | O(NlogN)  | -       | -         |
+    | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)      | -       | -         |
 
 * ### Linked Lists
     * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)

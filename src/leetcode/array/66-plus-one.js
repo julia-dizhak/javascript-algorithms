@@ -54,6 +54,42 @@ var plusOne = function(digits) {
 };
 
 /*
+Vasyl approach
+*/
+function addOne(arr){
+  let carry = 0;
+
+  for (let index = arr.length-1; index >= 0; index--) {
+    const element = arr[index];
+
+    if (element < 9 && carry !== 1) {
+      arr[index] += 1;
+      break
+    } else if (element < 9 && carry === 1) {
+      arr[index] += 1;
+      carry = 0;
+      break;
+    } else if (element === 9 && carry === 1) {
+      arr[index] = 0
+
+      // if (index === 0) {
+      //   carry = 0;
+      // }
+    } else  {
+      carry = 1;
+      arr[index] = 0;
+
+    }
+
+  }
+  if (carry) {
+    arr.unshift(1);
+  }
+  return arr
+}
+
+
+/*
 Approach Math.pow
 
 We're given a list of digits, and the idea here is to convert that list to an
@@ -83,5 +119,6 @@ var plusOne1 = function(digits) {
 
 export {
   plusOne,
-  plusOne1
+  plusOne1,
+  addOne
 }

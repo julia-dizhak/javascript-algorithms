@@ -3,7 +3,6 @@ import Details from '../Details';
 
 import { MaxBinaryHeap } from '../../algorithms/heap/max-binary-heap';
 // problems
-// ...
 
 export default function Heap() {
   return (

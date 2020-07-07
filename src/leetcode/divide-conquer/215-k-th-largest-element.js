@@ -169,5 +169,6 @@ function swap(arr, i, j) {
 
 export {
   findKthLargest,
-  findKthLargestSort
+  findKthLargestSort,
+  partition
 }

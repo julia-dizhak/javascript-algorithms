@@ -1,12 +1,16 @@
 import React from 'react';
 import Details from './../Details';
+
+// sorting
 import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
 import { quickSort } from '../../algorithms/sorting/quick-sort';
 import { selectionSort } from '../../algorithms/sorting/selection-sort';
 import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
 import { insertionSort } from '../../algorithms/sorting/insertion-sort';
 // import { shellSort } from '../../algorithms/sorting/shell-sort';
+import { heapSort } from '../../algorithms/sorting/heap-sort';
 
+// problems
 import { findMedian } from '../../algorithms/sorting/problems/find-median';
 
 function Sorting() {
@@ -15,12 +19,10 @@ function Sorting() {
       <h2>Sorting</h2>
 
       <ul>
-        {/* <li>
-          <Details
-            id="sort-test"
-            code={}
-          />
-        </li> */}
+        {/* <Details
+          id="sort-test"
+          code={heapSort.toString()}
+        /> */}
 
         <li>
           <Details
@@ -93,6 +95,18 @@ function Sorting() {
             time="O(n log n)"
             space="O(log n)"
             code={quickSort.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
+            id="heap-sort"
+            question="Heapsort"
+            solution=""
+            complexity=""
+            time="O(nlogn)"
+            space="O(1)"
+            code={heapSort.toString()}
           />
         </li>
 
