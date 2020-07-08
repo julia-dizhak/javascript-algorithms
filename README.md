@@ -73,6 +73,7 @@ created on 12/21/17
     * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/quick-sort.js)
     * [Heapsort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/heap-sort.js)
 
+
     | Sort name       | Ω           | θ          | O         | Space     | Stable  | Adaptive  |
     | :---            | :---        | :---       | :---      | :---      | :---    | :---      |
     | Bubble sort     | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |

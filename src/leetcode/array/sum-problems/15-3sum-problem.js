@@ -1,3 +1,6 @@
+/*
+2 sum check in has
+*/
 // 3 sum
 
 // 3-SUM. Given N distinct integers, how many triples sum to exactly zero?

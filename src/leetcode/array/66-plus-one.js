@@ -71,17 +71,12 @@ function addOne(arr){
       break;
     } else if (element === 9 && carry === 1) {
       arr[index] = 0
-
-      // if (index === 0) {
-      //   carry = 0;
-      // }
     } else  {
       carry = 1;
       arr[index] = 0;
-
     }
-
   }
+  
   if (carry) {
     arr.unshift(1);
   }

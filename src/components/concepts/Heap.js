@@ -12,7 +12,7 @@ export default function Heap() {
         <Details
           id=""
           question="test"
-          //code={isUgly.toString()}
+          //code={.toString()}
         />
       <ul>
         <li>

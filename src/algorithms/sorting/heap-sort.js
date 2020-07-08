@@ -1,28 +1,8 @@
 /*
-Heap sort
-
-task is related https://leetcode.com/problems/relative-sort-array/
-
-https://www.youtube.com/watch?v=k72DtCnY4MU
-11:46
+Heapsort algorithm implementation
 */
 
-
-class MaxHeap {
-  constructor(arr) {
-    this.size = arr.length;
-  }
-
-  /**
-   * i - index of root
-   */
-  heapify(arr, length, i) {
-
-  }
-}
-
 function heapify(arr, length, i) {
-  debugger
   let largest = i; // referring to indexes
   let left = i*2 + 1;
   let right = left + 1; // i*2 + 2
@@ -85,6 +65,93 @@ function heapSort(arr) {
 }
 
 console.log('heapSort', heapSort([6,5,3,1,8,7,2,4]));
+
+
+/*
+Island Perimeter
+
+You are given a map in form of a two-dimensional integer grid where 1 represents
+land and 0 represents water.
+
+Grid cells are connected horizontally/vertically (not diagonally).
+The grid is completely surrounded by water, and there is exactly one island
+(i.e., one or more connected land cells).
+
+The island doesn't have "lakes" (water inside that isn't connected to the water
+around the island). One cell is a square with side length 1. The grid is
+rectangular, width and height don't exceed 100. Determine the perimeter of the island.
+
+
+Input:
+[ [0,1,0,0],
+  [1,1,1,0],
+  [0,1,0,0],
+  [1,1,0,0]
+]
+Output: 16
+
+Explanation: The perimeter is the 16 yellow stripes in the image below:
+*/
+
+/*
+Approach traversal
+
+Since there are no lakes, every pair of neighbour cells with different values is part of the perimeter (more precisely, the edge between them is). So just count the differing pairs, both horizontally and vertically (for the latter I simply transpose the grid).
+
+*/
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var islandPerimeter = function(grid) {
+  const row = grid.length;
+  const col = grid[0].length;
+  let perimeter = 0;
+  let square = 0
+
+  for (let i = 0; i < row; i++) {
+    for (let j = 0; j < col; j++) {
+      if (grid[i][j] === 1) square += 4;
+      if (i > 0 && j > 0 && i < row - 1 && j < col - 1) {
+        perimeter += grid[i][j-1] + grid[i][j+1] + grid[i-1][j] + grid[i+1][j]
+      }
+      if (i === 0 && j === 0) {
+        perimeter += grid[i][j+1] + grid[i+1][j];
+      }
+      if (i === row - 1 && j === col - 1) {
+        //debugger
+        perimeter += grid[i][j-1] + grid[i-1][j];
+      }
+    }
+  }
+
+  return square - perimeter
+};
+
+const input = [
+  [0,1,0,0],
+  [1,1,1,0],
+  [0,1,0,0],
+  [1,1,0,0]
+]
+
+// var islandPerimeter = function(grid) {
+//   const row = grid.length;
+//   const col = grid[0].length;
+//   let perimeter = 0;
+
+//   for (let i = 0; i < row; i++) {
+//       for (let j = 0; j < col; j++) {
+//           if (grid[i][j] === 1) perimeter += 4;
+//  todo inside loop
+//           if (i < row - 1 && grid[i+1][j] === 1) perimeter -= 2;
+//           if (j < col - 1 && grid[i][j+1] === 1) perimeter -= 2;
+//       }
+//   }
+//   return perimeter;
+// };
+
+console.log('islandPerimeter', islandPerimeter(input))
 
 export {
   heapSort,

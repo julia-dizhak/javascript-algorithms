@@ -9,16 +9,15 @@ Given a coordinate (sr, sc) representing the starting pixel (row and column)
 of the flood fill, and a pixel value newColor, "flood fill" the image.
 
 To perform a "flood fill", consider the starting pixel, plus any pixels
-connected 4-directionally
-to the starting pixel of the same color as the starting pixel,
-plus any pixels connected 4-directionally to those pixels (also with the same color
-as the starting pixel),
-and so on.
+connected 4-directionally to the starting pixel of the same color as the
+starting pixel,plus any pixels connected 4-directionally to those pixels
+(also with the same color as the starting pixel),and so on.
 Replace the color of all of the aforementioned pixels with the newColor.
 
 Note
 The length of image and image[0] will be in the range [1, 50].
-The given starting pixel will satisfy 0 <= sr < image.length and 0 <= sc < image[0].length.
+The given starting pixel will satisfy 0 <= sr < image.length and
+0 <= sc < image[0].length.
 The value of each color in image[i][j] and newColor will be an integer in [0, 65535].
 
 Hint
@@ -127,6 +126,18 @@ output = [
   [2,0,1]
 ]
 
+There are three things that you need to consider once you have identified that
+a question can be solved using DFS
+1 The base case ( return condition )
+2 Mark that node as visited
+3nGiven that I am at a particular node what operations do I need to perform
+
+The base case :
+The current node cannot
+a ) Exit the matrix bounding condition
+b ) Different from the base color
+c ) Be a node that we have already visited
+
 Time complexity is proportional to a number of pixes
 we have to fill rows * cols or O(n)
 */
@@ -149,15 +160,19 @@ function helper(img, i, j, originalColor, newColor) {
     i < 0 || i >= rows ||
     j < 0 || j >= cols ||
     // if color is not a color I started with
-    // Without checking if (color != newColor), your program will keep moving around in the image
-    // visited flag: we are using the changing colour to keep track of which pixels we've already visited.
-    // If the colour doesn't change, we forget where we've been and visit the same pixels over and over again.
+    // Without checking if (color != newColor), your program will keep moving
+    // around in the image visited flag: we are using the changing colour to
+    // keep track of which pixels we've already visited.
+    // If the colour doesn't change, we forget where we've been and visit the
+    // same pixels over and over again.
     img[i][j] !== originalColor
   ) return;
 
+  // starts from the middle as the starting pixel, changes itself to a new color
   // have to modify color position
   img[i][j] = newColor;
   // exploring all directions
+  // replaces those that had the same number as the one the starting pixel had
   helper(img, i - 1, j, originalColor, newColor);
   helper(img, i + 1, j, originalColor, newColor);
   helper(img, i, j - 1, originalColor, newColor);

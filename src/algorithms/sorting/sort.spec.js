@@ -8,8 +8,9 @@ import {
 import {
   // insertionSort,
   insertionSortVariant2 as insertionSort
- } from './insertion-sort';
- import { shellSort } from './shell-sort';
+} from './insertion-sort';
+import { shellSort } from './shell-sort';
+import { heapSort } from './heap-sort';
 
 describe('sorting array test case', () => {
   let arr;
@@ -105,5 +106,11 @@ describe('sorting array test case', () => {
   it('shell sort for unsorted arrays', () => {
     shellSort(arr);
     expect(arr).toEqual(sortedArr);
+  });
+
+  it('heapSort for unsorted arrays', () => {
+    let arr = [6,5,3,1,8,7,2,4];
+    arr = heapSort(arr);
+    expect(arr).toEqual([1,2,3,4,5,6,7,8]);
   });
 });

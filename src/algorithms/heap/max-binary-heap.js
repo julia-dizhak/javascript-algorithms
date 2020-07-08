@@ -1,3 +1,5 @@
+import { heapify } from "../sorting/heap-sort";
+
 /*
 Implementation
 We can use a class to implement adding and removing from the heap,
