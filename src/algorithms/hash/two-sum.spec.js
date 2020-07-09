@@ -5,9 +5,7 @@ import {
 } from './two-sum';
 
 describe('two sum test case', () => {
-  it('empty array', () => {
-    // todo
-    // expect(() => twoSum([], 9)).toThrowError(TypeError);
+  it('empty array', () => {;
     expect(twoSum([], 9)).toEqual([]);
   });
 
@@ -20,7 +18,7 @@ describe('two sum test case', () => {
   });
 
   it('there is no such indexes', () => {
-    expect(twoSum([1, 2, 3, 9], 8)).toEqual([]);
-    expect(twoSum([2, 7, 11, 15], 8)).toEqual([]);
+    expect(twoSum([1, 2, 3, 9], 8)).toEqual(-1);
+    expect(twoSum([2, 7, 11, 15], 8)).toEqual(-1);
   });
 });

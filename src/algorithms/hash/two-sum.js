@@ -69,7 +69,7 @@ function twoSumBruteForce(arr, sum) {
 
   // todo
   // throw new Error('No two sum solution');
-  return [];
+  return -1;
 }
 
 /*
@@ -122,7 +122,7 @@ function twoSumTwoPassHashes(arr, target) {
     }
   }
 
-  return [];
+  return -1;
 }
 
 /*
@@ -175,16 +175,8 @@ function twoSum(arr, target) {
 
   // or through an exception
   // throw new Error('No two sum solution');
-  return [];
+  return -1;
 }
-
-/*
-2 sum sorted
-*/
-function sum2(arr, target) {
-
-}
-//console.log('2 sum', sum2([2, 7, 11, 15], 9))
 
 export {
   twoSum,
