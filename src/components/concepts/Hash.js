@@ -1,8 +1,8 @@
 import React from 'react';
 import Details from './../Details';
 
-import { twoSum } from "../../algorithms/hash/two-sum";
 // problems
+import { twoSumBruteForce, twoSum, twoSumTwoPassHashes } from "../../leetcode/array/sum-problems/two-sum";
 // import { prisonAfterNDays } from '../../leetcode/hash/957-prison-cells-after-N-days'
 
 export default function Hash() {
@@ -14,7 +14,7 @@ export default function Hash() {
           {/* <Details
             id="test"
             question=""
-            code={prisonAfterNDays.toString()}
+            code={.toString()}
           /> */}
         <li>
           <Details
@@ -27,7 +27,9 @@ export default function Hash() {
             `}
             time="O(n)"
             space="O(n). The extra space required depends on the number of items stored in the hash table, which stores exactly nn elements"
-            code={twoSum.toString()}
+            code={twoSumBruteForce.toString()}
+            secondCode={twoSumTwoPassHashes.toString()}
+            thirdSolution={twoSum.toString()}
           />
         </li>
       </ul>

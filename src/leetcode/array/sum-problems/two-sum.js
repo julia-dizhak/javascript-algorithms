@@ -54,7 +54,6 @@ its runtime complexity is O(n^2).
 
 Space complexity is O(1)
 */
-
 function twoSumBruteForce(arr, sum) {
   const len = arr.length;
   if (len === 0) return [];

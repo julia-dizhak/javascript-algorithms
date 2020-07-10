@@ -1,4 +1,25 @@
 /*
+
+Q. Are numbers are integer?
+Q. Could numbers be negative?
+
+Intuition
+youtube google https://www.youtube.com/watch?v=XKu_SEDAykw
+3-44
+Q. Are numbers are integer?
+Q. Could numbers be negative?
+
+Simplest solution to compare every possible pair
+I could just have 2 For loops.
+One scanning a whole thing from i and the second one
+starting from j = i+1
+
+two sum with duplicates
+ expect(twoSumSorted([1, 2, 4, 4], 8)).toEqual([2, 3]);
+*/
+
+
+/*
 Leetcode
 167 Two sum II - input array is sorted
 easy
@@ -22,26 +43,6 @@ Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 
 
 follow up design two sum data structure
-*/
-
-
-/* Approach brute force
-(the same like for 2 sum problem )
-
-From youtube google https://www.youtube.com/watch?v=XKu_SEDAykw
-Intuition
-
-3-44
-Q. Are numbers are integer?
-Q. Could numbers be negative?
-
-Simplest solution to compare every possible pair
-I could just have 2 For loops.
-One scanning a whole thing from i and the second one
-starting from j = i+1
-
-two sum with duplicates
-expect(twoSumSorted([1, 2, 4, 4], 8)).toEqual([2, 3]);
 */
 
 

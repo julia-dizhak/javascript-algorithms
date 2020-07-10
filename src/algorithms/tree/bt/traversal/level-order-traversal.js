@@ -130,24 +130,24 @@ Time Complexity: O(n) where n is number of nodes in the binary tree
  */
 var levelOrderBottom = function(root) {
   let result = [];
-    if (!root) return result;
+  if (!root) return result;
 
-    let queue = [];
-    if (root) queue.push(root);
+  let queue = [];
+  if (root) queue.push(root);
 
-    while (queue.length) {
-      let size = queue.length;
-      let temp = [];
-      for (let i=0; i<size; i++) {
-          let node = queue.shift();
-          temp.push(node.val);
-          if (node.left) queue.push(node.left);
-          if (node.right) queue.push(node.right);
+  while (queue.length) {
+    let size = queue.length;
+    let temp = [];
+    for (let i=0; i<size; i++) {
+        let node = queue.shift();
+        temp.push(node.val);
+        if (node.left) queue.push(node.left);
+        if (node.right) queue.push(node.right);
 
-      }
-      result.unshift(temp);
     }
-    return result
+    result.unshift(temp);
+  }
+  return result
 };
 
 /**

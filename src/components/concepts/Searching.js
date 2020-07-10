@@ -8,6 +8,8 @@ import { binarySearchRecursive, binarySearch } from '../../algorithms/search/bin
 import { balancedSum } from '../../algorithms/search/problems/balanced-sum';
 import { solutionBinarySearch } from '../../leetcode/search/binary-search/278-first-bad-version';
 //import { arrangeCoins } from '../../leetcode/search/binarySearch/441-arrangeCoins';
+import { twoSumSorted } from '../../leetcode/array/sum-problems/two-sum-sorted';
+import { threeSum } from '../../leetcode/array/sum-problems/15-3sum-problem';
 
 export default function Searching() {
   return (
@@ -15,12 +17,13 @@ export default function Searching() {
       <h2>Search / Binary search</h2>
 
         <ul>
-          {/* test
+          test
           <Details
             id="test"
             question=""
-            code={}
-          /> */}
+            code={twoSumSorted.toString()}
+            secondCode={threeSum.toString()}
+          />
         <li>
           <Details
             id="is-find-index"
