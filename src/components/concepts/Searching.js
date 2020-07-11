@@ -17,13 +17,13 @@ export default function Searching() {
       <h2>Search / Binary search</h2>
 
         <ul>
-          test
+          {/* test
           <Details
             id="test"
             question=""
             code={twoSumSorted.toString()}
             secondCode={threeSum.toString()}
-          />
+          /> */}
         <li>
           <Details
             id="is-find-index"

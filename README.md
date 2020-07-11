@@ -27,7 +27,7 @@ by [Yuliia (Julia) Dizhak](https://github.com/julia-dizhak)
 
 created on 12/21/17
 
-## List of problems
+## Main Algorithms implementation
 
 * ### Bitwise
     * [Common bit tasks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
@@ -85,7 +85,7 @@ created on 12/21/17
     | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)      | -       | -         |
 
 * ### Linked Lists
-    * [Singly-linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly-linked-list.js)
+    * [Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly/singly-linked-list.js)
 
     | Complexity:             | Time         | Space   |
     | :---                    | :---         | :---    |
@@ -162,7 +162,7 @@ created on 12/21/17
     * [Fibonacci Number (recursion, iterative)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
 
 
-## Leetcode
+## Leetcode problems solving
 
 * ### Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
@@ -304,8 +304,19 @@ created on 12/21/17
     | :---                | :---    | :---    |
     | Hash + catch cycle  | O(1)    | O(1)    |
 
-* ### Linked Lists
-    * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-lists/singly-linked-list/237-delete-node-in-linked-list.js)
+* ### Singly Linked List
+    * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/237-delete-node-in-linked-list.js)
+
+    | Approach            | Time    | Space   |
+    | :---                | :---    | :---    |
+    | Swap with next node | O(?)    | O(?)    |
+
+* ### Doubly Linked List
+    * [430. Flatten a multilevel Doubly Linked List)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/doubly/430-flatten-multilevel-doubly-linked-list.js)
+
+    | Approach            | Time    | Space   |
+    | :---                | :---    | :---    |
+    | ? | O(?)    | O(?)    |
 
 * ### Stack
     * [155. Min Stack](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)
