@@ -6,7 +6,7 @@ import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-
 import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
 // import { hammingDistance } from '../../leetcode/bitwise/461-hamming-distance';
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
-import { testBit } from '../../algorithms/bitwise/common-bit-tasks';
+import { getBit, testBit } from '../../algorithms/bitwise/common-bit-tasks';
 
 
 export default function BitManipulation() {
@@ -14,15 +14,15 @@ export default function BitManipulation() {
     <div className="bit">
       <h2 id="bit">Bit Manipulation</h2>
 
-      <ul id="bit">
+      <ul>
         <li>
           <Details
             id="common-bit-tasks"
             question="Common bit tasks"
-            solution="Tasks: testBit, "
+            solution="Tasks: getBit(n,i), "
             time=""
             space=""
-            code={testBit.toString()}
+            code={getBit.toString()}
             //secondCode={hammingDistance1.toString()}
           />
         </li>

@@ -32,10 +32,10 @@ created on 12/21/17
 * ### Bitwise
     * [Common bit tasks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
 
-    | Approaches:        | Time    | Space   |
-    | :---               | :---    | :---    |
-    | getBit(num, i)     | O()     |         |
-    | testBit(num, i)    | O()     | O()     |
+    | Approaches:        | Time     | Space    |
+    | :---               | :---     | :---     |
+    | getBit(num, i)     | O(1)     | O(1)     |
+    | testBit(num, i)    | O()      | O()      |
 
 * Number (General)
 
@@ -85,7 +85,7 @@ created on 12/21/17
     | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)      | -       | -         |
 
 * ### Linked Lists
-    * [Singly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly/singly-linked-list.js)
+    * [Singly Linked List Implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly/singly-linked-list.js)
 
     | Complexity:             | Time         | Space   |
     | :---                    | :---         | :---    |
@@ -133,11 +133,11 @@ created on 12/21/17
     | Iterative + Stack   | O(n)     | 0(h)   |
     | Recursion           | O(n)     | 0(n)   |
 
-    * [Level order (bottom) traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/level-order-traversal.js)
+    * [Level order (and bottom) traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/level-order-traversal.js)
 
-    | Approaches:         | Time     | Space      |
-    | :---                | :---     | :---       |
-    | Iterative, Queue    | O(n)     | 0(n/2 = n) |
+    | Approaches:          | Time     | Space      |
+    | :---                 | :---     | :---       |
+    | Iterative + Queue    | O(n)     | 0(n/2 = n) |
 
 * ### Binary Search Tree (BST) Implementation
     * [BST implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bst/binary-search-tree.js)
@@ -157,7 +157,7 @@ created on 12/21/17
     | deleteMax     | O(log n)  | O(1)      |
     | max           | O(1)      | O(1)      |
 
-* Recursion
+* ### Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
     * [Fibonacci Number (recursion, iterative)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
 
@@ -305,18 +305,20 @@ created on 12/21/17
     | Hash + catch cycle  | O(1)    | O(1)    |
 
 * ### Singly Linked List
-    * [237. Delete node in linked list (swap with next node))](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/237-delete-node-in-linked-list.js)
+    * [237. Delete node in Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/237-delete-node-in-linked-list.js)
 
-    | Approach            | Time    | Space   |
-    | :---                | :---    | :---    |
-    | Swap with next node | O(?)    | O(?)    |
+    | Approach             | Time    | Space   |
+    | :---                 | :---    | :---    |
+    | Swap with next node  | O(1)    | O(1)    |
+    | Usual way: find prev | O(n)    | O(1)    |
 
 * ### Doubly Linked List
-    * [430. Flatten a multilevel Doubly Linked List)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/doubly/430-flatten-multilevel-doubly-linked-list.js)
+    * [430. Flatten a multilevel Doubly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/doubly/430-flatten-multilevel-doubly-linked-list.js)
 
-    | Approach            | Time    | Space   |
-    | :---                | :---    | :---    |
-    | ? | O(?)    | O(?)    |
+    | Approach        | Time     | Space   |
+    | :---            | :---     | :---    |
+    | Iterative       | O(n)?    | O(1)    |
+    | Use stack       | O(?)     | O(?)    |
 
 * ### Stack
     * [155. Min Stack](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/stack/155-min-stack.js)

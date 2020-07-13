@@ -1,7 +1,7 @@
 /*
-
 Leetcode
 237 Delete a node in Linked List
+easy
 
 Write a function to delete a node (except the tail) in a singly linked list,
 given only access to that node.
@@ -42,7 +42,9 @@ Approach swap with next node
 
 The usual way of deleting a node node from a linked list
 is to modify the next pointer of the node before it,
-to point to the node after it (see below).
+to point to the node after it:
+1 -> 2 -> 3 -> 4 -> 5 -> x
+we want to delete 3 : 2.next = 4
 
 Since we do not have access to the node before the one we want to delete,
 we cannot modify the next pointer of that node in any way.
@@ -67,8 +69,26 @@ var deleteNode = function(node) {
   node.next = node.next.next;
 };
 
+
 /*
-Usual way of deleting a node in linked list
+Usual way of deleting a node in Linked list: find a prev node
+
+We are given the head of a linked list and a key. We have to delete the node
+that contains this given key.
+
+Hint:
+keep track of prev pointer
+
+Solution Breakdown
+First, we have to find the key in the linked list. We’ll keep two pointers,
+current and previous, as we iterate the linked list.
+
+If the key is found in the linked list, then the current pointer would be
+pointing to the node containing the key to be deleted. The previous should be
+pointing to the node before the key node.
+
+This can be done in a linear scan and we can simply update current and previous
+pointers as we iterate through the linked list.
 
 To delete a node from linked list, we need to do following steps.
 1) Find previous node of the node to be deleted.
@@ -81,28 +101,69 @@ need to remove 3
 Time is O(n)
 space is O(1)
 */
-var deleteNodeUsualWay = function(node, key) {
-  let temp = node;
+
+// tod check test here https://www.educative.io/m/delete-node-with-given-key
+/**
+ *
+ * @param {*} head - head of Linked List
+ * @param {*} key  -  is a given value
+ */
+var deleteNodeUsualWay1 = function(head, key) {
+  let prev = null;
+  let current = head;
+
+  while (current) {
+    if (current.val === key) {
+      if (current === head) {
+        head = head.next;
+        current = head;
+      } else {
+        prev.next = current.next;
+        current = current.next;
+      }
+    } else {
+      // current.val !== key
+      prev = current;
+      current = current.next;
+    }
+  }
+
+  //  key not found in list
+  if (!current) return head;
+
+  return head
+}
+
+// todo check solution
+/**
+ *
+ * @param {*} head - head of Linked List
+ * @param {*} key  -  is a given value
+ */
+var deleteNodeUsualWay = function(head, key) {
+  let current = head;
   let prev = null;
 
   // If head node itself holds the key to be deleted
-  while (temp !== null && node.val === key) {
-    node = temp.next; // changed head
+  while (current !== null && head.val === key) {
+    head = current.next; // changed head
     return;
   }
 
   // Search for the key to be deleted, keep track of the
   // previous node as we need to change temp.next
-  while (temp !== null && node.val !== key) {
-    prev = temp;
-    temp = temp.next;
+  while (current !== null && head.val !== key) {
+    prev = current;
+    current = current.next;
   }
 
   // If key was not present in linked list
-  if (temp == null) return;
+  if (current == null) return;
 
   // Unlink the node from linked list
-  prev.next = temp.next;
+  prev.next = current.next;
 }
 
-export { deleteNode, deleteNodeUsualWay }
+// todo write a test
+
+export { deleteNode, deleteNodeUsualWay, deleteNodeUsualWay1 }

@@ -18,10 +18,17 @@ function getBit(num, index) {
 }
 
 // tests
-// console.log('getBit', getBit(5,0)); // 1
-// console.log('getBit', getBit(5,1)); // 0
-// console.log('getBit 0', getBit(2,0));
-// console.log('getBit 0', getBit(2,1));
+console.log('getBit', getBit(5,0)); // true
+console.log('getBit', getBit(5,1)); // false, 5 - 101
+console.log('getBit', getBit(5,2)); // true
+
+
+/*
+Examples
+
+*/
+
+
 
 /*
 testBit
@@ -86,5 +93,6 @@ function testBit(number, index) {
 
 
 export {
+  getBit,
   testBit
 }

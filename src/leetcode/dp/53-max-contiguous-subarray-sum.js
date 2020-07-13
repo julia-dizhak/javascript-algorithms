@@ -2,7 +2,7 @@
 /**
  * Leetcode
  * 53 Maximum subarray
- * easy (I think medium)
+ * easy
  *
  * Given an integer array nums, find the contiguous subarray
  * (containing at least one number) which has the largest sum
@@ -27,30 +27,28 @@
  */
 
 /*
-  Approach Brute Force cubic time
+Approach Brute Force cubic time
 
-  We will use these outer 2 for loops to investigate all
-  windows of the array.
+We will use these outer 2 for loops to investigate all windows of the array.
 
-  We plant at each 'left' value and explore every
-  'right' value from that 'left' planting.
-  These are our bounds for the window we will investigate.
+We plant at each 'left' value and explore every 'right' value from that 'left'
+planting. These are our bounds for the window we will investigate.
 
-  Cubic solution will calculate sum of first subarray and
-  then going all way back to the left bound and calculate the sum of second subarray.
+Cubic solution will calculate sum of first subarray and
+then going all way back to the left bound and calculate the sum of second subarray.
 
-  Do you see a problem here?
-  Whenever yo wanna optimize an algorithm think about BUD =
-  Bottlenecks
-  Unnecessary Work
-  Duplicate Work
+Do you see a problem here?
+Whenever yo wanna optimize an algorithm think about BUD =
+Bottlenecks
+Unnecessary Work
+Duplicate Work
 
-  We are doing duplicate work here and we can optimize it with eliminate inner most loop,
-  because we already know the subarray of previous window and we don't need
-  to calculate it again. See below.
+We are doing duplicate work here and we can optimize it with eliminate inner most
+loop, because we already know the subarray of previous window and we don't need
+to calculate it again. See below.
 
-  time is O(n^3)
-  space O(1)
+time is O(n^3)
+space O(1)
 */
 
 /**
@@ -81,13 +79,13 @@ var maxSubArrayBruteForceCubicTime = function(nums) {
 };
 
 /*
-  Approach Brute Force quadratic time
+Approach Brute Force quadratic time
 
-  The optimization is next, we don't need to make a duplicate work,
-  we already know the sum of previous window.
-  So we just need to add next element to previous sum = just add one item.
+The optimization is next, we don't need to make a duplicate work,
+we already know the sum of previous window.
+So we just need to add next element to previous sum = just add one item.
 
-  complexity time is O(n^2) because we eliminate inner most loop
+complexity time is O(n^2) because we eliminate inner most loop
 */
 var maxSubArrayBruteForce = function(nums) {
   const len = nums.length;
