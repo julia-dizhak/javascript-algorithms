@@ -1,5 +1,6 @@
 /*
 getBit
+
 This method shifts 1 over by i bits
 */
 
@@ -13,15 +14,38 @@ function getBit(num, index) {
   const mask = 1 << index;
   // by performing AND with num we clear all bits other that the bit at bit index
   // finally we compare that to 0
-  // if that new value is not zero, then bit index must have a 1. Otherwise, bit is a 0
+  // if that new value is not zero, then bit index must have a 1. Otherwise,
+  // bit is a 0
   return (num & mask) !== 0;
 }
 
 // tests
-console.log('getBit', getBit(5,0)); // true
-console.log('getBit', getBit(5,1)); // false, 5 - 101
-console.log('getBit', getBit(5,2)); // true
+// console.log('getBit', getBit(5,0)); // true
+// console.log('getBit', getBit(5,1)); // false, 5 - 101
+// console.log('getBit', getBit(5,2)); // true
 
+
+/*
+setBit
+Given a number, write a function that sets its i-th bit to 1.
+
+setBit shifts 1 over by i bits, creating a value like 00010000. By performing an
+OR with num, only the value at bit i will change. All other bits of the mack are
+zero and will not affect them.
+
+0|0 = 0 we don't have this case
+1|0 = 1
+0|1 = 1
+1|1 = 1
+*/
+function setBit(num, index) {
+  const mask = 1 << index;
+  return num | mask;
+}
+
+console.log('setBit', setBit(5,0)); // 5
+console.log('setBit', setBit(5,1)); // 7
+console.log('setBit', setBit(5,2)); // 5
 
 /*
 Examples

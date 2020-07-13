@@ -30,12 +30,13 @@ created on 12/21/17
 ## Main Algorithms implementation
 
 * ### Bitwise
-    * [Common bit tasks](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
+    * [Common bit tasks: getBit(n,i), setBit(n,i)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
 
-    | Approaches:        | Time     | Space    |
-    | :---               | :---     | :---     |
-    | getBit(num, i)     | O(1)     | O(1)     |
-    | testBit(num, i)    | O()      | O()      |
+    | Bit task              | Approach      | Time/Space    |
+    | :---                  | :---          | :---          |
+    | getBit(num, i)        | mask + AND    | O(1)          |
+    | setBit(num, i)     | mask + OR     | O(1)          |
+    | testBit(num, i)       | O()           | O(1)          |
 
 * Number (General)
 
