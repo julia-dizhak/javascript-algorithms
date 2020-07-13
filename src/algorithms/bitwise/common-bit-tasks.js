@@ -43,15 +43,50 @@ function setBit(num, index) {
   return num | mask;
 }
 
-console.log('setBit', setBit(5,0)); // 5
-console.log('setBit', setBit(5,1)); // 7
-console.log('setBit', setBit(5,2)); // 5
+// tests
+// console.log('setBit', setBit(5,0)); // 5
+// console.log('setBit', setBit(5,1)); // 7
+// console.log('setBit', setBit(5,2)); // 5
 
 /*
-Examples
+Clear bit
 
+Given a number, write a function that clears its ith bit by setting it to 0.
+This method operates in almost the reverse of setBit.
+First, we create a number line 11101111 by creating the reverse of it (00010000)
+and negating it. Then we perform an AND with num. This will clear the i-th bit
+and leave the remainder unchanged
 */
 
+function clearBit(num, index) {
+  const mask = ~(1 << index);
+  return num & mask;
+}
+
+// tests
+// console.log('clearBit', clearBit(5,0)); //
+// console.log('clearBit', clearBit(5,1)); //
+// console.log('clearBit', clearBit(5,2)); //
+
+function clearAllBitsMSBthrough(num, index) {
+  const mask = (1 << index) - 1;
+  return num & mask
+}
+
+// tests
+// console.log('clearAllBitsMSBthrough', clearAllBitsMSBthrough(5,0));
+// console.log('clearAllBitsMSBthrough', clearAllBitsMSBthrough(5,1));
+// console.log('clearAllBitsMSBthrough', clearAllBitsMSBthrough(5,2));
+
+
+/*
+toggleBit
+*/
+
+function toggleBit(num, index) {
+  const mask = 1 << index;
+  return num ^ mask;
+}
 
 
 /*
@@ -115,8 +150,14 @@ function testBit(number, index) {
 // console.log(testBit(1, 1)) ; // start from 0?
 // console.log(testBit(1, 2));
 
+/*
+Examples
+...
+*/
 
 export {
   getBit,
+  setBit,
+  clearBit,
   testBit
 }

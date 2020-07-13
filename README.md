@@ -35,8 +35,8 @@ created on 12/21/17
     | Bit task              | Approach      | Time/Space    |
     | :---                  | :---          | :---          |
     | getBit(num, i)        | mask + AND    | O(1)          |
-    | setBit(num, i)     | mask + OR     | O(1)          |
-    | testBit(num, i)       | O()           | O(1)          |
+    | setBit(num, i)        | mask + OR     | O(1)          |
+    | clearBit(num, i)      | ~mask + AND   | O(1)          |
 
 * Number (General)
 
