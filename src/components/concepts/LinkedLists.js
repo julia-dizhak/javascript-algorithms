@@ -1,7 +1,7 @@
 import React from 'react';
 import Details from '../Details';
 
-import { LinkedList } from '../../algorithms/linked-lists/singly/singly-linked-list';
+import { LinkedList } from '../../algorithms/linked-list/singly/singly-linked-list';
 
 export default function LinkedLists() {
   return (

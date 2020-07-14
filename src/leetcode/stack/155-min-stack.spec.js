@@ -1,5 +1,6 @@
 import {
-  MinStack, MinStackUseTwoStack,
+  MinStack,
+  MinStackUseTwoStack,
   MinStackMinPairs,
 } from './155-min-stack';
 

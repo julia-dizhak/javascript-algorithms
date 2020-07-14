@@ -13,6 +13,7 @@ import { levelOrder } from '../../algorithms/tree/bt/traversal/level-order-trave
 // problems
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 // import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
+import { isSameTree, TreeNode } from '../../leetcode/tree/binary-tree/100-same-tree';
 import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/max-width-bt';
 
 // contest move
@@ -30,7 +31,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={subsets.toString()}
+            code={TreeNode.toString()}
             //secondCode={widthOfBinaryTree.toString()}
             // secondCode={Trie.toString()}
           />

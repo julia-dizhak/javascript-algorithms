@@ -50,54 +50,51 @@ or throw an exception if they do.
 
 
 /*
-  Approach 2 Stacks
+Approach 2 Stacks
 
-  We could have two Stacks inside our MinStack.
+We could have two Stacks inside our MinStack.
 
-  The main Stack should keep track of the order numbers arrived (a standard Stack),
-  and the second Stack should keep track of the current minimum.
-  We'll call this second Stack the "min-tracker" Stack for clarity.
+The main Stack should keep track of the order numbers arrived (a standard Stack),
+and the second Stack should keep track of the current minimum.
+We'll call this second Stack the "min-tracker" Stack for clarity.
 
-  The push(...) method: items should always be pushed onto the main Stack,
-  but they should only be pushed onto the min-tracker Stack if they are smaller
-  than the current top of it.
+The push(...) method: items should always be pushed onto the main Stack,
+but they should only be pushed onto the min-tracker Stack if they are smaller
+than the current top of it.
 
-  There's one potential pitfall.
-  Instead of only pushing numbers to the min-tracker Stack if they are less than
-  the current minimum, we should push them if they are less than or equal to it.
-  While this means that some duplicates are added to the min-tracker Stack.
+There's one potential pitfall.
+Instead of only pushing numbers to the min-tracker Stack if they are less than
+the current minimum, we should push them if they are less than or equal to it.
+While this means that some duplicates are added to the min-tracker Stack.
 
-  top(...) returns (but doesn't remove) the top value of the main Stack,
-  whereas getMin(...) returns (but doesn't remove) the top of the min-tracker Stack.
+top(...) returns (but doesn't remove) the top value of the main Stack,
+whereas getMin(...) returns (but doesn't remove) the top of the min-tracker Stack.
 
-  This leaves us still needing to implement MinStack's pop(...) method.
-  The value we actually need to pop is always on the top of the main underlying Stack.
-  However, if we simply popped it from there, the min-tracker Stack would become
-  incorrect once its top value had been removed from the main Stack.
+This leaves us still needing to implement MinStack's pop(...) method.
+The value we actually need to pop is always on the top of the main underlying Stack.
+However, if we simply popped it from there, the min-tracker Stack would become
+incorrect once its top value had been removed from the main Stack.
 
-  Complexity analysis
+Complexity analysis
 
-  time complexity
-  O(1) for all operations
-  push(...): Checking the top of a Stack, comparing numbers, and pushing to the top of a Stack (or adding to the end of an Array or List) are all O(1) operations.
+time complexity
+O(1) for all operations
+push(...): Checking the top of a Stack, comparing numbers, and pushing to the top of a Stack (or adding to the end of an Array or List) are all O(1) operations.
 
-  pop(...): Popping from a Stack (or removing from the end of an Array, or List)
-  is an O(1) operation.
+pop(...): Popping from a Stack (or removing from the end of an Array, or List)
+is an O(1) operation.
 
-  top(...): Looking at the top of a Stack is an O(1) operation.
+top(...): Looking at the top of a Stack is an O(1) operation.
 
-  getMin(...): Same as above. This operation is O(1) because we do not need to compare values to find it.
-  If we had not kept track of it on the Stack,
-  and instead had to search for it each time, the overall time complexity would have been O(n).
+getMin(...): Same as above. This operation is O(1) because we do not need to compare values to find it.
+If we had not kept track of it on the Stack,
+and instead had to search for it each time, the overall time complexity would have been O(n).
 
-  space complexity
-  Worst case is that all the operations are push.
-  In this case, there will be O(2n) = O(n) space used.
+space complexity
+Worst case is that all the operations are push.
+In this case, there will be O(2n) = O(n) space used.
 */
 class MinStack {
-  /**
-  * @constructor
-  */
   constructor() {
     this.stack = [];
     this.minStack = [];
@@ -185,18 +182,20 @@ class MinStackMinPairs {
 }
 
 /*
-  Approach 3: Improved 2 Stacks
+Approach 3: Improved 2 Stacks
 
-  In the first approach, we pushed a new number onto the min-tracker Stack if,
-  and only if, it was less than or equal to the current minimum.
-  One downside of this solution is that if the same number is pushed repeatedly into MinStack,
-  and that number also happens to be the current minimum,
-  there'll be a lot of needless repetition on the min-tracker Stack.
-  Recall that we put this repetition in to prevent a bug from occurring (refer to Approach 1).
+In the first approach, we pushed a new number onto the min-tracker Stack if,
+and only if, it was less than or equal to the current minimum.
+One downside of this solution is that if the same number is pushed repeatedly
+into MinStack,
+and that number also happens to be the current minimum,
+there'll be a lot of needless repetition on the min-tracker Stack.
+Recall that we put this repetition in to prevent a bug from occurring
+(refer to Approach 1).
 
-  An improvement is to put pairs onto the min-tracker Stack.
-  The first value of the pair would be the same as before,
-  and the second value would be how many times that minimum was repeated.
+An improvement is to put pairs onto the min-tracker Stack.
+The first value of the pair would be the same as before,
+and the second value would be how many times that minimum was repeated.
 */
 
 class MinStackUseTwoStack {
@@ -224,17 +223,26 @@ class MinStackUseTwoStack {
   }
 
   pop() {
+    if (this.stack.length === 0 || this.minStack.length === 0) {
+      throw new Error('stack is empty');
+    }
+
     // If the top of min stack is the same as the top of stack
     // then we need to decrement the count at the top by 1.
     if (this.stack[this.stack.length - 1] === this.minStack[this.minStack.length - 1][0]) {
       this.minStack[this.minStack.length - 1][1]--;
+
+      // it's better approach nested loop
+      if (this.minStack[this.minStack.length - 1][1] === 0) {
+        this.minStack.pop();
+      }
     }
 
     // If the count at the top of min stack is now 0, then remove
     // that value as we're done with it.
-    if (this.minStack[this.minStack.length - 1][1] === 0) {
-      this.minStack.pop();
-    }
+    // if (this.minStack[this.minStack.length - 1][1] === 0) {
+    //   this.minStack.pop();
+    // }
 
     // and like before, pop the top of the main stack.
     this.stack.pop();
@@ -263,6 +271,18 @@ class MinStackUseTwoStack {
     ...
   }
 */
+
+// tests
+// let minStack = new MinStackUseTwoStack();
+// minStack.push(-2);
+// minStack.push(0);
+// minStack.push(-2);
+// minStack.pop();
+// minStack.pop();
+// minStack.pop();
+// minStack.pop();
+// console.log('minStack', minStack)
+// console.log('minStack', minStack.top())
 
 export {
   MinStack,
