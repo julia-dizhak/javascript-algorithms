@@ -366,9 +366,10 @@ created on 12/21/17
 
     * [100. Same Tree ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/100-same-tree.js)
 
-    | Approaches:    | Time     | Space        |
-    | :---           | :---     | :---         |
-    | Recursion      | O(n)     | 0(logn)/O(n) |
+    | Approaches:      | Time     | Space        |
+    | :---             | :---     | :---         |
+    | Recursion        | O(n)     | 0(logn)/O(n) |
+    | Iterative DFS    | O(n)     | 0(logn)/O(n) |
 
     * [222. Count complete tree nodes](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/22-count-complete-tree-modes.js)
 
