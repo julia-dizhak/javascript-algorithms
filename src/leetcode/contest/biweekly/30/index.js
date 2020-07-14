@@ -269,41 +269,6 @@ var subsets = function(nums) {
 
 console.log('subsets', subsets([1,2,3]))
 
-
-/*
-Reverse Bits
-*/
-// todo https://leetcode.com/problems/reverse-bits/discuss/55011/JavaScript-solution
-/**
- * @param {number} n - a positive integer
- * @return {number} - a positive integer
- */
-var reverseBits = function(n) {
-  console.log('n', n.toString(2))
-  //debugger
-  let reverse = 0;
-  let count = 32;
-
-  while (count--) {
-    reverse *= 2;
-    reverse += n & 1;
-    n = n >> 1;
-  }
-
-  return reverse
-
-};
-
-// var reverseBits = function (n) {
-//   return parseInt(('0'.repeat(32 - n.toString(2).length) + n.toString(2)).split('').reverse().join(''), 2)
-// };
-
-//console.log('reverseBits', reverseBits('00000010100101000001111010011100'))
-// output 00111001011110000010100101000000
-console.log('reverseBits', reverseBits('00000010100101000001111010011100'))
-//console.log('reverseBits', reverseBits('11111111111111111111111111111101'))
-// 10111111111111111111111111111111
-
 export {
   reformatDate,
   rangeSum,

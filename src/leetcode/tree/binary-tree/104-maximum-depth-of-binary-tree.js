@@ -32,6 +32,18 @@ Algorithm
 3 count height of right subtree = rightHeight
 4 height equals 1 + max(leftHeight, rightHeight)
 
+Visualization:
+You can draw a table with root, line number, left height, right height
+  | root    | line number   | left height  | right height  |
+  | 10      | 3             | 1            | 3             |
+
+var height = function(root) {
+  if (root === null) return 0;
+  line 1 => let leftHeight = height(root.left);
+  line 2 => let rightHeight = height(root.right);
+  line 3 => return 1 + Math.max(leftHeight, rootHeight);
+}
+
 Example: Given binary tree [3,9,20,null,null,15,7],
     3
      \

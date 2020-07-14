@@ -6,6 +6,7 @@ import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-
 import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
 // import { hammingDistance } from '../../leetcode/bitwise/461-hamming-distance';
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
+import { reverseBits } from '../../leetcode/bitwise/190-reverse-bits';
 import { getBit, setBit, clearBit } from '../../algorithms/bitwise/common-bit-tasks';
 
 
@@ -15,6 +16,11 @@ export default function BitManipulation() {
       <h2 id="bit">Bit Manipulation</h2>
 
       <ul>
+          <Details
+            id="test"
+            question="test"
+            code={reverseBits.toString()}
+          />
         <li>
           <Details
             id="common-bit-tasks"

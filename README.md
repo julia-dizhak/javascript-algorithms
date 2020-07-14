@@ -202,6 +202,12 @@ created on 12/21/17
     | Bit trick manipulation  | O(1)     | O(1)   |
     | XOR + toString          | O(n)     | O(1)   |
 
+    * [190. Reverse bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/190-reverse-bits.js)
+
+    | Approaches:       | Time      | Space  |
+    | :---              | :---      | :---   |
+    | Bit by bit        | O(1)      | O(1)   |
+
 * ### Number / Math
     * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/263-ugly-number.js)
 
@@ -357,7 +363,12 @@ created on 12/21/17
     | Approaches:    | Time     | Space  |
     | :---           | :---     | :---   |
     | Recursion      | O(n)     | 0(n)   |
-    | Iterative      | ?        | ?      |
+
+    * [100. Same Tree ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/100-same-tree.js)
+
+    | Approaches:    | Time     | Space        |
+    | :---           | :---     | :---         |
+    | Recursion      | O(n)     | 0(logn)/O(n) |
 
     * [222. Count complete tree nodes](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/22-count-complete-tree-modes.js)
 

@@ -59,5 +59,7 @@ function max(arr) {
 export {
   loopNTimes,
   countDown,
-  sumUseLoop
+  sumUseLoop,
+  sum,
+  max
 }

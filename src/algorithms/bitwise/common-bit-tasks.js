@@ -159,5 +159,6 @@ export {
   getBit,
   setBit,
   clearBit,
+  toggleBit,
   testBit
 }

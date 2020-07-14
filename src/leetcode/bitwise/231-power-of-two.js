@@ -79,6 +79,12 @@ var isPowerOfTwoUseWhile = function(n) {
 /*
 Approach bit manipulation (trick)
 
+There is a question: explain what the following code does: n & (n-1) === 0.
+What does it mean A & B === 0.
+It means that A and B never have 1 bit in the same place. So if n & (n-1) === 0,
+then n and n-1 never share 1.
+The value n is therefore a power of two
+
 Power of two means only one bit of n is 1.
 And you can use trick n & (n-1) === 0 to judge
 whether that is the case.
