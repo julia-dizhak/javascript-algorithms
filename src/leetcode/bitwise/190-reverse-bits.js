@@ -51,7 +51,7 @@ n, one could either apply the modulo operation (i.e. n % 2) or the bit AND opera
 (i.e. n & 1).
 Another example would be that in order to combine the results of
 reversed bits (e.g. 2^a, 2^b) one could either use the addition operation
-(i.e. 2^a + 2^b) or again the bit OR operation (i.e. 2^a | 2^b2)
+(i.e. 2^a + 2^b) or again the bit OR operation (i.e. 2^a | 2^b)
 
 The key idea is that for a bit that is situated at the index i, after the
 reversion, its position should be 31-i (note: the index starts from zero).
@@ -82,7 +82,7 @@ var reverseBits = function(n) {
   let power = 31;
 
   while (n !== 0) {
-    ret += (n & 1) << power;
+    ret += (n & 1) << power; // (n & 1) ^ 31, 2^0 + 2^1 + ... 2^31 = (n & 1) * 2^ 31
     n = n >> 1;
     power -= 1;
   }
@@ -129,7 +129,7 @@ var reverseBitsToString = function(n) {
 //console.log('reverseBitsToString', reverseBitsToString('01000000'))
 
 var reverseBitsSum = function(n) {
-  if (n == 0) return 0;
+  if (n === 0) return 0;
 
   let result = 0;
 

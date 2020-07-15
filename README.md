@@ -30,20 +30,28 @@ created on 12/21/17
 ## Main Algorithms implementation
 
 * ### Bitwise
-    * [Common bit tasks: getBit(n,i), setBit(n,i)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
+    * [Common bit tasks: getBit(n,i), setBit(n,i), toggleBit(n,i)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
 
     | Bit task              | Approach      | Time/Space    |
     | :---                  | :---          | :---          |
     | getBit(num, i)        | mask + AND    | O(1)          |
     | setBit(num, i)        | mask + OR     | O(1)          |
     | clearBit(num, i)      | ~mask + AND   | O(1)          |
+    | toggleBit(num, i)     | XOR           | O(1)          |
 
-* Number (General)
+    * [Check if number is even or odd](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/check-if-number-even-or-odd.js)
 
-* String manipulation
+    | Approaches:       | Time    | Space    |
+    | :---              | :---    | :---     |
+    | AND               | O(1)    | O(1)     |
+    | XOR               | O(1)    | O(1)     |
+
+* ###  Number (General)
+
+* ###  String manipulation
     * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/reverse-a-string.js)
 
-* Array
+* ###  Array
     * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
     * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
 

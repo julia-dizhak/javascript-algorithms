@@ -55,7 +55,7 @@ otherwise recursively search left and right at next level
 3 The search pattern is very similar to binary search, the difference of heights
 either exists in left side, or right side
 
-For those who are confused with (1 << leftDepth) - 1;
+For those who are confused with (1 << leftDepth) - 1 ( => 1 << leftDepth = 1 * 2^leftDepth)
 This is done to find the nodes when depth is known.
 Suppose there are N nodes in a tree, then depth = log2(n+1)
 1 node gives log2(2) = 1
