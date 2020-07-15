@@ -90,7 +90,7 @@ var reverseBits = function(n) {
 }
 
 // tests
-console.log('reverseBits', reverseBits('11111111111111111111111111111101'))
+//console.log('reverseBits', reverseBits('11111111111111111111111111111101'))
 
 /*
 Approach
@@ -300,11 +300,12 @@ var reverseBitsDivideConquer = function(n) {
 //console.log('reverseBits', reverseBits('11111111111111111111111111111101'))
 // 10111111111111111111111111111111
 
+
 export {
   reverseBits,
   reverseBitsSum,
   reverseBits2,
   reverseBits3,
   reverseBitsToString,
-  reverseBitsDivideConquer
+  reverseBitsDivideConquer,
 }

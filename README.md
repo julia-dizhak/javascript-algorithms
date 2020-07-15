@@ -46,12 +46,12 @@ created on 12/21/17
     | AND               | O(1)    | O(1)     |
     | XOR               | O(1)    | O(1)     |
 
-* ###  Number (General)
+* ### Math (General)
 
-* ###  String manipulation
+* ### String manipulation
     * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/reverse-a-string.js)
 
-* ###  Array
+* ### Array
     * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
     * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
 
@@ -188,6 +188,14 @@ created on 12/21/17
     | Iterative: keep divide by 2  | O(log n)     | 0(1)   |
     | Math + toString              | O(n)         | O(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
+
+    * [693. Binary Number of Alternating Bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/693-alternating-bits.js)
+
+    | Approaches:       | Time      | Space  |
+    | :---              | :---      | :---   |
+    | Convert to Sting  | O(1)      | 0(1)   |
+    | Prev + XOR        | O(1)      | O(1)   |
+    | XOR               | O(1)      | O(1)   |
 
     * [136. Single Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/136-single-number.js)
 
