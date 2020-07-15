@@ -56,7 +56,7 @@ created on 12/21/17
     | 2-pass Hash table  | O(n)    | O(n)     |
     | 1-pass Hash table  | O(n)    | O(n)     |
 
-* ### Search: linear and binary
+* ### Search: linear and binary search
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
     * [Binary search (iterative, recursion)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary/binary-search.js)
 
@@ -207,6 +207,8 @@ created on 12/21/17
     | Approaches:       | Time      | Space  |
     | :---              | :---      | :---   |
     | Bit by bit        | O(1)      | O(1)   |
+    | Memoization       | O(1)      | O(1)   |
+    | Mask and shift    | O(1)      | O(1)   |
 
 * ### Math / Number
     * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/263-ugly-number.js)

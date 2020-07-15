@@ -64,19 +64,29 @@ function clearBit(num, index) {
 }
 
 // tests
+// console.log('clearBit', clearBit(2,0)); // is a 0
+// console.log('clearBit', clearBit(2,1));
 // console.log('clearBit', clearBit(5,0)); //
 // console.log('clearBit', clearBit(5,1)); //
 // console.log('clearBit', clearBit(5,2)); //
 
-function clearAllBitsMSBthrough(num, index) {
+/*
+To clear all bits from the most significant bit till i,
+we create a mask with a 1, 1<<i. Then we subtract 1 from it, i=4,
+00010000 -> 00001111,
+we left 4 bits untouched. mask = (1<<i)-1, num&mask
+To clear all bits from i through 0. mask = (-1<<(i+1)) ,-1 is all 1s,
+then we have a sequence of 1s followed by i 0 bits
+*/
+function clearAllBits(num, index) {
   const mask = (1 << index) - 1;
   return num & mask
 }
 
 // tests
-// console.log('clearAllBitsMSBthrough', clearAllBitsMSBthrough(5,0));
-// console.log('clearAllBitsMSBthrough', clearAllBitsMSBthrough(5,1));
-// console.log('clearAllBitsMSBthrough', clearAllBitsMSBthrough(5,2));
+// console.log('clearAllBits', clearAllBits(5,0));
+// console.log('clearAllBits', clearAllBits(5,1));
+// console.log('clearAllBits', clearAllBits(5,2));
 
 
 /*
@@ -159,6 +169,7 @@ export {
   getBit,
   setBit,
   clearBit,
+  clearAllBits,
   toggleBit,
   testBit
 }
