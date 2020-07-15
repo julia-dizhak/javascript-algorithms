@@ -208,15 +208,15 @@ created on 12/21/17
     | :---              | :---      | :---   |
     | Bit by bit        | O(1)      | O(1)   |
 
-* ### Number / Math
-    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/263-ugly-number.js)
+* ### Math / Number
+    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/263-ugly-number.js)
 
     | Approaches:                 | Time         | Space     |
     | :---                        | :---         | :---      |
     | Recursion                   | O(log N)     | 0(log N)? |
     | Greatest divide by [2,3,4]  | O(log N)     | 0(1)      |
 
-    * [264. Ugly number II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/264-ugly-number-2.js)
+    * [264. Ugly number II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/264-ugly-number-2.js)
 
     | Approaches:                 | Time           | Space     |
     | :---                        | :---           | :---      |
@@ -224,6 +224,11 @@ created on 12/21/17
     | Generate all ugly numbers   | O(n log n)     | 0(n)      |
     | DP                          | O(n)           | 0(n)      |
 
+    * [1344. Angle between hands of clock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/1344-angle-between-hands-of-clock.js)
+
+    | Approach:   | Time      | Space     |
+    | :---        | :---      | :---      |
+    | Math        | O(1)      | 0(1)      |
 
 * ### String manipulation
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)

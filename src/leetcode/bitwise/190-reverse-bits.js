@@ -50,9 +50,8 @@ of implementation. For instance, to retrieve the least significant bit in an int
 n, one could either apply the modulo operation (i.e. n % 2) or the bit AND operation
 (i.e. n & 1).
 Another example would be that in order to combine the results of
-reversed bits (e.g. 2^a, 2^b2) one could either use the addition operation
-(i.e. 2^a + 2^b2
-or again the bit OR operation (i.e. 2^a | 2^b2)
+reversed bits (e.g. 2^a, 2^b) one could either use the addition operation
+(i.e. 2^a + 2^b) or again the bit OR operation (i.e. 2^a | 2^b2)
 
 The key idea is that for a bit that is situated at the index i, after the
 reversion, its position should be 31-i (note: the index starts from zero).
@@ -90,8 +89,38 @@ var reverseBits = function(n) {
   return ret;
 }
 
-console.log('reverseBits', reverseBits('01000000'))
+/*
+Approach
 
+Shift the results 1 bit leftwards; shift n 1 bit right wards, and bit AND with
+1. Every time you will get the last bit as 0 or 1; if last bit is 1, add 1 to result.
+Get ready for next iteration.
+
+Note: in JS, you have to result>>>0 in order to get the result to be unsigned.
+
+*/
+var reverseBits3 = function(n) {
+  if (n === 0) return 0;
+  let result = 0;
+
+  for (let i = 0; i < 32; i++) {
+    result = result << 1;
+    if ((n & 1) === 1) {
+      result += 1
+    }
+    n = n >> 1;
+  }
+
+  return result >>> 0;
+}
+
+
+/*
+Approach toString + parseInt
+*/
+var reverseBitsToString = function(n) {
+  return parseInt(('0'.repeat(32 - n.toString(2).length) + n.toString(2)).split('').reverse().join(''), 2)
+};
 
 
 var reverseBits1 = function(n) {
@@ -109,14 +138,11 @@ var reverseBits1 = function(n) {
 /*
 Reverse Bits
 */
-// todo https://leetcode.com/problems/reverse-bits/discuss/55011/JavaScript-solution
 /**
  * @param {number} n - a positive integer
  * @return {number} - a positive integer
  */
-var reverseBits = function(n) {
-  console.log('n', n.toString(2))
-  //debugger
+var reverseBits2 = function(n) {
   let reverse = 0;
   let count = 32;
 
@@ -127,12 +153,36 @@ var reverseBits = function(n) {
   }
 
   return reverse
-
 };
 
-// var reverseBits = function (n) {
-//   return parseInt(('0'.repeat(32 - n.toString(2).length) + n.toString(2)).split('').reverse().join(''), 2)
-// };
+/*
+Approach Byte by byte Memoization
+
+Someone might argument it might be more efficient to reverse the bits, per byte,
+which is an unit of 8 bits. Though it is not necessarily true in our case, since
+the input is of fixed-size 32-bit integer, it could become more advantageous when
+dealing with the input of long bit stream.
+
+Another implicit advantage of using byte as the unit of iteration is that we
+could apply the technique of memoization, which caches the previously calculated
+values to avoid the re-calculation.
+
+The application of memoization can be considered as a response to the follow-up
+question posed in the description of the problem, which is stated as following:
+If this function is called many times, how would you optimize it?
+
+...
+Reverse the bits in a byte with 3 operations (64-bit multiply and modulus division):
+unsigned char b; // reverse this (8-bit) byte
+
+b = (b * 0x0202020202ULL & 0x010884422010ULL) % 1023;
+The multiply operation creates five separate copies of the 8-bit byte pattern to fan-out into a 64-bit value. The AND operation selects the bits that are in the correct (reversed) positions, relative to each 10-bit groups of bits. The multiply and the AND operations copy the bits from the original byte so they each appear in only one of the 10-bit sets. The reversed positions of the bits from the original byte coincide with their relative positions within any 10-bit set. The last step, which involves modulus division by 2^10 - 1, has the effect of merging together each set of 10 bits (from positions 0-9, 10-19, 20-29, ...) in the 64-bit value. They do not overlap, so the addition steps underlying the modulus division behave like or operations.
+http://graphics.stanford.edu/~seander/bithacks.html#ReverseByteWith64BitsDiv
+
+*/
+
+// tests
+console.log('reverseBitsToString', reverseBitsToString('01000000'))
 
 //console.log('reverseBits', reverseBits('00000010100101000001111010011100'))
 // output 00111001011110000010100101000000
@@ -140,7 +190,9 @@ var reverseBits = function(n) {
 //console.log('reverseBits', reverseBits('11111111111111111111111111111101'))
 // 10111111111111111111111111111111
 
-
 export {
-  reverseBits
+  reverseBits,
+  reverseBits1,
+  reverseBits2,
+  reverseBits3
 }
