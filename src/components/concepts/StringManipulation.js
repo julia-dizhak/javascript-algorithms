@@ -3,7 +3,9 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Details from './../Details';
 
+// problems
 import { reverseVariant2, reverseStringTwoPointersUseTemp, reverseStringRecursion } from '../../algorithms/string-manipulation/reverse-a-string';
+import { reverseWords } from '../../leetcode/string-manipulation/151-reverse-words';
 import { defineAnagrams } from '../../algorithms/string-manipulation/define-anagrams';
 import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
@@ -25,8 +27,8 @@ export default function StringManipulation() {
         <li>
           <Details
             id="test1"
-            question="test"
-            code={getPermutation.toString()}
+            question="test case"
+            code={reverseWords.toString()}
           />
         </li>
 

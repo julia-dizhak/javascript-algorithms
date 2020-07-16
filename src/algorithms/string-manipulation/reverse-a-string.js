@@ -100,9 +100,8 @@ var reverseStringRecursionVariant2 = s => {
   let temp = s[0];
   s.shift();
   reverseStringRecursionVariant2(s);
-  s.push(temp)
+  s.push(temp);
 }
-
 
 /*
 Two pointers approach
@@ -133,15 +132,17 @@ var reverseStringTwoPointersUseTemp = function(s) {
   let right = s.length - 1;
 
   while (left < right) {
-      let temp = s[left];
-      s[left] = s[right];
-      s[right] = temp;
-      left++;
-      right--;
+    let temp = s[left];
+    s[left] = s[right];
+    s[right] = temp;
+    left++;
+    right--;
   }
 };
+// console.log('reverseStringTwoPointersUseTemp', reverseStringTwoPointersUseTemp(['t','h','e']);
 
-// Using destructuring assignment array matching available in ES6+ though not very effecient.
+// Using destructuring assignment array matching available in ES6+ though not
+// very efficient.
 var reverseStringTwoPointers = s => {
   if (s.length === 1) return s;
 
@@ -154,6 +155,8 @@ var reverseStringTwoPointers = s => {
     j--;
   }
 }
+// const t = reverseStringTwoPointers(['t', 'h', 'e']);
+// console.log('reverseStringTwoPointers', t)
 
 export {
   reverse, reverseVariant2,
