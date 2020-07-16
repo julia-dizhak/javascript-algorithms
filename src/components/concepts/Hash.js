@@ -11,11 +11,11 @@ export default function Hash() {
       <h2>Hash / Hash Table</h2>
 
         <ul>
-          {/* <Details
+          <Details
             id="test"
             question=""
-            code={.toString()}
-          /> */}
+            //code={prisonAfterNDays.toString()}
+          />
         <li>
           <Details
             id="search-two-sum"

@@ -7,9 +7,10 @@ https://leetcode.com/discuss/general-discussion/730487/biweekly-contest-30
 rating 4038 / 8174
 
 What i did wrong?
-- keyboard speed to slow
-
-
+- keyboard speed to slow = I need training
+- reduce repeat and add to anki
+- to learn Kadan algorithm
+- click on custom cases
 */
 
 /*
@@ -240,6 +241,7 @@ is no such restriction on a subset. For example,
 */
 
 
+// todo https://leetcode.com/problems/subsets/discuss/122645/3ms-easiest-solution-no-backtracking-no-bit-manipulation-no-dfs-no-bullshit
 /**
  * @param {number[]} nums
  * @return {number[][]}

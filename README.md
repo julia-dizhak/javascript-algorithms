@@ -272,6 +272,13 @@ created on 12/21/17
     | Brute force            | O(n^3)       | O(min(n,m))  |
     | Sliding window + Hash  | O(2n)=O(n)   | O(min(n,m))  |
 
+    * [151 Reverse words in string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/151-reverse-words.js)
+
+    | Approaches:              | Time         | Space    |
+    | :---                     | :---         | :---     |
+    | Two pointers (in-place)  | O(n)         | O(1)     |
+    | Two pointers + trim      | O(n)         | O(n))    |
+    | reverse, split, trim     | O(n)         | O(n))    |
 
     * [383. Ransom Note]
     * [387. First Unique Character in a String]

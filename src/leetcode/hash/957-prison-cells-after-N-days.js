@@ -119,7 +119,7 @@ var prisonAfterNDays = function(cells, N) {
   for (let i = 0; i < N; i++) {
     const nextDayTransfrom = nextDay(cells);
 
-    let key = nextDayTransfrom.toString()
+    let key = nextDayTransfrom.toString();
     if (!hash[key]) {
       // store cells state
       hash[nextDayTransfrom] = true;
@@ -165,7 +165,8 @@ function nextDay(cells) {
 //   return newPrison;
 // }
 
-console.log('prisonAfterNDays', prisonAfterNDays([0,1,0,1,1,0,0,1], 15))
+// tests
+// console.log('prisonAfterNDays', prisonAfterNDays([0,1,0,1,1,0,0,1], 7))
 
 export {
   prisonAfterNDays
