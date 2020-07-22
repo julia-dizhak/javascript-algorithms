@@ -14,6 +14,7 @@ import { levelOrder } from '../../algorithms/tree/bt/traversal/level-order-trave
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 // import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
 // import { isSameTree, TreeNode } from '../../leetcode/tree/binary-tree/100-same-tree';
+import { zigzagLevelOrder } from '../../algorithms/tree/bt/traversal/103-level-order-zigzag-traversal';
 import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/max-width-bt';
 
 // contest move
@@ -31,7 +32,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            //code={TreeNode.toString()}
+            code={zigzagLevelOrder.toString()}
             //secondCode={widthOfBinaryTree.toString()}
             // secondCode={Trie.toString()}
           />

@@ -10,8 +10,8 @@ of the flood fill, and a pixel value newColor, "flood fill" the image.
 
 To perform a "flood fill", consider the starting pixel, plus any pixels
 connected 4-directionally to the starting pixel of the same color as the
-starting pixel,plus any pixels connected 4-directionally to those pixels
-(also with the same color as the starting pixel),and so on.
+starting pixel, plus any pixels connected 4-directionally to those pixels
+(also with the same color as the starting pixel), and so on.
 Replace the color of all of the aforementioned pixels with the newColor.
 
 Note
@@ -30,25 +30,27 @@ sr = 1, sc = 1, newColor = 2
 Output: [[2,2,2],[2,2,0],[2,0,1]]
 
 Explanation
-From the center of the image (with position (sr, sc) = (1, 1)), all pixels connected
+From the center of the image ( with position (sr, sc) = (1, 1) ), all pixels connected
 by a path of the same color as the starting pixel are colored with the new color.
 Note the bottom corner is not colored 2, because it is not 4-directionally connected
 to the starting pixel.
 
 Flood fill also called seed fill, is an algorithm that determines the area
-connected to a given node in a multi-dimensional array.
-The flood-fill algorithm takes three parameters:
+connected to a given node in a multi-dimensional array. The flood-fill algorithm
+takes three parameters:
 a start node,
 a target color,
 and a replacement color.
 
-In computer graphics, a bitmap image or a raster graphics is a dot matrix data (2 dimensional array) structure that represents a generally rectangular
+In computer graphics, a bitmap image or a raster graphics is a dot matrix data
+(2 dimensional array) structure that represents a generally rectangular
 grid of pixels (points of color), viewable via a monitor, paper.
 
-A bitmap is a rectangular grid of pixels, with each pixel's color being specified by a number of bits.
-A raster is technically characterized by the width and height of the image in pixels and by the number of bits per pixel (or color depth, which determines the number of colors it can represent).
+A bitmap is a rectangular grid of pixels, with each pixel's color being specified
+by a number of bits. A raster is technically characterized by the width and
+height of the image in pixels and by the number of bits per pixel (or color depth,
+which determines the number of colors it can represent).
 */
-
 
 /*
 Approach 1: Depth-First Search
@@ -59,9 +61,9 @@ paint the starting pixels, plus adjacent pixels of the same color, and so on.
 
 Algorithm
 Say color is the color of the starting pixel.
-Let's flood-fill the starting pixel: we change the color of that pixel to the new color,
-then check the 4 neighboring pixels to make sure they are valid pixels of the same color,
-and of the valid ones, we flood-fill those, and so on.
+Let's flood-fill the starting pixel: we change the color of that pixel to the
+new color, then check the 4 neighboring pixels to make sure they are valid pixels
+of the same color, and of the valid ones, we flood-fill those, and so on.
 
 We can use a function dfs to perform a flood-fill on a target pixel.
 And check a boundary conditions to prevent infinite loop.
@@ -119,7 +121,6 @@ input = [
   [1,0,1]
 ]
 anything you change, you keep doing it connectively
-
 output = [
   [2,2,2],
   [2,2,0],
@@ -128,15 +129,15 @@ output = [
 
 There are three things that you need to consider once you have identified that
 a question can be solved using DFS
-1 The base case ( return condition )
+1 The base case (return condition)
 2 Mark that node as visited
-3nGiven that I am at a particular node what operations do I need to perform
+3 nGiven that I am at a particular node what operations do I need to perform
 
-The base case :
+The base case:
 The current node cannot
-a ) Exit the matrix bounding condition
-b ) Different from the base color
-c ) Be a node that we have already visited
+a) Exit the matrix bounding condition
+b) Different from the base color
+c) Be a node that we have already visited
 
 Time complexity is proportional to a number of pixes
 we have to fill rows * cols or O(n)

@@ -198,7 +198,7 @@ var reverseWords2 = function(s) {
   return chars.join('').trim();
 };
 
-console.log('reverseWords', reverseWords2('  a good   example'))
+// console.log('reverseWords', reverseWords2('  a good   example'))
 
 /*
 Approach JS built-in reverse
@@ -211,6 +211,46 @@ var reverseWords1 = function(s) {
 
   return arr.reverse().join(' ');
 }
+
+/*
+Implement pow(x, n), which calculates x raised to the power n (xn).
+
+Example 1:
+
+Input: 2.00000, 10
+Output: 1024.00000
+*/
+/**
+ * @param {number} x
+ * @param {number} n
+ * @return {number}
+ */
+// var myPow = function(x, n) {
+//   if (n < 0) {
+//     n = -n;
+//     x = 1 / x;
+//   }
+//   if (n === 0) return 1;
+//   return (x * myPow(x, n - 1)).toFixed(5);
+
+// };
+var myPow = function(x, n) {
+  // if(n === 0) return 1;
+  // if(n<0){
+  //   n = -n;
+  //   x = 1/x;
+  // }
+  // return (n%2 === 0) ? myPow(x*x, n/2) : x*myPow(x*x, n/2);
+
+  if (n===0) return 1;
+  let pow = Math.abs(n);
+  let result = pow%2===0 ? myPow(x*x,pow/2) : myPow(x*x,(pow-1)/2) * x;
+  return n < 0 ? 1/result : result;
+};
+console.log('myPow', myPow(2.00000, 3))
+console.log('myPow', myPow(2.10000, 3))
+console.log('myPow', myPow(2.10000, -2))
+//console.log('myPow', myPow(2.0000, 10))
 
 export {
   reverseWords,

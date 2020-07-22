@@ -113,13 +113,13 @@ return its bottom-up level order traversal as:
 /*
 Approach Queue
 
-1.Add root to queue
-2.pop item in queue and add left and right nodes of that item to queue.
+1. Add root to queue
+2. pop item in queue and add left and right nodes of that item to queue.
 now add value of popped to a temporary array
-3.repeat the above step len(queue) no of times
-4.Add that temporary to result array
-5.if size of queue !=0 go to step 2
-6.return reversed result array
+3. repeat the above step len(queue) no of times
+4. Add that temporary to result array
+5. if size of queue !=0 go to step 2
+6. return reversed result array
 
 Time Complexity: O(n) where n is number of nodes in the binary tree
 (we need to visit every node)
@@ -138,12 +138,11 @@ var levelOrderBottom = function(root) {
   while (queue.length) {
     let size = queue.length;
     let temp = [];
-    for (let i=0; i<size; i++) {
-        let node = queue.shift();
-        temp.push(node.val);
-        if (node.left) queue.push(node.left);
-        if (node.right) queue.push(node.right);
-
+    for (let i = 0; i < size; i++) {
+      let node = queue.shift();
+      temp.push(node.val);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
     }
     result.unshift(temp);
   }
