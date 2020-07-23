@@ -49,7 +49,7 @@ Complexity Analysis
 Time complexity: O(n⋅1)=O(n). Time complexity of for loop is O(n).
 Time complexity of hash table(dictionary in python) operation pop is O(1).
 
-Space complexity : O(n). The space required by hash table is equal to the number
+Space complexity: O(n). The space required by hash table is equal to the number
 of elements in nums.
 */
 
@@ -61,7 +61,7 @@ Concept
 2 * (a + b + c) - (a + a + b + b + c) = c
 
 Complexity Analysis
-Time complexity : O(n + n) = =O(n). sum will call next to iterate through nums.
+Time complexity : O(n + n) = O(n). sum will call next to iterate through nums.
 We can see it as sum(list(i, for i in nums)) which means the time complexity
 is O(n) because of the number of elements(n) nums.
 
@@ -76,11 +76,14 @@ known that A ^ A = 0 and the XOR operator is commutative,
 the solution will be very straightforward.
 X ^ 0s = X
 
+X^X = 0
+0^0 = 0
+0^X = X
+
 This XOR operation works because it's like XORing all the numbers by itself.
 So if the array is [2,1,4,5,2,4,1] then it will be like we are performing this
 operation
 ((2^2)^(1^1)^(4^4)^(5)) => (0^0^0^5) => 5.
-
 Hence picking the odd one out (5 in this case).
 
 Complexity Analysis

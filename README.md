@@ -142,11 +142,18 @@ created on 12/21/17
     | Iterative + Stack   | O(n)     | 0(h)   |
     | Recursion           | O(n)     | 0(n)   |
 
-    * [Level order (and bottom) traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/level-order-traversal.js)
+    * [BFS: Level order and bottom traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/level-order-traversal.js)
 
     | Approaches:          | Time     | Space      |
     | :---                 | :---     | :---       |
     | Iterative + Queue    | O(n)     | 0(n/2 = n) |
+
+    * [Level order zigzag traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/traversal/103-level-order-zigzag-traversal.js)
+
+    | Approaches:     | Time     | Space      |
+    | :---            | :---     | :---       |
+    | BFS + Queue     | O(n)     | 0(n)       |
+    | Recursion       | O(n)     | 0(n)       |
 
 * ### Binary Search Tree (BST) Implementation
     * [BST implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bst/binary-search-tree.js)
@@ -203,6 +210,7 @@ created on 12/21/17
     | :---           | :---     | :---   |
     | Bitwise XOR    | O(n)     | 0(1)   |
     | Hash           | O(n)     | O(n)   |
+    | Brute force    | O(n^2)   | O(1)   |
 
     * [191. Number of bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/191-number-of-bits.js)
 

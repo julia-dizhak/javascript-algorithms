@@ -43,21 +43,21 @@ Space depends on queue size. In worst case is O(n)
  */
 var zigzagLevelOrder = function(root) {
   let result = [];
-  let level = 0;
+  let depth = 0;
   if (!root) return result;
 
   let queue = [];
   if (root) queue.push(root);
 
   while (queue.length) {
-    level++;
+    depth++;
     let size = queue.length;
     let temp = []
 
     for (let i = 0; i < size; i++) {
       let node = queue.shift();
 
-      if (level === 1 || level % 2 === 0) {
+      if (depth === 1 || depth % 2 === 0) {
         temp.unshift(node.val);
       } else {
         temp.push(node.val)
@@ -76,9 +76,9 @@ var zigzagLevelOrder = function(root) {
 /*
 Approach recursion
 
-
+O(n) is time
+O(n) is space stack size
 */
-
 function zigzagLevelOrderUseRecursion(root) {
   let result = [];
   traversal(root, 0, result);
