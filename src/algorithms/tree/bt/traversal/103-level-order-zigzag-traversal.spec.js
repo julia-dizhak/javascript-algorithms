@@ -1,6 +1,7 @@
 import {
-  zigzagLevelOrder,
-  TreeNode
+  //zigzagLevelOrder,
+  TreeNode,
+  zigzagLevelOrderUseRecursion as zigzagLevelOrder
 } from './103-level-order-zigzag-traversal';
 
 describe('level order zigzag traversal test case', () => {

@@ -29,6 +29,14 @@ function TreeNode(val, left, right) {
   this.right = (right === undefined ? null : right)
 }
 
+/*
+Approach BFS + queue
+
+Time Complexity: O(n) where n is number of nodes in the binary tree (we need to
+visit every node)
+
+Space depends on queue size. In worst case is O(n)
+*/
 /**
  * @param {TreeNode} root
  * @return {number[][]}
@@ -65,19 +73,47 @@ var zigzagLevelOrder = function(root) {
   return result;
 };
 
+/*
+Approach recursion
+
+
+*/
+
+function zigzagLevelOrderUseRecursion(root) {
+  let result = [];
+  traversal(root, 0, result);
+  return result;
+}
+
+function traversal(node, level, result) {
+  if (!node) return;
+
+  // result[level] = undefined
+  if (result[level] == null) result.push([]);
+  if (level % 2 === 0) {
+    result[level].push(node.val);
+  } else {
+    result[level].unshift(node.val);
+  }
+
+  traversal(node.left, level + 1, result);
+  traversal(node.right, level + 1, result);
+}
+
+
 // tests
-// todo reverse
 // Given binary tree [3,9,20,null,null,15,7],
-let root = new TreeNode(3);
-root.left = new TreeNode(9);
-root.right = new TreeNode(20);
-root.right.left = new TreeNode(15);
-root.right.right = new TreeNode(7);
-console.log('root', root);
-const zigzagLevelOrderNode = zigzagLevelOrder(root);
-console.log('zigzagLevelOrderNode', zigzagLevelOrderNode)
+// let root = new TreeNode(3);
+// root.left = new TreeNode(9);
+// root.right = new TreeNode(20);
+// root.right.left = new TreeNode(15);
+// root.right.right = new TreeNode(7);
+// console.log('root', root);
+// const zigzagLevelOrderNode = zigzagLevelOrderUseRecursion(root);
+// console.log('zigzagLevelOrderNode', zigzagLevelOrderNode)
 
 export {
   zigzagLevelOrder,
-  TreeNode
+  TreeNode,
+  zigzagLevelOrderUseRecursion
 }
