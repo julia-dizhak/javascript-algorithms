@@ -212,6 +212,12 @@ created on 12/21/17
     | Hash           | O(n)     | O(n)   |
     | Brute force    | O(n^2)   | O(1)   |
 
+    * [260. Single Number III](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/260-single-number-3.js)
+
+    | Approaches:    | Time     | Space  |
+    | :---           | :---     | :---   |
+    | Bitwise XOR    | O(n)     | 0(1)   |
+
     * [191. Number of bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/191-number-of-bits.js)
 
     | Approaches:             | Time     | Space  |

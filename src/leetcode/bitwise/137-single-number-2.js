@@ -100,9 +100,7 @@ and implement. Plus, you get a general solution for any times of occurrence.
 Say all the numbers have 5 times, just do sum %= 5.
 */
 
-// todo https://www.geeksforgeeks.org/find-the-element-that-appears-once/
 var singleNumber2TimeOccurrence = function(nums) {
-  //debugger
   let result = 0;
   let sum;
   let mask;
@@ -110,7 +108,7 @@ var singleNumber2TimeOccurrence = function(nums) {
   for (let i = 0; i < 32; i++) {
     // find sum of set bits at i-th position in all array elements
     sum = 0;
-    mask = (1 << i);
+    mask = 1 << i;
     for (let j = 0; j < nums.length; j++) {
       if (nums[j] & mask) sum++;
     }
@@ -130,8 +128,9 @@ var singleNumber2TimeOccurrence = function(nums) {
   }
   return result
 }
-console.log('singleNumber2TimeOccurrence', singleNumber2TimeOccurrence([2,2,3,2]))
+//console.log('singleNumber2TimeOccurrence', singleNumber2TimeOccurrence([5,5,5,8]))
 
+// todo https://www.geeksforgeeks.org/find-the-element-that-appears-once/
 /*
 Approach Bitwise XOR ???
 
@@ -155,32 +154,8 @@ var singleNumber2 = function(nums) {
   return ones
 }
 
-console.log('singleNumber2', singleNumber2([2,2,3,2]))
+//console.log('singleNumber2', singleNumber2([2,2,3,2]))
 //console.log('singleNumber', singleNumber([0,1,0,1,0,1,99]))
-
-/*
-Single number III
-
-2 elements appears only once and all other apperars exactyl twice
-
-can use hash
-
-example [1,2,1,3,2,5]
-((1^1)^(2^2)^(3^5)) => 0^0^0^(3^5) => 5.
-
-
-*/
-
-var singleNumber3 = function(nums) {
-  //debugger
-  let result = 0;
-  for (let i = 0; i < nums.length; i++) {
-    result = result ^ nums[i]
-  }
-  return result
-}
-//console.log('singleNumber3', singleNumber3([1,2,1,3,2,5]))
-
 
 export {
   singleNumber2,

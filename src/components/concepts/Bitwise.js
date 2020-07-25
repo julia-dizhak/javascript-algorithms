@@ -9,6 +9,7 @@ import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from
 // import { reverseBits } from '../../leetcode/bitwise/190-reverse-bits';
 // import { hasAlternatingBits } from '../../leetcode/bitwise/693-alternating-bits';
 import { singleNumber2 } from '../../leetcode/bitwise/137-single-number-2';
+import { singleNumber3 } from '../../leetcode/bitwise/260-single-number-3';
 import { getBit, setBit, clearBit } from '../../algorithms/bitwise/common-bit-tasks';
 
 
@@ -22,6 +23,7 @@ export default function BitManipulation() {
             id="test"
             question="test"
             code={singleNumber2.toString()}
+            secondCode={singleNumber3.toString()}
           />
         <li>
           <Details
