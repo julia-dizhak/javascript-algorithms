@@ -4,6 +4,7 @@ let countDownFrom = (num) => {
   countDownFrom(num - 1);
 }
 countDownFrom(10);
+//console.log('countDownFrom', countDownFrom(10))
 
 /*
   leetcode

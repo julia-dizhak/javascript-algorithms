@@ -20,7 +20,9 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 // contest move
 // import { average, kthFactor, longestSubarray } from '../../leetcode/contest/biweekly/29/contest'
 // contest
-import { reformatDate, rangeSum, minDifference, subsets } from '../../leetcode/contest/biweekly/30/index';
+//import { reformatDate, rangeSum, minDifference, subsets } from '../../leetcode/contest/biweekly/30/index';
+//import { countOdds, numOfSubarrays } from '../../leetcode/contest/biweekly/31/index';
+
 
 export default function Tree() {
   return (
@@ -32,7 +34,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={zigzagLevelOrder.toString()}
+            //code={numOfSubarrays.toString()}
             //secondCode={widthOfBinaryTree.toString()}
             // secondCode={Trie.toString()}
           />

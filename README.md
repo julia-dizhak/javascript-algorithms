@@ -474,6 +474,13 @@ created on 12/21/17
     | Brute force     | O(n)         | O(1)   |
     | Binary search   | O(log n)     | 0(1)   |
 
+    * [154. Find minimum in rotated sorted array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/154-find-min-in-rotated-sorted-arr-2.js)
+
+    | Approaches:     | Time         | Space  |
+    | :---            | :---         | :---   |
+    | Brute force     | O(n)         | 0(1)   |
+    | Binary search   | O(log n)     | 0(1)   |
+
     * [528. Random pick with weight (accumulation sum + binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/528-random-pick-with-weight.js)
 
 * ### Greedy

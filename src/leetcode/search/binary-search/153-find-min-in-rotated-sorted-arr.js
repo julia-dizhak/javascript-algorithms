@@ -59,7 +59,8 @@ left or right depending on some condition.
 Since the given array is sorted, we can make use of binary search. However,
 the array is rotated. So simply applying the binary search won't work here.
 
-In this question we would essentially apply a modified version of binary search
+I
+n this question we would essentially apply a modified version of binary search
 where the condition that decides the search direction would be different than
 in a standard binary search.
 
@@ -187,8 +188,7 @@ var findMin1 = function(nums) {
 // console.log('findMin', findMin([4,5,6,7,0,1,2]));
 // console.log('findMin', findMin([3,4,5,1,2]));
 // console.log('findMin', findMin([2,1]));
-//console.log('findMid', findMin([2,3,4,5,1]))
-
+// console.log('findMid', findMin([2,3,4,5,1]))
 
 export {
   findMin,

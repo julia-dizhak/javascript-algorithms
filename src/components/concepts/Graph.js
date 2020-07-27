@@ -6,7 +6,6 @@ import { floodFill } from '../../leetcode/graph/dfs/733-flood-fill';
 // import { allPathsSourceTarget } from '../../leetcode/graph/bfs/797-all-paths-from-source-target';
 import { exist } from '../../leetcode/backtracking/79-word-search';
 import { solve } from '../../leetcode/graph/dfs/130-surrounded-regions';
-import { findMin } from '../../leetcode/graph/bfs/797-all-paths-from-source-target';
 
 export default function Graph() {
   return (
@@ -18,7 +17,7 @@ export default function Graph() {
         <Details
             id="test"
             question="test"
-            code={findMin.toString()}
+            //code={findMin.toString()}
           />
         </li>
         <li>
