@@ -7,17 +7,20 @@ import { swap, swapUseTemp } from '../../algorithms/number/swap';
 // import { countPrimes } from '../../leetcode/number/204-count-primes';
 // import { isUgly } from '../../leetcode/number/263-ugly-number'
 // import { nthUglyNumber } from '../../leetcode/number/264-ugly-number-2'
+import { addDigits } from '../../leetcode/math/258-add-digits'
+
 
 export default function Number() {
   return (
     <div className="number">
-      <h2>Number / Math</h2>
+      <h2>Numbers / Math</h2>
 
-      {/* <Details
+      <Details
         id=""
         question="test"
-        code={.toString()}
-      /> */}
+        code={addDigits.toString()}
+      />
+
       <ul id="number">
         <li>
           <Details

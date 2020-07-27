@@ -7,8 +7,8 @@ import { binarySearchRecursive, binarySearch } from '../../algorithms/search/bin
 // problems
 import { balancedSum } from '../../algorithms/search/problems/balanced-sum';
 import { solutionBinarySearch } from '../../leetcode/search/binary-search/278-first-bad-version';
-//import { findMin } from '../../leetcode/search/binary-search/153-find-min-in-rotated-sorted-arr';
-import { findMin2 } from '../../leetcode/search/binary-search/154-find-min-in-rotated-sorted-arr-2';
+// import { findMin } from '../../leetcode/search/binary-search/153-find-min-in-rotated-sorted-arr';
+// import { findMin2 } from '../../leetcode/search/binary-search/154-find-min-in-rotated-sorted-arr-2';
 //import { arrangeCoins } from '../../leetcode/search/binarySearch/441-arrangeCoins';
 // import { twoSumSorted } from '../../leetcode/array/sum-problems/two-sum-sorted';
 // import { threeSum } from '../../leetcode/array/sum-problems/15-3sum-problem';
@@ -23,7 +23,7 @@ export default function Searching() {
           <Details
             id="test"
             question=""
-            code={findMin2.toString(2)}
+            // code={findMin2.toString(2)}
             // code={twoSumSorted.toString()}
             // secondCode={threeSum.toString()}
           />
