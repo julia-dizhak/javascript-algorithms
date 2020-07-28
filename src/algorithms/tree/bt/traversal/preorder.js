@@ -196,22 +196,7 @@ tree.right.left = new TreeNode(3);
 // https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/929/
 
 
-var buildTree = function(inorder, postorder) {
-  const n = postorder.length;
-  const root = postorder[n-1];
-  console.log('root', root);
-  const rootIndex = inorder.indexOf(root);
-  console.log('rootIndex', rootIndex);
 
-
-  debugger
-  const leftTree = inorder.slice(0, rootIndex);
-  const rightTree = inorder.slice(rootIndex+1);
-  console.log('leftTree', leftTree);
-  // if (root) {
-
-  // }
-};
 // const build = buildTree([9,3,15,20,7], [9,15,7,20,3])
 // // inorder = [9,3,15,20,7]
 // // postorder = [9,15,7,20,3]

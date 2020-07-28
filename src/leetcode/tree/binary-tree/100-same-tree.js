@@ -46,7 +46,6 @@ None, and their values are equal. If all checks are OK, do the same for the chil
 nodes recursively.
 
 Complexity Analysis
-
 Time complexity: O(N), where N is a number of nodes in the tree, since one
 visits each node exactly once.
 

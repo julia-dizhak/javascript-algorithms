@@ -423,6 +423,14 @@ created on 12/21/17
     | Recursion        | O(n)     | 0(logn)/O(n) |
     | Iterative DFS    | O(n)     | 0(logn)/O(n) |
 
+    * [106. Construct BT from inorder, preorder ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/traversal/106-construct-bt-from-postorder-inorder-traversal.js)
+
+    | Approaches:                          | Time       | Space        |
+    | :---                                 | :---       | :---         |
+    | Recursion                            | O(n^2)     | 0(n^2)       |
+    | Hash indexes from inorder            | O(n)       | O(n)         |
+    | Map indexes from inorder without pop | O(n)       | O(n)         |
+
     * [222. Count complete tree nodes](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/22-count-complete-tree-modes.js)
 
     | Approaches:   | Time         | Space  |
