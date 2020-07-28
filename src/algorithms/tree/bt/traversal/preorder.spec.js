@@ -1,7 +1,8 @@
 import {
-  //preorderTraversal,
-  preorder as preorderTraversal,
-  BT
+  preorderTraversal,
+  //preorder as preorderTraversal,
+  BT,
+  TreeNode
 } from './preorder';
 
 describe('preorderTraversal test case', () => {
@@ -37,24 +38,17 @@ describe('preorderTraversal test case', () => {
     expect(result).toEqual([5,4,2,1,3]);
   });
 
-  // todo
-  xit('preorderTraversal, case with null as value', () => {
-    tree = new BT(1);
-    const arr = [null,2,3];
-    arr.map((element, index) => {
-      tree.insert(element);
-      return tree;
-    })
-
-    tree = JSON.parse(JSON.stringify(tree)).root;
+  it('preorderTraversal, case with null as value', () => {
+    tree = new TreeNode(1);
+    tree.right = new TreeNode(2);
+    tree.right.left = new TreeNode(3);
     // 1
     //  \
     //    2
     //  /
     // 3
     const result = preorderTraversal(tree);
-    // expect(result).toEqual([1,2,3]);
+    expect(result).toEqual([1,2,3]);
   });
-
 
 });

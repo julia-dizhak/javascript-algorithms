@@ -32,6 +32,7 @@ var preorder = function(root, nodes = []) {
   return nodes;
 };
 
+
 /*
 Approach Stack + Iterative
 
@@ -159,8 +160,66 @@ class BT {
 // console.log('tree', tree);
 // console.log('preorder', preorder(tree));
 
+// let tree1 = new TreeNode(1);
+// tree1.right = new TreeNode(2);
+// tree1.right.left = new TreeNode(3);
+// console.log('tree', tree1);
+// const preorder1 = preorder(tree1);
+// console.log('preorderTraversal1', preorder1);
+
+var inorderTraversal = function(root, nodes=[]) {
+  //debugger
+  if (root) {
+
+    inorderTraversal(root.left, nodes);
+    nodes.push(root.val);
+    inorderTraversal(root.right, nodes);
+  }
+
+  return nodes
+};
+
+
+
+let tree = new TreeNode(1);
+tree.right = new TreeNode(2);
+tree.right.left = new TreeNode(3);
+// tree.insert(null);
+// tree.insert(2);
+// tree.insert(3);
+// tree = JSON.parse(JSON.stringify(tree)).root;
+// console.log('tree', tree);
+// console.log('inorderTraversal', inorderTraversal(tree));
+// const inorder = inorderTraversal(tree);
+// console.log('inorder', inorder); // [1,3,2]
+
+// https://leetcode.com/explore/learn/card/data-structure-tree/134/traverse-a-tree/929/
+
+
+var buildTree = function(inorder, postorder) {
+  const n = postorder.length;
+  const root = postorder[n-1];
+  console.log('root', root);
+  const rootIndex = inorder.indexOf(root);
+  console.log('rootIndex', rootIndex);
+
+
+  debugger
+  const leftTree = inorder.slice(0, rootIndex);
+  const rightTree = inorder.slice(rootIndex+1);
+  console.log('leftTree', leftTree);
+  // if (root) {
+
+  // }
+};
+// const build = buildTree([9,3,15,20,7], [9,15,7,20,3])
+// // inorder = [9,3,15,20,7]
+// // postorder = [9,15,7,20,3]
+// console.log('build tree', build)
+
 export {
   preorder,
   preorderTraversal,
-  BT
+  BT,
+  TreeNode
 }

@@ -26,6 +26,12 @@ Approach recursive
 
 maximum depth equals to height? of the tree - yes, of node - no
 
+Intuition
+1 Calculate height of left side
+2 calculate height of right side
+3 getMax of 2 heights and you add 1 to it
+4 return this to the calling function
+
 Algorithm
 1 if root is null return 0
 2 count height of leet subtree = leftHeight
@@ -33,16 +39,32 @@ Algorithm
 4 height equals 1 + max(leftHeight, rightHeight)
 
 Visualization:
-You can draw a table with root, line number, left height, right height
-  | root    | line number   | left height  | right height  |
-  | 10      | 3             | 1            | 3             |
-
+    10
+    /\
+   5   6
+      / \
+     8   7
+          \
+           4
 var height = function(root) {
-  if (root === null) return 0;
-  line 1 => let leftHeight = height(root.left);
-  line 2 => let rightHeight = height(root.right);
-  line 3 => return 1 + Math.max(leftHeight, rootHeight);
+            if (root === null) return 0;
+  line 1 -  let leftHeight = height(root.left);
+  line 2 -  let rightHeight = height(root.right);
+  line 3 -  return 1 + Math.max(leftHeight, rootHeight);
 }
+
+You can draw a table with root, line number, left height, right height
+Call Stack
+root     | line number   | left height  | right height
+10       | 1             |  1           |
+
+5        | 1             | 0            |
+null     |               |              |
+5        | 2             |              | 0
+null     |               |              |
+5 return from line number 3 - 1 to 10
+
+
 
 Example: Given binary tree [3,9,20,null,null,15,7],
     3

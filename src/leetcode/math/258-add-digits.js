@@ -29,12 +29,7 @@ base is the (single digit) value obtained by an iterative process of summing dig
 on each iteration using the result from the previous iteration to compute a digit sum.
 The process continues until a single-digit number is reached.
 https://en.wikipedia.org/wiki/Digital_root
-
 */
-/**
- * @param {number} num
- * @return {number}
- */
 
 function count(n) {
   if (n <= 0) {
@@ -163,7 +158,6 @@ space is O(1)
 */
 
 var addDigits = function(num) {
-  debugger
   if (num === 0) return 0;
   if (num % 9 === 0) return 9;
   else {
@@ -177,9 +171,9 @@ var addDigitsMath = function(num) {
 
 //console.log('addDigits', addDigits(38))
 //console.log('addDigits', addDigits(23456))
-console.log('addDigits', addDigits(10))
-console.log('addDigits', addDigits(1))
-console.log('addDigits', addDigits(99))
+// console.log('addDigits', addDigits(10))
+// console.log('addDigits', addDigits(1))
+// console.log('addDigits', addDigits(99))
 // console.log('addDigits', addDigits(112))
 // console.log('addDigits', addDigits(912))
 
