@@ -506,6 +506,13 @@ created on 12/21/17
     | :---           | :---      | :---   |
     | Greedy         | O(nlogn)  | 0(1)   |
 
+    * [621. Task scheduler](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/greedy/621-task-scheduler.js)
+
+    | Approaches:    | Time      | Space  |
+    | :---           | :---      | :---   |
+    | Greedy + map   | O(n)      | 0(1)   |
+    | Greedy + hash  | O(n)      | 0(n)   |
+
 * ### DP[dynamic programming]
     * [518. Coin change 2 ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
 

@@ -5,6 +5,7 @@ import Details from '../Details';
 import { change } from '../../leetcode/dp/518-coin-change-2';
 import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
 import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
+import { maxProfit } from '../../leetcode/dp/best-time-to-buy-sell-stock';
 
 
 export default function DP() {
@@ -12,6 +13,10 @@ export default function DP() {
     <div className="dp">
       <h2 id="dp">Dynamic Programming</h2>
 
+      <Details
+        id="test"
+        code={maxProfit.toString()}
+      />
       <ul>
         <li>
           <Details

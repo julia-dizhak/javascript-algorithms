@@ -1,6 +1,6 @@
 import {
-  //leastInterval,
-  leastIntervalUseHash as leastInterval
+  leastInterval,
+  //leastIntervalUseHash as leastInterval
 } from './621-task-scheduler';
 
 describe('task scheduler test case', () => {

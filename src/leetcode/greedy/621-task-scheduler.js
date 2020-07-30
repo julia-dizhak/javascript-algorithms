@@ -125,60 +125,33 @@ inputs and calculate counts for each distinct char. This is O(n) time and O(26)
 space since we only handle upper case letters.
 All other operations are O(1) time O(1) space which give us total time complexity
 of O(n) and space O(1)
-
-
-similar solution only instead of map, we have array which will store occurrences of characters
-var leastInterval = function(tasks, n) {
-
-    let count = new Array(26).fill(0),
-        max = 0,
-        maxNum = 0;
-
-    for(const c of tasks) {
-        const index = c.charCodeAt(0) - 'A'.charCodeAt(0);
-
-        if(++count[index] > max){
-            max = count[index];
-            maxNum = 1;
-        } else if(count[index] === max) maxNum++;
-    }
-
-    return Math.max(tasks.length, (max - 1) * (n+1) + maxNum);
-};
 */
 
 /**
  * @param {character[]} tasks
  * @param {number} n
  * @return {number}
- */
-// var leastInterval = function(tasks, n) {
-//   let counter = new Array(26).fill(0);
-//   let max = 0;
-//   let maxCount = 0;
+*/
+var leastInterval = function(tasks, n) {
+  let count = new Array(26).fill(0);
+  let maxVal = 0;
+  let maxValCount = 0;
 
-//   for (const task of tasks) {
-//     //debugger
-//     const index = task.charCodeAt(0) - 'A'.charCodeAt(0);
+  for (const task of tasks) {
+    const index = task.charCodeAt(0) - 'A'.charCodeAt(0);
+    if (++count[index] > maxVal) {
+      maxVal = count[index];
+      maxValCount = 1
+    } else if (count[index] === maxVal) {
+      maxValCount++;
+    }
+  }
 
-//     if (max === counter[task - 'A']) {
-//       maxCount++;
-//     } else if (max < counter[task - 'A']) {
-//       max = counter[task - 'A'];
-//       maxCount = 1;
-//     }
-//   }
-
-//   let partCount = max - 1;
-//   let partLength = n - (maxCount - 1);
-//   let emptySlots = partCount * partLength;
-//   let availableTasks = tasks.length - max * maxCount;
-//   let idles = Math.max(0, emptySlots - availableTasks);
-//   return tasks.length + idles;
-//}
+  return Math.max(tasks.length, (maxVal - 1) * (n+1) + maxValCount)
+}
 
 /*
-Approach (the same) Greedy
+Approach Greedy + Hash
 
 cases: The result value can be calculated by determining the task(s) that occur(s)
 most often.
@@ -218,6 +191,9 @@ Using our formula, our answer would be 4. Clearly this isn't correct because t
 here are more than 4 tasks in the starting array!
 Thus, we can just return the length of the initial array.
 
+Complexity
+time complexity is O(n)
+space is O(n) because of hash
 */
 var leastIntervalUseHash = function(tasks, n) {
   let map = {};
@@ -243,11 +219,14 @@ var leastIntervalUseHash = function(tasks, n) {
   return Math.max(tasks.length, (maxVal - 1) * (n+1) + maxValCount);
 }
 
-//console.log('leastIntervalUseHash', leastIntervalUseHash(["A","A","A","B","B","B"], 2))
+//console.log('leastInterval', leastInterval(["A","A","A","B","B","B"], 2))
 //console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","B","C","C"], 2))
-console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","C","D","E","F","G"], 2))
+//console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","C","D","E","F","G"], 2))
+
+
+// todo solution with priority queue
 
 export {
-  //leastInterval,
+  leastInterval,
   leastIntervalUseHash
 }
