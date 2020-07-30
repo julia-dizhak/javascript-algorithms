@@ -223,7 +223,6 @@ var leastIntervalUseHash = function(tasks, n) {
 //console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","B","C","C"], 2))
 //console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","C","D","E","F","G"], 2))
 
-
 // todo solution with priority queue
 
 export {

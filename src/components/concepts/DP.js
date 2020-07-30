@@ -5,7 +5,7 @@ import Details from '../Details';
 import { change } from '../../leetcode/dp/518-coin-change-2';
 import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
 import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
-import { maxProfit } from '../../leetcode/dp/best-time-to-buy-sell-stock';
+import { maxProfit } from '../../leetcode/dp/121-best-time-to-buy-sell-stock';
 
 
 export default function DP() {

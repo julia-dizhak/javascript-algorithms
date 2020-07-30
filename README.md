@@ -204,7 +204,7 @@ created on 12/21/17
     | Prev + XOR        | O(1)      | O(1)   |
     | XOR               | O(1)      | O(1)   |
 
-    * [136. Single Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/136-single-number.js)
+    * [136. Single Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/single-number/136-single-number.js)
 
     | Approaches:    | Time     | Space  |
     | :---           | :---     | :---   |
@@ -212,7 +212,7 @@ created on 12/21/17
     | Hash           | O(n)     | O(n)   |
     | Brute force    | O(n^2)   | O(1)   |
 
-    * [260. Single Number III](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/260-single-number-3.js)
+    * [260. Single Number III](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/single-number/260-single-number-3.js)
 
     | Approaches:    | Time     | Space  |
     | :---           | :---     | :---   |
@@ -521,6 +521,13 @@ created on 12/21/17
     | Approaches:   | Time      | Space  |
     | :---          | :---      | :---   |
     | DP            | O(n^2)    | 0(n)   |
+
+    * [121 Best time to buy and sell stock ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/121-best-time-to-buy-sell-stock.js)
+
+    | Approaches:   | Time      | Space  |
+    | :---          | :---      | :---   |
+    | Brute force   | O(n^2)    | 0(1)   |
+    | One pass      | O(n)      | 0(1)   |
 
 
 ## OOP in JS

@@ -8,8 +8,8 @@ import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
 // import { reverseBits } from '../../leetcode/bitwise/190-reverse-bits';
 // import { hasAlternatingBits } from '../../leetcode/bitwise/693-alternating-bits';
-import { singleNumber2 } from '../../leetcode/bitwise/137-single-number-2';
-import { singleNumber3 } from '../../leetcode/bitwise/260-single-number-3';
+import { singleNumber2 } from '../../leetcode/bitwise/single-number/137-single-number-2';
+// import { singleNumber3 } from '../../leetcode/bitwise/single-number/260-single-number-3';
 import { getBit, setBit, clearBit } from '../../algorithms/bitwise/common-bit-tasks';
 
 
@@ -19,12 +19,12 @@ export default function BitManipulation() {
       <h2 id="bit">Bit Manipulation</h2>
 
       <ul>
-          <Details
-            id="test"
-            question="test"
-            code={singleNumber2.toString()}
-            secondCode={singleNumber3.toString()}
-          />
+        <Details
+          id="test"
+          question="test"
+          //code={singleNumber2.toString()}
+          //secondCode={singleNumber3.toString()}
+        />
         <li>
           <Details
             id="common-bit-tasks"

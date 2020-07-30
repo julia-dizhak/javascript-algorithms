@@ -1,4 +1,8 @@
 /*
+Leetcode
+121 Best time to buy and sell stock
+easy
+
 Say you have an array for which the ith element is the price of a given stock on
 day i.
 
@@ -23,6 +27,15 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 /*
 Approach Brute force
 
+Intuition
+example [7,1,5,3,6,4]
+If buy stock in first day for 7$ and sell on next day for 1$. It means we are
+losing 6$. It is terrible algorithm. Want we want to do, buy stock for 1$ and sell it
+for next maximum value. We can't sell for 7$ because it was day before we bought
+and we can't go back in time.
+
+Input: [7,6,4,3,1] in descending order => profit does not exist
+
 Explanation
 We need to find out the maximum difference (which will be the maximum profit)
 between two numbers in the given array. Also, the second number (selling price)
@@ -40,7 +53,6 @@ Space complexity: O(1). Only two variables - maxprofit and profit are used.
  * @return {number}
  */
 var maxProfitUseBruteForce = function(prices) {
-  //debugger
   let maxProfit = 0;
   for (let i = 0; i < prices.length - 1; i++) {
     for (let j = i+1; j < prices.length; j++) {
@@ -55,8 +67,21 @@ var maxProfitUseBruteForce = function(prices) {
 };
 
 /*
-One pass
+Algorithm
 
+Say the given array is:
+[7, 1, 5, 3, 6, 4]
+
+If we plot the numbers of the given array on a graph, we get:
+The points of interest are the peaks and valleys in the given graph.
+We need to find the largest peak following the smallest valley.
+We can maintain two variables - minprice and maxprofit corresponding to the
+smallest valley and maximum profit (maximum difference between selling price and
+minprice) obtained so far respectively.
+
+Complexity Analysis
+Time complexity: O(n). Only a single pass is needed.
+Space complexity: O(1). Only two variables are used.
 */
 var maxProfit = function(prices) {
   let minPrice = +Infinity;
@@ -72,7 +97,11 @@ var maxProfit = function(prices) {
   return maxProfit
 }
 
-var maxProfit1 = function(prices){
+console.log('maxProfitUsePass', maxProfit([7,1,5,3,6,4]))
+// todo why it's DP problem
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
+
+var maxProfit2 = function(prices){
   if (prices == null || prices.length <= 1) return 0;
 
   let b0 = -prices[0], b1 = b0;
@@ -97,7 +126,7 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/39038/Kada
 
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/712254/simple-2-approaches-DP-and-Recursion-Time-O(n)-Space-O(1)
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
-console.log('maxProfit', maxProfit([7,1,5,3,6,4]))
+console.log('maxProfit', maxProfitUseBruteForce([7,6,4,3,1]))
 
 export {
   maxProfit,

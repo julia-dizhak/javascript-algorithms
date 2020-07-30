@@ -30,7 +30,7 @@ Idea:
 - because 2 numbers are distinct xor must be non-zero, otherwise they are equal;
 - 3 ^ 5 = 011 ^ 101 = 110. Only one number has a bit at second position, and only
 one number has a bit at third position;
-- we define 2 buckets [2,2,3] and [1,1,5] or [10,10,11] - have 1bit at second position
+- we define 2 buckets [2,2,3] and [1,1,5] or [010,010,011] - have 1bit at second position
 and [001,001,101] have 1bit at third position.
 - we can use mask num & 010 ? goto [2,2,3] else goto [1,1,5] but for simplification
 we extract last bit which is formula x & -x;
