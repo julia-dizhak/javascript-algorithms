@@ -5,12 +5,18 @@ import Details from '../Details';
 import { minimumAbsoluteDifference } from '../../algorithms/greedy/min-abs-difference';
 import { luckBalance } from '../../algorithms/greedy/luck-balance';
 import { twoCitySchedCost, twoCitySchedCostSortAbs } from '../../leetcode/greedy/1029-two-city-scheduling';
+import { leastInterval } from '../../leetcode/greedy/621-task-scheduler';
+
 
 export default function GreedyAlgorithms() {
   return (
     <div className="greedy">
       <h2 id="greedy">Greedy Algorithms</h2>
 
+      <Details
+        id="test"
+        code={leastInterval.toString()}
+      />
       <ul>
         <li>
           <Details

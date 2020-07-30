@@ -60,7 +60,7 @@ Thus, the overall running time and extra space is O(N^2).
 So this implementation has a very bad performance, and you can avoid it.
 
 time is O(N^2)
-space is O(N^2)?
+space is O(N^2)
 */
 /**
  * @param {number[]} inorder
@@ -224,6 +224,7 @@ preorder and postorder https://leetcode.com/problems/construct-binary-tree-from-
 BST from Preorder https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/discuss/758443/detailed-explanation-with-code
 
 If you like solution upvote.
+
 */
 
 export {
