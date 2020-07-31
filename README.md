@@ -514,20 +514,27 @@ created on 12/21/17
     | Greedy + hash  | O(n)      | 0(n)   |
 
 * ### DP[dynamic programming]
-    * [518. Coin change 2 ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
+    * [518. Coin change 2](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
 
-    * [96. Unique binary search trees ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/96-unique-binary-search-trees.js)
+    * [96. Unique binary search trees](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/96-unique-binary-search-trees.js)
 
     | Approaches:   | Time      | Space  |
     | :---          | :---      | :---   |
     | DP            | O(n^2)    | 0(n)   |
 
-    * [121 Best time to buy and sell stock ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/121-best-time-to-buy-sell-stock.js)
+    * [121 Best time to buy and sell stock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/121-best-time-to-buy-sell-stock.js)
 
     | Approaches:   | Time      | Space  |
     | :---          | :---      | :---   |
     | Brute force   | O(n^2)    | 0(1)   |
     | One pass      | O(n)      | 0(1)   |
+
+    * [70 Climbing stairs](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/70-climbing-stairs.js)
+
+    | Approaches:   | Time      | Space  |
+    | :---          | :---      | :---   |
+    | Brute force   | O(^2n)    | 0(n)   |
+    |       | O()      | 0()   |
 
 
 ## OOP in JS

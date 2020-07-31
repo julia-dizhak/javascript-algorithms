@@ -128,6 +128,73 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/39038/Kada
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
 console.log('maxProfit', maxProfitUseBruteForce([7,6,4,3,1]))
 
+// answer https://leetcode.com/discuss/explore/july-leetcoding-challenge/762350/Task-Scheduler-questions
+
+// word break
+// https://www.youtube.com/watch?v=WepWFGxiwRs
+
+/*
+Leetocode
+139 Word break
+
+Given a non-empty string s and a dictionary wordDict containing a list of
+non-empty words, determine if s can be segmented into a space-separated sequence
+of one or more dictionary words.
+
+Note:
+The same word in the dictionary may be reused multiple times in the segmentation.
+You may assume the dictionary does not contain duplicate words.
+Example 1:
+
+Input: s = "leetcode", wordDict = ["leet", "code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+Example 2:
+
+Input: s = "applepenapple", wordDict = ["apple", "pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+             Note that you are allowed to reuse a dictionary word.
+Example 3:
+
+Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
+Output: false
+*/
+
+/*
+Approach
+
+s = I a m a c e
+wordDict = [I, am, ace, a]
+
+lenght = 1
+length = 2
+
+String="iamace" Words=[i, am, ace]
+1) take array of length of the string+1.and first cell is empty string.
+2) take first character check in Words it's there or not.
+    If yes empty string in the cell.
+    If no that character plus previous cell string and keep in the cell.
+3) if not empty string in cell check any word in Words is matching with it or not if match empty string in cell or keep as it is.
+4) continue for rest character.
+5) in the last cell if it's empty then successful else not.
+
+*/
+/**
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+var wordBreak = function(s, wordDict) {
+
+};
+
+//console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
+//console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
+
+// word break ii
+// https://leetcode.com/problems/word-break-ii/discuss/739854/JavaScript-Easy-Solution
+
 export {
   maxProfit,
   maxProfitUseBruteForce
