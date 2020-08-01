@@ -5,7 +5,7 @@ import Details from '../Details';
 import { change } from '../../leetcode/dp/518-coin-change-2';
 import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
 import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
-//import { maxProfit } from '../../leetcode/dp/121-best-time-to-buy-sell-stock';
+import { maxProfit } from '../../leetcode/dp/121-best-time-to-buy-sell-stock';
 import { climbStairsBruteForce } from '../../leetcode/dp/70-climbing-stairs';
 
 export default function DP() {
@@ -15,7 +15,7 @@ export default function DP() {
 
       <Details
         id="test"
-        //code={maxProfit.toString()}
+        code={maxProfit.toString()}
         secondCode={climbStairsBruteForce.toString()}
       />
       <ul>

@@ -121,7 +121,60 @@ var maxProfit1 = function(prices) {
   return max;
 }
 
-console.log('maxProfitUsePass', maxProfit([7,1,5,3,6,4]))
+/*
+Approach
+
+time is O(n)
+space is O(1)
+*/
+var maxProfitFindMinPrice = function(prices) {
+  if (prices.length === 0 || prices.length === 1) return 0;
+  let minPrice = +Infinity;
+  let maxProfit = 0;
+
+  for (let i = 0; i < prices.length; i++) {
+    minPrice = Math.min(minPrice, prices[i]);
+    maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+  }
+  return maxProfit
+}
+
+/*
+Approach DP
+
+There's is a clear formula expression here, where dp[i] denotes the max profit
+on ith day.
+
+We should get the max profit on (i + 1)th day from
+
+profit from previous days, or
+profit gained on this day (current price - minimum price before)
+And only after this, we can update the minimum price.
+
+Then, according this 'naive' DP solution, we can see there's only one variable
+needed for memorization. So we change the array dp[] to a variable, and thus
+change the space from O(n) to O(1).
+
+(A good example of doing this reducing space would be knapsack problem. We can
+change the space complexity from O(mn) to O(n). I think you can discover that
+by yourself.)
+
+time is O(n)
+space is O(n) create auxillary array
+*/
+var maxProfitDP = function(prices) {
+  let dp = new Array(prices.length).fill(0);
+  dp[0] = 0;
+  let minPrice = prices[0];
+
+  for (let i = 1; i < prices.length; i++) {
+    dp[i] = Math.max(dp[i-1], prices[i] - minPrice);
+    minPrice = Math.min(minPrice, prices[i])
+  }
+  return Math.max(...dp);
+}
+
+//console.log('maxProfitDP', maxProfitDP([7,1,5,3,6,4]))
 
 // todo why it's DP problem
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
@@ -224,5 +277,7 @@ var wordBreak = function(s, wordDict) {
 export {
   maxProfit,
   maxProfitUseBruteForce,
-  maxProfit1
+  maxProfit1,
+  maxProfitFindMinPrice,
+  maxProfitDP
 }

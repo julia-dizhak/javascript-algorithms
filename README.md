@@ -524,10 +524,12 @@ created on 12/21/17
 
     * [121 Best time to buy and sell stock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/121-best-time-to-buy-sell-stock.js)
 
-    | Approaches:   | Time      | Space  |
-    | :---          | :---      | :---   |
-    | Brute force   | O(n^2)    | 0(1)   |
-    | One pass      | O(n)      | 0(1)   |
+    | Approaches:                | Time      | Space  |
+    | :---                       | :---      | :---   |
+    | Brute force                | O(n^2)    | 0(1)   |
+    | One pass                   | O(n)      | 0(1)   |
+    | Find min price so far      | O(n)      | 0(1)   |
+    | DP                         | O(n)      | 0(n)   |
 
     * [70 Climbing stairs](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/70-climbing-stairs.js)
 
