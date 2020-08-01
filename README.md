@@ -534,7 +534,7 @@ created on 12/21/17
     | Approaches:   | Time      | Space  |
     | :---          | :---      | :---   |
     | Brute force   | O(^2n)    | 0(n)   |
-    |       | O()      | 0()   |
+    | DP: bottom-up | O(n)      | 0(n)   |
 
 
 ## OOP in JS

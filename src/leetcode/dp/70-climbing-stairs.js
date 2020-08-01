@@ -23,9 +23,12 @@ Explanation: There are three ways to climb to the top.
 2. 1 step + 2 steps
 3. 2 steps + 1 step
 
-
 Constraints:
 1 <= n <= 45
+
+Hint
+To reach nth step, what could have been your previous steps? (Think about the
+step sizes)
 
 Possible questions to as the interviewer:
 - Do I need to return the order of steps takes as well? (No, just count and return
@@ -73,6 +76,11 @@ Recursion Tree
                /  \  /  \
       (3,5)(4,5) (4,5) (5,5) ...
 number of nodes 2^n
+
+Critical ideas to think
+- Are you able to notice the overlapping subproblems?
+- hwo would you modify this recursion if you could take upto k steps at a time?
+- think about the top-down approach to solve this problem
 */
 /**
  * @param {number} n
@@ -88,9 +96,30 @@ var climbStairsBruteForce = function(n) {
 console.log('climbStairsBruteForce', climbStairsBruteForce(3))
 
 /*
+Approach Bottom-up approach of DP
+...
 
+
+...
+Complexity Analysis
+Time complexity : O(n). Single loop upto n.
+
+Space complexity : O(n). dp array of size nn is used.
 */
+var climbStairsDP = function(n) {
+  if (n === 1) return 1;
+  let solution = new Array(n+1).fill(0);
+  solution[0] = 1;
+  solution[1] = 1;
+  solution[2] = 2;
+
+  for (let i = 3; i <= n; i++) {
+    solution[i] = solution[i-1] + solution[i-2]
+  }
+  return solution[n]
+}
 
 export {
-  climbStairsBruteForce
+  climbStairsBruteForce,
+  climbStairsDP
 }

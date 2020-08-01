@@ -1,5 +1,7 @@
 import {
-  maxProfitUseBruteForce as maxProfit
+  //maxProfitUseBruteForce as maxProfit,
+  //maxProfit1 as maxProfit,
+  maxProfit
 }  from './121-best-time-to-buy-sell-stock';
 
 describe('best buy and sell stock test case ', () => {

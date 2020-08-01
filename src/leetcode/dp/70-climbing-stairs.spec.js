@@ -1,5 +1,6 @@
 import {
-  climbStairsBruteForce as climbStairs
+  //climbStairsBruteForce as climbStairs,
+  climbStairsDP as climbStairs
 }  from './70-climbing-stairs';
 
 describe('climbing stairs test case ', () => {

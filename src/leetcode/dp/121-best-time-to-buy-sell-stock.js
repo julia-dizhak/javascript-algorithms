@@ -67,12 +67,13 @@ var maxProfitUseBruteForce = function(prices) {
 };
 
 /*
-Algorithm
+Algorithm One pass
 
 Say the given array is:
 [7, 1, 5, 3, 6, 4]
 
-If we plot the numbers of the given array on a graph, we get:
+If we plot the numbers of the given array on a graph (days - x, profit - y),
+we get:
 The points of interest are the peaks and valleys in the given graph.
 We need to find the largest peak following the smallest valley.
 We can maintain two variables - minprice and maxprofit corresponding to the
@@ -84,8 +85,8 @@ Time complexity: O(n). Only a single pass is needed.
 Space complexity: O(1). Only two variables are used.
 */
 var maxProfit = function(prices) {
-  let minPrice = +Infinity;
-  let maxProfit = 0;
+  let minPrice = +Infinity; // smallest valley
+  let maxProfit = 0; // max difference between selling price and minprice
   for (let i = 0; i < prices.length; i++) {
     if (prices[i] < minPrice) {
       minPrice = prices[i]
@@ -97,7 +98,31 @@ var maxProfit = function(prices) {
   return maxProfit
 }
 
+/*
+Approach find so far min price
+The idea is to find so far min price.
+
+time is O(n)
+space is O(1)
+*/
+var maxProfit1 = function(prices) {
+  if (prices.length === 0) return 0;
+
+  let max = 0;
+  let sofarMin = prices[0];
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] > sofarMin) {
+      max = Math.max(max, prices[i] - sofarMin)
+    } else {
+      // prices[i] < sofarMin
+      sofarMin = prices[i]
+    }
+  }
+  return max;
+}
+
 console.log('maxProfitUsePass', maxProfit([7,1,5,3,6,4]))
+
 // todo why it's DP problem
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
 
@@ -133,6 +158,7 @@ console.log('maxProfit', maxProfitUseBruteForce([7,6,4,3,1]))
 // word break
 // https://www.youtube.com/watch?v=WepWFGxiwRs
 
+//https://leetcode.com/problems/word-break/discuss/169383/The-Time-Complexity-of-The-Brute-Force-Method-Should-Be-O(2n)-and-Prove-It-Below
 /*
 Leetocode
 139 Word break
@@ -197,5 +223,6 @@ var wordBreak = function(s, wordDict) {
 
 export {
   maxProfit,
-  maxProfitUseBruteForce
+  maxProfitUseBruteForce,
+  maxProfit1
 }
