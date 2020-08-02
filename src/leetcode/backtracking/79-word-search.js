@@ -68,7 +68,7 @@ var exist = function(board, word) {
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[0].length; j++) {
       // 0 is count
-      if (board[i][j] === word.chartAt(0) && dfs(board, i, j, 0, word)) {
+      if (board[i][j] === word.charAt(0) && dfs(board, i, j, 0, word)) {
         return true
       }
     }
@@ -85,7 +85,7 @@ var dfs = function(board, i, j, count, word) {
   if (
     i < 0 || i >= row ||
     j < 0 || j >= col ||
-    board[i][j] !== word.chartAt(count)
+    board[i][j] !== word.charAt(count)
   ) return false;
 
   // mark

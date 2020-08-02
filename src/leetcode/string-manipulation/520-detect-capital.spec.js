@@ -1,5 +1,7 @@
 import {
-  detectCapitalUse
+  // detectCapitalUse,
+  //detectCapitalUseSubstr as detectCapitalUse,
+  detectCapitalUseCharacterByCharacter as detectCapitalUse
 }  from './520-detect-capital';
 
 describe('detect capital test case ', () => {

@@ -280,6 +280,13 @@ created on 12/21/17
     | Two pointers             | O(n)         | 0(1)   |
     | Recursion                | O(n)         | 0(n)   |
 
+    * [520 Detect capital](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/520-detect-capital.js)
+
+    | Approaches:             | Time     | Space  |
+    | :---                    | :---     | :---   |
+    | Use substr              | O(n)     | 0(1)   |
+    | Character by character  | O(n)     | 0(1)   |
+
     * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
 
     | Approaches:        | Time     | Space  |
