@@ -15,8 +15,8 @@ Example 1:
 
 Input: [7,1,5,3,6,4]
 Output: 5
-Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
-Not 7-1 = 6, as selling price needs to be larger than buying price.
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),
+profit = 6-1 = 5. Not 7-1 = 6, as selling price needs to be larger than buying price.
 
 Example 2:
 Input: [7,6,4,3,1]
@@ -48,6 +48,7 @@ Complexity Analysis
 Time complexity: O(n2). Loop runs n(n−1)/2 times
 Space complexity: O(1). Only two variables - maxprofit and profit are used.
 */
+
 /**
  * @param {number[]} prices
  * @return {number}
@@ -146,7 +147,6 @@ There's is a clear formula expression here, where dp[i] denotes the max profit
 on ith day.
 
 We should get the max profit on (i + 1)th day from
-
 profit from previous days, or
 profit gained on this day (current price - minimum price before)
 And only after this, we can update the minimum price.
@@ -273,6 +273,7 @@ var wordBreak = function(s, wordDict) {
 
 // word break ii
 // https://leetcode.com/problems/word-break-ii/discuss/739854/JavaScript-Easy-Solution
+
 
 export {
   maxProfit,
