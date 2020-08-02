@@ -1,13 +1,19 @@
 import {
   // detectCapitalUse,
   //detectCapitalUseSubstr as detectCapitalUse,
-  detectCapitalUseCharacterByCharacter as detectCapitalUse
+  //detectCapitalUseCharacterByCharacter as detectCapitalUse,
+  detectCapitalUseCharacterByCharacterImprove as detectCapitalUse
 }  from './520-detect-capital';
 
 describe('detect capital test case ', () => {
+  it('edge case, length is t', () => {
+    expect(detectCapitalUse('a')).toBeTruthy();
+  });
+
   it('string consist only capital', () => {
     expect(detectCapitalUse('USA')).toBeTruthy();
   });
+
   it('string consist only lowercase', () => {
     expect(detectCapitalUse('aaaa')).toBeTruthy();
   });

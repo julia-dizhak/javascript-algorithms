@@ -82,6 +82,7 @@ readability.
 */
 var detectCapitalUseCharacterByCharacter = function(word) {
   const n = word.length;
+  if (n === 1) return true;
   let match1 = true, match2 = true, match3 = true;
 
 
@@ -120,6 +121,63 @@ var detectCapitalUseCharacterByCharacter = function(word) {
   return false;
 }
 
+/*
+Approach
+
+Improvement
+
+Where to start? The biggest problem of the code above is that there are too many
+cases. What if we can combine them? Notice that the biggest difference between
+case 2 and case 3 is the condition of the first char.
+
+By combining case 2 and case 3, we get a new pattern: No matter what first char
+is, the rest should be lowercase.
+
+Still, there are a few points you should notice from the code above:
+We check the length of the word firstly because we need to use the first two
+char to check if the word matches case1. Fortunately, a word with 1 length would
+always match either case2 or case3.
+
+You can count the number of uppercase/lowercase letters in the word instead of
+checking it one by one and return immediately. That can also work.
+
+Some programming languages have built-in methods to check if the word matches
+certain case, such as istitle() in Python and word.toUpperCase().equals(word)
+in Java. Those methods are doing the same things as our code above. It would be great if you can know both these APIs and how they implemented.
+
+Complexity Analysis
+Time complexity: O(n), where n is the length of the word. We only need to check
+each char at most constant times.
+
+Space complexity: O(1). We only need constant spaces to store our variables.
+*/
+var detectCapitalUseCharacterByCharacterImprove = function(word) {
+  const n = word.length;
+  if (n === 1) return true;
+
+  // case 1: all capital
+  if (
+    word.charAt(0) === word.charAt(0).toUpperCase() &&
+    word.charAt(1) === word.charAt(1).toUpperCase()
+  ) {
+    for (let i = 2; i < n; i++) {
+      if (word.charAt(i) === word.charAt(i).toLowerCase()) {
+        return false;
+      }
+    }
+  } else {
+    // case 2 and 3
+    for (let i = 1; i < n; i++) {
+      if (word.charAt(i) === word.charAt(i).toUpperCase()) {
+        return false
+      }
+    }
+  }
+
+  // if pass one of cases
+  return true;
+}
+
 console.log('detectCapitalUseCharacterByCharacter', detectCapitalUseCharacterByCharacter('LKK'))
 //console.log('detectCapitalUse', detectCapitalUse('USA'))
 // console.log('detectCapitalUse1', detectCapitalUse('USAaaaa'))
@@ -129,5 +187,6 @@ console.log('detectCapitalUseCharacterByCharacter', detectCapitalUseCharacterByC
 export {
   detectCapitalUse,
   detectCapitalUseSubstr,
-  detectCapitalUseCharacterByCharacter
+  detectCapitalUseCharacterByCharacter,
+  detectCapitalUseCharacterByCharacterImprove
 }

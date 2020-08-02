@@ -86,6 +86,7 @@ Time complexity: O(n). Only a single pass is needed.
 Space complexity: O(1). Only two variables are used.
 */
 var maxProfit = function(prices) {
+  // always set min to max value initially and max to min value
   let minPrice = +Infinity; // smallest valley
   let maxProfit = 0; // max difference between selling price and minprice
   for (let i = 0; i < prices.length; i++) {
