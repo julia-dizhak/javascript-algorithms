@@ -6,7 +6,7 @@ import {
 }  from './520-detect-capital';
 
 describe('detect capital test case ', () => {
-  it('edge case, length is t', () => {
+  it('edge case, length is 1', () => {
     expect(detectCapitalUse('a')).toBeTruthy();
   });
 

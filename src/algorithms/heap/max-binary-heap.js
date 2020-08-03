@@ -1,4 +1,3 @@
-import { heapify } from "../sorting/heap-sort";
 
 /*
 Implementation

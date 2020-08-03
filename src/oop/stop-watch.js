@@ -1,28 +1,28 @@
 /*
-  OOP in JS
-  Design StopWatch
-  Implement counter - a start / stop / reset millisecond counter.
-  If you want to do fanciful formatting on the time, that's completely up to you.
-  This should be more than enough to get you started.
+OOP in JS
+Design StopWatch
+Implement counter - a start / stop / reset millisecond counter.
+If you want to do fanciful formatting on the time, that's completely up to you.
+This should be more than enough to get you started.
 
-  Implement an object which behaves like this.
-  Properties:
-    duration is 0 as an initially - started to calculated from the moment start() method run
-  until it called stop method
+Implement an object which behaves like this.
+Properties:
+  duration is 0 as an initially - started to calculated from the moment start() method run
+until it called stop method
 
-  methods:
-    start - if you call start second time - display stopwatch has already started
-    we can't call start twice
+methods:
+start - if you call start second time - display stopwatch has already started
+we can't call start twice
 
-    stop() - we can't call stop twice in a row - complain: stopwatch is not started
+stop() - we can't call stop twice in a row - complain: stopwatch is not started
 
-    reset() - takes stop to initial state
+reset() - takes stop to initial state
 
-  implementation without classes, but using operator new
+implementation without classes, but using operator new
 
-  Create html elements
-    <div id="a-timer"></div>
-    <div id="b-timer"></div>
+Create html elements
+  <div id="a-timer"></div>
+  <div id="b-timer"></div>
 */
 
 // creating a blueprint using operator new
