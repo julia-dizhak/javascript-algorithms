@@ -68,10 +68,10 @@ created on 12/21/17
     * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
     * [Binary search (iterative, recursion)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary/binary-search.js)
 
-| Search name       | O          | Ω      | Space  |
-| :---              | :---       | :---   | :---   |
-| Linear Search     | O(n)       | Ω(1)   | O(1)   |
-| Binary Search     | O(log n)   | Ω(1)   | O(1)   |
+    | Search name       | O          | Ω      | Space  |
+    | :---              | :---       | :---   | :---   |
+    | Linear Search     | O(n)       | Ω(1)   | O(1)   |
+    | Binary Search     | O(log n)   | Ω(1)   | O(1)   |
 
 * Sorting
     * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
@@ -125,6 +125,15 @@ created on 12/21/17
     | 1 Pointer (head)            | O(n)         | 0(1)      |
     | 2 Pointers (head and tail)  | O(1)         | 0(1)      |
 
+* ### Hash implementation
+    * [HashSet via object](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/hashSet-use-object.js)
+
+    | Complexity:       | time      | space     |
+    | :---              | :---      | :---      |
+    | add               | O(1)      | 0(1)      |
+    | remove            | O(1)      | 0(1)      |
+    | contains          | O(1)      | 0(1)      |
+
 * ### Binary Tree
     * [BT](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/bt.js)
 
@@ -175,10 +184,11 @@ created on 12/21/17
 
 * ### Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
+
     * [Fibonacci Number (recursion, iterative)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
 
 
-## Leetcode problems solving
+## Problems solving on leetcode
 
 * ### Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)

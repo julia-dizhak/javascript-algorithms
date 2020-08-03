@@ -70,18 +70,16 @@ class StackVariant2 {
   }
 }
 
-// test
-const stack = new Stack();
+// tests
+//const stack = new Stack();
 //const stack2 = new StackVariant2();
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(1);
-stack.pop();
-stack.pop();
-stack.peek()
-
-//const stackOfStrings = new Stack();
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+// stack.push(1);
+// stack.pop();
+// stack.pop();
+// stack.peek()
 
 export {
   Stack,

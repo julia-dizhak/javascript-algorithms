@@ -11,7 +11,6 @@ Return the minimum cost to fly every person to a city such
 that exactly N people arrive in each city.
 
 Example 1:
-
 Input: [[10,20],[30,200],[400,50],[30,20]]
 Output: 110
 Explanation:
@@ -57,6 +56,16 @@ Space complexity: O(1) since it's a constant space solution.
 var twoCitySchedCost = function(costs) {
   // sort by a gain which company has
   // by sending a person to city A and not to city B
+  // function compare(a,b) {
+  //   if (a<b) return -1
+  //   if (a>b) return 1;
+  //   // must be equal
+  //   return 0
+  // }
+  // [10,20], // 10 - 20 - (200 - 30) = -10 - 170 = - 180
+  // [30,200],
+  // [400,50],
+  // [30,20]
   costs = costs.sort((a, b) => a[0] - b[0] - (a[1] - b[1]));
 
   let total = 0;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Details from './../Details';
 
+import { HashSet, HashSetVariant1 } from "../../algorithms/hash/hashSet-use-object";
 // problems
 import { twoSumBruteForce, twoSum, twoSumTwoPassHashes } from "../../leetcode/array/sum-problems/two-sum";
 // import { prisonAfterNDays } from '../../leetcode/hash/957-prison-cells-after-N-days'
@@ -16,6 +17,17 @@ export default function Hash() {
             question=""
             //code={prisonAfterNDays.toString()}
           />
+        <li>
+          <Details
+            id="hash"
+            question="HashSet implementation: use object"
+            code={HashSet.toString()}
+            secondCode={HashSetVariant1.toString()}
+            time=""
+            space=""
+          />
+        </li>
+
         <li>
           <Details
             id="search-two-sum"
