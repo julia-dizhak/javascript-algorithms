@@ -126,7 +126,7 @@ created on 12/21/17
     | 2 Pointers (head and tail)  | O(1)         | 0(1)      |
 
 * ### Hash implementation
-    * [HashSet via object](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/hashSet-use-object.js)
+    * [HashSet via object](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/hashSet/hashSet-use-object.js)
 
     | Complexity:       | time      | space     |
     | :---              | :---      | :---      |
@@ -297,7 +297,7 @@ created on 12/21/17
     | Use substr              | O(n)     | 0(1)   |
     | Character by character  | O(n)     | 0(1)   |
 
-    * [125. Valid palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/520-detect-capital.js)
+    * [125. Valid palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/palindrome/125-valid-palindrome.js)
 
     | Approaches:             | Time     | Space  |
     | :---                    | :---     | :---   |

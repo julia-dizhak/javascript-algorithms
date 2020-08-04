@@ -1,7 +1,7 @@
 /*
 Leetcode
-
-Design a HashSet without using any built-in hash table libraries.
+705 Design a HashSet without using any built-in hash table libraries.
+easy
 
 To be specific, your design should include these functions:
 add(value): Insert a value into the HashSet.
@@ -151,11 +151,45 @@ hash.add(2);
 console.log('hash', hash)
 
 
-// difference https://www.geeksforgeeks.org/difference-between-hashmap-and-hashset/
+
 // https://leetcode.com/problems/design-hashset/discuss/768659/Python-Easy-Multiplicative-Hash-explained
+// return ((key*1031237) & (1<<20) - 1)>>5
+// key is val
+// let mySet = new Set()
+// mySet.add(10000)
+
 // hashing with load factor
 // array https://leetcode.com/problems/design-hashset/discuss/137257/javascript-solution%3A-100ms.
 // https://leetcode.com/problems/design-hashset/discuss/304242/Javascript-Solution-Easy-To-Understand
+
+// https://javascript.info/class-inheritance
+// interface js
+// strategy pattern
+/*
+
+class Duck {
+  constructor() {
+   this.flyBehaviour = new Date()
+}
+}
+
+k = new Duck()
+
+class CanFly {
+fly = () => console.log('fly...')
+}
+
+class FlyingDuck extends Duck {
+   constructor() {
+    super();
+    this.newFly = new CanFly();
+}
+}
+pp = new CanFly()
+pp = new FlyingDuck()
+pp.flyBehaviour
+pp.newFly.fly()
+*/
 
 export {
   HashSet,
