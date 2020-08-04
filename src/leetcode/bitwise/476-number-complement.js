@@ -37,15 +37,14 @@ todo = num.
 
 Loop over the bits. While todo != 0:
 Flip the current bit: num = num ^ bit.
-Prepare for the next run. Shift flip variable to the left and todo variable to the right.
-Return num
+Prepare for the next run. Shift flip variable to the left and todo variable to
+the right. Return num
 
 Time Complexity: O(1), since we're doing not more than 32 iterations here
 Space complexity O(1)
 */
 
 var flipBitByBit = function(num) {
-  debugger
   if (num === 1) return 0;
   if (num === 0) return 1;
 
@@ -68,7 +67,7 @@ var flipBitByBit = function(num) {
   }
   return num;
 }
-console.log('flipBitByBit', flipBitByBit(10))
+//console.log('flipBitByBit', flipBitByBit(10))
 
 function findComplementUsePow(num) {
   let n = 0;

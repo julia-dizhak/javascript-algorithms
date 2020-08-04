@@ -36,6 +36,14 @@ class Stack {
     // get the top element from the stack
     return this.stack[this.stack.length - 1];
   }
+
+  clear() {
+    return []
+  }
+
+  print() {
+    console.log('stack', this.stack.toString())
+  }
 }
 
 /*
@@ -71,8 +79,8 @@ class StackVariant2 {
 }
 
 // tests
-//const stack = new Stack();
-//const stack2 = new StackVariant2();
+// const stack = new Stack();
+// //const stack2 = new StackVariant2();
 // stack.push(1);
 // stack.push(2);
 // stack.push(3);
@@ -80,6 +88,7 @@ class StackVariant2 {
 // stack.pop();
 // stack.pop();
 // stack.peek()
+// stack.print();
 
 export {
   Stack,

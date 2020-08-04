@@ -3,8 +3,8 @@ import Details from '../Details';
 
 // problems
 import { flipBitByBit, decimalToBinary } from '../../leetcode/bitwise/476-number-complement';
-import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
-// import { hammingDistance } from '../../leetcode/bitwise/461-hamming-distance';
+import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/power/231-power-of-two';
+import { isPowerOfFour } from '../../leetcode/bitwise/power/342-power-of-four';
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
 // import { reverseBits } from '../../leetcode/bitwise/190-reverse-bits';
 // import { hasAlternatingBits } from '../../leetcode/bitwise/693-alternating-bits';
@@ -22,7 +22,7 @@ export default function BitManipulation() {
         <Details
           id="test"
           question="test"
-          //code={singleNumber2.toString()}
+          code={isPowerOfFour.toString()}
           //secondCode={singleNumber3.toString()}
         />
         <li>
