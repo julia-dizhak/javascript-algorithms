@@ -1,10 +1,12 @@
 import {
-  isPowerOfFour,
+  //isPowerOfFour,
   //isPowerOfFourIterative as isPowerOfFour,
-  //isPowerOfFourVariant2 as isPowerOfFour
+  //isPowerOfFourVariant2 as isPowerOfFour,
+  //isPowerOfFourVariant3 as isPowerOfFour,
+  isPowerOfFourVariant4 as isPowerOfFour
 } from './342-power-of-four';
 
-describe('power of two test case', () => {
+describe('power of 4 test case', () => {
   it('n is negative ', () => {
     expect(isPowerOfFour(-15)).toBeFalsy();
   });

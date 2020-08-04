@@ -207,12 +207,21 @@ created on 12/21/17
     | Math + toString              | O(n)         | O(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
 
+    * [326. Power of three](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/power/326-power-of-three.js)
+
+    | Approaches:                  | Time          | Space  |
+    | :---                         | :---          | :---   |
+    | Iterative: keep divide by 3  | O(log_3n)     | 0(1)   |
+    | Integer limitations          | O(1)          | 0(1)   |
+
     * [342. Power of four](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/power/342-power-of-four.js)
 
     | Approaches:                  | Time         | Space  |
     | :---                         | :---         | :---   |
-    | Iterative: keep divide by 4  | O(log n)     | 0(1)   |
+    | Iterative: keep divide by 4  | O(log_4n)    | 0(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
+    | Divisible by 3               | O(1)         | O(1)   |
+    | Ends with 4 or 6             | O(1)         | O(1)   |
 
     * [693. Binary Number of Alternating Bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/693-alternating-bits.js)
 
