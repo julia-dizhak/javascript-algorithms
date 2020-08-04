@@ -1,7 +1,6 @@
 /*
-Leetcode javascript
-476. Number complement /
-1009. Complement of Base 10 Integer
+Leetcode
+476. Number complement / 1009. Complement of Base 10 Integer
 easy
 
 Given a positive integer, output its complement number.
@@ -33,8 +32,8 @@ To move along the number and flip bit by bit.
 
 Initiate 1-bit variable which will be used to flip bits one by one.
 Set it to the smallest register bit = 1.
-Initiate the marker variable which will be used to stop the loop
-over the bits todo = num.
+Initiate the marker variable which will be used to stop the loop over the bits
+todo = num.
 
 Loop over the bits. While todo != 0:
 Flip the current bit: num = num ^ bit.
@@ -46,6 +45,10 @@ Space complexity O(1)
 */
 
 var flipBitByBit = function(num) {
+  debugger
+  if (num === 1) return 0;
+  if (num === 0) return 1;
+
   let bit = 1;
   let todo = num;
 
@@ -65,55 +68,7 @@ var flipBitByBit = function(num) {
   }
   return num;
 }
-
-
-/*
-Approach Bit manipulation shift and xor
-
-with this approach Time Limit Exceeded
-
-example with num = 5
-i = 1;
-i = i << 1 = 1 << 1 = 10 => 2
-
-i = 2
-2 <= 5
-i = i << 1 = 2 << 1 = 0010 << 1 = 0100 = 4
-
-i = 4
-4 <= 5
-i = i << 1 = 4 << 1 = 0100 << 1 = 1000 = 8
-
-i = 8
-8 > 5
-
-1000 - 1 = 111, 111^101 = 010 got it
-x^1s = ~x
-*/
-// function findComplementUseShift(num) {
-//   let i = 1;
-//   while (i <= num) {
-//     i = i << 1; // multiple by 2
-//   }
-//   return (i-1)^num;
-// }
-
-/*
-Approach
-100110, its complement is 011001, the sum is 111111. So we only need get the
-min number large or equal to num, then do substraction
-*/
-// function findComplementUsePow(num) {
-//   let i = 0;
-//   let j = 0;
-
-//   while (i < num) {
-//     i += Math.pow(2,j);
-//     j++;
-//   }
-
-//   return i - num
-// }
+console.log('flipBitByBit', flipBitByBit(10))
 
 function findComplementUsePow(num) {
   let n = 0;
@@ -142,11 +97,11 @@ function findComplementUsePowVariant1(N) {
   Time complexity is O(1), because toString operates from 2 through 36 bits.
 */
 var bitwiseComplement = function(N) {
-  const bitmask = N.toString(2);
+  const mask = N.toString(2);
   let flip = [];
-  for (let i = 0; i < bitmask.length; i++) {
+  for (let i = 0; i < mask.length; i++) {
     let bit = 1;
-    if (Number(bitmask[i]) === 1) {
+    if (Number(mask[i]) === 1) {
       bit = 0
     }
     flip.push(bit)
@@ -158,9 +113,9 @@ var bitwiseComplement = function(N) {
 
 // second variant
 var findComplement = function(N) {
-  const bitmask = N.toString(2);
+  const mask = N.toString(2);
   let str = '';
-  for (const i of bitmask) {
+  for (const i of mask) {
     str += +!(i-0);
   }
   return parseInt(str, 2);
@@ -199,30 +154,54 @@ var bitwiseComplementUseReduce = function(N) {
 }
 
 /*
-  the math
-  (1) 11 / 2 = 5
-  (1) 5 / 2 = 2
-  (0) 2 / 2 = 1
-  (1) 1 / 2 = 0
+Approach Decimal to Binary + use Stack
 
-  todo: doesn't work with 0 case
+Algorithm
+1. Convert Decimal to binary.
+2. Take its compliment
+3. Convert back to equivalent Decimal.
+
+the math
+(1) 10 / 2 = 5
+(1) 5 / 2 = 2
+(0) 2 / 2 = 1
+(1) 1 / 2 = 0
+
+Time is O(log n)
+space is O(log n)
 */
-function decimalToBinary(inputNum) {
-  let binary = [];
+function decimalToBinary(N) {
+  if (N === 0) return 1;
+  if (N === 1) return 0;
+  // decimal to binary using Stack
+  let remStack = [],
+    rem,
+    binaryString = '';
 
-  while (inputNum > 0) {
-    if (inputNum % 2 === 1) {
-      binary.splice(0,0,1);
-      inputNum = (inputNum - 1) / 2;
+  while (N > 0) {
+    rem = Math.floor(N % 2);
+    remStack.push(rem);
+    N = Math.floor(N / 2);
+  }
+
+  while (remStack.length) {
+    binaryString += remStack.pop().toString();
+  }
+
+  // complement binary string
+  let complementString = '';
+  for (let i = 0; i < binaryString.length; i++) {
+    if (Number(binaryString[i]) === 0) {
+      complementString +='1'
     } else {
-      binary.splice(0,0,0);
-      inputNum /= 2;
+      complementString +='0'
     }
   }
 
-  binary = binary.join('');
-  return binary;
+  // Convert back to equivalent Decimal
+  return parseInt(complementString, 2)
 }
+//console.log('decimalToBinary', decimalToBinary(10))
 
 export {
   bitwiseComplement, findComplement, bitwiseComplementUseReduce,

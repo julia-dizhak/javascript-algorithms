@@ -1,7 +1,7 @@
 import React from 'react';
 import Details from './../Details';
 
-import { HashMap } from "../../algorithms/hash/hashMap/hashMap-use-map";
+import { HashTable as HashMap } from "../../algorithms/hash/hashMap/hashMap-use-array";
 import { HashSet, HashSetVariant1 } from "../../algorithms/hash/hashSet/hashSet-use-object";
 
 // problems

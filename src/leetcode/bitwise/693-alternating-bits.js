@@ -53,12 +53,12 @@ Approach Divide by Two
 
 Intuition and Algorithm
 
-We can get the last bit and the rest of the bits via n % 2 and n // 2 operations.
+We can get the last bit and the rest of the bits via n % 2 and n / 2 operations.
 Let's remember cur, the last bit of n. If the last bit ever equals the last
 bit of the remaining, then two adjacent bits have the same value, and the answer
 is False. Otherwise, the answer is True.
 
-Also note that instead of n % 2 and n // 2, we could have used operators n & 1
+Also note that instead of n % 2 and n / 2, we could have used operators n & 1
 and n >>= 1 instead.
 
 Time Complexity: O(1). For arbitrary inputs, we do O(w) work, where w is the
@@ -73,7 +73,7 @@ var hasAlternatingBitsDivideByTwo = function(n) {
   n /= 2;
 
   while (n > 0) {
-    if (current == n % 2) return false;
+    if (current === n % 2) return false;
     current = n % 2;
     n /= 2;
   }

@@ -148,5 +148,6 @@ export {
   isPowerOfTwoIterative,
   isPowerOfTwoMath,
   isPowerOfTwoBitManipulation,
-  isPowerOfTwoShiftBit
+  isPowerOfTwoShiftBit,
+  isPowerOfTwoUseWhile
 }

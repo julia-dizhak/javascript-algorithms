@@ -1,31 +1,22 @@
 import {
-  bitwiseComplement, findComplement,
-  bitwiseComplementUseReduce, flipBitByBit,
-  decimalToBinary
+  //bitwiseComplement,
+  //findComplement as bitwiseComplement,
+  // bitwiseComplementUseReduce as bitwiseComplement,
+  flipBitByBit as bitwiseComplement, 
+  //decimalToBinary as bitwiseComplement
 } from './476-number-complement';
 
 describe('bitwise complement test case', () => {
-  it('flip bit by bit', () => {
-    expect(flipBitByBit (5)).toEqual(2);
-    expect(flipBitByBit (1)).toEqual(0);
-  });
-
-  it('use toString and parseInt', () => {
-    expect(bitwiseComplement(5)).toEqual(2);
+  it('edge cases', () => {
+    expect(bitwiseComplement(0)).toEqual(1);
     expect(bitwiseComplement(1)).toEqual(0);
-
-    expect(findComplement(5)).toEqual(2);
-    expect(findComplement(1)).toEqual(0);
+    expect(bitwiseComplement(2)).toEqual(1);
   });
 
-  it('use reduce', () => {
-    expect(bitwiseComplementUseReduce(5)).toEqual(2);
-    expect(bitwiseComplementUseReduce(1)).toEqual(0);
+  it('complement for 3,5,8,10', () => {
+    expect(bitwiseComplement(8)).toEqual(7);
+    expect(bitwiseComplement(3)).toEqual(0);
+    expect(bitwiseComplement(5)).toEqual(2);
+    expect(bitwiseComplement(10)).toEqual(5);
   });
-
-  it('decimalToBinary', () => {
-    expect(decimalToBinary(5)).toEqual('101');
-    expect(decimalToBinary(1)).toEqual('1');
-  });
-
 });

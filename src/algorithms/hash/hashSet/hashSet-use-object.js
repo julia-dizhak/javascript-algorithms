@@ -30,6 +30,8 @@ Please do not use the built-in HashSet library.
 
 /*
 Approach use obj
+
+this solution under requirement, because {} is using any built-in hash in JS
 */
 class HashSet {
   constructor() {

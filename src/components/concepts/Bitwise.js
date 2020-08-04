@@ -2,7 +2,7 @@ import React from 'react';
 import Details from '../Details';
 
 // problems
-import { flipBitByBit, findComplement } from '../../leetcode/bitwise/476-number-complement';
+import { flipBitByBit, decimalToBinary } from '../../leetcode/bitwise/476-number-complement';
 import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/231-power-of-two';
 // import { hammingDistance } from '../../leetcode/bitwise/461-hamming-distance';
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
@@ -45,7 +45,7 @@ export default function BitManipulation() {
             time="O(1)"
             space="O(1)"
             code={flipBitByBit.toString()}
-            secondCode={findComplement.toString()}
+            secondCode={decimalToBinary.toString()}
           />
         </li>
         <li>

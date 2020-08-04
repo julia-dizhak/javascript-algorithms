@@ -193,10 +193,11 @@ created on 12/21/17
 * ### Bitwise operators
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
 
-    | Approaches:            | Time         | Space  |
-    | :---                   | :---         | :---   |
-    | Bit Shift + xor (2)    | O(1)         | 0(1)   |
-    | toString and parseInt  | O(1)         | 0(1)   |
+    | Approaches:                | Time          | Space      |
+    | :---                       | :---          | :---       |
+    | Bit Shift + xor (2)        | O(1)          | 0(1)       |
+    | toString and parseInt      | O(1)          | 0(1)       |
+    | decimal to Binary + Stack  | O(log n)      | 0(log n)   |
 
     * [231. Power of two (and more approaches)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/231-power-of-two.js)
 
