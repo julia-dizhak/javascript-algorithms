@@ -199,12 +199,19 @@ created on 12/21/17
     | toString and parseInt      | O(1)          | 0(1)       |
     | decimal to Binary + Stack  | O(log n)      | 0(log n)   |
 
-    * [231. Power of two (and more approaches)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/power/231-power-of-two.js)
+    * [231. Power of two](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/power/231-power-of-two.js)
 
     | Approaches:                  | Time         | Space  |
     | :---                         | :---         | :---   |
     | Iterative: keep divide by 2  | O(log n)     | 0(1)   |
     | Math + toString              | O(n)         | O(1)   |
+    | Bit Manipulation Trick       | O(1)         | O(1)   |
+
+    * [342. Power of four](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/power/342-power-of-four.js)
+
+    | Approaches:                  | Time         | Space  |
+    | :---                         | :---         | :---   |
+    | Iterative: keep divide by 4  | O(log n)     | 0(1)   |
     | Bit Manipulation Trick       | O(1)         | O(1)   |
 
     * [693. Binary Number of Alternating Bits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/693-alternating-bits.js)

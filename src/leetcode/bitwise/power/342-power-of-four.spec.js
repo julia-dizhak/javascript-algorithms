@@ -1,6 +1,7 @@
 import {
   isPowerOfFour,
-  //isPowerOfFourIterative as isPowerOfFour
+  //isPowerOfFourIterative as isPowerOfFour,
+  //isPowerOfFourVariant2 as isPowerOfFour
 } from './342-power-of-four';
 
 describe('power of two test case', () => {
