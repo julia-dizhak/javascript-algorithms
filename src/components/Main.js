@@ -2,17 +2,21 @@ import React from 'react';
 
 import BitManipulation from './concepts/Bitwise';
 import Number from './concepts/Number';
+
 import StringManipulation from './concepts/StringManipulation';
 import ArrayAlgorithms from './concepts/ArrayAlgorithms';
-import Hash from './concepts/Hash';
 
 import Stack from './concepts/Stack';
 import Queue from './concepts/Queue';
 import LinkedLists from './concepts/LinkedLists';
 
+import Hash from './concepts/Hash';
+
+import Graph from './concepts/Graph';
 import Tree from './concepts/Tree';
 import Heap from './concepts/Heap';
-import Graph from './concepts/Graph';
+import Trie from './concepts/Trie';
+
 
 import Sorting from './concepts/Sorting';
 import Searching from './concepts/Searching';
@@ -31,20 +35,23 @@ function Main() {
       <div className="wrapper">
         <BitManipulation />
         <Number />
+
         <StringManipulation />
         <ArrayAlgorithms />
-        <Hash />
-
-        <Sorting />
-        <Searching />
 
         <LinkedLists />
         <Stack />
         <Queue />
 
+        <Hash />
+
+        <Graph />
         <Tree />
         <Heap />
-        <Graph />
+        <Trie />
+
+        <Sorting />
+        <Searching />
 
         <Recursion />
         <GreedyAlgorithms />

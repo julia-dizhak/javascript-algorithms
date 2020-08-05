@@ -122,8 +122,6 @@ var isPowerOfThreeVariant2 = function(n) {
   }
 };
 
-// https://www.geeksforgeeks.org/swap-all-odd-and-even-bits/
-
 export {
   isPowerOfThree,
   isPowerOfThreeIterative,

@@ -5,8 +5,6 @@ import { BT } from '../../algorithms/tree/bt/bt';
 import { BinarySearchTree } from '../../algorithms/tree/bst/binary-search-tree';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 
-import { Trie } from '../../algorithms/trie/trie';
-
 // traversal
 import { preorderTraversal } from '../../algorithms/tree/bt/traversal/preorder';
 import { levelOrder } from '../../algorithms/tree/bt/traversal/level-order-traversal';

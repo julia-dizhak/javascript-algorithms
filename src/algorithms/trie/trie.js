@@ -1,12 +1,14 @@
 /*
-
-
+Leetcode
 208 Implement Trie (Prefix Tree
+medium
 
 Implement a trie with insert, search, and startsWith methods.
+Insert
+Search
+startsWith method
 
 Example:
-
 Trie trie = new Trie();
 
 trie.insert("apple");
@@ -15,22 +17,13 @@ trie.search("app");     // returns false
 trie.startsWith("app"); // returns true
 trie.insert("app");
 trie.search("app");     // returns true
+
 Note:
-
 You may assume that all inputs are consist of lowercase letters a-z.
 All inputs are guaranteed to be non-empty strings.
-
-
- Insert
-Search
-startsWith method
-
-You may assume that all inputs are consist of lowercase letters a-z.
-All inputs are guaranteed to be non-empty strings.
- *
- * just a refernces to other nodes
 */
 
+// implementation
 class TrieNode1 {
   constructor(key) {
     // the "key" value will be the character in sequence
