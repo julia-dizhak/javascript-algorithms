@@ -2,6 +2,7 @@ import React from 'react';
 import Details from '../Details';
 
 // design
+import { Trie as ImplementationTrie } from '../../algorithms/trie/implementation-Trie';
 import { Trie as DesignTrie } from '../../algorithms/trie/trie';
 
 // problems
@@ -16,6 +17,18 @@ export default function Trie() {
       <ul id="trie">
         <li>
           <Details
+            id="trie-implementation"
+            question="Trie implementation"
+            solution=""
+            complexity=""
+            time=""
+            space=""
+            code={ImplementationTrie.toString()}
+          />
+        </li>
+
+        <li>
+          <Details
             id="test-trie"
             question=""
             code={WordDictionary.toString()}
@@ -25,8 +38,8 @@ export default function Trie() {
 
         <li>
           <Details
-            id="trie-implementation"
-            question="Trie implementation"
+            id="trie-design"
+            question="Trie design"
             solution=""
             complexity=""
             time=""

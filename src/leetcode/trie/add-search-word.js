@@ -26,65 +26,6 @@ You should be familiar with how a Trie works. If not, please work on this proble
 Implement Trie (Prefix Tree) first.
 */
 
-class Node {
-  constructor(key) {
-    // the "key" value will be the character in sequence
-    this.key = (key === undefined) ? null : key;
-    this.value = (key.length === 0) ? null : undefined; // ?
-    this.children = [];
-  }
-}
-
-class Trie {
-  constructor() {
-    // head or root
-    this.head = {
-      key: '',
-      children: {}
-    }
-  }
-
-  /*
-    insert a word
-    to insert an element into the trie, simply build the correct path from the
-    root to the leaf
-  */
-  add(word) {
-    let curNode = this.head,
-      curChar = word.slice(0,1),
-      newNode = null;
-
-    // decrease a word for one character
-    word = word.slice(1);
-
-    //debugger
-    // looks for an appropriate place to insert an element and
-    // !== null
-    while (typeof curNode.children[curChar] !== 'undefined' &&
-    curChar.length > 0
-    ) {
-      //debugger
-      curNode = curNode.children[curChar];
-      curChar = word.slice(0,1);
-      word = word.slice(1);
-    }
-
-    // iterates through the remaining characters of the string, filling out the trie
-    while (curChar.length > 0) {
-      newNode = new Node(curChar);
-      curNode.children[curChar] = newNode;
-      curNode = newNode;
-      curChar = word.slice(0,1);
-      word = word.slice(1);
-    }
-  }
-
-  search(word) {
-
-  }
-}
-
-
 // https://leetcode.com/problems/add-and-search-word-data-structure-design/discuss/59669/Java-Solution-easy-understand
 /*
 Approach
@@ -183,9 +124,9 @@ class WordDictionary {
 };
 
 // tests
-let trie = new WordDictionary();
-trie.addWord('bad');
-trie.addWord('dad');
+let trie1 = new WordDictionary();
+trie1.addWord('bad');
+trie1.addWord('dad');
 // trie.add('good');
 // trie.add('glad');
 // trie.add('gold');
@@ -196,7 +137,7 @@ trie.addWord('dad');
 // trie.add('ball');
 // trie.add('bat');
 //trie = JSON.parse(JSON.stringify(trie)).head;
-console.log('trie', trie)
+//console.log('trie', trie)
 
 export {
   Trie,
