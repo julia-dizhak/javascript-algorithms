@@ -353,10 +353,12 @@ created on 12/21/17
 
 * ### Array
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
-    * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/26-remove-duplicates-from-sorted-array.js)
+
+    * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/26-remove-duplicates-from-sorted-array.js)
+
     * [540. Single element in sorted array (approach: Brute force, binary search, BS only on even indexes)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)
 
-    * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/169-majority-element.js)
+    * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/169-majority-element.js)
 
     | Approaches:  | Time       | Space       |
     | :---         | :---       | :---        |
@@ -365,7 +367,7 @@ created on 12/21/17
     | Sorting      | O(nlogn)   | O(1) / O(n) |
     | Voting       | O(n)       | O(1)        |
 
-    * [229. Majority element II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/229-majority-element-2.js)
+    * [229. Majority element II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/229-majority-element-2.js)
 
     | Approaches:     | Time    | Space  |
     | :---            | :---    | :---   |

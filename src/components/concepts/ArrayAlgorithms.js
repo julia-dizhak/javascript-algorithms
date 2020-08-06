@@ -6,12 +6,17 @@ import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../algorithms/a
 
 // problems
 import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
-import { majorityElement, majorityMooreVoting } from '../../leetcode/array/169-majority-element';
+import { majorityElement, majorityMooreVoting } from '../../leetcode/array/majority/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
-import { removeDuplicates } from '../../leetcode/array/26-remove-duplicates-from-sorted-array';
-import { plusOne } from '../../leetcode/array/66-plus-one';
+
+//import { plusOne } from '../../leetcode/array/66-plus-one';
+
+// duplicates
+import { removeDuplicates } from '../../leetcode/array/duplicates/26-remove-duplicates-from-sorted-array';
+import { findDuplicate } from '../../leetcode/array/duplicates/287-find-duplicate-number';
+import { findAllDuplicates } from '../../leetcode/array/duplicates/find-all-duplicates';
 
 // todo import { QuickUnion } from '../../algorithms/union-find/quick-union';
 // todo import { RandomizedSet } from '../../leetcode/hash/380-insert-delete-getrandom-constant-time';
@@ -20,10 +25,13 @@ export default function ArrayAlgorithms() {
   return (
     <div className="sorting">
       <h2>Array</h2>
+
       <Details
         id="test-array"
-        code={plusOne.toString()}
+        code={findDuplicate.toString()}
+        secondCode={findAllDuplicates.toString()}
       />
+
       <ul id="array">
         <li>
           <Details
