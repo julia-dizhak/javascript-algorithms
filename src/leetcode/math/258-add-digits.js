@@ -33,11 +33,11 @@ https://en.wikipedia.org/wiki/Digital_root
 
 function count(n) {
   if (n <= 0) {
-    console.log(0);
+    //console.log(0);
     return;
   }
   else {
-    console.log(n);
+    //console.log(n);
     return count(n-1)
   }
 }
@@ -63,6 +63,7 @@ var addDigitsBruteForce = function(num) {
   }
 };
 
+
 /*
 Approach recursion
 
@@ -78,7 +79,7 @@ var addDigitsUseRecursion = function(num) {
     sum += num % 10;
     num = Math.floor(num / 10);
   }
-  return addDigitsUseRecursion(sum)
+  return addDigitsUseRecursion(sum);
 };
 
 // print results

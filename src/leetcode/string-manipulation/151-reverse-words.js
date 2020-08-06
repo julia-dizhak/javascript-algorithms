@@ -30,7 +30,7 @@ For C programmers, try to solve it in-place in O(1) extra space.
 */
 
 /*
-Approach 2 Pointers + split + trim (no reverse)
+Approach: 2 Pointers + split + trim (no reverse)
 */
 /**
  * @param {string} s
@@ -63,7 +63,7 @@ var reverseWords = function(s) {
 /*
 Approach 2 Pointers without trim
 
-We can reverse each word first, then reverse the whole string, finnaly trim the string.
+We can reverse each word first, then reverse the whole string, finally trim the string.
 Let us consider a general case:
 
 Step 1:
@@ -90,7 +90,7 @@ The hardest part is from step 1 to step 2.
 
 For a string, we introduce 4 variables:
 
-1 len, the lenth of the string.
+1 len, the length of the string.
 2 last, the index of the last character in the string.
 3 chars, the character array of a string.
 4 i, the iteration pointer, from 0 to len:
@@ -157,7 +157,9 @@ var reverseWord = function(arr, i, j) {
   }
   return arr
 }
-// reverse words in string II unlock
+
+// reverse words in string II
+// We can reverse each word first, then reverse the whole string, finally trim the string.
 var reverseWords2 = function(s) {
   if (s == null) {
     return s;
@@ -165,9 +167,8 @@ var reverseWords2 = function(s) {
   let chars = s.split('');
 
   let len = chars.length;
-  let last = len - 1;
-  // i, the iteration pointer, from 0 to len:
-  let i = 0;
+  let lastIndex = len - 1;
+  let i = 0; // i, the iteration pointer, from 0 to len:
   // start, the first position where a part of the string should be reversed.
   let start = 0;
   // the first position where the character is not blank
@@ -176,12 +177,12 @@ var reverseWords2 = function(s) {
 
   while (i < len) {
     start = i;
-    while (i < last && chars[i] === ' ') {
+    while (i < lastIndex && chars[i] === ' ') {
       i++;
     }
     first = i;
 
-    while (i < last && chars[i] !== ' ' && chars[i + 1] !== ' ') {
+    while (i < lastIndex && chars[i] !== ' ' && chars[i + 1] !== ' ') {
       i++;
     }
     end = i;
@@ -212,6 +213,7 @@ var reverseWords1 = function(s) {
   return arr.reverse().join(' ');
 }
 
+// todo move
 /*
 Implement pow(x, n), which calculates x raised to the power n (xn).
 
