@@ -1,10 +1,10 @@
 import React from 'react';
 import Details from '../Details';
 
-import { Stack as StackUseString } from '../../algorithms/stack/stack-use-string';
-import { Stack as StackArr } from '../../algorithms/stack/stack-use-array';
-import { Stack as StackLinkedList } from '../../algorithms/stack/stack-use-linked-list';
-import { StackObj as StackUseObj } from '../../algorithms/stack/stack-using-objects';
+import { Stack as StackUseString } from '../../ds/stack/stack-use-string';
+import { Stack as StackArr } from '../../ds/stack/stack-use-array';
+import { Stack as StackLinkedList } from '../../ds/stack/stack-use-linked-list';
+import { StackObj as StackUseObj } from '../../ds/stack/stack-using-objects';
 
 import { MinStack, MinStackMinPairs } from '../../leetcode/stack/155-min-stack';
 import { MaxStack } from '../../leetcode/stack/716-max-stack';

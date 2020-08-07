@@ -2,8 +2,8 @@ import React from 'react';
 import Details from '../Details';
 
 // problems
-import { minimumAbsoluteDifference } from '../../algorithms/greedy/min-abs-difference';
-import { luckBalance } from '../../algorithms/greedy/luck-balance';
+import { minimumAbsoluteDifference } from '../../ds/greedy/min-abs-difference';
+import { luckBalance } from '../../ds/greedy/luck-balance';
 import { twoCitySchedCost, twoCitySchedCostSortAbs } from '../../leetcode/greedy/1029-two-city-scheduling';
 //import { leastInterval } from '../../leetcode/greedy/621-task-scheduler';
 

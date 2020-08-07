@@ -1,13 +1,13 @@
 import React from 'react';
 import Details from '../Details';
 
-import { BT } from '../../algorithms/tree/bt/bt';
-import { BinarySearchTree } from '../../algorithms/tree/bst/binary-search-tree';
+import { BT } from '../../ds/tree/bt/bt';
+import { BinarySearchTree } from '../../ds/tree/bst/binary-search-tree';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 
 // traversal
-import { preorderTraversal } from '../../algorithms/tree/bt/traversal/preorder';
-import { levelOrder } from '../../algorithms/tree/bt/traversal/level-order-traversal';
+import { preorderTraversal } from '../../ds/tree/bt/traversal/preorder';
+import { levelOrder } from '../../ds/tree/bt/traversal/level-order-traversal';
 // problems
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 // import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';

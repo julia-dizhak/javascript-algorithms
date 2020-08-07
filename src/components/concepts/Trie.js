@@ -2,8 +2,8 @@ import React from 'react';
 import Details from '../Details';
 
 // design
-import { Trie as ImplementationTrie } from '../../algorithms/trie/implementation-Trie';
-import { Trie as DesignTrie } from '../../algorithms/trie/trie';
+import { Trie as ImplementationTrie } from '../../ds/trie/implementation-Trie';
+import { Trie as DesignTrie } from '../../ds/trie/trie';
 
 // problems
 import { WordDictionary, Trie as DesignTrie1 } from '../../leetcode/trie/add-search-word';

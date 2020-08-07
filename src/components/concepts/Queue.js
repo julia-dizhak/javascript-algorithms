@@ -1,8 +1,8 @@
 import React from 'react';
 import Details from '../Details';
 
-import { Queue as QueueArray } from '../../algorithms/queue/queue-use-array';
-import { Queue as QueueLinkedList, QueueUse2Pointers } from '../../algorithms/queue/queue-use-linked-list';
+import { Queue as QueueArray } from '../../ds/queue/queue-use-array';
+import { Queue as QueueLinkedList, QueueUse2Pointers } from '../../ds/queue/queue-use-linked-list';
 
 // problems related to Queue
 //import { CircularQueue } from '../../algorithms/queue/circular-queue';

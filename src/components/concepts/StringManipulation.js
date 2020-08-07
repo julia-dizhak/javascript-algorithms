@@ -4,12 +4,12 @@ import { docco, dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Details from './../Details';
 
 // problems
-import { reverseVariant2, reverseStringTwoPointersUseTemp, reverseStringRecursion } from '../../algorithms/string-manipulation/reverse-a-string';
+import { reverseVariant2, reverseStringTwoPointersUseTemp, reverseStringRecursion } from '../../ds/string-manipulation/reverse-a-string';
 // import { reverseWords } from '../../leetcode/string-manipulation/151-reverse-words';
-import { defineAnagrams } from '../../algorithms/string-manipulation/define-anagrams';
-import { makingAnagrams } from '../../algorithms/string-manipulation/making-anagrams';
-import { alternatingCharacters } from '../../algorithms/string-manipulation/tasks/alternating-characters';
-import { isValid } from '../../algorithms/string-manipulation/tasks/sherlock-valid-string';
+import { defineAnagrams } from '../../ds/string-manipulation/define-anagrams';
+import { makingAnagrams } from '../../ds/string-manipulation/making-anagrams';
+import { alternatingCharacters } from '../../ds/string-manipulation/tasks/alternating-characters';
+import { isValid } from '../../ds/string-manipulation/tasks/sherlock-valid-string';
 import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/771-number-jewels-in-stones';
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-find-all-anagrams';

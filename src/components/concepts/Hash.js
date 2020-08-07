@@ -1,8 +1,8 @@
 import React from 'react';
 import Details from './../Details';
 
-import { HashTable as HashMap } from "../../algorithms/hash/hashMap/hashMap-use-array";
-import { HashSet, HashSetVariant1 } from "../../algorithms/hash/hashSet/hashSet-use-object";
+import { HashTable as HashMap } from "../../ds/hash/hashMap/hashMap-use-array";
+import { HashSet, HashSetVariant1 } from "../../ds/hash/hashSet/hashSet-use-object";
 
 // problems
 import { twoSumBruteForce, twoSum, twoSumTwoPassHashes } from "../../leetcode/array/sum-problems/two-sum";

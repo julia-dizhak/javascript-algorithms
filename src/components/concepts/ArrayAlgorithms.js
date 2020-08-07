@@ -1,11 +1,11 @@
 import React from 'react';
 import Details from './../Details';
 
-import { mergeSortedArrays } from '../../algorithms/array/merge-sorted-arrays';
-import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../algorithms/array/clone';
+import { mergeSortedArrays } from '../../ds/arrays/merge-sorted-arrays';
+import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../ds/arrays/clone';
 
 // problems
-import { jumpOnClouds } from '../../algorithms/array/tasks/jump-on-clouds';
+import { jumpOnClouds } from '../../ds/arrays/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/majority/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';

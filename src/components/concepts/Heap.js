@@ -1,7 +1,7 @@
 import React from 'react';
 import Details from '../Details';
 
-import { MaxBinaryHeap } from '../../algorithms/heap/max-binary-heap';
+import { MaxBinaryHeap } from '../../ds/heap/max-binary-heap';
 // problems
 
 export default function Heap() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Details from './../Details';
-import { power } from '../../algorithms/number/power';
-import { swap, swapUseTemp } from '../../algorithms/number/swap';
+import { power } from '../../ds/number/power';
+import { swap, swapUseTemp } from '../../ds/number/swap';
 
 // problems
 // import { countPrimes } from '../../leetcode/number/204-count-primes';

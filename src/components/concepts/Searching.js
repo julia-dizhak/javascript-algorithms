@@ -1,11 +1,11 @@
 import React from 'react';
 import Details from './../Details';
 
-import { findIndex } from '../../algorithms/search/linear/find-index';
-import { binarySearchRecursive, binarySearch } from '../../algorithms/search/binary/binary-search';
+import { findIndex } from '../../ds/search/linear/find-index';
+import { binarySearchRecursive, binarySearch } from '../../ds/search/binary/binary-search';
 
 // problems
-import { balancedSum } from '../../algorithms/search/problems/balanced-sum';
+import { balancedSum } from '../../ds/search/problems/balanced-sum';
 import { solutionBinarySearch } from '../../leetcode/search/binary-search/278-first-bad-version';
 // import { findMin } from '../../leetcode/search/binary-search/153-find-min-in-rotated-sorted-arr';
 // import { findMin2 } from '../../leetcode/search/binary-search/154-find-min-in-rotated-sorted-arr-2';

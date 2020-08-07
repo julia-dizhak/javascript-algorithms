@@ -11,7 +11,7 @@ import { isPowerOfThree } from '../../leetcode/bitwise/power/326-power-of-three'
 // import { hasAlternatingBits } from '../../leetcode/bitwise/693-alternating-bits';
 import { singleNumber2 } from '../../leetcode/bitwise/single-number/137-single-number-2';
 // import { singleNumber3 } from '../../leetcode/bitwise/single-number/260-single-number-3';
-import { getBit, setBit, clearBit } from '../../algorithms/bitwise/common-bit-tasks';
+import { getBit, setBit, clearBit } from '../../ds/bitwise/common-bit-tasks';
 
 
 export default function BitManipulation() {

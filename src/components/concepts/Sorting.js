@@ -2,16 +2,16 @@ import React from 'react';
 import Details from './../Details';
 
 // sorting
-import { bubbleSort } from '../../algorithms/sorting/bubble-sort';
-import { quickSort } from '../../algorithms/sorting/quick-sort';
-import { selectionSort } from '../../algorithms/sorting/selection-sort';
-import { mergeSort, merger } from '../../algorithms/sorting/merge-sort';
-import { insertionSort } from '../../algorithms/sorting/insertion-sort';
+import { bubbleSort } from '../../ds/sorting/bubble-sort';
+import { quickSort } from '../../ds/sorting/quick-sort';
+import { selectionSort } from '../../ds/sorting/selection-sort';
+import { mergeSort, merger } from '../../ds/sorting/merge-sort';
+import { insertionSort } from '../../ds/sorting/insertion-sort';
 // import { shellSort } from '../../algorithms/sorting/shell-sort';
-import { heapSort } from '../../algorithms/sorting/heap-sort';
+import { heapSort } from '../../ds/sorting/heap-sort';
 
 // problems
-import { findMedian } from '../../algorithms/sorting/problems/find-median';
+import { findMedian } from '../../ds/sorting/problems/find-median';
 
 function Sorting() {
   return (
