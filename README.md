@@ -378,6 +378,14 @@ started on 12/21/17
     | Loop         | O(n)    | O(n)    |
     | Math.pow     | O(n)    | O(n)?   |
 
+    * [422 Find all duplicates in Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/422-find-all-duplicates.js)
+
+    | Approach:          | Time          | Space   |
+    | :---               | :---          | :---    |
+    | Hash               | O(n)          | O(n)    |
+    | Sort + 2 pointers  | O(n log n)    | O(1)    |
+    | Use Array          | O(n)          | O(n)    |
+
 * ### Hash
     * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/hash/two-sum.js)
 

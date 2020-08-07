@@ -1,13 +1,17 @@
 import {
   //findAllDuplicates,
   //findAllDuplicates1 as findAllDuplicates,
-  findAllDuplicates2 as findAllDuplicates
-} from './find-all-duplicates';
+  //findAllDuplicates2 as findAllDuplicates,
+
+  //findAllDuplicatesUseHash as findAllDuplicates,
+  //findAllDuplicatesSort as findAllDuplicates,
+  findAllDuplicatesUseArray as findAllDuplicates
+} from './442-find-all-duplicates';
 
 describe('find all duplicates in array test case', () => {
-  it('array is undefined or empty', () => {
-    expect(findAllDuplicates([])).toEqual(-1);
-  });
+  // it('array is undefined or empty', () => {
+  //   expect(findAllDuplicates([])).toEqual(-1);
+  // });
 
   it('there are 2 duplicates', () => {
     expect(findAllDuplicates([1,1])).toEqual([1]);
