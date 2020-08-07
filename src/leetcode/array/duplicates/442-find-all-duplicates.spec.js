@@ -1,11 +1,8 @@
 import {
-  //findAllDuplicates,
-  //findAllDuplicates1 as findAllDuplicates,
-  //findAllDuplicates2 as findAllDuplicates,
-
+  findAllDuplicates,
   //findAllDuplicatesUseHash as findAllDuplicates,
   //findAllDuplicatesSort as findAllDuplicates,
-  findAllDuplicatesUseArray as findAllDuplicates
+  //findAllDuplicatesUseArray as findAllDuplicates
 } from './442-find-all-duplicates';
 
 describe('find all duplicates in array test case', () => {

@@ -23,6 +23,7 @@ Intuition
 You could create a map to store the count of occurrence of each element and then
 only return those elements which have count equal to 2. But this would result
 in O(n) space complexity.
+
 time is O(n)
 space is (n)
 */
@@ -86,7 +87,6 @@ So it arr[i] is not already 0, when you can say that is duplicate
 
 time is O(n)
 space is O(n)
-
 */
 const findAllDuplicatesUseArray = function(nums) {
   const n = nums.length;
@@ -107,56 +107,88 @@ const findAllDuplicatesUseArray = function(nums) {
 }
 
 /*
-Approach
+Approach Mutate exists Array
 
-Linear loop through an array
+If you wanna find a solution without extra space, when you need to memorize a trick
+(idea).
+Pay an attention to detail in each description.
+What does catch your eyes?
+We could exploit the fact that each element of the array lies between 1 and n
+(size of array).
 
-Should catch you eye
-memorised idea
-pay attention to detail
-there is a trick
-modify an input array
-value could be an index as well
-reference index
-make it negative
-if its already negative when we already seen it
+Cath my eye:
+1 For example the fact that the numbers are between 1 and the length of the array
+points to the direction that the solution perhaps has something to do with
+indices of the array, as subtracting 1 from any value in the array will give
+you a valid index.
+2 Also they ask you to do it in no extra space. That leads to the belief that
+maybe the given array has to be mutated.
 
-We could exploit the fact that each element of the array lies between 1 and n(size of array). We can mutate the array to store information about the number of occurences of an element. We could do this by changing the sign of the element at nums[i] index. If we reach at an element for which the element at that index is negative, this implies that, that particular element has appeared before.
+We can mutate the array to store information about the number of occurrences of
+an element. We could do this by changing the sign of the element at nums[i] index.
+If we reach at an element for which the element at that index is negative, this
+implies that, that particular element has appeared before.
 
-Say, nums = [4,3,2,7,8,2,3,1]. While traversing on the array we would change the sign of elements at nums[i] index and check whether the element at nums[i] is negative or not.
+Say, nums = [4,3,2,7,8,2,3,1]. While traversing on the array we would change the
+sign of elements at nums[i] index and check whether the element at nums[i]
+is negative or not.
 
-i = 0, [4,3,2,-7,8,2,3,1]      // change the sign of element at 4th index
-i = 1, [4,3,-2,-7,8,2,3,1]     // change the sign of element at 3rd index
-i = 2, [4,-3,-2,-7,8,2,3,1]    // change the sign of element at 2nd index
-i = 3, [4,-3,-2,-7,8,2,-3,1]   // change the sign of element at 7th index
-i = 4, [4,-3,-2,-7,8,2,-3,-1]   // change the sign of element at 8th index
-i = 5, [4,3,-2,-7,8,2,-3,-1]    // here before changing the sign of element at 2nd index we will realize that it is already negative, which implies that 2 has appeared before in the array. So, we will push 2 in the ans
-i = 6, [4,3,2,-7,8,2,-3,-1]     // again we will encounter a negative element at 3rd index and we will push 3 into our ans
-i = 7, [-4,3,-2,-7,8,2,-3,-1]   // change the sign of element at 1st index
-This way we could keep a track of element which appears again without requiring any extra space.
+change the sign of element at 4th index
+i = 0, [4,3,2,-7,8,2,3,1]
+change the sign of element at 3rd index
+i = 1, [4,3,-2,-7,8,2,3,1]
+change the sign of element at 2nd index
+i = 2, [4,-3,-2,-7,8,2,3,1]
+change the sign of element at 7th index
+i = 3, [4,-3,-2,-7,8,2,-3,1]
+change the sign of element at 8th index
+i = 4, [4,-3,-2,-7,8,2,-3,-1]
+here before changing the sign of element at
+i = 5, [4,3,-2,-7,8,2,-3,-1]
+2nd index we will realize that it is already negative, which implies that 2 has
+appeared before in the array. So, we will push 2 in the ans
 
+again we will encounter a negative element at 3rd index and we will push 3 into
+our ans
+i = 6, [4,3,2,-7,8,2,-3,-1]
+change the sign of element at 1st index
+i = 7, [-4,3,-2,-7,8,2,-3,-1]
+This way we could keep a track of element which appears again without requiring
+any extra space.
+
+Time is O(n)
+
+Space is O(1)
+What ever you return doesn't mean space complexity of an algorithm. I mean you have to
+return a result (in this case as array) and it requires space. But this space doesn't
+really grow in some formula then your input grows
+Its' a constant space.
 */
-const findAllDuplicates2 = function(nums) {
-  const n = nums.length;
-  if (n <= 0) return -1;
+const findAllDuplicates = function(nums) {
+  // when find a number i, flip the number at position i-1 to negative.
+  // if the number at position i-1 is already negative, i is the number that
+  // occurs twice
 
   let result = [];
 
   for (let i = 0; i < nums.length; i++) {
-    //debugger
-    //  check if the element at nums[i]th index is negative
-    if (nums[Math.abs(nums[i]) - 1] < 0) {
-      result.push(Math.abs(nums[i]))
-    }
-    nums[Math.abs(nums[i]) - 1] *= - 1; // change the sign of nums[i]th element
+    let index = Math.abs(nums[i]) - 1;
+    // check if the element at nums[i]th index is negative
+    // Because index can never be negative, we don't have to use Math.abs(index + 1)
+    if (nums[index] < 0) result.push(index+1);
+    // change the sign of nums[i]th element
+    nums[index] = -nums[index]; // or nums[index] *= -1;
   }
 
-
-
-  //console.log('nums', nums)
   return result;
 }
 
+// tests
+// console.log('findAllDuplicates', findAllDuplicates([4,3,2,7,8,2,3,1]))
+// console.log('findAllDuplicates', findAllDuplicates([1,1]))
+
+
+// move
 /*
 linear time
 extra space
@@ -225,9 +257,6 @@ const findAllDuplicatesMin = function(nums) {
 //console.log('findAllDuplicatesMin', findAllDuplicatesMin([4,3,2,7,8,2,3,1]))
 
 
-//https://leetcode.com/discuss/explore/august-leetcoding-challenge/775784/find-all-duplicates-in-array-c-on-time-o1-space-with-explanation
-console.log('findAllDuplicates2', findAllDuplicates2([4,3,2,7,8,2,3,1]))
-//console.log('findAllDuplicates2', findAllDuplicates2([1,1]))
 // https://medium.com/javascript-in-plain-english/algorithms-101-group-anagrams-in-javascript-b3e3c10d211e
 // https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns
 // https://dev.to/wangonya/sorting-algorithms-with-javascript-part-2-3g51#:~:text=log(sorted)-,Heap%20Sort,every%20time%20this%20is%20done.
@@ -238,7 +267,7 @@ export {
   findAllDuplicatesUseHash,
   findAllDuplicatesSort,
   findAllDuplicatesUseArray,
-  //findAllDuplicates,
+  findAllDuplicates,
   //findAllDuplicates1,
-  findAllDuplicates2
+  //findAllDuplicates2
 }
