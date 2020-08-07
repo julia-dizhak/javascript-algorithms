@@ -18,7 +18,7 @@ All inputs are guaranteed to be non-empty strings.
 */
 
 /*
-Approach: 
+Approach:
 
 class Node = {
   key: key,
@@ -32,6 +32,12 @@ class Trie {
     children: {}
   }
 }
+
+time:
+insert
+search
+remove
+
 */
 class TrieNode {
   constructor(key) {

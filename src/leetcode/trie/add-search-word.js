@@ -37,6 +37,12 @@ class TrieNode {
   }
 }
 
+class Trie {
+  constructor() {
+    
+  }
+}
+
 // I think best case is O(n) (straight search down tree), worst case is O(26^m * n) where n is the length of the search term and m is the number of "." characters that appear in the search term.
 // WordDictionary.prototype.search = function(word) {
 //   var search = function(current, level) {
@@ -122,6 +128,11 @@ class WordDictionary {
   }
 
 };
+
+// solutions
+// DFS https://leetcode.com/problems/add-and-search-word-data-structure-design/discuss/499657/JavaScript-Solution-Trie-%2B-DFS
+// https://leetcode.com/problems/add-and-search-word-data-structure-design/discuss/528035/Javascript-and-C%2B%2B-solutions
+// https://leetcode.com/problems/add-and-search-word-data-structure-design/discuss/774859/JavaScript-Solution
 
 // tests
 let trie1 = new WordDictionary();
