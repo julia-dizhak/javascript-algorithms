@@ -24,74 +24,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Author
 
 by [Yuliia (Julia) Dizhak](https://github.com/julia-dizhak)
+started on 12/21/17
 
-created on 12/21/17
-
-## Main Algorithms implementation
-
-* ### Bitwise
-    * [Common bit tasks: getBit(n,i), setBit(n,i), toggleBit(n,i)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
-
-    | Bit task              | Approach      | Time/Space    |
-    | :---                  | :---          | :---          |
-    | getBit(num, i)        | mask + AND    | O(1)          |
-    | setBit(num, i)        | mask + OR     | O(1)          |
-    | clearBit(num, i)      | ~mask + AND   | O(1)          |
-    | toggleBit(num, i)     | XOR           | O(1)          |
-
-    * [Check if number is even or odd](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/check-if-number-even-or-odd.js)
-
-    | Approaches:       | Time    | Space    |
-    | :---              | :---    | :---     |
-    | AND               | O(1)    | O(1)     |
-    | XOR               | O(1)    | O(1)     |
-
-* ### Math (General)
-
-* ### String manipulation
-    * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/reverse-a-string.js)
+## Main Data Structures implementations by JS
 
 * ### Array
-    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
-    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
-
-* ### Hash
-    * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/two-sum.js)
-
-    | Approaches:        | Time    | Space    |
-    | :---               | :---    | :---     |
-    | Brute force        | O(n^2)  | O(1)     |
-    | 2-pass Hash table  | O(n)    | O(n)     |
-    | 1-pass Hash table  | O(n)    | O(n)     |
-
-* ### Search: linear and binary search
-    * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
-    * [Binary search (iterative, recursion)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary/binary-search.js)
-
-    | Search name       | O          | Ω      | Space  |
-    | :---              | :---       | :---   | :---   |
-    | Linear Search     | O(n)       | Ω(1)   | O(1)   |
-    | Binary Search     | O(log n)   | Ω(1)   | O(1)   |
-
-* Sorting
-    * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
-    * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/selection-sort.js)
-    * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/insertion-sort.js)
-    * [Shell sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/shell-sort.js)
-    * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
-    * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/quick-sort.js)
-    * [Heapsort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/heap-sort.js)
-
-
-    | Sort name       | Ω           | θ          | O         | Space     | Stable  | Adaptive  |
-    | :---            | :---        | :---       | :---      | :---      | :---    | :---      |
-    | Bubble sort     | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
-    | Selection sort  | Ω(n^2)      | θ(n^2)     | O(n^2)    | O(1)      | -       | -         |
-    | Insertion sort  | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
-    | Shell sort      | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      |         |           |
-    | Merge sort      | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(N)      | +       | -         |
-    | Quick sort      | Ω(NlogN)    | θ(NlogN)   | O(n^2)    | O(NlogN)  | -       | -         |
-    | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)      | -       | -         |
+    ...
 
 * ### Linked Lists
     * [Singly Linked List Implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/linked-lists/singly/singly-linked-list.js)
@@ -134,7 +72,7 @@ created on 12/21/17
     | remove            | O(1)      | 0(1)      |
     | contains          | O(1)      | 0(1)      |
 
-* ### Binary Tree
+* ### Binary Tree (BT)
     * [BT](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/tree/bt/bt.js)
 
     | Complexity:               | Time      |  Space    |
@@ -182,15 +120,68 @@ created on 12/21/17
     | deleteMax     | O(log n)  | O(1)      |
     | max           | O(1)      | O(1)      |
 
+## Bitwise operator in JS
+
+* ### Common bit operations
+    * [Common bit tasks: getBit(n,i), setBit(n,i), toggleBit(n,i)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/common-bit-tasks.js)
+
+    | Bit task              | Approach      | Time/Space    |
+    | :---                  | :---          | :---          |
+    | getBit(num, i)        | mask + AND    | O(1)          |
+    | setBit(num, i)        | mask + OR     | O(1)          |
+    | clearBit(num, i)      | ~mask + AND   | O(1)          |
+    | toggleBit(num, i)     | XOR           | O(1)          |
+
+## Searching and Sorting
+
+* ### Search: linear and binary
+    * [Linear search](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/linear/find-index.js)
+
+    * [Binary search (iterative, recursion)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/search/binary/binary-search.js)
+
+    | Search name       | O          | Ω      | Space  |
+    | :---              | :---       | :---   | :---   |
+    | Linear Search     | O(n)       | Ω(1)   | O(1)   |
+    | Binary Search     | O(log n)   | Ω(1)   | O(1)   |
+
+* ### Sorting
+    * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/bubble-sort.js)
+    * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/selection-sort.js)
+    * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/insertion-sort.js)
+    * [Shell sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/shell-sort.js)
+    * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/merge-sort.js)
+    * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/quick-sort.js)
+    * [Heapsort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/sorting/heap-sort.js)
+
+
+    | Sort name       | Ω           | θ          | O         | Space     | Stable  | Adaptive  |
+    | :---            | :---        | :---       | :---      | :---      | :---    | :---      |
+    | Bubble sort     | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
+    | Selection sort  | Ω(n^2)      | θ(n^2)     | O(n^2)    | O(1)      | -       | -         |
+    | Insertion sort  | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
+    | Shell sort      | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      |         |           |
+    | Merge sort      | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(N)      | +       | -         |
+    | Quick sort      | Ω(NlogN)    | θ(NlogN)   | O(n^2)    | O(NlogN)  | -       | -         |
+    | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)      | -       | -         |
+
+## Programming methods
+
 * ### Recursion
     * [Factorial](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/factorial.js)
 
     * [Fibonacci Number (recursion, iterative)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/recursion/fibonacci.js)
 
 
-## Problems solving on leetcode
+## Problem solving on leetcode
 
 * ### Bitwise operators
+    * [Check if number is even or odd](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/bitwise/check-if-number-even-or-odd.js)
+
+    | Approaches:       | Time    | Space    |
+    | :---              | :---    | :---     |
+    | AND               | O(1)    | O(1)     |
+    | XOR               | O(1)    | O(1)     |
+
     * [476. Number complement / 1009. Complement of Base 10 Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/476-number-complement.js)
 
     | Approaches:                | Time          | Space      |
@@ -298,6 +289,8 @@ created on 12/21/17
     | Math          | O(1)      | 0(1)      |
 
 * ### String manipulation
+    * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/reverse-a-string.js)
+
     * [541. Reverse a string II (2 pointers depends on k)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/541-reverse-string2.js)
 
     * [392. Is subsequence](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/392-is-subsequence.js)
@@ -352,6 +345,9 @@ created on 12/21/17
     * [771. Jewels and Stones]
 
 * ### Array
+    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/clone.js)
+    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/array/merge-sorted-arrays.js)
+
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
 
     * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/26-remove-duplicates-from-sorted-array.js)
@@ -391,6 +387,14 @@ created on 12/21/17
     | Math.pow     | O(n)    | O(n)?   |
 
 * ### Hash
+    * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/algorithms/hash/two-sum.js)
+
+    | Approaches:        | Time    | Space    |
+    | :---               | :---    | :---     |
+    | Brute force        | O(n^2)  | O(1)     |
+    | 2-pass Hash table  | O(n)    | O(n)     |
+    | 1-pass Hash table  | O(n)    | O(n)     |
+
     * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
 
     | Approach           | Time   | Space   |
