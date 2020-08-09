@@ -95,7 +95,7 @@ started on 12/21/17
     | :---                 | :---     | :---       |
     | Iterative + Queue    | O(n)     | 0(n/2 = n) |
 
-    * [Level order zigzag traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/tree/bt/traversal/103-level-order-zigzag-traversal.js)
+    * [Level order zigzag traversal](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/bt/traversal/103-level-order-zigzag-traversal.js)
 
     | Approaches:     | Time     | Space      |
     | :---            | :---     | :---       |

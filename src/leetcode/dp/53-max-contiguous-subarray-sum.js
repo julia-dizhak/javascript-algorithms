@@ -130,6 +130,9 @@ var maxSubArrayBruteForce = function(nums) {
 //console.log(maxSubArrayBruteForce([-2,1,-3,4,-1,2,1,-5,4]))
 //console.log(maxSubArrayBruteForce([-2,1,-3]))
 
+// https://github.com/bephrem1/backtobackswe/blob/master/Dynamic%20Programming%2C%20Recursion%2C%20%26%20Backtracking/MaxContiguousSubarraySum/LinearTime.java
+// https://leetcode.com/problems/maximum-subarray/discuss/20193/DP-solution-and-some-thoughts
+
 export {
   maxSubArrayBruteForceCubicTime,
   maxSubArrayBruteForce

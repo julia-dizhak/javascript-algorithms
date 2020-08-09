@@ -22,6 +22,22 @@ return its level order traversal as:
 ]
 */
 
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val === undefined ? 0 : val)
+ *     this.left = (left === undefined ? null : left)
+ *     this.right = (right === undefined ? null : right)
+ * }
+*/
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val === undefined ? 0 : val);
+    this.left = (left === undefined ? null : left);
+    this.right = (right === undefined ? null : right);
+  }
+}
+
 /*
 Approach iterative, Queue
 Breadth-first Search - exploring every level before going further
@@ -87,6 +103,15 @@ var levelOrderForLeetcode = function(root) {
   return result;
 };
 
+// tests
+let tree = new TreeNode(0)
+tree.left = new TreeNode(3);
+tree.right = new TreeNode(2);
+tree.left.left = new TreeNode(9);
+tree.right.right = new TreeNode(10);
+console.log('tree', tree);
+console.log('levelOrderForLeetcode', levelOrderForLeetcode(tree));
+
 /*
 Leetcode
 107 Binary Tree Level Order Traversal II
@@ -148,22 +173,6 @@ var levelOrderBottom = function(root) {
   }
   return result
 };
-
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val === undefined ? 0 : val)
- *     this.left = (left === undefined ? null : left)
- *     this.right = (right === undefined ? null : right)
- * }
-*/
-class TreeNode {
-  constructor(val, left, right) {
-    this.val = (val === undefined ? 0 : val);
-    this.left = (left === undefined ? null : left);
-    this.right = (right === undefined ? null : right);
-  }
-}
 
 class BT {
   constructor(val) {

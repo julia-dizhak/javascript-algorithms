@@ -8,11 +8,14 @@ import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tr
 // traversal
 import { preorderTraversal } from '../../ds/tree/bt/traversal/preorder';
 import { levelOrder } from '../../ds/tree/bt/traversal/level-order-traversal';
+// import { zigzagLevelOrder } from '../../algorithms/tree/bt/traversal/103-level-order-zigzag-traversal';
+import { verticalTraversal } from '../../leetcode/tree/binary-tree/traversal/987-vertical-order-traversal';
+
 // problems
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 // import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
 // import { isSameTree, TreeNode } from '../../leetcode/tree/binary-tree/100-same-tree';
-// import { zigzagLevelOrder } from '../../algorithms/tree/bt/traversal/103-level-order-zigzag-traversal';
+
 import { buildTreeUseRecursion } from '../../leetcode/tree/binary-tree/traversal/106-construct-bt-from-postorder-inorder-traversal';
 import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/max-width-bt';
 
@@ -22,6 +25,8 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 //import { reformatDate, rangeSum, minDifference, subsets } from '../../leetcode/contest/biweekly/30/index';
 //import { countOdds, numOfSubarrays } from '../../leetcode/contest/biweekly/31/index';
 
+// contest 32?
+//import {findKthPositive, minInsertions} from '../../leetcode/contest/biweekly/32/index';
 
 export default function Tree() {
   return (
@@ -33,8 +38,10 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={buildTreeUseRecursion.toString()}
-            //code={numOfSubarrays.toString()}
+            //code={findKthPositive.toString()}
+            //secondCode={minInsertions.toString()}
+            //code={buildTreeUseRecursion.toString()}
+            //code={verticalTraversal.toString()}
             //secondCode={widthOfBinaryTree.toString()}
             // secondCode={Trie.toString()}
           />

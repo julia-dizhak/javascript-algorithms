@@ -70,7 +70,7 @@ const findAllDuplicatesSort = function(nums) {
 
 
 /*
-Approach Array
+Approach Array (doesn't pass requirements)
 
 The idea that you can create an array of size n+1 and fill it by 0 .
 Because you know that given an array of integers in between 1 ≤ a[i] ≤ n (n = size
@@ -261,6 +261,10 @@ const findAllDuplicatesMin = function(nums) {
 // https://www.toptal.com/javascript/comprehensive-guide-javascript-design-patterns
 // https://dev.to/wangonya/sorting-algorithms-with-javascript-part-2-3g51#:~:text=log(sorted)-,Heap%20Sort,every%20time%20this%20is%20done.
 //https://codeburst.io/implementing-dfs-and-bfs-using-javascript-5034f3cee9a1
+
+// todo check solution with swap
+// https://leetcode.com/problems/find-all-duplicates-in-an-array/discuss/92430/Javascript-simple-solution-with-explaination
+// and post my own solution with array
 
 
 export {
