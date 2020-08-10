@@ -1,6 +1,8 @@
 import {
   // floodFill,
-  floodFillUseHelper as floodFill
+  //floodFillUseHelper as floodFill,
+  //floodFillBFS as floodFill,
+  floodFillDFS as floodFill
 } from './733-flood-fill';
 
 describe('flood fill algorithm test case', () => {

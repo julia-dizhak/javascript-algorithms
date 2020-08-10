@@ -53,7 +53,7 @@ which determines the number of colors it can represent).
 */
 
 /*
-Approach 1: Depth-First Search
+Approach 1: DFS via recursion
 
 Intuition
 We perform the algorithm explained in the problem description:
@@ -110,6 +110,9 @@ var floodFill = function(image, row, col, newColor, startingColor = image[row][c
 
 /*
 The same approach: DFS via recursion helper method.
+
+Why this approach called DFS?
+because of visited flag?
 
 We can use a function dfs to perform a flood-fill on a target pixel.
 And check a boundary conditions + visited flag to prevent infinite loop.
@@ -180,19 +183,79 @@ function helper(img, i, j, originalColor, newColor) {
   helper(img, i, j + 1, originalColor, newColor);
 }
 
-// let input = [
-//   [1,1,1],
-//   [1,1,0],
-//   [1,0,1]
-// ]
-// console.log('floodFillUseHelper', floodFillUseHelper(input, 1, 1, 2))
-
 /*
-Approach BFS todo
+Approach BFS
+
+todo
+time is O() need to visit all nodes
+space is
 
 */
+const floodFillBFS = function(img, sr, sc, newColor) {
+  const rows = img.length;
+  const cols = img[0].length;
+  const startingColor = img[sr][sc];
+
+  if (startingColor === newColor) return img;
+
+  // if startingColor !== newColor
+  let queue = [[sr,sc]];
+
+  while (queue.length) {
+    const [i, j] = queue.shift();
+    if (img[i][j] === startingColor) {
+      img[i][j] = newColor;
+      if (i-1 >= 0) queue.push([i-1, j]); // up
+      if (i+1 < rows) queue.push([i+1, j]); // down
+      if (j-1 >= 0) queue.push([i, j-1]); // left
+      if (j+1 < cols) queue.push([i, j+1]); // right
+    }
+  }
+
+
+  return img;
+}
+
+
+/*
+Approach: Depth-First Search
+I'm not sure that it's correct one solution 
+
+*/
+const floodFillDFS = function(img, sr, sc, newColor) {
+  const rows = img.length;
+  const cols = img[0].length;
+  const startingColor = img[sr][sc]
+  if (startingColor === newColor) return img;
+
+  let stack = [[sr,sc]];
+  while (stack.length) {
+    const [i,j] = stack.pop();
+    if (img[i][j] === startingColor) {
+      img[i][j] = newColor;
+
+      if (i-1 >= 0) stack.push([i-1, j]); // up
+      if (i+1 < rows) stack.push([i+1, j]); // down
+      if (j-1 >= 0) stack.push([i, j-1]); // left
+      if (j+1 < cols) stack.push([i, j+1]); // right
+    }
+  }
+
+  return img;
+}
+
+// tests
+let input = [
+  [1,1,1],
+  [1,1,0],
+  [1,0,1]
+]
+//console.log('floodFillUseHelper', floodFillUseHelper(input, 1, 1, 2))
+console.log('floodFillDFS', floodFillDFS(input, 1, 1, 2))
 
 export {
   floodFill,
-  floodFillUseHelper
+  floodFillUseHelper,
+  floodFillBFS,
+  floodFillDFS
 }
