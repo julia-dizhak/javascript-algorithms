@@ -36,6 +36,7 @@ class TreeNode {
   }
 }
 
+// https://leetcode.com/problems/path-sum-iii/discuss/91895/JavaScript-Solution-BFS-and-DFS-with-explanation
 /*
 Approach
 
@@ -61,19 +62,19 @@ var hasPathSum = function(root, sum) {
   if (root !== null) stack.push([root, root.val]);
 
   let result = [];
-  while (stack.length) {
-    const [node, val] = stack.pop();
+  // while (stack.length) {
+  //   const [node, val] = stack.pop();
 
-    // means leaf
-    if (!node.left && !node.right) {
-      if (val === sum) {
-        return true;
-      }
-    }
+  //   // means leaf
+  //   if (!node.left && !node.right) {
+  //     if (val === sum) {
+  //       return true;
+  //     }
+  //   }
 
-    if (node.right) stack.push(node.right, val + node.right.val);
-    if (node.left) stack.push(node.left, val + node.val.left);
-  }
+  //   if (node.right) stack.push(node.right, val + node.right.val);
+  //   if (node.left) stack.push(node.left, val + node.val.left);
+  // }
 
   console.log('result2', result);
   return false
@@ -175,49 +176,33 @@ grid[i][j] is only 0, 1, or 2.
 // create a file called todo
 // todo buy premium and check all tasks for august challenge
 
+
+
 /*
-Excel sheet column number
+448. Find All Numbers Disappeared in an Array
+Easy
 
-Given a column title as appear in an Excel sheet, return its corresponding column number.
+3008
 
-For example:
+253
 
-    A -> 1
-    B -> 2
-    C -> 3
-    ...
-    Z -> 26
-    AA -> 27
-    AB -> 28
-    ...
-Example 1:
+Add to List
 
-Input: "A"
-Output: 1
-Example 2:
+Share
+Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
 
-Input: "AB"
-Output: 28
-Example 3:
+Find all the elements of [1, n] inclusive that do not appear in this array.
 
-Input: "ZY"
-Output: 701
+Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
 
+Example:
 
-Constraints:
+Input:
+[4,3,2,7,8,2,3,1]
 
-1 <= s.length <= 7
-s consists only of uppercase English letters.
-s is between "A" and "FXSHRXW".
+Output:
+[5,6]
 */
-
-/**
- * @param {string} s
- * @return {number}
- */
-var titleToNumber = function(s) {
-
-};
 
 export {
   hasPathSum

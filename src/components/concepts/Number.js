@@ -7,7 +7,8 @@ import { swap, swapUseTemp } from '../../ds/number/swap';
 // import { countPrimes } from '../../leetcode/number/204-count-primes';
 // import { isUgly } from '../../leetcode/number/263-ugly-number'
 // import { nthUglyNumber } from '../../leetcode/number/264-ugly-number-2'
-//import { addDigits } from '../../leetcode/math/258-add-digits'
+// import { addDigits } from '../../leetcode/math/258-add-digits'
+//import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
 
 export default function Number() {
   return (
@@ -15,8 +16,9 @@ export default function Number() {
       <h2>Numbers / Math</h2>
 
       <Details
-        id=""
+        id="number-test"
         question="test"
+        //code={titleToNumber.toString()}
         //code={addDigits.toString()}
       />
 

@@ -251,6 +251,13 @@ started on 12/21/17
     | Mask and shift    | O(1)      | O(1)   |
 
 * ### Math / Number
+    * [171. Excel sheet column number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/171-excel-sheet-column-number.js)
+
+    | Approaches:      | Time         | Space     |
+    | :---             | :---         | :---      |
+    | Math + loop      | O(n)         | 0(1)      |
+    | Recursion        | O(n)         | 0(n)      |
+
     * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/263-ugly-number.js)
 
     | Approaches:                 | Time         | Space     |
