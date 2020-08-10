@@ -16,6 +16,9 @@ import { verticalTraversal } from '../../leetcode/tree/binary-tree/traversal/987
 // import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
 // import { isSameTree, TreeNode } from '../../leetcode/tree/binary-tree/100-same-tree';
 
+// path sum
+import { hasPathSum } from '../../leetcode/tree/binary-tree/path-sum/112-path-sum';
+
 import { buildTreeUseRecursion } from '../../leetcode/tree/binary-tree/traversal/106-construct-bt-from-postorder-inorder-traversal';
 import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/max-width-bt';
 
@@ -38,6 +41,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
+            code={hasPathSum.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}
