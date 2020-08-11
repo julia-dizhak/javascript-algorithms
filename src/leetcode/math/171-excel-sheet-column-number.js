@@ -1,6 +1,6 @@
 /*
-Excel sheet column number
-
+171 Excel sheet column number
+easy
 Given a column title as appear in an Excel sheet, return its corresponding column
 number.
 
@@ -65,7 +65,7 @@ var titleToNumberUseRecursion = function(s) {
 };
 
 /*
-Approach Math +
+Approach Math + base 26
 
 Think of this problem as the same way you'd manually take a binary string and
 calculate it's decimal representation. Instead of being base 2 it is base 26.

@@ -186,10 +186,11 @@ function helper(img, i, j, originalColor, newColor) {
 /*
 Approach BFS
 
-todo
-time is O() need to visit all nodes
-space is
+Create a queue with queue = [[sr,sc]]. Dequeue a queue, go to 4 directions and
+check of i,j are not out of boundary.
 
+time is O(n) need to visit all nodes
+space is O(n)
 */
 const floodFillBFS = function(img, sr, sc, newColor) {
   const rows = img.length;
@@ -212,14 +213,13 @@ const floodFillBFS = function(img, sr, sc, newColor) {
     }
   }
 
-
   return img;
 }
 
 
 /*
 Approach: Depth-First Search
-I'm not sure that it's correct one solution 
+I'm not sure that it's correct solution
 
 */
 const floodFillDFS = function(img, sr, sc, newColor) {
@@ -250,8 +250,8 @@ let input = [
   [1,1,0],
   [1,0,1]
 ]
-//console.log('floodFillUseHelper', floodFillUseHelper(input, 1, 1, 2))
-console.log('floodFillDFS', floodFillDFS(input, 1, 1, 2))
+// console.log('floodFillUseHelper', floodFillUseHelper(input, 1, 1, 2))
+// console.log('floodFillDFS', floodFillDFS(input, 1, 1, 2))
 
 export {
   floodFill,
