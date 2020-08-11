@@ -245,11 +245,11 @@ const floodFillDFS = function(img, sr, sc, newColor) {
 }
 
 // tests
-let input = [
-  [1,1,1],
-  [1,1,0],
-  [1,0,1]
-]
+// let input = [
+//   [1,1,1],
+//   [1,1,0],
+//   [1,0,1]
+// ]
 // console.log('floodFillUseHelper', floodFillUseHelper(input, 1, 1, 2))
 // console.log('floodFillDFS', floodFillDFS(input, 1, 1, 2))
 

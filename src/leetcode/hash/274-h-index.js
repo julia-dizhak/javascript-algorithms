@@ -30,12 +30,29 @@ Hint 3
 A faster approach is to use extra space.
 */
 
+/*
+Approach
+
+The idea is ti see that the result can only range from 0 to the length of the array
+(because we can't have h-index greater than the total papers published)
+*/
 /**
  * @param {number[]} citations
  * @return {number}
  */
 var hIndex = function(citations) {
+  const n = citations.length;
+  const total = 0;
+  let arr = new Array(n+1);
 
+  for (let i = 0; i < n; i++) {
+    if (citations[i] >= n) arr[n]++
+    else {
+      arr[citations[i]]++
+    }
+  }
+
+  console.log('arr', arr)
 };
 
 
@@ -71,3 +88,9 @@ Could you solve it in logarithmic time complexity?
 // wiki https://en.wikipedia.org/wiki/H-index
 // https://leetcode.com/problems/h-index-ii/discuss/71063/Standard-binary-search
 // https://leetcode.com/problems/h-index-ii/discuss/71124/Java-binary-search-simple-and-clean
+
+// tests
+
+export {
+  hIndex
+}

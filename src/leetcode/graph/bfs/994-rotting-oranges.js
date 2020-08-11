@@ -96,10 +96,6 @@ var rottingOranges = function(grid) {
   // console.log('rotten', rotten);
   if (isEmpty(fresh) || isEmpty(rotten)) return -1;
 
-  //if (Object.values(fresh).length <= 0 || Object.values(rotten).length <= 0) return -1
-// const [row, col] = Object.keys(rotten)[0].split('');
-  // let queue = [[Number(row), Number(col)]];
-
   let minutes = 0;
   let directions = [[1,0], [-1,0], [0,1], [0,-1]];
 
@@ -128,40 +124,6 @@ var rottingOranges = function(grid) {
   }
 
   return minutes;
-
-
-  // while (queue.length) {
-  //   //debugger
-  //   let [i,j] = queue.shift();
-
-  //   // flag visited or marked I was already in this position
-  //   if (grid[i][j] === 2) {
-  //     // top
-  //     if (i+1 < rows && grid[i+1][j] === 1) {
-  //       grid[i+1][j] = 2;
-  //       queue.push([i+1, j]);
-  //     }
-
-  //     if (i-1 >= 0 && grid[i-1][j] === 1) {
-  //       grid[i-1][j] = 2;
-  //       queue.push([i-1, j])
-  //     }
-
-  //     // right
-  //     if (j+1 < cols && grid[i][j+1] === 1) {
-  //       grid[i][j+1] = 2;
-  //       queue.push([i, j+1]);
-  //     }
-
-  //     if (j-1 >= 0 && grid[i][j-1] === 1) {
-  //       grid[i][j-1] = 2;
-  //       queue.push([i, j-1]);
-  //     }
-
-  //   }
-  //   minute++;
-  // }
-
 }
 
 /*
@@ -169,7 +131,6 @@ Approach BFS(queue)
 
 time is O(n)
 space is O(n) size of Queue
-
 */
 var rottingOrangesBFS = function(grid) {
   if (grid === null || grid.length < 0) return -1;
@@ -223,17 +184,91 @@ var rottingOrangesBFS = function(grid) {
   return countFresh === 0 ? minutes - 1 : -1
 }
 
+/*
+Approach BFS + Array
+
+*/
+var rottingOrangesBFSUseArray = function(grid) {
+  if (grid === null || grid.length < 0) return -1;
+  const rows = grid.length;
+  const cols = grid[0].length;
+
+  let rotted = [];
+  let countFresh = 0;
+
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (grid[i][j] === 2) {
+        rotted.push([i,j]);
+      } else if (grid[i][j] === 1) {
+        countFresh++;
+      }
+    }
+  }
+
+  // if count of fresh oranges is zero --> return 0
+  if (countFresh === 0) return -1;
+  let minutes = 0;
+
+  while (rotted.length) {
+    let temp = [];
+    for (const coordinate of rotted) {
+      const i = coordinate[0];
+      const j = coordinate[1];
+
+      // top
+      if (i+1 < rows && grid[i+1][j] === 1) {
+        temp.push([i+1, j]);
+        grid[i+1][j] = 2;
+        countFresh--;
+      }
+
+      // bottom
+      if (i-1 >=0 && grid[i-1][j] === 1) {
+        temp.push([i-1, j]);
+        grid[i-1][j] = 2;
+        countFresh--;
+      }
+
+      // right
+      if (j+1 < cols && grid[i][j+1] === 1) {
+        temp.push([i, j+1]);
+        grid[i][j+1] = 2;
+        countFresh--;
+      }
+
+      // left
+      if (j-1 >= 0 && grid[i][j-1] === 1) {
+        temp.push([i, j-1]);
+        grid[i][j-1] = 2;
+        countFresh--;
+      }
+    }
+
+    rotted = temp.slice(); // copy arrays
+    minutes++;
+  }
+
+  if (countFresh > 0) return -1;
+  return --minutes;
+}
+
+// todo
+// why "count-1" in the return?
+// https://leetcode.com/problems/rotting-oranges/discuss/238681/Java-Clean-BFS-Solution-with-comments
+
 // tests
-const grid = [
-  [2,1,1],
-  [1,1,0],
-  [0,1,1]
-]
+// const grid = [
+//   [2,1,1],
+//   [1,1,0],
+//   [0,1,1]
+// ]
 
 //console.log('rottingOranges', rottingOranges([[0,2]]));
-console.log('rottingOranges', rottingOrangesBFS(grid));
+//console.log('rottingOrangesBFSUseArray', rottingOrangesBFSUseArray(grid));
 
 export {
   rottingOranges,
-  rottingOrangesBFS
+  rottingOrangesBFS,
+  rottingOrangesBFSUseArray
 }

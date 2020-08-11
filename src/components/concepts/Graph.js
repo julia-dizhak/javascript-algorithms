@@ -5,7 +5,7 @@ import Details from '../Details';
 // dfs
 import { floodFill, floodFillUseHelper } from '../../leetcode/graph/dfs/733-flood-fill';
 // bfs
-import { rottingOranges } from '../../leetcode/graph/bfs/994-rotting-oranges';
+// import { rottingOranges } from '../../leetcode/graph/bfs/994-rotting-oranges';
 // import { allPathsSourceTarget } from '../../leetcode/graph/bfs/797-all-paths-from-source-target';
 // import { exist } from '../../leetcode/backtracking/79-word-search';
 // import { solve } from '../../leetcode/graph/dfs/130-surrounded-regions';
@@ -20,7 +20,7 @@ export default function Graph() {
         <Details
             id="test"
             question="test"
-            code={rottingOranges.toString()}
+            //code={rottingOranges.toString()}
             //code={findMin.toString()}
             //secondCode={exist.toString()}
             //thirdSolution={solve.toString()}

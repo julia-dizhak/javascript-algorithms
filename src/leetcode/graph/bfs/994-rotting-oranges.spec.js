@@ -1,6 +1,7 @@
 import {
   //rottingOranges,
-  rottingOrangesBFS as rottingOranges
+  // rottingOrangesBFS as rottingOranges,
+  rottingOrangesBFSUseArray as rottingOranges
 } from './994-rotting-oranges';
 
 describe('rotting oranges test case', () => {
