@@ -6,6 +6,7 @@ import { HashSet, HashSetVariant1 } from "../../ds/hash/hashSet/hashSet-use-obje
 
 // problems
 import { twoSumBruteForce, twoSum, twoSumTwoPassHashes } from "../../leetcode/array/sum-problems/two-sum";
+import { hIndex } from '../../leetcode/hash/274-h-index';
 // import { prisonAfterNDays } from '../../leetcode/hash/957-prison-cells-after-N-days'
 
 export default function Hash() {
@@ -17,6 +18,7 @@ export default function Hash() {
           <Details
             id="test"
             question=""
+            code={hIndex.toString()}
             //code={prisonAfterNDays.toString()}
           />
 

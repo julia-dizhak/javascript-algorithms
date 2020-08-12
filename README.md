@@ -512,8 +512,8 @@ started on 12/21/17
 
     | Approaches:     | Time            | Space  |
     | :---            | :---            | :---   |
-    | BFS + Hashes    | O(?)            | O(n)   |
-    | BFS (Queue)     | O(?)            | O(n)   |
+    | BFS + Hashes    | O(n*m)            | O(n)   |
+    | BFS (Queue)     | O(n*m)            | O(n)   |
 
     * [797. All paths from source target](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/bfs/797-all-paths-from-source-target.js)
 

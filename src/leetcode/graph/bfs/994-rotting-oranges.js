@@ -55,13 +55,11 @@ Create a separate hashes for fresh, rotten, infected oranges.
 And loop through rotten oranges
 
 Complexity analysis
-
-Why time is O(n) of we have 2 loop: one inside each other?
-the case doesn't work grid3 = [[0,2]];
-
 Time is O(n) if n counts of each grid (or n*m, if n - count of rows, m - count
-of columns)
-Space is O(n), use hashes
+of columns) -> each cell is visited at least once
+Space complexity: O(rows * cols) -> in the worst case if all the oranges are
+rotten they will be added to the hash
+
 */
 
 function isEmpty(obj) {
@@ -129,8 +127,12 @@ var rottingOranges = function(grid) {
 /*
 Approach BFS(queue)
 
-time is O(n)
-space is O(n) size of Queue
+Time is O(n) if n counts of each grid (or n*m, if n - count of rows, m - count
+of columns) -> each cell is visited at least once
+
+Space complexity: O(rows * cols) -> in the worst case if all the oranges are
+rotten they will be added to the queue
+
 */
 var rottingOrangesBFS = function(grid) {
   if (grid === null || grid.length < 0) return -1;
@@ -250,12 +252,12 @@ var rottingOrangesBFSUseArray = function(grid) {
   }
 
   if (countFresh > 0) return -1;
+  // Because in BFS's last iteration all oranges would have been rotten.
+  // So we need to exclude that.
+  // Because here we are counting the initial state of the oranges (at 0th minute)
+  // as well. That's why, we have to subtract 1 from the final count.
   return --minutes;
 }
-
-// todo
-// why "count-1" in the return?
-// https://leetcode.com/problems/rotting-oranges/discuss/238681/Java-Clean-BFS-Solution-with-comments
 
 // tests
 // const grid = [

@@ -10,7 +10,7 @@ import { majorityElement, majorityMooreVoting } from '../../leetcode/array/major
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
-
+import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-triangle';
 //import { plusOne } from '../../leetcode/array/66-plus-one';
 
 // duplicates

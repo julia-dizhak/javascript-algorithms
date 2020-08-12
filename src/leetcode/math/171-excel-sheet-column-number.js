@@ -30,9 +30,6 @@ s is between "A" and "FXSHRXW".
 Approach Math
 (teaser problem)
 
-Think of this problem as the same way you'd manually take a binary string and
-calculate it's decimal representation. Instead of being base 2 it is base 26.
-
 p.charAt(i) - 'a'
 
 Time is O(n)

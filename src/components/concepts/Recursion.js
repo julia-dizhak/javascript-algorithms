@@ -2,11 +2,11 @@ import React from 'react';
 import Details from './../Details';
 
 // explanation
-import { loopNTimes, countDown, sumUseLoop } from '../../ds/recursion/index';
+import { loopNTimes, countDown, sumUseLoop } from '../../leetcode/recursion/index';
 
 // problems
-import { factorial } from '../../ds/recursion/factorial';
-import { fib, fibIterative } from '../../ds/recursion/fibonacci';
+import { factorial } from '../../leetcode/recursion/factorial';
+import { fib, fibIterative } from '../../leetcode/recursion/fibonacci';
 import { findKthLargest } from '../../leetcode/divide-conquer/215-k-th-largest-element';
 
 export default function Recursion() {
