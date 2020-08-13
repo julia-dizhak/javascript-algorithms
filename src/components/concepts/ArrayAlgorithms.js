@@ -15,8 +15,8 @@ import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-tria
 
 // duplicates
 import { removeDuplicates } from '../../leetcode/array/duplicates/26-remove-duplicates-from-sorted-array';
-import { findDuplicate } from '../../leetcode/array/duplicates/287-find-duplicate-number';
-import { findAllDuplicates } from '../../leetcode/array/duplicates/442-find-all-duplicates';
+//import { findDuplicate } from '../../leetcode/array/duplicates/287-find-duplicate-number';
+//import { findAllDuplicates } from '../../leetcode/array/duplicates/442-find-all-duplicates';
 
 // todo import { QuickUnion } from '../../algorithms/union-find/quick-union';
 // todo import { RandomizedSet } from '../../leetcode/hash/380-insert-delete-getrandom-constant-time';
@@ -28,8 +28,9 @@ export default function ArrayAlgorithms() {
 
       <Details
         id="test-array"
-        code={findDuplicate.toString()}
-        secondCode={findAllDuplicates.toString()}
+        code={generate.toString()}
+        //code={findDuplicate.toString()}
+        //secondCode={findAllDuplicates.toString()}
       />
 
       <ul id="array">

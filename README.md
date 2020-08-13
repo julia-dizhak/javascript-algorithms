@@ -369,6 +369,13 @@ started on 12/21/17
     | Hash            | O(n)    | O(n)   |
     | Voting          | O(?)    | 0(?)   |
 
+    * [118 Pascals triangle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals/118-pascals-triangle.js)
+
+    | Approaches:     | Time             | Space           |
+    | :---            | :---             | :---            |
+    | Array (loop)    | O(numsRows^2)    | O(numsRows^2)   |
+
+
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 

@@ -4,8 +4,8 @@ import {
 
 describe('pascals triangle test case', () => {
   it('corner cases', () => {
-    expect(generate(0)).toEqual(0);
-    expect(generate([1])).toEqual([1]);
+    expect(generate(0)).toEqual([]);
+    expect(generate([1])).toEqual([[1]]);
   });
 
   it('numsRows > 1', () => {
