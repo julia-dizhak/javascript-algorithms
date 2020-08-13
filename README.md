@@ -369,7 +369,7 @@ started on 12/21/17
     | Hash            | O(n)    | O(n)   |
     | Voting          | O(?)    | 0(?)   |
 
-    * [118 Pascals triangle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals/118-pascals-triangle.js)
+    * [118 Pascals triangle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals-triangle/118-pascals-triangle.js)
 
     | Approaches:     | Time             | Space           |
     | :---            | :---             | :---            |

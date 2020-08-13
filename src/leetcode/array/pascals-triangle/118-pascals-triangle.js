@@ -55,6 +55,10 @@ Space complexity : O(numRows^2)
 Because we need to store each number that we update in triangle, the space
 requirement is the same as the time complexity.
 */
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
 var generate = function(numRows) {
   if (numRows === 0) return [];
 
@@ -85,29 +89,62 @@ First, we generate the overall triangle list, which will store each row as a
 sublist. Then, we check for the special case of 0, as we would otherwise
 return [1]. If numRows > 0, then we initialize triangle with [1] as its first row,
 and proceed to fill the rows as follows: there is a schema
+*/
+
+/*
+Approach recursion
+
+Time is O(numRows^2)
+space is O(numRows^2)
 
 */
-/**
- * @param {number} numRows
- * @return {number[][]}
- */
-var generate1 = function(numRows) {
 
+var generateUseRecursion = function(numRows) {
+  let result = [];
+  helper(numRows, result);
+  return result;
 };
 
-// tests
-console.log('pascalTriangle 1', generate(3));
+function helper(numRows, list = []) {
+  if (numRows === 1) list.push([1])
+  else if (numRows > 1) {
+    helper(numRows - 1, list);
+    let previousList = list[numRows - 2];
+    let thisList = [];
+    for (let i = 0; i < previousList.length; i++) {
+      if (i === 0) thisList.push(1);
+      if (i > 0) thisList.push(previousList[i] + previousList[i-1]);
+      if (i === previousList.length - 1) thisList.push(1)
+    }
+    list.push(thisList);
+  }
+}
 
-//
+// tests
+//console.log('pascalTriangle 1', generate(3));
+//console.log('pascalTriangle 1', generateUseRecursion(3));
+
+/*
+Pascals triangle II
+
+Given a non-negative index k <= 33 return the kth index row of the Pascals
+triangle. Note that the row index starts from 0.
+
+Example
+input 3, output [1,3,3,1]
+*/
 /**
  * @param {number} rowIndex
  * @return {number[]}
  */
+// todo check solution
 var getRow = function(numRows) {
   if (numRows === 0) return [];
+
+
   let result = [];
 
-  for (let i = 0; i < numRows; i++) {
+  for (let i = 0; i < numRows+1; i++) {
 
     let curRow = [];
     for (let j = 0; j <= i; j++) {
@@ -120,11 +157,112 @@ var getRow = function(numRows) {
     result.push(curRow);
   }
 
+  //debugger
   return result[numRows]
 };
 
-console.log('getRow', getRow(3))
+console.log('getRow', getRow(4))
+
+/*
+Design Iterator for combination
+
+Design an Iterator class, which has:
+
+A constructor that takes a string characters of sorted distinct lowercase English
+letters and a number combinationLength as arguments.
+
+A function next() that returns the next combination of length combinationLength
+in lexicographical order.
+
+A function hasNext() that returns True if and only if there exists a next
+combination.
+
+
+Example:
+CombinationIterator iterator = new CombinationIterator("abc", 2); // creates the
+iterator.
+
+iterator.next(); // returns "ab"
+iterator.hasNext(); // returns true
+iterator.next(); // returns "ac"
+iterator.hasNext(); // returns true
+iterator.next(); // returns "bc"
+iterator.hasNext(); // returns false
+
+
+Constraints:
+1 <= combinationLength <= characters.length <= 15
+There will be at most 10^4 function calls per test.
+It's guaranteed that all calls of the function next are valid.
+*/
+
+/*
+Approach
+
+sorted distinct lowercase English letters
+what is a combinations?
+*/
+class CombinationIterator {
+  /**
+   * @param {string} characters
+   * @param {number} combinationLength
+  */
+  constructor(characters, combinationLength) {
+    this.characters = characters;
+    this.combinationLength = combinationLength;
+  }
+
+  /**
+   * @return {string}
+   */
+  next() {
+
+  }
+
+  /**
+   * @return {boolean}
+   */
+  hasNext() {
+
+  }
+}
+
+/**
+ * Your CombinationIterator object will be instantiated and called as such:
+ * var obj = new CombinationIterator(characters, combinationLength)
+ * var param_1 = obj.next()
+ * var param_2 = obj.hasNext()
+ */
+
+const iterator = new CombinationIterator('abc', 2)
+iterator.next();
+//
+
+/*
+deutsch
+
+umzug check
+
+Erlich gesagt, sehe ich nur Vorteile.
+Meiner Meinung nach, dass es sehr gut ist, ein Vorbild zu haben.
+Aber man soll vorsichtig sein.
+Und onhe öffnen Augen sein Vorbild follgen.
+Ich meine Vobild folgen nicht ohne nachdenken.
+Das Vorbild kan sein Meinungen verändern
+Ein riesiger Vortel ist
+Ich denke
+
+Nach Meinur Meinung ist, dass es schon nicht nur 1 sonder auch 2,3 Vorbilde zu haben
+Dann kann man besser zu finden.
+
+Zusammefassen möchte ich sagen, dass Vorbild nur ein Beispiel ist.
+Man soll selsbt für ihn entschieden was am besten für ihn ist.
+
+*/
+
 
 export {
-  generate
+  generate,
+  generateUseRecursion,
+  getRow
 }
