@@ -13,9 +13,10 @@ import { isValid } from '../../ds/string-manipulation/tasks/sherlock-valid-strin
 import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/string-manipulation/771-number-jewels-in-stones';
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-find-all-anagrams';
-import { detectCapitalUse } from '../../leetcode/string-manipulation/520-detect-capital';
+//import { detectCapitalUse } from '../../leetcode/string-manipulation/520-detect-capital';
 
 import { getPermutation } from '../../leetcode/backtracking/60-permutation-sequence';
+import { permute } from '../../leetcode/backtracking/46-print-all-permutations';
 import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
 
@@ -29,8 +30,8 @@ export default function StringManipulation() {
           <Details
             id="test1"
             question="test case"
-            //code={.toString()}
-            secondCode={detectCapitalUse.toString()}
+            code={permute.toString()}
+            //secondCode={detectCapitalUse.toString()}
           />
         </li>
 

@@ -377,9 +377,9 @@ started on 12/21/17
 
     * [119. Pascals triangle II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals-triangle/118-pascals-triangle-ii.js)
 
-    | Approaches:     | Time             | Space           |
-    | :---            | :---             | :---            |
-    | Array (loop)    | O(rowIndex^2)    | O(k)   |
+    | Approaches:     | Time             | Space      |
+    | :---            | :---             | :---       |
+    | Array (loop)    | O(rowIndex^2)    | O(k)       |
 
 
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
