@@ -18,7 +18,7 @@ Output:
 */
 
 /*
-Print all binary
+Print all binary of length
 
 Approach Recursion
 
@@ -64,6 +64,19 @@ function printAllBinary(digits) {
 
 /*
 Approach Backtracking (with Recursion)
+
+...
+Trick by recursion
+Trick in recursion: right some helper functions that use more params to help solve the problem.
+If the required function doesn’t accept the parameters you need:
+Write a helper function that accepts more parameters
+Extra param can represent current state, choices made, etc
+
+Return functionName(params) {
+....
+    Return helper(params, moreParams)
+}
+
 
 A permutation is an arrangement of all or part of a set of objects, with regard
 to the order of the arrangement.

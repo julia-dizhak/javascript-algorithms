@@ -315,10 +315,10 @@ started on 12/21/17
 
     * [406 Longest palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/palindrome/406-longest-palindrome.js)
 
-    | Approaches:             | Time     | Space  |
-    | :---                    | :---     | :---   |
-    | 2 pointers              | O(n)     | 0(1)   |
-    | Use reverse             | O(n)     | 0(1)   |
+    | Approaches:       | Time     | Space         |
+    | :---              | :---     | :---          |
+    | Hash              | O(n)     | 0(n)/O(1)     |
+    | Greedy            | O(n)     | 0(n)/O(1)     |
 
     * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
 

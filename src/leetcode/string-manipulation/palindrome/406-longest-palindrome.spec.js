@@ -1,6 +1,9 @@
 import {
   //longestPalindrome,
-  longestPalindromeUseHash as longestPalindrome
+  //longestPalindromeUseHash as longestPalindrome,
+  
+  //longestPalindromeUseGreedy as longestPalindrome,
+  longestPalindromeUseGreedyVariant1 as longestPalindrome
 } from './406-longest-palindrome';
 
 describe('longest palindrome test case', () => {

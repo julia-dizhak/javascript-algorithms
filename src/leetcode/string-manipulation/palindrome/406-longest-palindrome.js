@@ -26,7 +26,6 @@ Intuition
 Palindrome means spells same backwards and forwards.
 famous: radar, racecar
 
-
 A palindrome consists of letters with equal partners, plus possibly a unique
 center (without a partner). The letter i from the left has its partner i from
 the right.
@@ -40,31 +39,9 @@ There is an extra character available anytime your answer is less than the
 length of the original string.
 E.g., after (OUTSIDE!) the loop, just do:
 if( ans < s.length ) ans++;
-...
-
-A palindrome consists of letters with equal partners, plus possibly a unique
-center (without a partner). The letter i from the left has its partner i from
-the right.
-For example in 'abcba', 'aa' and 'bb' are partners, and 'c' is a
-unique center.
-
-Imagine we built our palindrome. It consists of as many partnered letters as
-possible, plus a unique center if possible. This motivates a greedy approach.
-
-Algorithm
-For each letter, say it occurs v times. We know we have v // 2 * 2 letters that
-can be partnered for sure. For example, if we have 'aaaaa', then we could have
-'aaaa' partnered, which is 5 // 2 * 2 = 4 letters partnered.
-
-At the end, if there was any v % 2 == 1, then that letter could have been a
-unique center. Otherwise, every letter was partnered. To perform this check,
-we will check for v % 2 == 1 and ans % 2 == 0, the latter meaning we haven't
-yet added a unique center to the answer.
-
 
 Complexity Analysis
-
-Time Complexity: O(N), where N is the length of s. We need to count each
+Time Complexity: O(N)/O(1), where N is the length of s. We need to count each
 letter.
 
 Space Complexity: O(N) create a hash
@@ -92,14 +69,88 @@ var longestPalindromeUseHash = function(s) {
 }
 
 /*
-Approach
 Approach Greedy + Hash
 
-Space Complexity: O(1), the space for our count, as the alphabet size of s is
+A palindrome consists of letters with equal partners, plus possibly a unique
+center (without a partner). The letter i from the left has its partner i from
+the right.
+For example in 'abcba', 'aa' and 'bb' are partners, and 'c' is a
+unique center.
+
+Imagine we built our palindrome. It consists of as many partnered letters as
+possible, plus a unique center if possible. This motivates a greedy approach.
+
+Algorithm
+For each letter, say it occurs v times. We know we have (v / 2) * 2 letters that
+can be partnered for sure. For example, if we have 'aaaaa', then we could have
+'aaaa' partnered, which is (5 / 2) * 2 = 4 letters partnered.
+
+At the end, if there was any v % 2 == 1, then that letter could have been a
+unique center. Otherwise, every letter was partnered. To perform this check,
+we will check for v % 2 == 1 and ans % 2 == 0, the latter meaning we haven't
+yet added a unique center to the answer.
+The same can be achieve as this
+ans < s.length ? ans + 1 : ans;
+
+Complexity Analysis
+Time Complexity: O(N), where N is the length of s. We need to count each
+letter.
+
+Space Complexity: O(1)/O(n), the space for our count, as the alphabet size of s is
 fixed. We should also consider that in a bit complexity model, technically we
 need O(logN) bits to store the count values.
 */
+var longestPalindromeUseGreedy = function(s) {
+  if (s === undefined) return 0;
+  if (s.length === 1) return 1;
 
+  // it's really possible in JS?
+  // todo
+  // let charCounts = new Array(128).fill(0);
+  // for (const char of s) {
+  //   charCounts[char]++
+  // }
+
+  let charCounts = {};
+
+  for (const char of s) {
+    charCounts[char] = (charCounts[char] || 0) + 1;
+  }
+  //console.log('charCounts', charCounts);
+
+  let result = 0;
+  for (const charCount in charCounts) {
+    result += Math.floor(charCounts[charCount] / 2) * 2;
+  }
+
+  if (result < s.length) result++;
+  return result
+}
+
+var longestPalindromeUseGreedyVariant1 = function(s) {
+  if (s === undefined) return 0;
+  if (s.length === 1) return 1;
+
+  let charCounts = {};
+  let result = 0;
+
+  for (const char of s) {
+    charCounts[char] = (charCounts[char] || 0) + 1;
+    if (charCounts[char] === 2) {
+      result += 2;
+      charCounts[char] = 0;
+    }
+  }
+
+  if (result < s.length) result++;
+  return result
+}
+
+/*
+Approach todo
+doesn't work
+
+*/
 var longestPalindrome = function(s) {
   if (s === undefined) return 0;
   if (s.length === 1) return 1;
@@ -124,7 +175,7 @@ var longestPalindrome = function(s) {
 };
 
 // tests
-console.log('longestPalindromeUseHash', longestPalindromeUseHash("abccccdd"));
+//console.log('longestPalindromeUseGreedy', longestPalindromeUseGreedy("abccccdd"));
 //console.log('longestPalindrome', longestPalindrome("a")); // 1
 //console.log('longestPalindrome', longestPalindrome("bb"));
 //console.log('longestPalindrome', longestPalindrome('aAAAAAbccccdd'))
@@ -133,5 +184,7 @@ console.log('longestPalindromeUseHash', longestPalindromeUseHash("abccccdd"));
 
 export {
   longestPalindrome,
-  longestPalindromeUseHash
+  longestPalindromeUseHash,
+  longestPalindromeUseGreedy,
+  longestPalindromeUseGreedyVariant1
 }
