@@ -313,6 +313,13 @@ started on 12/21/17
     | 2 pointers              | O(n)     | 0(1)   |
     | Use reverse             | O(n)     | 0(1)   |
 
+    * [406 Longest palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/palindrome/406-longest-palindrome.js)
+
+    | Approaches:             | Time     | Space  |
+    | :---                    | :---     | :---   |
+    | 2 pointers              | O(n)     | 0(1)   |
+    | Use reverse             | O(n)     | 0(1)   |
+
     * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
 
     | Approaches:        | Time     | Space  |
@@ -621,6 +628,13 @@ started on 12/21/17
     | :---          | :---      | :---   |
     | Brute force   | O(^2n)    | 0(n)   |
     | DP: bottom-up | O(n)      | 0(n)   |
+
+* ### Backtracking
+    * [46 Permutations](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/backtracking/46-print-all-permutations.js)
+
+    | Approaches:         | Time      | Space  |
+    | :---                | :---      | :---   |
+    | Backtracking        | O(n!)     | 0(?)   |
 
 
 ## OOP in JS

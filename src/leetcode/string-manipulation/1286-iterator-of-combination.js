@@ -105,5 +105,5 @@ iterator.next();
 
 export {
   //permut,
-  permute
+  //permute
 }

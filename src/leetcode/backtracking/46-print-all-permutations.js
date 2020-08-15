@@ -157,9 +157,8 @@ function helper(nums, pos, result) {
 //console.log('permute', permute('abc'))
 
 
-// todo print quantity of soltuons
-console.log('permute', permute([1,2,3]))
-
+// todo print quantity of solutions
+//console.log('permute', permute([1,2,3]))
 
 export {
   permute

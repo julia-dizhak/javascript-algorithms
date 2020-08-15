@@ -1,0 +1,137 @@
+/*
+leetcode
+406 Longest Palindrome
+easy
+
+Given a string which consists of lowercase or uppercase letters, find the length
+of the longest palindromes that can be built with those letters.
+
+This is case sensitive, for example "Aa" is not considered a palindrome here.
+
+Note:
+Assume the length of given string will not exceed 1,010.
+
+Example:
+Input:"abccccdd"
+Output:7
+
+Explanation:
+One longest palindrome that can be built is "dccaccd", whose length is 7.
+*/
+
+/*
+Approach Hash
+
+Intuition
+Palindrome means spells same backwards and forwards.
+famous: radar, racecar
+
+
+A palindrome consists of letters with equal partners, plus possibly a unique
+center (without a partner). The letter i from the left has its partner i from
+the right.
+For example in 'abcba', 'aa' and 'bb' are partners, and 'c' is a
+unique center.
+
+We don't need to print longest palindrome, we just need to print length of
+palindrome
+So we can just add 1 for a center character if needed at the very end.
+There is an extra character available anytime your answer is less than the
+length of the original string.
+E.g., after (OUTSIDE!) the loop, just do:
+if( ans < s.length ) ans++;
+...
+
+A palindrome consists of letters with equal partners, plus possibly a unique
+center (without a partner). The letter i from the left has its partner i from
+the right.
+For example in 'abcba', 'aa' and 'bb' are partners, and 'c' is a
+unique center.
+
+Imagine we built our palindrome. It consists of as many partnered letters as
+possible, plus a unique center if possible. This motivates a greedy approach.
+
+Algorithm
+For each letter, say it occurs v times. We know we have v // 2 * 2 letters that
+can be partnered for sure. For example, if we have 'aaaaa', then we could have
+'aaaa' partnered, which is 5 // 2 * 2 = 4 letters partnered.
+
+At the end, if there was any v % 2 == 1, then that letter could have been a
+unique center. Otherwise, every letter was partnered. To perform this check,
+we will check for v % 2 == 1 and ans % 2 == 0, the latter meaning we haven't
+yet added a unique center to the answer.
+
+
+Complexity Analysis
+
+Time Complexity: O(N), where N is the length of s. We need to count each
+letter.
+
+Space Complexity: O(N) create a hash
+*/
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+var longestPalindromeUseHash = function(s) {
+  if (s === undefined) return 0;
+  if (s.length === 1) return 1;
+
+  let ans = 0;
+  let hash = {};
+
+  for (const char of s) {
+    hash[char] = (hash[char] || 0) + 1;
+    if (hash[char] % 2 === 0) ans += 2;
+  }
+
+  console.log('hash', hash);
+  // if( ans < s.length ) ans++;
+  return ans < s.length ? ans + 1 : ans;
+}
+
+/*
+Approach
+Approach Greedy + Hash
+
+Space Complexity: O(1), the space for our count, as the alphabet size of s is
+fixed. We should also consider that in a bit complexity model, technically we
+need O(logN) bits to store the count values.
+*/
+
+var longestPalindrome = function(s) {
+  if (s === undefined) return 0;
+  if (s.length === 1) return 1;
+  const arr = s.split('');
+  let hash = {};
+  for (let i = 0; i < arr.length; i++) {
+    hash[arr[i]] = (hash[arr[i]] || 0) + 1
+  }
+
+  const even = Object.values(hash).filter(val => val > 1 && val % 2 === 0)
+  const sumEven = even.length !== 0 ?  even.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+  }, 0) : 0;
+  const odd = Object.values(hash).filter(val => val > 1 && val % 2 !== 0)
+  const sumOdd = odd.length !== 0 ? odd.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+  }, 0) - 1 : 0;
+
+
+  console.log('hash', hash)
+  return sumEven + sumOdd + 1;
+};
+
+// tests
+console.log('longestPalindromeUseHash', longestPalindromeUseHash("abccccdd"));
+//console.log('longestPalindrome', longestPalindrome("a")); // 1
+//console.log('longestPalindrome', longestPalindrome("bb"));
+//console.log('longestPalindrome', longestPalindrome('aAAAAAbccccdd'))
+//console.log('longestPalindrome', longestPalindrome('aAbb'))
+
+
+export {
+  longestPalindrome,
+  longestPalindromeUseHash
+}
