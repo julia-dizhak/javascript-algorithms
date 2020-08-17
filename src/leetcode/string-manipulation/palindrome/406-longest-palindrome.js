@@ -19,6 +19,8 @@ Explanation:
 One longest palindrome that can be built is "dccaccd", whose length is 7.
 */
 
+import { waitForDomChange } from "@testing-library/react";
+
 /*
 Approach Hash
 
@@ -124,7 +126,7 @@ var longestPalindromeUseGreedy = function(s) {
   }
 
   if (result < s.length) result++;
-  return result
+  return result;
 }
 
 var longestPalindromeUseGreedyVariant1 = function(s) {
@@ -180,6 +182,48 @@ var longestPalindrome = function(s) {
 //console.log('longestPalindrome', longestPalindrome("bb"));
 //console.log('longestPalindrome', longestPalindrome('aAAAAAbccccdd'))
 //console.log('longestPalindrome', longestPalindrome('aAbb'))
+
+//https://leetcode.com/problems/non-overlapping-intervals/discuss/189715/Simple-Javascript-solution
+
+/**
+ * @param {number[][]} intervals
+ * @return {number}
+ */
+var eraseOverlapIntervals = function(intervals) {
+  if(intervals.length===0) return 0;
+
+intervals.sort((a,b) => a.start-b.start);
+var count = 0;
+var prevEnd = intervals[0].end;
+for(var i=1; i<intervals.length; i++) {
+  var thisStart = intervals[i].start;
+  var thisEnd = intervals[i].end;
+  if(thisStart < prevEnd) {
+    count++;
+    prevEnd = Math.min(prevEnd, thisEnd);
+  } else {
+    prevEnd = thisEnd;
+  }
+}
+return count;
+};
+// https://leetcode.com/problems/non-overlapping-intervals/discuss/91701/Javascript-Solution
+// runtime
+//https://leetcode.com/problems/non-overlapping-intervals/discuss/334377/Javascript-ES6
+
+// accepted
+// function eraseOverlapIntervals(intervals) {
+//   intervals.sort((a,b) => a[1] - b[1])
+//   let prevInterval = intervals[0]
+//   let counter = 0
+//   for (let i = 1; i < intervals.length; i++) {
+//       if (prevInterval[1] > intervals[i][0]) counter++
+//       else prevInterval = intervals[i];
+//   }
+//   return counter;
+// }
+
+// next https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/discuss/39684/Javascript-DP-solution-that-beats-100!
 
 
 export {

@@ -258,6 +258,12 @@ started on 12/21/17
     | Math + loop      | O(n)         | 0(1)      |
     | Recursion        | O(n)         | 0(n)      |
 
+    * [1103. Distribute candies to people](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/1103-distribute-candies-to-people.js)
+
+    | Approaches:      | Time         | Space     |
+    | :---             | :---         | :---      |
+    | Iterative        | O(n)         | 0(1)      |
+
     * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/263-ugly-number.js)
 
     | Approaches:                 | Time         | Space     |

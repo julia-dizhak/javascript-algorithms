@@ -68,7 +68,7 @@ Time complexity: O(2^n)
 Space complexity: O(n), for recursion stack space
 
 Recursion Tree
-                      (0,5)
+                    (0,5)
                   /        \
                 (1,5)      (2,5)
                 /  \        /  \

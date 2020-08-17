@@ -8,7 +8,8 @@ import { swap, swapUseTemp } from '../../ds/number/swap';
 // import { isUgly } from '../../leetcode/number/263-ugly-number'
 // import { nthUglyNumber } from '../../leetcode/number/264-ugly-number-2'
 // import { addDigits } from '../../leetcode/math/258-add-digits'
-//import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
+// import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
+import { distributeCandiesUseLoop } from '../../leetcode/math/1103-distribute-candies-to-people';
 
 export default function Number() {
   return (
@@ -18,7 +19,7 @@ export default function Number() {
       <Details
         id="number-test"
         question="test"
-        //code={titleToNumber.toString()}
+        code={distributeCandiesUseLoop.toString()}
         //code={addDigits.toString()}
       />
 

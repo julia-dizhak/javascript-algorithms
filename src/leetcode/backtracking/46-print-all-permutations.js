@@ -174,5 +174,5 @@ function helper(nums, pos, result) {
 //console.log('permute', permute([1,2,3]))
 
 export {
-  permute
+  permute,
 }
