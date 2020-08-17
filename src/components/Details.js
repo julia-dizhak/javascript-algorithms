@@ -30,7 +30,7 @@ export default function Details(props) {
         aria-controls="content"
       >
         <span className="question">
-          Question:&nbsp;
+          Playground:&nbsp;
           <strong>{question}</strong>
         </span>
       </summary>

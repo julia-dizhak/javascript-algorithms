@@ -54,3 +54,12 @@
 .runtime {
   margin: 0 0 5px 0;
 }
+
+.link {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.desc {
+  width: 70%;
+}

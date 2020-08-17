@@ -3,7 +3,7 @@ import Details from '../Details';
 
 // problems
 import { flipBitByBit, decimalToBinary } from '../../leetcode/bitwise/476-number-complement';
-import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/power/231-power-of-two';
+//import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/power/231-power-of-two';
 // import { isPowerOfFour } from '../../leetcode/bitwise/power/342-power-of-four';
 // import { isPowerOfThree } from '../../leetcode/bitwise/power/326-power-of-three';
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
@@ -17,7 +17,23 @@ import { getBit, setBit, clearBit } from '../../ds/bitwise/common-bit-tasks';
 export default function BitManipulation() {
   return (
     <div className="bit">
-      <h2 id="bit">Bit Manipulation</h2>
+      <h2 id="bit">Bitwise operators and Bit manipulation</h2>
+
+      <p class="desc">
+        Under the hood, numbers are just bits set to 0 or 1.
+        Bitwise operators treat their operands as a sequence of 32 bits (zeroes
+        and ones), rather than as decimal, hexadecimal, or octal numbers.
+        For example, the 9 has a binary representation of 1001.
+        Bitwise operators perform their operations on such binary representations,
+        but they return standard JavaScript numerical values.
+      </p>
+      <br />
+
+      <a
+        class="link"
+        href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#bitwise-operators">
+          List of problems with solutions
+      </a>
 
       <ul>
         {/* <Details
@@ -27,9 +43,7 @@ export default function BitManipulation() {
           //secondCode={singleNumber3.toString()}
         /> */}
         <li>
-          <a href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#bitwise-operators">
-            List of problems with solutions
-          </a>
+
         </li>
         <li>
           <Details
@@ -54,20 +68,6 @@ export default function BitManipulation() {
             secondCode={decimalToBinary.toString()}
           />
         </li>
-        <li>
-          <Details
-            id="bit-power-of-two"
-            question="Power of two: Given an integer, write a function to determine if it is a power of two"
-            solution="approach iterative, bit manipulation, math and use toString"
-            complexity="for bit manipulation approach, time and space is O(1)"
-            time="O(log n)"
-            space="is O(1)"
-            code={isPowerOfTwoIterative.toString()}
-            secondCode={isPowerOfTwoBitManipulation.toString()}
-            thirdSolution={isPowerOfTwo.toString()}
-          />
-        </li>
-
       </ul>
 
   </div>

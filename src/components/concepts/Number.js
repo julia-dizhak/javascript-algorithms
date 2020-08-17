@@ -16,6 +16,17 @@ export default function Number() {
     <div className="number">
       <h2>Numbers / Math</h2>
 
+      <p class="desc">
+        Below you can find problems related to Math
+      </p>
+      <br />
+
+      <a
+        class="link"
+        href="https://github.com/julia-dizhak/javascript-algorithms#math--number">
+          List of problems with solutions
+      </a>
+
       <Details
         id="number-test"
         question="test"
