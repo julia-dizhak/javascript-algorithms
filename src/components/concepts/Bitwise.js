@@ -4,12 +4,12 @@ import Details from '../Details';
 // problems
 import { flipBitByBit, decimalToBinary } from '../../leetcode/bitwise/476-number-complement';
 import { isPowerOfTwoIterative, isPowerOfTwoBitManipulation, isPowerOfTwo } from '../../leetcode/bitwise/power/231-power-of-two';
-import { isPowerOfFour } from '../../leetcode/bitwise/power/342-power-of-four';
-import { isPowerOfThree } from '../../leetcode/bitwise/power/326-power-of-three';
+// import { isPowerOfFour } from '../../leetcode/bitwise/power/342-power-of-four';
+// import { isPowerOfThree } from '../../leetcode/bitwise/power/326-power-of-three';
 // import { hammingWeight } from '../../leetcode/bitwise/191-number-of-bits';
 // import { reverseBits } from '../../leetcode/bitwise/190-reverse-bits';
 // import { hasAlternatingBits } from '../../leetcode/bitwise/693-alternating-bits';
-import { singleNumber2 } from '../../leetcode/bitwise/single-number/137-single-number-2';
+// import { singleNumber2 } from '../../leetcode/bitwise/single-number/137-single-number-2';
 // import { singleNumber3 } from '../../leetcode/bitwise/single-number/260-single-number-3';
 import { getBit, setBit, clearBit } from '../../ds/bitwise/common-bit-tasks';
 
@@ -20,12 +20,17 @@ export default function BitManipulation() {
       <h2 id="bit">Bit Manipulation</h2>
 
       <ul>
-        <Details
+        {/* <Details
           id="test"
           question="test"
           code={isPowerOfThree.toString()}
           //secondCode={singleNumber3.toString()}
-        />
+        /> */}
+        <li>
+          <a href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#bitwise-operators">
+            List of problems with solutions
+          </a>
+        </li>
         <li>
           <Details
             id="common-bit-tasks"
