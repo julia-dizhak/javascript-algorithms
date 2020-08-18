@@ -1,5 +1,8 @@
 import {
-  distributeCandiesUseLoop as distributeCandies
+  distributeCandies,
+  //distributeCandiesUseLoop as distributeCandies,
+  //distributeCandies1 as distributeCandies,
+  //distributeCandies2 as distributeCandies
 } from './1103-distribute-candies-to-people';
 
 describe('longest palindrome test case', () => {

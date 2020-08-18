@@ -9,33 +9,33 @@ import { swap, swapUseTemp } from '../../ds/number/swap';
 // import { nthUglyNumber } from '../../leetcode/number/264-ugly-number-2'
 // import { addDigits } from '../../leetcode/math/258-add-digits'
 // import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
-import { distributeCandiesUseLoop } from '../../leetcode/math/1103-distribute-candies-to-people';
+import { distributeCandies } from '../../leetcode/math/1103-distribute-candies-to-people';
 
 export default function Number() {
   return (
     <div className="number">
       <h2>Numbers / Math</h2>
 
-      <p class="desc">
+      <p className="desc">
         Below you can find problems related to Math
       </p>
       <br />
 
       <a
-        class="link"
+        className="link"
         href="https://github.com/julia-dizhak/javascript-algorithms#math--number">
-          List of problems with solutions
+          List of Math problems related with solutions and time complexity explain
       </a>
-
-      <Details
-        id="number-test"
-        question="test"
-        code={distributeCandiesUseLoop.toString()}
-        //code={addDigits.toString()}
-      />
 
       <ul id="number">
         <li>
+          <Details
+            id="number-test"
+            question="test"
+            code={distributeCandies.toString()}
+            //code={addDigits.toString()}
+          />
+
           <Details
             id="number-power"
             question="Write a power function"

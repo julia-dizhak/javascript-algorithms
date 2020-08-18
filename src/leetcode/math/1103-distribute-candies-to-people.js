@@ -53,50 +53,16 @@ Constraints:
 
 /*
 Approach iterative (loop)
+brute force
+
 time is O(n)
+space is O(num_people)
 */
 /**
  * @param {number} candies
  * @param {number} num_people
  * @return {number[]}
  */
-var distributeCandies = function(candies, num_people) {
-  let output = new Array(num_people).fill(0);
-  const n = output.length;
-
-
-  // while (candies > 0) {
-  for (let i = 0; i < n; i++) {
-    //debugger
-    if (candies >= 0 && candies >= i+1) {
-      output[i] = i+1;
-    } else {
-      output[i] = candies;
-      break
-    }
-    candies -= (i+1);
-  }
-
-  let j = 0;
-  while (candies > 0) {
-    //debugger
-    if (j>=n) {
-      j = 0
-    }
-    if (candies >= output[j]+n+1 ) {
-      // n+1
-      output[j] = output[j] + n + 1;
-    } else {
-      output[j] = output[j] + candies;
-      break;
-    }
-    candies -= j + (n + 1);
-    j++;
-  }
-
-  return output;
-};
-
 var distributeCandiesUseLoop = function(candies, num_people) {
   let output = new Array(num_people).fill(0);
   let loop = 0;
@@ -122,12 +88,140 @@ var distributeCandiesUseLoop = function(candies, num_people) {
   return output;
 }
 
+/*
+Approach loop + min
+
+1 Use give % num_people to determine the current index of the people, where give
+is the give-th giving of candy;
+
+2 Increase each giving amount by 1 till run out of candies.
+
+These tricks are so helpful. They have broadened my horizons.
+people[give % num_people]: in order to calculate the each column's value
+min(candies, give + 1): in order to add last remaining candies
+
+Analysis:
+Assume there are give times distribution such that 1 + 2 + ... + give >= candies.
+Therefore,
+(1 + give) * give / 2 >= candies, and when give is big enough, (give + 1) * give /2 ~ candies.
+
+We have:
+1/2 * give ^ 2 < 1/2 * (give ^ 2 + give)  < 1/ 2 * (give + 1) ^ 2
+then
+1/2 * give ^ 2 < candies < 1/ 2 * (give + 1) ^ 2
+
+Time: O(sqrt(candies)), space: O(num_people).
+*/
+
+var distributeCandies1 = function(candies, num_people) {
+  let output = new Array(num_people).fill(0);
+
+  for (let give = 0; candies > 0; candies -= give) {
+    output[give % num_people] += Math.min(candies, ++give);
+  }
+  return output
+}
+
+var distributeCandies2 = function(candies, num_people) {
+  let output = new Array(num_people).fill(0);
+
+  for (let i = 0; candies > 0; i++) {
+    output[i % num_people] += Math.min(candies, i+1);
+    candies -= i+1;
+  }
+  return output
+}
+
+/*
+Approach Math Gauss
+
+The other approach is to skip the simulation and calculate the final candy distribution.
+Let's imagine the candy distribution process for candies = 10, and num_people = 3:
+Person 0 receives 1 piece of candy, Person 1 receives 2 pieces of candy, Person 2 receives 3 pieces of candy then we go back to Person 0 to give them the remaining 4 pieces of candy.
+So, generalize
+Now let's go back to our rows - and add them up :
+
+              p[0]            p[1]             ...       p[n - 1]
+------------------------------------------------------------------------
+0:              1                     2        ...           n
+1:            n + 1                 n + 2      ...         2 * n
+...            ...                   ...       ...          ...
+k-1:  (k-1) * n + 1           (k-1)*n + 2      ...         n * n
+---------------------------------------------------------------------------
+s: n*gauss(k-1) + 1*k    n*gauss(k-1) + 1*k    ...    n*gauss(k-1) + n*k
+
+Remember this sum 1 + 2 + ... + n = n*(n +1)/2. Let's call this as gauss(n))
+How much candy have I distributed up until now? 1 + 2 + 3 + ... k * n = gauss(k * n)
+
+If k rounds are complete, the the candies distributed is equal to (1+2+...+kn),
+which is equal to (1+kn)kn/2. Then solve (1+k*n)kn/2 == c, for k.
+
+Write it again:
+n^2 * k^2 + n * k - 2*c <= 0 which yields
+k <= (sqrt(1 + 8*c) - 1) / (2*n), k greatest.
+
+I have k, let's take out our k distribution cycles of candy.
+candies -= gauss(k * num_people);
+
+(
+  Simple Gauss
+  const k = Math.sqrt(8*n + 1) / 2
+  return Math.floor(k - 0.5);
+)
+
+
+Complexity
+Time O(sqrt(candies))
+Space O(N) for result
+
+The number of given candies is i + 1, which is an increasing sequence.
+The total number distributed candies is c * (c + 1) / 2 until it's bigger than candies.
+So the time it takes is O(sqrt(candies))
+
+todo
+js math solution https://leetcode.com/problems/distribute-candies-to-people/discuss/327045/Javascript-O(n)-math-solution.-Beats-100-time.
+
+*/
+
+function gauss(n) {
+  return Math.floor(n*(n+1)/2);
+}
+
+var distributeCandies = function(candies, num_people) {
+  let people = new Array(num_people).fill(0);
+  
+  // calculate fully-filled layers
+  let k = Math.floor((Math.sqrt(8*candies + 1) - 1) / (2 * num_people));
+  candies -= gauss(k * num_people);
+
+  for (let i = 0; i < num_people; i++) {
+		people[i] += num_people * gauss(k - 1) + k * (i + 1);
+  }
+
+  // All that remains is the last remaining distribution cycle.
+  let d = k * num_people + 1;
+	let j = d;
+	for (; candies - j >= 0; j++) {
+		people[j - d] += j;
+		candies -= j;
+	}
+
+	if (candies > 0) {
+		people[j - d] += candies;
+	}
+
+	return people;
+}
+
+
 // tests
 //console.log('distributeCandies', distributeCandies(7, 4)) // [1,2,3,1]
-//console.log('distributeCandies', distributeCandies(10, 3)) // [5,2,3]
-console.log('distributeCandies', distributeCandies(28, 3)) // [12,7,9]?
+console.log('distributeCandies', distributeCandies(10, 3)) // [5,2,3]
+//console.log('distributeCandies', distributeCandies(28, 3)) // [12,7,9]?
 
 export {
   distributeCandies,
-  distributeCandiesUseLoop
+  distributeCandiesUseLoop,
+  distributeCandies1,
+  distributeCandies2
 }

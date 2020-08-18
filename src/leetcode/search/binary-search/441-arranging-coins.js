@@ -38,12 +38,10 @@ These completed rows contain in total
 We could now reformulate the problem as follows:
 find the maximum k such that k*(k+1)/2 <= N
 
-The problem seems to be one of those search problems. And instead of naive
-iteration, one could resort to another more efficient algorithm called binary
-search, as we can find in another similar problem called
-search insert position (Leetcode 35).
+The problem seems to be one of those search problems which you can solve using a binary search.
+As well we can find in another similar problem called search insert position (Leetcode 35).
 
-time is O(logn)
+time is O(log n)
 space is O(1)
 */
 
@@ -69,27 +67,22 @@ var arrangeCoins = function(n) {
 }
 
 /*
-Approach 2
+Approach Math (Gauss)
+
 If we look deeper into the formula of the problem, we could actually solve it
 with the help of mathematics, without using any iteration.
 
 As a reminder, the constraint of the problem can be expressed as follows:
 k*(k+1) <= 2*N
-
-This could be solved by completing the square technique,
-(k+ 1/2)^2 - 1/4 <= 2N
-that results in the following answer:
-k = [sqrt(2N + 1/4) - 1/2]
-
-Or
-n = (x + 1) * x / 2
 x² + x = 2n
 x² + x + 1/4 - 1/4 = 2n
-(x + 1/2)² = 2n + 1 / 4
+(x + 1/2)² = 2n + 1/4
 (x + 1/2)² = (8n + 1) / 4
 x + 1/2 = sqrt(8n + 1) / 2
-x = (sqrt(8n + 1) / 2) - (1 / 2)
-x = (sqrt(8n + 1) - 1) / 2
+x = (sqrt(8n + 1) / 2) - 1/2
+x = (sqrt(8n + 1) - 1)/2
+
+or formula x = sqrt(2n + 1/4) - 1/2
 
 Time complexity: O(1).
 Space complexity: O(1).
@@ -97,6 +90,11 @@ Space complexity: O(1).
 
 var arrangeCoinsMath = function(n) {
   return Math.floor(Math.sqrt(2*n + 0.25) - 0.5);
+}
+
+var arrangeCoinsMath1 = function(n) {
+  const k = Math.sqrt(8*n + 1) / 2
+  return Math.floor(k - 0.5);
 }
 
 // another approach
@@ -120,7 +118,7 @@ var arrangeCoins2 = function(n) {
 
 export {
   arrangeCoins,
-  arrangeCoinsMath,
+  arrangeCoinsMath, arrangeCoinsMath1,
   arrangeCoins1,
   arrangeCoins2
 }

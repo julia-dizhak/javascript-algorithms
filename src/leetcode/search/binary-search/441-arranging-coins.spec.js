@@ -1,8 +1,9 @@
 import {
-  arrangeCoins,
+  //arrangeCoins,
   // arrangeCoinsMath as arrangeCoins,
   // arrangeCoins2 as arrangeCoins,
-  //arrangeCoins1 as arrangeCoins
+  //arrangeCoins1 as arrangeCoins,
+  arrangeCoinsMath1 as arrangeCoins
 } from './441-arranging-coins';
 
 describe('arranging coins test case', () => {

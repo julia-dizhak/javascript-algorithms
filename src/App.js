@@ -35,7 +35,7 @@ class App extends Component {
           <Sidebar className="sidebar" />
           <div className="rightPart">
               <header className="App-header">
-                Computer Science Algorithms in JavaScript
+                Problem solving in JavaScript
               </header>
               <Main />
           </div>

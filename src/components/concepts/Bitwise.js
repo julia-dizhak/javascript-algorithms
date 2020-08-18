@@ -17,9 +17,9 @@ import { getBit, setBit, clearBit } from '../../ds/bitwise/common-bit-tasks';
 export default function BitManipulation() {
   return (
     <div className="bit">
-      <h2 id="bit">Bitwise operators and Bit manipulation</h2>
+      <h2 id="bit">Bitwise operators and bit manipulation</h2>
 
-      <p class="desc">
+      <p className="desc">
         Under the hood, numbers are just bits set to 0 or 1.
         Bitwise operators treat their operands as a sequence of 32 bits (zeroes
         and ones), rather than as decimal, hexadecimal, or octal numbers.
@@ -30,9 +30,9 @@ export default function BitManipulation() {
       <br />
 
       <a
-        class="link"
+        className="link"
         href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#bitwise-operators">
-          List of problems with solutions
+          List problems related to Bit manipulations with solutions and time complexity explanation
       </a>
 
       <ul>
