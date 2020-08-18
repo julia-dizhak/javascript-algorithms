@@ -189,7 +189,7 @@ function gauss(n) {
 
 var distributeCandies = function(candies, num_people) {
   let people = new Array(num_people).fill(0);
-  
+
   // calculate fully-filled layers
   let k = Math.floor((Math.sqrt(8*candies + 1) - 1) / (2 * num_people));
   candies -= gauss(k * num_people);
@@ -213,10 +213,9 @@ var distributeCandies = function(candies, num_people) {
 	return people;
 }
 
-
 // tests
 //console.log('distributeCandies', distributeCandies(7, 4)) // [1,2,3,1]
-console.log('distributeCandies', distributeCandies(10, 3)) // [5,2,3]
+//console.log('distributeCandies', distributeCandies(10, 3)) // [5,2,3]
 //console.log('distributeCandies', distributeCandies(28, 3)) // [12,7,9]?
 
 export {
