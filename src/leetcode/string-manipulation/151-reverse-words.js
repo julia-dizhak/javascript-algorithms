@@ -161,6 +161,7 @@ var reverseWord = function(arr, i, j) {
 // reverse words in string II
 // We can reverse each word first, then reverse the whole string, finally trim the string.
 var reverseWords2 = function(s) {
+  debugger
   if (s == null) {
     return s;
   }
@@ -199,7 +200,7 @@ var reverseWords2 = function(s) {
   return chars.join('').trim();
 };
 
-// console.log('reverseWords', reverseWords2('  a good   example'))
+console.log('reverseWords', reverseWords2('  a good   example'))
 
 /*
 Approach JS built-in reverse

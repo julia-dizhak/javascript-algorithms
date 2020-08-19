@@ -536,6 +536,12 @@ started on 12/21/17
     | DFS (recursion + visited flag) | O(N)    | 0(N)   |
     | BFS (queue + visited flag)     | O(N)    | 0(N)   |
 
+    * [967. Numbers With Same Consecutive Differences](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/dfs/967-numbers-with-same-consecutive-difference.js)
+
+    | Approaches:        | Time           | Space  |
+    | :---               | :---           | :---   |
+    | DFS (+last digit)  |  O(N * 2^N)    | O(2^N) |
+
     * [994. Rotting oranges](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/graph/bfs/994-rotting-oranges.js)
 
     | Approaches:     | Time            | Space  |
@@ -604,6 +610,7 @@ started on 12/21/17
     | Binary search   | O(log n)     | 0(1)   |
 
     * [528. Random pick with weight (accumulation sum + binary search)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/search/binary-search/528-random-pick-with-weight.js)
+
 
 * ### Greedy
     * [1029. Two city Scheduling](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/greedy/1029-two-city-scheduling.js)

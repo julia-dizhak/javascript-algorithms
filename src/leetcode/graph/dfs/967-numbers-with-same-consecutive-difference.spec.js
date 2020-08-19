@@ -1,5 +1,6 @@
 import {
-  numsSameConsecDiff
+  //numsSameConsecDiff,
+  numsSameConsecDiff1 as numsSameConsecDiff
 } from './967-numbers-with-same-consecutive-difference';
 
 describe('display numbers with same consesutive differences test case', () => {

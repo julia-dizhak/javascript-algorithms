@@ -135,7 +135,7 @@ The operations within each invocation takes a constant time O(1).
 
 - Therefore, for a total 9*2^(N-1) number of potential combinations, a loose
 upper-bound on the time complexity of the algorithm would be O(N* 9*2^(N-1)) =
-= O(N* 2^N),since different combinations could share some efforts during the construction.
+= O(N* 2^N), since different combinations could share some efforts during the construction.
 
 - Note that, when K=0, at each position, there is only one possible candidate,
 e.g. 333. In total, we would have 9 numbers in the result set, and each number
@@ -157,12 +157,12 @@ O(N) + O(9*2^(N-1)) = O(2^N)
 var numsSameConsecDiff = function(N, K) {
   if (N === 1) return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   let results = [];
-  console.log('results', results)
+  //console.log('results', results)
   for (let num = 1; num < 10; num++) {
     dfs(N - 1, K, num, results);
   }
 
-  console.log('results', results)
+  //console.log('results', results)
   return [...results];
 }
 
@@ -191,11 +191,48 @@ function dfs(N, K, num, results) {
 
 /*
 Approach: DFS (the same)
+but use Set()
+
 */
+var numsSameConsecDiff1 = function(N, K) {
+  let results = new Set();
+  for (let num = 0; num < 10; num++) {
+    dfs1(N - 1, K, num, results);
+  }
+
+  return [...results];
+}
+
+function dfs1(N, K, num, results) {
+  if (N === 0) {
+    results.add(num);
+    return;
+  }
+
+  // No leading zeros
+  if (num === 0) return;
+
+  let newValues = [];
+  let lastDigit = num % 10;
+  newValues.push(lastDigit + K);
+  newValues.push(lastDigit - K);
+
+  // because of set: there is no duplicates
+  // if (K !== 0) {
+  //   newValues.push(lastDigit - K);
+  // }
+
+  for (const newValue of newValues) {
+    if (newValue >=0 && newValue < 10) {
+      let newNum = 10*num + newValue;
+      dfs1(N-1, K, newNum, results);
+    }
+  }
+}
 
 // tests
 // example (3,7) -> [181,292,707,818,929]
-console.log(numsSameConsecDiff(2,1))
+//console.log(numsSameConsecDiff(2,1))
 //console.log(numsSameConsecDiff(2,0))
 //console.log('numsSameConsecDiff', numsSameConsecDiff(3,7))
 
@@ -205,6 +242,8 @@ approach looping
 */
 
 /*
+iterative solution
+https://leetcode.com/problems/numbers-with-same-consecutive-differences/discuss/211183/JavaC%2B%2BPython-Iterative-Solution
 looping
 
     if (N === 1) return [0,1,2,3,4,5,6,7,8,9];
@@ -232,39 +271,6 @@ looping
 */
 
 /*
-dfs
-var numsSameConsecDiff = function(N, K) {
-    const res = new Set();
-    for (let i = 0; i <= 9; i += 1) {
-        numsSameConsecDiffImpl(N - 1, K, res, i);
-    }
-    return [...res];
-};
-
-function numsSameConsecDiffImpl(n, k, res, acc) {
-    if (n === 0) {
-        res.add(acc);
-        return;
-    }
-    if (acc === 0) {
-        return; // No leading zeros
-    }
-
-    const lastNumber = acc % 10;
-    const newValues = [
-        lastNumber + k,
-        lastNumber - k,
-    ];
-    for (const newValue of newValues) {
-        if (newValue < 0 || newValue > 9) {
-            continue;
-        }
-        numsSameConsecDiffImpl(n - 1, k, res, acc * 10 + newValue);
-    }
-}
-*/
-
-/*
 brute force
 
 [18, 29, 70, 81, 92]
@@ -281,43 +287,39 @@ Seems the answer for N == 1 and K > 0 should be []...
 backtracing
 dp?
 */
-/**
- * @param {number} N
- * @param {number} K
- * @return {number[]}
- */
-var numsSameConsecDiff1 = function(N, K) {
-  let result = [];
+// /**
+//  * @param {number} N
+//  * @param {number} K
+//  * @return {number[]}
+//  */
+// var numsSameConsecDiff1 = function(N, K) {
+//   let result = [];
 
-  // there is no case N = 1, N>=1
-  if (N === 1) return [0,1,2,3,4,5,6,7,8,9];
+//   // there is no case N = 1, N>=1
+//   if (N === 1) return [0,1,2,3,4,5,6,7,8,9];
 
-  for (let i = 1; i <= 9; i++) {
-    for (let j = 0; j <= 9; j++) {
-      if (Math.abs(i-j) === K) {
-        //result.push(Number(''+i+j));
-        result.push(''+i+j);
-      }
+//   for (let i = 1; i <= 9; i++) {
+//     for (let j = 0; j <= 9; j++) {
+//       if (Math.abs(i-j) === K) {
+//         //result.push(Number(''+i+j));
+//         result.push(''+i+j);
+//       }
 
-    }
-  }
+//     }
+//   }
 
-  if (N > 2) {
-    for (let i = 0; i < result.length; i++) {
-      result[i] += result[i].slice(0, N-2);
-    }
-  }
+//   if (N > 2) {
+//     for (let i = 0; i < result.length; i++) {
+//       result[i] += result[i].slice(0, N-2);
+//     }
+//   }
 
-  result = result.map(el => Number(el))
+//   result = result.map(el => Number(el))
 
-  return result;
-};
-// console.log('numsSameConsecDiff', numsSameConsecDiff(1,0))
-// console.log('numsSameConsecDiff', numsSameConsecDiff(0,1))
-// //console.log('numsSameConsecDiff', numsSameConsecDiff(2,1))
-// console.log('numsSameConsecDiff', numsSameConsecDiff(3,7))
-// console.log('numsSameConsecDiff', numsSameConsecDiff(4,7))
+//   return result;
+// };
 
 export {
-  numsSameConsecDiff
+  numsSameConsecDiff,
+  numsSameConsecDiff1
 }

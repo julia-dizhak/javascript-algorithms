@@ -5,7 +5,7 @@ import Details from './../Details';
 
 // problems
 import { reverseVariant2, reverseStringTwoPointersUseTemp, reverseStringRecursion } from '../../ds/string-manipulation/reverse-a-string';
-// import { reverseWords } from '../../leetcode/string-manipulation/151-reverse-words';
+//import { reverseWords } from '../../leetcode/string-manipulation/151-reverse-words';
 import { defineAnagrams } from '../../ds/string-manipulation/define-anagrams';
 import { makingAnagrams } from '../../ds/string-manipulation/making-anagrams';
 import { alternatingCharacters } from '../../ds/string-manipulation/tasks/alternating-characters';
@@ -16,7 +16,7 @@ import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-f
 //import { detectCapitalUse } from '../../leetcode/string-manipulation/520-detect-capital';
 
 import { getPermutation } from '../../leetcode/backtracking/60-permutation-sequence';
-import { permute } from '../../leetcode/backtracking/46-print-all-permutations';
+//import { permute } from '../../leetcode/backtracking/46-print-all-permutations';
 // import { longestPalindromeUseHash } from '../../leetcode/string-manipulation/palindrome/406-longest-palindrome';
 import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
@@ -31,7 +31,7 @@ export default function StringManipulation() {
           <Details
             id="test1"
             question="test case"
-            //code={.toString()}
+            //code={reverseWords.toString()}
             //secondCode={detectCapitalUse.toString()}
           />
         </li>
