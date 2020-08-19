@@ -4,6 +4,8 @@ import Details from '../Details';
 // problems
 // dfs
 import { floodFill, floodFillUseHelper } from '../../leetcode/graph/dfs/733-flood-fill';
+import { numsSameConsecDiff } from '../../leetcode/graph/dfs/967-numbers-with-same-consecutive-difference';
+
 // bfs
 // import { rottingOranges } from '../../leetcode/graph/bfs/994-rotting-oranges';
 // import { allPathsSourceTarget } from '../../leetcode/graph/bfs/797-all-paths-from-source-target';
@@ -17,10 +19,10 @@ export default function Graph() {
 
       <ul id="graph">
         <li>
-        <Details
+          <Details
             id="test"
             question="test"
-            //code={rottingOranges.toString()}
+            code={numsSameConsecDiff.toString()}
             //code={findMin.toString()}
             //secondCode={exist.toString()}
             //thirdSolution={solve.toString()}

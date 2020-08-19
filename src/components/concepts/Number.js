@@ -10,7 +10,6 @@ import { swap, swapUseTemp } from '../../ds/number/swap';
 // import { addDigits } from '../../leetcode/math/258-add-digits'
 // import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
 // import { distributeCandies } from '../../leetcode/math/1103-distribute-candies-to-people';
-import { numsSameConsecDiff } from '../../leetcode/math/1103-distribute-candies-to-people';
 
 export default function Number() {
   return (
@@ -30,12 +29,12 @@ export default function Number() {
 
       <ul id="number">
         <li>
-          <Details
+          {/* <Details
             id="number-test"
             question="test"
-            code={numsSameConsecDiff.toString()}
+            code={.toString()}
             //code={addDigits.toString()}
-          />
+          /> */}
 
           <Details
             id="number-power"

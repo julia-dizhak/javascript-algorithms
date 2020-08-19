@@ -73,41 +73,75 @@ This stack keeps track of the function calls to fib(N).
 This has the potential to be bad in cases
 hat there isn't enough physical memory to handle the increasingly growing stack,
 leading to a StackOverflowError.
+You can pass higher number 50, 60, ... and you IDE will die
 */
 /**
  * @param {number} N
  * @return {number}
  */
+// example 0,1,1,2,3,5, ...
 let fib = (N) => {
   if (N === 0) return 0;
   if (N === 1) return 1;
+  //if (N <= 1) return N;
 
   if (N > 1) {
-    return fib(N-1) + fib(N-2)
+    return fib(N-1) + fib(N-2);
+  }
+};
+
+function fib2(num) {
+  if (num === 0 || num === 1) return 1;
+  else {
+    return num * fib2(num-1)
   }
 };
 
 /*
-  Approach: Iterative solution
-  use for loop
+Approach: Iterative solution
+use for loop
 
-  time - O(n)
-  space - O(1)
+time - O(n)
+space - O(1)
 */
 function fibIterative(N) {
-  let arr = [0, 1];
+  let arr = new Array(N);
+  //let arr = [0, 1];
+  arr[0] = 0;
+  arr[1] = 1;
 
   for (let i = 2; i <= N; i++) {
-    arr.push(arr[i-2] + arr[i-1])
+    //arr.push(arr[i-2] + arr[i-1])
+    arr[i] = arr[i-1] + arr[i-2];
   }
 
   return arr[N]
 }
 
-// todo Approach 4: Iterative Top-Down Approach
 /*
+Approach Iterative Top-Down
+
+time is O(n)
+space is O(1)
 
 */
+function fibIterativeTop(N) {
+  if (N === 0) return 0;
+  if (N === 1) return 1;
+
+  let prevPrev;
+  let prev = 0;
+  let current = 1
+
+  for (let i = 2; i <= N; i++) {
+    prevPrev = prev;
+    prev = current;
+    current = prevPrev + prev;
+  }
+
+  return current
+}
+
 // Here is a O(1) memory solution:
 
 // function fibIterative(n) {
@@ -149,5 +183,8 @@ function fibIterative(N) {
 */
 
 
-export { fib, fibIterative }
-
+export {
+  fib,
+  fibIterative, fibIterativeTop,
+  fib2
+}
