@@ -83,7 +83,35 @@ Algorithm
 Intuitively we could implement the DFS algorithm with recursion. Here we define
 a recursive function DFS(N, num) whose goal is to come up the combinations for
 the remaining N digits, starting from the current num.
-...
+
+  1 dfs(2, 2, 1)
+  |
+  3 dfs(N-1 = 1, 2, 13)
+ / \
+5   1 dfs(N-2 = 0, 2, 135) or dfs(N-2 = 0, 7, 131)
+
+For instance, in the example, where N=3 and K=2, and there is a moment
+we would invoke DFS(1, K=2, 13) which is to add another digit to the existing number
+13 so that the final number meets the requirements. If the DFS function works
+properly, we should have the numbers of 135 and 131 as results after the invocation.
+
+We could implement the recursive function in the following steps:
+
+- As a base case, when N=0 i.e. no more remaining digits to complete, we could
+return the current num as the result.
+
+- Otherwise, there are still some remaining digits to be added to the current
+number, e.g. 13. There are two potential cases to explore, based on the last
+digit of the current number which we denote as tail_digit.
+
+  -- Adding the difference K to the last digit, i.e. tail_digit + K.
+  -- Deducting the difference K from the last digit, i.e. tail_digit - K.
+
+- If the result of either above case falls into the valid digit range
+(i.e. [0,9]), we then continue the exploration by invoking the function itself.
+
+Once we implement the DFS(N, num) function, we then simply call this function
+over the scope of [1, 9], i.e. the valid digits for the highest position.
 
 Note: If we are asked to return numbers of a single digit (i.e. N=1), then
 regardless of K, all digits are valid, including zero. We treat this as a special
@@ -96,75 +124,85 @@ Complexity Analysis
 Let N be the number of digits for a valid combination, and K be the difference
 between digits.
 
+First of all, let us estimate the number of potential solutions. For the highest
+digit, we could have 9 potential candidates. Starting from the second highest
+position, we could have at most 2 candidates for each position. Therefore, at most,
+we could have 9*2^(N-1) for N>1.
 
-brute force
+Time Complexity: O(N * 2^N)
+- For each final combination, we would invoke the recursive function N times.
+The operations within each invocation takes a constant time O(1).
 
-[18, 29, 70, 81, 92]
-181, 292, 707, 818, 929
-18 + 1
+- Therefore, for a total 9*2^(N-1) number of potential combinations, a loose
+upper-bound on the time complexity of the algorithm would be O(N* 9*2^(N-1)) =
+= O(N* 2^N),since different combinations could share some efforts during the construction.
 
-DP subproblems
-define a subproblem
+- Note that, when K=0, at each position, there is only one possible candidate,
+e.g. 333. In total, we would have 9 numbers in the result set, and each number
+is of N digits. The time complexity would then be reduced down to O(N).
 
+Space complexity is O(2^N)
+- Since we adopt a recursive solution, we would have some additional memory
+consumption on the function call stack. The maximum number of consecutive calls
+on the recursion function is N. Hence, the space complexity for the call stack
+is O(N).
 
+- We use a list to keep all the solutions, which could amount to 9*2^(N-1) number of elements.
 
-Consecutive" digits when N == 1
-Seems the answer for N == 1 and K > 0 should be []...
-backtracing
-dp?
+- To sum up, the overall space complexity of the algorithm is
+O(N) + O(9*2^(N-1)) = O(2^N)
 */
 
 // example N = 3, k = 2
 var numsSameConsecDiff = function(N, K) {
-  if (N === 1) return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // ?
+  if (N === 1) return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   let results = [];
   console.log('results', results)
   for (let num = 1; num < 10; num++) {
     dfs(N - 1, K, num, results);
   }
 
+  console.log('results', results)
   return [...results];
 }
 
 function dfs(N, K, num, results) {
-  //debugger
   if (N === 0) {
-    //debugger
     results.push(num);
     return;
   }
 
-  // can't be zero for loop starts from 1
-  if (num === 0) return; // no leading zeros
-
   let newValues = [];
   let lastDigit = num % 10;
-  // newValues.push(lastNumber + K);
-  // newValues.push(lastNumber - K);
-  newValues = [lastDigit + K, lastDigit - K];
-  for (const newValue of newValues) {
-    if (newValue >=0 && newValue < 10) {
-      dfs(N-1, K, 10*num + newValue);
-    } else continue;
+  newValues.push(lastDigit + K);
+
+  // check case if k!== 0
+  if (K !== 0) {
+    newValues.push(lastDigit - K);
   }
 
-  //let nextDigits = [];
-  // let tailDigit = num % 10; // last number
-  // nextDigits.push(tailDigit + K);
-  // if (K !== 0) {
-  //   nextDigits.push(tailDigit - K);
-  //   for (const nextDigit of nextDigits) {
-  //     if (nextDigit >= 0 && nextDigit < 10) {
-  //       let newNum = 10*num + nextDigit;
-  //       dfs(N-1, K, newNum, results);
-  //     }
-  //   }
-  // }
-
+  for (const newValue of newValues) {
+    if (newValue >=0 && newValue < 10) {
+      let newNum = 10*num + newValue;
+      dfs(N-1, K, newNum, results);
+    }
+  }
 }
 
+/*
+Approach: DFS (the same)
+*/
+
 // tests
+// example (3,7) -> [181,292,707,818,929]
+console.log(numsSameConsecDiff(2,1))
+//console.log(numsSameConsecDiff(2,0))
 //console.log('numsSameConsecDiff', numsSameConsecDiff(3,7))
+
+/*
+Approach BFS
+approach looping
+*/
 
 /*
 looping
@@ -226,6 +264,23 @@ function numsSameConsecDiffImpl(n, k, res, acc) {
 }
 */
 
+/*
+brute force
+
+[18, 29, 70, 81, 92]
+181, 292, 707, 818, 929
+18 + 1
+
+DP subproblems
+define a subproblem
+
+
+
+Consecutive" digits when N == 1
+Seems the answer for N == 1 and K > 0 should be []...
+backtracing
+dp?
+*/
 /**
  * @param {number} N
  * @param {number} K
