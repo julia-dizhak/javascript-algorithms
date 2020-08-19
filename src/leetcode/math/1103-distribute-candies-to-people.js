@@ -222,5 +222,5 @@ export {
   distributeCandies,
   distributeCandiesUseLoop,
   distributeCandies1,
-  distributeCandies2
+  distributeCandies2,
 }

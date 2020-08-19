@@ -106,9 +106,10 @@ A[2] + permutation of (A[1..n] - A[2])
 ...
 A[n] + permutation of (A[1..n] - A[n]).
 
-Time: n!
-Space:
+Time: O(n!)
+Space: 
 */
+
 
 /**
  * @param {number[]} nums
