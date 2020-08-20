@@ -14,6 +14,7 @@ import { numJewelsInStones, numJewelsInStonesBruteForce } from '../../leetcode/s
 import { firstUniqueChar } from '../../leetcode/string-manipulation/387-first-unique-character-in-string';
 import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-find-all-anagrams';
 //import { detectCapitalUse } from '../../leetcode/string-manipulation/520-detect-capital';
+import { toGoatLatin } from '../../leetcode/string-manipulation/goat-latin';
 
 import { getPermutation } from '../../leetcode/backtracking/60-permutation-sequence';
 //import { permute } from '../../leetcode/backtracking/46-print-all-permutations';
@@ -31,7 +32,7 @@ export default function StringManipulation() {
           <Details
             id="test1"
             question="test case"
-            //code={reverseWords.toString()}
+            code={toGoatLatin.toString()}
             //secondCode={detectCapitalUse.toString()}
           />
         </li>
