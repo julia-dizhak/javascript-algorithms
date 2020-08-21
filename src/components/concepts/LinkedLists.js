@@ -2,6 +2,7 @@ import React from 'react';
 import Details from '../Details';
 
 import { LinkedList } from '../../ds/linked-list/singly/singly-linked-list';
+import { LinkedList as List1 } from '../../leetcode/linked-list/singly/143-reorder-linked-list';
 
 export default function LinkedLists() {
   return (
@@ -15,6 +16,14 @@ export default function LinkedLists() {
             id="singly-linked-list"
             question="Singly linked list implementation"
             code={LinkedList.toString()}
+          />
+        </li>
+        <li>
+          problems
+          <Details
+            id="singly-linked-list-test"
+            question="test"
+            code={List1.toString()}
           />
         </li>
       </ul>

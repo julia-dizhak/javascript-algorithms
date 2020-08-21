@@ -454,6 +454,12 @@ started on 12/21/17
     | Swap with next node  | O(1)    | O(1)    |
     | Usual way: find prev | O(n)    | O(1)    |
 
+    * [143. Reorder Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/143-reorder-linked-list.js)
+
+    | Approach             | Time      | Space   |
+    | :---                 | :---      | :---    |
+    | Brute force          | O(n^2)    | O(1)    |
+
 * ### Doubly Linked List
     * [430. Flatten a multilevel Doubly Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/doubly/430-flatten-multilevel-doubly-linked-list.js)
 

@@ -237,7 +237,7 @@ class LinkedList {
   }
 
   printList() {
-    const nodes = [];
+    let nodes = [];
     let current = this.head;
     while (current) {
       nodes.push(current.val);
