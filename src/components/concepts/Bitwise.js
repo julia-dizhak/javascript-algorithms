@@ -32,7 +32,7 @@ export default function BitManipulation() {
       <a
         className="link"
         href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#bitwise-operators">
-          List problems related to Bit manipulations with solutions and time complexity explanation
+          List of problems related to Bit manipulations with solutions and time complexity explanation
       </a>
 
       <ul>

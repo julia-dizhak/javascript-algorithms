@@ -422,30 +422,6 @@ started on 12/21/17
     | Use Array                        | O(n)          | O(n)    |
     | Mutate Array (negative indexes)  | O(n)          | O(1)    |
 
-* ### Hash
-    * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/hash/two-sum.js)
-
-    | Approaches:        | Time    | Space    |
-    | :---               | :---    | :---     |
-    | Brute force        | O(n^2)  | O(1)     |
-    | 2-pass Hash table  | O(n)    | O(n)     |
-    | 1-pass Hash table  | O(n)    | O(n)     |
-
-    * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
-
-    | Approach           | Time   | Space   |
-    | :---               | :---   | :---    |
-    | Array + Map: init  |        | O(m+n)  |
-    | insert             | O(1)   | O(1)    |
-    | remove             | O(1)   | O(1)    |
-    | getRandom          | O(1)   | O(1)    |
-
-    * [957. Prison Cells After N Days](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/957-prison-cells-after-N-days.js)
-
-    | Approach            | Time    | Space   |
-    | :---                | :---    | :---    |
-    | Hash + catch cycle  | O(1)    | O(1)    |
-
 * ### Singly Linked List
     * [237. Delete node in Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/237-delete-node-in-linked-list.js)
 
@@ -453,6 +429,12 @@ started on 12/21/17
     | :---                 | :---    | :---    |
     | Swap with next node  | O(1)    | O(1)    |
     | Usual way: find prev | O(n)    | O(1)    |
+
+    * [206. Reverse Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/206-reverse-linked-list.js)
+
+    | Approach       | Time      | Space   |
+    | :---           | :---      | :---    |
+    | Iterative      | O(n)      | O(1)    |
 
     * [143. Reorder Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/143-reorder-linked-list.js)
 
@@ -491,6 +473,30 @@ started on 12/21/17
     | :---         | :---      | :---      |
     | enqueue      | O(1)      | 0(1)      |
     | dequeue      | O(n)      | 0(1)      |
+
+* ### Hash
+    * [1. Two sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/hash/two-sum.js)
+
+    | Approaches:        | Time    | Space    |
+    | :---               | :---    | :---     |
+    | Brute force        | O(n^2)  | O(1)     |
+    | 2-pass Hash table  | O(n)    | O(n)     |
+    | 1-pass Hash table  | O(n)    | O(n)     |
+
+    * [380. Insert Delete GetRandom O(1)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/380-insert-delete-getrandom-constant-time.js)
+
+    | Approach           | Time   | Space   |
+    | :---               | :---   | :---    |
+    | Array + Map: init  |        | O(m+n)  |
+    | insert             | O(1)   | O(1)    |
+    | remove             | O(1)   | O(1)    |
+    | getRandom          | O(1)   | O(1)    |
+
+    * [957. Prison Cells After N Days](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/hash/957-prison-cells-after-N-days.js)
+
+    | Approach            | Time    | Space   |
+    | :---                | :---    | :---    |
+    | Hash + catch cycle  | O(1)    | O(1)    |
 
 * ### Tree, Binary Tree
     * [226. Invert a Binary Tree (recursive)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/226-invert-binary-tree.js)
