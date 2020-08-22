@@ -31,6 +31,9 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 // contest 32?
 //import {findKthPositive, minInsertions} from '../../leetcode/contest/biweekly/32/index';
 
+// contest 32
+import { test } from '../../leetcode/contest/biweekly/33/index';
+
 export default function Tree() {
   return (
     <div className="tree">
@@ -41,7 +44,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={hasPathSum.toString()}
+            code={test.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

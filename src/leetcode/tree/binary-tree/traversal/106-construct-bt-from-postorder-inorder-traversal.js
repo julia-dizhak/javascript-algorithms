@@ -211,7 +211,7 @@ var buildTree = function(inorder, postorder) {
 // postorder = [9,15,7,20,3]
 //const build = buildTreeUseHash([9,3,15,20,7], [9,15,7,20,3])
 const build = buildTree([2,1,3], [2,3,1])
-console.log('build tree', build)
+//console.log('build tree', build)
 
 
 /*

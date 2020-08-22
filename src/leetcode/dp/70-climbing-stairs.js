@@ -93,7 +93,7 @@ var climbStairsBruteForce = function(n) {
   }
 }
 
-console.log('climbStairsBruteForce', climbStairsBruteForce(3))
+//console.log('climbStairsBruteForce', climbStairsBruteForce(3))
 
 /*
 Approach Bottom-up approach of DP

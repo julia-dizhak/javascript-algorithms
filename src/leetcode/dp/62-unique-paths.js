@@ -97,11 +97,11 @@ var uniquePaths = function(m,n) {
     }
   }
 
-  console.log(path)
+  //console.log(path)
   return path[m-1][n-1];
 }
 
-console.log('uniquePath', uniquePaths(3,2))
+//console.log('uniquePath', uniquePaths(3,2))
 
 export {
   uniquePaths

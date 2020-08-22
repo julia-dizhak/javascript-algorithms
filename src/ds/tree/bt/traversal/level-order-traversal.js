@@ -109,8 +109,8 @@ tree.left = new TreeNode(3);
 tree.right = new TreeNode(2);
 tree.left.left = new TreeNode(9);
 tree.right.right = new TreeNode(10);
-console.log('tree', tree);
-console.log('levelOrderForLeetcode', levelOrderForLeetcode(tree));
+// console.log('tree', tree);
+// console.log('levelOrderForLeetcode', levelOrderForLeetcode(tree));
 
 /*
 Leetcode

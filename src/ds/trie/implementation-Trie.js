@@ -115,7 +115,7 @@ class Trie {
     }
 
     if (curNode.val === null && word.length === 0) {
-      console.log('d', d)
+      //console.log('d', d)
       return true
     } else return false
   }
@@ -144,7 +144,7 @@ trie.search('bad');
 // trie.insert('dad');
 //trie.add('mad');
 //trie = JSON.parse(JSON.stringify(trie)).head;
-console.log('trie', trie)
+//console.log('trie', trie)
 
 export {
   Trie

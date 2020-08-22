@@ -205,9 +205,9 @@ list.next.next.next = new Node(4);
 list.next.next.next.next = new Node(5);
 //console.log('list', list);
 //list = JSON.parse(JSON.stringify(list));
-console.log('list', list);
+//console.log('list', list);
 reorderList(list);
-console.log('reorder list', list);
+//console.log('reorder list', list);
 // console.log('reorder list val 1', list.val);
 // console.log('reorder list val 2', list.next.val);
 
@@ -220,7 +220,7 @@ function printList(head) {
   }
   return nodes.join(' -> ')
 }
-console.log('print list', printList(list));
+//console.log('print list', printList(list));
 
 /*
 Sort important? 1 3 5 6 8

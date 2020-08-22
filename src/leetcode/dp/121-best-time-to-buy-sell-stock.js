@@ -205,7 +205,7 @@ https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/39038/Kada
 
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/712254/simple-2-approaches-DP-and-Recursion-Time-O(n)-Space-O(1)
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
-console.log('maxProfit', maxProfitUseBruteForce([7,6,4,3,1]))
+//console.log('maxProfit', maxProfitUseBruteForce([7,6,4,3,1]))
 
 // answer https://leetcode.com/discuss/explore/july-leetcoding-challenge/762350/Task-Scheduler-questions
 

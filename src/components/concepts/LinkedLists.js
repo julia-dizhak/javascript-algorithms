@@ -10,8 +10,6 @@ export default function LinkedLists() {
     <div className="number">
       <h2>Linked Lists</h2>
 
-      <h4>Singly-linked List</h4>
-
       <p className="desc">
         Linked List is an ordered collection of data elements. Linked List can be
         visualized as a chain of nodes, where every nodes points to the next node.
@@ -19,6 +17,18 @@ export default function LinkedLists() {
       </p>
       <br />
 
+      <h4>Singly-linked List</h4>
+      <p className="desc">
+        In Singly Linked List each node consists of 2 parts: data and pointer
+        (reference) to the next node.
+      </p>
+      <br />
+
+      <a
+        className="link"
+        href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#singly-linked-list">
+        List of problems related to Linked Lists with solutions and time complexity explanation
+      </a>
       <ul>
         <li>
           <Details
@@ -28,16 +38,6 @@ export default function LinkedLists() {
           />
         </li>
         <li>
-          <p>
-            In Singly Linked List each node consists of 2 parts: data and pointer
-            (reference) to the next node.
-          </p>
-          <a
-            className="link"
-            href="https://github.com/julia-dizhak/javascript-algorithms/blob/master/README.md#singly-linked-list">
-              List of problems related to Linked List DS with solutions and time complexity explanation
-          </a>
-
           <Details
             id="singly-linked-list-test"
             question="test"

@@ -162,7 +162,7 @@ root.left = new TreeNode(9);
 root.right = new TreeNode(20);
 root.right.left = new TreeNode(15);
 root.right.right = new TreeNode(7);
-console.log('verticalTraversalWithoutOrder', verticalTraversalWithoutOrder(root));
+//console.log('verticalTraversalWithoutOrder', verticalTraversalWithoutOrder(root));
 
 // const compare = (a, b) => {
 //   if (a[2] - b[2] === 0 ) {

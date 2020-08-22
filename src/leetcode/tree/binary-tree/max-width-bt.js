@@ -225,7 +225,7 @@ tree = JSON.parse(JSON.stringify(tree)).root;
 
 // test 4
 const width = widthOfBinaryTreeVariant1(tree)
-console.log('width', width)
+//console.log('width', width)
 
 
 export {

@@ -150,9 +150,7 @@ hash.remove(3);
 hash.contains(3);
 hash.add(1);
 hash.add(2);
-console.log('hash', hash)
-
-
+//console.log('hash', hash)
 
 // https://leetcode.com/problems/design-hashset/discuss/768659/Python-Easy-Multiplicative-Hash-explained
 // return ((key*1031237) & (1<<20) - 1)>>5

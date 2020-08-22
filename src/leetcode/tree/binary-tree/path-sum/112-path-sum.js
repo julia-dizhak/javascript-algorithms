@@ -76,7 +76,7 @@ var hasPathSum = function(root, sum) {
   //   if (node.left) stack.push(node.left, val + node.val.left);
   // }
 
-  console.log('result2', result);
+  //console.log('result2', result);
   return false
 };
 
@@ -90,9 +90,9 @@ tree.right.right = new TreeNode(4);
 tree.left.left.left = new TreeNode(7);
 tree.left.left.right = new TreeNode(2);
 tree.right.right.right = new TreeNode(4);
-console.log('tree', tree);
+//console.log('tree', tree);
 
-console.log('hasPathSum', hasPathSum(tree, 22));
+//console.log('hasPathSum', hasPathSum(tree, 22));
 
 // describe task with path iii
 // has path sum III

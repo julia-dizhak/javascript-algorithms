@@ -116,8 +116,8 @@ var hIndexSort = function(citations) {
 }
 
 // provide a test
-console.log('hIndexSort', hIndexSort([3,0,6,1,5]));
-console.log('hIndexSort 1', hIndexSort([0,1,1,1,1,1,2,2,2,2]));
+//console.log('hIndexSort', hIndexSort([3,0,6,1,5]));
+//console.log('hIndexSort 1', hIndexSort([0,1,1,1,1,1,2,2,2,2]));
 
 /*
 Approach
@@ -158,12 +158,12 @@ var hIndex = function(citations) {
     if (total >= i) return i;
   }
 
-  console.log('arr', arr)
+  //console.log('arr', arr)
   return 0;
 };
 
 // provide a test
-console.log('hIndex', hIndex([3,0,6,1,5]))
+//console.log('hIndex', hIndex([3,0,6,1,5]))
 
 /*
 Leetcode

@@ -64,7 +64,7 @@ function heapSort(arr) {
   return arr
 }
 
-console.log('heapSort', heapSort([6,5,3,1,8,7,2,4]));
+//console.log('heapSort', heapSort([6,5,3,1,8,7,2,4]));
 
 
 /*
@@ -151,7 +151,7 @@ const input = [
 //   return perimeter;
 // };
 
-console.log('islandPerimeter', islandPerimeter(input))
+//console.log('islandPerimeter', islandPerimeter(input))
 
 export {
   heapSort,

@@ -129,9 +129,9 @@ function isVowel(x) {
   return /[aeiouAEIOU]/.test(x);
 }
 
-console.log('toGoatLatin', toGoatLatin('I'))
-console.log('toGoatLatin', toGoatLatin('I speak Goat Latin'))
-console.log('toGoatLatin', toGoatLatin('The quick brown fox jumped over the lazy dog'))
+// console.log('toGoatLatin', toGoatLatin('I'))
+// console.log('toGoatLatin', toGoatLatin('I speak Goat Latin'))
+// console.log('toGoatLatin', toGoatLatin('The quick brown fox jumped over the lazy dog'))
 
 export {
   toGoatLatin

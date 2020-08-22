@@ -213,7 +213,7 @@ var getPermutation = function(n, k) {
 // };
 
 
-console.log('getPermutation', getPermutation(4, 9))
+//console.log('getPermutation', getPermutation(4, 9))
 
 export {
   getPermutation
