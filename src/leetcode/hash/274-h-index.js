@@ -104,7 +104,7 @@ time is O(n log n)
 space is O(1)
 
 */
-var hIndexSort = function(citations) {
+var hIndexSort1 = function(citations) {
   if (citations === null || citations.length === 0) return 0;
   //debugger
   citations = citations.sort((a,b) => a - b);
@@ -201,5 +201,6 @@ Could you solve it in logarithmic time complexity?
 
 export {
   hIndex,
-  hIndexSort
+  hIndexSort,
+  hIndexSort1
 }

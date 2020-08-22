@@ -1,5 +1,6 @@
 import {
-  generate,
+  //generate,
+  generate1 as generate,
   //generateUseRecursion as generate,
 } from './118-pascals-triangle';
 import {

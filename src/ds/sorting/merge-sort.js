@@ -20,7 +20,7 @@ The downside is merging 2 arrays together requires extra space - O(n) space
 */
 
 function merger(left, right) {
-  // auxilary
+  // auxiliary
   let singleSorted = [];
 
   while (left.length && right.length) {
@@ -143,8 +143,8 @@ function bottomUpMergeSort(arr) {
       }
     }
     var temp = sorted,
-        sorted = buffer,
-        buffer = temp;
+    sorted = buffer,
+    buffer = temp;
   }
 
   return sorted;

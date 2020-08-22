@@ -271,12 +271,13 @@ return [...map.values()]
 };
 
 // tests
-// let tree = new TreeNode(3)
+let tree = new TreeNode(3)
 // tree.left = new TreeNode(9);
 // tree.right = new TreeNode(20);
 // tree.right.left = new TreeNode(15);
 // tree.right.right = new TreeNode(7);
 //console.log('tree', tree);
+tree = verticalTraversal(tree)
 //console.log('verticalTraversal', verticalTraversal(tree));
 
 // solution https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/discuss/777997/JavaScript-Clean-BFS-Beat-97

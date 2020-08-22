@@ -1,3 +1,5 @@
+import { getNodeText } from "@testing-library/react";
+
 /*
 Leetcode
 118 Pascals triangle
@@ -77,6 +79,28 @@ var generate = function(numRows) {
   return result;
 }
 
+// the same approach
+var generate1 = function(numRows) {
+  if (numRows === 0) return [];
+
+  let output = [];
+
+  for (let i = 0; i < numRows; i++) {
+    let rows = [];
+    for (let j = 0; j <= i; j++) {
+      if (j === 0 || j === i) {
+        rows[j] = 1
+      } else {
+        rows[j] = output[i-1][j-1] + output[i-1][j];
+      }
+    }
+    output.push(rows)
+  }
+
+  return output;
+}
+
+
 /*
 Approach DP
 
@@ -125,6 +149,6 @@ function helper(numRows, list = []) {
 //console.log('pascalTriangle 1', generateUseRecursion(3));
 
 export {
-  generate,
+  generate, generate1,
   generateUseRecursion
 }

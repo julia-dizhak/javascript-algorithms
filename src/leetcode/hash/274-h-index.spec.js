@@ -1,6 +1,6 @@
 import {
-  //hIndex,
-  hIndexSort as hIndex,
+  hIndex,
+  //hIndexSort as hIndex,
 } from './274-h-index';
 
 describe('find h-index test case', () => {

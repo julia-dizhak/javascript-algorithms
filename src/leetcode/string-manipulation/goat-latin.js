@@ -101,7 +101,7 @@ word.
 // }
 
 var toGoatLatin = function(S) {
-  const n = S.length;
+  //const n = S.length;
   let words = S.split(' ');
   const ma = "ma";
 

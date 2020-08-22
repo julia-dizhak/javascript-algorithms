@@ -103,37 +103,37 @@ Since there are no lakes, every pair of neighbour cells with different values is
  * @param {number[][]} grid
  * @return {number}
  */
-var islandPerimeter = function(grid) {
-  const row = grid.length;
-  const col = grid[0].length;
-  let perimeter = 0;
-  let square = 0
+// var islandPerimeter = function(grid) {
+//   const row = grid.length;
+//   const col = grid[0].length;
+//   let perimeter = 0;
+//   let square = 0
 
-  for (let i = 0; i < row; i++) {
-    for (let j = 0; j < col; j++) {
-      if (grid[i][j] === 1) square += 4;
-      if (i > 0 && j > 0 && i < row - 1 && j < col - 1) {
-        perimeter += grid[i][j-1] + grid[i][j+1] + grid[i-1][j] + grid[i+1][j]
-      }
-      if (i === 0 && j === 0) {
-        perimeter += grid[i][j+1] + grid[i+1][j];
-      }
-      if (i === row - 1 && j === col - 1) {
-        //debugger
-        perimeter += grid[i][j-1] + grid[i-1][j];
-      }
-    }
-  }
+//   for (let i = 0; i < row; i++) {
+//     for (let j = 0; j < col; j++) {
+//       if (grid[i][j] === 1) square += 4;
+//       if (i > 0 && j > 0 && i < row - 1 && j < col - 1) {
+//         perimeter += grid[i][j-1] + grid[i][j+1] + grid[i-1][j] + grid[i+1][j]
+//       }
+//       if (i === 0 && j === 0) {
+//         perimeter += grid[i][j+1] + grid[i+1][j];
+//       }
+//       if (i === row - 1 && j === col - 1) {
+//         //debugger
+//         perimeter += grid[i][j-1] + grid[i-1][j];
+//       }
+//     }
+//   }
 
-  return square - perimeter
-};
+//   return square - perimeter
+// };
 
-const input = [
-  [0,1,0,0],
-  [1,1,1,0],
-  [0,1,0,0],
-  [1,1,0,0]
-]
+// const input = [
+//   [0,1,0,0],
+//   [1,1,1,0],
+//   [0,1,0,0],
+//   [1,1,0,0]
+// ]
 
 // var islandPerimeter = function(grid) {
 //   const row = grid.length;

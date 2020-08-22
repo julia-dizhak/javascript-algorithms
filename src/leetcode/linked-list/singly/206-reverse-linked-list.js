@@ -91,6 +91,14 @@ var reverse = function(head) {
   return reversedList;
 };
 
+/*
+todo
+https://www.youtube.com/watch?v=B3U6LExgevE
+https://leetcode.com/problems/reverse-linked-list/solution/
+https://www.educative.io/courses/coderust-hacking-the-coding-interview/lq2j
+https://leetcode.com/problems/middle-of-the-linked-list/
+*/
+
 // tests
 let list = new Node(1);
 list.next = new Node(2);
