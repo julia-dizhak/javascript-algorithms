@@ -178,7 +178,8 @@ var detectCapitalUseCharacterByCharacterImprove = function(word) {
   return true;
 }
 
-console.log('detectCapitalUseCharacterByCharacter', detectCapitalUseCharacterByCharacter('LKK'))
+// tests
+//console.log('detectCapitalUseCharacterByCharacter', detectCapitalUseCharacterByCharacter('LKK'))
 //console.log('detectCapitalUse', detectCapitalUse('USA'))
 // console.log('detectCapitalUse1', detectCapitalUse('USAaaaa'))
 // console.log('detectCapitalUse1', detectCapitalUse('aaaa'))

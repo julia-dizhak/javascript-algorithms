@@ -23,6 +23,23 @@ Output: 6
 Explanation: The missing positive integers are [5,6,7,...]. The 2nd missing
 positive integer is 6.
 */
+
+/*
+todo https://leetcode.com/problems/kth-missing-positive-number/discuss/779901/C%2B%2B-O(n)
+1 <= arr.length <= 1000
+*/
+var findKthPositive2 = function(arr, k) {
+  let count = 0;
+  for (let i = 0, n = 1; n <= 100; n++) {
+    if (i < arr.length && arr[i] === n) {
+      i++
+    } else {
+      k--;
+    }
+
+  }
+}
+
 /**
  * @param {number[]} arr
  * @param {number} k
