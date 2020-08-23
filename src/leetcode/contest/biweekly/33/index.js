@@ -2,58 +2,14 @@
 contest 33
 22.08.2020
 
+Problem 1
+1556 https://leetcode.com/problems/thousand-separator/
 
+
+solved 1 from 4
+
+rank
 */
-
-var test = function() {
-  console.log('test contest 3', test)
-}
-
-const test1 = test();
-console.log('test1', test1)
-
-
-/*
-
-Given an integer n, add a dot (".") as the thousands separator and return it
-in string format.
-
-https://leetcode.com/problems/thousand-separator/
-*/
-
-/**
- * @param {number} n
- * @return {string}
-*/
-var thousandSeparator = function(n) {
-  let num = n.toString();
-  let count = 0;
-  let s = '';
-
-  for (let i = num.length - 1; i >= 0; i--) {
-
-    if (count % 3 === 0 && count !== 0) {
-      s = '.' + s;
-    }
-    s = num.charAt(i) + s;
-    count++;
-  }
-
-  return s;
-};
-
-var thousandSeparator1 = function(n) {
-  // n = n.toString();
-  // if (n.length <= 3) return n;
-  // return n.toLocaleString(undefined, {maximumFractionDigits:3})
-
-  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-};
-
-//console.log('thousandSeparator', thousandSeparator(987))
-console.log('thousandSeparator', thousandSeparator(1234))
-//console.log('thousandSeparator', thousandSeparator(123456789))
-//console.log('thousandSeparator', thousandSeparator(0))
 
 
 /*
@@ -126,5 +82,5 @@ var minOperations = function(nums) {
 //console.log('minOperations', minOperations([1,5]))
 
 export {
-  test
+
 }
