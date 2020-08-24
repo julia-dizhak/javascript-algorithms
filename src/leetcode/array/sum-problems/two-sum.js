@@ -109,11 +109,11 @@ function twoSumTwoPassHashes(arr, target) {
   if (len === 0) return [];
 
   let map = new Map();
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < len; i++) {
     map.set(arr[i], i)
   }
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < len; i++) {
     const complement = target - arr[i];
     // Beware that the complement must not be nums[i] itself!
     if (map.has(complement) && map.get(complement) !== i) {

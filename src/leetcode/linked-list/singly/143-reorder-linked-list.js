@@ -157,27 +157,6 @@ The problem can be solved as efficient as O(n) using the following implementatio
 3 Rejoin both the lists in alternate order.
 */
 
-// use recursion?
-/*
-reverse
-find last
-point to previous
-*/
-function reverseList(head) {
-  //debugger
-  let prev = null;
-  let current = head;
-  let next = null;
-
-  while (current) {
-    next = current.next;
-    current.next = prev;
-    prev = current;
-    current = next;
-  }
-  return prev;
-}
-
 var reorderList = function(head) {
   //debugger
   if (head === null || head.next === null || head.next.next === null) return;

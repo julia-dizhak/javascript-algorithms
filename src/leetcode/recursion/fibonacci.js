@@ -90,12 +90,6 @@ let fib = (N) => {
   }
 };
 
-function fib2(num) {
-  if (num === 0 || num === 1) return 1;
-  else {
-    return num * fib2(num-1)
-  }
-};
 
 /*
 Approach: Iterative solution
@@ -185,6 +179,5 @@ function fibIterativeTop(N) {
 
 export {
   fib,
-  fibIterative, fibIterativeTop,
-  fib2
+  fibIterative, fibIterativeTop
 }

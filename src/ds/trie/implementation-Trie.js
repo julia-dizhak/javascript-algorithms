@@ -43,7 +43,7 @@ class TrieNode {
   constructor(key) {
     // the "key" value will be the character in sequence
     this.key = (key === undefined) ? null : key;
-    this.val = null; // need to think about this solution is not obvius better to use boolen Endword
+    this.val = null; // need to think about this solution is not obvious better to use boolen Endword
     this.children = [];
   }
 }

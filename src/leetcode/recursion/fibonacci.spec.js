@@ -20,15 +20,6 @@ describe('fibonacci test case', () => {
     expect(fib(7)).toEqual(13);
   });
 
-  it('multiply num on fibonacci', ()=> {
-    expect(fib2(0)).toEqual(1);
-    expect(fib2(1)).toEqual(1);
-    expect(fib2(2)).toEqual(2);
-    expect(fib2(3)).toEqual(6);
-    expect(fib2(4)).toEqual(24);
-    expect(fib2(5)).toEqual(120);
-  });
-
   it('iterative', () => {
     //   fib 0 1 1 2 3 5 8 13
     // index 0 1 2 3 4 5 6 7

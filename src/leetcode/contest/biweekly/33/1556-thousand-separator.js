@@ -96,10 +96,11 @@ var thousandSeparator = function(n) {
 };
 
 // tests
-console.log('thousandSeparator', thousandSeparator(987));
-console.log('thousandSeparator', thousandSeparator(1234));
-console.log('thousandSeparator', thousandSeparator(123456789));
-console.log('thousandSeparator', thousandSeparator(0));
+// console.log('thousandSeparator', thousandSeparator(987));
+// console.log('thousandSeparator', thousandSeparator(1234));
+// console.log('thousandSeparator', thousandSeparator(123456789));
+// console.log('thousandSeparator', thousandSeparator(0));
+
 
 export {
   thousandSeparator,
