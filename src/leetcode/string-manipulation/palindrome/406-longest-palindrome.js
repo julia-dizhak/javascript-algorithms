@@ -46,11 +46,11 @@ letter.
 
 Space Complexity: O(N) create a hash
 */
+
 /**
  * @param {string} s
  * @return {number}
- */
-
+*/
 var longestPalindromeUseHash = function(s) {
   if (s === undefined) return 0;
   if (s.length === 1) return 1;
@@ -60,6 +60,7 @@ var longestPalindromeUseHash = function(s) {
 
   for (const char of s) {
     hash[char] = (hash[char] || 0) + 1;
+    // it works because we do it in one cycle
     if (hash[char] % 2 === 0) ans += 2;
   }
 
@@ -103,13 +104,6 @@ need O(logN) bits to store the count values.
 var longestPalindromeUseGreedy = function(s) {
   if (s === undefined) return 0;
   if (s.length === 1) return 1;
-
-  // it's really possible in JS?
-  // todo
-  // let charCounts = new Array(128).fill(0);
-  // for (const char of s) {
-  //   charCounts[char]++
-  // }
 
   let charCounts = {};
 

@@ -12,6 +12,7 @@ import { levelOrder } from '../../ds/tree/bt/traversal/level-order-traversal';
 import { verticalTraversal } from '../../leetcode/tree/binary-tree/traversal/987-vertical-order-traversal';
 
 // problems
+// import { maxDepthRecursion } from '../../leetcode/tree/binary-tree/104-maximum-depth-of-binary-tree';
 // import { countNodes } from '../../leetcode/tree/binary-tree/222-count-complete-tree-nodes';
 // import { sumNumbers, BT } from '../../leetcode/tree/binary-tree/129-sum-root-to-leaf-numbers';
 // import { isSameTree, TreeNode } from '../../leetcode/tree/binary-tree/100-same-tree';
@@ -44,7 +45,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            //code={twoSum.toString()}
+            //code={maxDepthRecursion.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

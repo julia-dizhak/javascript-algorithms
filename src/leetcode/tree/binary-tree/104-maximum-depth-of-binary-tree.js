@@ -62,9 +62,8 @@ root     | line number   | left height  | right height
 null     |               |              |
 5        | 2             |              | 0
 null     |               |              |
+...
 5 return from line number 3 - 1 to 10
-
-
 
 Example: Given binary tree [3,9,20,null,null,15,7],
     3
@@ -86,7 +85,17 @@ space: height of binary tree, in worst case O(n)
  */
 var maxDepth = function(root) {
   if (root === null) return 0;
+
   return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+};
+
+// the same approach
+var maxDepthRecursion = function(root) {
+  if (root === null) return 0;
+
+  let leftHeight = maxDepthRecursion(root.left);
+  let rightHeight = maxDepthRecursion(root.right);
+  return Math.max(leftHeight, rightHeight) + 1;
 };
 
 /*
@@ -172,11 +181,19 @@ class BT {
 // tree.addNode(null);
 // tree.addNode(15);
 // tree.addNode(7);
-// console.log('height of tree', tree.height());
 // tree = JSON.parse(JSON.stringify(tree)).root;
 // console.log('tree', tree)
+//
+let root = new TreeNode(3);
+root.left = new TreeNode(9);
+root.right = new TreeNode(20);
+root.right.left = new TreeNode(7);
+root.right.right = new TreeNode(15);
+const height = maxDepthRecursion(root);
+console.log('height of tree', height);
+console.log('root', root)
 
 export {
-  maxDepth,
+  maxDepth, maxDepthRecursion,
   BT
 }

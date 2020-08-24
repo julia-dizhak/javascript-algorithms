@@ -1,4 +1,8 @@
-import { maxDepth, BT } from './104-maximum-depth-of-binary-tree';
+import {
+  //maxDepth,
+  maxDepthRecursion as maxDepth,
+  BT
+} from './104-maximum-depth-of-binary-tree';
 
 describe('maximum depth of BT test case', () => {
   let tree;

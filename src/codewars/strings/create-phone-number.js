@@ -53,6 +53,20 @@ console.log('createPhoneNumber', createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0
 console.log('createPhoneNumber', createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]));
 console.log('createPhoneNumber', createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
+
+/*
+Match next patterns for phone number
+
+1234567890
+123 4567890
+123 456 7890
+(123) 4567890
+(123) 456 7890
+(123) 456-7890
+*/
+
+
+
 export {
   createPhoneNumber,
   createPhoneNumber1,

@@ -147,6 +147,7 @@ function reverseUseRecursion(head) {
   console.log('head', head)
   if (!head || !head.next) return head;
 
+  console.log('head', head)
   console.log('head next', head.next)
   let reversedList = reverseUseRecursion(head.next);
   head.next.next = head;
@@ -162,6 +163,28 @@ https://www.educative.io/courses/coderust-hacking-the-coding-interview/lq2j
 https://leetcode.com/problems/middle-of-the-linked-list/
 
 */
+
+/*
+
+*/
+class TreeNode(val, left, right) {
+  this.val = (val===undefined ? 0 : val)
+  this.left = (left===undefined ? null : left)
+  this.right = (right===undefined ? null : right)
+}
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+
+var sumOfLeftLeaves = function(root) {
+
+};
+let root = new TreeNode(3);
+root.left = new TreeNode(9);
+root.right = new TreeNode(20);
+list.next.next = new Node(3);
+list.next.next.next = new Node(4);
 
 /*
 todo
@@ -197,7 +220,7 @@ let list = new Node(1);
 list.next = new Node(2);
 list.next.next = new Node(3);
 list.next.next.next = new Node(4);
-list.next.next.next.next = new Node(5);
+//list.next.next.next.next = new Node(5);
 console.log('original ist', list);
 list = reverseUseRecursion(list);
 console.log('after reverse', list);
