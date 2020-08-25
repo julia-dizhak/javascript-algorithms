@@ -37,7 +37,11 @@ function createPhoneNumber3(numbers) {
   return format;
 }
 
-// Use replace + regex
+/*
+Use replace + regex
+
+regular expression  https://eloquentjavascript.net/09_regexp.html
+*/
 function createPhoneNumber4(numbers) {
   return numbers.join('').replace(/(\d{3})(\d{3})(.*)/, '($1) $2 $3')
 }

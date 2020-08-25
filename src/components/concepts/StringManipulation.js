@@ -32,7 +32,7 @@ export default function StringManipulation() {
           <Details
             id="test1"
             question="test case"
-            code={longestPalindromeUseGreedy.toString()}
+            //code={longestPalindromeUseGreedy.toString()}
             //secondCode={detectCapitalUse.toString()}
           />
         </li>

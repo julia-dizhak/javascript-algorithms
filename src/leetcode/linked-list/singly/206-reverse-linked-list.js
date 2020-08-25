@@ -16,6 +16,8 @@ Think of doing this iteratively in a single pass.
 Think of doing this recursively in a single pass.
 */
 
+import { helperVariant1 } from "../../../ds/string-manipulation/reverse-a-string";
+
 // node
 class Node {
   constructor(val, next) {
@@ -165,26 +167,73 @@ https://leetcode.com/problems/middle-of-the-linked-list/
 */
 
 /*
+Sum of left leaves
+Find the sum of all left leaves in a given binary tree.
 
+Example:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
 */
-class TreeNode(val, left, right) {
-  this.val = (val===undefined ? 0 : val)
-  this.left = (left===undefined ? null : left)
-  this.right = (right===undefined ? null : right)
+class TreeNode {
+  constructor(val, left, right) {
+    this.val = (val===undefined) ? 0 : val;
+    this.left = (left===undefined) ? null : left;
+    this.right = (right===undefined) ? null : right;
+  }
 }
 /**
  * @param {TreeNode} root
  * @return {number}
  */
 
-var sumOfLeftLeaves = function(root) {
+// watch sumof leaf explanation
+// function getSum
+function sumOfLeftLeaves(root, isLeft = false) {
+  if (!root) return 0;
+  if (!root.left && !root.right) return isLeft ? root.val : 0;
+  return sumOfLeftLeaves(root.left, true) + sumOfLeftLeaves(root.right, false);
+}
 
+function sumOfLeftLeaves1(root) {
+  if (!root) return 0;
+
+  let result = [];
+  helper(root, result, false);
+
+  // if result is not undefined
+  let sum = 0;
+  for (let i = 0; i < result.length; i++) {
+    sum += result[i];
+  }
+  return sum;
+}
+
+var helper = function(node, result, isLeft) {
+  //debugger
+  //if (!node) return;
+
+  if (root.left === null && root.right === null && isLeft) {
+    result.push(node.val);
+    //return;
+  }
+
+  if (root.left !== null) helper(root.left, result, true);
+  if (root.right !== null) helper(root.right, result, false);
+  //return;
 };
+
 let root = new TreeNode(3);
 root.left = new TreeNode(9);
 root.right = new TreeNode(20);
-list.next.next = new Node(3);
-list.next.next.next = new Node(4);
+root.right.left = new Node(15);
+root.right.left = new Node(7);
+console.log('sumOfLeftLeaves', sumOfLeftLeaves(root));
 
 /*
 todo
@@ -229,5 +278,7 @@ export {
   reverse,
   reverseIterative,
   reverseUseRecursion,
-  Node
+  Node,
+
+  sumOfLeftLeaves
 }

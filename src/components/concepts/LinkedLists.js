@@ -3,7 +3,7 @@ import Details from '../Details';
 
 import { LinkedList } from '../../ds/linked-list/singly/singly-linked-list';
 import { LinkedList as List1 } from '../../leetcode/linked-list/singly/143-reorder-linked-list';
-import { reverse } from '../../leetcode/linked-list/singly/206-reverse-linked-list';
+import { reverse, sumOfLeftLeaves } from '../../leetcode/linked-list/singly/206-reverse-linked-list';
 
 export default function LinkedLists() {
   return (
@@ -43,6 +43,7 @@ export default function LinkedLists() {
             question="test"
             //code={List1.toString()}
             secondCode={reverse.toString()}
+            thirdSolution={sumOfLeftLeaves.toString()}
           />
         </li>
       </ul>
