@@ -3,8 +3,8 @@ const mappingFunction = v => v + 1;
 
 const mappedArray = arr.map((v,i) => v + i);
 const mappedArray1 = arr.map(mappingFunction);
-//console.log('mappedArray', mappedArray);
-//console.log('mappedArray', mappedArray1);
+console.log('mappedArray', mappedArray);
+console.log('mappedArray', mappedArray1);
 
 const customMapping = (arr, mappingFunction) => {
   // val - iteration value
@@ -13,5 +13,5 @@ const customMapping = (arr, mappingFunction) => {
     []
   );
 }
-//console.log('customMapping', customMapping(arr, mappingFunction));
+console.log('customMapping', customMapping(arr, mappingFunction));
 
