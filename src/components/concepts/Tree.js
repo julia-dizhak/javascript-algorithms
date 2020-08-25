@@ -35,6 +35,9 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 // contest 32
 //import { test } from '../../leetcode/contest/biweekly/33/index';
 
+// codewars
+//import { basketWithoutDuplicatesUseReduce } from '../../codewars/arrays/filter-out-duplicates';
+
 export default function Tree() {
   return (
     <div className="tree">
