@@ -43,6 +43,7 @@ Use replace + regex
 regular expression  https://eloquentjavascript.net/09_regexp.html
 */
 function createPhoneNumber4(numbers) {
+  // todo
   return numbers.join('').replace(/(\d{3})(\d{3})(.*)/, '($1) $2 $3')
 }
 
@@ -61,14 +62,34 @@ console.log('createPhoneNumber', createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0
 /*
 Match next patterns for phone number
 
+formatting:
 1234567890
 123 4567890
 123 456 7890
+123-456-7890 it would be string in JS
 (123) 4567890
 (123) 456 7890
 (123) 456-7890
++1 123 456-7890
 */
+function validPhoneNumber(number) {
+  //number = number.toString();
+  console.log('number', number)
+  //const regex = /\d{10}/;
+  //const regex = /\d{3}-?\d{3}-?\d{4}/g;
+  //const regex = /\d{3}[ -]?\d{3}[ -]?\d{4}/g;
+  //const regex = /(\d{3})([ -]?\d{3})([ -]?\d{4})/g;
+  //const regex = /\(?\d{3}\)?([ -]?\d{3})([ -]?\d{4})/g;
+  const regex = /(\+1[ -])?(\d{3})([ -]?\d{3})([- ]?\d{4})/g;
 
+  return regex.test(number)
+}
+
+console.log('validPhoneNumber', validPhoneNumber(123456789));
+console.log('validPhoneNumber', validPhoneNumber(1234567890));
+console.log('validPhoneNumber', validPhoneNumber('123-456-7890'));
+console.log('validPhoneNumber', validPhoneNumber('123 456 7890'));
+console.log('validPhoneNumber', validPhoneNumber('(123) 456-7890'));
 
 
 export {

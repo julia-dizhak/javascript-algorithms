@@ -51,13 +51,13 @@ space is O(n) recursion stack
 */
 var addDigitsBruteForce = function(num) {
   let arr = num.toString().split('');
-  if (arr.length === 0) return;
+  if (arr.length === 0) return 0;
   if (arr.length === 1) return arr[0];
 
   if (arr.length > 1) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
-      sum += Number(arr[i])
+      sum += Number(arr[i]);
     }
     return addDigits(sum)
   }
@@ -71,7 +71,7 @@ time is O(n)
 space is O(n)
 */
 var addDigitsUseRecursion = function(num) {
-  if (num === 0) return 0;
+  if (num === 0) return;
   if (num < 10) return num;
 
   let sum = 0;
@@ -81,6 +81,8 @@ var addDigitsUseRecursion = function(num) {
   }
   return addDigitsUseRecursion(sum);
 };
+
+//console.log('addDigitsUseRecursion', addDigitsUseRecursion(16))
 
 // print results
 // By carefully observing the output, you would've noticed a pattern:
@@ -183,5 +185,6 @@ export {
   addDigitsBruteForce,
   addDigits,
   addDigitsUseLoop,
-  addDigitsMath
+  addDigitsMath,
+  addDigitsUseRecursion
 }

@@ -7,7 +7,7 @@ import { swap, swapUseTemp } from '../../ds/number/swap';
 // import { countPrimes } from '../../leetcode/number/204-count-primes';
 // import { isUgly } from '../../leetcode/number/263-ugly-number'
 // import { nthUglyNumber } from '../../leetcode/number/264-ugly-number-2'
-// import { addDigits } from '../../leetcode/math/258-add-digits'
+// import { addDigits, addDigitsUseRecursion } from '../../leetcode/math/258-add-digits'
 // import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
 // import { distributeCandies } from '../../leetcode/math/1103-distribute-candies-to-people';
 
@@ -29,12 +29,12 @@ export default function Number() {
 
       <ul id="number">
         <li>
-          {/* <Details
+          <Details
             id="number-test"
             question="test"
-            code={.toString()}
             //code={addDigits.toString()}
-          /> */}
+            //code={addDigits.toString()}
+          />
 
           <Details
             id="number-power"

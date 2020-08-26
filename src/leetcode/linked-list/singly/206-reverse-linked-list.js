@@ -16,8 +16,6 @@ Think of doing this iteratively in a single pass.
 Think of doing this recursively in a single pass.
 */
 
-import { helperVariant1 } from "../../../ds/string-manipulation/reverse-a-string";
-
 // node
 class Node {
   constructor(val, next) {
@@ -273,6 +271,8 @@ list.next.next.next = new Node(4);
 console.log('original ist', list);
 list = reverseUseRecursion(list);
 console.log('after reverse', list);
+
+
 
 export {
   reverse,
