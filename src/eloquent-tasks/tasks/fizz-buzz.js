@@ -56,7 +56,7 @@ var fizzBuzz = function(n) {
         output.push(i.toString())
       }
   }
-  return output
+  return output;
 };
 
 /*
@@ -100,23 +100,99 @@ in the first approach.
 Similarly, for FizzBuzzJazz now we would just have three conditions to check
 for divisibility.
 
-Time is O(n)
+time is O(n)
 space is O(1)
 */
 
+// return string
 const fizzBuzzStringConcatenation = () => {
+  let output = "";
   for (let n = 1; n <= 100; n++) {
-    let output = "";
     if (n % 3 === 0)
       output += "Fizz";
     if (n % 5 === 0)
       output += "Buzz";
 
-    console.log(output || n);
+    //console.log(output || n);
   }
+  return output;
 };
+
+// return Array
+function f1(n) {
+  if (n === 0) return [];
+  let output = [];
+
+  for (let i = 1; i <= n; i++) {
+    let newStr = '';
+    if (i % 3 === 0) newStr += 'Fizz';
+    if (i % 5 === 0) newStr += 'Buzz';
+    if (newStr === '') newStr += i;
+
+     // Append the current answer str to the ans list
+    output.push(newStr)
+  }
+
+  return output;
+}
+//console.log('f n', f1(15))
+
+/*
+Approach 3 Hash it
+
+Intuition
+
+This approach is an optimization over approach 2. When the number of mappings
+are limited, approach 2 looks good. But what if you face a tricky interviewer and
+he decides to add too many mappings?
+
+Having a condition for every mapping is not feasible or may be we can say the
+code might get ugly and tough to maintain.
+
+What if tomorrow we have to change a mapping or may be delete a mapping? Are we
+going to change the code every time we have a modification in the mappings?
+
+We don't have to. We can put all these mappings in a Hash Table.
+
+Algorithm
+
+1 Put all the mappings in a hash table. The hash table fizzBuzzHash would look
+something like { 3: 'Fizz', 5: 'Buzz' }
+
+2 Iterate on the numbers from 1...N.
+
+3 For every number, iterate over the fizzBuzzHash keys and check for divisibility.
+
+If the number is divisible by the key, concatenate the corresponding hash value to the answer string for current number. We do this for every entry in the hash table.
+Add the answer string to the answer list.
+
+time is O(n)
+space is O(1)
+*/
+
+function fUseHash(n) {
+  let output = [];
+  let fizzBuzzHash = {};
+  fizzBuzzHash[3] = 'Fizz';
+  fizzBuzzHash[5] = 'Buzz';
+  //console.log('fizzBuzzHash', fizzBuzzHash);
+  for (let num = 1; num <= n; num++) {
+    let numAnsStr = '';
+    for (const key in fizzBuzzHash) {
+      //console.log('key', key);
+      if (num % Number(key) === 0) {
+        numAnsStr += fizzBuzzHash[key];
+      }
+    }
+    if (numAnsStr === '') numAnsStr += num;
+    output.push(numAnsStr)
+  }
+  return output;
+}
+//console.log('fUseHash', fUseHash(15));
 
 export {
   fizzBuzz,
-  fizzBuzzStringConcatenation
+  fizzBuzzStringConcatenation,
+  fUseHash
 }
