@@ -7,7 +7,7 @@ import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
 import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
 import { maxProfit } from '../../leetcode/dp/121-best-time-to-buy-sell-stock';
 import { climbStairsBruteForce } from '../../leetcode/dp/70-climbing-stairs';
-import { mincostTickets } from '../../leetcode/dp/min-cost-tickets';
+import { mincostTickets } from '../../leetcode/dp/983-min-cost-tickets';
 
 export default function DP() {
   return (

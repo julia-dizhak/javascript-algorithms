@@ -5,11 +5,11 @@ import {
 
 describe('fizzbuzz test case', () => {
 
-  it('add digits', () => {
+  it('edge cases', () => {
     expect(fizzBuzz(0)).toEqual([]);
   });
 
-  it('add digits', () => {
+  it('n > 1', () => {
     expect(fizzBuzz(1)).toEqual(['1']);
     expect(fizzBuzz(2)).toEqual(['1', '2']);
     expect(fizzBuzz(3)).toEqual(['1', '2', 'Fizz']);

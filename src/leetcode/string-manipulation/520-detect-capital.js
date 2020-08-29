@@ -178,6 +178,63 @@ var detectCapitalUseCharacterByCharacterImprove = function(word) {
   return true;
 }
 
+/*
+Approach use Regex
+
+Intuition
+
+Hey, if we want to do pattern matching, why don't we use Regular Expression (Regex)?
+Regex is a great way to match a given pattern to a string.
+
+Algorithm
+
+1 All letters in this word are capitals, like "USA".
+2 All letters in this word are not capitals, like "leetcode".
+3 Only the first letter in this word is capital, like "Google".
+
+The pattern of case 1 in regex is [A-Z]*, where [A−Z] matches one char
+from 'A' to 'Z', * represents repeat the pattern before it at least 0 times.
+Therefore, this pattern represents "All capital".
+
+The pattern of case 2 in regex is [a-z]*, where similarly, [a-z] matches one
+char from 'a' to 'z'. Therefore, this pattern represents "All not capital".
+
+Similarly, the pattern of case 3 in regex is [A-Z][a-z]*.
+
+Take these three pattern together, we have [A-Z]*|[a-z]*|[A-Z][a-z]*, where "|"
+represents "or".
+
+Still, we can combine case 2 and case 3, and we get .[a-z]*, where "."
+can matches any char.
+
+Therefore, the final pattern is [A-Z]*|.[a-z]*.
+
+However, it is worth pointing out that the speed of regex is highly dependent on
+its pattern and its implementation, and the time complexity can vary from O(1)
+to O(2^n)
+If you want to control the speed yourself, using Approach 1 would be better.
+
+Complexity Analysis
+Time complexity: Basically O(n), but depends on implementation.
+
+Space complexity : O(1). We only need constant spaces to store our pattern.
+*/
+
+var detectCapitalUseRegex = function(word) {
+  let regex = /^[a-z]+$|^[A-Z]+$|^[A-Z][a-z]+$/;
+  //let regex = /[A−Z]*|[a-z]*|[A-Z][a-z]*/ // todo doesn't work
+  return regex.test(word)
+
+  // return (
+  //   /^[^a-z]*$/.test(word) ||
+  //   /^[a-z]*$/.test(word) ||
+  //   /^[A-Z]{1}[a-z]*$/.test(word)
+  // );
+
+};
+
+
+
 // tests
 //console.log('detectCapitalUseCharacterByCharacter', detectCapitalUseCharacterByCharacter('LKK'))
 //console.log('detectCapitalUse', detectCapitalUse('USA'))
@@ -189,5 +246,6 @@ export {
   detectCapitalUse,
   detectCapitalUseSubstr,
   detectCapitalUseCharacterByCharacter,
-  detectCapitalUseCharacterByCharacterImprove
+  detectCapitalUseCharacterByCharacterImprove,
+  detectCapitalUseRegex
 }
