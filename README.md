@@ -309,10 +309,11 @@ started on 12/21/17
 
     * [520. Detect capital](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/520-detect-capital.js)
 
-    | Approaches:             | Time     | Space  |
-    | :---                    | :---     | :---   |
-    | Use substr              | O(n)     | 0(1)   |
-    | Character by character  | O(n)     | 0(1)   |
+    | Approaches:             | Time            | Space  |
+    | :---                    | :---            | :---   |
+    | Use substr              | O(n)            | 0(1)   |
+    | Character by character  | O(n)            | 0(1)   |
+    | Regex                   | O(n) / O(2^n)   | 0(1)   |
 
     * [125. Valid palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/palindrome/125-valid-palindrome.js)
 
