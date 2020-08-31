@@ -8,6 +8,27 @@ In the end of the day it still O(n^2)
 
 Space is constant O(1)
 */
+function bubbleSortUseLoops(arr) {
+  const n = arr.length;
+  console.log(n);
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n - i - 1; j++) { // j=1 , j = 2
+      //console.log('j', j)
+      if (arr[j] > arr[j+1]) {
+        let temp = arr[j];
+        arr[j] = arr[j+1];
+
+        arr[j+1] = temp;
+      }
+    }
+
+  }
+  return arr;
+}
+//console.log('bubbleSortUseLoops', bubbleSortUseLoops([1,3,2]));
+//console.log('bubbleSortUseLoops', bubbleSortUseLoops([1,8,2,4,5,7,3]));
+
+
 function bubbleSort(arr) {
   const len = arr.length;
   let swap;
@@ -96,5 +117,8 @@ function bubbleSortDisplayCount(arr) {
 }
 
 
-export { bubbleSort, bubbleSortDisplayCount, bubbleSortTwoForLoops,
+export {
+  bubbleSort,
+  bubbleSortUseLoops,
+  bubbleSortDisplayCount, bubbleSortTwoForLoops,
   bubbleSortModified }

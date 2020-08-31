@@ -43,71 +43,32 @@ All integers in A are unique (i.e. A is a permutation of the integers from 1 to
 A.length).
 */
 
-/*
-Approach sort like bubble sort
-
-I need to choose k
-k can't be 4
-arr.length = 4
-k < arr.length
-
-
-3 2 4 1
-4 2 3 1
-
-Explanation
-
-It's called "Pancake Flip" because, like a stack of pancakes, if you're going to flip some of the pancakes, you have to flip from the top of the stack up until a certain point. You can't flip only some section below the top.
-
-It makes way more sense when you think about the array standing vertically like stack of pancakes. You must take a section from the top (beginning), including k pancakes in your flip.
-
-I hope my explanation helped clear things up.
-
-
-Time is
-
-
-
-let currentSortingIndex = A.length-1;
-    let res = [];
-    while (currentSortingIndex != 0) {
-        for(let i = currentSortingIndex; i >= 0; i--) {
-            // if current sorted index number is in his place we dont need to sort him
-            if(A[currentSortingIndex] === currentSortingIndex+1) break;
-            // we found the current index number we need to sort
-            if(A[i] === currentSortingIndex+1) {
-                // reverse from 0 to that index to make the current sorting number first
-                let partOfArrayToIndexWeFoundTheNumber = A.splice(0, i+1).reverse();
-                A.splice(0, 0, ...partOfArrayToIndexWeFoundTheNumber)
-                res.push(i+1);
-                // reverse from 0 to the place that we currently sorting
-                let partOfArrayToTheSortedIndex = A.splice(0, currentSortingIndex+1).reverse();
-                A.splice(0, 0, ...partOfArrayToTheSortedIndex)
-                res.push(currentSortingIndex+1);
-                break;
-            }
-        }
-        // we sorted the current index so we go to the next one
-        currentSortingIndex--;
-        // everything after that index is sorted
-    }
-    return res;
-
-todo
-https://leetcode.com/problems/sort-colors/
-
-*/
 
 /*
 Approach strait forward
 
+Explanation
+It's called "Pancake Flip" because, like a stack of pancakes, if you're going to
+flip some of the pancakes, you have to flip from the top of the stack up until
+a certain point. You can't flip only some section below the top.
+
+Or
+It makes way more sense when you think about the array standing vertically like
+stack of pancakes. You must take a section from the top (beginning), including k
+pancakes in your flip.
+
+
+Note 1
+there is no unique solution for this problem
+
+Note 2
 Note If you see the like vs dislike ratio < 1. Because this problem is poor
 written, it is not clearly mentioned in the problem we need to return result 1
 indexed based.
 
 Example: A[] = [3, 2, 4, 1]
 
-As, we have 4 elements in the aray 1 - 4.
+As, we have 4 elements in the array 1 - 4.
 Let start to move 4 on its correct position.
 find index for 4 return 2
 flip array at 2 and then 3 -->  [3, 2, 4, 1] --> [4, 2, 3, 1] -->  [1, 3, 2, 4]
@@ -128,7 +89,6 @@ index = 0
 flip array at 0 and 1 --> [1, 3, 2, 4] --> [1, 3, 2, 4] --> [1, 3, 2, 4]
 list = [3, 4, 2, 3, 1, 2, 1, 1]
 
-
 As, per the problem we can flip subarray from 0 to k where 0 ≤ k < A.length,
 this give us a hint first find the index of largest element and move it to the
 correct place how to do that?
@@ -138,10 +98,12 @@ correct place how to do that?
 3 now flip the array from 0 the correct place of that element
 4 Above 3 operation we have to perform for all elements from n to 1.
 
+similar as bubble sort?
 similar as selection sort?
 
 time is O(n^2)
-space is O(1)
+space is O(n)
+number of flips?
 */
 
 // example [3, 2, 4, 1]
@@ -174,18 +136,16 @@ var pancakeSortBruteForce = function(A) {
   for (let n = A.length; n > 0; n--) {
     // first find the index of current target = n
     let index = findIndex(A, n);
-    // todo can find inside a loop
-    console.log('index', index);
+
     // flip the array till that index so that get that element on front of array
     flip(A, index);
-    //console.log('A', A);
+    // add first flip operation k, + 1
+    res.push(index + 1);
+
     // now flip the array to move that element on correct position
     // n length, index 1 number less
     flip(A, n - 1);
-    //console.log('A', A);
 
-    // add first flip operation k, + 1
-    res.push(index + 1);
     // add second flip operation k
     res.push(n)
   }
@@ -194,8 +154,33 @@ var pancakeSortBruteForce = function(A) {
   return res;
 }
 
+// Similar approach
+// an error in solution
+function reverse(A, k) {
+  for (let i = 0, j = k - 1; i < j; i++, j--) {
+      let temp = A[i];
+      A[i] = A[j];
+      A[j] = temp;
+  }
+}
+var pancakeSortBruteForce1 = function(A) {
+  let res = [];
+
+  for (let n = A.length; n > 0; --n) {
+    for (let i = 0; A[i] !== n; ++i) {
+      reverse(A, i + 1);
+      res.push(i + 1);
+      reverse(A, n);
+      res.push(n);
+    }
+  }
+
+  console.log('res', res);
+  return res;
+}
+
 /*
-Approach
+Approach lastPosition
 
 1 Find max
 2 bring max to front
@@ -212,8 +197,7 @@ Example
 [1,2,3,4] bring back
 
 time is O(n^2)
-space is O(?)
-
+space is O(n)
 */
 /**
  * @param {number[]} A
@@ -235,9 +219,9 @@ var pancakeSort = function(A) {
         index = i;
       }
     }
-    console.log('max', max);
-    console.log('lastPosition', lastPosition);
-    console.log('index', index);
+    // console.log('max', max);
+    // console.log('lastPosition', lastPosition);
+    // console.log('index', index);
 
     // the max is already at the lastPosition, ignore this round
     if (index === lastPosition) {
@@ -259,64 +243,135 @@ var pancakeSort = function(A) {
   return ans;
 }
 
+/*
+Approach like Sort like a bubble sort
 
-//////
-// function find(arr, target) {
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] === target) return i;
-//   }
-//   return -1;
-// }
+Intuition
 
-// function flip1(subArr, k) {
-//   let i = 0;
-//   while (i < Math.floor(k/2)) {
-//     let temp = subArr[i];
-//     subArr[i] = subArr[k-i-1];
-//     subArr[k-i-1] = temp;
-//     i++;
-//   }
-// }
+One might argue that this is an awkward question to do things. Indeed, it is not
+the most practical operation that one can have with the pancake flipping, in order
+to sort a list.
 
-// var pancakeSort1 = function(A) {
-//   if (A.length === 1) return [];
-//   let ans = [];
+However awkward the problem might be, it is the game that we play with. And in
+order to win the game, we have to play by the rules. Actually, from this perspective,
+this problem does share some similarity with the Rubik's cube, i.e. one cannot
+move one tile without moving other tiles along with. Let us get on with it, by
+playing a few rounds ourselves to get the hang of the problem.
 
-//   for (let valueToSort = A.length; valueToSort > 0; valueToSort--) {
-//     console.log('valueToSort', valueToSort);
-//     // locate the position for the value to sort in this round
-//     let index = find(A, valueToSort);
-//     console.log('index', index);
+Given the input of [3, 2, 4, 1], the desired sorted output would be [1, 2, 3, 4].
 
-//     // sink the value_to_sort to the bottom,
-//     // with at most two steps of pancake flipping.
-//     if (index === valueToSort - 1 ) {
-//       continue;
-//     }
-//     // 1). flip the value to the head if necessary
-//     if (index !== 0) {
-//       ans.push(index + 1);
-//       flip1(A, index + 1);
-//     }
-//     // 2). now that the value is at the head, flip it to the bottom
-//     ans.push(valueToSort);
-//     flip1(A, valueToSort);
-//   }
+As a reminder, the only operation that we could perform in order to move the
+elements in the list, is the so-called pancake flip, which is to reverse a prefix
+of the list.
 
-//   console.log('ans')
-//   return ans;
-// }
+Starting from the largest value in the list, i.e. 4 in the example, its desired
+position would be the tail of the list. While in the input, it is located at the
+third of the list, if we look at the list from left to right.
+
+In order to move the value of 4 to its desired position, we could perform the
+following two steps:
+
+- Firstly, we do the pancake flip on the prefix of [3, 2, 4]. With this operation,
+we then move the value 4 to the head of the updated list as [4, 2, 3, 1].
+
+- Now that, the value 4 is located at the head of the list, we could now perform
+another pancake flip on the entire list, which would get us the list of [1, 3, 2, 4].
+
+Voila. With the obtained list of [1, 3, 2, 4], we are now one step closer to our
+final goal, with the value 4 now at its proper place. For the following steps,
+we only need to focus on the sublist of [1, 3, 2].
+
+If one looks over the above steps again, it might ring a bell to a well-known
+algorithm called bubble sort.
+
+The idea is simple. First we move the number to the head of the list, then we
+can switch it with any other element by performing another pancake flip.
 
 
+Algorithm
+
+One can inspire from the bubble sort to implement the algorithm.
+
+1 First of all, we implement a function called flip(list, k), which performs the
+pancake flip on the prefix of list[0:k] (in Python).
+
+2 The main algorithm runs a loop over the values of the list, starting from the
+largest one.
+
+- At each round, we identify the value to sort (named as value_to_sort), which is
+the number we would put in place at this round.
+
+- We then locate the index of the value_to_sort.
+
+- If the value_to_sort is not at its place already, we can then perform at most
+two pancake flips as we explained in the intuition.
+
+- At the end of the round, the value_to_sort would be put in place.
+*/
+
+function bubbleSort(arr) {
+  const n = arr.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n - i - 1 ; j++) {
+      //console.log('j', j)
+      if (arr[j] > arr[j+1]) {
+        let temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+//console.log('bubbleSort', bubbleSort([4,3,1,2]));
+
+function flipReverse(subArr, k) {
+  let i = 0;
+
+  while (i < Math.floor(k/2)) {
+    let temp = subArr[i];
+    subArr[i] = subArr[k-i-1];
+    subArr[k-i-1] = temp;
+    i++;
+  }
+}
+
+var pancakeSortLikeBubbleSort = function(A) {
+  if (A.length === 1) return [];
+  let ans = [];
+
+  for (let valueToSort = A.length; valueToSort > 0; valueToSort--) {
+    // locate the position for the value to sort in this round
+    let index = findIndex(A, valueToSort);
+
+    // sink the value_to_sort to the bottom,
+    // with at most two steps of pancake flipping.
+    if (index === valueToSort - 1 ) {
+      continue;
+    }
+    // 1). flip the value to the head if necessary
+    if (index !== 0) {
+      ans.push(index + 1);
+      flipReverse(A, index + 1);
+    }
+    // 2). now that the value is at the head, flip it to the bottom
+    ans.push(valueToSort);
+    flipReverse(A, valueToSort);
+  }
+
+  console.log('ans')
+  return ans;
+}
 
 // tests
-//console.log('pancakeSort', pancakeSort([3,2,4,1]))
-console.log('pancakeSort', pancakeSortBruteForce([3,2,4,1]))
+// console.log('pancakeSort', pancakeSort([3,2,4,1]))
+// console.log('pancakeSort', pancakeSortBruteForce([3,2,4,1]))
 // console.log('pancakeSort', pancakeSort([3,2,1,4]));
 // console.log('pancakeSort', pancakeSort([1,2,3]))
 
 export {
   pancakeSort,
-  pancakeSortBruteForce,
+  pancakeSortBruteForce, pancakeSortBruteForce1,
+  pancakeSortLikeBubbleSort,
   flip
 }

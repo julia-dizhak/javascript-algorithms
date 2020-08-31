@@ -1,6 +1,8 @@
 import {
-  pancakeSort,
-  //pancakeSortBruteForce as pancakeSort
+  //pancakeSort,
+  pancakeSortLikeBubbleSort as pancakeSort,
+  pancakeSortBruteForce,
+  //pancakeSortBruteForce1 as pancakeSortBruteForce,
 } from './969-pancake-sorting';
 
 describe('pancake sorting test case', () => {
@@ -15,5 +17,9 @@ describe('pancake sorting test case', () => {
     expect(pancakeSort([3,2,4,1])).toEqual([3,4,2,3,2]);
   });
 
-  // different solutions
+  // there is no unique solution
+  it('pancake sort strait forward solution', () => {
+    expect(pancakeSortBruteForce([3,2,1,4])).toEqual([4, 4, 1, 3, 2, 2, 1, 1]);
+    expect(pancakeSortBruteForce([1,2,3])).toEqual([3,3,2,2,1,1]);
+  });
 });

@@ -401,12 +401,6 @@ started on 12/21/17
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
     * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 
-    * [75. Sort colors](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/75-sort-colors.js)
-
-    | Approach:       | Time    | Space  |
-    | :---            | :---    | :---   |
-    | 2 pointers      | O(n)    | O(1)   |
-
     * [66 Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/66-plus-one.js)
 
     | Approach:    | Time    | Space   |
@@ -422,6 +416,22 @@ started on 12/21/17
     | Sort + 2 pointers                | O(n log n)    | O(1)    |
     | Use Array                        | O(n)          | O(n)    |
     | Mutate Array (negative indexes)  | O(n)          | O(1)    |
+
+* ### Array Sorting
+
+    * [75. Sort colors](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/75-sort-colors.js)
+
+    | Approach:       | Time    | Space  |
+    | :---            | :---    | :---   |
+    | 2 pointers      | O(n)    | O(1)   |
+
+      * [969. Pancake sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/sorting/969-pancake-sorting.js)
+
+    | Approach:               | Time      | Space  |
+    | :---                    | :---      | :---   |
+    | Find max + 2 flips      | O(n^2)    | O(n)   |
+    | Like a bubble sort      | O(n^2)    | O(n)   |
+
 
 * ### Singly Linked List
     * [237. Delete node in Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/237-delete-node-in-linked-list.js)

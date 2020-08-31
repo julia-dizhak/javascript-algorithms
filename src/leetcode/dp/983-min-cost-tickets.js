@@ -232,29 +232,6 @@ function mergeIntervals(intervals) {
 }
 console.log('mergeIntervals', mergeIntervals([[1,3], [7,15], [5,10], [22,25], [18,30]]))
 
-
-
-
-function bubbleSort(arr) {
-  const n = arr.length;
-  console.log(n);
-  for (let i = 0; i < n; i++) {
-    for (let j = 1; j < n - i - 1; j++) { // j=1 , j = 2
-      console.log('j', j)
-      if (arr[j] > arr[j+1]) {
-        let temp = arr[j];
-        arr[j] = arr[j+1];
-        arr[j+1] = temp;
-      }
-    }
-
-  }
-  return arr;
-}
-
-console.log('bubbleSort', bubbleSort([1,3,2]));
-//console.log('bubbleSort', bubbleSort([1,8,2,4,5,7,3]));
-
 // var pancakeSort = function(A) {
 //   const n = A.length;
 //   let loop = 0;

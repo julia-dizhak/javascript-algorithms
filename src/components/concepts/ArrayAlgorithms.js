@@ -18,8 +18,8 @@ import { removeDuplicates } from '../../leetcode/array/duplicates/26-remove-dupl
 //import { findDuplicate } from '../../leetcode/array/duplicates/287-find-duplicate-number';
 //import { findAllDuplicates } from '../../leetcode/array/duplicates/442-find-all-duplicates';
 
-// sort
-import { pancakeSort, reverseArr } from '../../leetcode/array/sorting/969-pancake-sorting';
+// sorting
+// import { pancakeSort } from '../../leetcode/array/sorting/969-pancake-sorting';
 // todo import { QuickUnion } from '../../algorithms/union-find/quick-union';
 // todo import { RandomizedSet } from '../../leetcode/hash/380-insert-delete-getrandom-constant-time';
 

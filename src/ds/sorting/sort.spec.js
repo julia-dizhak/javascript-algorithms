@@ -1,4 +1,7 @@
-import { bubbleSort , bubbleSortDisplayCount, bubbleSortTwoForLoops, bubbleSortModified } from './bubble-sort';
+import {
+  bubbleSort,
+  bubbleSortUseLoops,
+  bubbleSortDisplayCount, bubbleSortTwoForLoops, bubbleSortModified } from './bubble-sort';
 import { selectionSort } from './selection-sort';
 import { mergeSort, bottomUpMergeSort } from './merge-sort';
 import {
@@ -62,6 +65,7 @@ describe('sorting array test case', () => {
     expect(bubbleSort(arr)).toEqual(sortedArr);
     expect(bubbleSortTwoForLoops([1, 10, 90, 23, 91, 81])).toEqual([1, 10, 23, 81, 90, 91]);
     expect(bubbleSortTwoForLoops([1, 10, 20, 30, 41, 81])).toEqual([1, 10, 20, 30, 41, 81]);
+    expect(bubbleSortUseLoops([1, 10, 90, 23, 91, 81])).toEqual([1, 10, 23, 81, 90, 91]);
   });
 
   it('bubble sort modified omega time', () => {
