@@ -2,7 +2,9 @@ import React from 'react';
 import Details from '../Details';
 
 import { BT } from '../../ds/tree/bt/bt';
+// bst
 import { BinarySearchTree } from '../../ds/tree/bst/binary-search-tree';
+import { BST as BST1 } from '../../ds/tree/bst/insert-node-in-bst';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 
 // traversal
@@ -48,7 +50,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            //code={maxDepthRecursion.toString()}
+            code={BST1.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

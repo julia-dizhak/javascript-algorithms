@@ -46,7 +46,7 @@ class BinarySearchTree {
       if (node === null) {
         node = newNode;
       } else if (val === node.val) {
-        // case with duplicated
+        // case with duplicates
         console.log('equal val');
         return null;
       } else if (val < node.val) {
