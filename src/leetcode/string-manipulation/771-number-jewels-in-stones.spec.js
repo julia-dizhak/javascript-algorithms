@@ -1,4 +1,7 @@
-import { numJewelsInStones, numJewelsInStonesBruteForce } from './771-number-jewels-in-stones';
+import {
+  //numJewelsInStones,
+  numJewelsInStonesBruteForce as numJewelsInStones
+} from './771-number-jewels-in-stones';
 
 describe('numJewelsInStones test case', () => {
   it('empty strings', () => {
@@ -7,13 +10,8 @@ describe('numJewelsInStones test case', () => {
   });
 
   it('brute force solution', () => {
-    expect(numJewelsInStonesBruteForce('aA', 'aAAbbbb')).toEqual(3);
-    expect(numJewelsInStonesBruteForce('a', 'abbbb')).toEqual(1);
-    expect(numJewelsInStones('z', 'ZZZZ')).toEqual(0);
-  });
-
-  it('two strings are not empty', () => {
     expect(numJewelsInStones('aA', 'aAAbbbb')).toEqual(3);
+    expect(numJewelsInStones('a', 'abbbb')).toEqual(1);
     expect(numJewelsInStones('z', 'ZZZZ')).toEqual(0);
   });
 });
