@@ -25,56 +25,16 @@ class BinarySearchTree {
     return this.count;
   }
 
-  /**
-    * Recursive approach
-    * Adds some value into the tree. This method traverses the tree to find
-    * the correct location to insert the value. Duplicate values are discarded.
-    * @param {*} val The value to add to the tree.
-    * @returns {void}
-  */
-  insert(val) {
-    let currentNode = this.root;
+  // approach recursion
+  insert1(val) {
 
-    // search
-    const check = (node) => {
-      /*
-      * Create a new node to insert into the tree and store the value in it.
-      * This node will be added into the tree.
-      */
-      const newNode = new Node(val);
-
-      if (node === null) {
-        node = newNode;
-      } else if (val === node.val) {
-        // case with duplicates
-        console.log('equal val');
-        return null;
-      } else if (val < node.val) {
-         // if value less than node value, go left
-        if (node.left === null) {
-          node.left = newNode;
-        } else {
-          check(node.left)
-        }
-      } else {
-        // if value bigger than node value go right
-        if (node.right === null) {
-          node.right = newNode;
-        } else {
-          check(node.right)
-        }
-      }
-    }
-
-    // call search on root node
-    check(currentNode);
-    this.count++;
   }
+
 
   /*
   * Insertion Node iteratively
   */
-  insertNode(val, root = this.root) {
+  insert(val, root = this.root) {
     const newNode = new Node(val);
 
     let x = root;
@@ -168,9 +128,9 @@ class BinarySearchTree {
 
 // tests
 const tree = new BinarySearchTree(4);
-tree.insert(2)
-tree.insert(3)
-tree.insert(1)
+// tree.insert(2)
+// tree.insert(3)
+// tree.insert(1)
 // tree.insert(7)
 // tree.insert(6)
 //console.log('BST', tree)

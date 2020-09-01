@@ -1,4 +1,4 @@
-import { BinarySearchTree as BST } from './binary-search-tree';
+import { BinarySearchTree as BST } from './api';
 
 describe('binary search tree test case', () => {
   let tree;
@@ -21,7 +21,7 @@ describe('binary search tree test case', () => {
       tree.insert(element);
       return tree;
     })
-    
+
     expect(tree.contains(3)).toBe(false);
     tree.insert(3);
     expect(tree.contains(3)).toBe(true);
