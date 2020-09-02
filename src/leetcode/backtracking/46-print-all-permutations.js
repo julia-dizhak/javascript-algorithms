@@ -18,9 +18,12 @@ Output:
 */
 
 /*
+todo
 Print all binary of length
-
 Approach Recursion
+
+
+
 
 The idea is to try every permutation. For every position, there are 2 options,
 either ‘0’ or ‘1’. Backtracking is used in this approach to try every
@@ -65,18 +68,17 @@ function printAllBinary(digits) {
 /*
 Approach Backtracking (with Recursion)
 
-...
 Trick by recursion
-Trick in recursion: right some helper functions that use more params to help solve the problem.
+Trick in recursion: right some helper functions that use more params to help
+solve the problem.
 If the required function doesn’t accept the parameters you need:
 Write a helper function that accepts more parameters
 Extra param can represent current state, choices made, etc
 
 Return functionName(params) {
-....
-    Return helper(params, moreParams)
+  ....
+  Return helper(params, moreParams)
 }
-
 
 A permutation is an arrangement of all or part of a set of objects, with regard
 to the order of the arrangement.
@@ -88,7 +90,6 @@ would be: AB, AC, BA, BC, CA, and CB.
 video all permutation example with boat
 https://www.youtube.com/watch?v=GCm7m5671Ps&t=82s
 https://www.youtube.com/watch?v=GuTPwotSdYw&t=3s
-
 
 
 good explanation of backtracking
@@ -107,7 +108,7 @@ A[2] + permutation of (A[1..n] - A[2])
 A[n] + permutation of (A[1..n] - A[n]).
 
 Time: O(n!)
-Space: 
+Space:
 */
 
 

@@ -674,7 +674,7 @@ started on 12/21/17
     | DP: bottom-up | O(n)      | 0(n)   |
 
 * ### Backtracking
-    * [46 Permutations](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/backtracking/46-print-all-permutations.js)
+    * [46. Print all permutations](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/backtracking/46-print-all-permutations.js)
 
     | Approaches:         | Time      | Space  |
     | :---                | :---      | :---   |
