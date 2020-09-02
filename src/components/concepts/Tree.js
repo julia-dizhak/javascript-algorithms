@@ -4,8 +4,8 @@ import Details from '../Details';
 import { BT } from '../../ds/tree/bt/bt';
 // bst
 import { BinarySearchTree } from '../../ds/tree/bst/api';
-import { BST as BST1 } from '../../ds/tree/bst/insert-node-in-bst';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
+import { largestTimeFromDigits } from '../../leetcode/move';
 
 // traversal
 import { preorderTraversal } from '../../ds/tree/bt/traversal/preorder';
@@ -50,7 +50,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={BST1.toString()}
+            //code={.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

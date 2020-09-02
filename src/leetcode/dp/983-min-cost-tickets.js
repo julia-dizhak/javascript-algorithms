@@ -72,13 +72,14 @@ yesterday's cost plus single-day ticket, or cost for 8 days ago plus 7-day pass,
 or cost 31 days ago plus 30-day pass.
 */
 
-var mincostTicketsTrackCalendarDays = function(days, costs) {
-  let dp = new Array(365).fill(0)
-  for (let i = 1; i < 366; i++) {
+// todo
+// var mincostTicketsTrackCalendarDays = function(days, costs) {
+//   let dp = new Array(365).fill(0)
+//   for (let i = 1; i < 366; i++) {
 
 
-  }
-}
+//   }
+// }
 
 /*
 Approach DP
@@ -146,13 +147,13 @@ var mincostTickets = function(days, costs) {
   // Base case
   dp[0] = 0;
 
-  console.log('days', days)
-  console.log('dp', dp)
+  // console.log('days', days)
+  // console.log('dp', dp)
   // Loop through all the days
   for (let i = 1; i < dp.length; i++) {
     // If 'i' isn't in the days array we let it equal to the previous day because
     // we don't need to buy a ticket for that day
-    console.log('i=', i)
+    //console.log('i=', i)
     if (!days.includes(i)) {
       dp[i] = dp[i-1];
     } else {
@@ -165,13 +166,13 @@ var mincostTickets = function(days, costs) {
     }
   }
 
-  console.log('dp', dp)
+  //console.log('dp', dp)
   // last element of dp will be our answer
   return dp[dp.length - 1]
 };
 const days = [1,4,6,7,8,20];
 const costs = [2,7,15]
-console.log('mincostTickets', mincostTickets(days, costs));
+//console.log('mincostTickets', mincostTickets(days, costs));
 
 /*
 coin change 322
@@ -204,9 +205,9 @@ function isPrime(n) {
   return true;
 }
 
-console.log('isPrime', isPrime(3))
-console.log('isPrime', isPrime(4))
-console.log('isPrime', isPrime(5))
+// console.log('isPrime', isPrime(3))
+// console.log('isPrime', isPrime(4))
+// console.log('isPrime', isPrime(5))
 
 /*
 find right interval
@@ -215,13 +216,13 @@ https://codereview.stackexchange.com/questions/221661/merge-intervals-in-javascr
 */
 function mergeIntervals(intervals) {
   intervals = intervals.sort((a,b) => {
-    console.log(a)
-    console.log(b)
+    // console.log(a)
+    // console.log(b)
     return a[0] - b[0]
   });
-  console.log(intervals)
+  //console.log(intervals)
   let result = [intervals[0]];
-  console.log(result)
+  //console.log(result)
 
   for (let i = 1; i < intervals.length; i++) {
     let interval2 = result[-1];
@@ -230,7 +231,7 @@ function mergeIntervals(intervals) {
   }
 
 }
-console.log('mergeIntervals', mergeIntervals([[1,3], [7,15], [5,10], [22,25], [18,30]]))
+//console.log('mergeIntervals', mergeIntervals([[1,3], [7,15], [5,10], [22,25], [18,30]]))
 
 // var pancakeSort = function(A) {
 //   const n = A.length;

@@ -13,12 +13,6 @@ class TreeNode {
 class BST {
   constructor(val) {
     this.root = new TreeNode(val);
-    this.count = 1; // how many nodes in Tree
-  }
-
-  size() {
-    // count doesn't work correctly with duplicated nodes
-    return this.count;
   }
 
   /*
@@ -88,14 +82,13 @@ class BST {
 
     // call search on root node
     check(currentNode);
-    this.count++;
   }
 }
 
 let tree = new BST(2);
 tree.insertNode(1);
 tree.insertNode(3);
-console.log('tree 1', tree);
+//console.log('tree 1', tree);
 
 // Second approach
 function BST2(value) {
@@ -120,7 +113,7 @@ BST2.prototype.insert = function(value) {
 let tree2 = new BST2(2);
 // insert
 tree2.insert(1).insert(3);
-console.log('tree 2', tree2);
+//console.log('tree 2', tree2);
 
 export {
   BST,

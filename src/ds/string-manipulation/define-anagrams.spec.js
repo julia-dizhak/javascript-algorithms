@@ -14,11 +14,13 @@ describe('makingAnagrams test case', () => {
   });
 
   it('strings are anagrams', () => {
-    expect(defineAnagrams('earth', 'heart')).toBeTruthy();
-    expect(defineAnagrams('silent', 'listen')).toBeTruthy();
+    expect(defineAnagrams('eartH', 'heart')).toBeTruthy();
+    expect(defineAnagrams('silent', 'Listen')).toBeTruthy();
+    expect(defineAnagrams('silent', ' lis ten')).toBeTruthy();
   });
 
   it('strings are not anagrams', () => {
     expect(defineAnagrams('foo', 'bar')).toBeFalsy();
+    expect(defineAnagrams('foo  K', 'barfig')).toBeFalsy();
   });
 });

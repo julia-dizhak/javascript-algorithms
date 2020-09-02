@@ -103,13 +103,12 @@ started on 12/21/17
     | Recursion       | O(n)     | 0(n)       |
 
 * ### Binary Search Tree (BST) Implementation
-    * [BST implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/tree/bst/binary-search-tree.js)
+    * [BST implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/tree/bst/api.js)
 
-    | Complexity:               | Time      |  Space    |
-    | :---                      | :---      | :---      |
-    | insert(node) recursion    | O(logn)   | 0(n)      |
-    | insert(node) Iteratively  | O(logn)   | 0(1)      |
-    | ...                       |           |           |
+    | Complexity:                      | Time       |  Space         |
+    | :---                             | :---       | :---           |
+    | Insert Recursive / iterative   | O(log n)   | 0(n) / O(1)    |
+    | ...                 |            |            |
 
 * ### Heap
     * [Max Binary Heap](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/heap/max-binary-heap.js)

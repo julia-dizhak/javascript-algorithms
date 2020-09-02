@@ -1,10 +1,11 @@
-/**
- * There are 2 string. Define if they are anagram
- * Two words are anagrams of one another if their letters can be rearranged to form the other word.
- *
- * @param {*} str1
- * @param {*} str2
- * @return {boolean}
+/*
+There are 2 string. Define if they are anagram
+Two words are anagrams of one another if their letters can be rearranged to form
+the other word.
+
+@param {*} str1
+@param {*} str2
+@return {boolean}
 */
 
 function defineAnagrams(str1, str2) {
@@ -27,7 +28,7 @@ function defineAnagrams(str1, str2) {
     for (let i = 0; i < len1; i++) {
       const index = normalizedStr1.charCodeAt(i)-97;
       obj[index] = (obj[index] || 0) + 1;
-     }
+    }
 
     for (let j = 0; j < len2; j++) {
       const index = normalizedStr2.charCodeAt(j)-97;
@@ -41,5 +42,15 @@ function defineAnagrams(str1, str2) {
     return isStringAnagram;
   }
 }
+
+// function defineAnagrams1(str1, str2) {
+//   if (str1.length !== str2.length) return false;
+
+// }
+
+// const str1 = 'abc cat find';
+// const str2 = 'abcfindcaT';
+// const str3 = ' abcat findA';
+// console.log('defineAnagrams1', defineAnagrams1(''))
 
 export { defineAnagrams }

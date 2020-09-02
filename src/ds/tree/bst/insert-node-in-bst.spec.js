@@ -1,5 +1,4 @@
 import {
-  TreeNode,
   BST
 } from './insert-node-in-bst';
 
