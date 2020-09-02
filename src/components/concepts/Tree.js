@@ -5,6 +5,7 @@ import { BT } from '../../ds/tree/bt/bt';
 // bst
 import { BinarySearchTree } from '../../ds/tree/bst/api';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
+import { BST as BST1 } from '../../ds/tree/bst/contains';
 import { largestTimeFromDigits } from '../../leetcode/move';
 
 // traversal
@@ -50,7 +51,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            //code={.toString()}
+            code={BST1.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

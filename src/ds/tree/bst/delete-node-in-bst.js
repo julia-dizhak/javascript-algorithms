@@ -11,7 +11,11 @@ class BST {
     this.root = new TreeNode(val);
   }
 
+  /*
+  search for node
+    check if current val equal val
+  */
   delete(val) {
-    
+
   }
 }

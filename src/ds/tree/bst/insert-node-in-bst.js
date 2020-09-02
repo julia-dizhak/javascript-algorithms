@@ -97,7 +97,7 @@ function BST2(value) {
   this.right = null;
 }
 
-// O(log(n))
+// O(log n)
 BST2.prototype.insert = function(value) {
   if (value <= this.value) {
     if (this.left) this.left.insert(value);

@@ -67,6 +67,8 @@ class BinarySearchTree {
     * search
     * The contains() method accepts a value as an argument and
     * returns true if the value is present in the tree or false if not.
+    *
+    * iterative approach
   */
   contains(val) {
     let currentNode = this.root;
