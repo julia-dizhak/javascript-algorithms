@@ -93,6 +93,20 @@ class BST {
     if (nodeToRemove.left === null && nodeToRemove.right === null) {
       if (nodeToRemoveIsParentsLeftChild) parent.left = null;
       else parent.right = null
+    } else if (nodeToRemove.left !== null && nodeToRemove.right === null) {
+      // only has a left child
+      if (nodeToRemoveIsParentsLeftChild) {
+        parent.left = nodeToRemove.left;
+      } else {
+        parent.right = nodeToRemove.left;
+      }
+    } else if (nodeToRemove.left === null && nodeToRemove.right !== null) {
+      // only has a right child
+      if (nodeToRemoveIsParentsLeftChild) {
+        parent.left = nodeToRemove.right;
+      } else {
+        parent.right = nodeToRemove.right;
+      }
     }
   }
 
@@ -100,8 +114,16 @@ class BST {
 
 let tree = new BST(6);
 tree.insert(2);
+tree.insert(1);
+tree.insert(0);
+tree.insert(3);
 tree.insert(10);
-tree.delete(2);
+tree.insert(11);
+tree.insert(12);
+
+// case if node is leaf
+//tree.delete(0); // left
+tree.delete(3); // right
 
 console.log('tree', tree)
 
