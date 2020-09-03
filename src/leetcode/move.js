@@ -89,6 +89,53 @@ console.log('largestTimeFromDigits', largestTimeFromDigits([1,2,3,4]))
 //console.log('largestTimeFromDigits', largestTimeFromDigits([6,6,6,6]))
 //console.log('largestTimeFromDigits', largestTimeFromDigits([1,1,1,1]))
 
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @param {number} t
+ * @return {boolean}
+ */
+var containsNearbyAlmostDuplicate = function(nums, k, t) {
+  nums = nums.sort((a,b) => a - b);
+  console.log('nums', nums)
+  let map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    map.set(i, nums[i])
+  }
+  console.log('map', map);
+
+  for (let [key, value] of map) {
+    console.log(key + ' = ' + value);
+    let nextKey = key+k;
+    //let nextVal = value+t
+    console.log(key+k)
+    //console.log(value+t)
+    //console.log(key + k + ' = ' + value + t);
+
+    if (Math.abs(map.get(key) - map.get(key+1)) <= t ) {
+      if (Math.abs(key - (key+1)) <=3) return true
+    }
+  }
+
+  // for (let i = 0; i < nums.length; i++) {
+  //   // 0 1 2 3
+  //   for (let j = 1; j < nums.length; j++) {
+  //     console.log('i, j', i, j);
+  //     //debugger
+  //     if (Math.abs(i - j) <= k && Math.abs(nums[i] - nums[j]) <= t ) {
+  //       return true
+  //     }
+  //   }
+  // }
+  return false
+};
+
+//console.log('containsNearbyAlmostDuplicate', containsNearbyAlmostDuplicate([1,2,3,1], 3, 0))
+//console.log('containsNearbyAlmostDuplicate', containsNearbyAlmostDuplicate([1,0,1,1], 1, 2))
+console.log('containsNearbyAlmostDuplicate', containsNearbyAlmostDuplicate([1,5,9,1,5,9], 2, 3));
+
+
 export {
-  largestTimeFromDigits
+  largestTimeFromDigits,
+  containsNearbyAlmostDuplicate
 }

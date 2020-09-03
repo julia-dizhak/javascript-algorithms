@@ -41,7 +41,7 @@ class BST {
     *
     * time is O(log n) in best case, in average case no
   */
-  // check why it doesn't work
+  // todo check why it doesn't work
   contains1(val, currentNode = this.root) {
     if (val === currentNode.val) return true;
 
@@ -84,7 +84,7 @@ tree.insert(6);
 tree.insert(8);
 // contains
 tree.contains(4);
-console.log('tree', tree);
+//console.log('tree', tree);
 
 export {
   BST,
