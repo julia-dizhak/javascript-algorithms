@@ -28,6 +28,13 @@ started on 12/21/17
 
 ## Main Data Structures implementations by Javascript
 
+* ### Strings manipulation
+    * [Get all substrings](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/string-manipulation/get-all-substr.js)
+
+    | Complexity:             | Time         | Space   |
+    | :---                    | :---         | :---    |
+    | iterative, 2 loops      | O(n^2)       | 0(?)    |
+
 * ### Array
     ...
 
@@ -327,6 +334,12 @@ started on 12/21/17
     | :---              | :---     | :---          |
     | Hash              | O(n)     | 0(n)/O(1)     |
     | Greedy            | O(n)     | 0(n)/O(1)     |
+
+    * [459. Repeated substr pattern](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/459-repeated-substr-pattern.js)
+
+    | Approaches:       | Time     | Space      |
+    | :---              | :---     | :---       |
+    | Loop              | O(n)     | O(1)       |
 
     * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
 

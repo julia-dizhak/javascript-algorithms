@@ -56,12 +56,11 @@ Time complexity: O(n^3)
 To verify if characters within index range [i, j)[i,j) are all unique,
 we need to scan all of them.
 
-Space complexity : O(min(n,m)). We need O(k) space for checking a substring
+Space complexity: O(min(n,m)). We need O(k) space for checking a substring
 has no duplicate characters, where k is the size of the Set.
 The size of the Set is upper bounded by the size of the string n and the size
 of the charset/alphabet m.
 */
-
 var lengthOfLongestSubstringBruteForce = function(s) {
   const n = s.length;
   let max = 0;
@@ -69,7 +68,7 @@ var lengthOfLongestSubstringBruteForce = function(s) {
   for (let i = 0; i < n; i++) {
     for (let j = i + 1; j <= n; j++) {
       if (allUnique(s,i,j)) {
-        max = Math.max(max, j - i)
+        max = Math.max(max, j - i); // length = j - i
       }
     }
   }
@@ -82,7 +81,7 @@ function allUnique(s, start, end) {
     if (hash[s[i]] === undefined) {
       hash[s[i]] = (hash[s[i]] || 0) + 1
     } else {
-      return false
+      return false;
     }
   }
   return true;

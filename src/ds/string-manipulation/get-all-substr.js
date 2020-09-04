@@ -1,3 +1,8 @@
+/*
+Time is O(n^2)
+space is O(?)
+*/
+
 function getAllSubstr(str) {
   const n = str.length;
   if (n === 1) return str;
@@ -13,7 +18,7 @@ function getAllSubstr(str) {
   return result;
 }
 
-console.log(getAllSubstr('some'));
+//console.log(getAllSubstr('some'));
 
 export {
   getAllSubstr
