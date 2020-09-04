@@ -52,7 +52,7 @@ contains it. If so, we return false. After the loop, we return true.
 
 Complexity Analysis
 
-Time complexity : O(n^3)
+Time complexity: O(n^3)
 To verify if characters within index range [i, j)[i,j) are all unique,
 we need to scan all of them.
 

@@ -134,8 +134,83 @@ var containsNearbyAlmostDuplicate = function(nums, k, t) {
 //console.log('containsNearbyAlmostDuplicate', containsNearbyAlmostDuplicate([1,0,1,1], 1, 2))
 console.log('containsNearbyAlmostDuplicate', containsNearbyAlmostDuplicate([1,5,9,1,5,9], 2, 3));
 
+/*
+Repeated substring pattern
+
+Example 1:
+
+Input: "abab"
+Output: True
+Explanation: It's the substring "ab" twice.
+*/
+
+var lengthOfLongestSubstring = function(s) {
+
+  const n = s.length;
+  let max = 0;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i+1; j <= n; j++) {
+      console.log('i,j', i, j)
+      if (allUnique(s,i,j)) {
+        max = Math.max(max, j-i)
+      }
+    }
+  }
+
+  return max;
+}
+console.log('lengthOfLongestSubstring', lengthOfLongestSubstring('aba'))
+//console.log('lengthOfLongestSubstring', lengthOfLongestSubstring('abcabcbb'))
+
+function allUnique(s, start, end) {
+  debugger
+  let hash = {};
+  for (let i = start; i < end; i++) {
+    if (hash[s[i]] === undefined) {
+      hash[s[i]] = (hash[s[i]] || 0) + 1;
+    } else return false;
+  }
+}
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var repeatedSubstringPattern = function(s) {
+  if (s.length < 2) return false; 
+  const n = s.length;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i+1; j <= n; j++) {
+      unique(s,i,j)
+      
+    }
+    
+  }
+}
+
+function unique(s, start, end) {
+  //debugger
+  let hash = {};
+  for (let i = start; i < end; i++) {
+    if (hash[s[i]] === undefined) {
+      hash[s[i]] = (hash[s[i]] || 0) + 1;
+    } else {
+
+    }
+    
+  }
+  
+}
+
+//console.log('repeatedSubstringPattern', repeatedSubstringPattern('abab'))
+    
 
 export {
   largestTimeFromDigits,
-  containsNearbyAlmostDuplicate
+  containsNearbyAlmostDuplicate,
+
+  lengthOfLongestSubstring,
+  repeatedSubstringPattern
 }

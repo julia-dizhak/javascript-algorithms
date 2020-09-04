@@ -6,7 +6,7 @@ import { BT } from '../../ds/tree/bt/bt';
 import { BinarySearchTree } from '../../ds/tree/bst/api';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 import { BST as BST1 } from '../../ds/tree/bst/delete-node-in-bst';
-import { largestTimeFromDigits, containsNearbyAlmostDuplicate } from '../../leetcode/move';
+import { largestTimeFromDigits, containsNearbyAlmostDuplicate, repeatedSubstringPattern, lengthOfLongestSubstring } from '../../leetcode/move';
 
 // traversal
 import { preorderTraversal } from '../../ds/tree/bt/traversal/preorder';

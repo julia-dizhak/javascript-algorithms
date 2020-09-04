@@ -107,6 +107,31 @@ class BST {
       } else {
         parent.right = nodeToRemove.right;
       }
+    } else {
+      // has 2 children
+      const rightSubTree = nodeToRemove.right;
+      const leftSubTree = nodeToRemove.left;
+      // sets parent nodes respective child to the right sub tree
+      if (nodeToRemoveIsParentsLeftChild) {
+        parent.left = rightSubTree;
+      } else {
+        parent.right = rightSubTree;
+      }
+
+      // find the lowest free space on the left side of the right sub tree
+      // and add the leftSubtree
+      let currentLeftNode = rightSubTree;
+      let currentLeftParent;
+      let foundSpace = false;
+      while (!foundSpace) {
+        if (currentLeftNode === null) foundSpace = true;
+        else {
+          currentLeftParent = currentLeftNode;
+          currentLeftNode = currentLeftNode.left;
+        }
+      }
+      currentLeftParent.left = leftSubTree;
+      return 'the node was successfully deleted'
     }
   }
 
@@ -123,9 +148,16 @@ tree.insert(12);
 
 // case if node is leaf
 //tree.delete(0); // left
-tree.delete(3); // right
+//tree.delete(3); // right
 
-console.log('tree', tree)
+// case is node has one child
+//tree.delete(1) // left
+//tree.delete(11) // right
+
+// case 2 children
+//tree.delete(2);
+
+//console.log('tree', tree)
 
 export {
   BST

@@ -37,9 +37,27 @@ describe('delete a node test case', () => {
     tree.delete(3);
     tree = JSON.parse(JSON.stringify(tree)).root;
     expect(tree.left.val).toEqual(2);
-    expect(tree.right.val).toEqual(10);
     expect(tree.left.left.val).toEqual(0);
     expect(tree.left.right).toBeNull();
+  });
+
+  it('node has a one child, child is on the left', () => {
+    tree.delete(1);
+    tree = JSON.parse(JSON.stringify(tree)).root;
+
+    expect(tree.left.val).toEqual(2);
+    expect(tree.left.left.val).toEqual(0);
+    expect(tree.left.right.val).toEqual(3);
+    expect(tree.left.left.left).toBeNull();
+  });
+
+  it('node has a one child, child is on the right', () => {
+    tree.delete(11);
+    tree = JSON.parse(JSON.stringify(tree)).root;
+
+    expect(tree.right.val).toEqual(10);
+    expect(tree.right.right.val).toEqual(12);
+    expect(tree.right.right.right).toBeNull();
   });
 
 });
