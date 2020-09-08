@@ -6,7 +6,7 @@ import { BT } from '../../ds/tree/bt/bt';
 import { BinarySearchTree } from '../../ds/tree/bst/api';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 import { BST as BST1 } from '../../ds/tree/bst/delete-node-in-bst';
-import { largestTimeFromDigits, containsNearbyAlmostDuplicate } from '../../leetcode/move';
+import { largestTimeFromDigits, containsNearbyAlmostDuplicate, partitionLabels, wordPattern } from '../../leetcode/move';
 
 // traversal
 import { preorderTraversal } from '../../ds/tree/bt/traversal/preorder';
@@ -38,6 +38,9 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 // contest 32
 //import { test } from '../../leetcode/contest/biweekly/33/index';
 
+// contest 34
+import { test1 } from '../../leetcode/contest/biweekly/34/index';
+
 // codewars
 //import { basketWithoutDuplicatesUseReduce } from '../../codewars/arrays/filter-out-duplicates';
 
@@ -51,7 +54,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={BST1.toString()}
+            code={test1.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

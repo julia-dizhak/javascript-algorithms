@@ -2,7 +2,8 @@
 Leetcode
 1556 Thousand separator
 
-Given an integer n, add a dot (".") as the thousands separator and return it in string format.
+Given an integer n, add a dot (".") as the thousands separator and return it in 
+string format.
 
 Example 1:
 Input: n = 987
@@ -84,7 +85,7 @@ var thousandSeparator3 = function(n) {
 
 // Approach toLocaleString
 var thousandSeparator4 = function(n) {
-  return n.toLocaleString()
+  return n.toLocaleString();
 };
 
 /*

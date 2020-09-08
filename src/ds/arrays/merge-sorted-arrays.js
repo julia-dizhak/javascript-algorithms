@@ -39,39 +39,39 @@ const mergeSortedArrays = (arr1, arr2) => {
 
 // other solution but also with a loop
 const mergeSortedArrays1 = (arr1, arr2) => {
-    let i = 1,
-        j = 1,
-        firstArr1 = arr1[0],
-        firstArr2 = arr2[0],
-        merged = [];
+  let i = 1,
+    j = 1,
+    firstArr1 = arr1[0],
+    firstArr2 = arr2[0],
+    merged = [];
 
-    const len1 = arr1.length,
-        len2 = arr2.length;
+  const len1 = arr1.length,
+    len2 = arr2.length;
 
-    // case if one array is empty
-    if (len1 === 0) {
-        return arr2;
+  // case if one array is empty
+  if (len1 === 0) {
+    return arr2;
+  }
+  if (len2 === 0) {
+    return arr1;
+  }
+
+  // if firstArr1 or firstArr2 exists we will insert to merged array
+  // will go inside while loop
+  // to insert: firstArr1 exists and firstArr2 doesn't exists
+  // or both exists and firstArr1 < firstArr2
+  // this is the critical part of the example
+  while(firstArr1 || firstArr2) {
+    if ( (firstArr1 && !firstArr2) || firstArr1 < firstArr2 ) {
+      merged.push(firstArr1);
+      firstArr1 = arr1[i++];
+    } else {
+      merged.push(firstArr2);
+      firstArr2 = arr2[j++];
     }
-    if (len2 === 0) {
-        return arr1;
-    }
+  }
 
-    // if firstArr1 or firstArr2 exists we will insert to merged array
-    // will go inside while loop
-    // to insert: firstArr1 exists and firstArr2 doesn't exists
-    // or both exists and firstArr1 < firstArr2
-    // this is the critical part of the example
-    while(firstArr1 || firstArr2) {
-        if ( (firstArr1 && !firstArr2) || firstArr1 < firstArr2 ) {
-            merged.push(firstArr1);
-            firstArr1 = arr1[i++];
-        } else {
-            merged.push(firstArr2);
-            firstArr2 = arr2[j++];
-        }
-    }
-
-    return merged;
+  return merged;
 };
 
 export { mergeSortedArrays, mergeSortedArrays1  };

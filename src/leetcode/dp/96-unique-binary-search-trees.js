@@ -128,8 +128,8 @@ var numTrees = function(n) {
   }
   return T[n];
 }
+//console.log('numTrees', numTrees(3));
 
-// console.log('numTrees', numTrees(3));
 export {
   numTrees
 }

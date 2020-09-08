@@ -79,6 +79,7 @@ var repeatedSubstringPattern = function(s) {
 
 /*
 todo KMP
+https://reponroy.wordpress.com/2015/04/29/kmp-minimum-length-of-a-repeated-string/#:~:text=KMP%20algorithm%20quickly%20finds%20the,to%20make%20the%20whole%20string..&text=S%20can%20be%20writen%20as,*%20ab%20where%20*%20means%20concatenation.
 todo remove first and last character
 todo solution https://leetcode.com/problems/repeated-substring-pattern/discuss/235383/JavaScript
 

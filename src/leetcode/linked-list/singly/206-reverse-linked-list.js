@@ -144,11 +144,11 @@ Memory is linear, because of recursion
 function reverseUseRecursion(head) {
   //debugger
   // base case, no need to reverse if head is null or there is only one node
-  console.log('head', head)
+  //console.log('head', head)
   if (!head || !head.next) return head;
 
-  console.log('head', head)
-  console.log('head next', head.next)
+  //console.log('head', head)
+  //console.log('head next', head.next)
   let reversedList = reverseUseRecursion(head.next);
   head.next.next = head;
   head.next = null;
@@ -231,7 +231,7 @@ root.left = new TreeNode(9);
 root.right = new TreeNode(20);
 root.right.left = new Node(15);
 root.right.left = new Node(7);
-console.log('sumOfLeftLeaves', sumOfLeftLeaves(root));
+//console.log('sumOfLeftLeaves', sumOfLeftLeaves(root));
 
 /*
 todo
@@ -268,9 +268,9 @@ list.next = new Node(2);
 list.next.next = new Node(3);
 list.next.next.next = new Node(4);
 //list.next.next.next.next = new Node(5);
-console.log('original ist', list);
+//console.log('original ist', list);
 list = reverseUseRecursion(list);
-console.log('after reverse', list);
+//console.log('after reverse', list);
 
 
 
