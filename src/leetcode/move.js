@@ -460,6 +460,13 @@ var wordPattern = function(pattern, str) {
 
 /*
 Sum of Root To Leaf Binary Numbers
+
+hint1
+Find each path, then transform that path to an integer in base 10
+
+todo
+solution with separate helper method outside of main function
+solution is open
 */
 
 /**
@@ -467,21 +474,39 @@ Sum of Root To Leaf Binary Numbers
  * @return {number}
  */
 var sumRootToLeaf = function(root) {
-  let sum = 0;
-  if (!root) sum = 0;
-  if (root.left === null && root.right === null) sum += root.val;
+  let binaries = [];
 
-  helper(root, root.val);
-  console.log('sum', sum)
+  const helper = (node, str) => {
+    if (!node) return; 
+
+    // compose the binary string for the next node
+    const binary = str + node.val;
+
+    if (!node.left && !node.right) {
+      binaries.push(binary)
+    }
+
+    if (node.left) {
+      helper(node.left, binary);
+    }
+    if (node.right) {
+      helper(node.right, binary);
+    }
+  }
+
+  helper(root, '');    
+  console.log('binaries', binaries);
+  
+  let sum = binaries.reduce((sum, binary) => {
+    sum += parseInt(binary, 2);
+    return sum
+  }, 0)
+
+  console.log(sum);
   return sum;  
 };
 
-function helper(node, number) {
-  debugger
-  if (!node.left && !node.right) number += node.val;
-  if (node.left) helper(node.left, number);
-  if (node.right) helper(node.right, number);
-}
+
 
 let root = new TreeNode(1);
 root.left = new TreeNode(0);
@@ -493,6 +518,66 @@ root.right.left = new TreeNode(0);
 root.right.right = new TreeNode(1)
 
 console.log('sumRootToLeaf', sumRootToLeaf(root));
+
+
+/*
+10.09
+compare version numbers
+
+*/
+
+/**
+ * @param {string} version1
+ * @param {string} version2
+ * @return {number}
+ */
+var compareVersion = function(version1, version2) {
+    
+};
+
+console.log('compareVersion', compareVersion('0.1', '1.1'))
+
+
+/*
+I understand correctly I will check that
+max sum find
+
+divide into small parts
+this solution with out of memory
+1 find all contiguus subarraya
+create tests
+[2,3,-2,4]
+[-2,0,-1]
+[-1]
+
+time is o(n^2)
+
+*/
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxProduct = function(nums) {
+  const n = nums.length;
+  if (n === 1) return nums[0];
+  let subArrays = [];
+    
+  for (let i = 0; i < n; i++) {
+    for (let j = i+1; j <= n; j++) {
+      subArrays.push(nums.slice(i,j));
+    }
+  }
+    
+  let output = [];
+  subArrays.map(arr => {
+    let result = arr.reduce((acc, val) => acc * val, 1);
+    output.push(result);
+  });
+  return Math.max(...output)
+};
+
+console.log('maxProduct', maxProduct([2,3,-2,4]))
+console.log('maxProduct', maxProduct([-2,0,-1]))
 
 export {
   largestTimeFromDigits,
