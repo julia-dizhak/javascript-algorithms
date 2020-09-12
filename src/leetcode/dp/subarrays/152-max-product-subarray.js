@@ -79,6 +79,18 @@ var maxProduct1 = function(nums) {
 /*
 Approach
 
+The intuition is that we store the information about our previous maximum product, 
+and as we iterate through the array, we keep using our previous maximum to calculate 
+the new maximum product.
+
+The tricky part of this problem is that negative numbers exist in the input array. 
+This causes situations where the smallest previous product (a negative number) 
+can become the largest product if the next number in line is also a negative number.
+
+Since the minimum product may have a chance to become the maximum, we need to store 
+the information about the previous minimum as well and take it into account when 
+we are calculating our maximum product.
+
 time is O(n)
 space is O(1)
 */
@@ -95,35 +107,30 @@ var maxProduct2 = function(nums) {
   debugger
   const n = nums.length;
   if (n === 1) return nums[0];
-  // store the result that is the max we have found so far
-  let max = nums[0];
+  // store the results we have found so far
+  let prevMax = nums[0];
+  let prevMin = nums[0];
+  let result = nums[0];
 
-  // maxSubArray/minSubarray stores the max/min product of
-  // subarray that ends with the current number A[i]
-  let maxSubArray = max;
-  let minSubArray = max;   
+  for (let i = 1; i < n; i++) {
+    // given the new number, the new max can have 3 conditions
+    // 1. number(+) * prevMax(+) is the largest
+    // 2. number(+) it self is the largest
+    // 3. number(-) * prevMin(-) is the largest 
+    let curMax = Math.max(nums[i] * prevMax, nums[i], nums[i] * prevMin);
+    let curMin = Math.min(nums[i] * prevMin, nums[i], nums[i] * prevMax);
 
-  for (let i = 1; maxSubArray = max, minSubArray = max, i < n; i++) {
-    // multiplied by a negative makes big number smaller, small number bigger
-    // so we redefine the extremes by swapping them
-    if (nums[i] < 0) {
-      swap(maxSubArray, minSubArray);
-    }   
-
-    // max/min product for the current number is either the current number itself
-    // or the max/min by the previous number times the current one
-    maxSubArray = Math.max(nums[i], maxSubArray * nums[i]);
-    minSubArray = Math.min(nums[i], minSubArray * nums[i]);
-
-    // the newly computed max value is a candidate for our global result
-    max = Math.max(max, maxSubArray);
+    // updating the prevMax & prevMin, these two may swap locations
+    prevMax = curMax;
+    prevMin = curMin;
+    result = Math.max(curMax, result);
   }
 
-  return max;
+  return result;
 };
 
 console.log('maxProduct', maxProduct2([2,3,-2,4]))
-//console.log('maxProduct2', maxProduct2([-2,0,-1]))
+console.log('maxProduct', maxProduct2([-2,0,-1]))
 
 export {
   maxProduct, maxProduct1,
