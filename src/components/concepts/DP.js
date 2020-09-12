@@ -2,6 +2,9 @@ import React from 'react';
 import Details from '../Details';
 
 // problems
+import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
+import { maxProduct } from '../../leetcode/dp/subarrays/152-max-product-subarray';
+
 import { change } from '../../leetcode/dp/518-coin-change-2';
 import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
 import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
@@ -16,8 +19,8 @@ export default function DP() {
 
       <Details
         id="test"
-        //code={maxProfit.toString()}
-        code={mincostTickets.toString()}
+        code={maxSubArrayBruteForceCubicTime.toString()}
+        //code={mincostTickets.toString()}
         //secondCode={climbStairsBruteForce.toString()}
       />
       <ul>

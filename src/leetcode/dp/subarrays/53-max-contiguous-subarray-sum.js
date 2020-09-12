@@ -1,32 +1,39 @@
 /**
- * Leetcode
- * 53 Maximum subarray
- * easy
- *
- * Given an integer array nums, find the contiguous subarray
- * (containing at least one number) which has the largest sum
- * and return its sum.
- *
- * Example:
- * Input: [-2,1,-3,4,-1,2,1,-5,4],
- * Output: 6
- * Explanation: [4,-1,2,1] has the largest sum = 6.
- *
- * If you have figured out the O(n) solution,
- * try coding another solution using the divide and conquer approach,
- * which is more subtle.
- *
- * Explanation:
- * input: Each number in the input array A could be positive, negative, or zero.[1]
- *
- * Some properties of this problem are:
- * 1 If the array contains all non-negative numbers, then the problem is trivial; a maximum subarray is the entire array.
- * 2 If the array contains all non-positive numbers, then a solution is any subarray of size 1 containing the maximal value of the array (or the empty subarray, if it is permitted)
- * 3 Several different sub-arrays may have the same maximum sum
- */
+Leetcode
+53 Maximum subarray
+easy
+
+Given an integer array nums, find the contiguous subarray
+(containing at least one number) which has the largest sum
+and return its sum.
+
+Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4],
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+
+Follow up:
+If you have figured out the O(n) solution,
+try coding another solution using the divide and conquer approach,
+which is more subtle.
+*/
 
 /*
-Approach Brute Force cubic time
+Approach Brute Force and Sliding window
+
+Explanation:
+input: Each number in the input array A could be positive, negative, or zero.
+
+Some properties of this problem are:
+1 If the array contains all non-negative numbers, then the problem is trivial; 
+a maximum subarray is the entire array.
+
+2 If the array contains all non-positive numbers, then a solution is any subarray 
+of size 1 containing the maximal value of the array (or the empty subarray, if 
+it is permitted)
+
+3 Several different sub-arrays may have the same maximum sum
+
 
 We will use these outer 2 for loops to investigate all windows of the array.
 
@@ -55,19 +62,19 @@ space O(1)
  * @return {number}
 */
 var maxSubArrayBruteForceCubicTime = function(nums) {
-  const len = nums.length;
+  const n = nums.length;
   let maxSubArraySum = -Infinity;
 
-  for (let left = 0; left < len; left++) {
-    for (let right = left; right < len; right++) {
+  for (let left = 0; left < n; left++) {
+    for (let right = left; right < n; right++) {
       // let's investigate this window
       let windowSum = 0;
 
       // add all items in the window
       for (let k = left; k <= right; k++) {
         windowSum += nums[k]
-
       }
+      
       // Did we beat the best sum seen so far?
       if (windowSum > maxSubArraySum) maxSubArraySum = windowSum;
       // or maximumSubArraySum = Math.max(maximumSubArraySum, windowSum);

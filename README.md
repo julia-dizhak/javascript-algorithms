@@ -411,7 +411,6 @@ started on 12/21/17
 
 
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
-    * [53. Maximum subarray: approach ...](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/53-max-contiguous-subarray-sum.js)
 
     * [66 Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/66-plus-one.js)
 
@@ -661,7 +660,19 @@ started on 12/21/17
     | Greedy + map   | O(n)      | 0(1)   |
     | Greedy + hash  | O(n)      | 0(n)   |
 
-* ### DP[dynamic programming]
+* ### DP [dynamic programming]
+    * [53. Maximum subarray](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/subarrays/53-max-contiguous-subarray-sum.js)
+
+    | Approaches:                   |  Time       | Space      |
+    | :---                          | :---        | :---       |
+    | Brute force + sliding window  | O(n^3)      | O(1)       |
+
+    * [152. Max product subarray](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/subarrays/152-max-product-subarray.js)
+
+    | Approaches:                   |  Time       | Space      |
+    | :---                          | :---        | :---       |
+    | Brute force + sliding window  | O(n^3)      | O(1)       |
+   
     * [518. Coin change 2](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
 
     * [96. Unique binary search trees](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/96-unique-binary-search-trees.js)

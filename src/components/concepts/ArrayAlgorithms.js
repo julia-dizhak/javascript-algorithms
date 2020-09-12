@@ -8,7 +8,6 @@ import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../ds/arrays/cl
 import { jumpOnClouds } from '../../ds/arrays/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/majority/169-majority-element';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
-import { maxSubArrayBruteForceCubicTime, maxSubArrayBruteForce } from '../../leetcode/array/53-max-contiguous-subarray-sum';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
 import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-triangle';
 //import { plusOne } from '../../leetcode/array/66-plus-one';
@@ -132,26 +131,6 @@ export default function ArrayAlgorithms() {
             secondCode={findJudgeTwoArrays.toString()}
           />
         </li>
-
-        <li>
-          <Details
-            id="max-contiguous-subarray-sum"
-            question="Max contiguous subarray sum: brute force cubic and quadratic time"
-            solution={
-              `
-                test
-              `
-            }
-            complexity={`
-              test
-            `}
-            time=""
-            space=""
-            code={maxSubArrayBruteForceCubicTime.toString()}
-            secondCode={maxSubArrayBruteForce.toString()}
-          />
-        </li>
-
       </ul>
   </div>
   );

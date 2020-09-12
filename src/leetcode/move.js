@@ -537,48 +537,6 @@ var compareVersion = function(version1, version2) {
 
 console.log('compareVersion', compareVersion('0.1', '1.1'))
 
-
-/*
-I understand correctly I will check that
-max sum find
-
-divide into small parts
-this solution with out of memory
-1 find all contiguus subarraya
-create tests
-[2,3,-2,4]
-[-2,0,-1]
-[-1]
-
-time is o(n^2)
-
-*/
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var maxProduct = function(nums) {
-  const n = nums.length;
-  if (n === 1) return nums[0];
-  let subArrays = [];
-    
-  for (let i = 0; i < n; i++) {
-    for (let j = i+1; j <= n; j++) {
-      subArrays.push(nums.slice(i,j));
-    }
-  }
-    
-  let output = [];
-  subArrays.map(arr => {
-    let result = arr.reduce((acc, val) => acc * val, 1);
-    output.push(result);
-  });
-  return Math.max(...output)
-};
-
-console.log('maxProduct', maxProduct([2,3,-2,4]))
-console.log('maxProduct', maxProduct([-2,0,-1]))
-
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
