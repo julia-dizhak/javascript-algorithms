@@ -706,6 +706,12 @@ started on 12/21/17
     | :---                | :---      | :---   |
     | Backtracking        | O(n!)     | 0(?)   |
 
+    * [216. Combination sum III](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/backtracking/combination/216-combination-sum.js)
+
+    | Approaches:         | Time                 | Space  |
+    | :---                | :---                 | :---   |
+    | Backtracking        | O(9!* K / (9-K)!)    | 0(k)   |
+
 
 ## OOP in JS
 

@@ -20,8 +20,6 @@ Input: k = 3, n = 9
 Output: [[1,2,6], [1,3,5], [2,3,4]]
 */
 
-import Backtracking from "../../../components/concepts/Backtracking";
-
 
 /*
 Approach backtracking
@@ -44,7 +42,7 @@ steps that we could do:
 the list of candidates is [1, 2, 3, 4, 5, 6, 7, 8. 9] for any element in the 
 combination, as stated in the problem. Let us pick 1 as the first element. 
 The current combination is [1].
-[1, ?, ?]
+[1, ?, ?], sum = 9
 
 2). Now that we picked the first element, we have two more elements to fill in 
 the final combination. Before we proceed, let us review the conditions that we 
@@ -56,7 +54,48 @@ combination does not contain any duplicate digits, as required in the problem.
 
 - In addition, the sum of the remaining two elements should be 9 - 1 = 8.
 
-...
+3). Based on the above conditions, for the second element, we could have several 
+choices. Let us pick the digit 2, which is not a duplicate of the first element, 
+plus it does not exceed the desired sum (i.e. 8) neither. The combination now
+becomes [1, 2].
+[1, 2, ?], sum = 9
+
+4). Now for the third element, with all the constraints, it leaves us no choice 
+but to pick the digit 6 as the final element in the combination of [1, 2, 6].
+[1, 2, 6]
+
+5). As we mentioned before, for the second element, we could have several choices. 
+For instance, we could have picked the digit 3, instead of the digit 2. Eventually, 
+it could lead us to another solution as [1, 3, 5].
+
+6). As one can see, for each element in the combination, we could revisit our 
+choices, and try out other possibilities to see if it leads to a valid solution.
+
+If you have followed the above steps, it should become evident that backtracking 
+would be the technique that we could use to come up an algorithm for this problem.
+
+Indeed, we could resort to backtracking, where we try to fill the combination 
+one element at a step. Each choice we make at certain step might lead us to a final 
+solution. If not, we simply revisit the choice and try out other choices, i.e. 
+backtrack.
+
+
+Algorithm
+
+To implement the algorithm, one could literally follow the steps in the Intuition 
+section. However, we would like to highlight a key trick that we employed, in 
+order to ensure the non-redundancy among the digits within a single combination, 
+as well as the non-redundancy among the combinations.
+
+The trick is that we pick the candidates in order. We treat the candidate digits 
+as a list with order, i.e. [1, 2, 3, 4, 5, 6, 7, 8, 9]. At any given step, once 
+we pick a digit, e.g. 6, we will not consider any digits before the chosen digit
+for the following steps, e.g. the candidates are reduced down to [7, 8, 9].
+
+With the above strategy, we could ensure that a digit will never be picked twice 
+for the same combination. Also, all the combinations that we come up with would 
+be unique.
+
 
 Backtracking template in general case
 def backtrack(candidate):
@@ -77,15 +116,37 @@ def backtrack(candidate):
 
 Complexity analysis
 
-Let KK be the number of digits in a combination.
+Let K be the number of digits in a combination.
 
 Time Complexity: O(9!* K / (9-K)!)
-...
 
+In a worst scenario, we have to explore all potential combinations to the very 
+end, i.e. the sum n is a large number (n > 9 * 9). At the first step, we 
+have 9 choices, while at the second step, we have 8 choices, so on and so forth.
+
+The number of exploration we need to make in the worst case would be P(9, K) = 
+9!* K / (9-K)!, assuming that K <= 9. By the way, K cannot be greater than 9, 
+otherwise we cannot have a combination whose digits are all unique.
+
+Each exploration takes a constant time to process, except the last step where it 
+takes O(K) time to make a copy of combination.
+
+Space complexity O(k)
+During the backtracking, we used a list to keep the current combination, which 
+holds up to K elements, i.e. O(K).
+
+Since we employed recursion in the backtracking, we would need some additional 
+space for the function call stack, which could pile up to K consecutive invocations, 
+i.e. O(K).
+
+Hence, to sum up, the overall space complexity would be O(K).
+
+Note that, we did not take into account the space for the final results in the 
+space complexity.
 
 */
 
-// Find app permutations
+// Example: Find app permutations
 function permutations(arr) {
   if (arr.length === 1) return arr;
   let output = [];
@@ -105,7 +166,7 @@ function helper(arr, pos, res) {
   } else {
     for (let i = pos; i < arr.length; i++) {
       swap(arr, i, pos);
-      helper(arr, pos+1, res)
+      helper(arr, pos + 1, res)
       swap(arr, i, pos);
     }
   }
@@ -117,15 +178,13 @@ function helper(arr, pos, res) {
  * @return {number[][]}
  */
 var combinationSum3 = function(k, n) {
-  debugger
-  let res = [];
+  let output = [];
   let combinations = [];
-  backtrack(k, n, combinations, 0, res);
-  return res;
+  backtrack(k, n, combinations, 0, output);
+  return output;
 };
 
 function backtrack(k, remain, combinations, nextStart, res) {
-  debugger
   if (remain === 0 && combinations.length === k) {
     res.push(combinations.slice());
   } else if (remain < 0 || combinations.length === k) {
@@ -141,12 +200,51 @@ function backtrack(k, remain, combinations, nextStart, res) {
   
 }
 
+/*
+Approach the same backtracking
+
+*/
+var combinationSum3Backtracking = function(k, n) {
+  let output = [];
+  getCombination(k, n, [], 1, output);
+  return output;
+}
+
+function getCombination(k, n, combinations, start, res) {
+  if (combinations.length === k && n === 0) {
+    res.push(combinations.slice()); 
+  }
+
+  for (let i = start; i <= 9; i++) {
+    combinations.push(i);
+    getCombination(k, n - i, combinations, i+1, res);
+    combinations.pop();
+  }
+}
+
+/*
+Approach
+*/
+var combinationSum3Variant2 = function(k, n) {
+  var result = [];
+  search(1, [], k, n);
+  return result;
+  
+  function search(from, prefix, k, n) {
+    if (k === 0 && n === 0) return result.push(prefix);
+    if (from > 9) return;
+    prefix.push(from);
+    search(from + 1, prefix.slice(0), k - 1, n - from);
+    prefix.pop();
+    search(from + 1, prefix.slice(0), k, n);
+  }
+};
+
 // tests
-//console.log('combinationSum3', combinationSum3(3, 7))
-console.log('combinationSum3', combinationSum3(3, 9))
+// console.log('combinationSum3', combinationSum3(3, 7))
+// console.log('combinationSum3', combinationSum3(3, 9))
 
 export {
   combinationSum3,
-  permutations
-
+  combinationSum3Backtracking
 }
