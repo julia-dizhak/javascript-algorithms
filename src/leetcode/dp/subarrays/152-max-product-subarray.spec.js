@@ -1,7 +1,8 @@
 import {
   //maxProduct, 
   //maxProduct1 as maxProduct,
-  maxProduct2 as maxProduct
+  //maxProduct2 as maxProduct,
+  maxProductUseDP as maxProduct
 } from './152-max-product-subarray';
 
 describe('max product of contiguous subarray', () => {

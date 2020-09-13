@@ -77,7 +77,7 @@ var maxProduct1 = function(nums) {
 };
 
 /*
-Approach
+Approach Store prev max and min
 
 The intuition is that we store the information about our previous maximum product, 
 and as we iterate through the array, we keep using our previous maximum to calculate 
@@ -86,6 +86,9 @@ the new maximum product.
 The tricky part of this problem is that negative numbers exist in the input array. 
 This causes situations where the smallest previous product (a negative number) 
 can become the largest product if the next number in line is also a negative number.
+So that's the intuition behind the question - you must keep hope on both the positive 
+and negative side.
+And in some cases, maybe the current number is the best you'll ever get.
 
 Since the minimum product may have a chance to become the maximum, we need to store 
 the information about the previous minimum as well and take it into account when 
@@ -95,22 +98,13 @@ time is O(n)
 space is O(1)
 */
 
-function swap(max, min) {
-  let temp = max;
-  max = min;
-  min = temp;
-
-  //return [max,min]
-}
-
 var maxProduct2 = function(nums) {
-  debugger
   const n = nums.length;
   if (n === 1) return nums[0];
   // store the results we have found so far
   let prevMax = nums[0];
   let prevMin = nums[0];
-  let result = nums[0];
+  let maxSoFar = nums[0];
 
   for (let i = 1; i < n; i++) {
     // given the new number, the new max can have 3 conditions
@@ -121,18 +115,63 @@ var maxProduct2 = function(nums) {
     let curMin = Math.min(nums[i] * prevMin, nums[i], nums[i] * prevMax);
 
     // updating the prevMax & prevMin, these two may swap locations
-    prevMax = curMax;
-    prevMin = curMin;
-    result = Math.max(curMax, result);
+    // max and min could have swapped
+    prevMax = Math.max(curMax, curMin);
+    prevMin = Math.min(curMax, curMin);
+    
+    maxSoFar = Math.max(maxSoFar, prevMax);
   }
 
-  return result;
+  return maxSoFar;
 };
 
-console.log('maxProduct', maxProduct2([2,3,-2,4]))
-console.log('maxProduct', maxProduct2([-2,0,-1]))
+/*
+Approach DP
+
+time is O(n)
+space is O(1)
+*/
+let maxProductUseDP = function(nums) {
+  const n = nums.length;
+  if (n === 1) return nums[0];
+
+  let prevMax = nums[0];
+  let prevMin = nums[0];
+  let max = nums[0];
+
+  for (let i = 1; i < n; i++) {
+    let curMax = Math.max(nums[i] * prevMax, Math.max(nums[i], nums[i] * prevMin));
+    let curMin = Math.min(nums[i] * prevMin, Math.min(nums[i], nums[i] * prevMax));
+
+    prevMax = curMax;
+    prevMin = curMin;
+    max = Math.max(max, curMax);
+  }
+
+  return max;
+}
+
+// /*
+// Approach DP
+
+// time is O(n)
+// space is O(n)
+// */
+
+// let maxProductUseDP1= function(nums) {
+//   const n = nums.length;
+//   if (n === 1) return nums[0];
+
+
+
+// }
+
+// tests
+// console.log('maxProduct', maxProductUseDP1([2,3,-2,4]))
+// console.log('maxProduct', maxProductUseDP1([-2,0,-1]))
 
 export {
   maxProduct, maxProduct1,
-  maxProduct2
+  maxProduct2,
+  maxProductUseDP
 }

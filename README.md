@@ -672,6 +672,8 @@ started on 12/21/17
     | Approaches:                   |  Time       | Space      |
     | :---                          | :---        | :---       |
     | Brute force + sliding window  | O(n^3)      | O(1)       |
+    | Store prev max and min        | O(n)        | O(1)       |
+    | DP                            | O(n)        | O(1)       |
    
     * [518. Coin change 2](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/518-coin-change-2.js)
 
