@@ -22,9 +22,6 @@ todo
 Print all binary of length
 Approach Recursion
 
-
-
-
 The idea is to try every permutation. For every position, there are 2 options,
 either ‘0’ or ‘1’. Backtracking is used in this approach to try every
 possibility/permutation.
@@ -47,22 +44,22 @@ if (digits === 0) {
 }
 */
 // todo
-function helper1(digits, output) {
-  if (digits === 0) {
+// function helper1(digits, output) {
+//   if (digits === 0) {
 
-  } else {
+//   } else {
 
-  }
-}
+//   }
+// }
 
-function printAllBinary(digits) {
-  if (digits === 0) {
+// function printAllBinary(digits) {
+//   if (digits === 0) {
 
-  } else {
+//   } else {
 
-  }
+//   }
 
-}
+// }
 //console.log('printAllBinary', printAllBinary(2))
 
 /*
@@ -116,7 +113,7 @@ Space:
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
+var permutations = function(nums) {
   if (nums.length === 1) return nums;
   let output = [];
   helper(nums, 0, output);
@@ -168,13 +165,9 @@ function helper(nums, pos, result) {
 //   return permutations;
 // }
 
-//
-//console.log('permute', permute('abc'))
-
-
-// todo print quantity of solutions
-//console.log('permute', permute([1,2,3]))
+// tests
+//console.log('permutations', permutations([1,2,3]))
 
 export {
-  permute,
+  permutations,
 }

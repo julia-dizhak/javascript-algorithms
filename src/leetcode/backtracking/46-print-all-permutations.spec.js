@@ -1,5 +1,5 @@
 import {
-  permute,
+  permutations,
 } from './46-print-all-permutations';
 
 describe('print all permutations test case', () => {
@@ -17,12 +17,12 @@ describe('print all permutations test case', () => {
   ];
 
   it('edge cases', () => {
-    expect(permute([1])).toEqual([1]);
+    expect(permutations([1])).toEqual([1]);
   });
 
   it('arr length more than 1', () => {
-    expect(permute([1,2])).toEqual(permutations2);
-    expect(permute([1,2,3])).toEqual(permutations1);
+    expect(permutations([1,2])).toEqual(permutations2);
+    expect(permutations([1,2,3])).toEqual(permutations1);
   });
 
 });

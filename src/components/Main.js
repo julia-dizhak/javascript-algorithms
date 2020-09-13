@@ -24,6 +24,7 @@ import Searching from './concepts/Searching';
 import Recursion from './concepts/Recursion';
 import GreedyAlgorithms from './concepts/GreedyAlgorithms';
 import DP from './concepts/DP';
+import Backtracking from './concepts/Backtracking';
 
 import CodeSandboxTasks from '../eloquent-tasks/CodeSandboxTasks';
 
@@ -56,6 +57,7 @@ function Main() {
         <Recursion />
         <GreedyAlgorithms />
         <DP />
+        <Backtracking />
 
         <CodeSandboxTasks />
       </div>
