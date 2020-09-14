@@ -22,6 +22,9 @@ import { removeDuplicates } from '../../leetcode/array/duplicates/26-remove-dupl
 // todo import { QuickUnion } from '../../algorithms/union-find/quick-union';
 // todo import { RandomizedSet } from '../../leetcode/hash/380-insert-delete-getrandom-constant-time';
 
+// intervals
+import { insert } from '../../leetcode/array/intervals/57-insert-interval';
+
 export default function ArrayAlgorithms() {
   return (
     <div className="sorting">
@@ -29,7 +32,7 @@ export default function ArrayAlgorithms() {
 
       <Details
         id="test-array"
-        code={generate.toString()}
+        code={insert.toString()}
         //code={findDuplicate.toString()}
         //secondCode={findAllDuplicates.toString()}
       />

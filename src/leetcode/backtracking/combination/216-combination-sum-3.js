@@ -34,12 +34,12 @@ To solve the problem, it would be beneficial to build a combination by hand.
 If we represent the combination as an array, we then could fill the array one 
 element at a time.
 
-For example, given the input k=3k=3 and n=9n=9, i.e. the size of the combination 
+For example, given the input k=3 and n=9, i.e. the size of the combination 
 is 3, and the sum of the digits in the combination should be 9. Here are a few 
 steps that we could do:
 
 1). We could pick a digit for the first element in the combination. Initially, 
-the list of candidates is [1, 2, 3, 4, 5, 6, 7, 8. 9] for any element in the 
+the list of candidates is [1, 2, 3, 4, 5, 6, 7, 8, 9] for any element in the 
 combination, as stated in the problem. Let us pick 1 as the first element. 
 The current combination is [1].
 [1, ?, ?], sum = 9
@@ -215,10 +215,11 @@ function getCombination(k, n, combinations, start, res) {
     res.push(combinations.slice()); 
   }
 
-  for (let i = start; i <= 9; i++) {
+  for (let i = start; i <= 9; i++) { // for number 1 ~ 9
     combinations.push(i);
-    getCombination(k, n - i, combinations, i+1, res);
-    combinations.pop();
+    let nextTarget = n - i;
+    getCombination(k, nextTarget, combinations, i+1, res);
+    combinations.pop(); // restore
   }
 }
 

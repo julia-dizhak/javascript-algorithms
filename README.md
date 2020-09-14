@@ -436,7 +436,22 @@ started on 12/21/17
     | :---            | :---    | :---   |
     | 2 pointers      | O(n)    | O(1)   |
 
-      * [969. Pancake sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/sorting/969-pancake-sorting.js)
+    * [969. Pancake sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/sorting/969-pancake-sorting.js)
+
+    | Approach:               | Time      | Space  |
+    | :---                    | :---      | :---   |
+    | Find max + 2 flips      | O(n^2)    | O(n)   |
+    | Like a bubble sort      | O(n^2)    | O(n)   |
+
+* ### Intervals (Array, sort)
+
+    * [57. Insert interval](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/intervals/57-insert-interval.js)
+
+    | Approach:       | Time    | Space  |
+    | :---            | :---    | :---   |
+    | Iterative       | O(n)    | O(1)   |
+
+    * [969. Pancake sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/sorting/969-pancake-sorting.js)
 
     | Approach:               | Time      | Space  |
     | :---                    | :---      | :---   |
