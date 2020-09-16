@@ -614,58 +614,58 @@ var helper = function(nums, i) {
 // console.log('rob', rob([1, 2]))
 // console.log('rob', rob([2,1,1,2]))
 
-/**
- * @param {string} s
- * @return {number}
- */
-var lengthOfLastWord1 = function(s) {
-  //if (s === ' ') return 0;
-  s = s.split(' ');
-  return s[s.length - 1].length;
-    
-};
-var lengthOfLastWord = function(s) {
-  //debugger
-  if (s === ' ') return 0;
-  s = s.trim();
-  if (s.length === 1 && s[0] !== ' ') return 1;
-  const n = s.length;
-  console.log('n', n)
-  let i = 0;
-  let j = 0;
+/* 
+time is n^2
+time limit exceed
+3^3 = 0 
+*/
+var findMaximumXOR = function(nums) {
+  const n = nums.length;
+  if (n === 1) return nums[0];
+  let output = [];
 
-  while (i < n) {
-    if (s[i] === ' ') {
-      j = i+1;
+  for (let i = 0; i < n; i++) {
+    for (let j = i+1; j < n; j++) {
+      let x = nums[i] ^ nums[j];
+      output.push(x)
+      console.log('x is', x);
     }
-    // if (j === n) {
-
-    // }
-
-    i++;
   }
 
-  console.log('j', j); 
-  console.log('i', i);  
-  return n - j;
-};
+  console.log('output', output);
+  return Math.max(...output);
+}
 
-console.log('lengthOfLastWord', lengthOfLastWord(' a'));
-console.log('lengthOfLastWord', lengthOfLastWord(' a '));
-console.log('lengthOfLastWord', lengthOfLastWord('a '));
-console.log('lengthOfLastWord', lengthOfLastWord(' test a '));
-console.log('lengthOfLastWord', lengthOfLastWord('1'));
-console.log('lengthOfLastWord', lengthOfLastWord(' '));
-console.log('lengthOfLastWord', lengthOfLastWord('    '));
-console.log('length', lengthOfLastWord('Hello World'));
-console.log('lengthOfLastWord', lengthOfLastWord('Hello World test1 test 1 234'))
+/*
 
+*/
+var findMaximumXOR1 = function(nums) {
+  const n = nums.length;
+  if (n === 1) return 0;
+  let output = [];
+  let even = []
+  let odd = []
+
+  for (let i = 0; i < n; i++) {
+    if ( (nums[i] & 1) === 0) even.push(nums[i])
+    if ( (nums[i] & 1) === 1) odd.push(nums[i])
+  }
+
+  console.log('even', even);
+  console.log('odd', odd);
+  return Math.max(...output);
+}
+
+console.log('findMaximumXOR', findMaximumXOR([3,10,5,25,2,8]));
+console.log('findMaximumXOR', findMaximumXOR([3]));
+console.log('findMaximumXOR', findMaximumXOR([3,8]))
+console.log('findMaximumXOR', findMaximumXOR([3,8,2]))
+console.log('findMaximumXOR', findMaximumXOR([3,8,5]))
 
 
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
   partitionLabels,
-  wordPattern,
-  lengthOfLastWord
+  wordPattern
 }

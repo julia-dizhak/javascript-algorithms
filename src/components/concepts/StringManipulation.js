@@ -17,8 +17,9 @@ import { findAnagramsUseTwoHash } from '../../leetcode/string-manipulation/438-f
 import { toGoatLatin } from '../../leetcode/string-manipulation/goat-latin';
 //import { repeatedSubstringPattern } from '../../leetcode/string-manipulation/459-repeated-substr-pattern';
 //import { longestPalindromeUseHash, longestPalindromeUseGreedy } from '../../leetcode/string-manipulation/palindrome/406-longest-palindrome';
-import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
-import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
+// import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
+// import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
+import { lengthOfLastWord2 } from '../../leetcode/string-manipulation/58-length-of-last-word';
 
 export default function StringManipulation() {
   return (
@@ -30,7 +31,7 @@ export default function StringManipulation() {
           <Details
             id="test1"
             question="test case"
-            //code={longestPalindromeUseGreedy.toString()}
+            //code={lengthOfLastWord2.toString()}
             //secondCode={detectCapitalUse.toString()}
           />
         </li>

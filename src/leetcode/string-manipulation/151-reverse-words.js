@@ -161,7 +161,6 @@ var reverseWord = function(arr, i, j) {
 // reverse words in string II
 // We can reverse each word first, then reverse the whole string, finally trim the string.
 var reverseWords2 = function(s) {
-  debugger
   if (s == null) {
     return s;
   }

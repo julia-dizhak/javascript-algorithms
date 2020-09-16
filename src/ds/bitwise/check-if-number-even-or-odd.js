@@ -1,6 +1,7 @@
 /*
 Check if a Number is Odd or Even using Bitwise Operators
-Given a number N, the task is to check whether the number is even or odd using Bitwise Operators.
+Given a number N, the task is to check whether the number is even or odd using 
+Bitwise Operators.
 
 Examples:
 

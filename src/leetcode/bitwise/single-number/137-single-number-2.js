@@ -143,7 +143,6 @@ space is O(1)
 
 
 var singleNumber2 = function(nums) {
-  //debugger
   let ones = 0;
   let twos = 0;
 
