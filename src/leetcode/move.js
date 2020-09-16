@@ -537,9 +537,135 @@ var compareVersion = function(version1, version2) {
 
 console.log('compareVersion', compareVersion('0.1', '1.1'))
 
+/*
+DP?
+row
+col
+what is the smallest problem? max today?
+
+Columns are sizes of knapsack
+Rows are items.
+
+
+time is O(n^2)
+
+todo tests
+[1,2,3,1]
+[2,7,9,3,1]
+[1,1,1,1,1]
+[]
+[1]
+*/
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var rob1 = function(nums) {
+  //debugger
+  const n = nums.length;
+  if (n < 1) return 0;
+  if (n === 1) return nums[0];
+  
+  let output = []
+
+  let start = 0;
+  while (start < n) {
+    let i = start;
+    let res = 0;
+    while (i < n) {
+      res += nums[i];
+      i += 2;
+    }
+    output.push(res);
+    start++;
+  }
+
+  console.log('output', output);
+  return Math.max(...output)
+};
+
+/*
+step 1
+A robber has 2 options: a) rob current house i; b) don't rob current house
+If an option "a" is selected it means she can't rob previous i-1 house but can 
+safely proceed to the one before previous i-2 and gets all cumulative loot that follows.
+If an option "b" is selected the robber gets all the possible loot from robbery of i-1 and all the following buildings.
+So it boils down to calculating what is more profitable:
+
+robbery of current house + loot from houses before the previous
+loot from the previous house robbery and any loot captured before that
+
+Step 2. Recursive (top-down)
+Converting the recurrent relation from Step 1 shound't be very hard.
+time limit exceed
+*/
+
+var rob = function(nums) {
+  return helper(nums, nums.length - 1);
+}
+var helper = function(nums, i) {
+  if (i < 0) return 0;
+  return Math.max(helper(nums, i-2) + nums[i], helper(nums, i-1));
+}
+
+// console.log('rob', rob([1,2,3,1]));
+// console.log('rob', rob([2,7,9,3,1]))
+// console.log('rob', rob([1,1,1,1,1]))
+// console.log('rob', rob([1, 2]))
+// console.log('rob', rob([2,1,1,2]))
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord1 = function(s) {
+  //if (s === ' ') return 0;
+  s = s.split(' ');
+  return s[s.length - 1].length;
+    
+};
+var lengthOfLastWord = function(s) {
+  //debugger
+  if (s === ' ') return 0;
+  s = s.trim();
+  if (s.length === 1 && s[0] !== ' ') return 1;
+  const n = s.length;
+  console.log('n', n)
+  let i = 0;
+  let j = 0;
+
+  while (i < n) {
+    if (s[i] === ' ') {
+      j = i+1;
+    }
+    // if (j === n) {
+
+    // }
+
+    i++;
+  }
+
+  console.log('j', j); 
+  console.log('i', i);  
+  return n - j;
+};
+
+console.log('lengthOfLastWord', lengthOfLastWord(' a'));
+console.log('lengthOfLastWord', lengthOfLastWord(' a '));
+console.log('lengthOfLastWord', lengthOfLastWord('a '));
+console.log('lengthOfLastWord', lengthOfLastWord(' test a '));
+console.log('lengthOfLastWord', lengthOfLastWord('1'));
+console.log('lengthOfLastWord', lengthOfLastWord(' '));
+console.log('lengthOfLastWord', lengthOfLastWord('    '));
+console.log('length', lengthOfLastWord('Hello World'));
+console.log('lengthOfLastWord', lengthOfLastWord('Hello World test1 test 1 234'))
+
+
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
   partitionLabels,
-  wordPattern
+  wordPattern,
+  lengthOfLastWord
 }

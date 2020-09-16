@@ -4,8 +4,8 @@ import {
 
 describe('insert an interval test case', () => {
   it('newInterval is null', () => {
-    //expect(insert([[5,7]], null)).toEqual([[5,7]]);
-    //expect(insert([], [5,7])).toEqual([[5,7]]);
+    expect(insert([[5,7]], [])).toEqual([[5,7]]);
+    expect(insert([], [5,7])).toEqual([[5,7]]);
     expect(insert([[2,5],[6,7],[8,9]],[0,1])).toEqual([[0,1],[2,5],[6,7],[8,9]]);
   });
 

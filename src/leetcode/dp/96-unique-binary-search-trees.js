@@ -123,7 +123,7 @@ var numTrees = function(n) {
     for (let j = 1; j <= i; j++) {
       // just treat each number as root, and then left part * right part is the answer.
       // combine together - cartesian product
-      T[i] += T[j - 1] * T[i - j]
+      T[i] += T[j - 1] * T[i - j];
     }
   }
   return T[n];

@@ -104,7 +104,7 @@ Approach Bottom-up approach of DP
 Complexity Analysis
 Time complexity : O(n). Single loop upto n.
 
-Space complexity : O(n). dp array of size nn is used.
+Space complexity : O(n), dp array of size n is used.
 */
 var climbStairsDP = function(n) {
   if (n === 1) return 1;
@@ -114,7 +114,7 @@ var climbStairsDP = function(n) {
   solution[2] = 2;
 
   for (let i = 3; i <= n; i++) {
-    solution[i] = solution[i-1] + solution[i-2]
+    solution[i] = solution[i-1] + solution[i-2];
   }
   return solution[n]
 }
