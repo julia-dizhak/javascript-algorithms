@@ -614,53 +614,45 @@ var helper = function(nums, i) {
 // console.log('rob', rob([1, 2]))
 // console.log('rob', rob([2,1,1,2]))
 
-/* 
-time is n^2
-time limit exceed
-3^3 = 0 
-*/
-var findMaximumXOR = function(nums) {
-  const n = nums.length;
-  if (n === 1) return nums[0];
-  let output = [];
 
-  for (let i = 0; i < n; i++) {
-    for (let j = i+1; j < n; j++) {
-      let x = nums[i] ^ nums[j];
-      output.push(x)
-      console.log('x is', x);
-    }
-  }
-
-  console.log('output', output);
-  return Math.max(...output);
-}
 
 /*
 
+https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/91046/How-do-you-even-think-of-getting-an-O(n)-solution-for-this
+
+https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/849679/Javascript-Python3-C%2B%2B-Trie-%2B-Greedy-Alternative-Path
 */
 var findMaximumXOR1 = function(nums) {
   const n = nums.length;
   if (n === 1) return 0;
+  if (n === 2) return nums[0] ^ nums[1];
   let output = [];
   let even = []
   let odd = []
 
+  let prevOdd = 0;
+  let currOdd = 0
   for (let i = 0; i < n; i++) {
     if ( (nums[i] & 1) === 0) even.push(nums[i])
     if ( (nums[i] & 1) === 1) odd.push(nums[i])
   }
 
   console.log('even', even);
+  odd = odd.sort((a,b) => b - a);
+  even = even.sort((a,b) => a - b);
   console.log('odd', odd);
-  return Math.max(...output);
+  let merge = [...odd, ...even];
+  console.log('merge', merge)
+  return merge[0] ^ merge[1];
 }
 
-console.log('findMaximumXOR', findMaximumXOR([3,10,5,25,2,8]));
-console.log('findMaximumXOR', findMaximumXOR([3]));
-console.log('findMaximumXOR', findMaximumXOR([3,8]))
-console.log('findMaximumXOR', findMaximumXOR([3,8,2]))
-console.log('findMaximumXOR', findMaximumXOR([3,8,5]))
+console.log('findMaximumXOR', findMaximumXOR1([3,10,5,25,2,8]));
+console.log('findMaximumXOR', findMaximumXOR1([3]));
+console.log('findMaximumXOR', findMaximumXOR1([3,8]))
+console.log('findMaximumXOR', findMaximumXOR1([3,8,2]))
+console.log('findMaximumXOR', findMaximumXOR1([3,8,5]))
+console.log('findMaximumXOR', findMaximumXOR([8,10,2]))
+console.log('findMaximumXOR', findMaximumXOR([14,70,53,83,49,91,36,80,92,51,66,70]))
 
 
 export {

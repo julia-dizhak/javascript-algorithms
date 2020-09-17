@@ -27,6 +27,7 @@ Approach use split and trim
 var lengthOfLastWord1 = function(s) {
   if (s === ' ') return 0;
   s = s.trim();
+  // can use s.split(' ').filter(s => s.length);
   s = s.split(' ');
   return s[s.length - 1].length;
 };
@@ -79,7 +80,11 @@ var lengthOfLastWord2 = function(s) {
   return len;
 }
 
-// regex
+/* 
+Approach regex
+time is O(1) ?
+space is O(1)
+*/
 var lengthOfLastWordUseRegex = function(s) {
   s = s.replace(/^\s+|\s+$/g,'');
   var arr = s.split(' ');
@@ -88,11 +93,11 @@ var lengthOfLastWordUseRegex = function(s) {
 
 // tests
 console.log('lengthOfLastWord', lengthOfLastWordUseRegex('  test a aa '));
-console.log('lengthOfLastWord', lengthOfLastWordUseRegex('1'));
-console.log('lengthOfLastWord', lengthOfLastWordUseRegex(' '));
-console.log('lengthOfLastWord', lengthOfLastWordUseRegex('    '));
-console.log('length', lengthOfLastWordUseRegex('Hello World'));
-console.log('lengthOfLastWord', lengthOfLastWordUseRegex('Hello World test1 test 1 234'));
+// console.log('lengthOfLastWord', lengthOfLastWordUseRegex('1'));
+// console.log('lengthOfLastWord', lengthOfLastWordUseRegex(' '));
+// console.log('lengthOfLastWord', lengthOfLastWordUseRegex('    '));
+// console.log('length', lengthOfLastWordUseRegex('Hello World'));
+// console.log('lengthOfLastWord', lengthOfLastWordUseRegex('Hello World test1 test 1 234'));
 
 export {
   lengthOfLastWord1,

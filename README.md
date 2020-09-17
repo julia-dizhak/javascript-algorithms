@@ -348,6 +348,13 @@ started on 12/21/17
     | Regex              | O(1)     | 0(1)   |
     | Divide and Conquer | O(n)     | 0(1)   |
 
+    * [58. Length of last word](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/58-length-of-last-word.js)
+
+    | Approaches:            | Time     | Space  |
+    | :---                   | :---     | :---   |
+    | Loop backward + tail   | O(n)     | 0(1)   |
+    | Regex                  | O(1)     | 0(1)   |
+
     * [3. Longest substring without repeating characters](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/3-longest-substring-without-repeating-characters.js)
 
     | Approaches:            | Time         | Space        |
