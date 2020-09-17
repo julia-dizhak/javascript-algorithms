@@ -338,7 +338,7 @@ const getAllElements = (root1, root2) => merge(traversal(root1), traversal(root2
 /*
 Image overlap
 
-start from -3
+start from (-3,-3) and shift up by one unit
 total number of 1
 
 After, the overlap of this translation is the number of positions that have a 
@@ -614,46 +614,73 @@ var helper = function(nums, i) {
 // console.log('rob', rob([1, 2]))
 // console.log('rob', rob([2,1,1,2]))
 
-
-
 /*
-
-https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/91046/How-do-you-even-think-of-getting-an-O(n)-solution-for-this
-
-https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/849679/Javascript-Python3-C%2B%2B-Trie-%2B-Greedy-Alternative-Path
+Calculate the final vector of how the robot travels after executing all 
+instructions once - it consists of a change in position plus a change in direction.
 */
-var findMaximumXOR1 = function(nums) {
-  const n = nums.length;
-  if (n === 1) return 0;
-  if (n === 2) return nums[0] ^ nums[1];
-  let output = [];
-  let even = []
-  let odd = []
+// help
+const floodFillBFS = function(img, sr, sc, newColor) {
+  const rows = img.length;
+  const cols = img[0].length;
+  const startColor = img[sr][sc];
+  if (startColor === newColor) return img;
 
-  let prevOdd = 0;
-  let currOdd = 0
-  for (let i = 0; i < n; i++) {
-    if ( (nums[i] & 1) === 0) even.push(nums[i])
-    if ( (nums[i] & 1) === 1) odd.push(nums[i])
+  let queue = [[sr,sc]];
+  while (queue.length) {
+    let [i,j] = queue.shift();
+    if (img[i][j] === startColor) {
+      img[i][j] = newColor;
+      if (i-1 >= 0) queue.push([i-1, j]);
+      if (i+1 < rows) queue.push([i-1, j]);
+      if (j-1 >= 0) queue.push([i, j-1]);
+      if (j+1 < cols ) queue.push([i, j+1]);
+    }
   }
 
-  console.log('even', even);
-  odd = odd.sort((a,b) => b - a);
-  even = even.sort((a,b) => a - b);
-  console.log('odd', odd);
-  let merge = [...odd, ...even];
-  console.log('merge', merge)
-  return merge[0] ^ merge[1];
+  return img
 }
 
-console.log('findMaximumXOR', findMaximumXOR1([3,10,5,25,2,8]));
-console.log('findMaximumXOR', findMaximumXOR1([3]));
-console.log('findMaximumXOR', findMaximumXOR1([3,8]))
-console.log('findMaximumXOR', findMaximumXOR1([3,8,2]))
-console.log('findMaximumXOR', findMaximumXOR1([3,8,5]))
-console.log('findMaximumXOR', findMaximumXOR([8,10,2]))
-console.log('findMaximumXOR', findMaximumXOR([14,70,53,83,49,91,36,80,92,51,66,70]))
+/*
+G (0,1)
+L (-1,0)
+R (0, 1)
+*/
+var isRobotBounded = function(instructions) {
+  let [x,y] = [0,0];
+  let directions = {
+    G: [0,1],
+    L: [-1,0],
+    R: [1,0]
+  }
 
+  let nextI = 0;
+  let nextJ = 0
+
+  let hash = {};
+  for (let i = 0; i < instructions.length; i++) {
+    let instruction = directions[instructions[i]];
+    let nextI = x + instruction[0];
+    let nextJ = y + instruction[1];
+    console.log('x', x);
+    console.log('y', y);
+    console.log('next', nextI);
+    console.log('next', nextJ);
+    x = nextI;
+    y = nextJ;
+    console.log('x', x);
+    console.log('y', y);
+    console.log('instruction', instruction);
+
+  }
+  
+  console.log(x,y)
+
+
+    
+};
+
+//console.log('isRobotBounded', isRobotBounded('GLR'));
+console.log('isRobotBounded', isRobotBounded('GGLLGG'));
 
 export {
   largestTimeFromDigits,

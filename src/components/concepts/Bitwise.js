@@ -12,7 +12,7 @@ import { flipBitByBit, decimalToBinary } from '../../leetcode/bitwise/476-number
 // import { singleNumber2 } from '../../leetcode/bitwise/single-number/137-single-number-2';
 // import { singleNumber3 } from '../../leetcode/bitwise/single-number/260-single-number-3';
 import { getBit, setBit, clearBit } from '../../ds/bitwise/common-bit-tasks';
-
+import { findMaximumXOR } from '../../leetcode/bitwise/421-max-xor-of-2-numbers-in-array';
 
 export default function BitManipulation() {
   return (

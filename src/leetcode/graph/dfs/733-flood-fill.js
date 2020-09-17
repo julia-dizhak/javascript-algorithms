@@ -186,7 +186,7 @@ function helper(img, i, j, originalColor, newColor) {
 /*
 Approach BFS
 
-Create a queue with queue = [[sr,sc]]. Dequeue a queue, go to 4 directions and
+Create a queue = [[sr,sc]]. Dequeue a queue, go to 4 directions and
 check of i,j are not out of boundary.
 
 time is O(n) need to visit all nodes
