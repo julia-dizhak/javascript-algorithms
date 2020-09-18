@@ -272,14 +272,14 @@ started on 12/21/17
     | Loop + min       | O(sqrt n)         | 0(num_people)      |
     | Math (Gauss)     | O(sqrt n)         | 0(num_people)      |
 
-    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/263-ugly-number.js)
+    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/ugly-number/263-ugly-number.js)
 
     | Approaches:                 | Time         | Space     |
     | :---                        | :---         | :---      |
     | Recursion                   | O(log N)     | 0(log N)? |
     | Greatest divide by [2,3,4]  | O(log N)     | 0(1)      |
 
-    * [264. Ugly number II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/264-ugly-number-2.js)
+    * [264. Ugly number II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/ugly-number/264-ugly-number-2.js)
 
     | Approaches:                 | Time           | Space     |
     | :---                        | :---           | :---      |

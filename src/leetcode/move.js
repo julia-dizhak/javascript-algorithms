@@ -644,42 +644,66 @@ const floodFillBFS = function(img, sr, sc, newColor) {
 G (0,1)
 L (-1,0)
 R (0, 1)
+
+intuution
+Let chopper help explain.
+
+Starting at the origin and face north (0,1),
+after one sequence of instructions,
+
+- if chopper return to the origin, he is obvious in an circle.
+2 if chopper finishes with face not towards north,
+it will get back to the initial status in another one or three sequences.
+
+Explanation
+(x,y) is the location of chopper.
+d[i] is the direction he is facing.
+i = (i + 1) % 4 will turn right
+i = (i + 3) % 4 will turn left
+Check the final status after instructions.
+
+
+Complexity
+Time O(N)
+Space O(1)
+
+
+
+
+
+
+tricky longest duplicate string 1044
+todo can use switch
+
 */
 var isRobotBounded = function(instructions) {
+  let k = 4;
   let [x,y] = [0,0];
-  let directions = {
-    G: [0,1],
-    L: [-1,0],
-    R: [1,0]
-  }
+  // dx,dy = 0,1 # initial direction of travel is north 
+  let [dx, dy] = [0,1];
+  //let start = [0,0]
+  let directions = [[0,1],[-1,0],[1,0], [0,1]];
 
-  let nextI = 0;
-  let nextJ = 0
-
-  let hash = {};
-  for (let i = 0; i < instructions.length; i++) {
-    let instruction = directions[instructions[i]];
-    let nextI = x + instruction[0];
-    let nextJ = y + instruction[1];
-    console.log('x', x);
-    console.log('y', y);
-    console.log('next', nextI);
-    console.log('next', nextJ);
-    x = nextI;
-    y = nextJ;
-    console.log('x', x);
-    console.log('y', y);
-    console.log('instruction', instruction);
-
+  // 4 times to repeat
+  while (k--) {
+    for (let i = 0; i < instructions.length; i++) {
+      if ( instructions[i] === 'G') {
+        x += dx;
+        y += dy;
+      } else if (instructions[i] === 'L') {
+        [x, y] = [-y, x];
+      } else {
+        // R
+        [x, y] = [y, -x];
+      }
+    }
   }
   
-  console.log(x,y)
-
-
-    
+  return x === 0 && y === 0
+  
 };
 
-//console.log('isRobotBounded', isRobotBounded('GLR'));
+console.log('isRobotBounded', isRobotBounded('GLR'));
 console.log('isRobotBounded', isRobotBounded('GGLLGG'));
 
 export {
