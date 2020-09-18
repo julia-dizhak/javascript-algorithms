@@ -10,6 +10,7 @@ import { swap, swapUseTemp } from '../../ds/number/swap';
 // import { addDigits, addDigitsUseRecursion } from '../../leetcode/math/258-add-digits'
 // import { titleToNumber } from '../../leetcode/math/171-excel-sheet-column-number';
 // import { distributeCandies } from '../../leetcode/math/1103-distribute-candies-to-people';
+import { isRobotBounded } from '../../leetcode/math/1041-robot-bounded-in-circle';
 
 export default function Number() {
   return (

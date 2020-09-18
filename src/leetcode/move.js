@@ -667,44 +667,14 @@ Complexity
 Time O(N)
 Space O(1)
 
-
-
-
-
-
 tricky longest duplicate string 1044
 todo can use switch
 
 */
-var isRobotBounded = function(instructions) {
-  let k = 4;
-  let [x,y] = [0,0];
-  // dx,dy = 0,1 # initial direction of travel is north 
-  let [dx, dy] = [0,1];
-  //let start = [0,0]
-  let directions = [[0,1],[-1,0],[1,0], [0,1]];
 
-  // 4 times to repeat
-  while (k--) {
-    for (let i = 0; i < instructions.length; i++) {
-      if ( instructions[i] === 'G') {
-        x += dx;
-        y += dy;
-      } else if (instructions[i] === 'L') {
-        [x, y] = [-y, x];
-      } else {
-        // R
-        [x, y] = [y, -x];
-      }
-    }
-  }
-  
-  return x === 0 && y === 0
-  
-};
 
-console.log('isRobotBounded', isRobotBounded('GLR'));
-console.log('isRobotBounded', isRobotBounded('GGLLGG'));
+
+
 
 export {
   largestTimeFromDigits,

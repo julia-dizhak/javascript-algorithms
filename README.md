@@ -301,6 +301,14 @@ started on 12/21/17
     | Iteration     | O(n)      | 0(1)      |
     | Math          | O(1)      | 0(1)      |
 
+    * [1041. Robot bounded in circle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/1041-robot-bounded-in-circle.js)
+
+    | Approach:         | Time      | Space     |
+    | :---              | :---      | :---      |
+    | Math + rotation   | O(n)      | 0(1)      |
+    | ?         | O(?)      | 0(?)      |
+
+
 * ### String manipulation
     * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/reverse-a-string.js)
 
