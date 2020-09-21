@@ -1,7 +1,7 @@
 import {
-  //carPooling,
-  carPoolingCountStops as carPooling
-} from './car-pooling';
+  carPooling,
+  //carPoolingCountStops as carPooling
+} from './1094-car-pooling';
 
 describe('car pooling interval problem test case', () => {
   it('capacity is enough', () => {

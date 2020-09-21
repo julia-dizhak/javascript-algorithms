@@ -19,7 +19,8 @@ The second person goes to city A for a cost of 30.
 The third person goes to city B for a cost of 50.
 The fourth person goes to city B for a cost of 20.
 
-The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people interviewing in each city.
+The total minimum cost is 10 + 30 + 50 + 20 = 110 to have half the people 
+interviewing in each city.
 
 Note:
 1 <= costs.length <= 100
@@ -75,7 +76,7 @@ var twoCitySchedCost = function(costs) {
   // send the first n persons to the city A
   // and the others to the city B
   for (let i = 0; i < midIndex; i++) {
-    total += costs[i][0] + costs[i + midIndex][1]
+    total += costs[i][0] + costs[i + midIndex][1];
   }
 
   return total;

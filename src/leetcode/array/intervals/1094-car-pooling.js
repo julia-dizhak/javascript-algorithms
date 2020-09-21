@@ -1,6 +1,6 @@
 /*
 Leetcode
-Car pooling
+1094 Car pooling
 You are driving a vehicle that has capacity empty seats initially available for 
 passengers.  The vehicle only drives east (ie. it cannot turn around and drive west.)
 
@@ -40,6 +40,18 @@ trips[i].length == 3
 */
 
 /*
+Thinking process:
+it is an interval problem.
+Interval is an intervening period of time.
+An interval of time represented by start and end.
+
+After wrong thinking process:
+means I don't understand DS good or just don't need in JS? or?
+I can already guess that it's greedy approach
+*/
+
+/*
+Approach Use stop constrains (iterative)
 Intuition
 since we have only 1001 stops, we can just figure out how many people get it and out
 in each location.
@@ -54,6 +66,12 @@ Finally, scan all stops and check if we ever exceed our vehicle capacity.
 time is O(n), n - number of trips + constant
 space is constant O(m = 1001), m is number of stops, doesn't grow,
 */
+
+/**
+ * @param {number[][]} trips
+ * @param {number} capacity
+ * @return {boolean}
+ */
 let carPoolingCountStops = function(trips, capacity) {
   const stops = new Array(1001).fill(0); // constraint from desc
 
@@ -68,19 +86,83 @@ let carPoolingCountStops = function(trips, capacity) {
   return capacity >= 0;
 }
 
+/*
+Approach Time stamp
+Go through from start to end, and check if actual capacity exceeds capacity.
+
+To know the actual capacity, we just need the number of passengers changed at each 
+timestamp.
+
+We can save the number of passengers changed at each time, sort it by timestamp,
+and finally iterate it to check the actual capacity.
+
+Algorithm
+we will initialize a list to store the number of passengers changed and the 
+corresponding timestamp and then sort it.
+
+Time is O(n log n)
+Space is
+*/
+var carPooling = function(trips, capacity) {
+  let capacityMap = new Map();
+  for (const trip of trips) {
+    let [passengers, start, end] = trip;
+    let curr = start;
+    while (curr < end) {
+      if (capacityMap.has(curr)) {
+        capacityMap.set(curr, capacityMap.get(curr) + passengers);
+      } else {
+        capacityMap.set(curr, passengers)
+      }
+      if (capacityMap.get(curr) > capacity) return false;
+      curr++;
+    }
+  }
+
+  return true;
+}  
+
+// var carPooling = function(trips, capacity) {
+//   let timestamp = {};
+//   for (const trip of trips) {
+
+//     let startPassenger = trip[0];
+
+//     let endPassenger = trip[2];
+//     timestamp[trip[1]] = (timestamp[trip[1]] || 0) + startPassenger;
+//     timestamp[trip[2]] = (timestamp[trip[1]] || 0) - endPassenger;
+//   }
+//   // console.log('timestamp', timestamp);
+//   // console.log('timestamp', Object.values(timestamp));
+
+//   let usedCapacity = 0;
+//   for (const passengerChange in Object.values(timestamp)) {
+//     usedCapacity += passengerChange;
+//     if (usedCapacity > capacity) return false
+//   }
+//   return true;
+// }  
+
 // tests
 //console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 4));
 //console.log('carPooling', carPoolingCountStops([[2,1,5], [3,3,7]], 5));
-console.log('carPooling', carPoolingCountStops([[2,1,5], [3,3,7]], 3));
+//console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 5));
 //console.log('carPooling', carPoolingCountStops([[3,2,7], [3,7,9], [8,3,9]], 11));
 
 /*
-
+todo
 Famous interval problem
 similiar as Meeting Room II
 
 */
 
+/*
+todo
+Approach Bucket Sort 
+
+*/
+
 export {
-  carPoolingCountStops
+  carPoolingCountStops,
+  carPooling
 }

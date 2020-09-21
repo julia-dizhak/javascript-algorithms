@@ -1,5 +1,6 @@
 import {
-  getAllSubstr
+  getAllSubstr,
+  //getAllSubstr1 as getAllSubstr
 } from './get-all-substr';
 
 describe('getAll substrings test case', () => {
