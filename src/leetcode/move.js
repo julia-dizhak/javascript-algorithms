@@ -677,26 +677,113 @@ var sequentialDigits = function(low, high) {
 /*
 21.09
 
+
+
+
+
+
+
+Approach Time stamp
+Go through from start to end, and check if actual capacity exceeds capacity.
+
+To know the actual capacity, we just need the number of passengers changed at each 
+timestamp.
+
+We can save the number of passengers changed at each time, sort it by timestamp,
+and finally iterate it to check the actual capacity.
+
+Algorithm
+we will initialize a list to store the number of passengers changed and the 
+corresponding timestamp and then sort it.
+
+Time is O(n log n)
+Space is
+
+
+Approach Bucket Sort 
+todo
+
+todo
+means I don't understand DS good or just don't need in JS? or?
+
+is it intervals problem
+Intervals problems
+Interval is an intervening period of time
+An interval of time represented by start and end.
+
+I need to find overlapping intervals and count capacity?
+check problem - merge intervals?
+add to common problem: how to solve a problem with intervals
+wrong thinking process
+
+
+
+check greedy approach
 */
+
+
 
 /**
  * @param {number[][]} trips
  * @param {number} capacity
  * @return {boolean}
  */
-var carPooling = function(trips, capacity) {
-  // edge cases
+var carPooling1 = function(trips, capacity) {
+  let timestamp = {};
   for (const trip of trips) {
-    let passengers = trip[0];
-    let [start, end] = trip.slice(1);
-    console.log('trip', trip);
-    console.log('passengers', passengers);
-    // cases 
-    //if ()
-  }    
+    let startPassenger = trip[0]
+
+    //let endPassenger = 
+  }
+
+  let usedCapacity = 0;
+  for (const passengerChange in timestamp.values()) {
+    usedCapacity += passengerChange;
+    if (usedCapacity > capacity) return false
+  }
+  return true;
+  /*
+  (a < b) -1
+  a > b 1
+  a = b 0
+  */
+  // trips = trips.sort((a,b) => {
+  //   return a[1] - b[1];
+  // });
+  // console.log('trips', trips);
+  // edge cases
+  // let intervals = [trips[0]];
+  // console.log('intervals', intervals);
+  // let interval = intervals[intervals.length - 1];
+  // console.log('interval', interval);
+  // let [gStart, gEnd] = interval.slice(1);
+  // console.log('gStart', gStart, 'global End', gEnd);
+  // let startCapacity = interval[0];
+  // console.log('startCapacity', startCapacity);
+  // capacity = capacity - startCapacity;
+  // console.log('capacity', capacity);
+
+  // for (const trip of trips.slice(1)) {
+  //   let passengers = trip[0];
+  //   let [start, end] = trip.slice(1);
+  //   console.log('trip', trip);
+  //   console.log('passengers', passengers);
+  //   // cases 
+  //   // if (gEnd < start) {
+  //   //   capacity += startCapacity;
+  //   //   capacity -=passengers;
+  //   // } else if (gEnd < end) {
+  //   //   capacity += passengers
+  //   // }
+  //   if (gEnd < end && capacity < passengers) {
+  //     return false
+  //   }
+  // }    
+
+  // console.log('capacity', capacity)
+  // return capacity;
 };
 
-console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 4));
 
 export {
   largestTimeFromDigits,

@@ -458,6 +458,7 @@ started on 12/21/17
     | Find max + 2 flips      | O(n^2)    | O(n)   |
     | Like a bubble sort      | O(n^2)    | O(n)   |
 
+
 * ### Intervals (Array, sort)
 
     * [57. Insert interval](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/intervals/57-insert-interval.js)
@@ -466,12 +467,11 @@ started on 12/21/17
     | :---            | :---    | :---   |
     | Iterative       | O(n)    | O(1)   |
 
-    * [969. Pancake sorting](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/sorting/969-pancake-sorting.js)
+    * [Car pooling](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/intervals/car-pooling.js)
 
-    | Approach:               | Time      | Space  |
-    | :---                    | :---      | :---   |
-    | Find max + 2 flips      | O(n^2)    | O(n)   |
-    | Like a bubble sort      | O(n^2)    | O(n)   |
+    | Approach:          | Time      | Space         |
+    | :---               | :---      | :---          |
+    | Iterative          | O(n)      | O(m = 1001)   |
 
 
 * ### Singly Linked List

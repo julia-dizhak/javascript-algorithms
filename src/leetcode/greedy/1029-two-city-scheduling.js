@@ -36,7 +36,7 @@ if we choose to go to city A rather then city B.
 Let's figure out how to sort the input here.
 The input should be sorted by a parameter which indicates a money lost for the company.
 
-The company would pay anyway : price_A to send a person to the city A,
+The company would pay anyway: price_A to send a person to the city A,
 or price_B to send a person to the city B. By sending the person to the city A,
 the company would lose price_A - price_B, which could negative or positive.
 
@@ -45,7 +45,7 @@ and then send the first n persons to the city A,
 and the others to the city B, because this way the company costs are minimal.
 
 Complexity Analysis
-Time complexity: O(NlogN) because of sorting of input data.
+Time complexity: O(n log n) because of sorting of input data.
 Space complexity: O(1) since it's a constant space solution.
 */
 
