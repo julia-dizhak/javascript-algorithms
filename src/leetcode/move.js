@@ -5,6 +5,7 @@ Approach Generate all permutations
 which is very easier to code in Java because all of the nunber in our array is single digit.
 */
 
+
 // permutation
 function permute(arr) {
   if (arr.length === 1) return arr;
@@ -40,7 +41,7 @@ function backtracking(arr, pos, result) {
 var largestTimeFromDigits = function(A) {
   let permutations = permute(A);
   let res = '';
-  console.log('permutations', permutations);
+  //console.log('permutations', permutations);
   // for (const p of permutations) {
 
   // }
@@ -97,18 +98,18 @@ var largestTimeFromDigits = function(A) {
  */
 var containsNearbyAlmostDuplicate = function(nums, k, t) {
   nums = nums.sort((a,b) => a - b);
-  console.log('nums', nums)
+  //console.log('nums', nums)
   let map = new Map();
   for (let i = 0; i < nums.length; i++) {
     map.set(i, nums[i])
   }
-  console.log('map', map);
+  //console.log('map', map);
 
   for (let [key, value] of map) {
-    console.log(key + ' = ' + value);
+    //console.log(key + ' = ' + value);
     let nextKey = key+k;
     //let nextVal = value+t
-    console.log(key+k)
+    //console.log(key+k)
     //console.log(value+t)
     //console.log(key + k + ' = ' + value + t);
 
@@ -172,7 +173,7 @@ var partitionLabels = function(S) {
   for (let i = 0; i < n; i++) {
     hash[S[i]] = (hash[S[i]] || 0) + 1;
   }
-  console.log('hash', hash);
+  //console.log('hash', hash);
 
   let i = 0;
   let j = 0;
@@ -248,8 +249,8 @@ var getAllElements = function(root1, root2) {
     res2 = inorder(root2)
   }
 
-  console.log('res1', res1);
-  console.log('res2', res2);
+  // console.log('res1', res1);
+  // console.log('res2', res2);
   return merge(res1, res2);
 
 };
@@ -309,8 +310,7 @@ let root2 = new TreeNode(8);
 root2.left = new TreeNode(1);
 //root2.right = new TreeNode(3);
 
-
-console.log('getAllElements', getAllElements(root1, root2))
+//console.log('getAllElements', getAllElements(root1, root2))
 
 /*
 easy to read
@@ -364,8 +364,8 @@ var largestOverlap = function(A, B) {
   for (let row = -rows; row < rows; row++) {
     for (let col = -cols; col < cols; col++) {
       // all possible overlapping
-      console.log('row', row);
-      console.log('col', col);
+      // console.log('row', row);
+      // console.log('col', col);
       // console.log('A', A[row][col])
       // console.log('B', B[row][col]);
       res = Math.max(res, count(A, B, row, col));
@@ -400,7 +400,7 @@ let B = [
   [0,0,0],
 [0,1,1],
 [0,0,1]]
-console.log('largestOverlap', largestOverlap(A, B))
+//console.log('largestOverlap', largestOverlap(A, B))
 
 /* 
 word pattern
@@ -495,14 +495,14 @@ var sumRootToLeaf = function(root) {
   }
 
   helper(root, '');    
-  console.log('binaries', binaries);
+  //console.log('binaries', binaries);
   
   let sum = binaries.reduce((sum, binary) => {
     sum += parseInt(binary, 2);
     return sum
   }, 0)
 
-  console.log(sum);
+  //console.log(sum);
   return sum;  
 };
 
@@ -517,7 +517,7 @@ root.right = new TreeNode(1);
 root.right.left = new TreeNode(0);
 root.right.right = new TreeNode(1)
 
-console.log('sumRootToLeaf', sumRootToLeaf(root));
+//onsole.log('sumRootToLeaf', sumRootToLeaf(root));
 
 
 /*
@@ -531,11 +531,11 @@ compare version numbers
  * @param {string} version2
  * @return {number}
  */
-var compareVersion = function(version1, version2) {
+// var compareVersion = function(version1, version2) {
     
-};
+// };
 
-console.log('compareVersion', compareVersion('0.1', '1.1'))
+//console.log('compareVersion', compareVersion('0.1', '1.1'))
 
 /*
 DP?
@@ -580,7 +580,7 @@ var rob1 = function(nums) {
     start++;
   }
 
-  console.log('output', output);
+  //console.log('output', output);
   return Math.max(...output)
 };
 
@@ -600,13 +600,13 @@ Converting the recurrent relation from Step 1 shound't be very hard.
 time limit exceed
 */
 
-var rob = function(nums) {
-  return helper(nums, nums.length - 1);
-}
-var helper = function(nums, i) {
-  if (i < 0) return 0;
-  return Math.max(helper(nums, i-2) + nums[i], helper(nums, i-1));
-}
+// var rob = function(nums) {
+//   return helper(nums, nums.length - 1);
+// }
+// var helper = function(nums, i) {
+//   if (i < 0) return 0;
+//   return Math.max(helper(nums, i-2) + nums[i], helper(nums, i-1));
+// }
 
 // console.log('rob', rob([1,2,3,1]));
 // console.log('rob', rob([2,7,9,3,1]))
@@ -614,67 +614,89 @@ var helper = function(nums, i) {
 // console.log('rob', rob([1, 2]))
 // console.log('rob', rob([2,1,1,2]))
 
-/*
-Calculate the final vector of how the robot travels after executing all 
-instructions once - it consists of a change in position plus a change in direction.
-*/
-// help
-const floodFillBFS = function(img, sr, sc, newColor) {
-  const rows = img.length;
-  const cols = img[0].length;
-  const startColor = img[sr][sc];
-  if (startColor === newColor) return img;
+// best stock 2
+// robot follow up
 
-  let queue = [[sr,sc]];
-  while (queue.length) {
-    let [i,j] = queue.shift();
-    if (img[i][j] === startColor) {
-      img[i][j] = newColor;
-      if (i-1 >= 0) queue.push([i-1, j]);
-      if (i+1 < rows) queue.push([i-1, j]);
-      if (j-1 >= 0) queue.push([i, j-1]);
-      if (j+1 < cols ) queue.push([i, j+1]);
+// var sequentialDigits = function(low, high) {
+//   let output = [];
+
+//   helper2(low, high, 1, output);
+//   console.log('output', output)
+//   return output;  
+// };
+
+// function helper2(low, high, start, res) {
+//   if (num <= high) {
+
+//   }
+//   let n1 = low.length;
+//   for (let i = start; i <= 9; i++) {
+    
+    
+//   }
+  
+// }
+/*
+constraints
+tipps you can generate all numbers
+
+need to learn practical js
+git
+DOM event
+rxjs (in angular)
+build interface
+system design: how to build google analytics
+build projects from scratch
+sql
+rest 
+*/
+var sequentialDigits = function(low, high) {
+  let allNumbers = [
+    12,23,34,45,56,67,78,89,
+    123,234,345,456,567,678,789,
+    1234,2345,3456,4567,5678,6789,
+    12345,23456,34567,45678,56789,
+    123456,234567,345678,456789,
+                         1234567,2345678,3456789,
+                         12345678,23456789,
+                         123456789
+  ];
+
+  let list = [];
+  const n = allNumbers.length;
+  for (let i = 0; i < n; i++) {
+    if (allNumbers[i] >= low && allNumbers[i] <= high) {
+      list.push(allNumbers[i]);
     }
   }
-
-  return img
+  return list;
 }
+// console.log('sequentialDigits', sequentialDigits(100, 300))
+// console.log('sequentialDigits', sequentialDigits(100, 1300))
 
 /*
-G (0,1)
-L (-1,0)
-R (0, 1)
-
-intuution
-Let chopper help explain.
-
-Starting at the origin and face north (0,1),
-after one sequence of instructions,
-
-- if chopper return to the origin, he is obvious in an circle.
-2 if chopper finishes with face not towards north,
-it will get back to the initial status in another one or three sequences.
-
-Explanation
-(x,y) is the location of chopper.
-d[i] is the direction he is facing.
-i = (i + 1) % 4 will turn right
-i = (i + 3) % 4 will turn left
-Check the final status after instructions.
-
-
-Complexity
-Time O(N)
-Space O(1)
-
-tricky longest duplicate string 1044
-todo can use switch
+21.09
 
 */
 
+/**
+ * @param {number[][]} trips
+ * @param {number} capacity
+ * @return {boolean}
+ */
+var carPooling = function(trips, capacity) {
+  // edge cases
+  for (const trip of trips) {
+    let passengers = trip[0];
+    let [start, end] = trip.slice(1);
+    console.log('trip', trip);
+    console.log('passengers', passengers);
+    // cases 
+    //if ()
+  }    
+};
 
-
-
+console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 4));
 
 export {
   largestTimeFromDigits,

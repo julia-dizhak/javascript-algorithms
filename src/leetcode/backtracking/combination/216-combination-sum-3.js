@@ -118,7 +118,7 @@ Complexity analysis
 
 Let K be the number of digits in a combination.
 
-Time Complexity: O(9!* K / (9-K)!)
+Time Complexity: O(9! * K/(9-K)!)
 
 In a worst scenario, we have to explore all potential combinations to the very 
 end, i.e. the sum n is a large number (n > 9 * 9). At the first step, we 

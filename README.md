@@ -306,7 +306,7 @@ started on 12/21/17
     | Approach:         | Time      | Space     |
     | :---              | :---      | :---      |
     | Math + rotation   | O(n)      | 0(1)      |
-    | ?         | O(?)      | 0(?)      |
+    | Math              | O(n)      | 0(1)      |
 
 
 * ### String manipulation
@@ -713,7 +713,7 @@ started on 12/21/17
     | :---          | :---      | :---   |
     | DP            | O(n^2)    | 0(n)   |
 
-    * [121 Best time to buy and sell stock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/121-best-time-to-buy-sell-stock.js)
+    * [121. Best time to buy and sell stock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/121-best-time-to-buy-sell-stock.js)
 
     | Approaches:                | Time      | Space  |
     | :---                       | :---      | :---   |

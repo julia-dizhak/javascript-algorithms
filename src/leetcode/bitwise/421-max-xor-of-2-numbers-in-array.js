@@ -143,12 +143,12 @@ var findMaximumXOR = function(nums) {
       we only care about the left parts, for example, if i = 2, then we have
       {1100, 1000, 0100, 0000} from {1110, 1011, 0111, 0010}
       */
-      console.log('mask', mask.toString(2));
+      //console.log('mask', mask.toString(2));
       let leftPartOfNum = num & mask;
-      console.log('leftPartOfNum', leftPartOfNum.toString(2));
+      //console.log('leftPartOfNum', leftPartOfNum.toString(2));
       set.add(leftPartOfNum);
     }
-    console.log('set', set);
+    //console.log('set', set);
 
     // if i = 1 and before this iteration, the maxResult we have now is 1100, 
     // my wish is the maxResult will grow to 1110, so I will try to find a candidate
@@ -178,7 +178,7 @@ var findMaximumXOR = function(nums) {
 //console.log('findMaximumXOR', findMaximumXOR([3,10,5,25,2,8]));
 //console.log('findMaximumXOR', findMaximumXOR([3]));
 //console.log('findMaximumXOR', findMaximumXOR([3,8]))
-console.log('findMaximumXOR', findMaximumXOR([3,8,2]))
+//console.log('findMaximumXOR', findMaximumXOR([3,8,2]))
 // console.log('findMaximumXOR', findMaximumXOR([3,8,5]))
 // console.log('findMaximumXOR', findMaximumXOR([8,10,2]))
 // console.log('findMaximumXOR', findMaximumXOR([14,70,53,83,49,91,36,80,92,51,66,70]))
@@ -187,6 +187,11 @@ console.log('findMaximumXOR', findMaximumXOR([3,8,2]))
 /*
 todo
 https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/166211/Python-O(n)-solution-for-dummies-like-me-easy-commented-solution-with-explanation
+https://www.quora.com/q/threadsiiithyderabad/Tutorial-on-Trie-and-example-problems
+from discord https://www.youtube.com/watch?v=6QSLMWgBnv4&ab_channel=SDESkills
+trie solution
+https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/discuss/849679/Javascript-Python3-C%2B%2B-Trie-%2B-Greedy-Alternative-Path
+
 */
 export {
   findMaximumXOR1, 

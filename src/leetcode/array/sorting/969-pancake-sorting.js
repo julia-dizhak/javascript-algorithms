@@ -363,6 +363,33 @@ var pancakeSortLikeBubbleSort = function(A) {
   return ans;
 }
 
+// todo
+// var pancakeSort = function(A) {
+//   const n = A.length;
+//   let loop = 0;
+//   let output = []
+
+//   let min = A[0];
+//   for (let i = 0; i < n; i++) {
+//     min = Math.min(min, A[i])
+
+//   }
+//   console.log('min', min)
+//   let k = A.indexOf(min);
+//   console.log('k', k)
+
+//   while (k > 0) {
+//     output.push(k);
+//     let subArray = A.slice(0,k+1);
+//     reverseArr(subArray);
+//     console.log('subArray', subArray);
+//     A = subArray.concat(A.slice(k+1));
+//     console.log('A', A)
+//   }
+
+//   return output;
+// };
+
 // tests
 // console.log('pancakeSort', pancakeSort([3,2,4,1]))
 // console.log('pancakeSort', pancakeSortBruteForce([3,2,4,1]))

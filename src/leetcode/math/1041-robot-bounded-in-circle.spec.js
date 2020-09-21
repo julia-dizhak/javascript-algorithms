@@ -1,5 +1,6 @@
 import {
-  isRobotBoundedUseMath as isRobotBounded
+  isRobotBounded,
+  //isRobotBoundedUseMath as isRobotBounded
 }  from './1041-robot-bounded-in-circle';
 
 describe('is robot bounded in circle test case', () => {

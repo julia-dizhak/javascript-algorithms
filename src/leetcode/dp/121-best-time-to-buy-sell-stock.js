@@ -44,27 +44,26 @@ In formal terms, we need to find max(prices[j] − prices[i]), for every i and j
 that j > i.
 
 Complexity Analysis
-Time complexity: O(n2). Loop runs n(n−1)/2 times
+Time complexity: O(n^2). Loop runs n(n−1)/2 times
 Space complexity: O(1). Only two variables - maxprofit and profit are used.
 */
 
 /**
  * @param {number[]} prices
  * @return {number}
- */
+*/
 var maxProfitUseBruteForce = function(prices) {
   let maxProfit = 0;
   for (let i = 0; i < prices.length - 1; i++) {
     for (let j = i+1; j < prices.length; j++) {
       let profit = prices[j] - prices[i];
-      if (profit > maxProfit) {
-        maxProfit = profit
-      }
+      if (profit > maxProfit) maxProfit = profit;
     }
   }
 
   return maxProfit;
 };
+//console.log('maxprofit', maxProfitUseBruteForce([7,1,5,3,6,4]));
 
 /*
 Algorithm One pass
@@ -96,8 +95,23 @@ var maxProfit = function(prices) {
     }
   }
 
-  return maxProfit
+  return maxProfit;
 }
+/* 
+the same approach
+works as well
+*/
+var maxProfitOnePass = function(prices) {
+  let minPrice = +Infinity;
+  let max = 0;
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) minPrice = prices[i];
+    let profit = prices[i] - minPrice;
+    if (profit > max) max = profit;    
+  }
+  return max;
+};
+//console.log('maxprofit', maxProfitOnePass([7,1,5,3,6,4]));
 
 /*
 Approach find so far min price
@@ -116,7 +130,7 @@ var maxProfit1 = function(prices) {
       max = Math.max(max, prices[i] - sofarMin)
     } else {
       // prices[i] < sofarMin
-      sofarMin = prices[i]
+      sofarMin = prices[i];
     }
   }
   return max;
@@ -276,9 +290,10 @@ var wordBreak = function(s, wordDict) {
 
 
 export {
-  maxProfit,
+  maxProfit, maxProfitOnePass,
   maxProfitUseBruteForce,
   maxProfit1,
   maxProfitFindMinPrice,
-  maxProfitDP
+  maxProfitDP,
+  
 }

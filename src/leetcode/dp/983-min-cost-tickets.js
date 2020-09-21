@@ -233,32 +233,6 @@ function mergeIntervals(intervals) {
 }
 //console.log('mergeIntervals', mergeIntervals([[1,3], [7,15], [5,10], [22,25], [18,30]]))
 
-// var pancakeSort = function(A) {
-//   const n = A.length;
-//   let loop = 0;
-//   let output = []
-
-//   let min = A[0];
-//   for (let i = 0; i < n; i++) {
-//     min = Math.min(min, A[i])
-
-//   }
-//   console.log('min', min)
-//   let k = A.indexOf(min);
-//   console.log('k', k)
-
-//   while (k > 0) {
-//     output.push(k);
-//     let subArray = A.slice(0,k+1);
-//     reverseArr(subArray);
-//     console.log('subArray', subArray);
-//     A = subArray.concat(A.slice(k+1));
-//     console.log('A', A)
-//   }
-
-//   return output;
-// };
-
 
 export {
   mincostTickets

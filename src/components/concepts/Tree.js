@@ -39,7 +39,10 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 //import { test } from '../../leetcode/contest/biweekly/33/index';
 
 // contest 34
-import { test1 } from '../../leetcode/contest/biweekly/34/index';
+//import { test1 } from '../../leetcode/contest/biweekly/34/index';
+// contest 35
+import { test } from '../../leetcode/contest/biweekly/35/index';
+
 
 // codewars
 //import { basketWithoutDuplicatesUseReduce } from '../../codewars/arrays/filter-out-duplicates';
@@ -54,7 +57,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={test1.toString()}
+            code={test.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

@@ -245,7 +245,13 @@ Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 whi
  *
  * stack
  * linear time : loop through N and deletions
- *
+
+ todo
+was good explanation on youtube
+https://www.youtube.com/watch?v=vbM41Zql228
+
+https://medium.com/javascript-in-plain-english/javascript-what-are-stack-and-queue-79df7af5a566
+
 */
 
 /*

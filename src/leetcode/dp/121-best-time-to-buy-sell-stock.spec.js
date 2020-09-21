@@ -3,7 +3,8 @@ import {
   //maxProfit1 as maxProfit,
   //maxProfit,
   //maxProfitFindMinPrice as maxProfit,
-  maxProfitDP as maxProfit
+  //maxProfitDP as maxProfit,
+  maxProfitOnePass as maxProfit
 }  from './121-best-time-to-buy-sell-stock';
 
 describe('best buy and sell stock test case ', () => {

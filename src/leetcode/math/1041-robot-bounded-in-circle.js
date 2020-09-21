@@ -39,6 +39,7 @@ Note:
 instructions[i] is in {'G', 'L', 'R'}
 */
 
+import { helperVariant1 } from "../../ds/string-manipulation/reverse-a-string";
 
 /*
 Approach Math
@@ -46,7 +47,6 @@ Approach Math
 Important: repeated infinite times
 
 Examples:
-
 1 'GR' or 'GL' -> true
       _
     | _ |
@@ -54,31 +54,6 @@ Examples:
 2 'GG' -> false
   |
   |
-
-
-
-
-...
-Any return to (0,0) is going to imply a loop, so you might not need to try the instructions 4 times. I implemented this.
-Also, I used a dx, dy pair to keep track of direction; then, at each "Go" step x+=dx and y+=dy. It's easy enough to apply a rotation directly to the dx and dy.
-
-...
-There are only two scenarios where the robot can come back to its original location:
-
-1 the robot is already back to its origin by the end of the string traversal, and
-
-2 the robot is away from the origin, but heading to a direction different from 
-its initial direction. For example, if the robot is facing left by the end of the 
-first string traversal, after three other traversals of left->left->left, it is back to 
-the origin. 
-A second example is that if the robot is facing down by the end of the 
-first string traversal, it only takes another traversal for it to get back to the origin.
-
-...
-Let dx, dy be directions of our robot and x,y be its coordinates. Then using linear algepra we can say that if we rotate to the left, then dx, dy = -dy, dx, similar if we rotate to the right. So, now we can easily follow the place of our robot. How to understand if his path will be bounded by some circle? We need to understand if he is going to loop. There are 3 possible options where path will be bounded.
-
-
-
 Direction explanation
 dx and dy refer to the robot's direction, not its coordinates. 
 
@@ -93,8 +68,6 @@ up -> left -> down -> right -> up. The resulting move is
 [dx, dy] + [-dy, dx] + [-dx, -dy] + [dy, -dx] = [0, 0]
 up -> down -> up. The resulting move is [dx, dy] + [-dx, -dy] = [0, 0]
 up -> up. The resulting move is [dx, dy]
-
-
 
 Let's say the robot starts with facing up. It moves [dx, dy] by executing the 
 instructions once.
@@ -121,16 +94,17 @@ I think it's just looking at these numbers and making a relationship between the
 What is the thought process to say i = (i + 1) % 4 will turn right AND 
 i = (i + 3) % 4 will turn left? Why increment right by 1 and left by 3? 
 Why is the modulus 4 and some arbitrary number ?
+
 To answer your question about the modulus being 4, it's because that is the 
 number of entries in the directions array. You're constraining the resulting 
 index by taking the modulus of the length to make sure it's 0-3.
- Don't understand your question. Turn right once = Turn left 3 times, Turn 
- left once = Turn right 3 times
+Turn right once = Turn left 3 times, 
+Turn left once = Turn right 3 times
 
-
-
-
+time is O(n)
+space is O(1)
 */
+// todo I don't really understand this solution
 var isRobotBounded = function(instructions) {
   let [x,y] = [0,0];
   let directions = [[0,1], [1, 0], [0,-1], [-1, 0]];
@@ -149,7 +123,6 @@ var isRobotBounded = function(instructions) {
   }
   return x === 0 && y === 0 || i > 0;
 }
-
 
 /*
 Approach Math
@@ -208,11 +181,13 @@ https://www.youtube.com/watch?v=f7Zd8hEbCz0
 */
 
 // test
-//console.log('isRobotBounded', isRobotBoundedUseMath('GG'));
-console.log('isRobotBounded', isRobotBoundedUseMath('GL'));
+//console.log('isRobotBounded', isRobotBounded('GG'));
+//console.log('isRobotBounded', isRobotBounded('GL'));
 //console.log('isRobotBounded', isRobotBoundedUseMath('GLR'));
 //console.log('isRobotBounded', isRobotBoundedUseMath('GGLLGG'));
 
+
 export {
-  isRobotBoundedUseMath
+  isRobotBoundedUseMath,
+  isRobotBounded
 }
