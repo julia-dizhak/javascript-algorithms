@@ -1,6 +1,8 @@
 import {
   carPooling,
-  //carPoolingCountStops as carPooling
+  //carPoolingCountStops as carPooling,
+  //carPoolingUseHash as carPooling,
+  //carPoolingUseHash1 as carPooling
 } from './1094-car-pooling';
 
 describe('car pooling interval problem test case', () => {

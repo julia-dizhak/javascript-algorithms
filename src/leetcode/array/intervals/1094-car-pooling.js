@@ -52,7 +52,12 @@ I can already guess that it's greedy approach
 
 /*
 Approach Use stop constrains (iterative)
+
+
 Intuition
+Note that in the problem there is a interesting constraint:
+0 <= trips[i][1] < trips[i][2] <= 1000
+
 since we have only 1001 stops, we can just figure out how many people get it and out
 in each location.
 
@@ -100,10 +105,93 @@ Algorithm
 we will initialize a list to store the number of passengers changed and the 
 corresponding timestamp and then sort it.
 
-Time is O(n log n)
-Space is
+Note that in Java, we do not have a nice API to do this. However, we can use a 
+TreeMap, which can help us to sort during insertion. You can use a PriorityQueue 
+instead.
+
+Finally, we just need to iterate from the start timestamp to the end timestamp 
+and check if the actual capacity meets the condition.
+
+Complexity Analysis
+Assume N is the length of trips.
+
+Time complexity: for Java O(n log n) since we need to iterate over trips and sort our timestamp. 
+for JS - O(n) only iterating costs
+Space complexity: O(N) since in the worst case we need O(N) to store timestamp.
 */
 var carPooling = function(trips, capacity) {
+  let timestamp = {};
+
+  for (const trip of trips) {
+    let [passengers, start, end] = trip;
+    timestamp[start] = (timestamp[start] || 0) + passengers; // Incrementing the Passengers at boarding
+    timestamp[end] = (timestamp[end] || 0) - passengers; // Decrementing the Passengers at the time of get down  
+  }
+
+  // passenger changes in time
+  var sum = Object.values(timestamp);
+  for (let i = 0; i < sum.length; i++){
+    capacity -= sum[i];
+    if (capacity < 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+// the same approach
+var carPoolingUseHash = function(trips, capacity) {
+  var res={};
+  for(let i=0; i<trips.length; i++){
+      if(res[trips[i][1]] == undefined){
+          res[trips[i][1]]=0;
+      }
+      res[trips[i][1]]+= trips[i][0];
+      if(res[trips[i][2]] == undefined){
+          res[trips[i][2]]=0;
+      }
+      res[trips[i][2]]-= trips[i][0];
+  }
+  console.log('res', res);
+  var arr=Object.values(res);
+  for(let i=0; i<arr.length; i++){
+      capacity-=  arr[i];
+      if(capacity<0){
+          return false;
+      }
+  }
+  return true;
+};
+
+// the same approach
+var carPoolingUseHash1 = function(trips, capacity) {
+  let timestamp = {};
+
+  for (const trip of trips) {
+    let [passengers, start, end] = trip;
+    if (timestamp[start] === undefined) {
+      timestamp[start] = 0
+    } 
+    timestamp[start] += passengers;
+
+    if (timestamp[end] === undefined) {
+      timestamp[end] = 0
+    } 
+    timestamp[end] -= passengers;
+  }
+
+  var arr = Object.values(timestamp);
+  for (let i=0; i < arr.length; i++){
+    capacity -= arr[i];
+    if (capacity < 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+// the same approach but use Map
+var carPoolingUseMap = function(trips, capacity) {
   let capacityMap = new Map();
   for (const trip of trips) {
     let [passengers, start, end] = trip;
@@ -122,30 +210,10 @@ var carPooling = function(trips, capacity) {
   return true;
 }  
 
-// var carPooling = function(trips, capacity) {
-//   let timestamp = {};
-//   for (const trip of trips) {
-
-//     let startPassenger = trip[0];
-
-//     let endPassenger = trip[2];
-//     timestamp[trip[1]] = (timestamp[trip[1]] || 0) + startPassenger;
-//     timestamp[trip[2]] = (timestamp[trip[1]] || 0) - endPassenger;
-//   }
-//   // console.log('timestamp', timestamp);
-//   // console.log('timestamp', Object.values(timestamp));
-
-//   let usedCapacity = 0;
-//   for (const passengerChange in Object.values(timestamp)) {
-//     usedCapacity += passengerChange;
-//     if (usedCapacity > capacity) return false
-//   }
-//   return true;
-// }  
-
 // tests
 //console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 4));
-//console.log('carPooling', carPoolingCountStops([[2,1,5], [3,3,7]], 5));
+//console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 4));
+//console.log('carPooling', carPoolingUseHash([[2,1,5], [3,3,7]], 5));
 //console.log('carPooling', carPooling([[2,1,5], [3,3,7]], 5));
 //console.log('carPooling', carPoolingCountStops([[3,2,7], [3,7,9], [8,3,9]], 11));
 
@@ -156,13 +224,10 @@ similiar as Meeting Room II
 
 */
 
-/*
-todo
-Approach Bucket Sort 
-
-*/
 
 export {
   carPoolingCountStops,
-  carPooling
+  carPooling,
+  carPoolingUseHash,
+  carPoolingUseHash1
 }
