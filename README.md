@@ -469,9 +469,10 @@ started on 12/21/17
 
     * [Car pooling](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/intervals/car-pooling.js)
 
-    | Approach:          | Time      | Space         |
-    | :---               | :---      | :---          |
-    | Iterative          | O(n)      | O(m = 1001)   |
+    | Approach:               | Time      | Space         |
+    | :---                    | :---      | :---          |
+    | Bucket sort             | O(n)      | O(m = 1001)   |
+    | Same timestamp as Hash  | O(n)      | O(n)          |
 
 
 * ### Singly Linked List

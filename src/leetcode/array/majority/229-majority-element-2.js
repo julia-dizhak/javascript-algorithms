@@ -33,7 +33,6 @@ easiest way
 
 time is O(n)
 space is O(n)
-
 */
 /**
  * @param {number[]} nums

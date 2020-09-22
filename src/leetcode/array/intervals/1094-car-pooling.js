@@ -51,8 +51,8 @@ I can already guess that it's greedy approach
 */
 
 /*
-Approach Use stop constrains (iterative)
-
+Approach Bucket sort 
+or Use stop constrains (iterative)
 
 Intuition
 Note that in the problem there is a interesting constraint:
@@ -119,7 +119,7 @@ Time complexity: for Java O(n log n) since we need to iterate over trips and sor
 for JS - O(n) only iterating costs
 Space complexity: O(N) since in the worst case we need O(N) to store timestamp.
 */
-var carPooling = function(trips, capacity) {
+let carPooling = function(trips, capacity) {
   let timestamp = {};
 
   for (const trip of trips) {
@@ -129,7 +129,7 @@ var carPooling = function(trips, capacity) {
   }
 
   // passenger changes in time
-  var sum = Object.values(timestamp);
+  let sum = Object.values(timestamp);
   for (let i = 0; i < sum.length; i++){
     capacity -= sum[i];
     if (capacity < 0){
@@ -223,7 +223,6 @@ Famous interval problem
 similiar as Meeting Room II
 
 */
-
 
 export {
   carPoolingCountStops,

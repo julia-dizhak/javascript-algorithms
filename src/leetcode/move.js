@@ -674,6 +674,66 @@ var sequentialDigits = function(low, high) {
 // console.log('sequentialDigits', sequentialDigits(100, 300))
 // console.log('sequentialDigits', sequentialDigits(100, 1300))
 
+/*
+Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+
+Note: The algorithm should run in linear time and in O(1) space.
+
+sort doesn't work
+*/
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var majorityElement1 = function(nums) {
+  let res = [];
+  const n = nums.length;
+  let hash = {};
+  for (const num of nums) {
+    hash[num] = (hash[num] || 0) + 1;
+  }
+  console.log('hash', hash);
+  for (const key in hash) {
+    if (hash[key] > n/3) res.push(Number(key));
+  }
+
+  return res;
+};
+var majorityElement2 = function(nums) {
+  let res = [];
+  const n = nums.length;
+  nums = nums.sort((a,b) => a-b);
+  console.log('nums', nums)
+  return nums[Math.floor(n/3)];
+};
+
+// doesn't work count only one
+/*
+
+*/
+var majorityElement = function(nums) {
+  
+
+};
+// vote algorithm
+var majorityElement = function(nums) {
+  let candidate;
+  let counter = 0;
+
+  for (const num of nums) {
+    if (counter === 0) {
+      candidate = num;
+    }
+    counter += (candidate === num) ? 1 : -1; 
+  }
+
+  return candidate;
+}
+
+console.log('majorityElement', majorityElement([3,2,3]));
+console.log('majorityElement', majorityElement([1,1,1,3,3,2,2,2]));
+
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,

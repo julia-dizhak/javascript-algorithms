@@ -38,16 +38,13 @@ var majorityElementBruteForce = function(arr) {
 
   for (const num of arr) {
     let count = 0;
-
     for (const elem of arr) {
       if (elem === num) {
         count += 1
       }
     }
 
-    if (count > majorityCount) {
-      return num
-    }
+    if (count > majorityCount) return num
   }
 
   return -1
