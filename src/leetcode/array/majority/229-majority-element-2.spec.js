@@ -1,5 +1,6 @@
 import {
-  majorityElementUseHash as majorityElement,
+  majorityElement,
+  //majorityElementUseHash as majorityElement,
   //majorityMooreVotingVariant2 as majorityElement
 } from './229-majority-element-2';
 

@@ -7,6 +7,7 @@ import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../ds/arrays/cl
 // problems
 import { jumpOnClouds } from '../../ds/arrays/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/majority/169-majority-element';
+//import { majorityElement as majority } from '../../leetcode/array/majority/229-majority-element-2';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
 import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-triangle';
@@ -101,6 +102,7 @@ export default function ArrayAlgorithms() {
             space="Moore O(1)"
             code={majorityElement.toString()}
             secondCode={majorityMooreVoting.toString()}
+            //thirdSolution={majority.toString()}
           />
         </li>
 

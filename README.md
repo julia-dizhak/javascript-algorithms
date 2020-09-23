@@ -408,12 +408,12 @@ started on 12/21/17
 
     * [229. Majority element II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/229-majority-element-2.js)
 
-    | Approaches:     | Time    | Space  |
-    | :---            | :---    | :---   |
-    | Hash            | O(n)    | O(n)   |
-    | Voting          | O(?)    | 0(?)   |
+    | Approaches:         | Time    | Space  |
+    | :---                | :---    | :---   |
+    | Hash                | O(n)    | O(n)   |
+    | Boyer-Moore Voting  | O(n)    | 0(1)   |
 
-    * [118 Pascals triangle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals-triangle/118-pascals-triangle.js)
+    * [118. Pascals triangle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals-triangle/118-pascals-triangle.js)
 
     | Approaches:     | Time             | Space           |
     | :---            | :---             | :---            |

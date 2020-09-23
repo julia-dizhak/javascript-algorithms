@@ -86,36 +86,71 @@ candidate as well.
 
 -Both counters are decremented only when the current element is different from 
 both candidates.
-*/
 
+Complexity Analysis
+
+Time complexity : O(N) where N is the size of nums. We first go through nums looking 
+for first and second potential candidates. We then count the number of occurrences 
+for these two potential candidates in nums. Therefore, 
+our runtime is O(N) + O(N) = O(2N) ≈O(N).
+
+Space complexity: O(1) since we only have four variables for holding two potential 
+candidates and two counters. Even the returning array is at most 2 elements.
+*/
 var majorityElement = function(nums) {
-  if (nums.length === 0) return -1;
+  const n = nums.length
+  if (n === 0) return -1;
+
   let candidate1 = null;
   let candidate2 = null;
 
-  let counter1 = 0;
-  let counter2 = 0;
+  // 1st pass
+  let count1 = 0;
+  let count2 = 0;
 
   for (const num of nums) {
-    // if (candidate1 !== null && candidate1 === num) {
-    //   count1++;
-    // } else if ()
-    if (num === candidate1) counter1++;
-    else if (num === candidate2) counter2++;
-    else if (counter1 === 0) {
-      candidate1 = num,
-      counter1 = 1
-    } else if (counter2 === 0) {
-      candidate2 = num,
-      counter2 = 1;
+    if (candidate1 != null && candidate1 === num) {
+      count1++;
+    } else if (candidate2 != null && candidate2 === num) {
+      count1++;
+    }
+    else if (count1 === 0) {
+      candidate1 = num;
+      count1++;
+    }
+    else if (count2 === 0) {
+      candidate2 = num;
+      count2++;
     } else {
-      counter1 = counter1 - 1,
-      counter2 = counter2 - 1
+      count1--;
+      count2--;
     }
   }
-}
 
-//
+  // console.log('count1', count1);
+  // console.log('count2', count2);
+  // console.log('candidate1', candidate1);
+  // console.log('candidate2', candidate2);
+
+  // 2 pass
+  let res = [];
+  count1 = 0;
+  count2 = 0;
+  
+  for (const num of nums) {
+    if (candidate1 != null && num == candidate1) count1++;
+    if (candidate2 != null && num == candidate2) count2++;
+  }
+  if (count1 > n/3) res.push(candidate1);
+  if (count2 > n/3) res.push(candidate2);
+
+  return res;
+}
+// tests
+//console.log('majorityElement', majorityElement([1]));
+//console.log('majorityElement', majorityElement([3,2,3]));
+//console.log('majority', majorityElement([1,1,1,3,3,2,2,2]));
+
 
 // voting second solution
 const majorityMooreVotingVariant2 = nums => {
@@ -157,16 +192,15 @@ const majorityMooreVotingVariant2 = nums => {
   return candidate;
 };
 
-// tests
-// console.log('majorityElement', majorityElement([1]));
-// console.log('majorityElement', majorityElement([3,2,3]));
-// console.log('majorityElement', majorityElement([1,1,1,3,3,2,2,2]));
-
 /*
 todo
+good explanation
+https://leetcode.com/problems/majority-element-ii/discuss/63520/boyer-moore-majority-vote-algorithm-and-my-elaboration
+https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html
 */
 
 export {
   majorityElementUseHash,
-  majorityMooreVotingVariant2
+  majorityMooreVotingVariant2,
+  majorityElement
 }
