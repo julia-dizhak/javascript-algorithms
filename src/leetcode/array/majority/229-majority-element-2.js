@@ -151,7 +151,6 @@ var majorityElement = function(nums) {
 //console.log('majorityElement', majorityElement([3,2,3]));
 //console.log('majority', majorityElement([1,1,1,3,3,2,2,2]));
 
-
 // voting second solution
 const majorityMooreVotingVariant2 = nums => {
   if (nums.length === 0) return -1;

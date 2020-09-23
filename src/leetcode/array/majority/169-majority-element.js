@@ -170,6 +170,73 @@ var majorityElementRandomization = function(nums) {
 //console.log('majority', majorityElementRandomization([1,2,1,3,1]));
 
 /*
+Approach Divide and Conquer
+
+Intuition
+
+If we know the majority element in the left and right halves of an array, we can 
+determine which is the global majority element in linear time.
+
+Algorithm
+
+Here, we apply a classical divide & conquer approach that recurses on the left 
+and right halves of an array until an answer can be trivially achieved for a 
+length-1 array. Note that because actually passing copies of subarrays costs 
+time and space, we instead pass lo and hi indices that describe the relevant 
+slice of the overall array. In this case, the majority element for a length-1 
+slice is trivially its only element, so the recursion stops there. If the current 
+slice is longer than length-1, we must combine the answers for the slice's left 
+and right halves. If they agree on the majority element, then the majority 
+element for the overall slice is obviously the same[1]. If they disagree, only 
+one of them can be "right", so we need to count the occurrences of the left and 
+right majority elements to determine which subslice's answer is globally correct. 
+The overall answer for the array is thus the majority element between indices 0 and nn.
+
+
+Time complexity: O(nlgn)
+Each recursive call to majority_element_rec performs two recursive calls on subslices 
+of size n\2 
+
+Space complexity : O(logn)
+Although the divide & conquer does not explicitly allocate any additional memory, 
+it uses a non-constant amount of additional memory in stack frames due to recursion. 
+Because the algorithm "cuts" the array in half at each level of recursion, it 
+follows that there can only be O(lgn) "cuts" before the base case of 1 is reached. 
+It follows from this fact that the resulting recursion tree is balanced, and 
+therefore all paths from the root to a leaf are of length O(lgn). Because the 
+recursion tree is traversed in a depth-first manner, the space complexity is 
+therefore equivalent to the length of the longest path, which is, of course, OO(lgn).
+*/
+function countInRange(nums, num, lo, hi) {
+  let count = 0;
+  for (let i = lo; i <= hi; i++) {
+    if (nums[i] === num) count++;
+  }
+  return count;
+}
+
+var majorityElementDivideConquer = function(nums, lo = 0, hi = nums.length - 1) {
+  // base case; the only element in an array of size 1 is the majority element.
+  if (lo === hi) return nums[lo];
+
+  // recurse on left and right halves of this slice.
+  let mid = Math.floor(lo + (hi -lo)/2);
+  let left = majorityElementDivideConquer(nums, lo, mid);
+  let right = majorityElementDivideConquer(nums, mid+1, hi);
+  
+  // if the two halves agree on the majority element, return it.
+  if (left === right) return left;
+  // otherwise, count each element and return the "winner".
+  let leftCount = countInRange(nums, left, lo, hi);
+  let rightCount = countInRange(nums, right, lo, hi);
+
+  return leftCount > rightCount ? left : right;
+}
+
+// console.log('majority', majorityElementDivideConquer([1,2,1,3,1]));
+// console.log('majority', majorityElementDivideConquer([8,8,7,7,7]));
+
+/*
 Approach 6 Boyer-Moore Voting algorithm
 
 Intuition
@@ -202,7 +269,7 @@ var majorityMooreVoting = function(nums) {
     count += (num === candidate) ? 1 : -1
   }
 
-  return candidate
+  return candidate;
 }
 
 export {
@@ -210,5 +277,6 @@ export {
   majorityElementBruteForce,
   majorityMooreVoting,
   majorityElementSorting,
-  majorityElementRandomization
+  majorityElementRandomization,
+  majorityElementDivideConquer
 }

@@ -44,7 +44,7 @@ function binarySearch(arr, target) {
   return -1;
 }
 
-function binarySearchRecursive(arr, target, start = 0, stop = (arr.length - 1)) {
+function binarySearchRecursive(arr, target, start = 0, stop = arr.length - 1) {
   // left + right could overflow
   // let midPoint = Math.floor((start + stop) / 2);
   let mid = Math.floor(start + (stop - start)/2)
