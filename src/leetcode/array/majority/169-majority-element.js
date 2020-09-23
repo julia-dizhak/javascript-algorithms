@@ -64,15 +64,9 @@ This is because an arbitrary array of length n can contain n distinct values,
 but arr is guaranteed to contain a majority element, which will occupy (at minimum) n/2 + 1 array indices.
 */
 var majorityElement = function(arr) {
-  const len = arr.length;
-
-  if (len === 0) {
-    return [];
-  }
-
-  if (len  === 1) {
-    return arr[0]
-  }
+  const n = arr.length;
+  if (n === 0) return -1;
+  if (n === 1) return arr[0];
 
   const hash = {};
 
@@ -81,10 +75,11 @@ var majorityElement = function(arr) {
   }
 
   for (const key in hash) {
-    if (hash[key] > len/2)  {
+    if (hash[key] > n/2)  {
       return Number(key)
     }
   }
+  return -1;
 }
 
 /*
@@ -100,10 +95,79 @@ Sorting the array costs O(nlogn) time in Python and Java, so it dominates the ov
 Space complexity : O(1) or O(n)
 We sorted arr in place here - if that is not allowed, then we must spend linear additional space on a copy of nums and sort the copy instead.
 */
+// doesn't work for all cases
 var majorityElementSorting = function(arr) {
+  const n = arr.length;
+  if (n === 0) return -1;
+  if (n === 1) return arr[0];
+
   arr = arr.sort((a, b)=> a - b);
   return arr[Math.floor(arr.length/2)]
 }
+
+/*
+Approach Randomization
+
+Intuition
+
+Because more than ⌊n/2] array indices are occupied by the majority element, a 
+random array index is likely to contain the majority element.
+
+Algorithm
+
+Because a given index is likely to have the majority element, we can just select 
+a random index, check whether its value is the majority element, return if it is, 
+and repeat if it is not. The algorithm is verifiably correct because we ensure 
+that the randomly chosen value is the majority element before ever returning.
+
+Complexity analysis
+Time is O(infinite)
+It is technically possible for this algorithm to run indefinitely (if we never 
+manage to randomly select the majority element), so the worst possible runtime 
+is unbounded. However, the expected runtime is far better - linear, in fact. 
+For ease of analysis, convince yourself that because the majority element is 
+guaranteed to occupy more than half of the array, the expected number of 
+iterations will be less than it would be if the element we sought occupied 
+exactly half of the array. Therefore, we can calculate the expected number of 
+iterations for this modified version of the problem and assert that our version 
+is easier.
+
+Space complexity : O(1)
+Much like the brute force solution, the randomized approach runs with constant 
+additional space.
+*/
+// todo
+// function getRandomInt(max) {
+//   return Math.floor(Math.random() * Math.floor(max));
+// }
+function randRange(rand, min, max) {
+  return Math.floor(rand * Math.floor(max - min) + min);
+}
+
+function countOccurrences(nums, element) {
+  let count = 0;
+  for (const num of nums) {
+    if (num === element) count++;
+  }
+  return count;
+}
+
+var majorityElementRandomization = function(nums) {
+  const n = nums.length;
+  const majorityCount = n / 2;
+
+  let rand = Math.random();
+  console.log('majorityCount', majorityCount)
+  console.log('rand', rand);
+  
+  while (true) {
+    let candidate = nums[randRange(rand, 0, n)];
+    console.log('candidate', candidate);
+    if (countOccurrences(nums, candidate) > majorityCount) return candidate;
+  }
+}
+
+//console.log('majority', majorityElementRandomization([1,2,1,3,1]));
 
 /*
 Approach 6 Boyer-Moore Voting algorithm
@@ -126,6 +190,7 @@ linear time.
 Space complexity: O(1)
 Boyer-Moore allocates only constant additional memory.
 */
+// doesn't work for case when there is no majority elements
 var majorityMooreVoting = function(nums) {
   let count = 0;
   let candidate;
@@ -140,53 +205,10 @@ var majorityMooreVoting = function(nums) {
   return candidate
 }
 
-// voting second solution
-const majorityMooreVotingVariant2 = nums => {
-  if (nums.length === 0) {
-    return [];
-  }
-
-  let candidateA,
-    candidateB,
-    countA = 0,
-    countB = 0;
-  for (let index = 0; index < nums.length; index++) {
-    if (candidateA === nums[index]) {
-      countA++;
-    } else if (candidateB === nums[index]) {
-      countB++;
-    } else if (countA === 0) {
-      candidateA = nums[index];
-      countA = 1;
-    } else if (countB === 0) {
-      candidateB = nums[index];
-      countB = 1;
-    } else {
-      countA--;
-      countB--;
-    }
-  }
-
-  const elementCount = search => {
-    return nums.reduce((accumulator, currentValue) => {
-      return currentValue === search ? accumulator + 1 : accumulator;
-    }, 0);
-  };
-
-  const candidate =  candidateA === candidateB
-    ? [candidateA]
-    : [candidateA, candidateB].filter(
-      (element, index) => elementCount(element) > Math.floor(nums.length / 3)
-    );
-
-  return candidate;
-};
-
-
 export {
   majorityElement,
   majorityElementBruteForce,
   majorityMooreVoting,
   majorityElementSorting,
-  majorityMooreVotingVariant2
+  majorityElementRandomization
 }

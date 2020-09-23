@@ -398,12 +398,13 @@ started on 12/21/17
 
     * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/169-majority-element.js)
 
-    | Approaches:  | Time       | Space       |
-    | :---         | :---       | :---        |
-    | Brute force  | O(n^2)     | 0(1)        |
-    | Hash         | O(n)       | O(n)        |
-    | Sorting      | O(nlogn)   | O(1) / O(n) |
-    | Voting       | O(n)       | O(1)        |
+    | Approaches:           | Time              | Space       |
+    | :---                  | :---              | :---        |
+    | Brute force           | O(n^2)            | 0(1)        |
+    | Hash                  | O(n)              | O(n)        |
+    | Sorting               | O(nlogn)          | O(1) / O(n) |
+    | Voting                | O(n)              | O(1)        |
+    | Randomization index   | O(infinite)/O(n)  | O(1)        |
 
     * [229. Majority element II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/229-majority-element-2.js)
 
