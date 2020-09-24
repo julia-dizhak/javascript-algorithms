@@ -32,7 +32,8 @@ Travel to station 4. Your tank = 4 - 1 + 5 = 8
 Travel to station 0. Your tank = 8 - 2 + 1 = 7
 Travel to station 1. Your tank = 7 - 3 + 2 = 6
 Travel to station 2. Your tank = 6 - 4 + 3 = 5
-Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
+Travel to station 3. The cost is 5. Your gas is just enough to travel back to 
+station 3.
 Therefore, return 3 as the starting index.
 
 Example 2:
@@ -57,9 +58,46 @@ Approach 1 Pass
 be a solution.
 
 2 The tank should never be negative, so restart whenever there is a negative number.
+
+Time is O(n)
+space is O(1)
 */
 var canCompleteCircuit = function(gas, cost) {
+  const n = gas.length;
+  if (n === 0) return -1;
+  let sumGas = 0;
+  let sumCost = 0;
+  let start = 0;
+  let tank = 0;
 
+  for (let i = 0; i < n; i++) {
+    sumGas += gas[i];
+    sumCost += cost[i];
+    tank += gas[i] - cost[i];
+    if (tank < 0) {
+      start = start + 1;
+      tank = 0;
+    }
+  }
+
+  if (sumGas < sumCost) return -1;
+  else return start;
+}
+
+/*
+Approach 2 passes
+
+- Use the first pass to determine if we have a solution
+
+time is 
+*/
+var canCompleteCircuit2Passes = function(gas, cost) {
+  let total = 0;
+  // determine if we have a solution
+  for (let i = 0; i < gas.length; i++) {
+    total += gas[i] - cost[i];
+  }
+  if (total < 0) return -1;
 }
 
 /*
@@ -83,10 +121,14 @@ back like : 1->2->3->4->1.
 To solve this problem, you just need to use a simple trick. Instead of increment 
 the value like : n=n+1, what we can do is : n=(n+1)%length.
 In that case, when the pointer gets to the end, it will again start from the zero.
+
+time is not O(n^2) because second while loop goes from 0 to 1
 */
+// it seams doesn't pass all tests
 var canCompleteCircuit1 = function(gas, cost) {
-  if (gas.length === 0) return -1;
-  if (gas.length === 1) return gas[0] - cost[0] > 0 ? 0 : -1;
+  const n = gas.length;
+  if (n === 0) return -1;
+  if (n === 1) return gas[0] - cost[0] > 0 ? 0 : -1;
 
   let start = 0;
   let end = 1;
@@ -95,21 +137,23 @@ var canCompleteCircuit1 = function(gas, cost) {
   while (start != end) {
     while (curr < 0 && start != end) {
       curr = curr - (gas[start] - cost[start]);
-      start = (start + 1) % gas.length;
+      start = (start + 1) % n;
       if (start === 0) return -1;
     }
     curr += gas[end] - cost[end];
-    end = (end+1) % gas.length;
+    end = (end+1) % n;
   }
   
   if (curr < 0) return -1;
   return start;
 }
 
+// tests
 console.log('gas', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]));
 console.log('gas', canCompleteCircuit([2,3,4], [3,4,3]));
 console.log('gas', canCompleteCircuit([1,2], [2,1]));
 
 export {
+  canCompleteCircuit,
   canCompleteCircuit1
 }

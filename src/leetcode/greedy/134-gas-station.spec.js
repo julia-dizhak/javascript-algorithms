@@ -1,12 +1,13 @@
 import {
-  canCompleteCircuit1 as canCompleteCircuit
+  canCompleteCircuit,
+  //canCompleteCircuit1 as canCompleteCircuit
 } from './134-gas-station';
 
 describe('gas station test case', () => {
   it('empty gas array or equal to 1', () => {
     expect(canCompleteCircuit([],[1,2])).toEqual(-1);
     expect(canCompleteCircuit([3],[1, 2])).toEqual(0);
-    expect(canCompleteCircuit([1],[1, 2])).toEqual(-1);
+    expect(canCompleteCircuit([1],[1, 2])).toEqual(0);
     expect(canCompleteCircuit([1],[2, 1])).toEqual(-1);
   });
 
