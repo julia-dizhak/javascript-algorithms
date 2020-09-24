@@ -223,7 +223,11 @@ var leastIntervalUseHash = function(tasks, n) {
 //console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","B","C","C"], 2))
 //console.log('leastIntervalUseHash', leastIntervalUseHash(["A","B","C","D","E","F","G"], 2))
 
-// todo solution with priority queue
+/* 
+todo solution with priority queue
+need to build priority queue by myself using js
+https://leetcode.com/problems/task-scheduler/discuss/104496/concise-Java-Solution-O(N)-time-O(26)-space
+*/
 
 export {
   leastInterval,

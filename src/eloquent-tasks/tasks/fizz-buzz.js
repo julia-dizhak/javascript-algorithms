@@ -1,6 +1,6 @@
 /*
 Leetcode
-412. Fizzbuzz
+412 Fizzbuzz
 easy
 
 Create a for loop that iterates up to 100 while outputting "fizz" at multiples

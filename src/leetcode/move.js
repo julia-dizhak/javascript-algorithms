@@ -674,15 +674,44 @@ var sequentialDigits = function(low, high) {
 // console.log('sequentialDigits', sequentialDigits(100, 300))
 // console.log('sequentialDigits', sequentialDigits(100, 1300))
 
-var majority =  function(nums) {
-  let candidate = null;
-  let count = 0;
-  for (const num of nums) {
-    if (count === 0) candidate = num;
-    count += (candidate === num) ? +1 : -1
+/*
+Gas station
+I think its greedy
+Gas station https://medium.com/@rohitsharmacr/gas-station-leetcode-134-d9693244d18c
+
+First solution will be to use two loops and check from whether the index exist 
+but that will take higher time and O(n²) time complexity.
+
+
+*/
+
+/*
+Approach 1 Pass
+1 If the total number of gas is bigger than the total number of cost. There must 
+be a solution.
+
+2 The tank should never be negative, so restart whenever there is a negative number.
+*/
+var canCompleteCircuit = function(gas, cost) {
+  let sumGas = 0;
+  let sumCost = 0;
+  let start = 0;
+  let tank = 0;
+
+  for (let i = 0; i < gas.length; i++) {
+    sumGas += gas[i];
+    sumCost += cost[i];
+    tank += gas[i] - cost[i];
+    if (tank < 0) {
+      start = i +1;
+      tank = 0;
+    }
   }
-  return candidate
+
+  if (sumGas < sumCost) return -1;
+  else return start;
 }
+
 
 export {
   largestTimeFromDigits,
