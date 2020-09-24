@@ -3,7 +3,7 @@ import {
   // majorityElementBruteForce as majorityElement,
   //majorityMooreVoting as majorityElement,
   //majorityElementSorting as majorityElement,
-  //majorityElementRandomization as majorityElement doesn't pass,
+  //majorityElementRandomization as majorityElement //doesn't pass,
   //majorityElementDivideConquer as majorityElement
 } from './169-majority-element';
 

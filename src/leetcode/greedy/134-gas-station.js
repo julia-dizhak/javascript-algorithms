@@ -52,12 +52,59 @@ Therefore, you can't travel around the circuit once no matter where you start.
 */
 
 /*
+Approach Brute force
+
+First solution will be to use two loops and check from whether the index exist 
+but that will take higher time and O(n²) time complexity.
+space is O(1)
+*/
+var canCompleteCircuitBruteForce = function(gas, cost) {
+  const n = gas.length;
+  if (n === 0) return -1;
+
+  for (let i = 0; i < n; i++) {
+    let total = 0;
+    let stopCount = 0;
+    let j = i;
+    // loop for n stops
+    while (stopCount < n) {
+      total += gas[j % n] - cost[j % n];
+      // starting from this stop we can't complete trip break
+      if (total < 0) break;
+      stopCount++;
+      j++;
+    }
+    // if we are able to cover all the stop and fuel +ve return i'th stop
+    if (stopCount === n && total >= 0) return i;
+  }
+  return -1;
+}
+
+/*
 Approach 1 Pass
 
 1 If the total number of gas is bigger than the total number of cost. There must 
 be a solution.
 
 2 The tank should never be negative, so restart whenever there is a negative number.
+
+Why is it greedy?
+
+Proof:
+If sum of all gas[i]-cost[i] is greater than or equal to 0, then there is a start 
+position you can travel the whole circle.
+
+Let i be the index such that the the partial sum
+
+gas[0] - cost[0] + gas[1] - cost[1] + ... + gas[i] - cost[i]
+
+is the smallest, then the start position should be start=i+1 (start=0 if i=n-1). 
+Consider any other partial sum, for example,
+gas[0] - cost[0] + gas[1] - cost[1] + ... + gas[i] - cost[i] + gas[i+1] - cost[i+1]
+
+Since gas[0]-cost[0]+gas[1]-cost[1]+...+gas[i]-cost[i] is the smallest, we must have
+gas[i+1]-cost[i+1]>=0
+...
 
 Time is O(n)
 space is O(1)
@@ -75,7 +122,7 @@ var canCompleteCircuit = function(gas, cost) {
     sumCost += cost[i];
     tank += gas[i] - cost[i];
     if (tank < 0) {
-      start = start + 1;
+      start = i + 1;
       tank = 0;
     }
   }
@@ -89,15 +136,31 @@ Approach 2 passes
 
 - Use the first pass to determine if we have a solution
 
-time is 
+time is O(n),
+space is O(1)
 */
 var canCompleteCircuit2Passes = function(gas, cost) {
+  const n = gas.length;
+  if (n === 0) return -1;
+
   let total = 0;
   // determine if we have a solution
   for (let i = 0; i < gas.length; i++) {
     total += gas[i] - cost[i];
   }
   if (total < 0) return -1;
+
+  // find out where to start
+  let tank = 0;
+  let start = 0;
+  for (let i = 0; i < gas.length; i++) {
+    tank += gas[i] - cost[i];
+    if (tank < 0) {
+      start = i + 1;
+      tank = 0;
+    }
+  }
+  return start;
 }
 
 /*
@@ -149,11 +212,13 @@ var canCompleteCircuit1 = function(gas, cost) {
 }
 
 // tests
-console.log('gas', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]));
-console.log('gas', canCompleteCircuit([2,3,4], [3,4,3]));
-console.log('gas', canCompleteCircuit([1,2], [2,1]));
+//console.log('gas', canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2]));
+// console.log('gas', canCompleteCircuit([2,3,4], [3,4,3]));
+// console.log('gas', canCompleteCircuit([1,2], [2,1]));
 
 export {
   canCompleteCircuit,
-  canCompleteCircuit1
+  canCompleteCircuit1,
+  canCompleteCircuit2Passes,
+  canCompleteCircuitBruteForce
 }

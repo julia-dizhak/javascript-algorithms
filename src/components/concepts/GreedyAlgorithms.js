@@ -5,6 +5,7 @@ import Details from '../Details';
 import { minimumAbsoluteDifference } from '../../leetcode/greedy/task/min-abs-difference';
 import { luckBalance } from '../../leetcode/greedy/task/luck-balance';
 import { twoCitySchedCost, twoCitySchedCostSortAbs } from '../../leetcode/greedy/1029-two-city-scheduling';
+import { canCompleteCircuit } from '../../leetcode/greedy/134-gas-station';
 //import { leastInterval } from '../../leetcode/greedy/621-task-scheduler';
 
 export default function GreedyAlgorithms() {
@@ -14,7 +15,7 @@ export default function GreedyAlgorithms() {
 
       <Details
         id="test"
-        //code={leastInterval.toString()}
+        code={canCompleteCircuit.toString()}
       />
       <ul>
         <li>

@@ -695,9 +695,11 @@ started on 12/21/17
 
     * [134. Gas station](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/greedy/134-gas-station.js)
 
-    | Approaches:        | Time      | Space    |
-    | :---               | :---      | :---     |
-    | Iterative 1 pass   | O(n)      | 0(1)     |
+    | Approaches:          | Time      | Space    |
+    | :---                 | :---      | :---     |
+    | Iterative 1 pass     | O(n)      | 0(1)     |
+    | Iterative 2 passes   | O(n)      | 0(1)     |
+    | Brute force          | O(n^2)    | 0(1)     |
 
 * ### DP [dynamic programming]
     * [53. Maximum subarray](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/subarrays/53-max-contiguous-subarray-sum.js)
