@@ -67,7 +67,7 @@ For an array of length n:
 -There can be at most three majority elements which are more than ⌊n/4⌋ times.
 and so on.
 
-And since the requirement is finding the majority for more than ceiling of [n/3], 
+And since the requirement is finding the majority for more than ceiling of n/3, 
 the answer would be less than or equal to two numbers.
 
 Now figuring out the majority elements which show up more than ⌊n/3⌋ times is 
@@ -77,19 +77,19 @@ two corresponding counters. Similar to the above case, both candidates are initi
 as None in the beginning with their corresponding counters being 0. While going 
 through the array:
 
--If the current element is equal to one of the potential candidate, the count for 
+- If the current element is equal to one of the potential candidate, the count for 
 that candidate is increased while leaving the count of the other candidate as it is.
 
--If the counter reaches zero, the candidate associated with that counter will be 
+- If the counter reaches zero, the candidate associated with that counter will be 
 replaced with the next element if the next element is not equal to the other 
 candidate as well.
 
--Both counters are decremented only when the current element is different from 
+- Both counters are decremented only when the current element is different from 
 both candidates.
 
 Complexity Analysis
 
-Time complexity : O(N) where N is the size of nums. We first go through nums looking 
+Time complexity: O(N) where N is the size of nums. We first go through nums looking 
 for first and second potential candidates. We then count the number of occurrences 
 for these two potential candidates in nums. Therefore, 
 our runtime is O(N) + O(N) = O(2N) ≈O(N).
@@ -99,7 +99,7 @@ candidates and two counters. Even the returning array is at most 2 elements.
 */
 var majorityElement = function(nums) {
   const n = nums.length
-  if (n === 0) return -1;
+  if (n === 0) return [];
 
   let candidate1 = null;
   let candidate2 = null;
@@ -109,10 +109,10 @@ var majorityElement = function(nums) {
   let count2 = 0;
 
   for (const num of nums) {
-    if (candidate1 != null && candidate1 === num) {
+    if (candidate1 != null && candidate1 == num) {
       count1++;
-    } else if (candidate2 != null && candidate2 === num) {
-      count1++;
+    } else if (candidate2 != null && candidate2 == num) {
+      count2++;
     }
     else if (count1 === 0) {
       candidate1 = num;

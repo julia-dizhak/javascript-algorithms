@@ -6,15 +6,16 @@ import {
 
 describe('majority element 2', () => {
   it('empty array', () => {
-    expect(majorityElement([])).toEqual(-1);
+    expect(majorityElement([])).toEqual([]);
   });
 
   it('one element array', () => {
     expect(majorityElement([1])).toEqual([1]);
   });
 
-  it('use hash', () => {
+  it('majority elements exists', () => {
     expect(majorityElement([3,2,3])).toEqual([3]);
     expect(majorityElement([1,1,1,3,3,2,2,2])).toEqual([1,2]);
+    expect(majorityElement([-1,100,2,100,100,4,100])).toEqual([100]);
   });
 });
