@@ -256,15 +256,15 @@ started on 12/21/17
     | Memoization       | O(1)      | O(1)   |
     | Mask and shift    | O(1)      | O(1)   |
 
-* ### Math / Number
-    * [171. Excel sheet column number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/171-excel-sheet-column-number.js)
+* ### Number (Math)
+    * [171. Excel sheet column number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/171-excel-sheet-column-number.js)
 
     | Approaches:      | Time         | Space     |
     | :---             | :---         | :---      |
     | Math + loop      | O(n)         | 0(1)      |
     | Recursion        | O(n)         | 0(n)      |
 
-    * [1103. Distribute candies to people](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/1103-distribute-candies-to-people.js)
+    * [1103. Distribute candies to people](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/1103-distribute-candies-to-people.js)
 
     | Approaches:      | Time              | Space              |
     | :---             | :---              | :---               |
@@ -272,14 +272,14 @@ started on 12/21/17
     | Loop + min       | O(sqrt n)         | 0(num_people)      |
     | Math (Gauss)     | O(sqrt n)         | 0(num_people)      |
 
-    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/ugly-number/263-ugly-number.js)
+    * [263. Ugly number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/ugly-number/263-ugly-number.js)
 
     | Approaches:                 | Time         | Space     |
     | :---                        | :---         | :---      |
     | Recursion                   | O(log N)     | 0(log N)? |
     | Greatest divide by [2,3,4]  | O(log N)     | 0(1)      |
 
-    * [264. Ugly number II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/ugly-number/264-ugly-number-2.js)
+    * [264. Ugly number II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/ugly-number/264-ugly-number-2.js)
 
     | Approaches:                 | Time           | Space     |
     | :---                        | :---           | :---      |
@@ -287,13 +287,13 @@ started on 12/21/17
     | Generate all ugly numbers   | O(n log n)     | 0(n)      |
     | DP                          | O(n)           | 0(n)      |
 
-    * [1344. Angle between hands of clock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/1344-angle-between-hands-of-clock.js)
+    * [1344. Angle between hands of clock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/1344-angle-between-hands-of-clock.js)
 
     | Approach:   | Time      | Space     |
     | :---        | :---      | :---      |
     | Math        | O(1)      | 0(1)      |
 
-    * [258. Add digits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/258-add-digits.js)
+    * [258. Add digits](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/258-add-digits.js)
 
     | Approach:     | Time      | Space     |
     | :---          | :---      | :---      |
@@ -301,7 +301,7 @@ started on 12/21/17
     | Iteration     | O(n)      | 0(1)      |
     | Math          | O(1)      | 0(1)      |
 
-    * [1041. Robot bounded in circle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/math/1041-robot-bounded-in-circle.js)
+    * [1041. Robot bounded in circle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/1041-robot-bounded-in-circle.js)
 
     | Approach:         | Time      | Space     |
     | :---              | :---      | :---      |

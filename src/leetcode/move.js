@@ -701,6 +701,7 @@ If char = ‘X’, than char.charAtCode(i) - “A”.charAtCode(0) = 66 - 65 = 2
 ...
 If char = ‘Z’, than char.charAtCode(i) - “A”.charAtCode(0) = 66 - 65 = 25
 
+todo add an approach with XOR
 */
 /**
  * @param {string} s
@@ -748,7 +749,7 @@ var findTheDifference1 = function(s, t) {
 // }
 
 //console.log('find', findTheDifference('abcd', 'abcde'));
-console.log('find', findTheDifference('abcdx', 'abcdex'));
+//console.log('find', findTheDifference('abcdx', 'abcdex'));
 // console.log('find', findTheDifference('a', 'aa'));
 // console.log('find', findTheDifference('abacabac', 'abacaback'));
 // console.log('find', findTheDifference('a', 'ab'));
@@ -757,6 +758,8 @@ let testStr = 'ymbgaraibkfmvocpizdydugvalagaivdbfsfbepeyccqfepzvtpyxtbadkhmwmosw
 let q = "qhxepbshlrhoecdaodgpousbzfcqjxulatciapuftffahhlmxbufgjuxstfjvljybfxnenlacmjqoymvamphpxnolwijwcecgwbcjhgdybfffwoygikvoecdggplfohemfypxfsvdrseyhmvkoovxhdvoavsqqbrsqrkqhbtmgwaurgisloqjixfwfvwtszcxwktkwesaxsmhsvlitegrlzkvfqoiiwxbzskzoewbkxtphapavbyvhzvgrrfriddnsrftfowhdanvhjvurhljmpxvpddxmzfgwwpkjrfgqptrmumoemhfpojnxzwlrxkcafvbhlwrapubhveattfifsmiounhqusvhywnxhwrgamgnesxmzliyzisqrwvkiyderyotxhwspqrrkeczjysfujvovsfcfouykcqyjoobfdgnlswfzjmyucaxuaslzwfnetekymrwbvponiaojdqnbmboldvvitamntwnyaeppjaohwkrisrlrgwcjqqgxeqerjrbapfzurcwxhcwzugcgnirkkrxdthtbmdqgvqxilllrsbwjhwqszrjtzyetwubdrlyakzxcveufvhqugyawvkivwonvmrgnchkzdysngqdibhkyboyftxcvvjoggecjsajbuqkjjxfvynrjsnvtfvgpgveycxidhhfauvjovmnbqgoxsafknluyimkczykwdgvqwlvvgdmufxdypwnajkncoynqticfetcdafvtqszuwfmrdggifokwmkgzuxnhncmnsstffqpqbplypapctctfhqpihavligbrutxmmygiyaklqtakdidvnvrjfteazeqmbgklrgrorudayokxptswwkcircwuhcavhdparjfkjypkyxhbgwxbkvpvrtzjaetahmxevmkhdfyidhrdeejapfbafwmdqjqszwnwzgclitdhlnkaiyldwkwwzvhyorgbysyjbxsspnjdewjxbhpsvj";
 //console.log('find', findTheDifference('aklfg', 'albkgf'));
 // console.log('find', findTheDifference(testStr, q));
+
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
