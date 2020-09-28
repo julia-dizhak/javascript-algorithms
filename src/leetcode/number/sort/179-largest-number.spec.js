@@ -1,10 +1,16 @@
 import {
-  largestNumber,
+  //largestNumber,
+  //largestNumber3 as largestNumber,
+  largestNumber4 as largestNumber
 } from './179-largest-number';
 
 describe('largest number', () => {
   it('empty array', () => {
     expect(largestNumber([])).toEqual('');
+  });
+
+  it('nums are 0', () => {
+    expect(largestNumber([0,0])).toEqual('0');
   });
 
   it('array is not empty', () => {

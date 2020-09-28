@@ -19,7 +19,8 @@ import { toGoatLatin } from '../../leetcode/string-manipulation/goat-latin';
 //import { longestPalindromeUseHash, longestPalindromeUseGreedy } from '../../leetcode/string-manipulation/palindrome/406-longest-palindrome';
 // import { checkStraightLine } from '../../leetcode/string-manipulation/383-ransom-note';
 // import { checkInclusion } from '../../leetcode/string-manipulation/567-permutation-in-string';
-import { lengthOfLastWord2 } from '../../leetcode/string-manipulation/58-length-of-last-word';
+//import { lengthOfLastWord2 } from '../../leetcode/string-manipulation/58-length-of-last-word';
+import { findTheDifference1 } from '../../leetcode/string-manipulation/389-find-difference';
 
 export default function StringManipulation() {
   return (

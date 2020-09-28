@@ -308,6 +308,12 @@ started on 12/21/17
     | Math + rotation   | O(n)      | 0(1)      |
     | Math              | O(n)      | 0(1)      |
 
+    * [174. Largest Number](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/number/sort/179-largest-number.js)
+
+    | Approach:     | Time       | Space        |
+    | :---          | :---       | :---         |
+    | Sort          | O(nlogn)   | 0(n) / O(1)  |
+
 
 * ### String manipulation
     * [Reverse a string (swap, recursion, 2 pointers)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/reverse-a-string.js)
@@ -385,6 +391,13 @@ started on 12/21/17
     * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)
     * [387. First Unique Character in a String]
     * [771. Jewels and Stones]
+
+    * [389. Find difference](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/389-find-difference.js)
+
+    | Approaches:             | Time            | Space  |
+    | :---                    | :---            | :---   |
+    | Iterative               | O(n)            | 0(1)   |
+    | XOR                     | O(n)            | 0(1)   |
 
 * ### Array
     * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/clone.js)
