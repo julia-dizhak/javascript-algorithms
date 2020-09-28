@@ -9,8 +9,10 @@ import { jumpOnClouds } from '../../ds/arrays/tasks/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/majority/169-majority-element';
 //import { majorityElement as majority } from '../../leetcode/array/majority/229-majority-element-2';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
+// sliding window
+import { findMaxAverageCumulativeSum} from '../../leetcode/array/subarrays/643-max-average-subarray-I';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
-import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-triangle';
+//import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-triangle';
 //import { plusOne } from '../../leetcode/array/66-plus-one';
 
 // duplicates

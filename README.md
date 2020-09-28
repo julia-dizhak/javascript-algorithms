@@ -415,7 +415,8 @@ started on 12/21/17
     | Approaches:           | Time              | Space       |
     | :---                  | :---              | :---        |
     | Brute force           | O(n^2)            | 0(1)        |
-    | Sliding window        | O(n)             | O(1)        |
+    | Sliding window        | O(n)              | O(1)        |
+    | Cumulative Sum        | O(n)              | O(1)        |
 
     * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/169-majority-element.js)
 

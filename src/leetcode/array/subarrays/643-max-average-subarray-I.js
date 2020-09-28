@@ -106,16 +106,100 @@ function findMaxAverage(nums, K) {
     }
   }
 
-  console.log('result', result);
+  //console.log('result', result);
   return Math.max(...result);
+}
+
+/* 
+Approach sliding window (the same)
+
+Typical Sliding window problem. The key to these types of problem is we first 
+need to calculate our initial window, then build off that window by sliding it 
+through our input. In this case we simply modify the sum and re-calculate the 
+new average. Notice how we don't have to do an inner loop to calculate the sum 
+at each window.
+
+time is O(n)
+space is O(1)
+*/
+function findMaxAverageUseSlidingWindow(nums, K) {
+  const n = nums.length;
+  if (n === 0) return 0;
+
+  let left = 0;
+  let right = K;
+  let max = 0;
+  let sum = 0;
+  for (let i = 0;  i < K; i++) {
+    sum += nums[i];  
+  }
+
+  let average = sum / K;
+  max = average;
+
+  while (right < n) {
+    sum += nums[right];
+    sum -= nums[left];
+    average = sum / K;
+    max = Math.max(max, average);
+    left++;
+    right++;
+  }
+
+  return max;
+}
+
+/*
+Approach Cumulative sum
+
+Algorithm
+We know that in order to obtain the averages of subarrays with length k, we need 
+to obtain the sum of these k length subarrays. One of the methods of obtaining 
+this sum is to make use of a cumulative sum array, sum, which is populated only 
+once. Here, sum[i] is used to store the sum of the elements of the given nums 
+array from the first element upto the element at the ith index.
+
+Once the sum array has been filled up, in order to find the sum of elements from 
+the index i to i+k, all we need to do is to use: sum[i] - sum[i-k]. 
+Thus, now, by doing one more iteration over the sum array, we can determine 
+the maximum average possible from the subarrays of length kk.
+
+The following animation illustrates the process for a simple example.
+nums = 1 12 -5 -6 50 3  -30 25, k = 4
+sum =  1 13  8  2 52 55 25  50
+res = 2/4 = 0.5
+res = max(0.5, (52 - 1)/4)) = 12.75
+res = max(12.75, (55 - 13)/4)) = 12.75 
+res = max(12.75, (25 - 8)/4)) = 12.75
+res = max(12.75, (50 - 2)/4)) = 12.75
+res = 12.75
+*/
+function findMaxAverageCumulativeSum(nums, k) {
+  const n = nums.length;
+  if (n === 0) return 0;
+
+  let sum = 0;
+  for (let i = 0; i < k; i++) {
+    sum += nums[i];  
+  }
+  let max = sum;
+  for (let i = k; i < n; i++) {
+    sum += nums[i] - nums[i - k];
+    max = Math.max(max, sum);
+  }
+
+  return max / 1.0 / k;
+  //return max / k;
 }
 
 // tests
 //console.log('findAverages', findMaxAverage([1, 2, 3, 4], 4));
 //console.log('findAverages', findMaxAverage([1, 3, 2, 6, -1, 4, 1, 8, 2], 5));
-//console.log('findMaxAverage', findMaxAverageBruteForce([1,12,-5,-6,50,3], 4));
+console.log('findMaxAverage', findMaxAverageCumulativeSum([1,12,-5,-6,50,3], 4));
 
 export {
   findMaxAverageBruteForce,
-  findMaxAverage
+  findMaxAverage,
+  findMaxAverageUseSlidingWindow,
+  findMaxAverageCumulativeSum
 }
