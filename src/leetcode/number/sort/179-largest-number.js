@@ -101,6 +101,12 @@ var largestNumber3 = function (nums) {
 };
 
 // sort
+function comparator(a,b) {
+  const s1 = '' + a + b;
+  const s2 = '' + b + a;
+  return s2 - s1;
+}
+
 var largestNumber4 = function(nums) {
   if (nums.length === 0 || nums === null) return '';
   let res = '';
@@ -113,11 +119,6 @@ var largestNumber4 = function(nums) {
   return res == 0 ? '0' : res;
 }  
 
-function comparator(a,b) {
-  const s1 = '' + a + b;
-  const s2 = '' + b + a;
-  return s2 - s1;
-}
 
 // tests
 //console.log('largestNumber', largestNumber([]));

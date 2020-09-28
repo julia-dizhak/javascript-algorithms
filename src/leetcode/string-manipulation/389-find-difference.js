@@ -38,13 +38,41 @@ The String.prototype.charCodeAt() method returns an integer between 0 and 65535 
 If char = ‘A’, than char.charAtCode(i) - “A”.charAtCode(0) = 65 - 65 = 0 (98 - 97 for lowercase)
 If char = ‘B’, than char.charAtCode(i) - “A”.charAtCode(0) = 66 - 65 = 1
 ...
-If char = ‘X’, than char.charAtCode(i) - “A”.charAtCode(0) = 66 - 65 = 23
+If char = ‘X’, than char.charAtCode(i) - “A”.charAtCode(0) = 88 - 65 = 23
 ...
-If char = ‘Z’, than char.charAtCode(i) - “A”.charAtCode(0) = 66 - 65 = 25
+If char = ‘Z’, than char.charAtCode(i) - “A”.charAtCode(0) = 90 - 65 = 25
 
-time is O(n);
+time is O(n)
 space is O(1)
 */
+
+/*
+Approach Hashmap
+
+in this approach we will store the frequency of each character of our S string 
+in hashmap and then iterate over our T string and then check whether the ith 
+character has frequency greater than 0 in the hashmap or not.
+
+time is O(n)
+space is O(n)
+*/
+var findTheDifferenceUseHash = function(s, t) {
+  if (s.length === 0) return t;
+
+  let hash = {};
+  for (const char of s) {
+    hash[char] = (hash[char] || 0) + 1;
+  }
+  //console.log('hash', hash);
+  for (let i = 0; i < t.length; i++) {
+    if (hash[t[i]] === undefined) return t[i];
+    if (hash[t[i]] !== undefined && hash[t[i]] === 0) return t[i];
+    hash[t[i]]--;
+  }
+  
+  return '';
+}
+
 /**
  * @param {string} s
  * @param {string} t
@@ -73,14 +101,11 @@ var findTheDifference = function(s, t) {
 /*
 Approach XOR
 
-a ^ a ^ b ^ b ^c ^c ^c will give c
-check single number problem
+a ^ a ^ b ^ b ^c ^c ^c will give 
+Check single number problem, see example below
+time is O(n)
+space is O(1)
 */
-
-/**
- * @param {number[]} nums
- * @return {number}
- */
 var singleNumber = function(nums) {
   let res = 0;
   for (const num of nums) {
@@ -88,12 +113,11 @@ var singleNumber = function(nums) {
   }
   return res;
 }
-//
 // console.log('singleNumber', singleNumber([2,2,1]));
 // console.log('singleNumber', singleNumber([4,1,2,1,2]));
 
 var findTheDifference1 = function(s, t) {
-  let c = t.charCodeAt(t.length-1);
+  let c = t.charCodeAt(t.length - 1);
   //console.log('c', c);
 
   for (let i = 0; i < s.length; i++) {
@@ -104,14 +128,10 @@ var findTheDifference1 = function(s, t) {
   return String.fromCharCode(c);
 }
 
-/*
-todo hash
-*/
-
 // tests
-console.log('findTheDifference', findTheDifference1('abcd', 'abcde'))
+//console.log('findTheDifference', findTheDifferenceUseHash('abcd', 'abcde'))
 //console.log('find', findTheDifference('abcdx', 'abcdex'));
-// console.log('find', findTheDifference('a', 'aa'));
+//console.log('find', findTheDifferenceUseHash('a', 'aa'));
 // console.log('find', findTheDifference('abacabac', 'abacaback'));
 // console.log('find', findTheDifference('a', 'ab'));
 // console.log('find', findTheDifference('b', 'bb'));
@@ -122,5 +142,6 @@ console.log('findTheDifference', findTheDifference1('abcd', 'abcde'))
 
 export {
   findTheDifference,
-  findTheDifference1
+  findTheDifference1,
+  findTheDifferenceUseHash
 }

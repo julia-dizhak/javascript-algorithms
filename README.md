@@ -394,10 +394,11 @@ started on 12/21/17
 
     * [389. Find difference](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/389-find-difference.js)
 
-    | Approaches:             | Time            | Space  |
-    | :---                    | :---            | :---   |
-    | Iterative               | O(n)            | 0(1)   |
-    | XOR                     | O(n)            | 0(1)   |
+    | Approaches:        | Time            | Space  |
+    | :---               | :---            | :---   |
+    | Hash               | O(n)            | 0(n)   |
+    | Iterative          | O(n)            | 0(1)   |
+    | XOR                | O(n)            | 0(1)   |
 
 * ### Array
     * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/clone.js)

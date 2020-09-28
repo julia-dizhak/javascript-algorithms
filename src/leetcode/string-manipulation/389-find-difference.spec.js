@@ -1,6 +1,7 @@
 import {
   //findTheDifference,
-  findTheDifference1 as findTheDifference
+  //findTheDifference1 as findTheDifference,
+  findTheDifferenceUseHash as findTheDifference
 } from './389-find-difference';
 
 describe('find difference test case', () => {
