@@ -20,6 +20,7 @@ Elements of the given array will be in the range [-10,000, 10,000].
 
 /*
 Approach brute force
+(solution was accepted on Leetcode)
 
 Here, we are asked to find the average of all contiguous subarrays of size ‘5’ 
 in the given array. Let’s solve this:
@@ -66,8 +67,6 @@ var findMaxAverageBruteForce = function(nums, K) {
 
   return Math.max(...result);
 }
-console.log('findMaxAverage', findMaxAverageBruteForce([1,12,-5,-6,50,3], 4));
-
 
 /*
 Approach Sliding window
@@ -77,49 +76,46 @@ Think about Kadans max contigiuos subarray
 
 The inefficiency is that for any two consecutive subarrays of size ‘5’, the 
 overlapping part (which will contain four elements) will be evaluated twice. 
-For example, take the above-mentioned input:
-
-As you can see, there are four overlapping elements between the subarray
-(indexed from 0-4) and the subarray (indexed from 1-5). Can we somehow reuse the
-sum we have calculated for the overlapping elements?
+Can we somehow reuse the sum we have calculated for the overlapping elements?
 
 The efficient way to solve this problem would be to visualize each contiguous 
 subarray as a sliding window of ‘5’ elements. This means that when we move on to 
 the next subarray, we will slide the window by one element. So, to reuse the sum 
 from the previous subarray, we will subtract the element going out of the window 
-and add the element now being included in the sliding window. This will save us 
-from going through the whole subarray to find the sum and, as a result, the 
-algorithm complexity will reduce to O(N)
+and add the element now being included in the sliding window. 
+
+This will save us from going through the whole subarray to find the sum and, 
+as a result, the algorithm complexity will reduce to O(N)
 
 Time is O(n)
 */
+function findMaxAverage(nums, K) {
+  const n = nums.length;
+  if (n === 0) return 0;
 
-function findAverages(K, arr) {
-  const n = arr.length;
   let result = [];
-  let windowSum = 0.0, windowStart = 0;
-
+  let windowSum = 0.0;
+  let windowStart = 0;
   for (let windowEnd = 0; windowEnd < n; windowEnd++) {
-    windowSum += arr[windowEnd]; // add the next element;
+    windowSum += nums[windowEnd]; // add the next element;
     // slide the window, we don't need to slide if we've not hit the required window size of 'k'
-    if (windowEnd >= K - 1) {
-      result.push(windowSum / K); // calculate average
-      // subtract the element going out
-      windowSum -= arr[windowStart];
-      // slide the window ahead
-      windowStart += 1; 
+    if (windowEnd >= K-1) {
+      result.push(windowSum/K); // calculate average
+      windowSum -= nums[windowStart]; // subtract the element going out
+      windowStart += 1; // slide the window ahead
     }
   }
 
   console.log('result', result);
-  return result;
+  return Math.max(...result);
 }
 
-//console.log('findAverage', findAveragesOfSubarrays(4, [1, 2, 3, 4]));
-console.log('findAverage', findAverages(5, [1, 3, 2, 6, -1, 4, 1, 8, 2]));
-
+// tests
+//console.log('findAverages', findMaxAverage([1, 2, 3, 4], 4));
+//console.log('findAverages', findMaxAverage([1, 3, 2, 6, -1, 4, 1, 8, 2], 5));
+//console.log('findMaxAverage', findMaxAverageBruteForce([1,12,-5,-6,50,3], 4));
 
 export {
   findMaxAverageBruteForce,
-  //findAverages
+  findMaxAverage
 }

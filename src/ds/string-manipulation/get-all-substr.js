@@ -48,6 +48,8 @@ example [1,12,-5,-6,50,3], k=4
 1 12 -5 -6
 12,-5,-6,50,
 -5 -6 50 3
+
+time is O(n^2)
 */
 function findAllSubarraysOfSize(nums, K) {
   const n = nums.length;
@@ -58,10 +60,10 @@ function findAllSubarraysOfSize(nums, K) {
     for (let j = i; j < i + K; j++) {
       subarray.push(nums[j]);
     }
-    console.log('subarray', subarray);
+    //console.log('subarray', subarray);
     res.push(subarray)
   }
-  console.log('res', res)
+  //console.log('res', res)
   return res;
 }
 //console.log('findAllSubarrays', findAllSubarraysOfSize([1,12,-5,4], 2));

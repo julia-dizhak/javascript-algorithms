@@ -410,6 +410,13 @@ started on 12/21/17
 
     * [540. Single element in sorted array (approach: Brute force, binary search, BS only on even indexes)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)
 
+    * [643. Max average subarray I](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/subarrays/643-max-average-subarray-I.js)
+
+    | Approaches:           | Time              | Space       |
+    | :---                  | :---              | :---        |
+    | Brute force           | O(n^2)            | 0(1)        |
+    | Sliding window        | O(n)             | O(1)        |
+
     * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/169-majority-element.js)
 
     | Approaches:           | Time              | Space       |
@@ -419,7 +426,7 @@ started on 12/21/17
     | Sorting               | O(nlogn)          | O(1) / O(n) |
     | Voting                | O(n)              | O(1)        |
     | Randomization index   | O(infinite)/O(n)  | O(1)        |
-    | Divide and Conquer    | O(log n)          | O(log n)        |
+    | Divide and Conquer    | O(log n)          | O(log n)    |
 
     * [229. Majority element II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/229-majority-element-2.js)
 
