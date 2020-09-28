@@ -1,10 +1,22 @@
 /*
-create a new chapter
-todo
-check leetcode
+Leetcode
+643 Maximum Average Subarray I
+easy
 
-Given an array, find the average of all contiguous subarrays of size ‘K’ in it.
+Given an array consisting of n integers, find the contiguous subarray of given 
+length k that has the maximum average value. And you need to output the maximum 
+average value.
+
+Example 1:
+Input: [1,12,-5,-6,50,3], k = 4
+Output: 12.75
+Explanation: Maximum average is (12 - 5 - 6 + 50)/4 = 51/4 = 12.75
+
+Note:
+1 <= k <= n <= 30,000.
+Elements of the given array will be in the range [-10,000, 10,000].
 */
+
 
 /*
 Approach brute force
@@ -31,28 +43,31 @@ will be O(N*K) where ‘N’ is the number of elements in the input array.
 
 space is O(1)
 */
-// todo provide tests
-function findAveragesOfSubarrays(K, arr) {
-  const n = arr.length;
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var findMaxAverageBruteForce = function(nums, K) {
+  const n = nums.length;
+  if (n === 0) return 0;
   let result = [];
 
-  // todo or i <= n - K
+  // possible as well i <= n - K
   for (let i = 0; i < n - K + 1; i++) {
-    console.log('i', i)
     // find sum of next 'K' elements
     let sum = 0.0;
     for (let j = i; j < i + K; j++) {
-      console.log('j', j)
-      sum += arr[j];
+      sum += nums[j];
     }
-    console.log('sum', sum);
     let average = sum / K;
     result.push(average);
   }
 
-  console.log('result', result);
-  return result;
+  return Math.max(...result);
 }
+console.log('findMaxAverage', findMaxAverageBruteForce([1,12,-5,-6,50,3], 4));
+
 
 /*
 Approach Sliding window
@@ -105,6 +120,6 @@ console.log('findAverage', findAverages(5, [1, 3, 2, 6, -1, 4, 1, 8, 2]));
 
 
 export {
-  findAveragesOfSubarrays,
-  findAverages
+  findMaxAverageBruteForce,
+  //findAverages
 }
