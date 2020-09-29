@@ -705,6 +705,213 @@ console.log('findPoisonedDuration', findPoisonedDuration([1,2], 2));
 
 Thus, it is a directed weighted graph.
 */
+
+/*
+Constraints
+0 < nums.length <= 50000.
+0 < nums[i] < 1000.
+0 <= k < 10^6.
+
+Hint
+For each j, let opt(j) be the smallest i so that nums[i] * nums[i+1] * ... * nums[j] 
+is less than k. opt is an increasing function.
+*/
+
+/*
+Brute force
+time limit exceed
+
+
+*/
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var numSubarrayProductLessThanK1 = function(nums, k) {
+  const n = nums.length;
+  if (n === 0) return 0;
+
+  let count = 0;
+  for (let i = 0; i < n; i++) {
+    let subArray = [];
+    for (let j = i; j < n; j++) {
+      subArray.push(nums[j]);
+      let product = 1;
+      for (let k = 0; k < subArray.length; k++) {
+        product *= subArray[k];
+      }
+      if (product < k) count++;
+    }
+  } 
+
+  return count;
+};
+
+// time limit exceed
+var numSubarrayProductLessThanK2 = function(nums, k) {
+  const n = nums.length;
+  if (n === 0) return 0;
+  //nums = nums.sort((a,b) => a - b);
+  console.log('nums', nums);
+
+  let count = 0;
+  for (let i = 0; i < n; i++) {
+    let subArray = [];
+    for (let j = i; j < n; j++) {
+      subArray.push(nums[j]);
+      //subArray = subArray.sort((a,b) => a - b);
+      console.log('subArray', subArray)
+      let product = 1;
+      for (let c = 0; c < subArray.length; c++) {
+        product *= subArray[c];
+        if (product > k) break;
+      }
+      console.log('product', product);
+      if (product < k) count++;
+    }
+  } 
+
+  return count;
+
+}
+
+// 2 pointers or sliding window
+// slow fast 
+/*
+1 The idea is always keep an max-product-window less than K;
+
+2 Every time shift window by adding a new number on the right(j), if the product 
+is greater than k, then try to reduce numbers on the left(i), until the subarray 
+product fit less than k again, (subarray could be empty);
+Each step introduces x new subarrays, where x is the size of the current window (j + 1 - i);
+example:
+for window (5, 2), when 6 is introduced, it add 3 new subarray: (5, (2, (6)))
+        (6)
+     (2, 6)
+  (5, 2, 6)
+
+  I think the trickiest part is why the number of newly introduced subarrays is j - i + 1.
+Say now we have {1,2,3} and add {4} into it. Apparently, the new subarray introduced here are:
+{1,2,3,4}, {2,3,4}, {3,4}, {4}, which is the number of elements in the new list.
+If we also remove some at the left, say we we remove 1, then subarrays are:
+{2,3,4}, {3,4}, {4}. It is easy to get the result is j - i + 1.
+
+I was SO close to solving this via sliding window, but couldn't come up with ans += right - left + 1....
+
+For those who are confused, let's use the example nums = [10,5,2,6]:
+
+If we start at the 0th index, [10,5,2,6], the number of intervals is obviously 1.
+If we move to the 1st index, the window is now [10,5,2,6]. The new intervals created are [5] and [10,5], so we add 2.
+Now, expand the window to the 2nd index: [10,5,2,6]. The new intervals are [2], [5,2], and [10,5,2], so we add 3.
+The pattern should be obvious by now; we add right - left + 1 to the output variable every loop!
+
+Thus O(n) (+ alpha for computation)
+i is incremented by 1 everytime enter the while loop, so the while loop takes at most O(n) time, time complexity is O(n) for the for loop and O(n) for the while loop, i.e. O(n) totally.
+
+
+Initialize start and end to index 0. Initialize prod to 1. Iterate end from 0 to len(nums)-1. Now if prod * nums[end] is less than k, then all subarray between start and end contribute to the solution. Since we are moving from left to right, we would have already counted all valid subarrays from start to end-1. How many new subarrays with nums[end]? Answer: end-start+1. What will be the updated prod? Answer: prod * nums[end].
+What if prod * nums[end] >= k? We need to contract the subarray by advancing start until we get a valid solution again. Now what do we do when start > end? Answer: prod=1.
+Special case: k=0.
+Time is O(N) and space is O(1).
+Issue: Overflow with multiplication.
+
+Input: nums = [10, 5, 2, 6], k = 100
+
+======== (End for loop, r = 0 snapshot) =============
+[10, 5, 2, 6]
+  r
+  l
+prod = 10
+cnt += 1
+
+
+======== (End for loop, r = 1 snapshot) =============
+[10, 5, 2, 6]
+     r
+  l
+prod = 50
+cnt += 2
+
+
+======== (r = 2, prod >= k snapshot) ================
+[10, 5, 2, 6]
+        r
+  l  
+prod = 100, >= k, 
+keep moving l till < k
+
+
+======== (End for loop, r = 2 snapshot) =============
+[10, 5, 2, 6]
+        r
+     l  
+prod = 10
+cnt += 2
+
+
+======== (End for loop, r = 3 snapshot) =============
+[10, 5, 2, 6]
+           r
+     l  
+prod = 60	 
+cnt += 3
+
+Complexity Analysis
+
+Time Complexity: O(N)O(N), where NN is the length of nums. left can only be incremented at most N times.
+
+Space Complexity: O(1)O(1), the space used by prod, left, and ans.
+*/
+var numSubarrayProductLessThanK = function(nums, k) {
+  const n = nums.length;
+  if (n === 0) return 0;
+  if (k === 0) return 0;
+  console.log('nums', nums);
+
+  let count = 0;
+  let product = 1;
+  for (let i = 0, j=0; j < n; j++) {
+    product *= nums[j];
+    //try to make the subarray valid by removing the left elements from i
+    while (product >= k && i <= j) {
+      product /= nums[i];
+      i++
+    }
+    //now the length of valid subarray is j - i + 1,and since the array have only positive numbers
+     //All subarrays with length 1 ~ j - i + 1 ending with nums[j] are valid,and there are j - i + 1 of them.
+    count += j - i +1;
+  }
+  return count;
+}
+
+/*
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        int n = nums.length;
+        long p = 1l;
+        int i = 0;
+        int j = 0;
+        int total = 0;
+        while(j < n){
+            p *= nums[j];
+            while(i <= j&&p >= k){
+                p /= nums[i];
+                i++;
+            }
+            total += (j - i + 1);
+            j++;
+        }
+        return total;
+    }
+}
+*/
+
+//console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([1, 2], 1));
+//console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([3, 1, 1], 2));
+console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([10, 5, 2, 6], 100));
+//console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([1, 5, 2], 1));
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,

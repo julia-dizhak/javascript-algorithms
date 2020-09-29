@@ -3,6 +3,9 @@ import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import SplitSidebarView from './components/SplitSidebarView';
 
+// test react
+import Example from './practice-react/test';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -31,6 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Example />
         <SplitSidebarView>
           <Sidebar className="sidebar" />
           <div className="rightPart">
