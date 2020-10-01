@@ -739,11 +739,52 @@ Subtract the element going out of the sliding window i.e., subtract the first el
 Add the new element getting included in the sliding window i.e., the element coming right after the end of the window.
 
 Time Complexity #
-The time complexity of the above algorithm will be O(N)O(N).
+The time complexity of the above algorithm will be O(N).
 
 Space Complexity #
-The algorithm runs in constant space O(1)O(1).
+The algorithm runs in constant space O(1).
 */
+
+/* 
+Given an array of positive numbers and a positive number ‘S’, find the length of 
+the smallest contiguous subarray whose sum is greater than or equal to ‘S’. 
+Return 0, if no such subarray exists.
+
+what is the smallest subarray means? size or sum
+
+sliding window
+*/
+const smallestSubarrayWithGivenSum = function(arr, s) {
+  const n = arr.length;
+  let res = [];
+  let minLength = Number.MAX_SAFE_INTEGER;
+
+  for (let i = 0; i < n; i++) {
+    let subArr = [];
+    let windowSum = 0;
+
+    for (let j = i; j < n; j++) {
+      windowSum += arr[j];
+      subArr.push(arr[j]);
+    }
+    // if (windowSum >= s) {
+    //   const len = subArr.length;
+    //   if (len < minLength) minLength = len;
+    // }
+    res.push(subArr)
+    console.log('windowSum', windowSum)
+    console.log('subArr', subArr)
+    console.log('res', res)
+    
+  }
+
+  return minLength;
+};
+
+//console.log('smallestSubarray', smallestSubarrayWithGivenSum([1,2,3], 7));
+//console.log('smallestSubarray', smallestSubarrayWithGivenSum([2, 1, 5, 2, 3, 2], 7));
+//console.log('smallestSubarray', smallestSubarrayWithGivenSum([2, 1, 5, 2, 8], 7));
+console.log('smallestSubarray', smallestSubarrayWithGivenSum([3, 4, 1, 1, 6], 8));
 
 /*
 
@@ -974,6 +1015,7 @@ https://leetcode.com/problems/word-break/discuss/169383/The-Time-Complexity-of-T
 // word break ii
 // https://leetcode.com/problems/word-break-ii/discuss/739854/JavaScript-Easy-Solution
 
+https://leetcode.com/problems/word-break/discuss/43890/Javascript-DP-beats-91-Golang-DP-3ms
 
 Leetocode
 139 Word break

@@ -467,6 +467,13 @@ started on 12/21/17
     | Use Array                        | O(n)          | O(n)    |
     | Mutate Array (negative indexes)  | O(n)          | O(1)    |
 
+    * [41 First missing positive](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/41-first-missing-positive.js)
+
+    | Approach:                        | Time          | Space   |
+    | :---                             | :---          | :---    |
+    | Hash                             | O(n)          | O(n)    |
+    | Use Array                        | O(n)          | O(n)    |
+
 * ### Array Sorting
 
     * [75. Sort colors](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/75-sort-colors.js)

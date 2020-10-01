@@ -2,7 +2,7 @@ import {
   //firstMissingPositiveUseHash as firstMissingPositive,
   //firstMissingPositiveUseArr as firstMissingPositive,
   firstMissingPositiveUseArr1 as firstMissingPositive,
-} from './41-find-missing-positive';
+} from './41-first-missing-positive';
 
 describe('find missing positive', () => {
   it('first positive equal to 1', () => {
