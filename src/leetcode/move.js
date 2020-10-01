@@ -707,7 +707,61 @@ Thus, it is a directed weighted graph.
 */
 
 /*
-Constraints
+Maximum Sum Subarray of Size K
+Given an array of positive numbers and a positive number ‘k’, find the maximum 
+sum of any contiguous subarray of size ‘k’.
+
+The time complexity of the above algorithm will be O(N*K)O(N∗K), where ‘N’ is the total number of elements in the given array. Is it possible to find a better algorithm than this?
+*/
+const max_sub_array_of_size_k = function(k, arr) {
+  const n = arr.length;
+  let maxSum = 0;
+
+  for (let i = 0; i < n - k + 1; i++) {
+    let sum = 0;
+    for (let j = i; j < i + k; j++) {
+      sum += arr[j];
+    }
+    maxSum = Math.max(maxSum,sum);
+  }
+
+  return maxSum;
+}
+// output 9
+console.log('max', max_sub_array_of_size_k(3, [2, 1, 5, 1, 3, 2]))
+//console.log('max', max_sub_array_of_size_k(2, [2, 3, 4, 1, 5]))
+
+/*
+A better approach #
+If you observe closely, you will realize that to calculate the sum of a contiguous subarray we can utilize the sum of the previous subarray. For this, consider each subarray as a Sliding Window of size ‘k’. To calculate the sum of the next subarray, we need to slide the window ahead by one element. So to slide the window forward and calculate the sum of the new position of the sliding window, we need to do two things:
+
+Subtract the element going out of the sliding window i.e., subtract the first element of the window.
+Add the new element getting included in the sliding window i.e., the element coming right after the end of the window.
+
+Time Complexity #
+The time complexity of the above algorithm will be O(N)O(N).
+
+Space Complexity #
+The algorithm runs in constant space O(1)O(1).
+*/
+
+/*
+
+713 Subarray Product Less Than K
+Your are given an array of positive integers nums.
+
+Count and print the number of (contiguous) subarrays where the product of all 
+the elements in the subarray is less than k.
+
+Example 1:
+Input: nums = [10, 5, 2, 6], k = 100
+Output: 8
+Explanation: The 8 subarrays that have product less than 100 are: 
+[10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6].
+Note that [10, 5, 2] is not included as the product of 100 is not strictly less 
+than k.
+
+Note:
 0 < nums.length <= 50000.
 0 < nums[i] < 1000.
 0 <= k < 10^6.
@@ -721,60 +775,60 @@ is less than k. opt is an increasing function.
 Brute force
 time limit exceed
 
-
+is this 
+https://leetcode.com/problems/subarray-product-less-than-k/discuss/868946/C%2B%2B-Python-Explained-oror-Sliding-Windows-Problem-oror-Brute-Force-oror-Faster-than-96
+correct
 */
 /**
  * @param {number[]} nums
  * @param {number} k
  * @return {number}
- */
+*/
 var numSubarrayProductLessThanK1 = function(nums, k) {
-  const n = nums.length;
-  if (n === 0) return 0;
-
   let count = 0;
+  const n = nums.length;
+
   for (let i = 0; i < n; i++) {
-    let subArray = [];
-    for (let j = i; j < n; j++) {
-      subArray.push(nums[j]);
-      let product = 1;
-      for (let k = 0; k < subArray.length; k++) {
-        product *= subArray[k];
-      }
-      if (product < k) count++;
+    let product = nums[i];
+    if (nums[i] < k) count++;
+
+    for (let j = i+1; j < n; j++) {
+      product *= nums[i];
+      if (product >= k) break;
+      else count++;
     }
-  } 
+  }
 
   return count;
-};
-
-// time limit exceed
-var numSubarrayProductLessThanK2 = function(nums, k) {
-  const n = nums.length;
-  if (n === 0) return 0;
-  //nums = nums.sort((a,b) => a - b);
-  console.log('nums', nums);
-
-  let count = 0;
-  for (let i = 0; i < n; i++) {
-    let subArray = [];
-    for (let j = i; j < n; j++) {
-      subArray.push(nums[j]);
-      //subArray = subArray.sort((a,b) => a - b);
-      console.log('subArray', subArray)
-      let product = 1;
-      for (let c = 0; c < subArray.length; c++) {
-        product *= subArray[c];
-        if (product > k) break;
-      }
-      console.log('product', product);
-      if (product < k) count++;
-    }
-  } 
-
-  return count;
-
 }
+
+
+console.log('product', numSubarrayProductLessThanK1([10, 5, 2, 6], 100));
+
+/*
+
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        int count = 0;
+        int n = nums.size();
+        int start = 0, end = 0;
+        int product = 1;
+        while(end < n){
+            product *= nums[end];
+            while( start < n and product >= k){	    	//If  product is greater than K value then divide the value at 
+                product /= nums[start];                 //the START index from the "nums" array and then increment the start value 
+                start++;
+            }
+            if(product < k) count += end - start + 1;	// If product is less than K value then increase COUNT value
+
+            end++;
+        }
+        return count;
+    }
+};
+*/
+
 
 // 2 pointers or sliding window
 // slow fast 
@@ -911,6 +965,91 @@ class Solution {
 //console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([3, 1, 1], 2));
 console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([10, 5, 2, 6], 100));
 //console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([1, 5, 2], 1));
+
+/*
+word break
+https://www.youtube.com/watch?v=WepWFGxiwRs
+https://leetcode.com/problems/word-break/discuss/169383/The-Time-Complexity-of-The-Brute-Force-Method-Should-Be-O(2n)-and-Prove-It-Below
+
+// word break ii
+// https://leetcode.com/problems/word-break-ii/discuss/739854/JavaScript-Easy-Solution
+
+
+Leetocode
+139 Word break
+
+Given a non-empty string s and a dictionary wordDict containing a list of
+non-empty words, determine if s can be segmented into a space-separated sequence
+of one or more dictionary words.
+
+Note:
+The same word in the dictionary may be reused multiple times in the segmentation.
+You may assume the dictionary does not contain duplicate words.
+
+Example 1:
+Input: s = "leetcode", wordDict = ["leet", "code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+
+Example 2:
+Input: s = "applepenapple", wordDict = ["apple", "pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+Note that you are allowed to reuse a dictionary word.
+
+Example 3:
+Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
+Output: false
+
+*/
+
+
+/*
+Approach
+
+s = I a m a c e
+wordDict = [I, am, ace, a]
+
+length = 1
+length = 2
+
+String="iamace" Words=[i, am, ace]
+1) take array of length of the string+1 and first cell is empty string.
+2) take first character check in Words it's there or not.
+    If yes empty string in the cell.
+    If no that character plus previous cell string and keep in the cell.
+3) if not empty string in cell check any word in Words is matching with it or 
+not if match empty string in cell or keep as it is.
+4) continue for rest character.
+5) in the last cell if it's empty then successful else not.
+*/
+
+/**
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+var wordBreak = function(s, wordDict) {
+  if (!wordDict || wordDict.length == 0) return false
+  var dp = new Array(s.length + 1);
+  dp.fill(false)
+  dp[0] = true
+  
+  for(var i = 1; i <= s.length; i++) {
+      for(var j = 0; j < i; j++) {
+          if(dp[j] && wordDict.indexOf(s.substring(j, i)) >= 0) {
+              
+              dp[i] = true
+              break;
+          }
+      }
+  }
+  return dp[s.length]
+};
+
+console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
+console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
+console.log('wordBreak', wordBreak('applepenapple', ["apple", "pen"]));
 
 export {
   largestTimeFromDigits,

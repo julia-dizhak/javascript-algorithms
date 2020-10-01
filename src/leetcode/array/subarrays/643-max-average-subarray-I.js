@@ -44,6 +44,7 @@ will be O(N*K) where ‘N’ is the number of elements in the input array.
 
 space is O(1)
 */
+
 /**
  * @param {number[]} nums
  * @param {number} k
@@ -99,7 +100,7 @@ function findMaxAverage(nums, K) {
   for (let windowEnd = 0; windowEnd < n; windowEnd++) {
     windowSum += nums[windowEnd]; // add the next element;
     // slide the window, we don't need to slide if we've not hit the required window size of 'k'
-    if (windowEnd >= K-1) {
+    if (windowEnd >= K - 1) {
       result.push(windowSum/K); // calculate average
       windowSum -= nums[windowStart]; // subtract the element going out
       windowStart += 1; // slide the window ahead
@@ -195,7 +196,7 @@ function findMaxAverageCumulativeSum(nums, k) {
 // tests
 //console.log('findAverages', findMaxAverage([1, 2, 3, 4], 4));
 //console.log('findAverages', findMaxAverage([1, 3, 2, 6, -1, 4, 1, 8, 2], 5));
-console.log('findMaxAverage', findMaxAverageCumulativeSum([1,12,-5,-6,50,3], 4));
+//console.log('findMaxAverage', findMaxAverageCumulativeSum([1,12,-5,-6,50,3], 4));
 
 export {
   findMaxAverageBruteForce,
