@@ -418,6 +418,14 @@ started on 12/21/17
     | Sliding window        | O(n)              | O(1)        |
     | Cumulative Sum        | O(n)              | O(1)        |
 
+    * [209. Minimum Size Subarray Sum](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/subarrays/209-min-sub-array-len.js)
+
+    | Approaches:            | Time              | Space       |
+    | :---                   | :---              | :---        |
+    | Brute force            | O(n^2)            | 0(1)        |
+    | Shrink Sliding window  | O(n)              | O(1)        |
+    | Sort                   | O(?)              | O(?)        |
+
     * [169. Majority element](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/majority/169-majority-element.js)
 
     | Approaches:           | Time              | Space       |

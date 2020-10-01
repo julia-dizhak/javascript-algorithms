@@ -744,47 +744,51 @@ The time complexity of the above algorithm will be O(N).
 Space Complexity #
 The algorithm runs in constant space O(1).
 */
-
-/* 
-Given an array of positive numbers and a positive number ‘S’, find the length of 
-the smallest contiguous subarray whose sum is greater than or equal to ‘S’. 
-Return 0, if no such subarray exists.
-
-what is the smallest subarray means? size or sum
-
-sliding window
-*/
-const smallestSubarrayWithGivenSum = function(arr, s) {
+const maxSubArrayOfSize = function(k, arr) {
   const n = arr.length;
+
+  let max = 0;
+  let windowSum = 0;
+  let start = 0;
   let res = [];
-  let minLength = Number.MAX_SAFE_INTEGER;
-
-  for (let i = 0; i < n; i++) {
-    let subArr = [];
-    let windowSum = 0;
-
-    for (let j = i; j < n; j++) {
-      windowSum += arr[j];
-      subArr.push(arr[j]);
+  for (let end = 0; end < n; end++) {
+    windowSum += arr[end];
+    console.log(end);
+    console.log('widowSum', windowSum);
+    if (end >= k - 1 ) {
+      res.push(windowSum);
+      windowSum -= arr[start];
+      start++;
     }
-    // if (windowSum >= s) {
-    //   const len = subArr.length;
-    //   if (len < minLength) minLength = len;
-    // }
-    res.push(subArr)
-    console.log('windowSum', windowSum)
-    console.log('subArr', subArr)
-    console.log('res', res)
-    
   }
 
-  return minLength;
-};
+  return Math.max(...res);
+}
+console.log('maxSubArrayOfSize', maxSubArrayOfSize(3, [2, 1, 5, 1, 3, 2]))
 
-//console.log('smallestSubarray', smallestSubarrayWithGivenSum([1,2,3], 7));
-//console.log('smallestSubarray', smallestSubarrayWithGivenSum([2, 1, 5, 2, 3, 2], 7));
-//console.log('smallestSubarray', smallestSubarrayWithGivenSum([2, 1, 5, 2, 8], 7));
-console.log('smallestSubarray', smallestSubarrayWithGivenSum([3, 4, 1, 1, 6], 8));
+
+
+var minSubArrayLen = function(s, nums) {
+  const n = nums.length;
+
+  let start = 0;
+  let windowSum = 0;
+  let windowSizeSmallestSoFar = Number.MAX_SAFE_INTEGER;
+  let windowSize;
+  for (let end = 0; end < n; end++) {
+    windowSum += nums[end];
+    console.log('windowSum', windowSum);
+    if (windowSum >= s) {
+      windowSize = end;
+      if (windowSize < windowSizeSmallestSoFar) windowSizeSmallestSoFar = windowSize;
+    }
+    console.log('windowSize', windowSizeSmallestSoFar)
+  }
+
+  return windowSizeSmallestSoFar
+}
+
+
 
 /*
 
