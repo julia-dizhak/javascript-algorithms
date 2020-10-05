@@ -32,7 +32,7 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 //import { reformatDate, rangeSum, minDifference, subsets } from '../../leetcode/contest/biweekly/30/index';
 //import { countOdds, numOfSubarrays } from '../../leetcode/contest/biweekly/31/index';
 
-// contest 32?
+// contest 32
 //import {findKthPositive, minInsertions} from '../../leetcode/contest/biweekly/32/index';
 
 // contest 32
@@ -41,8 +41,10 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 // contest 34
 //import { test1 } from '../../leetcode/contest/biweekly/34/index';
 // contest 35
-import { test } from '../../leetcode/contest/biweekly/35/index';
+//import { test } from '../../leetcode/contest/biweekly/35/index';
 
+// contest 36
+import { test } from '../../leetcode/contest/biweekly/36/index';
 
 // codewars
 //import { basketWithoutDuplicatesUseReduce } from '../../codewars/arrays/filter-out-duplicates';

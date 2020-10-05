@@ -2,11 +2,11 @@
 Leetcode
 1094 Car pooling
 You are driving a vehicle that has capacity empty seats initially available for 
-passengers.  The vehicle only drives east (ie. it cannot turn around and drive west.)
+passengers. The vehicle only drives east (ie. it cannot turn around and drive west.)
 
 Given a list of trips, trip[i] = [num_passengers, start_location, end_location] 
 contains information about the i-th trip: the number of passengers that must be 
-picked up, and the locations to pick them up and drop them off.  The locations 
+picked up, and the locations to pick them up and drop them off. The locations 
 are given as the number of kilometers due east from your vehicle's initial location.
 
 Return true if and only if it is possible to pick up and drop off all passengers 
@@ -141,24 +141,26 @@ let carPooling = function(trips, capacity) {
 
 // the same approach
 var carPoolingUseHash = function(trips, capacity) {
-  var res={};
-  for(let i=0; i<trips.length; i++){
-      if(res[trips[i][1]] == undefined){
-          res[trips[i][1]]=0;
-      }
-      res[trips[i][1]]+= trips[i][0];
-      if(res[trips[i][2]] == undefined){
-          res[trips[i][2]]=0;
-      }
-      res[trips[i][2]]-= trips[i][0];
+  var res = {};
+  for (let i = 0; i < trips.length; i++) {
+    if (res[trips[i][1]] == undefined) {
+      res[trips[i][1]] = 0;
+    }
+    res[trips[i][1]] += trips[i][0];
+    
+    if (res[trips[i][2]] == undefined) {
+      res[trips[i][2]] = 0;
+    }
+    res[trips[i][2]] -= trips[i][0];
   }
-  console.log('res', res);
-  var arr=Object.values(res);
-  for(let i=0; i<arr.length; i++){
-      capacity-=  arr[i];
-      if(capacity<0){
-          return false;
-      }
+
+  //console.log('res', res);
+  var arr = Object.values(res);
+  for (let i=0; i<arr.length; i++){
+    capacity-=  arr[i];
+    if (capacity < 0) {
+      return false;
+    }
   }
   return true;
 };

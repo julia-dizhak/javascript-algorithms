@@ -697,8 +697,8 @@ var findPoisonedDuration = function(timeSeries, duration) {
   const [start, end] = timeSeries;
   return total;
 };
-console.log('findPoisonedDuration', findPoisonedDuration([1,4], 2));
-console.log('findPoisonedDuration', findPoisonedDuration([1,2], 2));
+// console.log('findPoisonedDuration', findPoisonedDuration([1,4], 2));
+// console.log('findPoisonedDuration', findPoisonedDuration([1,2], 2));
 
 
 /*
@@ -765,7 +765,7 @@ var numSubarrayProductLessThanK1 = function(nums, k) {
 }
 
 
-console.log('product', numSubarrayProductLessThanK1([10, 5, 2, 6], 100));
+//console.log('product', numSubarrayProductLessThanK1([10, 5, 2, 6], 100));
 
 /*
 
@@ -883,7 +883,7 @@ var numSubarrayProductLessThanK = function(nums, k) {
   const n = nums.length;
   if (n === 0) return 0;
   if (k === 0) return 0;
-  console.log('nums', nums);
+  //console.log('nums', nums);
 
   let count = 0;
   let product = 1;
@@ -925,7 +925,7 @@ class Solution {
 
 //console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([1, 2], 1));
 //console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([3, 1, 1], 2));
-console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([10, 5, 2, 6], 100));
+//console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([10, 5, 2, 6], 100));
 //console.log('numSubarrayProductLessThanK', numSubarrayProductLessThanK([1, 5, 2], 1));
 
 /*
@@ -1010,9 +1010,221 @@ var wordBreak = function(s, wordDict) {
   return dp[s.length]
 };
 
-console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
-console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
-console.log('wordBreak', wordBreak('applepenapple', ["apple", "pen"]));
+// console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
+// console.log('wordBreak', wordBreak('leetcode', ["leet", "code"]))
+// console.log('wordBreak', wordBreak('applepenapple', ["apple", "pen"]));
+
+/*
+check 560
+check 523
+*/
+
+/*
+design questions separate
+Recent Counter
+
+int ping(int t) Adds a new request at time t, where t represents some time in 
+milliseconds, and returns the number of requests that has happened in the past 
+3000 milliseconds (including the new request). Specifically, return the number 
+of requests that have happened in the inclusive range [t - 3000, t].
+
+...
+It is guaranteed that every call to ping uses a strictly larger value of t than the previous call
+
+example
+RecentCounter recentCounter = new RecentCounter();
+recentCounter.ping(1);     // requests = [1], range is [-2999,1], return 1
+recentCounter.ping(100);   // requests = [1, 100], range is [-2900,100], return 2
+recentCounter.ping(3001);  // requests = [1, 100, 3001], range is [1,3001], return 3
+recentCounter.ping(3002);  // requests = [1, 100, 3001, 3002], range is [2,3002], return 3
+
+Queue
+
+*/
+
+/*
+This problem is practical, which can test one's basic knowledge about the data structure and algorithm.
+
+First of all, let us clarify the problem a bit. We are given a sequence of ping calls, i.e. [t_1, t_2, t_3, ... t_n][t 
+1
+​	
+ ,t 
+2
+​	
+ ,t 
+3
+​	
+ ,...t 
+n
+​	
+ ], ordered by the chronological order of their arrival time.
+
+check solution
+
+Then the ping(t) function can be implemented in two steps:
+
+Step 1): we append the current ping call to the tail of the sliding window.
+
+Step 2): starting from the head of the sliding window, we remove the outdated 
+calls, until we come across a still valid ping call.
+
+https://leetcode.com/problems/number-of-recent-calls/discuss/204560/Confused
+i just dont understand a problem at all
+https://leetcode.com/problems/number-of-recent-calls/discuss/322357/Javascript-detailed-explanation-beats-99.76-O(1)-time-O(n)-space
+solution
+*/
+var RecentCounter = function() {
+  // RecentCounter() Initializes the counter with zero recent requests.
+  this.counter = 0;
+  this.requests = 0;
+  this.numberOfRequests = 0;
+};
+
+/** 
+ * @param {number} t
+ * @return {number}
+ */
+RecentCounter.prototype.ping = function(t) {
+  this.counter++;
+  this.numberOfRequests += t;
+  this.requests = [t - 3000, t];
+  return this.counter
+};
+
+let recentCounter = new RecentCounter();
+recentCounter.ping(1);
+recentCounter.ping(100);
+recentCounter.ping(3000);
+//console.log('recentCounter', recentCounter);
+//console.log('recentCounter', recentCounter.ping(100));
+
+
+/*
+permutation
+*/
+var findPairs = function(nums, k) {
+  const n = nums.length;
+  let res = [];
+  let count = 0;
+
+  for (let i = 0; i < n; i++) {
+    for (let j = i; j < n; j++) {
+      let pair = [nums[i], nums[j]]
+      //let diff = Math.abs(nums[i] - nums[j]);
+      //res.push(diff)
+      res.push(pair)
+      //if (diff === k) count++;
+    };
+  }
+
+  res.map((item, index) => {
+    const diff = Math.abs(item[0] - item[1]);
+    if (diff === k) count++;
+  })
+
+  console.log('res', res)
+  //console.log('pair', pair)
+  console.log(count)
+  return count
+};
+
+// var permutations = function(nums) {
+//   if (nums.length === 1) return nums;
+//   let output = [];
+//   helper(nums, 0, output);
+//   return output;
+// }
+
+// console.log('findPairs', findPairs([3,1,4,1,5], 2));
+// console.log('findPairs', findPairs([1,2,3,4,5], 1));
+
+// https://stackoverflow.com/questions/22566379/how-to-get-all-pairs-of-array-javascript
+// const pairsOfArray = array => (
+//   array.reduce((acc, val, i1) => [
+//     ...acc,
+//     ...new Array(array.length - 1 - i1).fill(0)
+//       .map((v, i2) => ([array[i1], array[i1 + 1 + i2]]))
+//   ], [])
+// ) 
+
+// const pairs = pairsOfArray(['a', 'b', 'c', 'd', 'e'])
+// console.log(pairs)
+
+/*
+?
+we must sort the input first?
+
+Interval [a,b) is covered by interval [c,d) if and only if c <= a and b <= d.
+
+
+count overlapping intervals
+Sort the intervals based on start of intervals.
+2 Create a currInt[] = {-1, -1}
+3 Scan all the intervals and compare it with currInt - 3 cases
+- interval lies in currInt jsut update overlap++;
+currInt lies in interval update currInt with interval and overlap++;
+not fully overlap just update currInt with interval
+
+TC - O(nlogn)
+SC - O(1)
+*/
+/**
+ * @param {number[][]} intervals
+ * @return {number}
+ */
+var removeCoveredIntervals = function(intervals) {
+  //debugger
+  if (intervals.length === 0 || intervals === null) return 0;
+  if (intervals.length === 1) return 1;
+
+  intervals = intervals.sort((a, b) => a[0] - b[0]);
+  console.log('intervals', intervals)
+
+  let overlap = 0;
+  let currInterval = [-1, -1];
+
+
+  for (const interval of intervals) {
+    console.log(interval);
+    const [start, end] = interval;
+    console.log('start', start)
+    console.log('end', end);
+    if (currInterval[0] <= start && currInterval[1] >= end) {
+      overlap++;
+    } else {
+      if (currInterval[0] >= start && currInterval[1] <= end) {
+        overlap++;
+      }
+      currInterval = interval;
+    }
+  }
+  console.log('overlap', overlap)
+  return intervals.length - overlap;
+};
+
+// var removeCoveredIntervals1 = function(intervals) {
+//   intervals = intervals.sort((a, b) => a[0] - b[0]);
+//   let currInt = [-1, -1];
+//   let overlap = 0;
+  
+//   for (let interval of intervals) {
+//     if (currInt[0] <= interval[0] && currInt[1] >= interval[1]) {
+//       overlap++;
+//     } else {
+//       if (currInt[0] >= interval[0] && currInt[1] <= interval[1]) { 
+//         overlap++;
+//       }
+//       currInt = interval;
+//     }    
+//   }
+//   console.log('overlap', overlap);
+//   return intervals.length - overlap;
+// }
+console.log('remove', removeCoveredIntervals([[1,2],[1,3]]));
+console.log('remove', removeCoveredIntervals([[1,4],[3,6],[2,8]]));
+// console.log('remove', removeCoveredIntervals([[1,4],[2,3]]));
+// console.log('remove', removeCoveredIntervals([[3,10],[4,10],[5,11]]));
+// console.log('remove', removeCoveredIntervals([[1,2],[1,4],[3,4]]));
 
 export {
   largestTimeFromDigits,

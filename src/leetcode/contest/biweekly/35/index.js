@@ -7,11 +7,11 @@ Biweekly 35 19.09
 */
 
 
-function test() {
-  console.log('biweekly 35')
-}
+// function test() {
+//   console.log('biweekly 35')
+// }
 
-console.log('test', test());
+// console.log('test', test());
 
 /*
 1 problem
@@ -68,25 +68,25 @@ var maxSumRangeQuery = function(nums, requests) {
   if (nums.length === 1) output = nums;
   helper(nums, 0, output)
   
-  console.log('output', output);
+  //console.log('output', output);
   
   let totalSum = 0;
   for (const permutation of output) {
-    console.log('permutation', permutation);
+    //console.log('permutation', permutation);
     let requestSum = 0;
     for (const request of requests) {
-      console.log('request', request);
+      //console.log('request', request);
       let [start, end] = request;
       let permute = permutation.slice(start, end+1);
-      console.log(permute)
+      //console.log(permute)
       let sum = permute.reduce((acc, val) => acc+val, 0);
-      console.log('sum', sum);
+      //console.log('sum', sum);
       requestSum += sum;
     }
-    console.log('requestSum', requestSum)
+    //console.log('requestSum', requestSum)
     if (requestSum > totalSum) totalSum = requestSum
   }
-  console.log('totalSum', totalSum);
+  //console.log('totalSum', totalSum);
 
   //return totalSum % Math.pow(10,9) + 7; 
   return totalSum % (1e9 + 7);
@@ -104,7 +104,7 @@ function helper(nums, pos, res) {
   }
 }
 
-console.log('max', maxSumRangeQuery([1,2,3,4,5], [[1,3],[0,1]]));
+//console.log('max', maxSumRangeQuery([1,2,3,4,5], [[1,3],[0,1]]));
 //console.log('max', maxSumRangeQuery([1,2,3,4,5,6], [[0,1]]));
 // console.log('max', maxSumRangeQuery([1,2,3,4,5,10], [[0,2],[1,3],[1,1]]));
 // console.log('max', maxSumRangeQuery([2,5,3,0,3,5,0,2], [[0,2],[5,5],[1,5],[1,1],[4,4],[1,7],[3,6],[6,6]]));
@@ -126,7 +126,7 @@ var minSubarray = function(nums, p) {
   let sum = nums.reduce((acc, val) => acc+val, 0);
   if (sum < p) return -1;
   let remain = sum % p;
-  console.log('remain', remain);
+  //console.log('remain', remain);
   if ( remain === 0) return 0;
 
   // subarray
@@ -136,7 +136,7 @@ var minSubarray = function(nums, p) {
       subArrays.push(nums.slice(i,j))
     }
   }
-  console.log('subArrays', subArrays);
+  //console.log('subArrays', subArrays);
   
 
   // while (remain > 0) {
@@ -145,12 +145,12 @@ var minSubarray = function(nums, p) {
 
 
 
-  console.log('sum', sum);
+  //console.log('sum', sum);
     
 };
 
 //console.log('minSubarray', minSubarray([1,2,3], 7));
-console.log('minSubarray', minSubarray([3,1,4,2], 6));
+//console.log('minSubarray', minSubarray([3,1,4,2], 6));
 //console.log('minSubarray', minSubarray([1,2,3], 6));
 
 export {

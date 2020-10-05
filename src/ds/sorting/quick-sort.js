@@ -186,8 +186,7 @@ great video with explanation https://www.youtube.com/watch?v=MZaf_9IZCrc
 */
 
 function partitionLomuto(arr, start, end) {
-  // choose element as pivot
-  const pivot = arr[end];
+  const pivot = arr[end];  // choose element as pivot
   let i = start; // pivot location
 
   for (let j = start; j < end; j++) {
@@ -222,5 +221,6 @@ function getRandom(max) {
 export {
   quickSort, quickSortUseRandomPivot,
   quickSortHoare,
-  quickSortHoare1
+  quickSortHoare1,
+  partitionLomuto
 };

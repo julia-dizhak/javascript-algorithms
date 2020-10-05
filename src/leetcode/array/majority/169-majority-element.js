@@ -154,15 +154,15 @@ var majorityElementRandomization = function(nums) {
   const n = nums.length;
   const majorityCount = n / 2;
 
-  console.log('majorityCount', majorityCount)
+  //console.log('majorityCount', majorityCount)
   
   while (true) {
     let candidate = nums[randRange(0, n)];
-    console.log('candidate', candidate);
+    //console.log('candidate', candidate);
     if (countOccurrences(nums, candidate) > majorityCount) return candidate;
   }
 }
-console.log('majority', majorityElementRandomization([1,2,1,3,1]));
+//console.log('majority', majorityElementRandomization([1,2,1,3,1]));
 
 /*
 Approach Divide and Conquer

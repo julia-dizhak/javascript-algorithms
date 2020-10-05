@@ -69,8 +69,7 @@ Partition array around pivot so that
 Repeat in one subarray, depending on j; finished when j equals k;
 
 Complexity
-The average case for quick select is O(n) while the worst case is
-O(n2).
+The average case for quick select is O(n) while the worst case is O(n2).
 
 Discard half each time: n+(n/2)+(n/4)..1 = n + (n-1) = O(2n-1) = O(n),
 because n/2+n/4+n/8+..1 = n-1.
@@ -82,10 +81,12 @@ because n/2+n/4+n/8+..1 = n-1.
  * @return {number}
 */
 function findKthLargest(nums, k) {
-  k = nums.length - k;
+  const n = nums.length;
+  k = n - k;
   let lo = 0;
-  let hi = nums.length - 1;
+  let hi = n - 1;
   while (lo < hi) {
+    // j is pivot index
     let j = partitionLomuto(nums, lo, hi);
     if (j < k) {
       /*
@@ -102,8 +103,8 @@ function findKthLargest(nums, k) {
       hi = j - 1;
     } else {
       break;
-      // if (j === nums.length - k)
       /*
+        if (j == n - k)
         Found. The pivot is index on index n - k. This is literally its final
         position if the array we were given had been sorted. See how we saved work?
         We don't need to sort the whole array
