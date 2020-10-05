@@ -1,6 +1,8 @@
 import {
-  removeCoveredIntervals
-} from './1288-removed-covered-intervals';
+  //removeCoveredIntervals,
+  //removeCoveredIntervalsUseSort as removeCoveredIntervals,
+  removeCoveredIntervalsUseSort2 as removeCoveredIntervals
+} from './1288-remove-covered-intervals';
 
 describe('remove covered intervals test', () => {
   it('no overlap', () => {

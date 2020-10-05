@@ -500,6 +500,13 @@ started on 12/21/17
 
 * ### Intervals (Array, sort)
 
+    * [1288. Remove Covered Intervals](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/intervals/1288-remove-covered-intervals.js)
+
+    | Approach:                        | Time      | Space  |
+    | :---                             | :---      | :---   |
+    | Sort left by asc, right by desc  | O(nlogn)  | O(1)   |
+    | Sort                             | O(nlogn)  | O(1)   |
+
     * [57. Insert interval](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/intervals/57-insert-interval.js)
 
     | Approach:       | Time    | Space  |
