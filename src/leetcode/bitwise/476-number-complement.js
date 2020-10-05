@@ -21,7 +21,51 @@ Input: num = 1
 Output: 0
 Explanation: The binary representation of 1 is 1 (no leading zero bits),
 and its complement is 0. So you need to output 0.
+
+Hint
+A binary number plus its complement will equal 111....111 in binary. Also, 
+N = 0 is a corner case.
 */
+
+
+/*
+Approach Use trick N + complement = 1
+
+Hints
+what is the relationship between input and output
+input + output = 111....11 in binary format
+
+Is there any corner case?
+0 is a corner case expecting 1, output > input
+
+Intuition
+Let's find the first number X that X = 1111....1 > N
+And also, it has to be noticed that,
+N = 0 is a corner case expecting 1 as result
+
+N + bitwiseComplement(N) = 11....11 = X
+Then bitwiseComplement(N) = X - N
+
+for those who wonder why the +1 is being added try looking at the pattern below, 
+maybe it helps someone:
+(number) => (how-number-is-derived) => binary-string
+x = 1 => 1 => 1
+x = 3 => (2*1 + 1) => 11
+x = 7 => (3*2 + 1) => 111
+x = 15 => (7*2 + 1) => 1111
+
+Time is O(logN)
+O(1) Space
+*/
+var bitwiseComplementUseTrick = function(N) {
+  if (N === 0) return 1;
+  if (N === 1) return 0;
+
+  let x = 1;
+  while (N > x) x = x * 2 + 1;
+  return x - N;
+}
+
 
 /*
 Approach 1 Flip Bit by bit
@@ -121,7 +165,7 @@ var findComplement = function(N) {
 }
 
 /*
-  Approach without toString and parseInt
+Approach without toString and parseInt
 */
 const power = function(base, exponent) {
   if (exponent === 0) return 1
@@ -206,5 +250,6 @@ export {
   bitwiseComplement, findComplement, bitwiseComplementUseReduce,
   flipBitByBit,
   decimalToBinary,
-  findComplementUsePowVariant1, findComplementUsePow
+  findComplementUsePowVariant1, findComplementUsePow,
+  bitwiseComplementUseTrick
 }

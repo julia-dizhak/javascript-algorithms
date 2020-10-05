@@ -2,8 +2,9 @@ import {
   //bitwiseComplement,
   //findComplement as bitwiseComplement,
   // bitwiseComplementUseReduce as bitwiseComplement,
-  flipBitByBit as bitwiseComplement, 
-  //decimalToBinary as bitwiseComplement
+  //flipBitByBit as bitwiseComplement, 
+  //decimalToBinary as bitwiseComplement,
+  bitwiseComplementUseTrick as bitwiseComplement
 } from './476-number-complement';
 
 describe('bitwise complement test case', () => {

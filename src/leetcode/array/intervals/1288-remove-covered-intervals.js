@@ -3,7 +3,8 @@ Leetcode
 1288 Remove Covered Intervals
 medium
 
-Given a list of intervals, remove all intervals that are covered by another interval in the list.
+Given a list of intervals, remove all intervals that are covered by another 
+interval in the list.
 
 Interval [a,b) is covered by interval [c,d) if and only if c <= a and b <= d.
 
@@ -86,17 +87,17 @@ var removeCoveredIntervalsUseSort = function(intervals) {
   //console.log('intervals', intervals);
 
   let currentEnding = 0; // global ending
-  let overlap = 0;
+  let res = 0;
 
   for (const interval of intervals) {
     const [start, end] = interval;
     if (end > currentEnding) {
-      overlap++;
+      res++;
       currentEnding = end;
     }
   }
 
-  return overlap;
+  return res;
 }
 
 // the same approach
@@ -117,8 +118,7 @@ Approach Sort
 
 - Sort the array, and note the previous left and right bound.
 - For every interval v, if v[0] > left && v[1] > right,
-It's a new uncovered interval,
-so we increment ++res.
+- It's a new uncovered interval, so we increment ++res.
 
 Complexity: time O(NlogN), space O(1)
 */
@@ -140,16 +140,18 @@ var removeCoveredIntervals = function(intervals) {
 }
 
 // approach sort and stack?
+// todo https://leetcode.com/problems/remove-covered-intervals/discuss/878196/2-Solutions-or-Easy-to-Understand-or-Sort-and-Count-overlap-intervals
 
 // tests
 //console.log('remove', removeCoveredIntervals([[1,4],[3,6],[2,8]]));
 //console.log('remove', removeCoveredIntervals([[1,4],[3,9],[2,8],[3,10]]));
 //console.log('remove', removeCoveredIntervals([[1,2],[1,3]]));
 //console.log('remove', removeCoveredIntervals([[1,2],[1,4],[1,3]]));
-console.log('remove', removeCoveredIntervals([[1,5],[3,6]]));
+//console.log('remove', removeCoveredIntervals([[1,5],[3,6]]));
 // console.log('remove', removeCoveredIntervals([[1,4],[2,3]]));
 // console.log('remove', removeCoveredIntervals([[3,10],[4,10],[5,11]]));
 // console.log('remove', removeCoveredIntervals([[1,2],[1,4],[3,4]]));
+
 
 export {
   removeCoveredIntervals,

@@ -1150,8 +1150,6 @@ var findPairs = function(nums, k) {
 // const pairs = pairsOfArray(['a', 'b', 'c', 'd', 'e'])
 // console.log(pairs)
 
-
-
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,

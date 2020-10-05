@@ -1,7 +1,7 @@
 import {
-  //removeCoveredIntervals,
+  removeCoveredIntervals,
   //removeCoveredIntervalsUseSort as removeCoveredIntervals,
-  removeCoveredIntervalsUseSort2 as removeCoveredIntervals
+  //removeCoveredIntervalsUseSort2 as removeCoveredIntervals
 } from './1288-remove-covered-intervals';
 
 describe('remove covered intervals test', () => {
@@ -16,5 +16,6 @@ describe('remove covered intervals test', () => {
     expect(removeCoveredIntervals([[1,4],[2,3]])).toEqual(1);
     expect(removeCoveredIntervals([[3,10],[4,10],[5,11]])).toEqual(2);
     expect(removeCoveredIntervals([[1,2],[1,4],[3,4]])).toEqual(1);
+    expect(removeCoveredIntervals([[1,2],[2,3],[1,4]])).toEqual(1);
   });
 });

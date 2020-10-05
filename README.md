@@ -187,6 +187,7 @@ started on 12/21/17
     | Bit Shift + xor (2)        | O(1)          | 0(1)       |
     | toString and parseInt      | O(1)          | 0(1)       |
     | decimal to Binary + Stack  | O(log n)      | 0(log n)   |
+    | N + complement = 1         | O(log n)      | 0(1)       |
 
     * [231. Power of two](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/bitwise/power/231-power-of-two.js)
 

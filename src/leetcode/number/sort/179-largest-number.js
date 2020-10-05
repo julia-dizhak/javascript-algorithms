@@ -83,7 +83,7 @@ var largestNumber = function(nums) {
 var largestNumber1 = function(nums) {
   return nums
     .map(n => n.toString())
-    .sort( (a,b) => (b + a).localeCompare(a + b))
+    .sort((a,b) => (b + a).localeCompare(a + b))
     .join('')
     .replace(/^0+\B/, '');
 };
