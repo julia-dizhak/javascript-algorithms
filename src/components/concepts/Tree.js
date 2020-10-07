@@ -1,9 +1,11 @@
 import React from 'react';
 import Details from '../Details';
 
+// bt
 import { BT } from '../../ds/tree/bt/bt';
 // bst
 import { BinarySearchTree } from '../../ds/tree/bst/api';
+import { BST } from '../../ds/tree/bst/insert-node-in-bst';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 import { BST as BST1 } from '../../ds/tree/bst/delete-node-in-bst';
 import { largestTimeFromDigits, containsNearbyAlmostDuplicate, partitionLabels, wordPattern } from '../../leetcode/move';
@@ -49,11 +51,15 @@ import { test } from '../../leetcode/contest/biweekly/36/index';
 // codewars
 //import { basketWithoutDuplicatesUseReduce } from '../../codewars/arrays/filter-out-duplicates';
 
+// 
+//import { setup } from '../../practice-react/life-game/index';
+
+
 export default function Tree() {
   return (
     <div className="tree">
       <h2>Trees</h2>
-
+      {/* setup(); */}
       <ul id="binary-search-tree">
         <li>
           <Details

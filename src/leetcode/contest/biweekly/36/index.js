@@ -8,10 +8,10 @@ How many problem resolved?
 */
 
 function test() {
-  console.log('biweekly 36')
+  //console.log('biweekly 36')
 }
 
-console.log('test', test());
+//console.log('test', test());
 
 /*
 1 problem
@@ -190,24 +190,24 @@ var alertNames = function(keyName, keyTime) {
 }
 
   keyName.map((name, index) => {
-    console.log(name);
-    console.log(index)
+    //console.log(name);
+    //console.log(index)
     hash[name] = hash[name] || []
     hash[name].push(keyTime[index])
   });
 
   for (const key in hash) {
-    console.log('key', key);
+    //console.log('key', key);
     let arr = hash[key].sort();
-    console.log('arr', arr);
+    //console.log('arr', arr);
   }
 
-  console.log(hash)
+  //console.log(hash)
 }
 
 const keyName = ["daniel","daniel","daniel","luis","luis","luis","luis"];
 const keyTime = ["10:00","10:40","11:00","09:00","11:00","13:00","15:00"]
-console.log('alertNames', alertNames(keyName, keyTime))
+//console.log('alertNames', alertNames(keyName, keyTime))
 // example
 let keyName2 = ["alice","alice","alice","bob","bob","bob","bob"]; 
 let keyTime2 = ["12:01","12:00","18:00","21:00","21:20","21:30","23:00"];

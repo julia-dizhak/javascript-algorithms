@@ -633,6 +633,13 @@ started on 12/21/17
     | Recursion     | O(log(n)^2)  | 0(n)   |
 
 * ### BST (Binary Search Tree)
+    * [701. Insert into a BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/tree/bst/insert-node-in-bst.js)
+
+    | Approaches:   | Time             | Space  |
+    | :---          | :---             | :---   |
+    | Recursion     | O(log n) / O(h)  | 0(h)   |
+    | Iterative     | O(log n) / O(h)  | 0(1)   |
+
     * [700. Search in BST](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/bst/search/200-search-in-bst.js)
 
     | Approaches:   | Time            | Space  |

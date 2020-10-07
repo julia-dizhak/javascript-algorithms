@@ -1,7 +1,14 @@
-/**
- * Binary Search Tree implementation in JavaScript
- * Nodes as objects
- */
+/*
+BST
+Node as class
+
+size
+insertNode - recursion and iterative approach
+contains = search
+delete - todo
+height of tree
+
+*/
 class Node {
   constructor(val, left, right) {
     this.val = (val === undefined ? 0 : val);
@@ -30,11 +37,9 @@ class BinarySearchTree {
 
   }
 
-  // delete
-
-
   /*
-  * Insertion Node iteratively
+  Insertion Node iteratively
+  time is O(h)
   */
   insert(val, root = this.root) {
     const newNode = new Node(val);
@@ -87,6 +92,9 @@ class BinarySearchTree {
 
     return false;
   }
+
+  
+  // todo delete
 
   // im not sure that this is correct solution
   // height of binary tree, should return '-1' when root is NULL.
