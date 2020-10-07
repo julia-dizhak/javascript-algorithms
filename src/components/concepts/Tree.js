@@ -5,7 +5,7 @@ import Details from '../Details';
 import { BT } from '../../ds/tree/bt/bt';
 // bst
 import { BinarySearchTree } from '../../ds/tree/bst/api';
-import { BST } from '../../ds/tree/bst/insert-node-in-bst';
+//import { BST } from '../../ds/tree/bst/insert-node-in-bst';
 import { invertTree } from '../../leetcode/tree/binary-tree/226-invert-binary-tree';
 import { BST as BST1 } from '../../ds/tree/bst/delete-node-in-bst';
 import { largestTimeFromDigits, containsNearbyAlmostDuplicate, partitionLabels, wordPattern } from '../../leetcode/move';

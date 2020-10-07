@@ -168,13 +168,13 @@ class BST {
 }
 
 // tests
-let tree = new BST(2);
+//let tree = new BST(2);
 // tree.insertNode(1);
 // tree.insertNode(3);
-tree.insertNodeIterative(1);
-tree.insertNodeIterative(3);
-tree.insertNodeIterative(4);
-console.log('tree 1', tree);
+// tree.insertNodeIterative(1);
+// tree.insertNodeIterative(3);
+// tree.insertNodeIterative(4);
+// console.log('tree 1', tree);
 
 /*
 BST insert a node
