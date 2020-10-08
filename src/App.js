@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './practice-react/life-game/store/store';
+
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import SplitSidebarView from './components/SplitSidebarView';
 
 // test react
 import { default as Example }  from './practice-react/app';
-import Game from './practice-react/life-game/Game';
+import Game1 from './practice-react/life-game/Game';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
@@ -35,8 +38,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Game /> */}
-        {/* <Example /> */}
+        {/* <Provider store={store}>
+          <Game1 />
+        </Provider> */}
+        
+        <Example />
         <SplitSidebarView>
           <Sidebar className="sidebar" />
           <div className="rightPart">

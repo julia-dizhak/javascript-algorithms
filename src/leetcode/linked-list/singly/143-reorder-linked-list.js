@@ -47,7 +47,8 @@ Approach Brute force
 Idea
 1) Initialize current node as head.
 2) While next of current node is not null, do following
-  a) Find the last node, remove it from the end and insert it as next of the current node.
+  a) Find the last node, remove it from the end and insert it as next of the 
+  current node.
   b) Move current to next to next of current
 
 Time complexity of the above simple solution is O(n2) where n is the number of nodes

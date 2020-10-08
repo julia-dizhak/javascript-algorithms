@@ -1,49 +1,43 @@
 import React, { Component } from 'react';
 import Square from '../components/Square';
 
-class Grid extends Component {
-  constructor(props) {
-    super(props);
+/*
+todo key unique
+*/
 
-    const generation = [];
-    const w = Math.floor(props.width);
-    const h = Math.floor(props.height);
-    for (let i = 0; i < w * h; i++) {
-      generation.push(Math.random() > 0.4 ? 0 : 1);
+const Grid = ({ gridState, rows, cols }) => {
+ //console.log('gridState', gridState);
+
+  // if gridState is null do not render 
+  let line = [];
+  for (let r = 0; r < rows; r++) {
+    let cells = [];
+    for (let c = 0; c < cols; c++) {
+      cells.push(
+        <Square 
+          key={`${r},${c}`}
+          //className={gridState[r][c] == 1 ? 'alive col1' : 'dead col1'}
+          className={gridState[r][c] ? 'alive col1' : 'dead col1'}
+        />
+      )
     }
-    this.state = { 
-      generation: generation,
-      width: w,
-      height: h,
-      squareSize: props.squareSize // it's bad for performance
-    }
+    line.push(
+      <div 
+        className="row1"
+        key={r}>
+          {cells}
+      </div>
+    )
   }
 
-  index(x, y) {
-    return Math.floor(x + y*this.state.width);
-  }
-  
-  render() { 
-    const { generation, height, width, squareSize } = this.state;
-    console.log('generation', generation);
-    let squares = [];
-
-    for (let i = 0; i < height; i++) {
-      for (let j = 0; j < width; j++) {
-        const index = this.index(i,j);
-        console.log(index);
-        const alive = this.state.generation[index];
-        const size = squareSize;
-        squares.push(<Square alive={alive} size={size} />)
-      }
-    }
-
-
-    
-    return ( 
-    <div className="squares">{squares}</div>
-    );
-  }
+  return (
+    <div className="grid">
+      <div className="container1">
+        {line}
+      </div>
+      
+    </div>  
+  )
 }
 
-export default Grid;
+export { Grid };

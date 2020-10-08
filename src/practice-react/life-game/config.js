@@ -1,0 +1,1 @@
+const SPEED = 500;
