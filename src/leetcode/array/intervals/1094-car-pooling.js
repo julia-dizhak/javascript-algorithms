@@ -1,6 +1,8 @@
 /*
 Leetcode
 1094 Car pooling
+medium
+
 You are driving a vehicle that has capacity empty seats initially available for 
 passengers. The vehicle only drives east (ie. it cannot turn around and drive west.)
 

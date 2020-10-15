@@ -43,13 +43,13 @@ You can just reuse the dfs algorithm, but make sure you push the children onto
 the stack in such a way that the left child is processed before
 the right child.
 
-Algorithm
+Intuition
 1 visit root
 2 visit left sub-tree (visit all nodes left)
 3 visit right sub-tree (visit all nodes right)
 
-Intuition
-1 Create an empty stack, push root node to the stack
+Algorithm
+1 Create an empty stack, push root node to the stack ???
 2 Do following while stack is not empty:
   2.1 pop an item from the stack and push it to stack
   2.2 push the right child of popped item to stack.

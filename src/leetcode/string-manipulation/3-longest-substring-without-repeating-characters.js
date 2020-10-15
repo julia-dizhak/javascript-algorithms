@@ -91,8 +91,8 @@ function allUnique(s, start, end) {
 Approach sliding window
 
 Algorithm
-The naive approach is very straightforward. But it is too slow.
-So how can we optimize it?
+The naive approach is very straightforward. But it is too slow. So how can we 
+optimize it?
 
 In the naive approaches, we repeatedly check a substring to see if it has
 duplicate character. But it is unnecessary. If a substring Sij

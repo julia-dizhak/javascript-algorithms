@@ -1150,6 +1150,326 @@ var findPairs = function(nums, k) {
 // const pairs = pairsOfArray(['a', 'b', 'c', 'd', 'e'])
 // console.log(pairs)
 
+/*
+449. Serialize and Deserialize BST
+
+traversal root left right
+preorder traversal <root><left><right>
+
+todo add what serialize mean
+Serialization / deserialization
+In computing, serialization (US spelling) or serialisation (UK spelling) is the process of translating a data structure or object state into a format (is converting a data structure or object into a sequence of bits) that can be stored (for example, in a file or memory data buffer) or transmitted (for example, across a computer network) and reconstructed later (possibly in a different computer environment). When the resulting series of bits is reread according to the serialization format, it can be used to create a semantically identical clone of the original object. 
+The opposite operation, extracting a data structure from a series of bytes, is deserialization.
+
+JSON.parse(text [, reviver]) method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned.
+
+JSON.stringify(value) converts a JS obj pr value to a JSON string.
+
+DFS repeat algorithm (educative espresso)
+I find preorder traversal the easiest to implement iteratively.
+You can just reuse the dfs algorithm, but make sure you push the children onto
+the stack in such a way that the left child is processed before
+the right child.
+
+Intuition
+1 visit root
+2 visit left sub-tree (visit all nodes left)
+3 visit right sub-tree (visit all nodes right)
+
+Algorithm
+1 Create an empty stack, push root node to the stack
+2 Do following while stack is not empty:
+  2.1 pop an item from the stack and push it to stack ??? check
+  2.2 push the right child of popped item to stack.
+  2.3 push the left child of popped item to stack.
+
+Complexity
+
+
+serialize and deserialize BT 
+https://leetcode.com/problems/serialize-and-deserialize-bst/discuss/201547/Easy-to-Understand-Javascript-Solution-84ms-beats-91
+
+
+*/
+//Definition for a binary tree node.
+// function TreeNode(val) {
+//   this.val = val;
+//   this.left = this.right = null;
+// }  
+
+/**
+ * Encodes a tree to a single string.
+ *
+ * @param {TreeNode} root
+ * @return {string}
+ */
+var serialize1 = function(root) {
+  let res = [];
+  if (root === null) return res;
+
+  let stack = [];
+
+  if (root !== null) {
+    stack.push(root);
+  }
+
+  while (stack.length) {
+    const node = stack.pop();
+    res.push(node.val);
+    if (node.right) stack.push(node.right);
+    if (node.left) stack.push(node.left);
+  }
+
+  return res.join('');
+};
+
+/**
+ * Decodes your encoded data to tree.
+ *
+ * @param {string} data
+ * @return {TreeNode}
+ */
+var deserialize2 = function(data) {
+  data = data.split('');
+  console.log(data);
+
+  // create a tree on the  top of it
+};
+
+/*
+approach My serialized list takes the form of:
+[root, <elements smaller than root>, <elements bigger than root>] and this is true recursively. I cheated a little bit by using JSON.stringify and JSON.parse but the general idea is there.
+*/
+var serialize = function(root) {
+  function traverse(node) {
+    if (!node) return [];
+    return [node.val].concat(traverse(node.right), traverse(node.left));
+  }
+  const stringify = traverse(root);
+  console.log(typeof stringify)
+  console.log(typeof JSON.stringify(stringify))
+  return JSON.stringify(stringify);
+}
+
+var deserialize = function(data) {
+  function construct(arr) {
+    if (!arr.length) {
+        return null;
+    }
+    const root = new TreeNode(arr[0]);
+    root.left = construct(arr.filter(num => num < root.val));
+    root.right = construct(arr.filter(num => num > root.val));
+    return root;
+  }
+  return construct(JSON.parse(data));
+};
+
+// root = [2,1,3]
+let root4 = new TreeNode(2);
+root4.left = new TreeNode(1);
+root4.left.left = new TreeNode(3);
+console.log('root', root4);
+
+
+//console.log('twoOperations', twoOperations(root4));
+console.log('serialize', serialize(root4));
+
+// Your functions will be called as such:
+//const twoOperations = deserialize('123');
+console.log('deserialize', deserialize('[1,2,3]'));
+//deserialize(serialize(root));
+
+
+/*
+min number of ballons
+
+d = 2r
+Given an array points where points[i] = [xstart, xend], return the minimum number of arrows that must be shot to burst all balloons.
+
+is it interval problem or not
+*/
+
+/**
+ * @param {number[][]} points
+ * @return {number}
+ */
+// wrong solution
+var findMinArrowShots1 = function(points) {
+  points = points.sort((a,b) => a[0] - b[0]);
+  console.log('points', points);
+
+  let intervals = [];
+  intervals.push(points[0]);
+  const lastInterval = intervals[intervals.length - 1];
+
+  let shoot = 1;
+
+  for (const point of points.slice(1)) {
+    const [start, end] = point;
+    console.log('start', start);
+    console.log('end', end);
+    if (lastInterval[1] < start) shoot++;
+    else {
+      lastInterval[1] = Math.min(lastInterval[1], end);
+      lastInterval[0] = Math.min(lastInterval[0], start);
+    }
+    console.log('lastInterval', lastInterval);
+  }
+
+  return shoot;
+};
+
+/*
+We know that eventually we have to shoot down every balloon, so for each ballon there must be an arrow whose position is between balloon[0] and balloon[1] inclusively. Given that, we can sort the array of balloons by their ending position. Then we make sure that while we take care of each balloon in order, we can shoot as many following balloons as possible.
+
+So what position should we pick each time? We should shoot as to the right as possible, because since balloons are sorted, this gives you the best chance to take down more balloons. Therefore the position should always be balloon[i][1] for the ith balloon.
+
+This is exactly what I do in the for loop: check how many balloons I can shoot down with one shot aiming at the ending position of the current balloon. Then I skip all these balloons and start again from the next one (or the leftmost remaining one) that needs another arrow.
+
+Example:
+
+balloons = [[7,10], [1,5], [3,6], [2,4], [1,4]]
+After sorting, it becomes:
+
+balloons = [[2,4], [1,4], [1,5], [3,6], [7,10]]
+So first of all, we shoot at position 4, we go through the array and see that all first 4 balloons can be taken care of by this single shot. Then we need another shot for one last balloon. So the result should be 2.
+
+
+
+BTW here are the questions that can be solved with the same technique
+
+56 Merge Intervals <- very similar😈
+435 Non-overlapping Intervals <- very similar😈
+252 Meeting Rooms
+253 Meeting Rooms II
+
+https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/discuss/889144/JavaScript-Clean-Solution
+https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/discuss/93703/Share-my-explained-Greedy-solution
+*/
+var findMinArrowShots = function(points) {
+  //debugger
+  if (points.length === 0) return 0;
+  points = points.sort((a,b) => a[1] - b[1]);
+  console.log('points', points);
+
+  let arrowPos = points[0][1];
+  console.log('arrowPos', arrowPos);
+  let shoot = 1;
+
+  for (let i = 1; i < points.length; i++) {
+    if (arrowPos >= points[i][0]) {
+      continue;
+    }
+    shoot++;
+    arrowPos = points[i][1];
+  }
+
+  return shoot;
+};
+
+//console.log('ArrowShots', findMinArrowShots([[10,16],[2,8],[1,6],[7,12]]));
+//console.log('ArrowShots2', findMinArrowShots([[1,2],[3,4],[5,6],[7,8]]));
+console.log('ArrowShots2', findMinArrowShots([[-2147483646,-2147483645],[2147483646,2147483647]]));
+
+
+/*
+Leetcode
+316 Remove duplicate letters
+medium
+
+Given a string s, remove duplicate letters so that every letter appears once and 
+only once. You must make sure your result is the smallest in lexicographical 
+order among all possible results.
+
+check 1081
+
+hint1
+Greedily try to add one missing character. How to check if adding some character 
+will not cause problems ? Use bit-masks to check whether you will be able to 
+complete the sub-sequence if you add the character at some index i.
+
+greedy approach?
+x^x = 0
+https://leetcode.com/problems/remove-duplicate-letters/discuss/76768/A-short-O(n)-recursive-greedy-solution
+for (let i = 0; i < n; i++) {
+  count[s.charCodeAt(i) - 'a'.charCodeAt(0)]++;
+}
+see comment great approach, here is mine Java iterative version:
+
+use stack
+https://leetcode.com/problems/remove-duplicate-letters/discuss/76769/Java-solution-using-Stack-with-comments
+
+https://leetcode.com/problems/remove-duplicate-letters/discuss/76767/C%2B%2B-simple-solution-easy-understanding
+
+js
+https://leetcode.com/problems/remove-duplicate-letters/discuss/890096/JavaScript-solution-explained-97-speed
+
+https://www.educative.io/courses/simplifying-javascript-handy-guide
+on the Pragmatic Programmers book
+gmat problem solving
+master sliding window patters
+*/
+/**
+ * @param {string} s
+ * @return {string}
+ */
+// var removeDuplicateLetters = function(s) {
+//   const n = s.length;
+//   if (n < 2) return s;
+//   let count = new Array(26).fill(0);
+//   let used = new Array(26);
+
+//   // Count all letters in s by ASCII code offset from a's code = 97
+//   for (let i = 0; i < n; i++) {
+//     count[s.charCodeAt(i) - 97]++;
+//   }
+
+//   let res = [];
+//   for (let i = 0; i < n; i++) {
+//     const letter = s.charCodeAt(i) - 97;   //Iterating over all letters in string, reduce count
+//     count[letter]--;
+//     if (!used[letter]) {
+//       while ( res.length > 0 && 
+//         res[res.length - 1].charCodeAt(0) - 97 > letter && 
+//         count[res[res.length - 1].charCodeAt(0) - 97] > 0 
+//       ) {
+//           used[res[res.length - 1].charCodeAt(0) - 97] = false;
+//           res.pop();
+//       }
+//       res.push(s[i]);  
+//     }
+//     used[letter] = true;
+//   }
+
+//   return res.join('')
+// };
+
+//console.log('removeDuplicateLetters', removeDuplicateLetters('bcabc'));
+//console.log('removeDuplicateLetters', removeDuplicateLetters('cbacdcbc'));
+
+/*
+https://leetcode.com/problems/buddy-strings/discuss/141838/Javascript-straightforward
+*/
+
+// var buddyStrings = function(A, B) {
+//   if (A.length === 0 || B.length === 0) return false;
+//   let B1 = B.split('').reverse().join('');
+//   console.log(B1);
+//   if (B1 === A) return true;
+//   return false
+    
+// };
+// console.log('buddyStrings', buddyStrings('ab', 'ba'));
+// console.log('buddyStrings', buddyStrings('ab', 'ab'));
+// console.log('buddyStrings', buddyStrings('aa', 'aa'));
+// console.log('buddyStrings', buddyStrings('aaaaaaabc', 'aaaaaaacb'));
+// console.log('buddyStrings', buddyStrings('', 'aa'));
+
+
+/*
+
+*/
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,

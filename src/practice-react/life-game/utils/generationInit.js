@@ -5,9 +5,6 @@ The function’s parameter defaults to less than 30% chance of being alive, but
 fell free to experiment with other numbers.
 generation.push(Math.random() > 0.4 ? 0 : 1);
 
-todo rename to 
-
-for this problem it's not necessary to have a redux
 */
 
 function getRandomInt(max) {
@@ -29,22 +26,10 @@ function make2DArray(rows, cols, status = () => Math.random() < 0.3) {
   return grid;
 }
 
-//const test = make2DArray(5,5);
-//console.log('test', test);
-
-// todo could be tested this logic
-// algorithm
-
-/*
-could be inside generation but then how I would test this
-is it good idea to be outside
-*/
-
 const countTotalAmountAliveNeighbors = (grid, row, col) => {
   const rows = grid.length;
   const cols = grid[0].length;
 
-  //const neighbors =  [[1,0], [-1,0], [0,1], [0,-1]]
   const neighbors = [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]];
   return neighbors.reduce((amount, neighbor) => {
     //debugger
@@ -63,11 +48,9 @@ const countTotalAmountAliveNeighbors = (grid, row, col) => {
       return amount;
     }
   }, 0);
-
 };
 
 const defineNextGeneration = function(prevState) {
-  //const clone = prevState.slice();
   const cloneStatus = JSON.parse(JSON.stringify(prevState));
   //console.log('prevState', prevState) 
 
@@ -76,9 +59,7 @@ const defineNextGeneration = function(prevState) {
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      //debugger
-      // console.log(i)
-      // console.log(j) 
+
       const totalAliveNeighbors = countTotalAmountAliveNeighbors(prevState,i,j);
       //console.log('totalAliveNeighbors', totalAliveNeighbors);
       // todo can change by 1 and 0

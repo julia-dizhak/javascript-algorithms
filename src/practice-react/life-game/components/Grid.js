@@ -5,8 +5,9 @@ import Square from '../components/Square';
 todo key unique
 */
 
-const Grid = ({ gridState, rows, cols }) => {
- //console.log('gridState', gridState);
+const Grid = ({ gridState }) => {
+  const rows = gridState.length;
+  const cols = gridState[0].length
 
   // if gridState is null do not render 
   let line = [];

@@ -8,7 +8,7 @@ import SplitSidebarView from './components/SplitSidebarView';
 
 // test react
 import { default as Example }  from './practice-react/app';
-import Game1 from './practice-react/life-game/Game';
+import Game from './practice-react/life-game/Game';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
@@ -39,17 +39,17 @@ class App extends Component {
     return (
       <div className="App">
         {/* <Provider store={store}>
-          <Game1 />
+          <Game />
         </Provider> */}
         
         <Example />
         <SplitSidebarView>
           <Sidebar className="sidebar" />
           <div className="rightPart">
-              <header className="App-header">
-                Problem solving in JavaScript
-              </header>
-              <Main />
+            <header className="App-header">
+              Problem solving in JavaScript
+            </header>
+            <Main />
           </div>
         </SplitSidebarView>
       </div>

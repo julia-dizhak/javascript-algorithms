@@ -1,5 +1,5 @@
 import { make2DArray, defineNextGeneration } from '../utils/generationInit';
-
+import allActionsTypes from './actions';
 
 const initialState = {
   gridState: [],
@@ -7,25 +7,32 @@ const initialState = {
   cols: 20,
   generation: 0,
   isRunning: false,
-  speed: 500,
+  speed: 100,
 }
 
 // todo just one reducer enough
 export default function reducer(state = initialState, action) {
+  // todo
   const initGridState = make2DArray(20, 20);
 
   switch (action.type) {
-    case 'BOOTSTRAP_APP':
+    case allActionsTypes.BOOTSTRAP_APP:
       return {
         ...state, 
         gridState: initGridState
       };
     
-    case 'HANDLE_RUN':
+    case allActionsTypes.HANDLE_RUN:
       return {
         ...state, 
         isRunning: true
       };  
+    
+    case allActionsTypes.START_GENERATION:
+      return {
+        ...state, 
+        isRunning: true
+      };   
 
     case 'HANDLE_STOP':
       return {
