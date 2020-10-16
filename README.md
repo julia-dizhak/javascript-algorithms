@@ -34,6 +34,7 @@ started on 12/21/17
 | θ          | big-theta     | average                |
 | O          | big-oh        | worst                  |
 
+
 ## Main Data Structures implementations by Javascript
 
 * ### Strings manipulation
@@ -427,6 +428,14 @@ started on 12/21/17
     | :---                          | :---            | :---   |
     | Spread operator               | O(n log n)      | 0(1)   |
     | Iterative + create a new arr  | O(n+m)          | 0(1)   |
+
+    * [Find Two Numbers that Add up to value](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/arrays/challenges/find-2-numbers-that-add-up-value.js)
+
+    | Approaches:           | Time           | Space  |
+    | :---                  | :---           | :---   |
+    | Brute force           | O(n^2)         | 0(1)   |
+    | Sort + binary search  | O(n log n)     | 0(1)   |
+    | Sort + 2 pointers     | O(n log n)     | 0(1)   |
 
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
 

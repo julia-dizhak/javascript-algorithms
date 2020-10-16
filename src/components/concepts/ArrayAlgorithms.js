@@ -1,16 +1,17 @@
 import React from 'react';
 import Details from './../Details';
 
-import { mergeSortedArrays } from '../../ds/arrays/merge-sorted-arrays';
+import { mergeArrays } from '../../ds/arrays/challenges/merge-2-arr';
 import { clone, cloneIterative, cloneUseLoopFixedSize } from '../../ds/arrays/clone';
 
 // problems
-import { jumpOnClouds } from '../../ds/arrays/tasks/jump-on-clouds';
+import { jumpOnClouds } from '../../ds/arrays/challenges/jump-on-clouds';
 import { majorityElement, majorityMooreVoting } from '../../leetcode/array/majority/169-majority-element';
 //import { majorityElement as majority } from '../../leetcode/array/majority/229-majority-element-2';
 import { findJudge, findJudgeTwoArrays } from '../../leetcode/array/997-find-judge';
+
 // sliding window
-import { findMaxAverageCumulativeSum} from '../../leetcode/array/subarrays/643-max-average-subarray-I';
+//import { findMaxAverageCumulativeSum} from '../../leetcode/array/subarrays/643-max-average-subarray-I';
 import { singleNonDuplicateBruteForce, singleNonDuplicateBinarySearch, singleNonDuplicateBinarySearchOnEvenIndexes } from '../../leetcode/array/540-single-element-in-sorted-array';
 //import { generate } from '../../leetcode/array/pascals-triangle/118-pascals-triangle';
 //import { plusOne } from '../../leetcode/array/66-plus-one';
@@ -79,7 +80,7 @@ export default function ArrayAlgorithms() {
             solution="Below is just an implementation of mergeSort algorithm"
             time="runtime is O(n log n)"
             space=""
-            code={mergeSortedArrays.toString()}
+            code={mergeArrays.toString()}
           />
         </li>
 
