@@ -26,6 +26,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 by [Yuliia (Julia) Dizhak](https://github.com/julia-dizhak)
 started on 12/21/17
 
+## Complexity terms
+
+| Symbol     | Name          | Performance            |
+| :---       | :---          | :---                   |
+| Ω          | big-omega     | best-case performance  |
+| θ          | big-theta     | average                |
+| O          | big-oh        | worst                  |
+
 ## Main Data Structures implementations by Javascript
 
 * ### Strings manipulation
@@ -413,7 +421,12 @@ started on 12/21/17
 * ### Array
     * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/arrays/clone.js)
 
-    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/merge-sorted-arrays.js)
+    * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/arrays/challenges/merge-2-arr.js)
+
+    | Approaches:                   | Time            | Space  |
+    | :---                          | :---            | :---   |
+    | Spread operator               | O(n log n)      | 0(1)   |
+    | Iterative + create a new arr  | O(n+m)          | 0(1)   |
 
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
 

@@ -1,4 +1,60 @@
 /*
+Bubble sort
+
+Approach Swapped
+
+Next, it’s important to know whether we should swap at all. If the array has 
+already been swapped, meaning an entire pass has gone without swapping, 
+we won’t have to go through the array again. We need to create a variable 
+that holds a boolean value, and only if that value is true, we want to swap values.
+
+*/
+
+function bubbleSort(arr) {
+  const n = arr.length;
+  let swapped;
+
+  do {
+    swapped = false;
+    // swap logic
+    // Right now, if swapped keeps on being false, the do-while will stop. 
+    // We need to create the swapping logic. First, we need to loop over the array. 
+    // Then, we check whether the current value, if it exists, is bigger than the 
+    // next item’s value, if that exists, meaning that they should swap.
+    for (let i = 0; i < n; i++) {
+      if (arr[i] && arr[i+1] && arr[i] > arr[i+1]) {
+        let temp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = temp;
+        swapped = true;
+      }
+      
+    }
+  } while (swapped);
+
+  return arr;
+}
+//console.log('bubbleSort', bubbleSort([2,1]));
+
+// the same approach use ES6
+function bubbleSortSwapped(arr) {
+  const len = arr.length;
+  let swapped;
+
+  do {
+    swapped = false;
+    for (let i = 0; i < len - 1; i++) {
+      if (arr[i] > arr[i+1]) {
+        [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
+        swapped = true;
+      }
+    }
+  } while (swapped)
+
+  return arr;
+}
+
+/*
 Complexity analysis
 
 Time complexity
@@ -10,7 +66,7 @@ Space is constant O(1)
 */
 function bubbleSortUseLoops(arr) {
   const n = arr.length;
-  console.log(n);
+
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n - i - 1; j++) { // j=1 , j = 2
       //console.log('j', j)
@@ -28,23 +84,6 @@ function bubbleSortUseLoops(arr) {
 //console.log('bubbleSortUseLoops', bubbleSortUseLoops([1,3,2]));
 //console.log('bubbleSortUseLoops', bubbleSortUseLoops([1,8,2,4,5,7,3]));
 
-
-function bubbleSort(arr) {
-  const len = arr.length;
-  let swap;
-
-  do {
-    swap = false;
-    for (let i = 0; i < len - 1; i++) {
-      if (arr[i] > arr[i+1]) {
-        [arr[i], arr[i+1]] = [arr[i+1], arr[i]];
-        swap = true;
-      }
-    }
-  } while (swap)
-
-  return arr;
-}
 
 function bubbleSortTwoForLoops(arr) {
   const len = arr.length;
@@ -119,6 +158,8 @@ function bubbleSortDisplayCount(arr) {
 
 export {
   bubbleSort,
+  bubbleSortSwapped,
   bubbleSortUseLoops,
   bubbleSortDisplayCount, bubbleSortTwoForLoops,
-  bubbleSortModified }
+  bubbleSortModified 
+}

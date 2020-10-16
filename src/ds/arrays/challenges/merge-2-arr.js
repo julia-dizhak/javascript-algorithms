@@ -72,4 +72,40 @@ function mergeArrays2(arr1, arr2) {
   }
   return res.concat(arr1).concat(arr2);
 }
-console.log('mergeArrays', mergeArrays2([1,3,4,5], [2,6,7,8]))
+//console.log('mergeArrays', mergeArrays2([1,3,4,5], [2,6,7,8]))
+
+// The same approach
+const mergeSortedArrays3 = (arr1, arr2) => {
+  let i = 0, // initial index for the first array
+    j = 0, // initial index for the second array,
+    result = [];
+
+  const len1 = arr1.length,
+    len2 = arr2.length;
+
+  while (i < len1 && j < len2 ) {
+    if (arr1[i] < arr2[j]) {
+      result.push(arr1[i]);
+      i++;
+    } else {
+      result.push((arr2[j]));
+      j++;
+    }
+  }
+
+  if (i < len1) {
+    result = [...result, ...arr1.slice(i)];
+  }
+
+  if (j < len2) {
+    result = [...result, ...arr2.slice(j)];
+  }
+
+  return result;
+};
+
+export {
+  mergeArrays,
+  mergeArrays2,
+  mergeSortedArrays3
+}

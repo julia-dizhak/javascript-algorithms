@@ -1471,6 +1471,13 @@ https://leetcode.com/problems/buddy-strings/discuss/141838/Javascript-straightfo
 
 Hint 1
 The easiest solution would use additional memory and that is perfectly fine.
+
+hint 2
+The actual trick comes when trying to solve this problem without using any 
+additional memory. This means you need to use the original array somehow to 
+move the elements around. Now, we can place each element in its original 
+location and shift all the elements around it to adjust as that would be too 
+costly and most likely will time out on larger input arrays.
 */
 
 /*
@@ -1490,26 +1497,22 @@ var rotate = function(nums, k) {
     k--;
   }
   console.log('nums', nums);
-  //return nums;
+  return nums;
 };
 
 console.log('rotate', rotate([1,2,3,4,5,6,7], 3))
 console.log('rotate', rotate([-1,-100,3,99], 2))
 
 var rotate1 = function(nums, k) {
-  let res1 = nums.slice(0,k+1);
-  let res = nums.slice(0);
+  let res = nums.slice(0,k+1);
+  let rest = nums.slice(k+1);
   console.log('res', res);
+  console.log('rest', rest);
 
-  while (k > 0) {
-    let lastElement = nums[nums.length - 1];
-    nums.unshift(lastElement);
-    nums.pop();
-    k--;
-  }
-  console.log('nums', nums);
-  return nums;
+  return rest.concat(res);
 };
+console.log('rotate', rotate1([1,2,3,4,5,6,7], 3))
+console.log('rotate', rotate1([-1,-100,3,99], 2))
 
 export {
   largestTimeFromDigits,
