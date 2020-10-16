@@ -1,17 +1,19 @@
 /**
- * Clone arrays
- *
- * Approaches:
- * loop for and while (var i = a.length; while(i--) { b[i] = a[i]; })
- * slice
- * map a.map(e => e)?
- * array.from()
- * concat
- * spread operator arr2 = [...arr1];
- *
- * @param {[array]}
- * @return {[array]}
- */
+Clone arrays
+
+Approaches:
+loop for and while (var i = a.length; while(i--) { b[i] = a[i]; })
+slice
+map a.map(e => e)?
+array.from()
+concat
+spread operator arr2 = [...arr1];
+*/
+
+/* 
+* @param {[array]}
+* @return {[array]}
+*/
 
 // runtime O(1)
 // one from fastest solutions

@@ -36,7 +36,16 @@ started on 12/21/17
     | iterative, 2 loops      | O(n^2)       | 0(?)    |
 
 * ### Array
-    ...
+    * Array built-in methods
+
+    | Complexity:                     | Time         | Space   |
+    | :---                            | :---         | :---    |
+    | push                            | O(1)         | 0(1)    |
+    | pop                             | O(1)         | 0(1)    |
+    | shift                           | O(n)         | 0(1)    |
+    | unshift                         | O(n)         | 0(1)    |
+    | delete                          | O(n)         | 0(1)    |
+    | reverse, splice, slice, concat  | O(n)         | 0(1)    |
 
 * ### Linked Lists
     * [Singly Linked List Implementation](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/linked-lists/singly/singly-linked-list.js)
@@ -402,7 +411,8 @@ started on 12/21/17
     | XOR                | O(n)            | 0(1)   |
 
 * ### Array
-    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/clone.js)
+    * [Clone arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/arrays/clone.js)
+
     * [Merge arrays](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/array/merge-sorted-arrays.js)
 
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
