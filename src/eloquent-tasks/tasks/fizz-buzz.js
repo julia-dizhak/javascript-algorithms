@@ -58,7 +58,35 @@ var fizzBuzz = function(n) {
   }
   return output;
 };
+//console.log('fizzBuzz', fizzBuzz(15));
 
+/*
+Print each result on a new separate line
+*/
+function fizzBuzzNewLine(n) {
+  let output = '';
+  for (let i = 1; i <= n; i++) {
+    if (i % 15 === 0) {
+        output += 'FizzBuzz';
+        if (i !== n) output += '\n';
+    }
+    else if (i % 3 === 0) {
+        output += 'Fizz';
+        if (i !== n) output += '\n';
+    }
+    else if (i % 5 === 0) {
+        output += 'Buzz';
+        if (i !== n) output += '\n';
+    }
+    else {
+      if (i == n) output += i;
+      else output += i + '\n';
+    }  
+  }
+  return output;
+}
+
+//console.log('fizzBuzz solution', fizzBuzzNewLine(5));
 /*
 Approach string concatenation
 

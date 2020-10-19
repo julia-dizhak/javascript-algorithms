@@ -68,8 +68,7 @@ var maxProfitUseBruteForce = function(prices) {
 /*
 Algorithm One pass
 
-Say the given array is:
-[7, 1, 5, 3, 6, 4]
+Say the given array is: [7, 1, 5, 3, 6, 4]
 
 If we plot the numbers of the given array on a graph (days - x, profit - y),
 we get:
@@ -82,6 +81,31 @@ minprice) obtained so far respectively.
 Complexity Analysis
 Time complexity: O(n). Only a single pass is needed.
 Space complexity: O(1). Only two variables are used.
+*/
+var maxProfitOnePass = function(prices) {
+  let minPrice = +Infinity;
+  let max = 0;
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) minPrice = prices[i];
+    let profit = prices[i] - minPrice;
+    if (profit > max) max = profit;    
+  }
+  return max;
+};
+
+var maxProfitOnePass1 = function(prices) {
+  let minPrice = +Infinity;
+  let max = 0;
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) minPrice = prices[i]; 
+    max = Math.max(max, prices[i] - minPrice)
+  }
+  return max;
+};
+
+/* 
+the same approach
+works as well
 */
 var maxProfit = function(prices) {
   // always set min to max value initially and max to min value
@@ -97,20 +121,6 @@ var maxProfit = function(prices) {
 
   return maxProfit;
 }
-/* 
-the same approach
-works as well
-*/
-var maxProfitOnePass = function(prices) {
-  let minPrice = +Infinity;
-  let max = 0;
-  for (let i = 0; i < prices.length; i++) {
-    if (prices[i] < minPrice) minPrice = prices[i];
-    let profit = prices[i] - minPrice;
-    if (profit > max) max = profit;    
-  }
-  return max;
-};
 //console.log('maxprofit', maxProfitOnePass([7,1,5,3,6,4]));
 
 /*
@@ -157,11 +167,13 @@ var maxProfitFindMinPrice = function(prices) {
 /*
 Approach DP
 
+Dynamic programming (dp) is a popular method among hard-level problems. Its 
+basic idea is to store the previous result to reduce redundant calculations.
+
 There's is a clear formula expression here, where dp[i] denotes the max profit
 on ith day.
 
-We should get the max profit on (i + 1)th day from
-profit from previous days, or
+We should get the max profit on (i + 1)th day from profit from previous days, or
 profit gained on this day (current price - minimum price before)
 And only after this, we can update the minimum price.
 
@@ -169,6 +181,7 @@ Then, according this 'naive' DP solution, we can see there's only one variable
 needed for memorization. So we change the array dp[] to a variable, and thus
 change the space from O(n) to O(1).
 
+todo
 (A good example of doing this reducing space would be knapsack problem. We can
 change the space complexity from O(mn) to O(n). I think you can discover that
 by yourself.)
@@ -190,8 +203,7 @@ var maxProfitDP = function(prices) {
 
 //console.log('maxProfitDP', maxProfitDP([7,1,5,3,6,4]))
 
-// todo why it's DP problem
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
+
 
 var maxProfit2 = function(prices){
   if (prices == null || prices.length <= 1) return 0;
@@ -208,27 +220,24 @@ var maxProfit2 = function(prices){
 }
 
 /*
+todo
+
 It's kinda the same approach compared to the Kadane's Algorithm on maximum subarray.
 When iterating the array you consider to sell on day i what would be the best profit against
 its current minimum buying price while updating minimum buying price.
 
 https://hackernoon.com/kadanes-algorithm-explained-50316f4fd8a6
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/39038/Kadane's-Algorithm-Since-no-one-has-mentioned-about-this-so-far-%3A)-(In-case-if-interviewer-twists-the-input)
+
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/712254/simple-2-approaches-DP-and-Recursion-Time-O(n)-Space-O(1)
+
 */
 
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/discuss/712254/simple-2-approaches-DP-and-Recursion-Time-O(n)-Space-O(1)
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
-//console.log('maxProfit', maxProfitUseBruteForce([7,6,4,3,1]))
-
-// answer https://leetcode.com/discuss/explore/july-leetcoding-challenge/762350/Task-Scheduler-questions
-
-
-
 export {
-  maxProfit, maxProfitOnePass,
+  maxProfit, 
+  maxProfitOnePass, maxProfitOnePass1,
   maxProfitUseBruteForce,
   maxProfit1,
   maxProfitFindMinPrice,
   maxProfitDP,
-  
 }

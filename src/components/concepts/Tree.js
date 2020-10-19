@@ -46,7 +46,9 @@ import { BT as BT1 , widthOfBinaryTree } from '../../leetcode/tree/binary-tree/m
 //import { test } from '../../leetcode/contest/biweekly/35/index';
 
 // contest 36
-import { test } from '../../leetcode/contest/biweekly/36/index';
+//import { test } from '../../leetcode/contest/biweekly/36/index';
+// contest 37
+import { test } from '../../leetcode/contest/biweekly/37/index';
 
 // codewars
 //import { basketWithoutDuplicatesUseReduce } from '../../codewars/arrays/filter-out-duplicates';

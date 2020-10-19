@@ -1268,15 +1268,15 @@ var deserialize = function(data) {
 let root4 = new TreeNode(2);
 root4.left = new TreeNode(1);
 root4.left.left = new TreeNode(3);
-console.log('root', root4);
+//console.log('root', root4);
 
 
 //console.log('twoOperations', twoOperations(root4));
-console.log('serialize', serialize(root4));
+//console.log('serialize', serialize(root4));
 
 // Your functions will be called as such:
 //const twoOperations = deserialize('123');
-console.log('deserialize', deserialize('[1,2,3]'));
+//console.log('deserialize', deserialize('[1,2,3]'));
 //deserialize(serialize(root));
 
 
@@ -1296,7 +1296,7 @@ is it interval problem or not
 // wrong solution
 var findMinArrowShots1 = function(points) {
   points = points.sort((a,b) => a[0] - b[0]);
-  console.log('points', points);
+  //console.log('points', points);
 
   let intervals = [];
   intervals.push(points[0]);
@@ -1313,7 +1313,7 @@ var findMinArrowShots1 = function(points) {
       lastInterval[1] = Math.min(lastInterval[1], end);
       lastInterval[0] = Math.min(lastInterval[0], start);
     }
-    console.log('lastInterval', lastInterval);
+    //console.log('lastInterval', lastInterval);
   }
 
   return shoot;
@@ -1350,10 +1350,10 @@ var findMinArrowShots = function(points) {
   //debugger
   if (points.length === 0) return 0;
   points = points.sort((a,b) => a[1] - b[1]);
-  console.log('points', points);
+  //console.log('points', points);
 
   let arrowPos = points[0][1];
-  console.log('arrowPos', arrowPos);
+  //console.log('arrowPos', arrowPos);
   let shoot = 1;
 
   for (let i = 1; i < points.length; i++) {
@@ -1369,7 +1369,7 @@ var findMinArrowShots = function(points) {
 
 //console.log('ArrowShots', findMinArrowShots([[10,16],[2,8],[1,6],[7,12]]));
 //console.log('ArrowShots2', findMinArrowShots([[1,2],[3,4],[5,6],[7,8]]));
-console.log('ArrowShots2', findMinArrowShots([[-2147483646,-2147483645],[2147483646,2147483647]]));
+//console.log('ArrowShots2', findMinArrowShots([[-2147483646,-2147483645],[2147483646,2147483647]]));
 
 
 /*
@@ -1496,25 +1496,106 @@ var rotate = function(nums, k) {
     nums.pop();
     k--;
   }
-  console.log('nums', nums);
+  //console.log('nums', nums);
   return nums;
 };
 
-console.log('rotate', rotate([1,2,3,4,5,6,7], 3))
-console.log('rotate', rotate([-1,-100,3,99], 2))
+// console.log('rotate', rotate([1,2,3,4,5,6,7], 3))
+// console.log('rotate', rotate([-1,-100,3,99], 2))
 
-var rotate1 = function(nums, k) {
-  let res = nums.slice(0,k+1);
-  let rest = nums.slice(k+1);
-  console.log('res', res);
-  console.log('rest', rest);
+/*
+Store last element, right shift the array and make that last element to be the 
+first element of list.
+*/
+function rightRotate(arr, n) {
+  return (arr.splice(arr.length - n)).concat(arr.splice(0, arr.length));
+}
+// console.log('rotate', rightRotate([1,2,3,4,5,6,7], 3))
+// console.log('rotate', rightRotate([-1,-100,3,99], 2))
 
-  return rest.concat(res);
+/*
+binary search?
+
+matrix properties
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+*/
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {boolean}
+ */
+
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor(left + (right - left)/2);
+    if (target === arr[mid]) {
+      return mid;
+    } else if (target < arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+
+  return -1;
+} 
+
+var searchMatrix = function(matrix, target) {
+  if (matrix.length < 1) return false;
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+  if (rows < 1 || cols < 1) return false;
+
+  let index;
+  debugger
+  for (let i = 0; i < rows; i++) {
+    let lastElementInRow = matrix[i][cols-1];
+    console.log('lastElementInRow', lastElementInRow);
+    let row = matrix[i];
+    console.log('row', row)
+    if (target <= lastElementInRow) {
+      index = binarySearch(row, target);
+      console.log('index', index);
+      if (index != -1) {
+        return true;
+      }
+    } else continue
+  }
+
+  return false;
 };
-console.log('rotate', rotate1([1,2,3,4,5,6,7], 3))
-console.log('rotate', rotate1([-1,-100,3,99], 2))
 
 
+const matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,50]]
+// console.log('searchMatrix', searchMatrix(matrix, 3));
+// console.log('searchMatrix', searchMatrix(matrix, 10));
+// console.log('searchMatrix', searchMatrix(matrix, 13));
+// console.log('searchMatrix', searchMatrix([], 0));
+// console.log('searchMatrix', searchMatrix([[1]], 0));
+// console.log('searchMatrix', searchMatrix([[1]], 1));
+// console.log('searchMatrix', searchMatrix([[1,2]], 1));
+// console.log('searchMatrix', searchMatrix([[1,2]], 2));
+// console.log('searchMatrix', searchMatrix([[1,2]], 3));
+
+/*
+https://leetcode.com/problems/repeated-dna-sequences/discuss/206968/javascript
+*/
+var findRepeatedDnaSequences = function(s) {
+  let res = [];
+  //s = s.match(/.{1,10}/g);
+  let hash = {};
+  for (let i = 0; i < s.length; i++) {
+    
+    
+  }
+  // move to regex patterns
+  console.log('s', s);
+};
+console.log('findRepeatedDnaSequences', findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT'));
 
 export {
   largestTimeFromDigits,

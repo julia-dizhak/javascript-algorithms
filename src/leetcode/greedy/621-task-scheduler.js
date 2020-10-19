@@ -227,6 +227,8 @@ var leastIntervalUseHash = function(tasks, n) {
 todo solution with priority queue
 need to build priority queue by myself using js
 https://leetcode.com/problems/task-scheduler/discuss/104496/concise-Java-Solution-O(N)-time-O(26)-space
+
+https://leetcode.com/discuss/explore/july-leetcoding-challenge/762350/Task-Scheduler-questions
 */
 
 export {

@@ -5,6 +5,10 @@ Given an array and a number "value", find two numbers from the array that sum
 to 'value'. Implement your solution in JavaScript and see if your output matches 
 with the correct output.
 
+Note: In case there is more than one pair in the array containing numbers that 
+add up to value, you are required to return only one such pair. If no such pair 
+found then simply return false.
+
 */
 
 /*
@@ -15,7 +19,7 @@ whole array, and check if any of the two elements add up to the given number n.
 Use a nested for-loop and iterate over the entire array for each element.
 
 Time 
-Since we iterate nn times over the entire array of length nn, the time 
+Since we iterate n times over the entire array of length n, the time 
 complexity is O(n^2).
 */
 
