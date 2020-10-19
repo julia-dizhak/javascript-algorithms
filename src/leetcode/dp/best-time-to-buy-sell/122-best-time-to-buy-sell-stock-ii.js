@@ -62,19 +62,14 @@ var maxProfitBruteForce = function(prices) {
 
   let maxProfit = 0;
 
-  for (let i = 0; i < prices.length; i++) {
-    for (let j = i+1; j < array.length; j++) {
-      let profit = prices[j] - prices[i];
-      if (profit > maxProfit) maxProfit = profit;
-      
-    }
-    
-  }
+  
   return maxProfit
 };
 
+//console.log('maxProfit', maxProfitBruteForce([7,1,5,3,6,4]));
+
 /*
-Greedy 
+Greedy Peak Valley approach
 
 The profit is the sum of sub-profits. Each sub-profit is the difference between 
 selling at day j, and buying at day i (with j > i). The range [i, j] should be 
@@ -85,14 +80,29 @@ sub-profit = prices[j] - prices[i]
 We should choose j that prices[j] is as big as possible, and choose i that 
 prices[i] is as small as possible (of course in their local range).
 
+
+If we analyze the graph, we notice that the points of interest are the consecutive 
+valleys and peaks.
+
+The key point is we need to consider every peak immediately following a valley 
+to maximize the profit. In case we skip one of the peaks (trying to obtain more 
+profit), we will end up losing the profit over one of the transactions leading 
+to an overall lesser profit.
+
 Time is O(n)
 space is O(1)
 
 todo
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/208241/Explanation-for-the-dummy-like-me.
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/564729/Java-Simple-Code-DP
+
 */
 var maxProfit = function(prices) {
-  let i = 0, buy, sell, profit = 0, N = prices.length - 1;
+  let i = 0, 
+    buy = prices[0], // valley
+    sell = prices[0], // peak
+    profit = 0, N = 
+    prices.length - 1;
 
   while (i < N) {
     while (i < N && prices[i+1] <= prices[i]) i++;
@@ -106,9 +116,29 @@ var maxProfit = function(prices) {
   return profit;
 }
 
-//console.log('maxProfit', maxProfitBruteForce([7,1,5,3,6,4]));
-console.log('maxProfit', maxProfit([7,1,5,3,6,4]));
+// the same approach 
+var maxProfit1 = function(prices) {
+  let i = 0, 
+    buy = prices[0], // valley
+    sell = prices[0], // peak
+    profit = 0, N = 
+    prices.length - 1;
+
+  while (i < N) {
+    while (i < N && prices[i] >= prices[i+1]) i++;
+    buy = prices[i];
+
+    while (i < N && prices[i] <= prices[i+1]) i++;
+    sell = prices[i];
+
+    profit += sell - buy;
+  }
+  return profit;
+}
+
+//console.log('maxProfit', maxProfit1([7,1,5,3,6,4]));
 
 export {
-  maxProfit
+  maxProfit,
+  maxProfit1
 }

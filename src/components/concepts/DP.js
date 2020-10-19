@@ -8,7 +8,8 @@ import { maxProduct } from '../../leetcode/dp/subarrays/152-max-product-subarray
 import { change } from '../../leetcode/dp/518-coin-change-2';
 import { numTrees } from '../../leetcode/dp/96-unique-binary-search-trees';
 import { uniquePaths } from '../../leetcode/dp/62-unique-paths';
-import { maxProfit } from '../../leetcode/dp/121-best-time-to-buy-sell-stock';
+//import { maxProfit } from '../../leetcode/dp/best-time-to-buy-sell/121-best-time-to-buy-sell-stock';
+//import { maxProfit } from '../../leetcode/dp/best-time-to-buy-sell/122-best-time-to-buy-sell-stock-ii';
 import { climbStairsBruteForce } from '../../leetcode/dp/70-climbing-stairs';
 import { mincostTickets } from '../../leetcode/dp/983-min-cost-tickets';
 

@@ -808,7 +808,7 @@ started on 12/21/17
     | :---          | :---      | :---   |
     | DP            | O(n^2)    | 0(n)   |
 
-    * [121. Best time to buy and sell stock](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/best-time-to-buy-sell/121-best-time-to-buy-sell-stock.js)
+    * [121. Best time to buy and sell stock 1](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/best-time-to-buy-sell/121-best-time-to-buy-sell-stock.js)
 
     | Approaches:                | Time      | Space  |
     | :---                       | :---      | :---   |
@@ -816,6 +816,13 @@ started on 12/21/17
     | One pass                   | O(n)      | 0(1)   |
     | Find min price so far      | O(n)      | 0(1)   |
     | DP                         | O(n)      | 0(n)   |
+
+    * [122. Best time to buy and sell stock II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/best-time-to-buy-sell/122-best-time-to-buy-sell-stock-ii.js)
+
+    | Approaches:                | Time      | Space  |
+    | :---                       | :---      | :---   |
+    | Greedy                     | O(n)      | 0(1)   |
+
 
     * [70 Climbing stairs](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/dp/70-climbing-stairs.js)
 

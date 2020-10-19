@@ -1,5 +1,6 @@
 import {
-  maxProfit,
+  //maxProfit,
+  maxProfit1 as maxProfit
 } from './122-best-time-to-buy-sell-stock-ii';
 
 describe('best buy and sell stock 2 test case ', () => {
