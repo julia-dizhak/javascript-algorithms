@@ -6,6 +6,7 @@ import { minimumAbsoluteDifference } from '../../leetcode/greedy/task/min-abs-di
 import { luckBalance } from '../../leetcode/greedy/task/luck-balance';
 import { twoCitySchedCost, twoCitySchedCostSortAbs } from '../../leetcode/greedy/1029-two-city-scheduling';
 import { canCompleteCircuit } from '../../leetcode/greedy/134-gas-station';
+import { minDominoRotations } from '../../leetcode/greedy/1007-min-domino-rotations-for-equal-row';
 //import { leastInterval } from '../../leetcode/greedy/621-task-scheduler';
 
 export default function GreedyAlgorithms() {

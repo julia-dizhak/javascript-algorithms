@@ -45,7 +45,8 @@ If we know the position of one of the elements,
 do we also know the positioning of all the duplicate elements?
 
 Hint 2
-We need to modify the array in-place and the size of the final array would potentially be smaller than the size of the input array.
+We need to modify the array in-place and the size of the final array would 
+potentially be smaller than the size of the input array.
 So, we ought to use a two-pointer approach here.
 One, that would keep track of the current element in the original array
 and another one for just the unique elements.

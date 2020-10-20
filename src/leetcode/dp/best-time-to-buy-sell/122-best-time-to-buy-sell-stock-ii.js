@@ -62,7 +62,7 @@ var maxProfitBruteForce = function(prices) {
 
   let maxProfit = 0;
 
-  
+  // todo
   return maxProfit
 };
 
