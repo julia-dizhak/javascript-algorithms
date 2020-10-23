@@ -41,9 +41,9 @@ Algorithm
 Visualization:
     10
     /\
-   5   6
+  5   6
       / \
-     8   7
+    8   7
           \
            4
 var height = function(root) {
@@ -85,8 +85,7 @@ space: height of binary tree, in worst case O(n)
  */
 var maxDepth = function(root) {
   if (root === null) return 0;
-
-  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
 
 // the same approach
@@ -95,7 +94,7 @@ var maxDepthRecursion = function(root) {
 
   let leftHeight = maxDepthRecursion(root.left);
   let rightHeight = maxDepthRecursion(root.right);
-  return Math.max(leftHeight, rightHeight) + 1;
+  return 1 + Math.max(leftHeight, rightHeight);
 };
 
 /*

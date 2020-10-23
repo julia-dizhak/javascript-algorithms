@@ -637,11 +637,17 @@ started on 12/21/17
     | :---          | :---     | :---   |
     | Recursion     | O(n)     | 0(n)   |
 
-    * [104. Maximum depth of binary tree](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/104-maximum-depth-of-binary-tree.js)
+    * [104. Maximum depth of binary tree](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/depth/104-maximum-depth-of-binary-tree.js)
 
     | Approaches:    | Time     | Space  |
     | :---           | :---     | :---   |
     | Recursion      | O(n)     | 0(n)   |
+
+    * [111. Minimum depth of binary tree](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/depth/111-min-depth-of-bt.js)
+
+    | Approaches:    | Time     | Space           |
+    | :---           | :---     | :---            |
+    | Recursion      | O(n)     | 0(n) / O(logn)  |
 
     * [100. Same Tree ](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/tree/binary-tree/100-same-tree.js)
 

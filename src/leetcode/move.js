@@ -1598,6 +1598,73 @@ var findRepeatedDnaSequences = function(s) {
 console.log('findRepeatedDnaSequences', findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT'));
 
 
+/*
+find all subarrays
+check sign
+
+brute force
+https://leetcode.com/problems/asteroid-collision/discuss/374043/Java-or-Full-thought-process-or-Brute-force-to-100-beat-or-Various-solutions
+
+overall, there are totally 4 scenarios will happen: 1.+ + 2.- - 3.+ - 4.- +
+when collision happens: only 3 which is + -
+use a stack to keep track of the previous and compare current value with previous ones
+
+https://leetcode.com/problems/asteroid-collision/discuss/109694/JavaC%2B%2B-Clean-Code
+use stack
+If someone wants a JavaScript solution: (here I make use of a 'blasted' boolean, just to think more naturally about the solution and keep it inline with other such Stack related problems.
+var asteroidCollision = function(asteroids) {
+    const stack = [];
+
+    if (!asteroids || asteroids.length < 1) return stack;
+
+    for (let i = 0; i < asteroids.length; i++) {
+        if (asteroids[i] < 0) {
+            const absoluteValue = Math.abs(asteroids[i]);
+
+            let blasted = false;
+            while (stack.length > 0 && stack[stack.length - 1] > 0 && stack[stack.length - 1] <= absoluteValue) {
+                if (stack.pop() === absoluteValue) {
+                    blasted = true;
+                    break;
+                }
+            }
+
+            if (!blasted && (stack.length === 0 || stack[stack.length - 1] < 0)) {
+                stack.push(asteroids[i]);
+            }
+        } else {
+            stack.push(asteroids[i]);
+        }
+    }
+
+    return stack;
+};
+*/
+/**
+ * @param {number[]} asteroids
+ * @return {number[]}
+ */
+var asteroidCollision = function(asteroids) {
+  const n = asteroids.length;
+  let res = [];
+
+  for (let i = 0; i < n - 2 + 1; i++) {
+    console.log(asteroids[i]);
+    let pair = []
+    for (let j = i; j < i+2; j++) {
+      console.log('j',asteroids[j]);
+      pair.push(asteroids[j]);
+    }
+    console.log('pair', pair);
+    res.push(pair)
+  }
+
+  // 
+  return res;
+};
+
+//console.log('asteroidCollision', asteroidCollision([5,10,-5]));
+
 
 export {
   largestTimeFromDigits,

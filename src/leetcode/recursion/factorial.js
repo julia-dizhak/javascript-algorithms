@@ -88,20 +88,24 @@ function factorialUseWhileLoop(n) {
 }
 
 // use recursion
-function factorial(n) {
+function factorial(targetNumber) {
   //console.time('test-factorial');
   // if the number is less than 0, reject it
-  if ( n < 0 ) {
+  if ( targetNumber < 0 ) {
     return -1;
   }
 
   // works with (n === 1) as well
-  if (n === 0) {
-    return 1;
-  } else {
+  if (targetNumber <= 1) return 1;
+  else {
     //console.timeEnd('test-factorial');
-    return n * factorial(n - 1);
+    return targetNumber * factorial(targetNumber - 1);
   }
 }
 
-export { factorialUseLoop, factorial, factorialUseWhileLoop, factorialUseLoopOperatorMinus }
+export { 
+  factorialUseLoop, 
+  factorial, 
+  factorialUseWhileLoop, 
+  factorialUseLoopOperatorMinus 
+}
