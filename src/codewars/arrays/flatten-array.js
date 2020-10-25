@@ -1,3 +1,6 @@
+/*
+As in the last problem, we have to process every item we receive. There’s no way to get around that so the best time complexity we can hope for is O(n).
+*/
 const nestedArr = [1, 2, [3], [4, [5]] ];
 
 // 1st approach

@@ -405,7 +405,13 @@ started on 12/21/17
 
     * [383. Ransom Note]
 
-    * [387. First Unique Character in a String]
+    * [387. First Unique Character in a String](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/unique-characters/387-first-unique-character-in-string.js)
+
+    | Approaches:                         | Time         | Space         |
+    | :---                                | :---         | :---          |
+    | Hash / Map                          | O(n)         | O(n) / O(1)   |
+    | Brute-force (indexOf, lastIndexOf)  | O(n^2)       | O(1)          |
+
 
     * [Is string unique](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/unique-characters/is-unique.js)
 

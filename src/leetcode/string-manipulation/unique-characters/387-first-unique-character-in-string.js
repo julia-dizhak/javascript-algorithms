@@ -6,6 +6,14 @@ easy
 Given a string, find the first non-repeating character in it and return it's index.
 If it doesn't exist, return -1.
 
+Examples:
+
+s = "leetcode"
+return 0.
+
+s = "loveleetcode"
+return 2.
+
 Note: You may assume the string contain only lowercase letters.
 */
 
@@ -22,7 +30,7 @@ Space complexity:
 O(N) since we have to keep a hash map with N elements.
 O(1) because English alphabet contains 26 letters.
 */
-var firstUniqueChar = function(s) {
+var firstUniqueCharUseHash = function(s) {
   const frequencies = {};
 
   for (const char of s) {
@@ -40,11 +48,46 @@ var firstUniqueChar = function(s) {
   return -1
 }
 
+/*
+Use Map
+
+time is O(n)
+space is O(n)
+*/
+var firstUniqueCharUseMap = function(s) {
+  if (!s || !s.length) return -1;
+  let cache = new Map();
+
+  for (const char of s) {
+    cache.set(char, cache.get(char) + 1 || 1);
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (cache.get(s[i]) == 1) return i;
+  }
+
+  return -1
+}
+
+/*
+Approach use indexOf, lastIndexOf
+
+time is O(n^2)
+*/
+var firstUniqueChar = function(s) {
+  for (let i = 0; i < s.length; i++) {
+    if (s.indexOf(s[i]) === s.lastIndexOf(s[i])) return i;
+  }
+
+  return -1
+}
+
+
 /**
 Calculate unique symbols in string
 
 time O(n)
-space O(n)
+space O(n) / O(1)
 */
 var countSymbols = function(str) {
   let map = new Map();
@@ -68,4 +111,7 @@ var countSymbols = function(str) {
 }
 
 
-export { firstUniqueChar, countSymbols }
+export { 
+  firstUniqueChar, firstUniqueCharUseHash, firstUniqueCharUseMap,
+  countSymbols 
+}
