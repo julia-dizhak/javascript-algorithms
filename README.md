@@ -404,7 +404,15 @@ started on 12/21/17
     | reverse, split, trim     | O(n)         | O(n))    |
 
     * [383. Ransom Note]
+
     * [387. First Unique Character in a String]
+
+    * [Is string unique](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/unique-characters/is-unique.js)
+
+    | Approaches:                | Time         | Space    |
+    | :---                       | :---         | :---     |
+    | Brute-force (lastIndexOf)  | O(n^2)       | O(1)     |
+ 
     * [771. Jewels and Stones]
 
     * [438. Find all anagrams](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/438-find-all-anagrams.js)

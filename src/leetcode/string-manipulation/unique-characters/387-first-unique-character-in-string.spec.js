@@ -1,4 +1,7 @@
-import { firstUniqueChar, countSymbols } from './387-first-unique-character-in-string';
+import { 
+  firstUniqueChar, 
+  countSymbols 
+} from './387-first-unique-character-in-string';
 
 describe('firstUniqueChar', () => {
 

@@ -1665,6 +1665,50 @@ var asteroidCollision = function(asteroids) {
 
 //console.log('asteroidCollision', asteroidCollision([5,10,-5]));
 
+/*
+132 Pattern
+
+i < j < k
+nums[i] < nums[k] < nums[j]
+*/
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var find132pattern = function(nums) {
+  const n = nums.length;
+
+  for (let i = 0; i < n - 2; i++) {
+    if (nums[i] >= nums[i+1]) continue;
+
+    for (let j = i+1; j <= n - 1 ; j++) {
+      if (nums[j] <= nums[j+1]) continue;
+
+      for (let k = j+1; k < n; k++) {    
+        if (nums[k] >= nums[j] || nums[k] <= nums[i]) {
+          continue
+        }
+        return true;
+      }
+      console.log('i', i);
+      console.log('j', j);
+      i = j;
+      break;
+
+    };
+  }
+
+  return false;
+};
+// console.log('find132pattern', find132pattern([1,2,3,4]));
+// console.log('find132pattern', find132pattern([3,1,4,2]));
+
+/*
+Bag of tokens
+https://leetcode.com/problems/bag-of-tokens/discuss/908434/Heavily-commented-JavaScript-Solution
+*/
+
+
 
 export {
   largestTimeFromDigits,

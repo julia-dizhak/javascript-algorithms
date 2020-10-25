@@ -87,7 +87,14 @@ function factorialUseWhileLoop(n) {
   return result;
 }
 
-// use recursion
+/* 
+Approach recursion
+
+We can write the mathematical formula recursively as:
+n! = 
+n = 1, if n <= 1, 
+n = n * (n-1)!, if n > 1 
+*/
 function factorial(targetNumber) {
   //console.time('test-factorial');
   // if the number is less than 0, reject it

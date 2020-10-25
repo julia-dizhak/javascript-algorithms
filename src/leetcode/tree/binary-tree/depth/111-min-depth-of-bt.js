@@ -74,7 +74,7 @@ root.left = new TreeNode(9);
 root.right = new TreeNode(20);
 root.right.left = new TreeNode(15);
 root.right.right = new TreeNode(7);
-console.log('minDepth', minDepth(root));
+//console.log('minDepth', minDepth(root));
 //console.log('minDepth', minDepth([3,9,20,null,null,15,7]));
 //console.log('minDepth', minDepth([2,null,3,null,4,null,5,null,6]));
     
