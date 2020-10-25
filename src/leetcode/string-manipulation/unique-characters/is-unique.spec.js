@@ -1,8 +1,9 @@
 import { 
   //isUnique,
+  isUnique1 as isUnique
   // isUniqueBruteForce as isUnique,
   //isUniqueUseHash as isUnique, 
-  isUniqueUseHash1 as isUnique, 
+  //isUniqueUseHash1 as isUnique, 
   //isUniqueUseSort as isUnique
 } from './is-unique';
 

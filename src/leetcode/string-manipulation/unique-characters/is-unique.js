@@ -112,20 +112,54 @@ function isUniqueUseSort(str) {
 }
 
 /* 
+Approach use Set (solution 3)
 
+A set is similar to an object. We insert items into the set and retrieve them 
+later.
+
+One of a set’s main strengths is that it can only store one copy of each item. 
+Attempts to add an item twice fail silently, so it only stores unique values.
+
+A set also has instant insertion and retrieval of items.
 */
 function isUnique(str) {
+  let chars = new Set();
+  for (let i = 0; i < str.length; i++) {
+    if (chars.has(str[i])) return false;
+    chars.add(str[i]);
+  }
 
+  return true;
+}
+
+/*
+the same approach
+
+If all characters are unique, the size of the set will be the same length as 
+the string. If we have duplicate characters, the set will be smaller. This is 
+because the set completely ignores duplicate insertions.
+
+While time and space complexity are both also O(n) for this solution, it is, 
+in general, slightly slower than Solution 3. This is because Solution 3 has a 
+mechanism to short-circuit the loop if we come across a repeat character. 
+This solution, on the other hand, must go through the entire string and then 
+return an answer.
+
+both versions above work for strings and arrays.
+Strings and arrays are both iterable items that the set treats in the same manner.
+*/
+function isUnique1(str) {
+  return str.length === new Set(str).size
 }
 
 // tests
-console.log(isUniqueUseSort('abcdef'));
-console.log(isUnique('89%df#$^a&x'));
-console.log(isUnique('abcAdef'));
-console.log(isUnique('abcaef'));
+// console.log(isUniqueUseSort('abcdef'));
+// console.log(isUnique('89%df#$^a&x'));
+// console.log(isUnique('abcAdef'));
+// console.log(isUnique('abcaef'));
 
 export {
-  isUnique,
+  isUnique, isUnique1, 
   isUniqueUseHash, isUniqueUseHash1, 
   isUniqueBruteForce,
   isUniqueUseSort

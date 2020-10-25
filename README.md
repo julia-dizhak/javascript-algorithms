@@ -414,6 +414,7 @@ started on 12/21/17
     | Brute-force (lastIndexOf)  | O(n^2)       | O(1)         |
     | Hash                       | O(n)         | O(n)/ O(1)   |
     | Sort                       | O(n log n)   | O(n)         |
+    | Set                        | O(n)         | O(n)         |
  
     * [771. Jewels and Stones]
 
