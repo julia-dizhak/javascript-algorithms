@@ -409,9 +409,11 @@ started on 12/21/17
 
     * [Is string unique](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/unique-characters/is-unique.js)
 
-    | Approaches:                | Time         | Space    |
-    | :---                       | :---         | :---     |
-    | Brute-force (lastIndexOf)  | O(n^2)       | O(1)     |
+    | Approaches:                | Time         | Space        |
+    | :---                       | :---         | :---         |
+    | Brute-force (lastIndexOf)  | O(n^2)       | O(1)         |
+    | Hash                       | O(n)         | O(n)/ O(1)   |
+    | Sort                       | O(n log n)   | O(n)         |
  
     * [771. Jewels and Stones]
 

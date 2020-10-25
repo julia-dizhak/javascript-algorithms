@@ -1,6 +1,9 @@
 import { 
   //isUnique,
-  isUniqueBruteForce as isUnique
+  // isUniqueBruteForce as isUnique,
+  //isUniqueUseHash as isUnique, 
+  isUniqueUseHash1 as isUnique, 
+  //isUniqueUseSort as isUnique
 } from './is-unique';
 
 describe('isUnique', () => {

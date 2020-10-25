@@ -45,26 +45,88 @@ function isUniqueBruteForce(str) {
 }
 
 
-function isUnique(str) {
+/*
+Approach use hash
+
+time is O(n)
+space is O(n)
+*/
+function isUniqueUseHash(str) {
   let hash = {};
 
   for (let i = 0; i < str.length; i++) {
     hash[str[i]] = (hash[str[i]] || 0) + 1; 
   }
-  console.log('hash', hash);
+
   for (const key in hash) {
     if (hash[key] > 1) return false
   }
   return true;
 }
 
+// the same approach
+function isUniqueUseHash1(str) {
+  let hash = {};
+  for (let i = 0; i < str.length; i++) {
+    const thisChar = str[i];
+
+    if (hash[thisChar]) return false;
+    hash[thisChar] = true
+  }
+
+  return true;
+}
+
+/*
+Approach Sort
+
+We insert every character present in the string into an array and then sort the 
+array. Since the array is sorted, identical characters will appear next to each 
+other.
+
+We then go through the sorted array one by one and check if the character is the 
+same as the one before it. If so, we return false. If we process the whole array, 
+we can return true.
+
+Time
+The complexity of a sorting algorithm can be approximated as O(n * log(n)). 
+The loop scales linearly, giving us O(n).
+
+Since these two processes happen apart from one another, we can add their time complexities to get a value for the whole function. This gives us O(n + n * log(n)). Dropping the lower order term, we get:
+
+O(n * log(n)).
+
+
+Space Complexity
+We need to store every character in an array, so our space complexity is: O(n).
+*/
+function isUniqueUseSort(str) {
+  const chars = str.split('').sort();
+  console.log('chars', chars);
+
+  for (let i = 0; i < chars.length; i++) {
+    if (chars[i] === chars[i-1]) return false;
+  }
+
+  return true;
+}
+
+/* 
+
+*/
+function isUnique(str) {
+
+}
+
 // tests
-console.log(isUnique('abcdef'));
+console.log(isUniqueUseSort('abcdef'));
 console.log(isUnique('89%df#$^a&x'));
 console.log(isUnique('abcAdef'));
 console.log(isUnique('abcaef'));
 
 export {
   isUnique,
-  isUniqueBruteForce
+  isUniqueUseHash, isUniqueUseHash1, 
+  isUniqueBruteForce,
+  isUniqueUseSort
 }

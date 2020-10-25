@@ -7,13 +7,20 @@ Given a string, find the first non-repeating character in it and return it's ind
 If it doesn't exist, return -1.
 
 Note: You may assume the string contain only lowercase letters.
+*/
 
-Approach linear time solution
+/*
+Approach use Hash 
+linear time solution
+
 The best possible solution here could be of a linear time
-because to ensure that the character is unique you have to check the whole string anyway.
+because to ensure that the character is unique you have to check the whole string 
+anyway.
 
 Time complexity: O(N) since we go through the string of length N two times.
-Space complexity: O(N) since we have to keep a hash map with N elements.
+Space complexity: 
+O(N) since we have to keep a hash map with N elements.
+O(1) because English alphabet contains 26 letters.
 */
 var firstUniqueChar = function(s) {
   const frequencies = {};
