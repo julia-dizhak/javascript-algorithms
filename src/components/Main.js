@@ -17,7 +17,6 @@ import Tree from './concepts/Tree';
 import Heap from './concepts/Heap';
 import Trie from './concepts/Trie';
 
-
 import Sorting from './concepts/Sorting';
 import Searching from './concepts/Searching';
 
@@ -27,6 +26,7 @@ import DP from './concepts/DP';
 import Backtracking from './concepts/Backtracking';
 
 import CodeSandboxTasks from '../eloquent-tasks/CodeSandboxTasks';
+import Codewars from '../codewars/';
 
 import './main.css';
 
@@ -60,6 +60,7 @@ function Main() {
         <Backtracking />
 
         <CodeSandboxTasks />
+        <Codewars />
       </div>
   </div>
   );

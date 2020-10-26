@@ -1708,6 +1708,24 @@ Bag of tokens
 https://leetcode.com/problems/bag-of-tokens/discuss/908434/Heavily-commented-JavaScript-Solution
 */
 
+const Parent = function () {
+  this.name = 'Parent';
+};
+
+Parent.prototype.greet = function () {
+  console.log('hello from Parent');
+};
+
+const child = Object.create(Parent.prototype);
+
+child.cry = function () {
+  console.log('waaaaaahhhh!');
+};
+
+child.cry();
+// Outputs: waaaaaahhhh!
+
+child.greet();
 
 
 export {

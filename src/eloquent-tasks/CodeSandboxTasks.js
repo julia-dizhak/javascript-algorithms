@@ -8,7 +8,7 @@ import { chessboard } from './tasks/chessboard';
 import { isEven } from './tasks/3-chapter-functions/is-even';
 import { reverseArray, reverseArrayInPlace, reverseUseRecursion } from './tasks/4-chapter-data-structures/reverse-array';
 
-export default function StringManipulation() {
+export default function CodeSandboxTasks() {
   return (
     <div className="sorting">
       <h2>

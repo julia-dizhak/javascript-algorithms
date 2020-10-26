@@ -411,6 +411,7 @@ started on 12/21/17
     | :---                                | :---         | :---          |
     | Hash / Map                          | O(n)         | O(n) / O(1)   |
     | Brute-force (indexOf, lastIndexOf)  | O(n^2)       | O(1)          |
+    | Use Array                           | O(n)         | O(n) / O(1)   |
 
 
     * [Is string unique](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/unique-characters/is-unique.js)

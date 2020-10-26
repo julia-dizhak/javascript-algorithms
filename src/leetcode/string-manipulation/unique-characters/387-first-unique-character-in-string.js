@@ -70,6 +70,32 @@ var firstUniqueCharUseMap = function(s) {
 }
 
 /*
+Use Array
+
+time is O(n)
+space is O(n) / O(1)
+*/
+var firstUniqueCharUseArray = function(s) {
+  if (!s || !s.length) return -1;
+
+  let freq = new Array(26).fill(0);
+  for (let i = 0; i < s.length; i++) {
+    //console.log(s.charCodeAt(i));
+    freq[s.charCodeAt(i) - 'a'.charCodeAt(0)]++
+  }
+  //console.log('chars', freq);
+
+  for (let i = 0; i < s.length; i++) {
+    const pos = s.charCodeAt(i) - 'a'.charCodeAt(0)
+    if (freq[pos] == 1) return i; 
+  }
+  
+  return -1;
+}
+
+//console.log('firstUniqueCharUseArray', firstUniqueCharUseArray('abcdefkz'));
+
+/*
 Approach use indexOf, lastIndexOf
 
 time is O(n^2)
@@ -81,6 +107,7 @@ var firstUniqueChar = function(s) {
 
   return -1
 }
+
 
 
 /**
@@ -110,8 +137,8 @@ var countSymbols = function(str) {
   return keys;
 }
 
-
 export { 
   firstUniqueChar, firstUniqueCharUseHash, firstUniqueCharUseMap,
+  firstUniqueCharUseArray,
   countSymbols 
 }

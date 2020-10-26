@@ -1,7 +1,8 @@
 import { 
   //firstUniqueChar, 
   //firstUniqueCharUseHash as firstUniqueChar,
-  firstUniqueCharUseMap as firstUniqueChar,
+  //firstUniqueCharUseMap as firstUniqueChar,
+  firstUniqueCharUseArray as firstUniqueChar,
   countSymbols 
 } from './387-first-unique-character-in-string';
 
