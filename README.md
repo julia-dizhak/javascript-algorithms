@@ -457,7 +457,13 @@ started on 12/21/17
 
     * [268. Missing number (approach: Gauss, sorting, hash)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/268-missing-number.js)
 
-    * [26. Remove duplicates from sorted array (Two pointers: slow and fast runner)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/26-remove-duplicates-from-sorted-array.js)
+    * [26. Remove duplicates from sorted array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/26-remove-duplicates-from-sorted-array.js)
+
+    | Approaches:               | Time           | Space          |
+    | :---                      | :---           | :---           |
+    | Hash and Array            | O(n)           | 0(2n) = O(n)   |
+    | 2 pointers: slow and fast | O(n)           | 0(1)           |
+    | Set                       | O(n)           | 0(n)           |
 
     * [540. Single element in sorted array (approach: Brute force, binary search, BS only on even indexes)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)
 

@@ -32,7 +32,6 @@ const countTotalAmountAliveNeighbors = (grid, row, col) => {
 
   const neighbors = [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]];
   return neighbors.reduce((amount, neighbor) => {
-    //debugger
     const x = row + neighbor[0];
     const y = col + neighbor[1];
 

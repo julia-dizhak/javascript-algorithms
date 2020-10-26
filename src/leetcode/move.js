@@ -1708,25 +1708,23 @@ Bag of tokens
 https://leetcode.com/problems/bag-of-tokens/discuss/908434/Heavily-commented-JavaScript-Solution
 */
 
-const Parent = function () {
-  this.name = 'Parent';
-};
-
-Parent.prototype.greet = function () {
-  console.log('hello from Parent');
-};
-
-const child = Object.create(Parent.prototype);
-
-child.cry = function () {
-  console.log('waaaaaahhhh!');
-};
-
-child.cry();
-// Outputs: waaaaaahhhh!
-
-child.greet();
-
+function removeDupes(str) {
+  let chars = str.split('');
+  console.log('chars', chars);
+  
+  let slow = 0;
+  for (let fast = 1; fast < chars.length; fast++) {
+    if (chars[slow] !== chars[fast]) {
+      slow += 1;
+      chars[slow] = chars[fast]
+      
+    }
+  }
+  console.log('chars', chars);
+  return slow+1;
+}
+console.log('removeDupes', removeDupes('aabbccdd'));
+//console.log('removeDupes', removeDupes('abcd'));
 
 export {
   largestTimeFromDigits,

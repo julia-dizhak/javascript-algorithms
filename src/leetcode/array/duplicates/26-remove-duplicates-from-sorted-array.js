@@ -57,24 +57,6 @@ and move on to the next unique element.
 */
 
 /*
-Approach Brute force
-
-Easy solution but doesn't required condition with space
-There is extra space?
-*/
-var removeDuplicates = function(nums) {
-  let uniqueArr = [];
-
-  for (let i = 1; i < nums.length; i++) {
-    if (nums[i] !== nums[i+1]) {
-      uniqueArr.push(nums[i])
-    }
-  }
-
-  return uniqueArr.length
-};
-
-/*
 Approach 2 Pointers: slow and fast runner
 
 Algorithm
@@ -121,10 +103,118 @@ var removeDuplicatesTwoPointers = function(nums) {
   return slow + 1;
 };
 
+/*
+Approach Brute force
+
+Easy solution but doesn't required condition with space
+There is extra space?
+*/
+var removeDuplicates = function(nums) {
+  let uniqueArr = [];
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] !== nums[i+1]) {
+      uniqueArr.push(nums[i])
+    }
+  }
+
+  return uniqueArr.length
+};
+
 // tests
 // console.log('removeDuplicatesTwoPointers', removeDuplicatesTwoPointers([0,0,1,1,1,2,2,3,3,4]))
 
+
+/*
+Remove Dupes
+
+Write a function that takes in a string and returns a new string. The new string 
+should be the same as the original with every duplicate character removed.
+*/
+
+/*
+Approach Hash
+
+We create an object and an array, both of which will hold unique characters.
+
+The for-loop goes through every character and checks if it’s present in our object.
+If so, do nothing. It’s a duplicate letter.
+
+If not present in our object, we need to insert it into both the object and the 
+array.
+
+We need to maintain both the object and the array because they perform different 
+functions for us. The object will allow us to check if we’ve already seen the 
+letter instantaneously. However, objects don’t keep track of the order that 
+items are inserted in. For that, we also need to push the characters into an 
+array.
+
+At the end, we join all the characters in the array together and return the string.
+
+Time
+We have to process every character, so our time complexity is: O(n)
+
+Space: We store every character twice, in an array and in an object. 
+This gives us O(2n) which simplifies to: O(n).
+*/
+function removeDupesUseHash(str) {
+  let chars = {};
+  let uniqueChars = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (chars[str[i]] === undefined) {
+      chars[str[i]] = (chars[str[i]] || 0) + 1;
+      uniqueChars.push(str[i]);
+    }
+  }
+
+  return uniqueChars.join('')
+}
+
+/*
+Use Set
+As mentioned in “Is Unique”, JavaScript received a new data structure that allows 
+items to be inserted only once and keeps track of insertion order. Using this 
+construct, the Set, we can greatly simplify our code.
+
+Let’s unpack these two lines.
+const uniqueCharacters = new Set(str);
+This line creates a new set and provides the string as input. In JavaScript, a 
+string is an iterable item, meaning that the Set breaks it up into its 
+individual characters and inserts them one by one, in order.
+
+A set cannot receive the same value more than once. Therefore, it’ll skip over 
+repeats in the string. The set will maintain a list of unique characters in order.
+
+On the next line, we get an array out of the set and join the characters back 
+together.
+
+Time and space complexities remain the same.
+*/
+function removeDupesUseSet(str) {
+  const uniqueCharacters = new Set(str);
+  return Array.from(uniqueCharacters).join();
+}
+
+// the same approach
+function removeDupesUseSet1(str) {
+  let unique = new Set();
+
+  for (let i = 0; i < str.length; i++) {
+    unique.add(str[i], i);
+  }
+
+  return Array.from(unique).join()
+}
+
+// tests
+// console.log('removeDupes', removeDupesUseSet('aabbccdd'));
+// console.log('removeDupes', removeDupesUseSet('abcd'));
+
 export {
   removeDuplicates,
-  removeDuplicatesTwoPointers
+  removeDuplicatesTwoPointers,
+
+  removeDupesUseHash,
+  removeDupesUseSet, removeDupesUseSet1
 }
