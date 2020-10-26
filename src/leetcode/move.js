@@ -1708,6 +1708,17 @@ Bag of tokens
 https://leetcode.com/problems/bag-of-tokens/discuss/908434/Heavily-commented-JavaScript-Solution
 */
 
+/*
+simulation
+Intuition
+
+Instead of keeping track of how much champagne should end up in a glass, keep track 
+of the total amount of champagne that flows through a glass. For example, if 
+poured = 10 cups are poured at the top, then the total flow-through of the top 
+glass is 10; the total flow-through of each glass in the second row is 4.5, and 
+so on.
+*/
+
 
 export {
   largestTimeFromDigits,

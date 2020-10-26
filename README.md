@@ -502,17 +502,20 @@ started on 12/21/17
     | Hash                | O(n)    | O(n)   |
     | Boyer-Moore Voting  | O(n)    | 0(1)   |
 
+
     * [118. Pascals triangle](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals-triangle/118-pascals-triangle.js)
 
     | Approaches:     | Time             | Space           |
     | :---            | :---             | :---            |
     | Array (loop)    | O(numsRows^2)    | O(numsRows^2)   |
 
+
     * [119. Pascals triangle II](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/pascals-triangle/118-pascals-triangle-ii.js)
 
     | Approaches:     | Time             | Space      |
     | :---            | :---             | :---       |
-    | Array (loop)    | O(rowIndex^2)    | O(k)       |
+    | DP              | O(rowIndex^2)    | O(k)       |
+    | Recursion       | O(2^rowIndex)    | O(k)       |
 
 
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)

@@ -1,5 +1,3 @@
-import { getNodeText } from "@testing-library/react";
-
 /*
 Leetcode
 118 Pascals triangle
@@ -52,7 +50,7 @@ is 1 + 2 + 3 + .., which, according to Gauss' formula, is
 numRows*(numRows+1) / 2  =  (numRows^2 + numRows) /2 = numRows^2 / 2 +
 numRows / 2 = O(numRows^2)
 
-Space complexity : O(numRows^2)
+Space complexity: O(numRows^2)
 
 Because we need to store each number that we update in triangle, the space
 requirement is the same as the time complexity.
@@ -89,7 +87,7 @@ var generate1 = function(numRows) {
     let rows = [];
     for (let j = 0; j <= i; j++) {
       if (j === 0 || j === i) {
-        rows[j] = 1
+        rows[j] = 1;
       } else {
         rows[j] = output[i-1][j-1] + output[i-1][j];
       }
@@ -114,6 +112,8 @@ sublist. Then, we check for the special case of 0, as we would otherwise
 return [1]. If numRows > 0, then we initialize triangle with [1] as its first row,
 and proceed to fill the rows as follows: there is a schema
 */
+
+
 
 /*
 Approach recursion

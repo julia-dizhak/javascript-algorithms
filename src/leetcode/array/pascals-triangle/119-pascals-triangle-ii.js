@@ -11,9 +11,43 @@ input 3, output [1,3,3,1]
 */
 
 /*
-Approach array
+Approach Brute-force recursion
 
-time is O(rowIndex^2)
+lets say we had a function getNum(rowIndex, colIndex)
+formula
+getNum(rowIndex, colIndex) = getNum(rowIndex - 1, colIndex - 1) + 
+getNum(rowIndex - 1, colIndex)
+
+the recursion ends in some known base cases:
+1 the first row is just a single 1
+2 the first and last number of each row is 1
+
+time is O(2^k)
+space is O(k) + O(k), kth row
+*/
+
+var getRow = function(rowIndex) {
+  let res = [];
+
+  for (let i = 0; i <= rowIndex; i++) {
+    res.push(helper(rowIndex, i));
+  }
+
+  return res;
+}
+
+function helper(row, col) {
+  if (row == col || row == 0 || col === 0) return 1;
+  return helper(row - 1, col - 1) + helper(row - 1, col);
+}
+
+/*
+Approach DP?
+
+simple memoization would make that a particular element in a row is only 
+calculated once.
+
+time is O(2^rowIndex)
 space is O(k), The space used is just the k+1 array elements, hence O(k).
 */
 /**
@@ -21,7 +55,7 @@ space is O(k), The space used is just the k+1 array elements, hence O(k).
  * @return {number[]}
  */
 
-var getRow = function(rowIndex) {
+var getRowUseArr = function(rowIndex) {
   let res = new Array(rowIndex + 1).fill(0);
   res[0] = 1;
   if (rowIndex === 0) return res;
@@ -38,6 +72,15 @@ var getRow = function(rowIndex) {
 
 // console.log('getRow', getRow(3))
 
+/*
+Approach DP
+
+in the previous approach, we end up making the recursive calls repeatedly
+
+simple memoization
+*/
+
 export {
-  getRow
+  getRow,
+  getRowUseArr
 }
