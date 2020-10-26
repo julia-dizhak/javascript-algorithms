@@ -110,6 +110,14 @@ Easy solution but doesn't required condition with space
 There is extra space?
 */
 var removeDuplicates = function(nums) {
+  if (nums === undefined || nums.length === 0) {
+    return -1;
+  }
+
+  if (nums.length === 1) {
+    return nums.length;
+  }
+
   let uniqueArr = [];
 
   for (let i = 1; i < nums.length; i++) {
@@ -207,14 +215,34 @@ function removeDupesUseSet1(str) {
   return Array.from(unique).join()
 }
 
+function removeDupesUseSplice(nums) {
+  let i = 0;
+  let j = 1;
+  
+  while (j < nums.length) {
+    if (nums[i] === nums[j]) {
+      nums.splice(i,1)
+    }
+    else {
+      i++;
+      j++;
+    }
+  }
+
+  return nums;
+}
+
 // tests
 // console.log('removeDupes', removeDupesUseSet('aabbccdd'));
 // console.log('removeDupes', removeDupesUseSet('abcd'));
+//console.log('removeDupes', removeDupesUseSplice([1,2,2,2,2,3]));
 
 export {
   removeDuplicates,
   removeDuplicatesTwoPointers,
 
   removeDupesUseHash,
-  removeDupesUseSet, removeDupesUseSet1
+  removeDupesUseSet, removeDupesUseSet1,
+
+  removeDupesUseSplice
 }

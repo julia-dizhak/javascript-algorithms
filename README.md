@@ -464,6 +464,7 @@ started on 12/21/17
     | Hash and Array            | O(n)           | 0(2n) = O(n)   |
     | 2 pointers: slow and fast | O(n)           | 0(1)           |
     | Set                       | O(n)           | 0(n)           |
+    | Array.splice              | O(n) ?         | 0(1)           |
 
     * [540. Single element in sorted array (approach: Brute force, binary search, BS only on even indexes)](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/540-single-element-in-sorted-array.js)
 
