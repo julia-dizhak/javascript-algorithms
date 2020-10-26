@@ -1708,17 +1708,57 @@ Bag of tokens
 https://leetcode.com/problems/bag-of-tokens/discuss/908434/Heavily-commented-JavaScript-Solution
 */
 
+
 /*
-simulation
-Intuition
+Write a function that takes an array of strings and returns the most commonly 
+occurring string in that array.
 
-Instead of keeping track of how much champagne should end up in a glass, keep track 
-of the total amount of champagne that flows through a glass. For example, if 
-poured = 10 cups are poured at the top, then the total flow-through of the top 
-glass is 10; the total flow-through of each glass in the second row is 4.5, and 
-so on.
+If there are multiple strings with the same high frequency, return the one that 
+finishes its occurrences first, while going left to right through the array.
+
+Time
+The time complexity of this function is: O(n).
+We’re processing every item once. No operations in the loop depend on the size 
+of the array, so they’re all O(1).
+
+Space
+We’re keeping track of every string that we process, so space complexity in the 
+worst case is also: O(n).
+
+This problem essentially forces us to store and update data as we go through our 
+loop. This is a good technique to keep in mind.
+
+Often, problems will not require this and a solution can be reached without 
+keeping track as we do here. Applying this strategy, however, can sometimes 
+reduce the time complexity of the algorithm.
+
+In general, try seeing if an object or other data structure can fit in an algorithm. 
+Storing data in a creative manner can increase algorithmic speed in unexpected ways.
 */
+function highestFrequency(strings) {
+  let freq = {};
+  let maxFreq = 0;
+  let mostFreqStr = strings[0];
 
+  for (let i = 0; i < strings.length; i++) {
+    const thisStr = strings[i];
+    if (freq[thisStr] === undefined) {
+      freq[thisStr] = 1
+    } else {
+      freq[thisStr]++;
+    }
+    //freq[thisStr] = (freq[thisStr] || 0) + 1;
+
+    if (freq[thisStr] > maxFreq) {
+      maxFreq = freq[thisStr];
+      mostFreqStr = thisStr;
+    }
+  }
+
+  return mostFreqStr;
+}
+
+console.log('highestFrequency', highestFrequency(['str1', 'str2', 'str3', 'str1']));
 
 export {
   largestTimeFromDigits,

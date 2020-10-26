@@ -44,6 +44,8 @@ function helper(row, col) {
 /*
 Approach DP?
 
+in the previous approach, we end up making the recursive calls repeatedly
+
 simple memoization would make that a particular element in a row is only 
 calculated once.
 
