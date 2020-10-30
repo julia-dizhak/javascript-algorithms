@@ -1760,6 +1760,72 @@ function highestFrequency(strings) {
 
 console.log('highestFrequency', highestFrequency(['str1', 'str2', 'str3', 'str1']));
 
+/*
+
+"rotation"  "tationro" "tionrota"
+*/
+
+function stringRotation(str1, str2) {
+  
+}
+console.log('stringRotation', stringRotation('rotation', 'tationro'));
+
+/*
+You are given a sorted unique integer array nums.
+
+Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
+
+Each range [a,b] in the list should be output as:
+
+"a->b" if a != b
+"a" if a == b
+
+The difference between a number and its index identifies the range. Consider the given example input:
+
+numbers:  [0, 1, 2, 4, 5, 7]
+indexes:  [0, 1, 2, 3, 4, 5]
+subtract: [0, 0, 0, 1, 1, 2]
+You can see I have three differences (0, 1 and 2), corresponding to the three ranges. That can then be used to group the elements.
+
+good solution, but i think the first part checking length==1 is not necessary
+Yes, u r right! That's my coding habit! When special case happen, always deal with it first. When length was 1, the code after first return won't ex! I assume this will reduce the load of the memory stack, I am not sure my thought was right.
+*/
+/**
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+var summaryRanges = function(nums) {
+  // const indexes = nums.map((item, index) => index);
+  // console.log(nums);
+  // console.log(indexes);
+  // let diff = [];
+  // for (let i = 0; i < nums.length; i++) {
+  //   diff.push(nums[i] - indexes[i])
+  // }
+  // console.log(diff);
+
+  let list = [];
+  if (nums.length === 1) {
+    list.push(nums[0]+'');
+    return list
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    const a = nums[i];
+    while (i+1 < nums.length && (nums[i+1] - nums[i]) == 1) {
+      i++;
+    }
+    if (a !== nums[i]) {
+      list.push(a + '->' + nums[i]);
+    } else {
+      list.push(String(a));
+    }
+  }
+
+  return list;
+};
+console.log('summaryRanges', summaryRanges([0,1,2,4,5,7]));
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,

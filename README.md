@@ -520,14 +520,14 @@ started on 12/21/17
 
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
 
-    * [66 Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/66-plus-one.js)
+    * [66. Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/66-plus-one.js)
 
     | Approach:    | Time    | Space   |
     | :---         | :---    | :---    |
     | Loop         | O(n)    | O(n)    |
     | Math.pow     | O(n)    | O(n)?   |
 
-    * [422 Find all duplicates in Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/422-find-all-duplicates.js)
+    * [422. Find all duplicates in Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/422-find-all-duplicates.js)
 
     | Approach:                        | Time          | Space   |
     | :---                             | :---          | :---    |
@@ -536,12 +536,18 @@ started on 12/21/17
     | Use Array                        | O(n)          | O(n)    |
     | Mutate Array (negative indexes)  | O(n)          | O(1)    |
 
-    * [41 First missing positive](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/41-first-missing-positive.js)
+    * [41. First missing positive](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/41-first-missing-positive.js)
 
     | Approach:                        | Time          | Space   |
     | :---                             | :---          | :---    |
     | Hash                             | O(n)          | O(n)    |
     | Use Array                        | O(n)          | O(n)    |
+
+    * [849. Maximize Distance to Closest Person](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/849-max-dist-to-closest.js)
+
+    | Approach:                        | Time          | Space   |
+    | :---                             | :---          | :---    |
+    | Next Array                       | O(n)          | O(n)    |
 
 * ### Array Sorting
 

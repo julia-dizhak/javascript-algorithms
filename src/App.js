@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { store } from './practice-react/life-game/store/store';
+// import { Provider } from 'react-redux';
+// import { store } from './practice-react/life-game/store/store';
 
 import Sidebar from './components/Sidebar';
 import Main from './components/Main';
 import SplitSidebarView from './components/SplitSidebarView';
 
 // test react
-import { default as Example }  from './practice-react/app';
-import Game from './practice-react/life-game/Game';
+// import { default as Example }  from './practice-react/app';
+// import Game from './practice-react/life-game/Game';
+import DrawCanvas from './challenges/draw/';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
@@ -36,13 +37,16 @@ class App extends Component {
 
 
   render() {
-    return (
+  return (
       <div className="App">
         {/* <Provider store={store}>
           <Game />
         </Provider> */}
         
-        <Example />
+        {/* <Example /> */}
+
+        {/* <DrawCanvas /> */}
+
         <SplitSidebarView>
           <Sidebar className="sidebar" />
           <div className="rightPart">

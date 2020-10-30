@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>canvas</title>
+  </head>
+  <body>
+
+    <canvas width="300" height="300" id="canvas"></canvas> 
+
+    <script> 
+      function draw() {
+        var canvas = document.getElementById('canvas'); 
+        if (canvas.getContext) {
+          var ctx = canvas.getContext('2d'); 
+
+          // ctx.fillRect(25, 25, 100, 100);
+          // ctx.clearRect(45, 45, 60, 60);
+          // ctx.strokeRect(50, 50, 50, 50);
+
+          // ctx.beginPath();
+          // ctx.moveTo(200, 50);
+          // ctx.lineTo(200, 75)
+          // ctx.lineTo(150, 25);
+          // ctx.fill();
+
+          // ctx.beginPath();
+          // ctx.arc(75,75,50,0, Math.PI * 2, true);
+          // ctx.moveTo(110, 75);
+          // ctx.arc(75, 75, 35, 0, Math.PI, false);
+          // ctx.moveTo(65, 65);
+          // ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Left eye
+          // ctx.moveTo(95, 65);
+          // ctx.arc(90, 65, 5, 0, Math.PI * 2, true); 
+          // ctx.stroke();
+
+          // // Filled triangle
+          // ctx.beginPath();
+          // ctx.moveTo(25, 25);
+          // ctx.lineTo(105, 25);
+          // ctx.lineTo(25, 105);
+          // ctx.fill();
+
+          // // Stroked triangle
+          // ctx.beginPath();
+          // ctx.moveTo(125, 125);
+          // ctx.lineTo(125, 45);
+          // ctx.lineTo(45, 125);
+          // ctx.closePath();
+          // ctx.stroke();
+
+          ctx.beginPath();
+          //ctx.strokeStyle = 'orange';
+          for (i=-2; i<=2; i++) {
+            // Current point
+            x1 = i;        
+            y1 = x1 * x1;
+            y1p = 2 * x1; // derivitive
+
+            // Previous point
+            x0 = i - 1;
+            y0 = x0 * x0;
+            y0p = 2 * x0; // derivitive
+
+            // Find intersection of tangents
+            // line0: y - y0 = y0p * (x - x0)
+            // line1: y - y1 = y1p * (x - x1)
+            //
+            // line0: y = y0p * x - y0p * x0 + y0
+            // line1: y = y1p * x - y1p * x1 + y1
+            //
+            // y0p * x - y0p * x0 + y0 = y1p * x - y1p * x1 + y1
+            // y0p * x - y1p * x = y0p * x0 - y0 - y1p * x1 + y1
+            // x = (y0p * x0 - y0 - y1p * x1 + y1) / (y0p - y1p)
+
+            // Intersection point of tangents
+            xi = (y0p * x0 - y0 - y1p * x1 + y1) / (y0p - y1p);
+            yi = y0p * xi - y0p * x0 + y0;
+
+            // Rescale for rendering
+            cx = (5 + x1) * 30;
+            cy = (5 + y1) * 30;
+
+            cix = (5 + xi) * 30;
+            ciy = (5 + yi) * 30;
+
+            if (i == -2) {
+              ctx.moveTo(cx, cy);
+            }
+            else {
+              //context.lineTo(cx, cy);
+              ctx.quadraticCurveTo(cix, ciy, cx, cy);
+            }
+          }
+          ctx.stroke();
+        } else {
+          //    
+        }
+      }
+
+      draw();
+      
+    </script> 
+  </body>
+</html>
