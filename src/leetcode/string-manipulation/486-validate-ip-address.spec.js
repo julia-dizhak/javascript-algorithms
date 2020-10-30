@@ -1,7 +1,7 @@
 import {
   validIPAddress,
   // validIPAddressUseRegex as validIPAddress
-} from './468-validate-ip-address';
+} from './486-validate-ip-address';
 
 describe('validate IP Address test case', () => {
   it('string is null', () => {

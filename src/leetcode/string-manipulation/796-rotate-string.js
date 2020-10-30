@@ -79,10 +79,93 @@ function stringRotation(str1, str2) {
   return false;
 }
 
-// tests
-console.log('stringRotation', stringRotation('rotation', 'tationro'));
+/*
+Approach Simple check
 
+
+Hints
+Try thinking about the relationship between a string and its rotation. Try to 
+short-circuit the check from Solution 1.
+
+
+This solution requires some intense critical thinking.
+
+If we take a string and create a new string by repeating it, it will contain all 
+possible rotations of the string.
+
+
+
+Time
+n here will represent the length of the strings. n will be calculated for the 
+case where the two strings are the same length.
+
+Checking and comparing string length is constant-time, O(n).
+
+The amount of time it takes to add a string to itself is proportional to the 
+length of the string, so (str1 + str1) is O(n).
+
+Checking string equality is also O(n) - all characters must be compared.
+
+So, the final time complexity is O(n).
+
+Space complexity is determined by the (str1 + str1) statement above. That temporary 
+value will be proportional to the length of the strings, so it is O(n).
+
+Time Complexity: O(N^2) ? no check before, where N is the length of A.
+Space Complexity: O(N), the space used building A+A.
+*/
+function stringRotationSimpleCheck(str1, str2) {
+  return str1.length === str2.length && (str1 + str1).includes(str2);
+}
+
+/*
+Use Hash
+
+time is O(n)
+space is O(n)
+*/
+function stringRotationUseHash(str1, str2) {
+  const n1 = str1.length;
+  const n2 = str2.length;
+  if (n1 !== n2) return false;
+  if (str1 === str2) return true;
+  
+  let arr1 = str1.split('');
+  let hash = {};
+
+  let key = '';
+  let newArr1 = arr1.slice();
+
+  let i = 0;
+  while (i < n1 ) {
+    let first = newArr1.shift();
+    //console.log(first);
+    //console.log(newArr1);
+    newArr1 = [...newArr1, ...first]; // here is time?
+    //console.log(newArr1);
+    key = newArr1.join('').toString();
+    //console.log(key);
+    if (hash[key] == undefined) {
+      hash[key] = key;
+    }
+    i++;
+  }
+
+  if (hash[str2]) {
+    return true
+  }
+
+  //console.log(hash);
+  return false;
+}
+
+// tests
+console.log('stringRotation', stringRotationUseHash('rotation', 'tationro'));
+console.log('stringRotation', stringRotationUseHash('rotation', 'tionrota'));
+console.log('stringRotation', stringRotationUseHash('abcde', 'abced'));
 
 export {
-  stringRotation
+  stringRotation,
+  stringRotationUseHash,
+  stringRotationSimpleCheck
 }

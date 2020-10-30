@@ -1,5 +1,7 @@
 import {
-  stringRotation
+  //stringRotation, 
+  //stringRotationUseHash as stringRotation,
+  stringRotationSimpleCheck as stringRotation
 } from './796-rotate-string';
 
 describe('string rotation test case', () => {

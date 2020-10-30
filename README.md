@@ -361,12 +361,12 @@ started on 12/21/17
     | 2 pointers              | O(n)     | 0(1)   |
     | Use reverse             | O(n)     | 0(1)   |
 
-    * [406 Longest palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/palindrome/406-longest-palindrome.js)
+    * [406. Longest palindrome](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/palindrome/406-longest-palindrome.js)
 
-    | Approaches:       | Time     | Space         |
-    | :---              | :---     | :---          |
-    | Hash              | O(n)     | 0(n)/O(1)     |
-    | Greedy            | O(n)     | 0(n)/O(1)     |
+    | Approaches:       | Time     | Space           |
+    | :---              | :---     | :---            |
+    | Hash              | O(n)     | 0(n) / O(1)     |
+    | Greedy            | O(n)     | 0(n) / O(1)     |
 
     * [459. Repeated substr pattern](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/459-repeated-substr-pattern.js)
 
@@ -374,7 +374,15 @@ started on 12/21/17
     | :---              | :---     | :---       |
     | Loop              | O(n)     | O(1)       |
 
-    * [468. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/468-validate-ip-address.js)
+    * [796. Rotate string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/796-rotate-string.js)
+
+    | Approaches:       | Time       | Space      |
+    | :---              | :---       | :---       |
+    | Brute force       | O(n^2)     | O(n)       |
+    | Hash              | ?          | ?          |
+    | Simple check      | O(n)       | O(n)       |
+
+    * [486. Validate IP address](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/486-validate-ip-address.js)
 
     | Approaches:        | Time     | Space  |
     | :---               | :---     | :---   |
@@ -395,7 +403,7 @@ started on 12/21/17
     | Brute force            | O(n^3)       | O(min(n,m))  |
     | Sliding window + Hash  | O(2n)=O(n)   | O(min(n,m))  |
 
-    * [151 Reverse words in string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/151-reverse-words.js)
+    * [151. Reverse words in string](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/151-reverse-words.js)
 
     | Approaches:              | Time         | Space    |
     | :---                     | :---         | :---     |
