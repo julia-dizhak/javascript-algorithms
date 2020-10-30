@@ -97,7 +97,7 @@ var maxDistToClosest = function(seats) {
     }
   }
   
-  console.log('ans', ans);
+  //console.log('ans', ans);
   return ans;
 }
 
@@ -105,6 +105,11 @@ var maxDistToClosest = function(seats) {
 //console.log('maxDistToClosest', maxDistToClosest([1,0,0,0,1,0,1]));
 //console.log('maxDistToClosest', maxDistToClosest([1,0,0,0,0,0,0,0]));
 //console.log('maxDistToClosest', maxDistToClosest([0,1]));
+
+/*
+todo 2 pointers solution
+https://leetcode.com/problems/maximize-distance-to-closest-person/solution/
+*/
 
 export {
   maxDistToClosest

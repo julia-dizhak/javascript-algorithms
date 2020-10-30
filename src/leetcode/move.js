@@ -1766,9 +1766,49 @@ console.log('highestFrequency', highestFrequency(['str1', 'str2', 'str3', 'str1'
 */
 
 function stringRotation(str1, str2) {
+  const n1 = str1.length;
+  const n2 = str2.length;
+  if (n1 !== n2) return false;
+  if (str1 === str2) return true;
   
+  let arr1 = str1.split('');
+  let hash = {};
+
+  let key = '';
+  let newArr1 = arr1.slice();
+
+  let i = 0;
+  while (i < n1 ) {
+    let first = newArr1.shift();
+    console.log(first);
+    console.log(newArr1);
+    newArr1 = [...newArr1, ...first];
+    console.log(newArr1);
+    key = newArr1.join('').toString();
+    console.log(key);
+    if (hash[key] == undefined) {
+      hash[key] = key;
+    }
+    i++;
+  }
+
+  if (hash[str2]) {
+    return true
+  }
+
+  console.log(hash);
+  return false;
 }
 console.log('stringRotation', stringRotation('rotation', 'tationro'));
+console.log('stringRotation', stringRotation('rotation', 'tionrota'));
+console.log('stringRotation', stringRotation('javascript', 'scriptjava'));
+console.log('stringRotation', stringRotation('test', 'test'));
+console.log('stringRotation', stringRotation('abcde', 'abcde'));
+console.log('stringRotation', stringRotation('abcde', 'abced'));
+console.log('stringRotation', stringRotation('1', '0'));
+console.log('stringRotation', stringRotation('1110', '0111'));
+
+
 
 /*
 You are given a sorted unique integer array nums.
