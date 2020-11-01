@@ -42,24 +42,21 @@ Space is O(n)
  * @return {number[]}
  */
 var frequencySort = function(nums) {
-  let sortAble = [];
   let frequency = {};
   let output = [];
 
   for (let i = 0; i < nums.length; i++) {
     frequency[nums[i]] = (frequency[nums[i]] || 0) + 1;
   }
-  console.log(frequency);
-  
-  for (const key in frequency) {
-    sortAble.push([key, frequency]);
-  }
+  //console.log(frequency);
 
-
-
-  console.log('sortAble', sortAble);
-
-
+  return nums.sort((a,b) => {
+    // console.log(a)
+    // console.log(frequency[a])
+    // console.log(b);
+    // console.log(frequency[b]);
+    return frequency[a] - frequency[b] || b - a
+  });
 }
 
 /*
@@ -91,6 +88,44 @@ function sortByFrequencyUseArr(arr){
   return sortable.map(s => s[0]);
 }
 
+/*
+Approach Use Map
+
+https://leetcode.com/problems/sort-array-by-increasing-frequency/discuss/917711/Javascript-Map-%2B-Sort
+
+*/
+const frequencySortUseMap = (nums) => {
+  let record = getRecord(nums);
+
+  nums.sort((a, b) => {
+    if (record.get(a) == record.get(b)) return b - a;
+    return record.get(a) - record.get(b);
+  });
+  return nums;
+};
+
+const getRecord = (s) => {
+  let map = new Map();
+
+  for (const i of s) {
+    if (map.has(i)) {
+      map.set(i, map.get(i) + 1);
+    } else {
+      map.set(i, 1);
+    }
+  }
+
+  //console.log(map);
+  return map;
+};
+
+/*
+todo
+
+451
+https://leetcode.com/problems/sort-characters-by-frequency/
+*/
+
 // tests
 // 3 1 1 2 2 2
 //console.log('frequencySort', frequencySort([1,1,2,2,2,3]));
@@ -99,5 +134,6 @@ console.log('frequencySort', frequencySort([2,3,1,3,2]));
 
 export {
   frequencySort,
-  sortByFrequencyUseArr
+  sortByFrequencyUseArr,
+  frequencySortUseMap
 }

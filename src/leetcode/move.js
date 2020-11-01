@@ -1854,52 +1854,6 @@ var findNumberOfLIS = function(nums) {
 };
 console.log('findNumberOfLIS', findNumberOfLIS([1,3,5,4,7]));
 
-/*
-https://leetcode.com/problems/sort-array-by-increasing-frequency/discuss/917711/Javascript-Map-%2B-Sort
-
-1636
-*/
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
-var frequencySort = function(nums) {
-  let sortAble = [];
-  let frequency = {};
-  let output = []
-
-  for (let i = 0; i < nums.length; i++) {
-    frequency[nums[i]] = (frequency[nums[i]] || 0) + 1;
-  }
-
-  for (const key in frequency) {
-    sortAble.push([key, frequency[key]])
-  }
-
-  sortAble = sortAble.sort((a, b) => {
-    if (a[1] === b[1]) {
-      return b[0] - a[0]
-    } else { 
-      return a[1] - b[1]
-    }
-  });
-  
-  sortAble.forEach(obj => {
-    for (let i=0; i < obj[1]; i++){
-      output.push(Number(obj[0]));
-    }
-  })
-
-  console.log(frequency);
-  console.log(sortAble);
-  console.log(output)
-
-  return output;
-};
-// 3 1 1 2 2 2
-//console.log('frequencySort', frequencySort([1,1,2,2,2,3]));
-console.log('frequencySort', frequencySort([2,3,1,3,2]));
-//console.log('frequencySort', frequencySort([-1,1,-6,4,5,-6,1,4,1]));
 
 
 /*
