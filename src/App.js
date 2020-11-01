@@ -45,8 +45,6 @@ class App extends Component {
         
         {/* <Example /> */}
 
-        {/* <DrawCanvas /> */}
-
         <SplitSidebarView>
           <Sidebar className="sidebar" />
           <div className="rightPart">

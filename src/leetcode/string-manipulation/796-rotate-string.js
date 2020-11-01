@@ -72,9 +72,7 @@ function stringRotation(str1, str2) {
 
   for (let i = 0; i < n1; i++) {
     const rotation = str1.slice(i, n1) + str1.slice(0,i);
-    //console.log(rotation);
     if (rotation === str2) return true;
-    
   }
   return false;
 }
@@ -111,7 +109,7 @@ So, the final time complexity is O(n).
 Space complexity is determined by the (str1 + str1) statement above. That temporary 
 value will be proportional to the length of the strings, so it is O(n).
 
-Time Complexity: O(N^2) ? no check before, where N is the length of A.
+Time Complexity: O(N^2) ? no check before or yes, where N is the length of A.
 Space Complexity: O(N), the space used building A+A.
 */
 function stringRotationSimpleCheck(str1, str2) {

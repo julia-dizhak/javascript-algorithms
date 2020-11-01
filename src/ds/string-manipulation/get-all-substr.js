@@ -7,7 +7,6 @@ space is O(1) don't use any additional DS for that
 
 */
 
-
 function getAllSubstr(str) {
   const n = str.length;
   if (n === 1) return str;

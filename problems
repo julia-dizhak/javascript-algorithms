@@ -1,3 +1,70 @@
+01.11
+
+codewars
+- isPrime update kata
+
+general
+- Find Two Numbers that Add up to "value"
+- House robber DP: comment1, comment2, comment 3
+
+regex
+- validate an IP
+- validate an email
+
+strings
+- Min insertion to form palindrome strings 
+-length of last word
+
+subsequence
+- find all subsequnces https://www.geeksforgeeks.org/print-subsequences-string/
+- 392 Is Subsequence
+- 673 number of longest increasing subsequence
+- 300 longest increas subseq
+- 674  Longest Continuous Increasing Subsequence
+- 78 subsets https://leetcode.com/problems/subsets/
+
+
+Arrays
+- 2 sum, 3sum
+- Write a function which merges two sorted arrays of integers and prints result;
+- Shuffle an array 
+
+
+linked list
+- sort linked list
+-Reverse Linked List
+- reorder linked list
+- Find a middle of linked list
+- Flatten multilevel doubly linked list
+
+queue
+- Circular queue https://www.youtube.com/watch?v=ihEmEcO2Hx8
+
+hash
+- implement hashtable: educative
+
+BT
+-sum of leaves
+
+BST
+- Remove a node in BST
+- How will you find kth smallest element of a Binary Search Tree
+- recover BST
+
+Backtracking
+- Combination sum ii 
+
+DP
+- Buy and sell stock II
+Longest common substring
+- coin change, coin change 2, max contiguous subarray
+Coins: amount, represent combinations
+Travel passes: all calendar days
+
+
+
+
+
 10.08
 - with premium leetcode account to check locked problems (for example
 grab from August challenge)

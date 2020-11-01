@@ -1817,6 +1817,130 @@ var summaryRanges = function(nums) {
 };
 console.log('summaryRanges', summaryRanges([0,1,2,4,5,7]));
 
+/*
+subseqeunce of string
+
+Pick and Don’t Pick Concept
+*/
+var findNumberOfLIStr = function(str, ans = '') {
+  let a1 = [];
+
+  if (str.length === 0) {
+    a1.push(ans);
+    return a1;
+  }
+
+  // We add adding 1st character in string
+  findNumberOfLIStr(str.substr(1), ans + str.charAt(0));
+
+  // Not adding first character of the string
+  // because the concept of subsequence either
+  // character will present or not
+  findNumberOfLIStr(str.substr(1), ans);
+
+  console.log(a1)
+  return a1;
+};
+// [abcd, abc, abd, ab, acd, ac, ad, a, bcd, bc, bd, b, cd, c, d, ]
+console.log('findNumberOfLIStr', findNumberOfLIStr('abc'));
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findNumberOfLIS = function(nums) {
+    
+};
+console.log('findNumberOfLIS', findNumberOfLIS([1,3,5,4,7]));
+
+/*
+https://leetcode.com/problems/sort-array-by-increasing-frequency/discuss/917711/Javascript-Map-%2B-Sort
+
+1636
+*/
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var frequencySort = function(nums) {
+  let sortAble = [];
+  let frequency = {};
+  let output = []
+
+  for (let i = 0; i < nums.length; i++) {
+    frequency[nums[i]] = (frequency[nums[i]] || 0) + 1;
+  }
+
+  for (const key in frequency) {
+    sortAble.push([key, frequency[key]])
+  }
+
+  sortAble = sortAble.sort((a, b) => {
+    if (a[1] === b[1]) {
+      return b[0] - a[0]
+    } else { 
+      return a[1] - b[1]
+    }
+  });
+  
+  sortAble.forEach(obj => {
+    for (let i=0; i < obj[1]; i++){
+      output.push(Number(obj[0]));
+    }
+  })
+
+  console.log(frequency);
+  console.log(sortAble);
+  console.log(output)
+
+  return output;
+};
+// 3 1 1 2 2 2
+//console.log('frequencySort', frequencySort([1,1,2,2,2,3]));
+console.log('frequencySort', frequencySort([2,3,1,3,2]));
+//console.log('frequencySort', frequencySort([-1,1,-6,4,5,-6,1,4,1]));
+
+
+/*
+timezone changed
+
+1637 timezone changed
+
+ sorting by the x coordinates
+
+ time without space
+ https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/discuss/917691/Javascript-Simple-solution-Sort
+
+ 
+*/
+/**
+ * @param {number[][]} points
+ * @return {number}
+ */
+var maxWidthOfVerticalArea = function(points) {
+  let max = 0;
+  let xAsis = []
+
+  for (const point of points) {
+    let [x,y] = point;
+    xAsis.push(x);
+  }
+  
+  xAsis = xAsis.sort((a, b) => a - b);
+  //console.log(xAsis);
+  for (let i = 0; i < xAsis.length - 1; i++) {
+    max = Math.max(max, Math.abs(xAsis[i] - xAsis[i+1]));
+  }
+
+  //console.log(max)
+  return max; 
+};
+// console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[8,7],[9,9],[7,4],[9,7]]));
+// console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[3,1],[9,0],[1,0],[1,4],[5,3],[8,8]]));
+
+
+
 export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
