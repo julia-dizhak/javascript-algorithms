@@ -604,6 +604,15 @@ started on 12/21/17
     | Swap with next node  | O(1)    | O(1)    |
     | Usual way: find prev | O(n)    | O(1)    |
 
+
+    * [1290. Convert Binary Number in a Linked List to Integer](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/1290-convert-binary-number-in-linked-list-to-integer.js)
+
+    | Approach               | Time    | Space   |
+    | :---                   | :---    | :---    |
+    | Binary representation  | O(n)    | O(1)    |
+    | Bit manipulation       | O(n)    | O(1)    |
+
+
     * [206. Reverse Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/206-reverse-linked-list.js)
 
     | Approach       | Time      | Space   |

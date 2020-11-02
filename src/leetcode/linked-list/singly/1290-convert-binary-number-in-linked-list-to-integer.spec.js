@@ -1,6 +1,9 @@
 import {
-  getDecimalValue,
+  //getDecimalValue,
   //getDecimalValue1 as getDecimalValue,
+  //getDecimalValueBinary as getDecimalValue,
+  //getDecimalValueBitManipulation as getDecimalValue,
+  getDecimalValueBitManipulation1 as getDecimalValue,
   ListNode
 } from './1290-convert-binary-number-in-linked-list-to-integer';
 

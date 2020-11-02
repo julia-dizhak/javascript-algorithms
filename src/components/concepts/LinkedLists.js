@@ -3,7 +3,10 @@ import Details from '../Details';
 
 import { LinkedList } from '../../ds/linked-list/singly/singly-linked-list';
 //import { LinkedList as List1 } from '../../leetcode/linked-list/singly/143-reorder-linked-list';
-import { reverse, sumOfLeftLeaves } from '../../leetcode/linked-list/singly/206-reverse-linked-list';
+// problems
+//import { reverse, sumOfLeftLeaves } from '../../leetcode/linked-list/singly/206-reverse-linked-list';
+//import { getDecimalValueBinary } from '../../leetcode/linked-list/singly/1290-convert-binary-number-in-linked-list-to-integer';
+
 
 export default function LinkedLists() {
   return (
@@ -41,9 +44,9 @@ export default function LinkedLists() {
           <Details
             id="singly-linked-list-test"
             question="test"
-            //code={List1.toString()}
-            secondCode={reverse.toString()}
-            thirdSolution={sumOfLeftLeaves.toString()}
+            //code={getDecimalValueBinary.toString()}
+            //secondCode={reverse.toString()}
+            //thirdSolution={sumOfLeftLeaves.toString()}
           />
         </li>
       </ul>
