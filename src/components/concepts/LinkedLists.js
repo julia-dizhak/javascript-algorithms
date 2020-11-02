@@ -2,7 +2,7 @@ import React from 'react';
 import Details from '../Details';
 
 import { LinkedList } from '../../ds/linked-list/singly/singly-linked-list';
-import { LinkedList as List1 } from '../../leetcode/linked-list/singly/143-reorder-linked-list';
+//import { LinkedList as List1 } from '../../leetcode/linked-list/singly/143-reorder-linked-list';
 import { reverse, sumOfLeftLeaves } from '../../leetcode/linked-list/singly/206-reverse-linked-list';
 
 export default function LinkedLists() {

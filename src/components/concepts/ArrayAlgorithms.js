@@ -40,7 +40,7 @@ export default function ArrayAlgorithms() {
 
       <Details
         id="test-array"
-        code={frequencySortUseMap1.toString()}
+        //code={frequencySortUseMap1.toString()}
         //code={findDuplicate.toString()}
         //secondCode={findAllDuplicates.toString()}
       />

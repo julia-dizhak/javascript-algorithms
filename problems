@@ -6,6 +6,7 @@ codewars
 general
 - Find Two Numbers that Add up to "value"
 - House robber DP: comment1, comment2, comment 3
+- Teemo Attacking
 
 regex
 - validate an IP
@@ -28,6 +29,7 @@ Arrays
 - 2 sum, 3sum
 - Write a function which merges two sorted arrays of integers and prints result;
 - Shuffle an array 
+- 1524
 
 
 linked list
@@ -44,6 +46,7 @@ hash
 - implement hashtable: educative
 
 BT
+1022
 -sum of leaves
 
 BST
@@ -53,9 +56,11 @@ BST
 
 Backtracking
 - Combination sum ii 
+- 1589
 
 DP
-- Buy and sell stock II
+https://leetcode.com/discuss/general-discussion/849681/how-to-approach-dp-problems
+- Buy and sell stock 121, II
 Longest common substring
 - coin change, coin change 2, max contiguous subarray
 Coins: amount, represent combinations
