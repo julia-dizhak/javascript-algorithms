@@ -1,7 +1,8 @@
 import {
   //frequencySort,
   //sortByFrequencyUseArr as frequencySort,
-  frequencySortUseMap as frequencySort
+  //frequencySortUseMap as frequencySort,
+  frequencySortUseMap1 as frequencySort
 } from './1638-sort-array-by-increasing-frequency';
 
 describe('frequencySort test case', () => {

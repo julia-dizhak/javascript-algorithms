@@ -43,7 +43,6 @@ Space is O(n)
  */
 var frequencySort = function(nums) {
   let frequency = {};
-  let output = [];
 
   for (let i = 0; i < nums.length; i++) {
     frequency[nums[i]] = (frequency[nums[i]] || 0) + 1;
@@ -119,6 +118,29 @@ const getRecord = (s) => {
   return map;
 };
 
+// the same approach
+const frequencySortUseMap1 = (nums) => {
+  let map = new Map();
+
+  for (let num of nums) {
+    map.set(num, map.get(num) + 1 || 1);
+  }
+
+  let arr = Array.from(map).sort((a,b) => a[1] - b[1] || b[0] - a[0]);
+
+  let output = new Array(nums.length);
+  for (let i = 0, j = 0; i < arr.length; i++) {
+    while (arr[i][1] > 0) {
+      output[j] = arr[i][0];
+      arr[i][1]--;
+      j++;
+    }
+  }
+
+  return output;
+}
+
+
 /*
 todo
 
@@ -129,11 +151,12 @@ https://leetcode.com/problems/sort-characters-by-frequency/
 // tests
 // 3 1 1 2 2 2
 //console.log('frequencySort', frequencySort([1,1,2,2,2,3]));
-console.log('frequencySort', frequencySort([2,3,1,3,2]));
+//console.log('frequencySort', frequencySort([2,3,1,3,2]));
 //console.log('frequencySort', frequencySort([-1,1,-6,4,5,-6,1,4,1]));
 
 export {
   frequencySort,
   sortByFrequencyUseArr,
-  frequencySortUseMap
+  frequencySortUseMap,
+  frequencySortUseMap1
 }

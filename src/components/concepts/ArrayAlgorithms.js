@@ -28,7 +28,10 @@ import { removeDuplicates } from '../../leetcode/array/duplicates/26-remove-dupl
 
 // intervals
 //import { insert } from '../../leetcode/array/intervals/57-insert-interval';
-import { removeCoveredIntervals } from '../../leetcode/array/intervals/1288-remove-covered-intervals';
+//import { removeCoveredIntervals } from '../../leetcode/array/intervals/1288-remove-covered-intervals';
+
+// frequency
+//import { frequencySortUseMap1 } from '../../leetcode/array/frequency/1638-sort-array-by-increasing-frequency';
 
 export default function ArrayAlgorithms() {
   return (
@@ -37,7 +40,7 @@ export default function ArrayAlgorithms() {
 
       <Details
         id="test-array"
-        //code={insert.toString()}
+        code={frequencySortUseMap1.toString()}
         //code={findDuplicate.toString()}
         //secondCode={findAllDuplicates.toString()}
       />
