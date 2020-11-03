@@ -621,6 +621,11 @@ started on 12/21/17
     | Binary representation  | O(n)    | O(1)    |
     | Bit manipulation       | O(n)    | O(1)    |
 
+    * [147. Insertion sort list](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/sort/147-insertion-sort-list.js)
+
+    | Approach          | Time      | Space   |
+    | :---              | :---      | :---    |
+    | Insertion sort    | O(n^2)    | O(1)    |
 
     * [206. Reverse Linked List](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/linked-list/singly/206-reverse-linked-list.js)
 

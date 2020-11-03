@@ -1902,44 +1902,7 @@ function arraySubset(arr, sub) {
 // Your code here
 }
 
-class ListNode {
-  constructor(val, next) {
-    this.val = (val === undefined ? 0 : val);
-    this.next = (next === undefined ? null : next);
-  }
-} 
-function insertionSort(arr) {
-  if (arr.length == 1) return arr;
 
-  for (let i = 0; i < arr.length; i++) {
-    const temp = arr[i];
-    let j = i - 1;
-    while (j >= 0 && arr[j] > temp) {
-      arr[j+1] = arr[j];
-      j--;
-    }
-    arr[j+1] = temp;
-  }
-  return arr;
-}
-console.log('insertionSort', insertionSort([4,2,1,3]));
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var insertionSortList = function(head) {
-    
-};
-
-// tests
-// 4->2->1->3
-let head = new ListNode(4);
-head.next = new ListNode(2);
-head.next.next = new ListNode(1);
-head.next.next = new ListNode(3);
-//console.log(head);
-const sorted = insertionSortList(head);
-console.log(sorted)
 
 
 export {

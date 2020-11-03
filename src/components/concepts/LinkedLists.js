@@ -6,7 +6,7 @@ import { LinkedList } from '../../ds/linked-list/singly/singly-linked-list';
 // problems
 //import { reverse, sumOfLeftLeaves } from '../../leetcode/linked-list/singly/206-reverse-linked-list';
 //import { getDecimalValueBinary } from '../../leetcode/linked-list/singly/1290-convert-binary-number-in-linked-list-to-integer';
-
+import { insertionSortList } from '../../leetcode/linked-list/singly/sort/147-insertion-sort-list';
 
 export default function LinkedLists() {
   return (
@@ -44,7 +44,7 @@ export default function LinkedLists() {
           <Details
             id="singly-linked-list-test"
             question="test"
-            //code={getDecimalValueBinary.toString()}
+            code={insertionSortList.toString()}
             //secondCode={reverse.toString()}
             //thirdSolution={sumOfLeftLeaves.toString()}
           />
