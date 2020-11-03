@@ -9,7 +9,6 @@ import SplitSidebarView from './components/SplitSidebarView';
 // test react
 // import { default as Example }  from './practice-react/app';
 // import Game from './practice-react/life-game/Game';
-import DrawCanvas from './challenges/draw/';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';

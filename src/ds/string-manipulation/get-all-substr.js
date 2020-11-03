@@ -103,5 +103,7 @@ function findAllSubarraysOfSize(nums, K) {
 
 export {
   getAllSubstr,
-  getAllSubstr1
+  getAllSubstr1,
+  getAllSubarrays,
+  findAllSubarraysOfSize
 }

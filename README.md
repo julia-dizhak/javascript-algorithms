@@ -171,22 +171,24 @@ started on 12/21/17
 * ### Sorting
     * [Bubble sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/bubble-sort.js)
     * [Selection sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/selection-sort.js)
+    
     * [Insertion sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/insertion-sort.js)
+
     * [Shell sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/shell-sort.js)
     * [Merge sort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/merge-sort.js)
     * [Quick sort: Hoare and Lomuto partition schema](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/quick-sort.js)
     * [Heapsort](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/ds/sorting/heap-sort.js)
 
 
-    | Sort name       | Ω           | θ          | O         | Space     | Stable  | Adaptive  |
-    | :---            | :---        | :---       | :---      | :---      | :---    | :---      |
-    | Bubble sort     | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
-    | Selection sort  | Ω(n^2)      | θ(n^2)     | O(n^2)    | O(1)      | -       | -         |
-    | Insertion sort  | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      | +       | +         |
-    | Shell sort      | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)      |         |           |
-    | Merge sort      | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(N)      | +       | -         |
-    | Quick sort      | Ω(NlogN)    | θ(NlogN)   | O(n^2)    | O(NlogN)  | -       | -         |
-    | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)      | -       | -         |
+    | Sort name       | Ω           | θ          | O         | Space      | Stable  | Adaptive  |
+    | :---            | :---        | :---       | :---      | :---       | :---    | :---      |
+    | Bubble sort     | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)       | +       | +         |
+    | Selection sort  | Ω(n^2)      | θ(n^2)     | O(n^2)    | O(1)       | -       | -         |
+    | Insertion sort  | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)/O(n)  | +       | +         |
+    | Shell sort      | Ω(n)        | θ(n^2)     | O(n^2)    | O(1)       |         |           |
+    | Merge sort      | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(N)       | +       | -         |
+    | Quick sort      | Ω(NlogN)    | θ(NlogN)   | O(n^2)    | O(NlogN)   | -       | -         |
+    | Heapsort        | Ω(NlogN)    | θ(NlogN)   | O(NlogN)  | O(1)       | -       | -         |
 
 ## Problem solving on leetcode
 
@@ -524,6 +526,13 @@ started on 12/21/17
     | :---            | :---             | :---       |
     | DP              | O(rowIndex^2)    | O(k)       |
     | Recursion       | O(2^rowIndex)    | O(k)       |
+
+    * [1638. Sort Array by Increasing Frequency](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/frequency/1638-sort-array-by-increasing-frequency.js)
+
+    | Approaches:     | Time             | Space      |
+    | :---            | :---             | :---       |
+    | Hash + sort     | O(n log n)       | O(n)       |
+    | Map + sort      | O(n log n)       | O(n)       |
 
 
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
