@@ -432,6 +432,14 @@ started on 12/21/17
     | Hash                       | O(n)         | O(n)/ O(1)   |
     | Sort                       | O(n log n)   | O(n)         |
     | Set                        | O(n)         | O(n)         |
+
+    * [1446. Consecutive Characters](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/string-manipulation/unique-characters/1446-consecutive-characters.js)
+
+    | Approaches:     | Time      | Space        |
+    | :---            | :---      | :---         |
+    | 1 pass          | O(n)      | O(1)         |
+    | Use Array       | O(n)      | O(n)         |
+
  
     * [771. Jewels and Stones]
 

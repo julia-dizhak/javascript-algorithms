@@ -1,10 +1,11 @@
 import {
   //maxPower,
-  maxPowerUseArr as maxPower
+  //maxPowerUseArr as maxPower,
+  maxPower1 as maxPower
 } from './1446-consecutive-characters';
 
 describe('define Consecutive Characters test case', () => {
-  it('', () => {
+  it('more than one unique characters', () => {
     expect(maxPower('leetcode')).toEqual(2);
     expect(maxPower('abbcccddddeeeeedcba')).toEqual(5);
     expect(maxPower('triplepillooooow')).toEqual(5);
