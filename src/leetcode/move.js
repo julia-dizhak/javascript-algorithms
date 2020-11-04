@@ -1882,16 +1882,16 @@ var maxWidthOfVerticalArea = function(points) {
   }
   
   xAsis = xAsis.sort((a, b) => a - b);
-  //console.log(xAsis);
+  console.log(xAsis);
   for (let i = 0; i < xAsis.length - 1; i++) {
-    max = Math.max(max, Math.abs(xAsis[i] - xAsis[i+1]));
+    max = Math.max(max, xAsis[i+1] - xAsis[i]);
   }
 
   //console.log(max)
   return max; 
 };
-// console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[8,7],[9,9],[7,4],[9,7]]));
-// console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[3,1],[9,0],[1,0],[1,4],[5,3],[8,8]]));
+console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[8,7],[9,9],[7,4],[9,7]]));
+console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[3,1],[9,0],[1,0],[1,4],[5,3],[8,8]]));
 
 // subset
 
@@ -1901,8 +1901,6 @@ function arraySubset(arr, sub) {
 
 // Your code here
 }
-
-
 
 
 export {

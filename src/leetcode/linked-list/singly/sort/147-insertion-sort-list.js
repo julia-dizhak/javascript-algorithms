@@ -35,7 +35,7 @@ class ListNode {
 } 
 
 /*
-Approach 1 Insertion Sort
+Approach 1 Insertion Sort Use fake Head
 
 Insertion sort is an intuitive sorting algorithm, although it is much less 
 efficient than the more advanced algorithms such as quicksort or merge sort.
@@ -112,9 +112,57 @@ reorder the existing nodes.
  * @return {ListNode}
  */
 
-// prev_node -> new_node -> next_node
 var insertionSortList = function(head) {
-  //debugger
+  // Initialize partially sorted list
+  let dummy = new ListNode(0), 
+    prev = dummy, 
+    curr = head;
+
+  while (curr != null) {
+    if (prev.val > curr.val) {
+      prev = dummy;
+    }
+
+    // Find the right place to insert current node
+    while (prev.next != null && prev.next.val < curr.val) {
+      prev = prev.next;
+    }
+    
+    // Insert current between prev and prev.next
+    // prev_node -> new_node -> next_node
+    let nextNode = curr.next;
+    curr.next = prev.next;
+    prev.next = curr;
+    curr = nextNode;
+  }
+  return dummy.next;  
+}
+
+var insertionSortList4 = function(head) {
+  let curr = head,
+    next = null;
+  let fakeHead = new ListNode();
+  //console.log(fakeHead);
+  
+  while (curr != null) {
+    next = curr.next;
+
+    let p = fakeHead;
+    while (p.next != null && p.next.val < curr.val) {
+      p = p.next;
+    }
+
+    // insert curr between p and p.next
+    curr.next = p.next;
+    p.next = curr;
+    curr = next;
+  }
+
+  return fakeHead.next;
+}
+
+// prev_node -> new_node -> next_node
+var insertionSortList3 = function(head) {
   //new starter of the sorted list
   let pseudoHead = new ListNode(); // helper node
   let curr = head; //the node will be inserted
@@ -124,9 +172,6 @@ var insertionSortList = function(head) {
     // At each iteration, we insert an element into the resulting list.
     prevNode = pseudoHead;
     nextNode = pseudoHead.next;
-
-    console.log(prevNode);
-    console.log(nextNode);
 
     // find the position to insert the current node
     while (nextNode != null) {
@@ -174,7 +219,7 @@ var insertionSortList2 = function(head) {
 }
 
 /*
-Approach
+Approach Use original insertion sort
 */
 
 /**
@@ -190,10 +235,10 @@ var insertionSortList1 = function(head) {
     output.push(val);
     head = head.next;
   }
-  console.log(output);
+  //console.log(output);
 
   let sorted = insertionSort(output);
-  console.log(sorted);
+  //console.log(sorted);
 
   //let list = arrayToList(sorted);
   let list = createList(sorted);
@@ -249,7 +294,7 @@ function createList(arr) {
 let head = new ListNode(4);
 head.next = new ListNode(2);
 head.next.next = new ListNode(1);
-head.next.next.next = new ListNode(3);
+// head.next.next.next = new ListNode(3);
 console.log(head);
 const sorted = insertionSortList(head);
 console.log(sorted);
