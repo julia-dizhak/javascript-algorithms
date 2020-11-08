@@ -1902,8 +1902,215 @@ function arraySubset(arr, sub) {
 // Your code here
 }
 
+/*
+Integer.MAX_VALUE move to anki
+
+bfs
+course schedule?
+
+hint1
+How many MHTs can a graph have at most?
+
+brute force
+https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
+tle
+
+topological sort
+
+use array https://leetcode.com/problems/minimum-height-trees/discuss/427802/javascript-BFS-solution
+
+more explian
+https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts
+*/
+/**
+ * @param {number} n
+ * @param {number[][]} edges
+ * @return {number[]}
+ */
+var findMinHeightTrees = function(n, edges) {
+  // base case
+  if (edges === 0) return [0];
+  if (n < 2) {
+    let centroids = [];
+    for (let i = 0; i < n; i++) {
+      centroids.push(i);
+      return centroids;
+    }
+  }
+
+  // // Build the graph with the adjacency list
+  const graph = makeAdjacencyList(n, edges);  
+  console.log(graph);
+
+  let m = n;
+  let leaves = [];
+
+  for (const [node, adj] of graph) {
+    if (adj.size === 1) {
+      leaves.push(node);
+    }
+  }
+  console.log(leaves);
+
+  while (m > 2) {
+    m -= leaves.length;
+    // The goal is to remove leaves from graph and find new leaves
+    const newLeaves = [];
+
+    for (const leaf of leaves) {
+      const neighbor = graph.get(leaf).values().next().value;
+      console.log(neighbor);
+      // a leaf only connects to one neighbor
+      graph.get(neighbor).delete(leaf);
+      // keep track of new leaves when if a node becomes a leaf after deletion
+      if (graph.get(neighbor).size === 1) {
+        newLeaves.push(neighbor);
+      }
+      console.log(newLeaves);
+      graph.delete(leaf);
+    }
+
+    leaves = newLeaves;
+  }
+  return leaves;
+
+  // let minHeight = Integer.MAX_VALUE; // 
+  // for (let i = 0; i < n; i++) {
+  //   let root = i;
+    
+    
+  // }
+};
+function makeAdjacencyList(n, edges) {
+  const adjacencyList = new Map();
+  
+  for (let i = 0; i < n; i++) {
+    adjacencyList.set(i, new Set());
+  }
+
+  for (const [start, end] of edges) {
+    adjacencyList.get(start).add(end);
+    adjacencyList.get(end).add(start);
+  }
+
+  return adjacencyList;
+}
+console.log(findMinHeightTrees(4, [[1,0],[1,2],[1,3]]));
+//console.log(findMinHeightTrees(1, [[0]]));
+
+
+class ListNode {
+  constructor(val, next) {
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : next);
+  }
+} 
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+// JavaScript - O(max(n, m)) time, O(max(n, m)) space, using stack
+// addDigit to anki
+var addTwoNumbers = function(l1, l2) {
+  let arr1 = [];
+  let arr2 = [];
+  let stack = []; // i need to have reverse kind of
+
+  while (l1 && l2) {
+    let num1 = l1.val;
+    let num2 = l2.val;
+    //stack.push([num1, num2]);
+    arr1.push(num1);
+    arr2.push(num2);
+
+    l1 = l1.next;
+    l2 = l2.next;
+  }
+
+  if (l1) {
+    while (l1) {
+      let num = l1.val;
+      stack.push([num]);
+      l1 = l1.next;
+    }
+  }
+  console.log(l1);
+
+  if (l2) {
+    while (l2) {
+      let num = l2.val;
+      stack.push([num]);
+      l1 = l2.next;
+    }
+  }
+
+  //console.log(stack);
+  console.log(arr1);
+  console.log(arr2);
+
+  // Sum the digits in reverse order (least significant first)
+  let prev = null;
+  let carry = 0;
+
+  while (arr1.length || arr2.length || carry) {
+    const val1 = arr1.pop() || 0;
+    const val2 = arr2.pop() || 0;
+    const sum = val1 + val2 + carry;
+    console.log(sum);
+    console.log(sum % 10);
+    carry = sum > 9 ? 1 : 0;
+
+    // Build the list backwards so digits are in forward order
+    // To handle the cases where sum is greater than 10. For example, if our sum is 12, we'd want the digit to be 2 and the carry to be 1.
+    const newNode = new ListNode(sum % 10);
+    console.log(newNode);
+    newNode.next = prev;
+    prev = newNode;
+  }
+  return prev;
+
+
+  // let res = [];
+  // for (let i = stack.length - 1; i >= 0; i--) {
+  //   let diff = 0;
+  //   const pair = stack[i];
+  //   const [el1, el2] = pair;
+  //   console.log(stack[i]);
+  //   // first check the same length
+  //   let sum = el1 + el2;
+  //   if (sum < 10) {
+  //     res.unshift(sum)
+  //   } else {
+  //     diff = Math.floor(sum % 10);
+  //     console.log(diff);
+  //   }
+  //   // if (!el2) {
+  //   //   if (el1 < 10) res.unshift(el1);
+  //   //   else {
+  //   //     diff = el1
+  //   //   }
+  //   // }
+  //   // else res.push(el1+el2);
+  // }
+
+  //console.log(res);
+};
+// (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4)
+let l1 = new ListNode(7);
+l1.next = new ListNode(2);
+l1.next.next = new ListNode(4);
+// l1.next.next.next = new ListNode(3);
+console.log(l1);
+let l2 = new ListNode(5);
+l2.next = new ListNode(6);
+l2.next.next = new ListNode(4);
+
+console.log('addTwoNumbers', addTwoNumbers(l1, l2));
+
 
 export {
+
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
   partitionLabels,

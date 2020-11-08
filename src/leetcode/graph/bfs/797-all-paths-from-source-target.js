@@ -28,7 +28,7 @@ You can print different paths in any order, but you should keep the order of nod
 /*
 Approach BFS
 
-1. create a queue
+1 create a queue
 2 push first node to the queue
 3 from example our start node is 0, our goal node is length - 1 = 3
 4 repeat next steps until queue is not empty

@@ -2,7 +2,8 @@ import {
   //addDigits,
   //addDigitsMath as addDigits,
   //addDigitsUseLoop as addDigits,
-  addDigitsUseRecursion as addDigits
+  addDigitsUseRecursion as addDigits,
+  //addDigitsBruteForce as addDigits
 } from './258-add-digits';
 
 describe('add digits test case', () => {

@@ -49,6 +49,7 @@ Approach recursion
 time is O(n)
 space is O(n) recursion stack
 */
+// todo return string
 var addDigitsBruteForce = function(num) {
   let arr = num.toString().split('');
   if (arr.length === 0) return 0;
@@ -59,10 +60,11 @@ var addDigitsBruteForce = function(num) {
     for (let i = 0; i < arr.length; i++) {
       sum += Number(arr[i]);
     }
-    return addDigits(sum)
+    console.log(typeof sum);
+    return addDigitsBruteForce(Number(sum));
   }
 };
-
+//console.log('addDigitsBruteForce', addDigitsBruteForce(16))
 
 /*
 Approach recursion
@@ -82,7 +84,7 @@ var addDigitsUseRecursion = function(num) {
   return addDigitsUseRecursion(sum);
 };
 
-//console.log('addDigitsUseRecursion', addDigitsUseRecursion(16))
+console.log('addDigitsUseRecursion', addDigitsUseRecursion(16))
 
 // print results
 // By carefully observing the output, you would've noticed a pattern:

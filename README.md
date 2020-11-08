@@ -550,7 +550,7 @@ started on 12/21/17
     | Approach:    | Time    | Space   |
     | :---         | :---    | :---    |
     | Loop         | O(n)    | O(n)    |
-    | Math.pow     | O(n)    | O(n)?   |
+    | Math.pow     | O(n)    | O(n)    |
 
     * [422. Find all duplicates in Array](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/duplicates/422-find-all-duplicates.js)
 
