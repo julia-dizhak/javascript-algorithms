@@ -545,7 +545,7 @@ started on 12/21/17
 
     * [997. Find the Judge in the town](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/997-find-judge.js)
 
-    * [66. Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/66-plus-one.js)
+    * [66. Plus one](https://github.com/julia-dizhak/javascript-algorithms/blob/master/src/leetcode/array/add-numbers/66-plus-one.js)
 
     | Approach:    | Time    | Space   |
     | :---         | :---    | :---    |

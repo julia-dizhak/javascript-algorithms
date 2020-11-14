@@ -1593,9 +1593,9 @@ var findRepeatedDnaSequences = function(s) {
     
   }
   // move to regex patterns
-  console.log('s', s);
+  // console.log('s', s);
 };
-console.log('findRepeatedDnaSequences', findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT'));
+// console.log('findRepeatedDnaSequences', findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT'));
 
 
 /*
@@ -1655,7 +1655,7 @@ var asteroidCollision = function(asteroids) {
       console.log('j',asteroids[j]);
       pair.push(asteroids[j]);
     }
-    console.log('pair', pair);
+    // console.log('pair', pair);
     res.push(pair)
   }
 
@@ -1758,7 +1758,7 @@ function highestFrequency(strings) {
   return mostFreqStr;
 }
 
-console.log('highestFrequency', highestFrequency(['str1', 'str2', 'str3', 'str1']));
+// console.log('highestFrequency', highestFrequency(['str1', 'str2', 'str3', 'str1']));
 
 
 /*
@@ -1815,7 +1815,7 @@ var summaryRanges = function(nums) {
 
   return list;
 };
-console.log('summaryRanges', summaryRanges([0,1,2,4,5,7]));
+// console.log('summaryRanges', summaryRanges([0,1,2,4,5,7]));
 
 /*
 subseqeunce of string
@@ -1842,7 +1842,7 @@ var findNumberOfLIStr = function(str, ans = '') {
   return a1;
 };
 // [abcd, abc, abd, ab, acd, ac, ad, a, bcd, bc, bd, b, cd, c, d, ]
-console.log('findNumberOfLIStr', findNumberOfLIStr('abc'));
+// console.log('findNumberOfLIStr', findNumberOfLIStr('abc'));
 
 
 /**
@@ -1852,7 +1852,7 @@ console.log('findNumberOfLIStr', findNumberOfLIStr('abc'));
 var findNumberOfLIS = function(nums) {
     
 };
-console.log('findNumberOfLIS', findNumberOfLIS([1,3,5,4,7]));
+// console.log('findNumberOfLIS', findNumberOfLIS([1,3,5,4,7]));
 
 
 
@@ -1890,8 +1890,8 @@ var maxWidthOfVerticalArea = function(points) {
   //console.log(max)
   return max; 
 };
-console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[8,7],[9,9],[7,4],[9,7]]));
-console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[3,1],[9,0],[1,0],[1,4],[5,3],[8,8]]));
+// console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[8,7],[9,9],[7,4],[9,7]]));
+// console.log('maxWidthOfVerticalArea', maxWidthOfVerticalArea([[3,1],[9,0],[1,0],[1,4],[5,3],[8,8]]));
 
 // subset
 
@@ -1940,7 +1940,7 @@ var findMinHeightTrees = function(n, edges) {
 
   // // Build the graph with the adjacency list
   const graph = makeAdjacencyList(n, edges);  
-  console.log(graph);
+  // console.log(graph);
 
   let m = n;
   let leaves = [];
@@ -1950,7 +1950,7 @@ var findMinHeightTrees = function(n, edges) {
       leaves.push(node);
     }
   }
-  console.log(leaves);
+  // console.log(leaves);
 
   while (m > 2) {
     m -= leaves.length;
@@ -1995,7 +1995,7 @@ function makeAdjacencyList(n, edges) {
 
   return adjacencyList;
 }
-console.log(findMinHeightTrees(4, [[1,0],[1,2],[1,3]]));
+// console.log(findMinHeightTrees(4, [[1,0],[1,2],[1,3]]));
 //console.log(findMinHeightTrees(1, [[0]]));
 
 
@@ -2011,7 +2011,7 @@ class ListNode {
  * @return {ListNode}
  */
 // JavaScript - O(max(n, m)) time, O(max(n, m)) space, using stack
-// addDigit to anki
+
 var addTwoNumbers = function(l1, l2) {
   let arr1 = [];
   let arr2 = [];
@@ -2035,7 +2035,7 @@ var addTwoNumbers = function(l1, l2) {
       l1 = l1.next;
     }
   }
-  console.log(l1);
+  // console.log(l1);
 
   if (l2) {
     while (l2) {
@@ -2046,8 +2046,8 @@ var addTwoNumbers = function(l1, l2) {
   }
 
   //console.log(stack);
-  console.log(arr1);
-  console.log(arr2);
+  // console.log(arr1);
+  // console.log(arr2);
 
   // Sum the digits in reverse order (least significant first)
   let prev = null;
@@ -2101,12 +2101,12 @@ let l1 = new ListNode(7);
 l1.next = new ListNode(2);
 l1.next.next = new ListNode(4);
 // l1.next.next.next = new ListNode(3);
-console.log(l1);
+// console.log(l1);
 let l2 = new ListNode(5);
 l2.next = new ListNode(6);
 l2.next.next = new ListNode(4);
 
-console.log('addTwoNumbers', addTwoNumbers(l1, l2));
+// console.log('addTwoNumbers', addTwoNumbers(l1, l2));
 
 
 export {

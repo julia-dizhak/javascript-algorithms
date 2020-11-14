@@ -295,9 +295,9 @@ let head = new ListNode(4);
 head.next = new ListNode(2);
 head.next.next = new ListNode(1);
 // head.next.next.next = new ListNode(3);
-console.log(head);
+// console.log(head);
 const sorted = insertionSortList(head);
-console.log(sorted);
+//console.log(sorted);
 
 export {
   ListNode,

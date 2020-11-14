@@ -60,7 +60,7 @@ var addDigitsBruteForce = function(num) {
     for (let i = 0; i < arr.length; i++) {
       sum += Number(arr[i]);
     }
-    console.log(typeof sum);
+    //console.log(typeof sum);
     return addDigitsBruteForce(Number(sum));
   }
 };
