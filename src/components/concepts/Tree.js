@@ -69,7 +69,7 @@ export default function Tree() {
           <Details
             id="test-bt"
             question=""
-            code={test.toString()}
+            //code={test.toString()}
             //code={findKthPositive.toString()}
             //secondCode={minInsertions.toString()}
             //code={buildTreeUseRecursion.toString()}

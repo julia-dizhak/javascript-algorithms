@@ -2109,8 +2109,73 @@ l2.next.next = new ListNode(4);
 // console.log('addTwoNumbers', addTwoNumbers(l1, l2));
 
 
-export {
+//
+class ListNode1 {
+  constructor(val) {
+    this.val = val;
+    this.next = null; // pointer or reference
+  }
+}
 
+
+// [0,1,2,3,4,5]
+let list1 = new ListNode1(0);
+list1.next = new ListNode1(1);
+list1.next.next = new ListNode1(2);
+list1.next.next.next = new ListNode1(3);
+list1.next.next.next.next = new ListNode1(4);
+list1.next.next.next.next.next = new ListNode1(5);
+
+// 
+let list2 = new ListNode1(10000);
+list2.next = new ListNode1(10001);
+list2.next = new ListNode1(10002);
+
+console.log('list1', list1);
+console.log('list2', list2);
+
+var mergeInBetween = function(list1, a, b, list2) {
+  let res = [];
+  let list;
+
+  let temp1 = list1;
+  let copyList12 = list1;
+
+  let indexA = 0;  
+  let indexB = 0
+  while (temp1) {
+    if (temp1.val !== a) {
+      indexA++;
+      const node = temp1.next;
+      list = new ListNode(temp1.val)
+      copyList1 = copyList1.next;
+    } else {
+      copyList1.next = list2; 
+      break;
+    }
+  }
+  console.log(indexA);
+  console.log(copyList1);
+
+  while (copyList12) {
+    if (copyList12.val !== b) {
+      indexB++;
+      copyList12 = copyList12.next;
+    } else {
+      break;
+    }
+  }
+
+  console.log(indexB);
+
+
+  console.log(res);
+  return res;
+}
+
+console.log('mergeInBetween', mergeInBetween(list1, 3, 4, list2) );
+
+export {
   largestTimeFromDigits,
   containsNearbyAlmostDuplicate,
   partitionLabels,
